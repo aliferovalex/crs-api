@@ -1,6 +1,7 @@
 {
   "source": "https://raw.githubusercontent.com/saby-integration/v8unpack/main/src/v8unpack/metadata_types.py",
   "names": {
+    "cf4abeab-37b2-11d4-940f-008048da11f9": "Configuration",
     "2deed9b8-0056-4ffe-a473-c20a6c32a0bc": "AccountingRegister",
     "b64d9a40-1642-11d6-a3c7-0050bae0a776": "AccumulationRegister",
     "6e6dc072-b7ac-41e7-8f88-278d25b6da2a": "Bot",
@@ -49,5 +50,17 @@
     "a7641777-7813-45c6-96ef-9d51587a6ac6": "WebSocketClient",
     "d26096fb-7a5d-4df9-af63-47d04771fa9b": "WSReference",
     "cc9df798-7c94-4616-97d2-7aa0b7bc515e": "XDTOPackage"
+  },
+  "groups": {
+    "General": "9cd510cd-abfc-11d4-9434-004095e12fc7",
+    "Main": "9fcd25a0-4822-11d4-9414-008048da11f9",
+    "Accounting": "e3687481-0a87-462c-a166-9f34594f9bba",
+    "Calculation": "9de14907-ec23-4a07-96f0-85521cb6b53b",
+    "DocFlow": "51f2d5d8-ea4d-4064-8892-82951750031e",
+    "DataSource": "e68182ea-4237-4383-967f-90c1e3370bc7",
+    "Integration": "fb282519-d103-4dd3-bc12-cb271d631dfc"
+  },
+  "features": {
+    "ConstantCollectionChanged": "3b294bed-fed0-4338-ba85-4a9e4d03f4ed"
   }
 }

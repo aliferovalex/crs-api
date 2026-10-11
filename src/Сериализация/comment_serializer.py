@@ -14,9 +14,10 @@ import uuid
 import xml.etree.ElementTree as ET
 import zlib
 from dataclasses import dataclass
+import metadata_identifiers as identifiers
 
 NS = "http://v8.1c.ru/8.2/crs"
-ROOT_CLASS = "cf4abeab-37b2-11d4-940f-008048da11f9"
+ROOT_CLASS = identifiers.class_id('Configuration')
 BASIC_FEATURE = "b3b0b503-7bab-411e-bf30-7a7c0925a441"
 ZERO = "00000000-0000-0000-0000-000000000000"
 SERIALIZER = bytes.fromhex("0201534b6ff4888dc14ea0d5ebb6bda0a70d")
@@ -25,7 +26,7 @@ HEADER = struct.pack("<III", 0x11223344, 2, 3)
 INDEX_HEADER = bytes.fromhex("11223344") + struct.pack("<II", 2, 3)
 MAX_BYTES = 16 * 1024 * 1024
 PROPERTY_SLOTS = {'NamePrefix': 42, 'Vendor': 14, 'Version': 15, 'UpdateCatalogAddress': 16}
-ROOT_FEATURE_CLASS = '9cd510cd-abfc-11d4-9434-004095e12fc7'
+ROOT_FEATURE_CLASS = identifiers.group_id('General')
 
 
 class Group(list):

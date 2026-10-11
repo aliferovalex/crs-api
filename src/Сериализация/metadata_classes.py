@@ -9,9 +9,10 @@ from pathlib import Path
 import sys
 import uuid
 import comment_serializer as s
+import metadata_identifiers as identifiers
 
-ROOT_CLASS = 'cf4abeab-37b2-11d4-940f-008048da11f9'
-MAIN_GROUP = '9fcd25a0-4822-11d4-9414-008048da11f9'
+ROOT_CLASS = identifiers.class_id('Configuration')
+MAIN_GROUP = identifiers.group_id('Main')
 
 
 def guid(node):
@@ -102,11 +103,10 @@ def catalog(request):
     documents = s.Parser(s.inflate(body).decode('utf-8-sig')).documents()
     if len(documents) != 1:
         raise ValueError('Unsupported Configuration document count')
-    labels = json.loads(Path(__file__).with_name('metadata_class_names.json').read_text(encoding='utf-8-sig'))
-    result = discover(documents[0], root_id, labels['names'])
+    result = discover(documents[0], root_id, identifiers.class_labels())
     result.update(ok=True, root_object_version=count(metadata[0][5]),
                   repository_version=request.get('repository_version'),
-                  platform=request.get('platform'), label_reference=labels['source'])
+                  platform=request.get('platform'), label_reference=identifiers.label_reference())
     return result
 
 

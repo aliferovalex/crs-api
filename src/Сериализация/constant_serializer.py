@@ -14,9 +14,10 @@ import uuid
 import xml.etree.ElementTree as E
 import zlib
 import comment_serializer as s
+import metadata_identifiers as identifiers
 
-CLASS = '0195e80c-b157-11d4-9435-004095e12fc7'
-LANGUAGE = '9cd510ce-abfc-11d4-9434-004095e12fc7'
+CLASS = identifiers.class_id('Constant')
+LANGUAGE = identifiers.class_id('Language')
 MD = 'http://v8.1c.ru/8.3/MDClasses'
 CORE = 'http://v8.1c.ru/8.1/data/core'
 READABLE = 'http://v8.1c.ru/8.3/xcf/readable'
@@ -278,7 +279,7 @@ def serialize(request):
             if section=='changes':field(second,'externals')
     field(p,'objectsToRemove');field(p,'code',s.val(s.configuration_properties(docs)[15]));field(p,'comment',text='')
     feature=field(field(p,'features'),'value');field(feature,'first',rid)
-    field(field(feature,'second'),'value','3b294bed-fed0-4338-ba85-4a9e4d03f4ed')
+    field(field(feature,'second'),'value',identifiers.feature_id('ConstantCollectionChanged'))
     descriptions=[]
     for oid in order:
         m=objects[oid][0]
