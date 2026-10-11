@@ -144,14 +144,15 @@ def read_record(data, pos):
 
 def storage(records, manifest):
     """SHA1-indexed native storage, with index and whole-stream checksums."""
-    data = bytearray(HEADER)
+    count = len({hashlib.sha1(p).digest() for p in records + [manifest]})
+    data = bytearray(struct.pack('<III', 0x11223344, 2, count))
     offsets = {}
     for payload in records + [manifest]:
         digest = hashlib.sha1(payload).digest()
         if digest not in offsets:
             offsets[digest] = len(data)
             data += record(payload)
-    index = INDEX_HEADER
+    index = bytes.fromhex('11223344') + struct.pack('<II', 2, count)
     for digest, offset in sorted(offsets.items()):
         index += digest + struct.pack("<Q", offset)
     index += bytes(20)
@@ -173,15 +174,17 @@ def inflate(data):
 
 def validate_storage(data):
     """Validate the index, all indexed records and both SHA1 checksums."""
-    if len(data) < 128 or len(data) > MAX_BYTES or data[:12] != HEADER:
+    if len(data) < 128 or len(data) > MAX_BYTES or data[:8] != HEADER[:8]:
         raise ValueError("Unsupported or oversized native storage")
+    count = struct.unpack_from('<I', data, 8)[0]
     if data[-36:-20] != EOF_MARKER or hashlib.sha1(data[:-20]).digest() != data[-20:]:
         raise ValueError("Native storage checksum mismatch")
     index_pos = len(data) - struct.unpack_from("<Q", data, len(data) - 64)[0]
     if index_pos < 12 or index_pos >= len(data) - 64:
         raise ValueError("Invalid native index offset")
     index, end = read_record(data, index_pos)
-    if end != len(data) - 64 or index[:12] != INDEX_HEADER or len(index) < 52:
+    index_header = bytes.fromhex('11223344') + struct.pack('<II', 2, count)
+    if end != len(data) - 64 or index[:12] != index_header or len(index) < 52:
         raise ValueError("Invalid native index")
     if index[-40:-20] != bytes(20) or hashlib.sha1(index[:-20]).digest() != index[-20:]:
         raise ValueError("Native index checksum mismatch")
@@ -203,13 +206,35 @@ def validate_storage(data):
             raise ValueError("Unsorted or duplicate native index")
         entries[digest] = struct.unpack_from("<Q", index, p + 20)[0]
         previous = digest
-    if pos != index_pos or entries != records or data[-56:-36] not in records:
+    if pos != index_pos or entries != records or len(records) != count or data[-56:-36] not in records:
         raise ValueError("Native index does not match storage records")
 
 
 def compress(data):
     encoder = zlib.compressobj(wbits=-15)
     return encoder.compress(data) + encoder.flush()
+
+
+def graph_relations(object_id, relation):
+    """Metadata stores UUID and flag columns; graph stores interleaved pairs."""
+    pairs = metadata_relations(relation)
+    row = [atom(object_id), atom(len(pairs))]
+    for target, flag in pairs.items():
+        row.extend([atom(target), atom(flag)])
+    return row
+
+
+def metadata_relations(relation):
+    count = int(val(relation[0]))
+    if len(relation) != 1 + count * 2:
+        raise ValueError('Invalid metadata relation count')
+    pairs = {}
+    for target, flag in zip(relation[1:1 + count], relation[1 + count:]):
+        key = str(uuid.UUID(val(target)))
+        if key in pairs or val(flag) not in ('0', '1'):
+            raise ValueError('Invalid or duplicate metadata relation')
+        pairs[key] = int(val(flag))
+    return pairs
 
 
 def xml_comment(before_text, after_text, object_id, name, current_comment):
@@ -380,7 +405,7 @@ def xml_property_patches(before_text, after_text, object_id, common, documents):
 
 
 def context_metadata(data, object_id):
-    if data[:12] != HEADER or len(data) > MAX_BYTES:
+    if data[:8] != HEADER[:8] or len(data) > MAX_BYTES:
         raise ValueError("Unsupported updateInfo context")
     pos, found = 12, []
     while pos < len(data):
@@ -474,7 +499,7 @@ def serialize(request):
     descriptor = [atom(object_id), copy.deepcopy(m[2]), atom(ZERO), copy.deepcopy(m[9]), copy.deepcopy(m[10]),
                   atom(4294967295), atom(0), copy.deepcopy(m[3]), copy.deepcopy(m[4]), atom(original64), atom(local64), atom(0)]
     graph = [[atom(1), atom(object_id), descriptor], [atom(1), [atom(object_id)] + features],
-             [atom(1), [atom(object_id)] + copy.deepcopy(m[14])], [atom(1), atom(object_id), copy.deepcopy(m[3])],
+             [atom(1), graph_relations(object_id, m[14])], [atom(1), atom(object_id), copy.deepcopy(m[3])],
              [atom(1), atom(object_id), atom(1)], [atom(1), atom(object_id), child_types], [atom(0)],
              [atom(1), atom(object_id), [atom(0)]], [atom(1), atom(object_id), atom(1)],
              [atom(1), atom(object_id), atom(1)], atom(0), [atom(0)], atom(0), [atom(0)], [atom(1), [atom(0)]]]
