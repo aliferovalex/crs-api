@@ -60,7 +60,8 @@
     "Calculation": "9de14907-ec23-4a07-96f0-85521cb6b53b",
     "DocFlow": "51f2d5d8-ea4d-4064-8892-82951750031e",
     "DataSource": "e68182ea-4237-4383-967f-90c1e3370bc7",
-    "Integration": "fb282519-d103-4dd3-bc12-cb271d631dfc"
+    "Integration": "fb282519-d103-4dd3-bc12-cb271d631dfc",
+    "CatalogAttributes": "cf4abea7-37b2-11d4-940f-008048da11f9"
   },
   "features": {
     "ConstantCollectionChanged": "3b294bed-fed0-4338-ba85-4a9e4d03f4ed"

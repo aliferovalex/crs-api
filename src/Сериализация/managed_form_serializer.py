@@ -40,7 +40,10 @@ def serialize(request):
     if (s.val(m[2])!=identifiers.class_id(parent_kind) or s.val(m[4])!=s.ZERO
             or s.render(m[11])!='{0}' or s.render(docs[2])!='{0}' or s.render(saved[2])!='{0}'):
         raise ValueError('Unsupported form parent or external data')
-    if kind!='CommonForm' and (s.val(m[3])==s.ZERO or s.render(m[13])!='{0}' or s.metadata_relations(m[14])!={s.val(m[3]):1}):raise ValueError('Invalid object parent relations')
+    if kind!='CommonForm':
+        relations=s.metadata_relations(m[14]);allowed={s.val(m[3])}|{child for child,cls in c.children(m)}
+        if s.val(m[3])==s.ZERO or relations.get(s.val(m[3]))!=1 or not set(relations).issubset(allowed) or any(v!=1 for v in relations.values()):raise ValueError('Invalid object parent relations')
+        if kind=='Document' and s.render(m[13])!='{0}':raise ValueError('Document attributes are not yet supported')
     if kind=='CommonForm' and s.val(m[3])!=s.ZERO:raise ValueError('Expected Configuration root')
     pairs=c.children(m)
     if kind!='CommonForm' and any(v!=cls for _,v in pairs):raise ValueError('Only existing forms are supported as children')
@@ -59,6 +62,11 @@ def serialize(request):
         if s.val(common[1][2])!=oid or s.val(common[2])!=s.val(m[9]):raise ValueError('Owner body/description mismatch')
         if kind=='Catalog' and (s.val(body[0][1][17])!='9' or s.val(body[0][1][19])!='25' or s.val(body[0][1][18])!='1'):raise ValueError('Only the verified default Catalog attributes are supported')
         if kind=='Document' and s.val(body[0][1][12])!='9':raise ValueError('Only the verified Document number is supported')
+        if kind=='Catalog':
+            attributes=body[0][6]
+            if s.val(attributes[0])!=identifiers.group_id('CatalogAttributes') or int(s.val(attributes[1]))!=len(attributes)-2:raise ValueError('Unsupported Catalog attribute map')
+            attribute_ids=[c.guid(s.val(v[0][1][1][1][1][2])) for v in attributes[2:]]
+            if len(set(attribute_ids))!=len(attribute_ids) or set(attribute_ids)!={s.val(v) for v in m[13][1:]}:raise ValueError('Catalog attributes/features mismatch')
         object_type=c.guid(s.val(body[0][1][1]))
     rows=[]
     def walk(node):
