@@ -3,4 +3,5 @@ out
 oscript_modules
 *.ospx
 coverage
+__pycache__/
 .vscode/launch.json
