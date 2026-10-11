@@ -50,7 +50,128 @@ def fixture():
     return request, raw
 
 
+def property_fixture():
+    request, raw = fixture()
+    docs = s.Parser(raw.decode('utf-8-sig')).documents()
+    common = s.common_properties(docs, ID)
+    props = [s.atom(0) for _ in range(81)]
+    props[0] = s.atom(79)
+    props[1] = [s.atom(0), copy.deepcopy(common)]
+    for key, slot in s.PROPERTY_SLOTS.items():
+        props[slot] = s.atom('Тест' if key == 'Vendor' else '', True)
+    docs[0][3:] = [[s.atom(s.ROOT_FEATURE_CLASS), [s.atom(1), props]], [s.atom(1), s.atom(CHILD)], s.atom('До', True)]
+    raw = s.text_bytes(docs)
+    metadata, _ = s.read_record(base64.b64decode(request['snapshot']), 12)
+    data = s.compress(raw)
+    manifest = s.text_bytes([[s.atom(0), s.atom(1), s.atom(ID),
+                             s.atom(hashlib.sha1(metadata).hexdigest(), True),
+                             s.atom(hashlib.sha1(data).hexdigest(), True), s.atom(0)]])
+    request['snapshot'] = base64.b64encode(s.storage([metadata, data], manifest)).decode()
+    before = ET.fromstring(xml('До'))
+    for node in before.iter():
+        node.tag = node.tag.rsplit('}', 1)[-1]
+    xmlprops = before.find('.//Properties')
+    ET.SubElement(xmlprops, 'Synonym')
+    for key in s.PROPERTY_SLOTS:
+        if key != 'Vendor':
+            ET.SubElement(xmlprops, key)
+    request['mode'] = 'properties'
+    request['before_xml'] = ET.tostring(before, encoding='unicode')
+    request['after_xml'] = request['before_xml']
+    return request, raw
+
+
 class SerializerTests(unittest.TestCase):
+    def test_string_properties_individually_and_together(self):
+        for keys in [(key,) for key in s.PROPERTY_SLOTS] + [tuple(s.PROPERTY_SLOTS) + ('Comment',)]:
+            request, original = property_fixture()
+            changed = ET.fromstring(request['after_xml'])
+            for key in keys:
+                changed.find('.//Properties/' + key).text = 'Значение "' + key + '" & текст\nстрока'
+            request['after_xml'] = ET.tostring(changed, encoding='unicode')
+            _, raw = s.serialize(request)
+            olddocs = s.Parser(original.decode('utf-8-sig')).documents()
+            newdocs = s.Parser(raw.decode('utf-8-sig')).documents()
+            props = s.configuration_properties(newdocs)
+            common = s.common_properties(newdocs, ID)
+            for key in keys:
+                token = common[4] if key == 'Comment' else props[s.PROPERTY_SLOTS[key]]
+                self.assertEqual(s.val(token), changed.find('.//Properties/' + key).text)
+            # Reverse only the changed properties; all other bytes must remain identical.
+            text = raw.decode('utf-8-sig')
+            reverse = []
+            for key in keys:
+                new = common[4] if key == 'Comment' else props[s.PROPERTY_SLOTS[key]]
+                old = s.common_properties(olddocs, ID)[4] if key == 'Comment' else s.configuration_properties(olddocs)[s.PROPERTY_SLOTS[key]]
+                reverse.append((new.start, new.end, s.render(old)))
+            for start, end, value in sorted(reverse, reverse=True):
+                text = text[:start] + value + text[end:]
+            self.assertEqual(text, original.decode('utf-8-sig'))
+
+    def test_synonym_creation_edit_and_removal(self):
+        request, _ = property_fixture()
+        pairs = [('ru', 'Синоним "русский"'), ('en', 'English & text')]
+        changed = ET.fromstring(request['after_xml'])
+        synonym = changed.find('.//Properties/Synonym')
+        for lang, content in pairs:
+            item = ET.SubElement(synonym, '{http://v8.1c.ru/8.1/data/core}item')
+            ET.SubElement(item, '{http://v8.1c.ru/8.1/data/core}lang').text = lang
+            ET.SubElement(item, '{http://v8.1c.ru/8.1/data/core}content').text = content
+        request['after_xml'] = ET.tostring(changed, encoding='unicode')
+        _, raw = s.serialize(request)
+        docs = s.Parser(raw.decode('utf-8-sig')).documents()
+        token = s.common_properties(docs, ID)[3]
+        self.assertEqual(s.synonym_value(token), pairs)
+        # Check nonempty -> empty and nonempty -> edited, without replacing other bytes.
+        for replacement in ([], [('ru', 'Новый')]):
+            current = s.xml_property_patches(request['after_xml'], request['before_xml'], ID, s.common_properties(docs, ID), docs)
+            self.assertEqual(current, [(token.start, token.end, '{0}')])
+            if replacement:
+                synonym[0].find('{http://v8.1c.ru/8.1/data/core}content').text = 'Новый'
+                synonym.remove(synonym[1])
+                patches = s.xml_property_patches(request['after_xml'], ET.tostring(changed, encoding='unicode'), ID,
+                                                  s.common_properties(docs, ID), docs)
+                self.assertEqual(patches[0][2], '{1,"ru","Новый"}')
+
+    def test_properties_reject_stale_values_and_unknown_changes(self):
+        original, _ = property_fixture()
+        for mutation in ('baseline', 'unsupported', 'duplicate', 'attributes', 'name'):
+            request = copy.deepcopy(original)
+            before, after = ET.fromstring(request['before_xml']), ET.fromstring(request['after_xml'])
+            after.find('.//Vendor').text = 'Изменение'
+            if mutation == 'baseline':
+                before.find('.//Vendor').text = 'Устарел'
+            elif mutation == 'unsupported':
+                ET.SubElement(after.find('.//Properties'), 'DefaultRunMode').text = 'OrdinaryApplication'
+            elif mutation == 'duplicate':
+                ET.SubElement(after.find('.//Properties'), 'Vendor').text = 'Дубликат'
+            elif mutation == 'attributes':
+                after.find('.//Vendor').set('unexpected', 'true')
+            else:
+                after.find('.//Name').text = 'Переименовано'
+            request['before_xml'], request['after_xml'] = ET.tostring(before, encoding='unicode'), ET.tostring(after, encoding='unicode')
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                s.serialize(request)
+
+    def test_invalid_synonyms_and_unknown_native_layout(self):
+        request, raw = property_fixture()
+        after = ET.fromstring(request['after_xml'])
+        synonym = after.find('.//Synonym')
+        for _ in range(2):
+            item = ET.SubElement(synonym, '{http://v8.1c.ru/8.1/data/core}item')
+            ET.SubElement(item, '{http://v8.1c.ru/8.1/data/core}lang').text = 'ru'
+            ET.SubElement(item, '{http://v8.1c.ru/8.1/data/core}content').text = 'Дубликат'
+        request['after_xml'] = ET.tostring(after, encoding='unicode')
+        with self.assertRaisesRegex(ValueError, 'Duplicate XML Synonym'):
+            s.serialize(request)
+        docs = s.Parser(raw.decode('utf-8-sig')).documents()
+        docs[0][3][1][1][0] = s.atom(78)
+        with self.assertRaisesRegex(ValueError, 'property layout'):
+            s.configuration_properties(docs)
+        request['mode'] = 'unknown'
+        with self.assertRaisesRegex(ValueError, 'serialization mode'):
+            s.serialize(request)
+
     def test_comment_roundtrip_preserves_other_bytes_and_graph(self):
         request, original = fixture()
         for comment in ('', 'Кириллица "кавычки" & XML\nстрока', '{1,2}', 'До\tпосле'):

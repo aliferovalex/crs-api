@@ -1,4 +1,4 @@
-"""Experimental 8.5.4.1878 serializer: change only Configuration.Comment.
+"""Experimental 8.5.4.1878 serializer for selected Configuration properties.
 
 Uses a current server snapshot and updateInfo context, never a captured commit.
 Python 3.9+, standard library only. No network or repository mutations.
@@ -24,6 +24,14 @@ EOF_MARKER = bytes.fromhex("eee6eb24e5811f44ab292f34ce20ab33")
 HEADER = struct.pack("<III", 0x11223344, 2, 3)
 INDEX_HEADER = bytes.fromhex("11223344") + struct.pack("<II", 2, 3)
 MAX_BYTES = 16 * 1024 * 1024
+PROPERTY_SLOTS = {'NamePrefix': 42, 'Vendor': 14, 'Version': 15, 'UpdateCatalogAddress': 16}
+ROOT_FEATURE_CLASS = '9cd510cd-abfc-11d4-9434-004095e12fc7'
+
+
+class Group(list):
+    def __init__(self, items, start, end):
+        super().__init__(items)
+        self.start, self.end = start, end
 
 
 @dataclass
@@ -58,7 +66,7 @@ class Parser:
                     raise ValueError("Unclosed serialization group")
                 if self.text[self.pos] == "}":
                     self.pos += 1
-                    return items
+                    return Group(items, start, self.pos)
                 items.append(self.value(depth + 1))
                 self.whitespace()
                 if self.pos < len(self.text) and self.text[self.pos] == ",":
@@ -260,6 +268,117 @@ def common_properties(node, object_id):
     return found[0]
 
 
+def configuration_properties(documents):
+    groups = [g for g in documents[0][3:] if isinstance(g, list) and len(g) == 2
+              and isinstance(g[0], Atom) and val(g[0]) == ROOT_FEATURE_CLASS]
+    if len(groups) != 1:
+        raise ValueError('Unsupported Configuration feature layout')
+    outer = groups[0][1]
+    if len(outer) < 2 or val(outer[0]) != '1' or not isinstance(outer[1], list):
+        raise ValueError('Unsupported Configuration feature version')
+    props = outer[1]
+    if len(props) != 81 or val(props[0]) != '79':
+        raise ValueError('Unsupported Configuration property layout (expected 79)')
+    for index in PROPERTY_SLOTS.values():
+        if not isinstance(props[index], Atom) or not props[index].quoted:
+            raise ValueError('Unsupported string property layout')
+    return props
+
+
+def synonym_value(node):
+    if not isinstance(node, list) or not node or int(val(node[0])) * 2 != len(node) - 1:
+        raise ValueError('Invalid native Synonym count')
+    pairs = []
+    for i in range(1, len(node), 2):
+        if not all(isinstance(n, Atom) and n.quoted for n in node[i:i + 2]):
+            raise ValueError('Unsupported native Synonym layout')
+        pairs.append((val(node[i]), val(node[i + 1])))
+    if len({p[0] for p in pairs}) != len(pairs):
+        raise ValueError('Duplicate native Synonym language')
+    return pairs
+
+
+def xml_property_patches(before_text, after_text, object_id, common, documents):
+    if '<!DOCTYPE' in before_text.upper() or '<!DOCTYPE' in after_text.upper():
+        raise ValueError('DOCTYPE is unsupported')
+    before, after = ET.fromstring(before_text), ET.fromstring(after_text)
+    def properties(root):
+        configs = [e for e in root.iter() if e.tag.rsplit('}', 1)[-1] == 'Configuration']
+        if len(configs) != 1 or configs[0].get('uuid', '').lower() != object_id:
+            raise ValueError('XML must contain the requested Configuration UUID')
+        nodes = [e for e in configs[0] if e.tag.rsplit('}', 1)[-1] == 'Properties']
+        if len(nodes) != 1:
+            raise ValueError('Missing or duplicate Configuration.Properties')
+        return nodes[0]
+    source, changed = properties(before), properties(after)
+    def canonical(e):
+        return (e.tag, sorted(e.attrib.items()), (e.text or '') if not len(e) else (e.text or '').strip(),
+                (e.tail or '').strip(), tuple(canonical(c) for c in e))
+    def unique(parent, name, required=True):
+        nodes = [e for e in parent if e.tag.rsplit('}', 1)[-1] == name]
+        if len(nodes) > 1 or (required and not nodes):
+            raise ValueError('Missing or duplicate XML property: ' + name)
+        return nodes[0] if nodes else None
+    for props in (source, changed):
+        name = unique(props, 'Name')
+        if len(name) or (name.text or '') != val(common[2]):
+            raise ValueError('Configuration.Name changes are unsupported')
+    def xml_synonym(node):
+        pairs = []
+        for item in node:
+            if item.tag != '{http://v8.1c.ru/8.1/data/core}item' or len(item) != 2 or item.attrib:
+                raise ValueError('Unsupported XML Synonym item')
+            lang, content = unique(item, 'lang'), unique(item, 'content')
+            if (lang.tag != '{http://v8.1c.ru/8.1/data/core}lang'
+                    or content.tag != '{http://v8.1c.ru/8.1/data/core}content'
+                    or len(lang) or len(content) or lang.attrib or content.attrib or not (lang.text or '')):
+                raise ValueError('Invalid XML Synonym language or content')
+            pairs.append((lang.text, content.text or ''))
+        if len({p[0] for p in pairs}) != len(pairs):
+            raise ValueError('Duplicate XML Synonym language')
+        return pairs
+    patches = []
+    props = None
+    for key in ('Comment', 'Synonym', *PROPERTY_SLOTS):
+        old, new = unique(source, key, False), unique(changed, key, False)
+        if old is None and new is None:
+            continue
+        if old is None or new is None:
+            raise ValueError('Both XML documents must contain property: ' + key)
+        if canonical(old) == canonical(new):
+            continue
+        if key == 'Synonym':
+            token = common[3]
+            baseline, value = xml_synonym(old), xml_synonym(new)
+            current = synonym_value(token)
+            native = [atom(len(value))]
+            for lang, content in value:
+                native.extend([atom(lang, True), atom(content, True)])
+        else:
+            if len(old) or len(new):
+                raise ValueError('Expected scalar XML property: ' + key)
+            if key == 'Comment':
+                token = common[4]
+            else:
+                if props is None:
+                    props = configuration_properties(documents)
+                token = props[PROPERTY_SLOTS[key]]
+            baseline, value, current = old.text or '', new.text or '', val(token)
+            native = atom(value, True)
+        if baseline != current:
+            raise ValueError('Baseline XML ' + key + ' does not match the server snapshot')
+        if baseline != value:
+            patches.append((token.start, token.end, render(native)))
+        # Only value changes are allowed; attributes and unrelated XML remain checked.
+        old.text = new.text
+        old[:] = copy.deepcopy(list(new))
+    if canonical(before) != canonical(after):
+        raise ValueError('Unsupported XML changes outside supported Configuration properties')
+    if not patches:
+        raise ValueError('Supported XML properties have not changed')
+    return patches
+
+
 def context_metadata(data, object_id):
     if data[:12] != HEADER or len(data) > MAX_BYTES:
         raise ValueError("Unsupported updateInfo context")
@@ -313,9 +432,17 @@ def serialize(request):
     text = original_raw.decode("utf-8-sig")
     documents = Parser(text).documents()
     common = common_properties(documents, object_id)
-    new_comment = xml_comment(request["before_xml"], request["after_xml"], object_id, val(common[2]), val(common[4]))
-    comment_token = common[4]
-    new_text = text[:comment_token.start] + render(atom(new_comment, True)) + text[comment_token.end:]
+    mode = request.get('mode', 'comment')
+    if mode == 'comment':
+        new_comment = xml_comment(request["before_xml"], request["after_xml"], object_id, val(common[2]), val(common[4]))
+        patches = [(common[4].start, common[4].end, render(atom(new_comment, True)))]
+    elif mode == 'properties':
+        patches = xml_property_patches(request['before_xml'], request['after_xml'], object_id, common, documents)
+    else:
+        raise ValueError('Unsupported serialization mode')
+    new_text = text
+    for start, end, replacement in sorted(patches, reverse=True):
+        new_text = new_text[:start] + replacement + new_text[end:]
     new_raw = b"\xef\xbb\xbf" + new_text.encode("utf-8")
     new_data = compress(new_raw)
     # Repository version IDs are opaque UUIDs; a new ID denotes changed content.
