@@ -1,6 +1,6 @@
-"""Experimental flat Configuration + string Constant creation in verified releases.
+"""Experimental flat Configuration + Constant/Catalog creation in verified releases.
 
-Input is fresh server snapshots/context and Constant XML. No capture, CF, network
+Input is fresh server snapshots/context and object XML. No capture, CF, network
 or Designer is used. Native layout is deliberately limited to verified defaults.
 """
 import base64
@@ -174,17 +174,25 @@ def descriptor(m):
     return [m[1],m[2],m[3],m[9],m[10],m[5],m[6],m[3],m[4],m[7],m[8],s.atom(0)]
 
 def serialize(request):
+    kind = request.get("object_type", "Constant")
+    if kind not in ("Constant", "Catalog"):raise ValueError("Unsupported creation type")
+    object_class = identifiers.class_id(kind)
     if request['platform'] not in s.PLATFORM_LAYOUTS:raise ValueError('Unsupported platform: ' + request['platform'])
     rid=guid(request['object_id']);objects=context_objects(request['context']);root=objects[rid]
     inspect(request)
     oldchildren=children(root[0]);expected={rid}|{oid for oid,_ in oldchildren}
-    if any(cls not in (CLASS,LANGUAGE) for _,cls in oldchildren):
-        raise ValueError('Only a flat Configuration with Languages and Constants is supported')
+    allowed_classes = (CLASS,LANGUAGE) + ((identifiers.class_id('Catalog'),) if request['platform']=='8.5.1.1529' else ())
+    if any(cls not in allowed_classes for _,cls in oldchildren):
+        raise ValueError('Only a flat Configuration with Languages, Constants and Catalogs is supported')
     if set(request['snapshots'])!=expected:raise ValueError('Snapshots must cover root and all existing children')
     if any(not isinstance(v,str) for v in request['snapshots'].values()) or sum(len(v) for v in request['snapshots'].values())>s.MAX_BYTES*2:
         raise ValueError('Oversized or invalid snapshots')
-    cid,name,body,generated=constant_xml(request['constant_xml'], request['platform'])
-    if cid in objects or any(s.val(objects[oid][0][9]).casefold()==name.casefold() for oid,cls in oldchildren if cls==CLASS):
+    if kind == 'Catalog':
+        from catalog_serializer import catalog_xml
+        cid,name,body,generated=catalog_xml(request['catalog_xml'], request['platform'])
+    else:
+        cid,name,body,generated=constant_xml(request['constant_xml'], request['platform'])
+    if cid in objects or any(s.val(objects[oid][0][9]).casefold()==name.casefold() for oid,cls in oldchildren if cls==object_class):
         raise ValueError('Constant UUID or name already exists')
     known=set(objects)
     if any(g in known for g in generated):raise ValueError('Generated type UUID collides with an object')
@@ -215,13 +223,13 @@ def serialize(request):
     matches=[]
     def walk(node):
         if isinstance(node,list):
-            if len(node)>=2 and not isinstance(node[0],list) and s.val(node[0])==CLASS:
+            if len(node)>=2 and not isinstance(node[0],list) and s.val(node[0])==object_class:
                 matches.append(node)
             for sub in node:walk(sub)
     walk(docs)
     if len(matches)!=1:raise ValueError('Constant class map not found uniquely in root')
     row=matches[0]
-    if {s.val(v) for v in row[2:]}!={oid for oid,cls in oldchildren if cls==CLASS} or int(s.val(row[1]))!=len(row)-2 or len({s.val(v) for v in row[2:]})!=len(row)-2:
+    if {s.val(v) for v in row[2:]}!={oid for oid,cls in oldchildren if cls==object_class} or int(s.val(row[1]))!=len(row)-2 or len({s.val(v) for v in row[2:]})!=len(row)-2:
         raise ValueError('Root content/context Constant map differs')
     updated=[row[0],s.atom(len(row)-1)]+list(row[2:])+[s.atom(cid)]
     # Positions follow the native collection order, not the context-map order.
@@ -233,8 +241,8 @@ def serialize(request):
     raws[rid]=b'\xef\xbb\xbf'+(text[:row.start]+s.render(updated)+text[row.end:]).encode('utf-8')
     versions[rid]=uuid.uuid4().bytes_le+struct.pack('<I',zlib.crc32(raws[rid]))
     versions[cid]=uuid.uuid4().bytes_le+struct.pack('<I',zlib.crc32(body));originals[cid]=versions[cid];raws[cid]=body
-    rm=root[0];rmap=rm[12];constrow=next((r for r in rmap[1:] if s.val(r[0])==CLASS),None)
-    if constrow is None:rmap[0]=s.atom(len(rmap));rmap.append([s.atom(CLASS),s.atom(1),s.atom(cid)])
+    rm=root[0];rmap=rm[12];constrow=next((r for r in rmap[1:] if s.val(r[0])==object_class),None)
+    if constrow is None:rmap[0]=s.atom(len(rmap));rmap.append([s.atom(object_class),s.atom(1),s.atom(cid)])
     else:constrow[1]=s.atom(len(constrow)-1);constrow.append(s.atom(cid))
     # Native relation arrays are column-wise: all UUIDs, then all flags.
     count=int(s.val(rm[14][0]));relationids=list(rm[14][1:1+count]);flags=list(rm[14][1+count:])
@@ -242,7 +250,7 @@ def serialize(request):
         raise ValueError('Invalid root relation columns')
     rm[14]=[s.atom(count+1)]+relationids+[s.atom(cid)]+flags+[s.atom(1)]
     original64=base64.b64encode(originals[cid]).decode()
-    cm=[s.atom(6),s.atom(cid),s.atom(CLASS),s.atom(rid),s.atom(s.ZERO),s.atom(4294967295),s.atom(0),s.atom(original64),s.atom(original64),s.atom(name,True),s.atom(constant_positions[cid]),[s.atom(0)],[s.atom(0)],[s.atom(0)],[s.atom(1),s.atom(rid),s.atom(1)],s.atom(CLASS+'.'+name,True),s.atom(0)]
+    cm=[s.atom(6),s.atom(cid),s.atom(object_class),s.atom(rid),s.atom(s.ZERO),s.atom(4294967295),s.atom(0),s.atom(original64),s.atom(original64),s.atom(name,True),s.atom(constant_positions[cid]),[s.atom(0)],[s.atom(0)],[s.atom(0)],[s.atom(1),s.atom(rid),s.atom(1)],s.atom(object_class+'.'+name,True),s.atom(0)]
     objects[cid]=[cm,copy.deepcopy(root[1]),[s.atom(0)]]
     order=[cid,rid]+[oid for oid,_ in oldchildren]
     for oid in order:
@@ -290,8 +298,10 @@ def serialize(request):
             ver=field(detail,'version');field(ver,'original',originals[oid].hex());field(ver,'local',versions[oid].hex());field(detail,'removed','false')
             if section=='changes':field(second,'externals')
     field(p,'objectsToRemove');field(p,'code',s.val(s.configuration_properties(docs, request['platform'])[15]));field(p,'comment',text='')
-    feature=field(field(p,'features'),'value');field(feature,'first',rid)
-    field(field(feature,'second'),'value',identifiers.feature_id('ConstantCollectionChanged'))
+    features=field(p,'features')
+    for oid in ([rid] if kind == 'Constant' else [rid,cid]):
+        feature=field(features,'value');field(feature,'first',oid);values=field(feature,'second')
+        if kind == 'Constant':field(values,'value',identifiers.feature_id('ConstantCollectionChanged'))
     descriptions=[]
     for oid in order:
         m=objects[oid][0]
