@@ -218,6 +218,12 @@ def serialize(request):
     if {s.val(v) for v in row[2:]}!={oid for oid,cls in oldchildren if cls==CLASS} or int(s.val(row[1]))!=len(row)-2 or len({s.val(v) for v in row[2:]})!=len(row)-2:
         raise ValueError('Root content/context Constant map differs')
     updated=[row[0],s.atom(len(row)-1)]+list(row[2:])+[s.atom(cid)]
+    # Positions follow the native collection order, not the context-map order.
+    # Earlier packages assigned position 0 to every newly created Constant.
+    # Designer normalizes these duplicate positions on retrieval.
+    constant_positions={s.val(node):index for index,node in enumerate(updated[2:])}
+    # Existing descriptors must stay identical to their source descriptions.
+    # Previously stored duplicate positions require a separate native repair.
     raws[rid]=b'\xef\xbb\xbf'+(text[:row.start]+s.render(updated)+text[row.end:]).encode('utf-8')
     versions[rid]=uuid.uuid4().bytes_le+struct.pack('<I',zlib.crc32(raws[rid]))
     versions[cid]=uuid.uuid4().bytes_le+struct.pack('<I',zlib.crc32(body));originals[cid]=versions[cid];raws[cid]=body
@@ -230,7 +236,7 @@ def serialize(request):
         raise ValueError('Invalid root relation columns')
     rm[14]=[s.atom(count+1)]+relationids+[s.atom(cid)]+flags+[s.atom(1)]
     original64=base64.b64encode(originals[cid]).decode()
-    cm=[s.atom(6),s.atom(cid),s.atom(CLASS),s.atom(rid),s.atom(s.ZERO),s.atom(4294967295),s.atom(0),s.atom(original64),s.atom(original64),s.atom(name,True),s.atom(0),[s.atom(0)],[s.atom(0)],[s.atom(0)],[s.atom(1),s.atom(rid),s.atom(1)],s.atom(CLASS+'.'+name,True),s.atom(0)]
+    cm=[s.atom(6),s.atom(cid),s.atom(CLASS),s.atom(rid),s.atom(s.ZERO),s.atom(4294967295),s.atom(0),s.atom(original64),s.atom(original64),s.atom(name,True),s.atom(constant_positions[cid]),[s.atom(0)],[s.atom(0)],[s.atom(0)],[s.atom(1),s.atom(rid),s.atom(1)],s.atom(CLASS+'.'+name,True),s.atom(0)]
     objects[cid]=[cm,copy.deepcopy(root[1]),[s.atom(0)]]
     order=[cid,rid]+[oid for oid,_ in oldchildren]
     for oid in order:

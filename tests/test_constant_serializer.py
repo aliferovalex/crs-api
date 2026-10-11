@@ -43,6 +43,39 @@ def fixture():
     return request
 
 class ConstantSerializerTests(unittest.TestCase):
+    def test_new_position_follows_collection_and_existing_positions_are_preserved(self):
+        request=fixture()
+        objects=c.context_objects(request['context'])
+        rid=request['object_id'];root=objects[rid]
+        old_ids=['aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa','bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb']
+        root[0][12][0]=s.atom(2)
+        root[0][12].append([s.atom(c.CLASS),s.atom(2)]+[s.atom(oid) for oid in old_ids])
+        root[0][14]=[s.atom(3),s.atom(existing.CHILD)]+[s.atom(oid) for oid in old_ids]+[s.atom(0),s.atom(1),s.atom(1)]
+        data=base64.b64decode(request['snapshots'][rid]);_,pos=s.read_record(data,12)
+        content,_=s.read_record(data,pos);body=s.Parser(s.inflate(content).decode('utf-8-sig')).documents()
+        # Context order deliberately differs from the native collection order.
+        body[0][-1]=[s.atom(c.CLASS),s.atom(2)]+[s.atom(oid) for oid in reversed(old_ids)]
+        def pack(metadata,raw):
+            meta=s.text_bytes(metadata);compressed=s.compress(raw)
+            manifest=s.text_bytes([[s.atom(0),s.atom(1),metadata[0][1],s.atom(hashlib.sha1(meta).hexdigest(),True),s.atom(hashlib.sha1(compressed).hexdigest(),True),s.atom(0)]])
+            return base64.b64encode(s.storage([meta,compressed],manifest)).decode()
+        request['snapshots'][rid]=pack(root,s.text_bytes(body))
+        for index,oid in enumerate(old_ids):
+            obj=copy.deepcopy(objects[existing.CHILD]);obj[0][1]=s.atom(oid);obj[0][2]=s.atom(c.CLASS)
+            obj[0][9]=s.atom('Old%d'%index,True);obj[0][10]=s.atom(0)
+            objects[oid]=obj;request['snapshots'][oid]=pack(obj,s.text_bytes([[s.atom(1),s.atom(0)]]))
+        request['context']=base64.b64encode(s.storage([s.text_bytes(obj) for obj in objects.values()],s.text_bytes([[s.atom(0)]]))).decode()
+        result=c.serialize(request)
+        expected={old_ids[1]:0,old_ids[0]:0,CID:2}
+        descriptions={entry['id']:entry for entry in result['descriptions']}
+        self.assertEqual({oid:descriptions[oid]['pos'] for oid in expected},expected)
+        native=E.fromstring(result['request_xml'])
+        for section in ('requested','changes'):
+            for entry in native.findall('{%s}params/{%s}%s/{%s}value'%(s.NS,s.NS,section,s.NS)):
+                oid=entry.find('{%s}first'%s.NS).get('value')
+                if oid in expected:
+                    self.assertEqual(int(entry.find('.//{%s}pos'%s.NS).get('value')),expected[oid])
+
     def test_create_graph_storage_and_xml(self):
         result=c.serialize(fixture())
         call=E.fromstring(result['request_xml']);p=call.find('{%s}params'%s.NS)
