@@ -50,7 +50,8 @@
     "a7641777-7813-45c6-96ef-9d51587a6ac6": "WebSocketClient",
     "d26096fb-7a5d-4df9-af63-47d04771fa9b": "WSReference",
     "cc9df798-7c94-4616-97d2-7aa0b7bc515e": "XDTOPackage",
-    "fdf816d2-1ead-11d5-b975-0050bae0a95d": "CatalogForm"
+    "fdf816d2-1ead-11d5-b975-0050bae0a95d": "CatalogForm",
+    "fb880e93-47d7-4127-9357-a20e69c17545": "DocumentForm"
   },
   "groups": {
     "General": "9cd510cd-abfc-11d4-9434-004095e12fc7",
