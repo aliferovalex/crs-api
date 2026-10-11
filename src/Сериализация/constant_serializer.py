@@ -174,19 +174,19 @@ def descriptor(m):
 
 def serialize(request):
     kind = request.get("object_type", "Constant")
-    if kind not in ("Constant", "Catalog", "Document"):raise ValueError("Unsupported creation type")
+    if kind not in ("Constant", "Catalog", "Document", "Enum"):raise ValueError("Unsupported creation type")
     object_class = identifiers.class_id(kind)
     platforms.profile(request['platform'])
     rid=guid(request['object_id']);objects=context_objects(request['context']);root=objects[rid]
     inspect(request)
     oldchildren=children(root[0]);expected={rid}|{oid for oid,_ in oldchildren}
-    allowed_classes = (CLASS,LANGUAGE) + (tuple(identifiers.class_id(v) for v in ('Catalog','Document')) if platforms.legacy(request['platform']) else ())
+    allowed_classes = (CLASS,LANGUAGE) + (tuple(identifiers.class_id(v) for v in ('Catalog','Document','Enum')) if platforms.legacy(request['platform']) else ())
     if any(cls not in allowed_classes for _,cls in oldchildren):
-        raise ValueError('Only a flat Configuration with Languages, Constants, Catalogs and Documents is supported')
+        raise ValueError('Only a flat Configuration with Languages, Constants, Catalogs, Documents and Enums is supported')
     if set(request['snapshots'])!=expected:raise ValueError('Snapshots must cover root and all existing children')
     if any(not isinstance(v,str) for v in request['snapshots'].values()) or sum(len(v) for v in request['snapshots'].values())>s.MAX_BYTES*2:
         raise ValueError('Oversized or invalid snapshots')
-    if kind in ('Catalog','Document'):
+    if kind in ('Catalog','Document','Enum'):
         from flat_object_serializer import object_xml
         cid,name,body,generated=object_xml(request[kind.lower()+'_xml'], request['platform'],kind)
     else:
