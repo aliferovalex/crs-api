@@ -15,6 +15,7 @@ import xml.etree.ElementTree as ET
 import zlib
 from dataclasses import dataclass
 import metadata_identifiers as identifiers
+import platform_profiles as platforms
 
 NS = "http://v8.1c.ru/8.2/crs"
 ROOT_CLASS = identifiers.class_id('Configuration')
@@ -27,7 +28,6 @@ INDEX_HEADER = bytes.fromhex("11223344") + struct.pack("<II", 2, 3)
 MAX_BYTES = 16 * 1024 * 1024
 PROPERTY_SLOTS = {'NamePrefix': 42, 'Vendor': 14, 'Version': 15, 'UpdateCatalogAddress': 16}
 ROOT_FEATURE_CLASS = identifiers.group_id('General')
-PLATFORM_LAYOUTS = {'8.5.1.1529': (76, 77), '8.5.4.1878': (79, 81)}
 
 
 class Group(list):
@@ -291,7 +291,7 @@ def common_properties(node, object_id, platform='8.5.4.1878'):
             or val(node[0][0]) != "2" or not isinstance(node[0][1], list)
             or len(node[0][1]) != 1 or val(node[0][1][0]).lower() != object_id.lower()):
         raise ValueError("Object content UUID does not match the Configuration root")
-    if platform == '8.5.1.1529':
+    if platforms.legacy(platform):
         props = configuration_properties(node, platform)
         wrapper = props[1]
         if not isinstance(wrapper, list) or len(wrapper) != 2 or val(wrapper[0]) != '0':
@@ -332,9 +332,7 @@ def configuration_properties(documents, platform='8.5.4.1878'):
     if len(outer) < 2 or val(outer[0]) != '1' or not isinstance(outer[1], list):
         raise ValueError('Unsupported Configuration feature version')
     props = outer[1]
-    if platform not in PLATFORM_LAYOUTS:
-        raise ValueError('Unsupported platform: ' + platform)
-    count, length = PLATFORM_LAYOUTS[platform]
+    count, length = platforms.configuration_layout(platform)
     if len(props) != length or val(props[0]) != str(count):
         raise ValueError('Unsupported Configuration property layout for ' + platform)
     for index in PROPERTY_SLOTS.values():
@@ -454,8 +452,7 @@ def context_metadata(data, object_id):
 
 
 def serialize(request):
-    if request["platform"] not in PLATFORM_LAYOUTS:
-        raise ValueError("Unsupported platform: " + request["platform"])
+    platforms.profile(request['platform'])
     for key in ('snapshot', 'context', 'before_xml', 'after_xml'):
         if not isinstance(request[key], str) or len(request[key]) > MAX_BYTES * 2:
             raise ValueError("Oversized or invalid serializer input")
@@ -490,7 +487,7 @@ def serialize(request):
     text = original_raw.decode("utf-8-sig")
     documents = Parser(text).documents()
     common = common_properties(documents, object_id, request['platform'])
-    if request['platform'] == '8.5.1.1529':
+    if platforms.legacy(request['platform']):
         if '<!DOCTYPE' in request['before_xml'].upper():
             raise ValueError('DOCTYPE is unsupported')
         before_root = ET.fromstring(request['before_xml'])

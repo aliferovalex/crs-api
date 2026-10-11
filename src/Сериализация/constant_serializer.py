@@ -15,6 +15,7 @@ import xml.etree.ElementTree as E
 import zlib
 import comment_serializer as s
 import metadata_identifiers as identifiers
+import platform_profiles as platforms
 
 CLASS = identifiers.class_id('Constant')
 LANGUAGE = identifiers.class_id('Language')
@@ -88,16 +89,14 @@ def inspect(request):
     return [child for child, cls in children(m)]
 
 def constant_xml(text, platform='8.5.4.1878'):
-    if platform not in s.PLATFORM_LAYOUTS:
-        raise ValueError('Unsupported platform: ' + platform)
+    platforms.profile(platform)
     if not isinstance(text, str) or len(text.encode('utf-8')) > s.MAX_BYTES:
         raise ValueError('Oversized Constant XML')
     if '<!DOCTYPE' in text.upper():raise ValueError('DOCTYPE is unsupported')
     top = E.fromstring(text)
     if top.tag != '{%s}MetaDataObject'%MD or len(top) != 1 or top[0].tag != '{%s}Constant'%MD:
         raise ValueError('Expected MetaDataObject/Constant XML')
-    xml_version = '2.21' if platform == '8.5.1.1529' else '2.22'
-    if top.attrib not in ({},{'version':xml_version}):raise ValueError('Unsupported XML version or attributes')
+    if not platforms.xml_attributes(top.attrib, platform):raise ValueError('Unsupported XML version or attributes')
     constant = top[0]; oid = guid(constant.attrib['uuid'])
     if constant.attrib != {'uuid':constant.attrib['uuid']}:raise ValueError('Unsupported Constant attributes')
     if len({n.tag for n in constant}) != len(constant):
@@ -148,7 +147,7 @@ def constant_xml(text, platform='8.5.4.1878'):
     if not 1 <= length <= 1024 or qualifiers[1].text != 'Variable':
         raise ValueError('Only variable strings of length 1..1024 are supported')
     docs = s.Parser(TEMPLATE).documents();native = docs[0][1];common = native[1][1][1]
-    if platform == '8.5.1.1529':
+    if platforms.legacy(platform):
         common[0] = s.atom(3)
         del common[9:]
     common[1][2],common[2],common[4] = s.atom(oid),s.atom(name,True),s.atom(value('Comment') if 'Comment' in fields else '',True)
@@ -177,11 +176,11 @@ def serialize(request):
     kind = request.get("object_type", "Constant")
     if kind not in ("Constant", "Catalog"):raise ValueError("Unsupported creation type")
     object_class = identifiers.class_id(kind)
-    if request['platform'] not in s.PLATFORM_LAYOUTS:raise ValueError('Unsupported platform: ' + request['platform'])
+    platforms.profile(request['platform'])
     rid=guid(request['object_id']);objects=context_objects(request['context']);root=objects[rid]
     inspect(request)
     oldchildren=children(root[0]);expected={rid}|{oid for oid,_ in oldchildren}
-    allowed_classes = (CLASS,LANGUAGE) + ((identifiers.class_id('Catalog'),) if request['platform']=='8.5.1.1529' else ())
+    allowed_classes = (CLASS,LANGUAGE) + ((identifiers.class_id('Catalog'),) if platforms.legacy(request['platform']) else ())
     if any(cls not in allowed_classes for _,cls in oldchildren):
         raise ValueError('Only a flat Configuration with Languages, Constants and Catalogs is supported')
     if set(request['snapshots'])!=expected:raise ValueError('Snapshots must cover root and all existing children')

@@ -6,14 +6,15 @@ import xml.etree.ElementTree as E
 from pathlib import Path
 import comment_serializer as s
 import constant_serializer as c
+import platform_profiles as platforms
 
 
 def catalog_xml(text, platform='8.5.1.1529'):
-    if platform != '8.5.1.1529':raise ValueError('Catalog requires platform 8.5.1.1529')
+    if not platforms.legacy(platform):raise ValueError('Catalog requires legacy platform profile')
     if not isinstance(text,str) or len(text.encode('utf-8'))>s.MAX_BYTES:raise ValueError('Oversized Catalog XML')
     if '<!DOCTYPE' in text.upper():raise ValueError('DOCTYPE is unsupported')
     top=E.fromstring(text)
-    if top.tag!='{%s}MetaDataObject'%c.MD or top.attrib not in ({},{'version':'2.21'}) or len(top)!=1 or top[0].tag!='{%s}Catalog'%c.MD:
+    if top.tag!='{%s}MetaDataObject'%c.MD or not platforms.xml_attributes(top.attrib,platform) or len(top)!=1 or top[0].tag!='{%s}Catalog'%c.MD:
         raise ValueError('Expected MetaDataObject/Catalog XML version 2.21')
     obj=top[0]
     if set(obj.attrib)!={'uuid'}:raise ValueError('Unsupported Catalog attributes')
