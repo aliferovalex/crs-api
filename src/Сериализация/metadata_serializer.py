@@ -1,4 +1,4 @@
-"""Experimental serializer for selected Configuration properties in verified releases.
+"""Native metadata storage primitives and Configuration property serialization.
 
 Uses a current server snapshot and updateInfo context, never a captured commit.
 Python 3.9+, standard library only. No network or repository mutations.

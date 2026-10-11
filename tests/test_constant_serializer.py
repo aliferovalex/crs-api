@@ -6,8 +6,8 @@ import struct
 import unittest
 import uuid
 import xml.etree.ElementTree as E
-import test_comment_serializer as existing
-import comment_serializer as s
+import test_metadata_serializer as existing
+import metadata_serializer as s
 import constant_serializer as c
 
 CID='11111111-2222-4333-8444-555555555555'

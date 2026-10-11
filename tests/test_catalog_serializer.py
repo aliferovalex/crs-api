@@ -6,7 +6,7 @@ import xml.etree.ElementTree as E
 import test_constant_serializer as const
 import catalog_serializer as cat
 import constant_serializer as c
-import comment_serializer as s
+import metadata_serializer as s
 
 
 def xml():

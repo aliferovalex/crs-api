@@ -4,7 +4,7 @@ import hashlib
 import unittest
 import uuid
 import test_constant_serializer as const
-import comment_serializer as s
+import metadata_serializer as s
 import constant_serializer as c
 import commonmodule_serializer as module
 import test_commonmodule_serializer as create

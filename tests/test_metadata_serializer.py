@@ -10,7 +10,7 @@ import uuid
 import xml.etree.ElementTree as ET
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src' / 'Сериализация'))
-import comment_serializer as s
+import metadata_serializer as s
 
 ID = 'e2a9c158-4b91-424a-b10d-07b43280ce83'
 VERSION = '30e59a31-bafa-4035-a368-705c1330444a'

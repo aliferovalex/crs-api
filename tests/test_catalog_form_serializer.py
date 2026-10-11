@@ -6,7 +6,7 @@ import uuid
 import test_catalog_serializer as catalog
 import test_constant_serializer as const
 import catalog_form_serializer as form
-import comment_serializer as s
+import metadata_serializer as s
 import constant_serializer as c
 
 

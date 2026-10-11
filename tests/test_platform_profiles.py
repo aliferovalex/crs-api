@@ -3,9 +3,9 @@ import unittest
 import xml.etree.ElementTree as E
 import test_constant_serializer as const
 import test_catalog_serializer as catalog
-import test_comment_serializer as comment
+import test_metadata_serializer as metadata
 import platform_profiles as p
-import comment_serializer as s
+import metadata_serializer as s
 import constant_serializer as c
 import catalog_serializer as cat
 
@@ -24,7 +24,7 @@ class PlatformProfileTests(unittest.TestCase):
 
     def test_legacy_property_packet_preserves_requested_platform(self):
         for version in LEGACY:
-            request,original=comment.property_fixture('8.5.1.1529')
+            request,original=metadata.property_fixture('8.5.1.1529')
             request['platform']=version
             request['mode']='comment'
             request['after_xml']=request['before_xml'].replace('<Comment>До</Comment>','<Comment>После</Comment>')
@@ -46,7 +46,7 @@ class PlatformProfileTests(unittest.TestCase):
         self.assertEqual(len(cat.catalog_xml(catalog.xml().replace('2.21','2.16'),'8.3.10.1')[3]),10)
         for attrs in ({'version':'2.22'},{'version':'2.-1'},{'version':'3.0'},{'unknown':'x'}):
             self.assertFalse(p.xml_attributes(attrs,'8.3.27.2342'))
-        request,_=comment.property_fixture('8.5.4.1878');request['platform']='8.3.27.2342'
+        request,_=metadata.property_fixture('8.5.4.1878');request['platform']='8.3.27.2342'
         with self.assertRaisesRegex(ValueError,'layout'):s.serialize(request)
 
 

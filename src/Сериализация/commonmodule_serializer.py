@@ -8,7 +8,7 @@ import struct
 import sys
 import uuid
 import zlib
-import comment_serializer as s
+import metadata_serializer as s
 import metadata_identifiers as identifiers
 import platform_profiles as platforms
 

@@ -9,7 +9,7 @@ import sys
 import uuid
 import zlib
 from pathlib import Path
-import comment_serializer as s
+import metadata_serializer as s
 import constant_serializer as c
 import metadata_identifiers as identifiers
 import platform_profiles as platforms

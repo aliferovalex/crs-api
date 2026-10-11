@@ -1,7 +1,7 @@
 """Inline Enum values, generated UUIDs and creation graph regression checks."""
 import base64,hashlib,unittest,xml.etree.ElementTree as E
 import test_constant_serializer as const
-import comment_serializer as s
+import metadata_serializer as s
 import constant_serializer as c
 import enum_serializer as enum
 

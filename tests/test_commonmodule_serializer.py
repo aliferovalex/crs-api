@@ -8,7 +8,7 @@ import test_enum_serializer as enum
 import test_constant_serializer as const
 import commonmodule_serializer as module
 import constant_serializer as c
-import comment_serializer as s
+import metadata_serializer as s
 
 
 def xml():

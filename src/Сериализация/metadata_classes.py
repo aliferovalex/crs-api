@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 import sys
 import uuid
-import comment_serializer as s
+import metadata_serializer as s
 import metadata_identifiers as identifiers
 
 ROOT_CLASS = identifiers.class_id('Configuration')

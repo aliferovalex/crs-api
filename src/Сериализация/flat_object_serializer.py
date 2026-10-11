@@ -4,7 +4,7 @@ import re
 import uuid
 import xml.etree.ElementTree as E
 from pathlib import Path
-import comment_serializer as s
+import metadata_serializer as s
 import constant_serializer as c
 import platform_profiles as platforms
 
