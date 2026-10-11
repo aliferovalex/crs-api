@@ -1,4 +1,4 @@
-"""Experimental flat Configuration + Constant/Catalog creation in verified releases.
+"""Experimental flat Configuration + Constant/Catalog/Document creation.
 
 Input is fresh server snapshots/context and object XML. No capture, CF, network
 or Designer is used. Native layout is deliberately limited to verified defaults.
@@ -174,25 +174,25 @@ def descriptor(m):
 
 def serialize(request):
     kind = request.get("object_type", "Constant")
-    if kind not in ("Constant", "Catalog"):raise ValueError("Unsupported creation type")
+    if kind not in ("Constant", "Catalog", "Document"):raise ValueError("Unsupported creation type")
     object_class = identifiers.class_id(kind)
     platforms.profile(request['platform'])
     rid=guid(request['object_id']);objects=context_objects(request['context']);root=objects[rid]
     inspect(request)
     oldchildren=children(root[0]);expected={rid}|{oid for oid,_ in oldchildren}
-    allowed_classes = (CLASS,LANGUAGE) + ((identifiers.class_id('Catalog'),) if platforms.legacy(request['platform']) else ())
+    allowed_classes = (CLASS,LANGUAGE) + (tuple(identifiers.class_id(v) for v in ('Catalog','Document')) if platforms.legacy(request['platform']) else ())
     if any(cls not in allowed_classes for _,cls in oldchildren):
-        raise ValueError('Only a flat Configuration with Languages, Constants and Catalogs is supported')
+        raise ValueError('Only a flat Configuration with Languages, Constants, Catalogs and Documents is supported')
     if set(request['snapshots'])!=expected:raise ValueError('Snapshots must cover root and all existing children')
     if any(not isinstance(v,str) for v in request['snapshots'].values()) or sum(len(v) for v in request['snapshots'].values())>s.MAX_BYTES*2:
         raise ValueError('Oversized or invalid snapshots')
-    if kind == 'Catalog':
-        from catalog_serializer import catalog_xml
-        cid,name,body,generated=catalog_xml(request['catalog_xml'], request['platform'])
+    if kind in ('Catalog','Document'):
+        from flat_object_serializer import object_xml
+        cid,name,body,generated=object_xml(request[kind.lower()+'_xml'], request['platform'],kind)
     else:
         cid,name,body,generated=constant_xml(request['constant_xml'], request['platform'])
     if cid in objects or any(s.val(objects[oid][0][9]).casefold()==name.casefold() for oid,cls in oldchildren if cls==object_class):
-        raise ValueError('Constant UUID or name already exists')
+        raise ValueError(f'{kind} UUID or name already exists')
     known=set(objects)
     if any(g in known for g in generated):raise ValueError('Generated type UUID collides with an object')
     raws={};versions={};originals={}
@@ -226,10 +226,10 @@ def serialize(request):
                 matches.append(node)
             for sub in node:walk(sub)
     walk(docs)
-    if len(matches)!=1:raise ValueError('Constant class map not found uniquely in root')
+    if len(matches)!=1:raise ValueError(f'{kind} class map not found uniquely in root')
     row=matches[0]
     if {s.val(v) for v in row[2:]}!={oid for oid,cls in oldchildren if cls==object_class} or int(s.val(row[1]))!=len(row)-2 or len({s.val(v) for v in row[2:]})!=len(row)-2:
-        raise ValueError('Root content/context Constant map differs')
+        raise ValueError(f'Root content/context {kind} map differs')
     updated=[row[0],s.atom(len(row)-1)]+list(row[2:])+[s.atom(cid)]
     # Positions follow the native collection order, not the context-map order.
     # Earlier packages assigned position 0 to every newly created Constant.
