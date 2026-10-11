@@ -130,6 +130,20 @@ def text_bytes(documents):
     return b"\xef\xbb\xbf" + ",".join(render(x) for x in documents).encode("utf-8")
 
 
+def render_native_text(node):
+    """8.5.4 object-body text: CRLF before groups and after final groups."""
+    if not isinstance(node, list):
+        return render(node)
+    items = [("\r\n" if isinstance(child, list) else "") + render_native_text(child)
+             for child in node]
+    closing = "\r\n" if node and isinstance(node[-1], list) else ""
+    return "{" + ",".join(items) + closing + "}"
+
+
+def native_body_bytes(documents):
+    return b"\xef\xbb\xbf" + ",".join(render_native_text(x) for x in documents).encode("utf-8")
+
+
 def record(data):
     return struct.pack("<Q", len(data)) + data
 

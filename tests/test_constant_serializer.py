@@ -43,6 +43,13 @@ def fixture():
     return request
 
 class ConstantSerializerTests(unittest.TestCase):
+    def test_native_body_text_layout(self):
+        # Fixed expected text, including a final nested group and quoted braces.
+        docs=s.Parser('{1,{2,"тест { ","кавычка """},{"Pattern",{"S",64,1}}}').documents()
+        expected='{1,\r\n{2,"тест { ","кавычка """},\r\n{"Pattern",\r\n{"S",64,1}\r\n}\r\n}'
+        self.assertEqual(s.native_body_bytes(docs),b'\xef\xbb\xbf'+expected.encode('utf-8'))
+        self.assertEqual(s.render(s.Parser(expected).documents()[0]),s.render(docs[0]))
+
     def test_new_position_follows_collection_and_existing_positions_are_preserved(self):
         request=fixture()
         objects=c.context_objects(request['context'])
@@ -95,7 +102,9 @@ class ConstantSerializerTests(unittest.TestCase):
         cm=s.Parser(meta.decode('utf-8-sig')).documents()[0]
         self.assertEqual(s.val(cm[3]),existing.ID)
         self.assertEqual(s.val(cm[7]),s.val(cm[8]))
-        body=s.Parser(s.inflate(data).decode('utf-8-sig')).documents()[0]
+        native_body=s.inflate(data)
+        self.assertTrue(native_body.startswith(b'\xef\xbb\xbf{1,\r\n{16,\r\n{27,'))
+        body=s.Parser(native_body.decode('utf-8-sig')).documents()[0]
         self.assertEqual(s.val(body[1][1][1][2][1][1]),'128')
         self.assertEqual(s.val(body[1][1][1][1][2]),'XML_Constant')
         self.assertEqual(len(p.find('{%s}changes'%s.NS)),3)

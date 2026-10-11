@@ -162,7 +162,7 @@ def constant_xml(text):
     else:ids=[str(uuid.uuid4()) for _ in range(6)]
     if len(set(ids+[oid]))!=7:raise ValueError('Duplicate generated UUID')
     for index,value_ in zip((2,3,4,5,13,14),ids):native[index]=s.atom(value_)
-    return oid,name,s.text_bytes(docs),ids
+    return oid,name,s.native_body_bytes(docs),ids
 
 def descriptor(m):
     return [m[1],m[2],m[3],m[9],m[10],m[5],m[6],m[3],m[4],m[7],m[8],s.atom(0)]
