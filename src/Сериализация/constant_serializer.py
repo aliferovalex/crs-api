@@ -1,4 +1,4 @@
-"""Experimental flat Configuration + string Constant creation, 8.5.4.1878.
+"""Experimental flat Configuration + string Constant creation in verified releases.
 
 Input is fresh server snapshots/context and Constant XML. No capture, CF, network
 or Designer is used. Native layout is deliberately limited to verified defaults.
@@ -87,14 +87,17 @@ def inspect(request):
         raise ValueError('Configuration root required')
     return [child for child, cls in children(m)]
 
-def constant_xml(text):
+def constant_xml(text, platform='8.5.4.1878'):
+    if platform not in s.PLATFORM_LAYOUTS:
+        raise ValueError('Unsupported platform: ' + platform)
     if not isinstance(text, str) or len(text.encode('utf-8')) > s.MAX_BYTES:
         raise ValueError('Oversized Constant XML')
     if '<!DOCTYPE' in text.upper():raise ValueError('DOCTYPE is unsupported')
     top = E.fromstring(text)
     if top.tag != '{%s}MetaDataObject'%MD or len(top) != 1 or top[0].tag != '{%s}Constant'%MD:
         raise ValueError('Expected MetaDataObject/Constant XML')
-    if top.attrib not in ({},{'version':'2.22'}):raise ValueError('Unsupported XML version or attributes')
+    xml_version = '2.21' if platform == '8.5.1.1529' else '2.22'
+    if top.attrib not in ({},{'version':xml_version}):raise ValueError('Unsupported XML version or attributes')
     constant = top[0]; oid = guid(constant.attrib['uuid'])
     if constant.attrib != {'uuid':constant.attrib['uuid']}:raise ValueError('Unsupported Constant attributes')
     if len({n.tag for n in constant}) != len(constant):
@@ -145,6 +148,9 @@ def constant_xml(text):
     if not 1 <= length <= 1024 or qualifiers[1].text != 'Variable':
         raise ValueError('Only variable strings of length 1..1024 are supported')
     docs = s.Parser(TEMPLATE).documents();native = docs[0][1];common = native[1][1][1]
+    if platform == '8.5.1.1529':
+        common[0] = s.atom(3)
+        del common[9:]
     common[1][2],common[2],common[4] = s.atom(oid),s.atom(name,True),s.atom(value('Comment') if 'Comment' in fields else '',True)
     common[3] = [s.atom(len(synonyms))]
     for lang,content in synonyms:common[3].extend([s.atom(lang,True),s.atom(content,True)])
@@ -168,7 +174,7 @@ def descriptor(m):
     return [m[1],m[2],m[3],m[9],m[10],m[5],m[6],m[3],m[4],m[7],m[8],s.atom(0)]
 
 def serialize(request):
-    if request['platform']!='8.5.4.1878':raise ValueError('Only platform 8.5.4.1878 is supported')
+    if request['platform'] not in s.PLATFORM_LAYOUTS:raise ValueError('Unsupported platform: ' + request['platform'])
     rid=guid(request['object_id']);objects=context_objects(request['context']);root=objects[rid]
     inspect(request)
     oldchildren=children(root[0]);expected={rid}|{oid for oid,_ in oldchildren}
@@ -177,7 +183,7 @@ def serialize(request):
     if set(request['snapshots'])!=expected:raise ValueError('Snapshots must cover root and all existing children')
     if any(not isinstance(v,str) for v in request['snapshots'].values()) or sum(len(v) for v in request['snapshots'].values())>s.MAX_BYTES*2:
         raise ValueError('Oversized or invalid snapshots')
-    cid,name,body,generated=constant_xml(request['constant_xml'])
+    cid,name,body,generated=constant_xml(request['constant_xml'], request['platform'])
     if cid in objects or any(s.val(objects[oid][0][9]).casefold()==name.casefold() for oid,cls in oldchildren if cls==CLASS):
         raise ValueError('Constant UUID or name already exists')
     known=set(objects)
@@ -283,7 +289,7 @@ def serialize(request):
             for key,index in [('parentID',3),('ownerID',4)]:field(detail,key,s.val(m[index]))
             ver=field(detail,'version');field(ver,'original',originals[oid].hex());field(ver,'local',versions[oid].hex());field(detail,'removed','false')
             if section=='changes':field(second,'externals')
-    field(p,'objectsToRemove');field(p,'code',s.val(s.configuration_properties(docs)[15]));field(p,'comment',text='')
+    field(p,'objectsToRemove');field(p,'code',s.val(s.configuration_properties(docs, request['platform'])[15]));field(p,'comment',text='')
     feature=field(field(p,'features'),'value');field(feature,'first',rid)
     field(field(feature,'second'),'value',identifiers.feature_id('ConstantCollectionChanged'))
     descriptions=[]
@@ -294,7 +300,7 @@ def serialize(request):
                                  original=originals[oid].hex(),local=versions[oid].hex()))
     return dict(request_xml=E.tostring(call,encoding='unicode'),object_id=cid,name=name,
                 descriptions=descriptions,data=base64.b64encode(payload).decode(),
-                version_code=s.val(s.configuration_properties(docs)[15]),existing_objects=sorted(expected))
+                version_code=s.val(s.configuration_properties(docs, request['platform'])[15]),existing_objects=sorted(expected))
 
 def main():
     from pathlib import Path

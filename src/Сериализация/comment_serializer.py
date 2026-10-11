@@ -1,4 +1,4 @@
-"""Experimental 8.5.4.1878 serializer for selected Configuration properties.
+"""Experimental serializer for selected Configuration properties in verified releases.
 
 Uses a current server snapshot and updateInfo context, never a captured commit.
 Python 3.9+, standard library only. No network or repository mutations.
@@ -27,6 +27,7 @@ INDEX_HEADER = bytes.fromhex("11223344") + struct.pack("<II", 2, 3)
 MAX_BYTES = 16 * 1024 * 1024
 PROPERTY_SLOTS = {'NamePrefix': 42, 'Vendor': 14, 'Version': 15, 'UpdateCatalogAddress': 16}
 ROOT_FEATURE_CLASS = identifiers.group_id('General')
+PLATFORM_LAYOUTS = {'8.5.1.1529': (76, 77), '8.5.4.1878': (79, 81)}
 
 
 class Group(list):
@@ -131,7 +132,7 @@ def text_bytes(documents):
 
 
 def render_native_text(node):
-    """8.5.4 object-body text: CRLF before groups and after final groups."""
+    """Verified 8.5.1/8.5.4 object text: CRLF before groups and after final groups."""
     if not isinstance(node, list):
         return render(node)
     items = [("\r\n" if isinstance(child, list) else "") + render_native_text(child)
@@ -284,12 +285,26 @@ def xml_comment(before_text, after_text, object_id, name, current_comment):
     return new_comment
 
 
-def common_properties(node, object_id):
+def common_properties(node, object_id, platform='8.5.4.1878'):
     # Configuration stores common properties under its feature ID, not root UUID.
     if (len(node) != 1 or not isinstance(node[0], list) or len(node[0]) < 2
             or val(node[0][0]) != "2" or not isinstance(node[0][1], list)
             or len(node[0][1]) != 1 or val(node[0][1][0]).lower() != object_id.lower()):
         raise ValueError("Object content UUID does not match the Configuration root")
+    if platform == '8.5.1.1529':
+        props = configuration_properties(node, platform)
+        wrapper = props[1]
+        if not isinstance(wrapper, list) or len(wrapper) != 2 or val(wrapper[0]) != '0':
+            raise ValueError('Unsupported 8.5.1 common properties wrapper')
+        common = wrapper[1]
+        if (not isinstance(common, list) or len(common) != 9 or val(common[0]) != '3'
+                or not isinstance(common[1], list) or len(common[1]) != 3
+                or [val(v) for v in common[1][:2]] != ['1', '0']
+                or not isinstance(common[4], Atom) or not common[4].quoted):
+            raise ValueError('Unsupported 8.5.1 common properties layout')
+        if str(uuid.UUID(val(common[1][2]))) == ZERO:
+            raise ValueError('Zero common properties UUID')
+        return common
     found = []
     def walk(n):
         if not isinstance(n, list):
@@ -308,7 +323,7 @@ def common_properties(node, object_id):
     return found[0]
 
 
-def configuration_properties(documents):
+def configuration_properties(documents, platform='8.5.4.1878'):
     groups = [g for g in documents[0][3:] if isinstance(g, list) and len(g) == 2
               and isinstance(g[0], Atom) and val(g[0]) == ROOT_FEATURE_CLASS]
     if len(groups) != 1:
@@ -317,8 +332,11 @@ def configuration_properties(documents):
     if len(outer) < 2 or val(outer[0]) != '1' or not isinstance(outer[1], list):
         raise ValueError('Unsupported Configuration feature version')
     props = outer[1]
-    if len(props) != 81 or val(props[0]) != '79':
-        raise ValueError('Unsupported Configuration property layout (expected 79)')
+    if platform not in PLATFORM_LAYOUTS:
+        raise ValueError('Unsupported platform: ' + platform)
+    count, length = PLATFORM_LAYOUTS[platform]
+    if len(props) != length or val(props[0]) != str(count):
+        raise ValueError('Unsupported Configuration property layout for ' + platform)
     for index in PROPERTY_SLOTS.values():
         if not isinstance(props[index], Atom) or not props[index].quoted:
             raise ValueError('Unsupported string property layout')
@@ -338,7 +356,7 @@ def synonym_value(node):
     return pairs
 
 
-def xml_property_patches(before_text, after_text, object_id, common, documents):
+def xml_property_patches(before_text, after_text, object_id, common, documents, platform='8.5.4.1878'):
     if '<!DOCTYPE' in before_text.upper() or '<!DOCTYPE' in after_text.upper():
         raise ValueError('DOCTYPE is unsupported')
     before, after = ET.fromstring(before_text), ET.fromstring(after_text)
@@ -401,7 +419,7 @@ def xml_property_patches(before_text, after_text, object_id, common, documents):
                 token = common[4]
             else:
                 if props is None:
-                    props = configuration_properties(documents)
+                    props = configuration_properties(documents, platform)
                 token = props[PROPERTY_SLOTS[key]]
             baseline, value, current = old.text or '', new.text or '', val(token)
             native = atom(value, True)
@@ -436,8 +454,8 @@ def context_metadata(data, object_id):
 
 
 def serialize(request):
-    if request["platform"] != "8.5.4.1878":
-        raise ValueError("Only platform 8.5.4.1878 is supported")
+    if request["platform"] not in PLATFORM_LAYOUTS:
+        raise ValueError("Unsupported platform: " + request["platform"])
     for key in ('snapshot', 'context', 'before_xml', 'after_xml'):
         if not isinstance(request[key], str) or len(request[key]) > MAX_BYTES * 2:
             raise ValueError("Oversized or invalid serializer input")
@@ -471,13 +489,25 @@ def serialize(request):
         raise ValueError("Unsupported object text encoding")
     text = original_raw.decode("utf-8-sig")
     documents = Parser(text).documents()
-    common = common_properties(documents, object_id)
+    common = common_properties(documents, object_id, request['platform'])
+    if request['platform'] == '8.5.1.1529':
+        if '<!DOCTYPE' in request['before_xml'].upper():
+            raise ValueError('DOCTYPE is unsupported')
+        before_root = ET.fromstring(request['before_xml'])
+        refs = []
+        for contained in before_root.iter():
+            if contained.tag.rsplit('}', 1)[-1] == 'ContainedObject':
+                fields = {e.tag.rsplit('}', 1)[-1]: e.text for e in contained}
+                if fields.get('ClassId', '').lower() == ROOT_FEATURE_CLASS:
+                    refs.append(fields.get('ObjectId', '').lower())
+        if refs != [val(common[1][2]).lower()]:
+            raise ValueError('XML common properties UUID does not match native body')
     mode = request.get('mode', 'comment')
     if mode == 'comment':
         new_comment = xml_comment(request["before_xml"], request["after_xml"], object_id, val(common[2]), val(common[4]))
         patches = [(common[4].start, common[4].end, render(atom(new_comment, True)))]
     elif mode == 'properties':
-        patches = xml_property_patches(request['before_xml'], request['after_xml'], object_id, common, documents)
+        patches = xml_property_patches(request['before_xml'], request['after_xml'], object_id, common, documents, request['platform'])
     else:
         raise ValueError('Unsupported serialization mode')
     new_text = text
@@ -485,7 +515,7 @@ def serialize(request):
         new_text = new_text[:start] + replacement + new_text[end:]
     new_raw = b"\xef\xbb\xbf" + new_text.encode("utf-8")
     new_data = compress(new_raw)
-    # Repository version IDs are opaque UUIDs; a new ID denotes changed content.
+    # Experimental client version; this does not reproduce the native hash algorithm.
     version_bytes = uuid.uuid4().bytes_le + struct.pack("<I", zlib.crc32(new_raw))
     local = version_bytes.hex()
     original64 = base64.b64encode(bytes.fromhex(original)).decode()

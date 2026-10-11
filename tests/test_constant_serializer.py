@@ -20,8 +20,8 @@ def xml():
             '<v8:StringQualifiers><v8:Length>128</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength>'
             '</v8:StringQualifiers></Type></Properties></Constant></MetaDataObject>')%(c.MD,c.CORE,CID)
 
-def fixture():
-    request,raw=existing.property_fixture()
+def fixture(platform='8.5.4.1878'):
+    request,raw=existing.property_fixture(platform)
     rootdocs=s.Parser(raw.decode('utf-8-sig')).documents()
     rootdocs[0].append([s.atom(c.CLASS),s.atom(0)])
     raw=s.text_bytes(rootdocs)
@@ -43,6 +43,22 @@ def fixture():
     return request
 
 class ConstantSerializerTests(unittest.TestCase):
+    def test_851_constant_format_and_xml_version(self):
+        text=xml().replace('<MetaDataObject ', '<MetaDataObject version="2.21" ', 1)
+        oid,name,body,generated=c.constant_xml(text,'8.5.1.1529')
+        common=s.Parser(body.decode('utf-8-sig')).documents()[0][1][1][1][1]
+        self.assertEqual((s.val(common[0]),len(common)),('3',9))
+        self.assertEqual(s.val(common[1][2]),CID)
+        self.assertEqual(s.val(common[4]),'Создано из XML')
+        with self.assertRaisesRegex(ValueError,'XML version'):
+            c.constant_xml(text,'8.5.4.1878')
+        with self.assertRaisesRegex(ValueError,'XML version'):
+            c.constant_xml(text.replace('2.21','2.22'),'8.5.1.1529')
+        request=fixture('8.5.1.1529')
+        request['constant_xml']=text
+        result=c.serialize(request)
+        self.assertEqual(E.fromstring(result['request_xml']).get('version'),'8.5.1.1529')
+
     def test_native_body_text_layout(self):
         # Fixed expected text, including a final nested group and quoted braces.
         docs=s.Parser('{1,{2,"тест { ","кавычка """},{"Pattern",{"S",64,1}}}').documents()

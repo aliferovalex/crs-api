@@ -50,12 +50,18 @@ def fixture():
     return request, raw
 
 
-def property_fixture():
+def property_fixture(platform='8.5.4.1878'):
     request, raw = fixture()
     docs = s.Parser(raw.decode('utf-8-sig')).documents()
     common = s.common_properties(docs, ID)
-    props = [s.atom(0) for _ in range(81)]
-    props[0] = s.atom(79)
+    if platform == '8.5.1.1529':
+        common[0] = s.atom(3)
+        common[1][2] = s.atom(VERSION)
+        common.extend([s.atom(0), s.atom(s.ZERO), s.atom(0)])
+    count, length = (76, 77) if platform == '8.5.1.1529' else (79, 81)
+    request['platform'] = platform
+    props = [s.atom(0) for _ in range(length)]
+    props[0] = s.atom(count)
     props[1] = [s.atom(0), copy.deepcopy(common)]
     for key, slot in s.PROPERTY_SLOTS.items():
         props[slot] = s.atom('Тест' if key == 'Vendor' else '', True)
@@ -71,6 +77,10 @@ def property_fixture():
     for node in before.iter():
         node.tag = node.tag.rsplit('}', 1)[-1]
     xmlprops = before.find('.//Properties')
+    if platform == '8.5.1.1529':
+        contained = ET.SubElement(ET.SubElement(before.find('Configuration'), 'InternalInfo'), 'ContainedObject')
+        ET.SubElement(contained, 'ClassId').text = s.ROOT_FEATURE_CLASS
+        ET.SubElement(contained, 'ObjectId').text = VERSION
     ET.SubElement(xmlprops, 'Synonym')
     for key in s.PROPERTY_SLOTS:
         if key != 'Vendor':
@@ -82,6 +92,32 @@ def property_fixture():
 
 
 class SerializerTests(unittest.TestCase):
+    def test_851_string_slots_and_wrong_platform_layout(self):
+        for key in s.PROPERTY_SLOTS:
+            request, original = property_fixture('8.5.1.1529')
+            changed = ET.fromstring(request['after_xml'])
+            changed.find('.//Properties/' + key).text = '8.5.1 ' + key
+            request['after_xml'] = ET.tostring(changed, encoding='unicode')
+            packet, raw = s.serialize(request)
+            docs = s.Parser(raw.decode('utf-8-sig')).documents()
+            props = s.configuration_properties(docs, '8.5.1.1529')
+            self.assertEqual(len(props), 77)
+            self.assertEqual(s.val(props[s.PROPERTY_SLOTS[key]]), '8.5.1 ' + key)
+            self.assertEqual(ET.fromstring(packet).get('version'), '8.5.1.1529')
+            request['platform'] = '8.5.4.1878'
+            with self.assertRaisesRegex(ValueError, 'layout'):
+                s.serialize(request)
+
+    def test_851_comment_preserves_unrelated_bytes(self):
+        request, original = property_fixture('8.5.1.1529')
+        request['mode'] = 'comment'
+        request['after_xml'] = request['before_xml'].replace('<Comment>До</Comment>', '<Comment>После</Comment>')
+        _, raw = s.serialize(request)
+        self.assertEqual(raw, original.replace('"До"'.encode(), '"После"'.encode(), 1))
+        request['before_xml'] = request['before_xml'].replace(VERSION, s.ZERO)
+        with self.assertRaisesRegex(ValueError, 'UUID does not match'):
+            s.serialize(request)
+
     def test_string_properties_individually_and_together(self):
         for keys in [(key,) for key in s.PROPERTY_SLOTS] + [tuple(s.PROPERTY_SLOTS) + ('Comment',)]:
             request, original = property_fixture()
