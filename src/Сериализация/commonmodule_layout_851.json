@@ -1,0 +1,18 @@
+{
+  "template": "{1,\n{12,\n{3,\n{1,0,00000000-0000-0000-0000-000000000000},\"\",\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,0,0,0,0,0,0},0}",
+  "defaults": {
+    "Global": "false",
+    "ClientManagedApplication": "false",
+    "Server": "true",
+    "ExternalConnection": "false",
+    "ClientOrdinaryApplication": "false",
+    "ServerCall": "false",
+    "Privileged": "false",
+    "ReturnValuesReuse": "DontUse"
+  },
+  "generated_slots": [],
+  "generated_categories": [],
+  "input_fields": [],
+  "common_slot": 1,
+  "common_direct": true
+}

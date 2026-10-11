@@ -1,4 +1,4 @@
-"""Experimental flat Configuration + Constant/Catalog/Document creation.
+"""Experimental flat Configuration and supported top-level object creation.
 
 Input is fresh server snapshots/context and object XML. No capture, CF, network
 or Designer is used. Native layout is deliberately limited to verified defaults.
@@ -174,19 +174,19 @@ def descriptor(m):
 
 def serialize(request):
     kind = request.get("object_type", "Constant")
-    if kind not in ("Constant", "Catalog", "Document", "Enum"):raise ValueError("Unsupported creation type")
+    if kind not in ("Constant", "Catalog", "Document", "Enum", "CommonModule"):raise ValueError("Unsupported creation type")
     object_class = identifiers.class_id(kind)
     platforms.profile(request['platform'])
     rid=guid(request['object_id']);objects=context_objects(request['context']);root=objects[rid]
     inspect(request)
     oldchildren=children(root[0]);expected={rid}|{oid for oid,_ in oldchildren}
-    allowed_classes = (CLASS,LANGUAGE) + (tuple(identifiers.class_id(v) for v in ('Catalog','Document','Enum')) if platforms.legacy(request['platform']) else ())
+    allowed_classes = (CLASS,LANGUAGE) + (tuple(identifiers.class_id(v) for v in ('Catalog','Document','Enum','CommonModule')) if platforms.legacy(request['platform']) else ())
     if any(cls not in allowed_classes for _,cls in oldchildren):
-        raise ValueError('Only a flat Configuration with Languages, Constants, Catalogs, Documents and Enums is supported')
+        raise ValueError('Only a flat Configuration with Languages, Constants, Catalogs, Documents, Enums and CommonModules is supported')
     if set(request['snapshots'])!=expected:raise ValueError('Snapshots must cover root and all existing children')
     if any(not isinstance(v,str) for v in request['snapshots'].values()) or sum(len(v) for v in request['snapshots'].values())>s.MAX_BYTES*2:
         raise ValueError('Oversized or invalid snapshots')
-    if kind in ('Catalog','Document','Enum'):
+    if kind in ('Catalog','Document','Enum','CommonModule'):
         from flat_object_serializer import object_xml
         cid,name,body,generated=object_xml(request[kind.lower()+'_xml'], request['platform'],kind)
     else:
@@ -195,7 +195,7 @@ def serialize(request):
         raise ValueError(f'{kind} UUID or name already exists')
     known=set(objects)
     if any(g in known for g in generated):raise ValueError('Generated type UUID collides with an object')
-    raws={};versions={};originals={}
+    raws={};versions={};originals={};externals={};external_data={}
     for oid in sorted(expected):
         data=base64.b64decode(request['snapshots'][oid],validate=True);s.validate_storage(data)
         meta,pos=s.read_record(data,12);content,pos=s.read_record(data,pos)
@@ -208,8 +208,24 @@ def serialize(request):
         if {s.val(v) for v in saved[13][1:]}!={s.val(v) for v in m[13][1:]} or s.metadata_relations(saved[14])!=s.metadata_relations(m[14]):
             raise ValueError('Snapshot/context relations or features mismatch')
         m[15:17]=copy.deepcopy(saved[15:17])
-        if s.render(m[11])!='{0}' or s.render(objects[oid][2])!='{0}' or (oid!=rid and children(m)):
-            raise ValueError('Nested or external object data is unsupported')
+        if oid!=rid and children(m):raise ValueError('Nested object data is unsupported')
+        refs=m[11]
+        external_context=objects[oid][2]
+        if s.render(external_context)!='{0}':
+            if (len(refs)!=3 or len(external_context)!=2 or s.val(external_context[0])!='1'
+                    or len(external_context[1])!=3 or s.val(external_context[1][0])!=s.val(refs[1])
+                    or s.val(external_context[1][1])!=s.val(refs[2]) or s.val(external_context[1][2])!='1'):
+                raise ValueError('Unsupported external context')
+        # updateInfo lists external versions to retrieve; commit includes only
+        # newly supplied streams. Existing streams remain stored on the server.
+        objects[oid][2]=[s.atom(0)]
+        if s.render(refs)!='{0}':
+            if (s.val(m[2])!=identifiers.class_id('CommonModule') or len(refs)!=3
+                    or s.val(refs[0])!='1' or s.val(refs[1])!=oid+'.0'):
+                raise ValueError('Unsupported external object map')
+            version=uuid.UUID(guid(s.val(refs[2]))).bytes_le+bytes(4)
+            refs[2]=s.atom(base64.b64encode(version).decode())
+            externals[oid]=[dict(name=oid+'.0',version=version.hex(),action=0)]
         if oid!=rid and s.val(m[3])!=rid:raise ValueError('Invalid child parent')
         if s.val(m[4])!=s.ZERO:raise ValueError('Owned objects unsupported')
         originals[oid]=uuid.UUID(s.val(m[7])).bytes_le+bytes(4)
@@ -251,6 +267,14 @@ def serialize(request):
     original64=base64.b64encode(originals[cid]).decode()
     cm=[s.atom(6),s.atom(cid),s.atom(object_class),s.atom(rid),s.atom(s.ZERO),s.atom(4294967295),s.atom(0),s.atom(original64),s.atom(original64),s.atom(name,True),s.atom(constant_positions[cid]),[s.atom(0)],[s.atom(0)],[s.atom(0)],[s.atom(1),s.atom(rid),s.atom(1)],s.atom(object_class+'.'+name,True),s.atom(0)]
     objects[cid]=[cm,copy.deepcopy(root[1]),[s.atom(0)]]
+    if kind=='CommonModule':
+        from commonmodule_serializer import module_container
+        external_name=cid+'.0';external_version=uuid.uuid4().bytes_le+bytes(4)
+        external64=base64.b64encode(external_version).decode()
+        cm[11]=[s.atom(1),s.atom(external_name,True),s.atom(external64)]
+        objects[cid][2]=[s.atom(1),[s.atom(external_name,True),s.atom(external64),s.atom(1)]]
+        external_data[cid]=s.compress(module_container(request['source_text']))
+        externals[cid]=[dict(name=external_name,version=external_version.hex(),action=1)]
     order=[cid,rid]+[oid for oid,_ in oldchildren]
     for oid in order:
         m=objects[oid][0];m[0]=s.atom(6);m[5]=s.atom(4294967295);m[6]=s.atom(0)
@@ -271,11 +295,15 @@ def serialize(request):
         for child,cls in sorted(pairs):childmap.extend([a(child),a(cls)])
         graph[5].extend([a(oid),childmap])
     for oid in [rid]+[v for v in order if v not in (rid,cid)]+[cid]:graph[6][-1].extend([a(oid),desc[oid]])
-    for oid in order:graph[7].extend([a(oid),[a(0)]])
+    for oid in order:graph[7].extend([a(oid),objects[oid][0][11]])
     records=[];manifest=[a(0),a(len(order))]
     for oid in order:
         meta=s.text_bytes(objects[oid]);data=s.compress(raws[oid]);records.extend([meta,data])
-        manifest.extend([a(oid),a(hashlib.sha1(meta).hexdigest(),True),a(hashlib.sha1(data).hexdigest(),True),a(0)])
+        extra=external_data.get(oid)
+        manifest.extend([a(oid),a(hashlib.sha1(meta).hexdigest(),True),a(hashlib.sha1(data).hexdigest(),True),a(1 if extra is not None else 0)])
+        if extra is not None:
+            records.append(extra)
+            manifest.extend([a(oid+'.0',True),a(hashlib.sha1(extra).hexdigest(),True)])
     snapshot=s.storage(records,s.text_bytes([manifest]));s.validate_storage(snapshot)
     payload=s.SERIALIZER+s.compress(s.record(s.text_bytes([graph]))+bytes(4)+s.record(snapshot))
     E.register_namespace('crs',s.NS)
@@ -295,7 +323,11 @@ def serialize(request):
             field(detail,'verNum',-1);field(detail,'selfVerNum',0)
             for key,index in [('parentID',3),('ownerID',4)]:field(detail,key,s.val(m[index]))
             ver=field(detail,'version');field(ver,'original',originals[oid].hex());field(ver,'local',versions[oid].hex());field(detail,'removed','false')
-            if section=='changes':field(second,'externals')
+            if section=='changes':
+                ext=field(second,'externals')
+                for item in externals.get(oid,[]):
+                    entry=field(ext,'value');field(entry,'first',item['name']);detail=field(entry,'second');supernode=field(detail,'_super')
+                    field(supernode,'name',item['name']);field(supernode,'verID',item['version']);field(detail,'action',item['action'])
     field(p,'objectsToRemove');field(p,'code',s.val(s.configuration_properties(docs, request['platform'])[15]));field(p,'comment',text='')
     features=field(p,'features')
     for oid in ([rid] if kind == 'Constant' else [rid,cid]):
@@ -309,7 +341,8 @@ def serialize(request):
                                  original=originals[oid].hex(),local=versions[oid].hex()))
     return dict(request_xml=E.tostring(call,encoding='unicode'),object_id=cid,name=name,
                 descriptions=descriptions,data=base64.b64encode(payload).decode(),
-                version_code=s.val(s.configuration_properties(docs, request['platform'])[15]),existing_objects=sorted(expected))
+                version_code=s.val(s.configuration_properties(docs, request['platform'])[15]),existing_objects=sorted(expected),
+                externals=[dict(object_id=oid,**item) for oid,items in externals.items() for item in items])
 
 def main():
     from pathlib import Path

@@ -1,4 +1,4 @@
-"""Shared strict XML reader for Catalog, Document and inline Enum bodies."""
+"""Shared strict XML reader for Catalog, Document, inline Enum and CommonModule bodies."""
 import json
 import re
 import uuid
@@ -10,7 +10,7 @@ import platform_profiles as platforms
 
 
 def object_xml(text, platform, kind):
-    if kind not in ('Catalog','Document','Enum'):raise ValueError('Unsupported flat object kind')
+    if kind not in ('Catalog','Document','Enum','CommonModule'):raise ValueError('Unsupported flat object kind')
     if not platforms.legacy(platform):raise ValueError(kind+' requires legacy platform profile')
     if not isinstance(text,str) or len(text.encode('utf-8'))>s.MAX_BYTES:raise ValueError(f'Oversized {kind} XML')
     if '<!DOCTYPE' in text.upper():raise ValueError('DOCTYPE is unsupported')
@@ -49,7 +49,8 @@ def object_xml(text, platform, kind):
         expected=[kind+'.'+name+'.StandardAttribute.'+v for v in layout['input_fields']]
         node=fields['InputByString']
         if [n.text for n in node]!=expected or any(n.tag!='{%s}Field'%c.READABLE or n.attrib or len(n) for n in node):raise ValueError('Unsupported InputByString')
-    docs=s.Parser(layout['template']).documents();native=docs[0][1];common=native[layout.get('common_slot',9)][1]
+    docs=s.Parser(layout['template']).documents();native=docs[0][1];common=native[layout.get('common_slot',9)]
+    if not layout.get('common_direct'):common=common[1]
     common[1][2]=s.atom(oid);common[2]=s.atom(name,True);common[4]=s.atom(fields['Comment'].text or '' if 'Comment' in fields else '',True)
     common[3]=[s.atom(len(synonyms))]
     for lang,content in synonyms:common[3].extend([s.atom(lang,True),s.atom(content,True)])
