@@ -78,12 +78,19 @@ def serialize(request):
     expected={child for child,child_class in pairs if child_class==cls}
     if len(rows)!=1 or int(s.val(rows[0][1]))!=len(rows[0])-2 or {s.val(v) for v in rows[0][2:]}!=expected or len(expected)!=len(rows[0])-2:raise ValueError('Form collection/context mismatch')
     fid=str(uuid.uuid4());a=s.atom
+    if 'definition_xml' in request:
+        import form_definition_xml
+        fid,xml_name,_=form_definition_xml.read(request['definition_xml'],kind,request['platform'])
+        if xml_name!=name:raise ValueError('Form name differs from its metadata XML')
+        if fid in all_context:raise ValueError('Form UUID already exists')
     row=rows[0];changed=[row[0],a(len(row)-1)]+list(row[2:])+[a(fid)]
     text=raw.decode('utf-8-sig');new_raw=b'\xef\xbb\xbf'+(text[:row.start]+s.render(changed)+text[row.end:]).encode('utf-8')
     layout=json.loads(Path(__file__).with_name({'Catalog':'catalog_form_layout_851.json','Document':'document_form_layout_851.json','CommonForm':'common_form_layout_851.json'}[kind]).read_text(encoding='utf-8'))
     form=s.Parser(layout['body_template']).documents();form_common=form[0][1][1][1]
     form_common[1][2]=a(fid);form_common[2]=a(name,True)
     form_raw=s.native_body_bytes(form)
+    if 'definition_xml' in request:
+        form_raw=form_definition_xml.convert(form_raw,request['definition_xml'],kind,request['platform'])
     external=b'\xef\xbb\xbf'+layout['external_template'].replace('${catalog_object_type}',object_type).replace('\r\n','\n').replace('\n','\r\n').encode('utf-8')
     if 'form_xml' in request and kind!='Catalog':raise ValueError('The initial Form.xml profile supports Catalog forms')
     external=form_xml.convert(external,request.get('form_xml'),request.get('module_text'),

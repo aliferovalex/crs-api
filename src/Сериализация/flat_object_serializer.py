@@ -14,7 +14,8 @@ def object_xml(text, platform, kind):
     if not platforms.legacy(platform):raise ValueError(kind+' requires legacy platform profile')
     if not isinstance(text,str) or len(text.encode('utf-8'))>s.MAX_BYTES:raise ValueError(f'Oversized {kind} XML')
     if '<!DOCTYPE' in text.upper():raise ValueError('DOCTYPE is unsupported')
-    top=E.fromstring(text)
+    try:top=E.fromstring(text)
+    except E.ParseError as error:raise ValueError('Invalid object XML: '+str(error)) from None
     if top.tag!='{%s}MetaDataObject'%c.MD or not platforms.xml_attributes(top.attrib,platform) or len(top)!=1 or top[0].tag!='{%s}%s'%(c.MD,kind):
         raise ValueError(f'Expected MetaDataObject/{kind} XML with a legacy XML version')
     obj=top[0]

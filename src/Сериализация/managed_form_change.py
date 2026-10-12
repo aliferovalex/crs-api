@@ -51,6 +51,9 @@ def serialize(request):
     definition=s.Parser(body.decode('utf-8-sig')).documents()[0]
     common=definition[1][1][1]
     if s.val(common[1][2])!=oid or s.val(common[2])!=s.val(m[9]):raise ValueError('Form body/description mismatch')
+    if 'definition_xml' in request:
+        import form_definition_xml
+        body=form_definition_xml.convert(body,request['definition_xml'],'Catalog',request['platform']);data=s.compress(body)
     return pack_external_change(docs,saved,data,oid,name,original,body,s.compress(external))
 
 

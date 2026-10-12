@@ -18,6 +18,24 @@ def module_xml(text, platform='8.5.1.1529'):
     return object_xml(text, platform, 'CommonModule')
 
 
+def module_xml_from_native(common):
+    """Complete XML input for the compatibility source-only operation."""
+    import xml.etree.ElementTree as E
+    from pathlib import Path
+    import constant_serializer as c
+    q='{'+c.MD+'}'
+    top=E.Element(q+'MetaDataObject',version='2.21');obj=E.SubElement(top,q+'CommonModule',uuid=s.val(common[1][2]))
+    props=E.SubElement(obj,q+'Properties');E.SubElement(props,q+'Name').text=s.val(common[2])
+    synonym=E.SubElement(props,q+'Synonym')
+    for lang,content in s.synonym_value(common[3]):
+        item=E.SubElement(synonym,'{'+c.CORE+'}item')
+        E.SubElement(item,'{'+c.CORE+'}lang').text=lang;E.SubElement(item,'{'+c.CORE+'}content').text=content
+    E.SubElement(props,q+'Comment').text=s.val(common[4])
+    layout=json.loads(Path(__file__).with_name('commonmodule_layout_851.json').read_text(encoding='utf-8'))
+    for key,value in layout['defaults'].items():E.SubElement(props,q+key).text=value
+    return E.tostring(top,encoding='unicode')
+
+
 def module_container(source):
     if not isinstance(source, str) or '\0' in source:
         raise ValueError('Invalid module source text')
@@ -96,6 +114,12 @@ def serialize_change(request):
     if (len(common) != 9 or s.val(common[0]) != '3' or len(common[1]) != 3
             or s.val(common[1][2]) != oid or s.val(common[2]) != s.val(m[9])):
         raise ValueError('Module body/description mismatch')
+    xml_id,xml_name,new_raw,_=module_xml(request.get('object_xml',module_xml_from_native(common)),request['platform'])
+    if xml_id!=oid or xml_name!=s.val(m[9]):raise ValueError('CommonModule UUID or name mismatch; rename is unsupported')
+    baseline=s.Parser(new_raw.decode('utf-8-sig')).documents()
+    baseline[0][1][1]=copy.deepcopy(common)
+    if s.render(baseline)!=s.render(body):raise ValueError('Source CommonModule properties are outside the verified XML profile')
+    raw=new_raw;data=s.compress(raw)
     external_data = s.compress(module_container(request['source_text']))
     return pack_external_change(docs, saved, data, oid, name, original, raw, external_data)
 

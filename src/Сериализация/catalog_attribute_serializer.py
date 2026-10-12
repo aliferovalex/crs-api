@@ -10,9 +10,9 @@ import constant_serializer as c
 
 def serialize(request):
     if not platforms.legacy(request['platform']):raise ValueError('Catalog attributes require legacy platform profile')
-    oid=c.guid(request['object_id']);name=request['name'];length=request['length']
-    if not isinstance(name,str) or not re.fullmatch(r'[^\W\d]\w{0,79}',name,re.UNICODE):raise ValueError('Invalid attribute name')
-    if type(length)!=int or not 1<=length<=1024:raise ValueError('String length must be 1..1024')
+    oid=c.guid(request['object_id']);name=request.get('name');length=request.get('length')
+    if 'object_xml' not in request and (not isinstance(name,str) or not re.fullmatch(r'[^\W\d]\w{0,79}',name,re.UNICODE)):raise ValueError('Invalid attribute name')
+    if 'object_xml' not in request and (type(length)!=int or not 1<=length<=1024):raise ValueError('String length must be 1..1024')
     for key in ('snapshot','context'):
         if not isinstance(request[key],str) or len(request[key])>s.MAX_BYTES*2:raise ValueError('Oversized attribute input')
     snapshot=base64.b64decode(request['snapshot'],validate=True);context=base64.b64decode(request['context'],validate=True)
@@ -39,16 +39,30 @@ def serialize(request):
     existing=[]
     for item in row[2:]:
         props=item[0][1][1][1];existing.append(c.guid(s.val(props[1][2])))
-        if s.val(props[2]).casefold()==name.casefold():raise ValueError('Attribute name already exists')
+        if 'object_xml' not in request and s.val(props[2]).casefold()==name.casefold():raise ValueError('Attribute name already exists')
     if set(existing)!=features or len(set(existing))!=len(existing):raise ValueError('Attribute collection/features mismatch')
-    aid=str(uuid.uuid4());entry=s.Parser(json.loads(Path(__file__).with_name('catalog_attribute_layout_851.json').read_text(encoding='utf-8'))['template']).documents()[0]
-    common=entry[0][1][1][1];common[1][2]=s.atom(aid);common[2]=s.atom(name,True)
-    entry[0][1][1][2][1][1]=s.atom(length)
-    updated=[row[0],s.atom(len(row)-1)]+list(row[2:])+[entry]
-    text=raw.decode('utf-8-sig');new_raw=b'\xef\xbb\xbf'+(text[:row.start]+s.render(updated)+text[row.end:]).encode('utf-8');compressed=s.compress(new_raw)
+    import catalog_object_xml
+    objects=c.context_objects(request['context'])
+    for child,cls in pairs:
+        if child not in objects or s.val(objects[child][0][2])!=cls or s.val(objects[child][0][3])!=oid:raise ValueError('Invalid Catalog child context')
+    forms={s.val(objects[child][0][9]):child for child,cls in pairs}
+    if len(forms)!=len(pairs):raise ValueError('Duplicate Catalog form name')
+    aid=None
+    if 'object_xml' in request:
+        target_xml=request['object_xml']
+    else:
+        # The compatibility operation builds the desired complete XML first.
+        aid=str(uuid.uuid4());entry=s.Parser(json.loads(Path(__file__).with_name('catalog_attribute_layout_851.json').read_text(encoding='utf-8'))['template']).documents()[0]
+        common=entry[0][1][1][1];common[1][2]=s.atom(aid);common[2]=s.atom(name,True)
+        entry[0][1][1][2][1][1]=s.atom(length)
+        top=catalog_object_xml.export(body[0],forms,request['platform'])
+        top[0].find('{'+c.MD+'}ChildObjects').append(catalog_object_xml.attribute_export(entry))
+        target_xml=E.tostring(top,encoding='unicode')
+    new_raw,new_ids=catalog_object_xml.convert(target_xml,request['platform'],body[0],forms)
+    compressed=s.compress(new_raw)
     local=uuid.uuid4().bytes_le+struct.pack('<I',zlib.crc32(new_raw));a=s.atom
     m[0],m[5],m[6],m[7],m[8]=a(6),a(4294967295),a(0),a(base64.b64encode(bytes.fromhex(original)).decode()),a(base64.b64encode(local).decode())
-    m[13]=[a(len(existing)+1)]+[a(v) for v in existing]+[a(aid)]
+    m[13]=[a(len(new_ids))]+[a(v) for v in new_ids]
     relations=s.metadata_relations(m[14]);relations.update({child:1 for child,cls in pairs})
     m[14]=[a(len(relations))]+[a(v) for v in relations]+[a(v) for v in relations.values()]
     m[15:17]=copy.deepcopy(saved[0][15:17]);docs[1]=copy.deepcopy(saved[1]);meta=s.text_bytes(docs)
@@ -73,7 +87,9 @@ def serialize(request):
         field(detail,'verNum',-1);field(detail,'selfVerNum',0);version=field(detail,'version');field(version,'original',original);field(version,'local',local.hex());field(detail,'removed','false')
         if section=='changes':field(second,'externals')
     field(p,'objectsToRemove');field(p,'code','');field(p,'comment',text='');field(p,'features')
-    return dict(request_xml=E.tostring(call,encoding='unicode'),attribute_id=aid)
+    result=dict(request_xml=E.tostring(call,encoding='unicode'))
+    if aid is not None:result['attribute_id']=aid
+    return result
 
 
 def main():

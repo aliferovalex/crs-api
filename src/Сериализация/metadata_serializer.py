@@ -401,8 +401,6 @@ def xml_property_patches(before_text, after_text, object_id, common, documents, 
             continue
         if old is None or new is None:
             raise ValueError('Both XML documents must contain property: ' + key)
-        if canonical(old) == canonical(new):
-            continue
         if key == 'Synonym':
             token = common[3]
             baseline, value = xml_synonym(old), xml_synonym(new)
@@ -433,6 +431,32 @@ def xml_property_patches(before_text, after_text, object_id, common, documents, 
     if not patches:
         raise ValueError('Supported XML properties have not changed')
     return patches
+
+
+def configuration_xml_values(after_text, object_id, common, documents, platform):
+    """Read every supported target property, including unchanged values.
+
+    The baseline validator still protects unsupported XML sections. It is not
+    used as a list of changes to apply.
+    """
+    root = ET.fromstring(after_text)
+    config = next(e for e in root.iter() if e.tag.rsplit('}',1)[-1]=='Configuration')
+    properties = next(e for e in config if e.tag.rsplit('}',1)[-1]=='Properties')
+    values = {e.tag.rsplit('}',1)[-1]:e for e in properties}
+    result=[]
+    for key in ('Comment','Synonym',*PROPERTY_SLOTS):
+        if key not in values:
+            continue
+        node=values[key]
+        if key=='Synonym':
+            token=common[3]; native=[atom(len(node))]
+            for item in node:
+                native.extend([atom(item[0].text or '',True),atom(item[1].text or '',True)])
+        else:
+            token=common[4] if key=='Comment' else configuration_properties(documents,platform)[PROPERTY_SLOTS[key]]
+            native=atom(node.text or '',True)
+        result.append((token.start,token.end,render(native)))
+    return result
 
 
 def context_metadata(data, object_id):
@@ -504,7 +528,8 @@ def serialize(request):
         new_comment = xml_comment(request["before_xml"], request["after_xml"], object_id, val(common[2]), val(common[4]))
         patches = [(common[4].start, common[4].end, render(atom(new_comment, True)))]
     elif mode == 'properties':
-        patches = xml_property_patches(request['before_xml'], request['after_xml'], object_id, common, documents, request['platform'])
+        xml_property_patches(request['before_xml'], request['after_xml'], object_id, common, documents, request['platform'])
+        patches = configuration_xml_values(request['after_xml'], object_id, common, documents, request['platform'])
     else:
         raise ValueError('Unsupported serialization mode')
     new_text = text

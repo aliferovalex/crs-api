@@ -1,0 +1,158 @@
+{
+  "PasswordMode": [
+    "{http://v8.1c.ru/8.3/MDClasses}PasswordMode",
+    {},
+    "false",
+    []
+  ],
+  "Format": [
+    "{http://v8.1c.ru/8.3/MDClasses}Format",
+    {},
+    "",
+    []
+  ],
+  "EditFormat": [
+    "{http://v8.1c.ru/8.3/MDClasses}EditFormat",
+    {},
+    "",
+    []
+  ],
+  "ToolTip": [
+    "{http://v8.1c.ru/8.3/MDClasses}ToolTip",
+    {},
+    "",
+    []
+  ],
+  "MarkNegatives": [
+    "{http://v8.1c.ru/8.3/MDClasses}MarkNegatives",
+    {},
+    "false",
+    []
+  ],
+  "Mask": [
+    "{http://v8.1c.ru/8.3/MDClasses}Mask",
+    {},
+    "",
+    []
+  ],
+  "MultiLine": [
+    "{http://v8.1c.ru/8.3/MDClasses}MultiLine",
+    {},
+    "false",
+    []
+  ],
+  "ExtendedEdit": [
+    "{http://v8.1c.ru/8.3/MDClasses}ExtendedEdit",
+    {},
+    "false",
+    []
+  ],
+  "MinValue": [
+    "{http://v8.1c.ru/8.3/MDClasses}MinValue",
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}nil": "true"
+    },
+    "",
+    []
+  ],
+  "MaxValue": [
+    "{http://v8.1c.ru/8.3/MDClasses}MaxValue",
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}nil": "true"
+    },
+    "",
+    []
+  ],
+  "FillFromFillingValue": [
+    "{http://v8.1c.ru/8.3/MDClasses}FillFromFillingValue",
+    {},
+    "false",
+    []
+  ],
+  "FillValue": [
+    "{http://v8.1c.ru/8.3/MDClasses}FillValue",
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}type": "xs:string"
+    },
+    "",
+    []
+  ],
+  "FillChecking": [
+    "{http://v8.1c.ru/8.3/MDClasses}FillChecking",
+    {},
+    "DontCheck",
+    []
+  ],
+  "ChoiceFoldersAndItems": [
+    "{http://v8.1c.ru/8.3/MDClasses}ChoiceFoldersAndItems",
+    {},
+    "Items",
+    []
+  ],
+  "ChoiceParameterLinks": [
+    "{http://v8.1c.ru/8.3/MDClasses}ChoiceParameterLinks",
+    {},
+    "",
+    []
+  ],
+  "ChoiceParameters": [
+    "{http://v8.1c.ru/8.3/MDClasses}ChoiceParameters",
+    {},
+    "",
+    []
+  ],
+  "QuickChoice": [
+    "{http://v8.1c.ru/8.3/MDClasses}QuickChoice",
+    {},
+    "Auto",
+    []
+  ],
+  "CreateOnInput": [
+    "{http://v8.1c.ru/8.3/MDClasses}CreateOnInput",
+    {},
+    "Auto",
+    []
+  ],
+  "ChoiceForm": [
+    "{http://v8.1c.ru/8.3/MDClasses}ChoiceForm",
+    {},
+    "",
+    []
+  ],
+  "LinkByType": [
+    "{http://v8.1c.ru/8.3/MDClasses}LinkByType",
+    {},
+    "",
+    []
+  ],
+  "ChoiceHistoryOnInput": [
+    "{http://v8.1c.ru/8.3/MDClasses}ChoiceHistoryOnInput",
+    {},
+    "Auto",
+    []
+  ],
+  "Use": [
+    "{http://v8.1c.ru/8.3/MDClasses}Use",
+    {},
+    "ForItem",
+    []
+  ],
+  "Indexing": [
+    "{http://v8.1c.ru/8.3/MDClasses}Indexing",
+    {},
+    "DontIndex",
+    []
+  ],
+  "FullTextSearch": [
+    "{http://v8.1c.ru/8.3/MDClasses}FullTextSearch",
+    {},
+    "Use",
+    []
+  ],
+  "DataHistory": [
+    "{http://v8.1c.ru/8.3/MDClasses}DataHistory",
+    {},
+    "Use",
+    []
+  ]
+}
