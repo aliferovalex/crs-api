@@ -86,7 +86,7 @@ def attribute_xml(node):
     return aid,name,entry
 
 
-def convert(text,platform,source,forms):
+def convert(text,platform,source,forms,removed_forms=()):
     if not isinstance(text,str) or len(text.encode('utf-8'))>s.MAX_BYTES or '<!DOCTYPE' in text.upper():raise ValueError('Invalid or oversized Catalog XML')
     try:root=E.fromstring(text)
     except E.ParseError as error:raise ValueError('Invalid Catalog XML: '+str(error)) from None
@@ -113,8 +113,9 @@ def convert(text,platform,source,forms):
             if fname not in forms or fname in form_names:raise ValueError('Unknown or duplicate Catalog Form reference')
             form_names.add(fname);form_ids.append(forms[fname])
         else:raise ValueError('Unsupported Catalog ChildObjects entry: '+child.tag)
-    if set(form_names)!=set(forms):raise ValueError('Creation or removal of separate forms requires a separate object packet')
-    if form_ids!=[s.val(v) for v in source[7][2:]]:raise ValueError('Reordering separate forms requires updating their object descriptions')
+    removed=set(removed_forms)
+    if set(forms)-set(form_names)!={key for key,value in forms.items() if value in removed} or set(form_names)-set(forms):raise ValueError('Creation or removal of separate forms requires a separate object packet')
+    if form_ids!=[s.val(v) for v in source[7][2:] if s.val(v) not in removed]:raise ValueError('Reordering separate forms requires updating their object descriptions')
     # Do not leave existing form bindings pointing at a removed inline attribute.
     old_ids={s.val(v[0][1][1][1][1][2]) for v in source[6][2:]}
     if forms and old_ids-set(features):raise ValueError('Attribute removal with existing forms is not yet supported')
