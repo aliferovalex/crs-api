@@ -97,6 +97,12 @@ def serialize_change(request):
             or s.val(common[1][2]) != oid or s.val(common[2]) != s.val(m[9])):
         raise ValueError('Module body/description mismatch')
     external_data = s.compress(module_container(request['source_text']))
+    return pack_external_change(docs, saved, data, oid, name, original, raw, external_data)
+
+
+def pack_external_change(docs, saved, data, oid, name, original, raw, external_data):
+    """Shared single-object commit with one replaced external stream."""
+    m = docs[0]
     external_version = uuid.uuid4().bytes_le + bytes(4)
     external64 = base64.b64encode(external_version).decode()
     local = uuid.uuid4().bytes_le + struct.pack('<I', zlib.crc32(raw))
