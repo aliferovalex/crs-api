@@ -13,6 +13,7 @@ import metadata_serializer as s
 import constant_serializer as c
 import metadata_identifiers as identifiers
 import platform_profiles as platforms
+import managed_form_xml as form_xml
 
 
 def serialize(request):
@@ -84,7 +85,9 @@ def serialize(request):
     form_common[1][2]=a(fid);form_common[2]=a(name,True)
     form_raw=s.native_body_bytes(form)
     external=b'\xef\xbb\xbf'+layout['external_template'].replace('${catalog_object_type}',object_type).replace('\r\n','\n').replace('\n','\r\n').encode('utf-8')
-    s.Parser(external.decode('utf-8-sig')).documents()
+    if 'form_xml' in request and kind!='Catalog':raise ValueError('The initial Form.xml profile supports Catalog forms')
+    external=form_xml.convert(external,request.get('form_xml'),request.get('module_text'),
+        form_xml.catalog_paths(body[0]) if kind=='Catalog' else None,s.val(m[9]))
     ver=lambda raw:uuid.uuid4().bytes_le+struct.pack('<I',zlib.crc32(raw))
     versions={oid:ver(new_raw),fid:ver(form_raw)};originals={oid:bytes.fromhex(original),fid:versions[fid]}
     external_version=uuid.uuid4().bytes_le+bytes(4);external64=base64.b64encode(external_version).decode();external_name=fid+'.0'

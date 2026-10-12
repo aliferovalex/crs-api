@@ -1,17 +1,18 @@
-"""Append a Catalog attribute input field to the current native managed form."""
+"""Replace the current managed interface using the shared whole-file converter."""
 import base64,json,re,sys,uuid,zlib
 from pathlib import Path
 import metadata_serializer as s
 import metadata_identifiers as ids
 import external_data
+import managed_form_xml as form_xml
 from commonmodule_serializer import pack_external_change
 import platform_profiles as platforms
 
 
 def serialize(request):
     if not platforms.legacy(request['platform']):raise ValueError('Managed form changes require legacy profile')
-    oid=str(uuid.UUID(request['object_id']));attribute=request['attribute_name']
-    if not isinstance(attribute,str) or not re.fullmatch(r'[^\W\d]\w{0,79}',attribute,re.UNICODE):raise ValueError('Invalid attribute name')
+    oid=str(uuid.UUID(request['object_id']));attribute=request.get('attribute_name')
+    if 'form_xml' not in request and (not isinstance(attribute,str) or not re.fullmatch(r'[^\W\d]\w{0,79}',attribute,re.UNICODE)):raise ValueError('Invalid attribute name')
     for key in ('snapshot','context','storage'):
         if not isinstance(request[key],str) or len(request[key])>s.MAX_BYTES*2:raise ValueError('Oversized form input')
     snapshot=base64.b64decode(request['snapshot'],validate=True);context=base64.b64decode(request['context'],validate=True);storage=base64.b64decode(request['storage'],validate=True)
@@ -32,35 +33,21 @@ def serialize(request):
     owner=s.Parser(s.inflate(base64.b64decode(parent['data'],validate=True)).decode('utf-8-sig')).documents()[0]
     attributes=owner[6]
     if s.val(attributes[0])!=ids.group_id('CatalogAttributes') or int(s.val(attributes[1]))!=len(attributes)-2:raise ValueError('Unsupported Catalog attributes')
-    matches=[v for v in attributes[2:] if s.val(v[0][1][1][1][2])==attribute]
-    if len(matches)!=1:raise ValueError('Attribute not found or ambiguous')
-    aid=s.val(matches[0][0][1][1][1][1][2]);uuid.UUID(aid)
-    pattern=matches[0][0][1][1][2]
-    if len(pattern)!=2 or s.val(pattern[0])!='Pattern' or s.val(pattern[1][0])!='S':raise ValueError('Only string attributes are supported')
-    raw=s.inflate(base64.b64decode(stream['data'],validate=True));form=s.Parser(raw.decode('utf-8-sig')).documents()[0]
-    if len(form)!=10 or s.val(form[0])!='4' or s.val(form[1][0])!='59':raise ValueError('Unsupported managed interface layout')
-    props=form[1];layout=json.loads(Path(__file__).with_name('managed_form_field_layout_851.json').read_text(encoding='utf-8'));candidates=[]
-    # Native storage and Designer's exported CF use two verified header variants.
-    for index in (23,25):
-        if index>=len(props) or isinstance(props[index],list):continue
-        count=int(s.val(props[index]));end=index+1+count*2
-        if count<0 or count>256 or end>=len(props):continue
-        if all(not isinstance(props[i],list) and s.val(props[i])==layout['element_type'] and isinstance(props[i+1],list) and s.val(props[i+1][0])=='48' for i in range(index+1,end,2)):candidates.append((index,count,end))
-    if len(candidates)!=1:raise ValueError('Unsupported or ambiguous control collection')
-    index,count,end=candidates[0];maximum=0
-    for i in range(index+1,end,2):
-        control=props[i+1];maximum=max(maximum,int(s.val(control[1][0])))
-        if s.val(control[6])==attribute or aid in s.render(control[11]):raise ValueError('Field already exists')
-    main=form[3]
-    if s.val(main[1])!='1' or s.val(main[2][3])!='Object' or s.val(main[2][5][1][1])!=s.val(owner[1][1]):raise ValueError('Form main Object type mismatch')
-    entry=s.Parser(layout['template']).documents()[0];entry[1][0]=s.atom(max(20,maximum+10));entry[11][2][1]=s.atom(aid)
-    def rename(node):
-        if isinstance(node,list):
-            for i,v in enumerate(node):
-                if isinstance(v,list):rename(v)
-                elif v.quoted and s.val(v).startswith(layout['prototype_name']):node[i]=s.atom(attribute+s.val(v)[len(layout['prototype_name']):],True)
-    rename(entry);props[index]=s.atom(count+1);props[end:end]=[s.atom(layout['element_type']),entry]
-    external=s.native_body_bytes([form]);body=s.inflate(data)
+    raw=s.inflate(base64.b64decode(stream['data'],validate=True))
+    if 'form_xml' in request:
+        form=form_xml.interface(raw)
+        if s.val(form[3][2][5][1][1])!=s.val(owner[1][1]):raise ValueError('Form main Object type mismatch')
+        external=form_xml.convert(raw,request['form_xml'],request.get('module_text'),
+            form_xml.catalog_paths(owner),s.val(owner[1][9][1][2]))
+    else:
+        matches=[v for v in attributes[2:] if s.val(v[0][1][1][1][2])==attribute]
+        if len(matches)!=1:raise ValueError('Attribute not found or ambiguous')
+        pattern=matches[0][0][1][1][2]
+        if len(pattern)!=2 or s.val(pattern[0])!='Pattern' or s.val(pattern[1][0])!='S':raise ValueError('Only string attributes are supported')
+        form=form_xml.interface(raw)
+        if s.val(form[3][1])!='1' or s.val(form[3][2][3])!='Object' or s.val(form[3][2][5][1][1])!=s.val(owner[1][1]):raise ValueError('Form main Object type mismatch')
+        external=form_xml.append_attribute(raw,attribute,form_xml.catalog_paths(owner),s.val(owner[1][9][1][2]))
+    body=s.inflate(data)
     definition=s.Parser(body.decode('utf-8-sig')).documents()[0]
     common=definition[1][1][1]
     if s.val(common[1][2])!=oid or s.val(common[2])!=s.val(m[9]):raise ValueError('Form body/description mismatch')
