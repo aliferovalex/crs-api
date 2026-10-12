@@ -18,6 +18,19 @@ def store(docs, body):
 
 
 class ManagedFormTests(unittest.TestCase):
+    def test_historical_parent_relation_is_preserved_but_live_foreign_is_rejected(self):
+        r=catalog.fixture();parent=s.context_metadata(base64.b64decode(r['context']),r['object_id'])
+        historical='88888888-8888-4888-8888-888888888888';m=parent[0]
+        m[14]=[s.atom(2),m[3],s.atom(historical),s.atom(1),s.atom(1)]
+        data=base64.b64decode(r['snapshot']);_,pos=s.read_record(data,12);body,_=s.read_record(data,pos)
+        r['snapshot']=store(parent,s.inflate(body))
+        r['context']=base64.b64encode(s.storage([s.text_bytes(parent)],s.text_bytes([[s.atom(0)]]))).decode()
+        result=forms.serialize(r);_,_,_,_,updated,_=catalog.records(result)
+        self.assertEqual(s.metadata_relations(updated[0][14]),s.metadata_relations(m[14]))
+        foreign=__import__('copy').deepcopy(parent);foreign[0][1]=s.atom(historical);foreign[0][3]=s.atom(s.ZERO)
+        r['context']=base64.b64encode(s.storage([s.text_bytes(parent),s.text_bytes(foreign)],s.text_bytes([[s.atom(0)]]))).decode()
+        with self.assertRaisesRegex(ValueError,'parent relations'):forms.serialize(r)
+
     def test_document_form(self):
         r=catalog.fixture();docs=s.context_metadata(base64.b64decode(r['context']),r['object_id'])
         docs[0][2]=s.atom(c.identifiers.class_id('Document'));docs[0][9]=s.atom('XML_Document',True)

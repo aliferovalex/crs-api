@@ -41,14 +41,17 @@ def serialize(request):
     if (s.val(m[2])!=identifiers.class_id(parent_kind) or s.val(m[4])!=s.ZERO
             or s.render(m[11])!='{0}' or s.render(docs[2])!='{0}' or s.render(saved[2])!='{0}'):
         raise ValueError('Unsupported form parent or external data')
+    all_context=c.context_objects(request['context'])
     if kind!='CommonForm':
         relations=s.metadata_relations(m[14]);allowed={s.val(m[3])}|{child for child,cls in c.children(m)}
+        # Repository metadata retains historical dependencies after deletion.
+        # Only absent objects may be historical; live foreign objects remain invalid.
+        allowed.update(set(relations)-set(all_context))
         if s.val(m[3])==s.ZERO or relations.get(s.val(m[3]))!=1 or not set(relations).issubset(allowed) or any(v!=1 for v in relations.values()):raise ValueError('Invalid object parent relations')
         if kind=='Document' and s.render(m[13])!='{0}':raise ValueError('Document attributes are not yet supported')
     if kind=='CommonForm' and s.val(m[3])!=s.ZERO:raise ValueError('Expected Configuration root')
     pairs=c.children(m)
     if kind!='CommonForm' and any(v!=cls for _,v in pairs):raise ValueError('Only existing forms are supported as children')
-    all_context=c.context_objects(request['context'])
     for child,child_class in pairs:
         if child not in all_context or s.val(all_context[child][0][2])!=child_class or s.val(all_context[child][0][3])!=oid:raise ValueError('Invalid existing child context')
         if child_class==cls and s.val(all_context[child][0][9]).casefold()==name.casefold():raise ValueError('Form name already exists')
