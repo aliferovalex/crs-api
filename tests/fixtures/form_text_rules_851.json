@@ -1,0 +1,425 @@
+{
+  "source": "Native 8.5.1.1529 full format/mask/rich title exports.",
+  "cases": [
+    {
+      "kind": "InputField",
+      "name": "Format",
+      "value": "NFD=2;NG=0;",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Format><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:Format></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0b4835b00a6060122df36253123928f6668298325a6b894b467a962fcb548f32"
+    },
+    {
+      "kind": "InputField",
+      "name": "Format",
+      "value": "DF=dd.MM.yyyy;",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Format><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>DF=dd.MM.yyyy;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:Format></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0a91377f658fcdb89dcdcb28dacf7fe5773d8c2148deb625674fee62588fb199"
+    },
+    {
+      "kind": "InputField",
+      "name": "EditFormat",
+      "value": "NFD=2;NG=0;",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:EditFormat><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:EditFormat></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "01ad107876d26e5a3db9656f382c304793cd11a5382d1a395aff5b40f06c59a2"
+    },
+    {
+      "kind": "InputField",
+      "name": "EditFormat",
+      "value": "DF=dd.MM.yyyy;",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:EditFormat><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>DF=dd.MM.yyyy;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:EditFormat></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "32b1078e8438ef8519f28e8b27c4eb429d0cf0ee20448abcaa61185b73216028"
+    },
+    {
+      "kind": "InputField",
+      "name": "Mask",
+      "value": "999-999",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Mask>999-999</ns0:Mask></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "f4b978636dbb78ecab0fd1552f5e99ae1d82816d8ed181859b2caa03aaaf4aaf"
+    },
+    {
+      "kind": "InputField",
+      "name": "Mask",
+      "value": ">AAAA",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Mask>&gt;AAAA</ns0:Mask></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5baaf2156c60d69a879e30fbc155e5180679ce79d92bfb26b46faf8cfa33beb3"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "EditFormat",
+      "value": "NFD=2;NG=0;",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:EditFormat><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:EditFormat></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6c64af439ca861e633a5237337c754e0dd03b7818066374db6076798bb3aaa82"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "EditFormat",
+      "value": "DF=dd.MM.yyyy;",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:EditFormat><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>DF=dd.MM.yyyy;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:EditFormat></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "fc66ed2d34469bed006d654f7397a1e2e4085e4cfbe846cc44b2ac0a6d7143bb"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Format",
+      "value": "NFD=2;NG=0;",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Format><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:Format></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d5e248f3e22b9efae74d7b40246472b76b54a6c42478a52a42452dd798879958"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Format",
+      "value": "DF=dd.MM.yyyy;",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Format><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>DF=dd.MM.yyyy;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:Format></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c212a8165bedd2ddec600ff3183ac80b64ffe2684d6869b99e50df7485e50bf4"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<b>Bold</> / <i>Italic</> / <link https://example.org>Link</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;Bold&lt;/&gt; / &lt;i&gt;Italic&lt;/&gt; / &lt;link https://example.org&gt;Link&lt;/&gt;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1282d14d5229c4892b193efeb1aa01280c19f647f4bdf4e4e40c242b4dc8685f"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<b>Bold</> / <i>Italic</> / <link https://example.org>Link</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"false\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;Bold&lt;/&gt; / &lt;i&gt;Italic&lt;/&gt; / &lt;link https://example.org&gt;Link&lt;/&gt;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "631062595514f7b96d42765767672c6abcd229ae554f04c1cb2c67f763676393"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<b>Bold</> / <i>Italic</> / <link https://example.org>Link</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;Bold&lt;/&gt; / &lt;i&gt;Italic&lt;/&gt; / &lt;link https://example.org&gt;Link&lt;/&gt;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3303fc5202671e74edc9945dd2e321082f7e98489ce3194475b9fec588fbb135"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<b>Bold</> / <i>Italic</> / <link https://example.org>Link</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"false\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;Bold&lt;/&gt; / &lt;i&gt;Italic&lt;/&gt; / &lt;link https://example.org&gt;Link&lt;/&gt;</ns1:content></ns1:item><ns1:item><ns1:lang>en</ns1:lang><ns1:content>NFD=2;NG=0;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d19ed98beafba0c40d6262135ba89c012223a07c096d9d74e2226719b9af013b"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "Plain < and > signs",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>Plain &lt; and &gt; signs</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "21aee158616221797ff991fb84812a80990704ceae2e85dca3cd75bf0dae377e"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<b>B</> <i>I</> <u>U</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;B&lt;/&gt; &lt;i&gt;I&lt;/&gt; &lt;u&gt;U&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "fce0df545e80b52dbe1edd63f5f3e007fa95175843ac83ff150bee07f4ffbcf6"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<color web:Red>Red</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;color web:Red&gt;Red&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "40b32ce653ed0b1c68680d8a259024dd84206d559323d52a1f6d69605ec93187"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<bgColor web:Blue>Blue</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;bgColor web:Blue&gt;Blue&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b36e7070cb95c9b15034aebb4e7624b5889d9a75ffd0ada46dd2217bf0eef508"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<font Arial>Font</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;font Arial&gt;Font&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "f100cb8657d4dcea0e5847cfd077d48d605c25654e8ca4e104907d770c8d2cb1"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<fontSize 14>Size</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;fontSize 14&gt;Size&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3f6a35dab5c851ed4003f38a2b6e224d9304c6608ebe74e4e5b9c558d4b86d80"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<link https://example.org>Link</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;link https://example.org&gt;Link&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "aceb1975a7f45677015a6ab718fae73694ac3c1cc0043e80764f3348ef28b3dd"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<img StdPicture.Refresh>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;img StdPicture.Refresh&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8e5d1023007ee80419d913105c6b6be461b449376d4e397a0c4def73724578a4"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "A <unknown>X</> Z",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>A &lt;unknown&gt;X&lt;/&gt; Z</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5209b205c84006324dd328a9915a6dadbad70c210f01ba484560fd37c9e4f67a"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<b>Nested <i>text</></>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;Nested &lt;i&gt;text&lt;/&gt;&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "9f2b783913aaf9818e3eff9d8a3684b6c9c1a7d0992bc5b74bf49a0efcea97d6"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "A &amp; B &lt; C",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>A &amp;amp; B &amp;lt; C</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5b0dd96e64377b310811b34dd37950c199274483fdc04526adc5310685d271b1"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<b>Unclosed",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;Unclosed</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "48c04f14cb9f3e660d1a83cd7755c0c171041b623212e399798c28060a2669ad"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<b>Mixed</b>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;Mixed&lt;/b&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "39b695c1d4772599209fe7d5a221ae72ec10e5b1ff65b955c043ec2982d532a6"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "Text <x> end",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>Text &lt;x&gt; end</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "fc243d033820b118d6ff5d35b68cea20393648384d09f0335cfbe13682adb138"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "Plain < and > signs",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>Plain &lt; and &gt; signs</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "748c2439c0cc631e31b18db427d2ea46fe98deba823e4ebc3543d68e97e8329c"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<b>B</> <i>I</> <u>U</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;B&lt;/&gt; &lt;i&gt;I&lt;/&gt; &lt;u&gt;U&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "501f1a23c76705b6befcffacfc2bd1a65969f657bf28831a14752cc2d5ae59ca"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<color web:Red>Red</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;color web:Red&gt;Red&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "67ee039550eb1d8fa0fdb758f8b4cba3078b6c0cb08ad1ce17c8a901603c4f6c"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<bgColor web:Blue>Blue</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;bgColor web:Blue&gt;Blue&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "980910fa6319b53315a3c5069008b7ff5084df0e998672582f60166fdb3c9b4a"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<font Arial>Font</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;font Arial&gt;Font&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8fd617d47355e18eeb5e359617413660a828a8ccd3a6acfb8e62b57969a95915"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<fontSize 14>Size</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;fontSize 14&gt;Size&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "773972d6b7b631f36ef4ad1e291b6f84e1262627d29e407706601e9c565b2ab9"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<link https://example.org>Link</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;link https://example.org&gt;Link&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "2d743f4f514cedb0656cc5591d2bea3a77c0919be3d4e3f4ef0705cc21858029"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<img StdPicture.Refresh>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;img StdPicture.Refresh&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5623e5d35a2db84080f7ecdd67bfc200ca8636fe4f2618adf230d1d6c272d2b4"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "A <unknown>X</> Z",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>A &lt;unknown&gt;X&lt;/&gt; Z</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6462b1153f25387b599dbc8c1ab20a4886cfed50a7cbdd434977ed702295bd56"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<b>Nested <i>text</></>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;Nested &lt;i&gt;text&lt;/&gt;&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "164b03e6f704b58a1f5cb8d73c95de04af36dd290807ce5368e8c57a90653f27"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "A &amp; B &lt; C",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>A &amp;amp; B &amp;lt; C</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b520ad65a7647c6de2ccecba511dc557ff38196f725ae432d064141a10f41df6"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<b>Unclosed",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;Unclosed</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "13b1b2dd8bb8b28356446e96cd2de9f3397a0185e1bd39e45419dd071351fad3"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<b>Mixed</b>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;b&gt;Mixed&lt;/b&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "555f7332f4fe0f1fd345539ac843a46ee3abc0e558c8b539d36cfcb6337ddf2f"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "Text <x> end",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>Text &lt;x&gt; end</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5a4cc509d2b19cac6dd2d93f0d38945966707163484fb5f9365add9aa629aa81"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "X <img StdPicture.Refresh> Y",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>X &lt;img StdPicture.Refresh&gt; Y</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ab6310f470135f62b851ee535c4b46a8bb36ea07798caab174854c9ccd69f49d"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<IMG StdPicture.Refresh>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;IMG StdPicture.Refresh&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "31ce50c474586a82fef1c66ffe163c0da4dcea5d21ab5240481a1bd41f7bc97a"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<img>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;img&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "97b5cc2754033f14e963741d3c768fdc955e94b01a5b1b991ca6406e08f66637"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<image Foo>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;image Foo&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "51510e8e8fba36b6b28a35ab5ca996729e4b684be1ec87c66a62747b3f41fab4"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<imgX>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;imgX&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "236e066fc2d71c36119df6e815901749a71c57f54fb331e0ed09cab82f9889df"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "Text <unfinished",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>Text &lt;unfinished</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8bfcd3ca69e9daeede8ecde73fb391df0e987c7bf2b33c03f99de9bbb817c6a5"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<<b>X</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;&lt;b&gt;X&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6e695f9f947176b5da963ade2b20e281586bf08112324a8b7506b7f8e4656230"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "End > test <",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>End &gt; test &lt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "eb7f627838ca126c6f0419f6c1d068cff242d66825f78756f9bbcac36921b527"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Title",
+      "value": "<link \"a>b\">Link</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;link \"a&gt;b\"&gt;Link&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "a4692c91b11ba478b4e4862948489b2bf2e2a7324cfdca1e1f94b8e935f9384a"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "X <img StdPicture.Refresh> Y",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>X &lt;img StdPicture.Refresh&gt; Y</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "a928f7e3c73c3299a4a9966ec94b9472ece16318b7728db469b9b6481808ffd8"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<IMG StdPicture.Refresh>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;IMG StdPicture.Refresh&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "a62dcd6762872f9314513c109014cac56bf0ba882e272892f9fdf1e2c9d47e30"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<img>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;img&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "2ec6774c412cb516c1b7c0cbe66dbcb9a13733db63eca84ea482f6aba7a29338"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<image Foo>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;image Foo&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "a34f5ea537c151cba02c1e0e52bb126e7a014e24178b1046c87712b8ead0c2db"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<imgX>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;imgX&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8570f2d613c68a999ce05543c74d7f1a95b996c70eec6640424331373a3f8ddc"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "Text <unfinished",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>Text &lt;unfinished</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "217c2ed94d5e99353d8a0a5ba930bf3160cf755ab38d474bf267f33ab3c5fad9"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<<b>X</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;&lt;b&gt;X&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5079254386d6fd2c3bcf91335f2274e609a9a250245ddf9bb3473b87b5b40b62"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "End > test <",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>End &gt; test &lt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c966e9985653024e1b8d9bb327b5dc7b077674d90f51c09f355cfe70cc25486d"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Title",
+      "value": "<link \"a>b\">Link</>",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Title formatted=\"true\"><ns1:item><ns1:lang>ru</ns1:lang><ns1:content>&lt;link \"a&gt;b\"&gt;Link&lt;/&gt;</ns1:content></ns1:item></ns0:Title></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6134a15e44881a67562206a305fe1dd941d84154ff04933850478a259fb5b9a2"
+    }
+  ]
+}

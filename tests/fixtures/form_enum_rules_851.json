@@ -1,0 +1,1027 @@
+{
+  "source": "Native 8.5.1.1529 CF exports for enum values. Expected SHA256 covers the complete interface AST.",
+  "cases": [
+    {
+      "kind": "InputField",
+      "name": "TitleLocation",
+      "value": "Left",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>Left</ns0:TitleLocation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "dda2a95ff6b4773bcc8a432e7b7027ddfbe535cbfc6c7e0bf367b155c695362c"
+    },
+    {
+      "kind": "InputField",
+      "name": "TitleLocation",
+      "value": "Right",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>Right</ns0:TitleLocation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "11b6346c48dd7b1eb7401764aa8ceda8239f60bc57e8831c3eb14b7d233468df"
+    },
+    {
+      "kind": "InputField",
+      "name": "TitleLocation",
+      "value": "Top",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>Top</ns0:TitleLocation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "67a9e7f640b0fc133d23f21f8a68274cf1be77662addc41002ce105d16abfda9"
+    },
+    {
+      "kind": "InputField",
+      "name": "TitleLocation",
+      "value": "Bottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>Bottom</ns0:TitleLocation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "295665046c0f94485dee77cb7646af8aaf9cbf9a6ddc4daa7278ded8d975d87d"
+    },
+    {
+      "kind": "InputField",
+      "name": "TitleLocation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>None</ns0:TitleLocation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "85c2d88c5d6ce76b5b2ba3e18ffee7f35c5e4381d2e927e3202a81459e6fa3a3"
+    },
+    {
+      "kind": "InputField",
+      "name": "TitleLocation",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>Auto</ns0:TitleLocation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c80f5b70f68c09d84d14ba1020148eb03ff796b3276b48be7a57fcf1d7b37989"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleLocation",
+      "value": "Left",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleLocation>Left</ns0:TitleLocation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "e2b4b242a0a11fc1083bfb0fa76098959a3e3c959f2b6bb28e0b0c3822fe578f"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleLocation",
+      "value": "Right",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleLocation>Right</ns0:TitleLocation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7dba777e14e70a7250187560899859ab0b499cf10ab77880effdecb5099d3adc"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleLocation",
+      "value": "Top",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleLocation>Top</ns0:TitleLocation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7d77038195a296d18ab6bd1c863c850040f22e57dae39359f1df1152119b6df8"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleLocation",
+      "value": "Bottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleLocation>Bottom</ns0:TitleLocation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0468d8de6f4f5a3514d8c6ff031400bc15ec594e18043127b38b201ca2bf5a35"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleLocation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleLocation>None</ns0:TitleLocation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "362a05300e19ae8dcc456ece6b586702186fd34baa6397e03c23e8498b8a02d4"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleLocation",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleLocation>Auto</ns0:TitleLocation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7d3da28a43a508dc0d6c39f696abfde66176e565eac6fab04f112d39d8fadda9"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleLocation",
+      "value": "Left",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>Left</ns0:TitleLocation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "673e8f0b2fc3df528e0a6e47db8d0d76f3fc20cb0b75fbc85f75b0b708af8652"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleLocation",
+      "value": "Right",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>Right</ns0:TitleLocation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "e1efa56301b218c5fa5a7c541cf2f872889a7da0fca4371d90c28846ebe144b7"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleLocation",
+      "value": "Top",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>Top</ns0:TitleLocation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c607a5694441f91a6291cb4843772e6d407e5af3ee527cdd493839b548d0b59b"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleLocation",
+      "value": "Bottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>Bottom</ns0:TitleLocation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "dfddff2d2f6a819d25a714f6fe9dde7b1033dc986366bea6f31494ef55053b91"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleLocation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>None</ns0:TitleLocation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "83097cd288cf771abf42f99073aa400c5cfeb4e6966d7c3d78a62ce02c05e3a0"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleLocation",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleLocation>Auto</ns0:TitleLocation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "dbd147051900abee5f494130b2d2338c14ef01561ff8625637a719acb9d6e6c2"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleLocation",
+      "value": "Left",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleLocation>Left</ns0:TitleLocation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b22fb782609ef743eb438c3778a804ecef0bf6264de3f53ab58f00cf7f5415fa"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleLocation",
+      "value": "Right",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleLocation>Right</ns0:TitleLocation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d6a2111fb90208339168d2138575494f63da9fc10449a6fe7c6ce8adaf9f6057"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleLocation",
+      "value": "Top",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleLocation>Top</ns0:TitleLocation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ad3c79c2a1299a000e6cf92f3af6a81fd06581929e54170a74b28955d0a38ca7"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleLocation",
+      "value": "Bottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleLocation>Bottom</ns0:TitleLocation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1659c101b8f8394f88ed4a6b3ba9f76a36476c58257fbae69c3ce54778496f36"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleLocation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleLocation>None</ns0:TitleLocation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5c932726a7777b30cf224f7f0706bcf5d831ae33ae333c1cb1d80dfdda3b7e0d"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleLocation",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleLocation>Auto</ns0:TitleLocation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "91c47207156d19c55272d476eac08e9e3f6a624c26f1d9192d8af43391364575"
+    },
+    {
+      "kind": "InputField",
+      "name": "HorizontalAlign",
+      "value": "Left",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:HorizontalAlign>Left</ns0:HorizontalAlign></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "13aa12389a51f39f9ba17939c0e272dbb028873caacfe462e74611f0b7b53530"
+    },
+    {
+      "kind": "InputField",
+      "name": "HorizontalAlign",
+      "value": "Center",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:HorizontalAlign>Center</ns0:HorizontalAlign></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0f991d24b25a7a357d76f099cfd0bde11996b1a1fa07052dadac0427c112a173"
+    },
+    {
+      "kind": "InputField",
+      "name": "HorizontalAlign",
+      "value": "Right",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:HorizontalAlign>Right</ns0:HorizontalAlign></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "db9f43d2ee5abdd75a3496061e857744b471e50de83c2957ce5fadb7f8f6a709"
+    },
+    {
+      "kind": "InputField",
+      "name": "HorizontalAlign",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:HorizontalAlign>Auto</ns0:HorizontalAlign></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c80f5b70f68c09d84d14ba1020148eb03ff796b3276b48be7a57fcf1d7b37989"
+    },
+    {
+      "kind": "LabelField",
+      "name": "HorizontalAlign",
+      "value": "Left",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:HorizontalAlign>Left</ns0:HorizontalAlign></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3148a55440f01fe91cc4cd60e9e13ccbb705c4374e3e72289758f696a98a9644"
+    },
+    {
+      "kind": "LabelField",
+      "name": "HorizontalAlign",
+      "value": "Center",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:HorizontalAlign>Center</ns0:HorizontalAlign></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1f7ec9c7686c1fa34054524558d5f1e272d6fa226ef96c6e729736a371b43cc4"
+    },
+    {
+      "kind": "LabelField",
+      "name": "HorizontalAlign",
+      "value": "Right",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:HorizontalAlign>Right</ns0:HorizontalAlign></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6026d441a92d47145bcd9e5c928bc94d6c21c0197e418308b6efb95eb49dca94"
+    },
+    {
+      "kind": "LabelField",
+      "name": "HorizontalAlign",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:HorizontalAlign>Auto</ns0:HorizontalAlign></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "dbd147051900abee5f494130b2d2338c14ef01561ff8625637a719acb9d6e6c2"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "HorizontalAlign",
+      "value": "Left",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:HorizontalAlign>Left</ns0:HorizontalAlign></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ba809bb3e0b6b21a72041dc80120cc5446854100d1e1de44a3c60f453a69409b"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "HorizontalAlign",
+      "value": "Center",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:HorizontalAlign>Center</ns0:HorizontalAlign></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "64384356d2512d77e101c80ac9480f6936a3e2122721f4cbe836f4ba4a0bbb37"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "HorizontalAlign",
+      "value": "Right",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:HorizontalAlign>Right</ns0:HorizontalAlign></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "886bed4941450c1f340e2b2ab7a65ac32087340ee86f76c8056bc6b039a15f0d"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "HorizontalAlign",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:HorizontalAlign>Auto</ns0:HorizontalAlign></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "60e203238bb5c405726f1c0958b4a8b37be4cb075036294e47f8e1600a621321"
+    },
+    {
+      "kind": "InputField",
+      "name": "VerticalAlign",
+      "value": "Top",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:VerticalAlign>Top</ns0:VerticalAlign></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "307a4ef8a322d06b1d5e89a779e94a2b7f37a95ce53be9000e391444177a2fa7"
+    },
+    {
+      "kind": "InputField",
+      "name": "VerticalAlign",
+      "value": "Center",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:VerticalAlign>Center</ns0:VerticalAlign></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "202fb0a732dc3213e215170073fc921c3b2710302adcb7ff31d66dc09f738247"
+    },
+    {
+      "kind": "InputField",
+      "name": "VerticalAlign",
+      "value": "Bottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:VerticalAlign>Bottom</ns0:VerticalAlign></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d6d134576ce7721fca8b1c0f87d7783c107898091ea58a8e5a77f1cfc94802c6"
+    },
+    {
+      "kind": "InputField",
+      "name": "VerticalAlign",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:VerticalAlign>Auto</ns0:VerticalAlign></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c80f5b70f68c09d84d14ba1020148eb03ff796b3276b48be7a57fcf1d7b37989"
+    },
+    {
+      "kind": "LabelField",
+      "name": "VerticalAlign",
+      "value": "Top",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:VerticalAlign>Top</ns0:VerticalAlign></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8c7ab45865a897d16c3cac03dd8eb7c6341e1dc7021702e014934baad4bc9092"
+    },
+    {
+      "kind": "LabelField",
+      "name": "VerticalAlign",
+      "value": "Center",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:VerticalAlign>Center</ns0:VerticalAlign></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0028d6162b83d24f4777ffaaadcc34bb99e66b3979481dd710a69d59639b0d31"
+    },
+    {
+      "kind": "LabelField",
+      "name": "VerticalAlign",
+      "value": "Bottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:VerticalAlign>Bottom</ns0:VerticalAlign></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "098c7fe5d7f98feead257bd15628959b46d208838be787dab490b1de123785fd"
+    },
+    {
+      "kind": "LabelField",
+      "name": "VerticalAlign",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:VerticalAlign>Auto</ns0:VerticalAlign></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "dbd147051900abee5f494130b2d2338c14ef01561ff8625637a719acb9d6e6c2"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "VerticalAlign",
+      "value": "Top",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:VerticalAlign>Top</ns0:VerticalAlign></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ee99d6669ab942518155b708b8f5d7bb33fe7379369de26e2ff04385b55439ca"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "VerticalAlign",
+      "value": "Center",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:VerticalAlign>Center</ns0:VerticalAlign></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "bcac8e3e6a6060d251cc13b7c41026ea4a27e2ca9c4a9fcf67e79a7d92512224"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "VerticalAlign",
+      "value": "Bottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:VerticalAlign>Bottom</ns0:VerticalAlign></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "367688c41b8c38b2e9d19605b4c5e6dcb519ee7001c042c06389cec511c6d4f4"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "VerticalAlign",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:VerticalAlign>Auto</ns0:VerticalAlign></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ba809bb3e0b6b21a72041dc80120cc5446854100d1e1de44a3c60f453a69409b"
+    },
+    {
+      "kind": "InputField",
+      "name": "ToolTipRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>None</ns0:ToolTipRepresentation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "30368f1d3813c8e01830e01b585fcf21a01d48a3d2aabdc82b4e9d7890b7cbcb"
+    },
+    {
+      "kind": "InputField",
+      "name": "ToolTipRepresentation",
+      "value": "Button",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>Button</ns0:ToolTipRepresentation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "279781cb1ecffcecf8d701e81eb45c6db44e6a5f107c3288f6c1eb2d60baaf0e"
+    },
+    {
+      "kind": "InputField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>ShowBottom</ns0:ToolTipRepresentation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0e163421ba02f643ecc9a445a37ce68ee362fa830e6ad1fd660315cb5821a367"
+    },
+    {
+      "kind": "InputField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>ShowTop</ns0:ToolTipRepresentation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0ba2e4d07c3164cd149417097635f4e22319bb13a7ad26e6aba623823502cf8c"
+    },
+    {
+      "kind": "InputField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowLeft",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>ShowLeft</ns0:ToolTipRepresentation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0e657c616730f0017e72c347e48b89cd94b1650e65fe7fa20652c7d2334ecc3c"
+    },
+    {
+      "kind": "InputField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowRight",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>ShowRight</ns0:ToolTipRepresentation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5c20b277ac1287b3b8812ee61e6dde31947579b5385f459eae4f0d67bdf2c5db"
+    },
+    {
+      "kind": "InputField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowAuto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>ShowAuto</ns0:ToolTipRepresentation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "294ab34d52d877574c08cdf8c7a684619f0cc5773ff535c997f205c9c9eaaa22"
+    },
+    {
+      "kind": "InputField",
+      "name": "ToolTipRepresentation",
+      "value": "Balloon",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>Balloon</ns0:ToolTipRepresentation></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "70337e0ebeff7789c18099975ca301ffbc587d3f5e2e72e83faa7f861fb9b5e6"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "ToolTipRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:ToolTipRepresentation>None</ns0:ToolTipRepresentation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "e4ca300477cd382e7c5f2ea1d4bde6bc854e1e4b80d272494aa62a43647b7ab5"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "ToolTipRepresentation",
+      "value": "Button",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:ToolTipRepresentation>Button</ns0:ToolTipRepresentation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "213efbd710e6545ef77e20efa0632746680c17440426b9aae42b343ed950735d"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:ToolTipRepresentation>ShowBottom</ns0:ToolTipRepresentation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "59e8fbff240751543d9e83fa3a444d7a9e38b897cb280fa5b27d981cf8d97c01"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:ToolTipRepresentation>ShowTop</ns0:ToolTipRepresentation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7c7f861e783b675b63ba6bd5cc094d913158cbd4d31964e83e8fe88ff85f034b"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowLeft",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:ToolTipRepresentation>ShowLeft</ns0:ToolTipRepresentation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "df6a0a6375f0a03c052e7451a76c7ac49305db1beea0b6f56ba772dfc1450aee"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowRight",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:ToolTipRepresentation>ShowRight</ns0:ToolTipRepresentation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "19ebe7e9b3117d126f1aed6291302e6d0bf9c0cf45356b3552697b10a46dd92f"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowAuto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:ToolTipRepresentation>ShowAuto</ns0:ToolTipRepresentation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c2a8e015803765c728fc418558ce019ca474a2677a1eb60b77c5bd9fb69c640c"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "ToolTipRepresentation",
+      "value": "Balloon",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:ToolTipRepresentation>Balloon</ns0:ToolTipRepresentation></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b0357c5fe97f46c6410e26f7ae423c7d372f64629319b18a85ad718b50e0c852"
+    },
+    {
+      "kind": "LabelField",
+      "name": "ToolTipRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>None</ns0:ToolTipRepresentation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7bb5372992d9fb85e4bef600bc4d3553119d8227705ef2c9727464b2d1e9c0a9"
+    },
+    {
+      "kind": "LabelField",
+      "name": "ToolTipRepresentation",
+      "value": "Button",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>Button</ns0:ToolTipRepresentation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "556bb1d524d0d64e12769086e9bd3ed83a148390c07ab5721bd4781526f06fc1"
+    },
+    {
+      "kind": "LabelField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>ShowBottom</ns0:ToolTipRepresentation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "bf0946d36aa09e160b37f167517e1b1216022cd871f0cf79b8dabf5ca8308b58"
+    },
+    {
+      "kind": "LabelField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>ShowTop</ns0:ToolTipRepresentation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "13dd03f604f207076ec79ed95e6c92aea7f6e4aa750cf6e808fb69f40ddf104e"
+    },
+    {
+      "kind": "LabelField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowLeft",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>ShowLeft</ns0:ToolTipRepresentation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "aa37e95b6792febd8cc68386f7c3ea9459bd8e5546a945665b1ca8e964fdcaf7"
+    },
+    {
+      "kind": "LabelField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowRight",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>ShowRight</ns0:ToolTipRepresentation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "142f8364c2239303ceeb2dc785d75aa4b55fcf0b69c20fa00479ff17765b6629"
+    },
+    {
+      "kind": "LabelField",
+      "name": "ToolTipRepresentation",
+      "value": "ShowAuto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>ShowAuto</ns0:ToolTipRepresentation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "e98ef92b8381d7d9c28fabf0aafb941502bf5ef3851293b051c8c61deebef35f"
+    },
+    {
+      "kind": "LabelField",
+      "name": "ToolTipRepresentation",
+      "value": "Balloon",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:ToolTipRepresentation>Balloon</ns0:ToolTipRepresentation></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6462665d687b22ea37d88136a948a7180f60bcfb5e22d4747b10ca4b9f355bec"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "ToolTipRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:ToolTipRepresentation>None</ns0:ToolTipRepresentation></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "628b7170d48877a3cee06bb776f1a2f4e39b440e204a8f990c30a2635752d096"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "ToolTipRepresentation",
+      "value": "Button",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:ToolTipRepresentation>Button</ns0:ToolTipRepresentation></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c55b9a1b2836de61cf02026458c1e1a317085dacbfe4ef27056158af4c505471"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "ToolTipRepresentation",
+      "value": "ShowBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowBottom</ns0:ToolTipRepresentation></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0cde0e9046465dad0bb9604f7cb0863cd887779e6f1b622b6bbf9f8c3f933dd5"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "ToolTipRepresentation",
+      "value": "ShowTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowTop</ns0:ToolTipRepresentation></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ea5de3844a9531622fd1e8e9635786ccc31b95ab7a43a161b5533657e03c43d9"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "ToolTipRepresentation",
+      "value": "ShowLeft",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowLeft</ns0:ToolTipRepresentation></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "fbfa6eb15ff843e44f0a9d639eae3b945832dde113a881a3b133667e6d7bb032"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "ToolTipRepresentation",
+      "value": "ShowRight",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowRight</ns0:ToolTipRepresentation></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5460dec34ddc546b65240472cdcd9cfb6d85518daf9375f8618ee18b15298f39"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "ToolTipRepresentation",
+      "value": "ShowAuto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowAuto</ns0:ToolTipRepresentation></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "746600d8db056ca000e48de6b3d8de36cdc5fde162e92139cc9431b497474af8"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "ToolTipRepresentation",
+      "value": "Balloon",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:ToolTipRepresentation>Balloon</ns0:ToolTipRepresentation></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ebeea30e81067b2effcef57bd79263c31158f08255442d8f06029f5cb49944cd"
+    },
+    {
+      "kind": "Pages",
+      "name": "ToolTipRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>None</ns0:ToolTipRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "44dd835d7406ae1f07ea365bd44426829c52052d4cdb1308a55392cc21ae3ac9"
+    },
+    {
+      "kind": "Pages",
+      "name": "ToolTipRepresentation",
+      "value": "Button",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>Button</ns0:ToolTipRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "09337fc973b4818775ea130e37b097587b128fac8764c4dff8437cbb2c4a0634"
+    },
+    {
+      "kind": "Pages",
+      "name": "ToolTipRepresentation",
+      "value": "ShowBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowBottom</ns0:ToolTipRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b613ceee52ed4a950781393c94a5d3a8268edd381fda5e36c2b7f2416e451041"
+    },
+    {
+      "kind": "Pages",
+      "name": "ToolTipRepresentation",
+      "value": "ShowTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowTop</ns0:ToolTipRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "4d21beecd41ecc0635111d53993f834e5f764c29ca7708f64f923c8a0c4f4f7f"
+    },
+    {
+      "kind": "Pages",
+      "name": "ToolTipRepresentation",
+      "value": "ShowLeft",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowLeft</ns0:ToolTipRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "80b6ad7b0a446bfc674ab4fa07205e914ea1deb38804b8fdebc97c9fa18ab29a"
+    },
+    {
+      "kind": "Pages",
+      "name": "ToolTipRepresentation",
+      "value": "ShowRight",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowRight</ns0:ToolTipRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c4de0b1693ceae29a28850e8f5b4f324d922be2a18d8fd50403000b8537e1e8c"
+    },
+    {
+      "kind": "Pages",
+      "name": "ToolTipRepresentation",
+      "value": "ShowAuto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowAuto</ns0:ToolTipRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c389bbc1f4fa5d4411bd58a41f696b041d3b8632eacffab17067470091c742f4"
+    },
+    {
+      "kind": "Pages",
+      "name": "ToolTipRepresentation",
+      "value": "Balloon",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>Balloon</ns0:ToolTipRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "981cadbe42b7573e8d6d0e2a74dc1882319cf504ddb54ea94047486af65a78f5"
+    },
+    {
+      "kind": "Page",
+      "name": "ToolTipRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>None</ns0:ToolTipRepresentation></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "558a5d0ce549973c0e3274e8384f7fe31690639b63642806a9134813936b8b78"
+    },
+    {
+      "kind": "Page",
+      "name": "ToolTipRepresentation",
+      "value": "Button",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>Button</ns0:ToolTipRepresentation></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3c8ea555919f84526a757913d65f332383c4805541119e01d256baf0e8b73c52"
+    },
+    {
+      "kind": "Page",
+      "name": "ToolTipRepresentation",
+      "value": "ShowBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowBottom</ns0:ToolTipRepresentation></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5eb177ae0206811b7da326b370e8735511f25183e42db0558165f4c382b5c905"
+    },
+    {
+      "kind": "Page",
+      "name": "ToolTipRepresentation",
+      "value": "ShowTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowTop</ns0:ToolTipRepresentation></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "e22d1b538de8d0a5da4a25a22be727f8adedfd8345c8d0211cc450b3a203b82e"
+    },
+    {
+      "kind": "Page",
+      "name": "ToolTipRepresentation",
+      "value": "ShowLeft",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowLeft</ns0:ToolTipRepresentation></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b93746bc5bb0cb1c7a8c894fa97130a8dc6fa87a2be015ebc1f06df662bd3518"
+    },
+    {
+      "kind": "Page",
+      "name": "ToolTipRepresentation",
+      "value": "ShowRight",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowRight</ns0:ToolTipRepresentation></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "40ea39b2baf7ed338da7773862ac024957e13b7bb79dd836d45d258d1e61f8f1"
+    },
+    {
+      "kind": "Page",
+      "name": "ToolTipRepresentation",
+      "value": "ShowAuto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowAuto</ns0:ToolTipRepresentation></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "cd2b2382e2e5304b8982f7c4dc8e46434dfb9822308df29d6a62e9416925da08"
+    },
+    {
+      "kind": "Page",
+      "name": "ToolTipRepresentation",
+      "value": "Balloon",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:ToolTipRepresentation>Balloon</ns0:ToolTipRepresentation></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "f50a65a6c060ea7ea6b0652f9aa34bef03e4976b3c2441c8456278c0b1a26b6a"
+    },
+    {
+      "kind": "Button",
+      "name": "ToolTipRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:ToolTipRepresentation>None</ns0:ToolTipRepresentation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "de85327132169c5ac4f7abbc76d4dd18a2804b8d792689ecab6bacd855322d7e"
+    },
+    {
+      "kind": "Button",
+      "name": "ToolTipRepresentation",
+      "value": "Button",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:ToolTipRepresentation>Button</ns0:ToolTipRepresentation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "826d36869670cb6611549fb15564febcf1926ca985585055baa9b70106d86a88"
+    },
+    {
+      "kind": "Button",
+      "name": "ToolTipRepresentation",
+      "value": "ShowBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:ToolTipRepresentation>ShowBottom</ns0:ToolTipRepresentation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "f9312927b077e1896f69a33a13fcfde52a30b39fc384f782845219ed747aa5cf"
+    },
+    {
+      "kind": "Button",
+      "name": "ToolTipRepresentation",
+      "value": "ShowTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:ToolTipRepresentation>ShowTop</ns0:ToolTipRepresentation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "763d01bbf694ff9027d880aa23f2b5568a7ce9d81ad72283c6fdb8b93ef3f01f"
+    },
+    {
+      "kind": "Button",
+      "name": "ToolTipRepresentation",
+      "value": "ShowLeft",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:ToolTipRepresentation>ShowLeft</ns0:ToolTipRepresentation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "bc31c86c81e158cf2998fdd2888f4d88c1744406cd7fc4367eeefb5be7030740"
+    },
+    {
+      "kind": "Button",
+      "name": "ToolTipRepresentation",
+      "value": "ShowRight",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:ToolTipRepresentation>ShowRight</ns0:ToolTipRepresentation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "e11d546905d2cd63add270cc7c0e1f49e23252735f90e214aaeeb2c675175144"
+    },
+    {
+      "kind": "Button",
+      "name": "ToolTipRepresentation",
+      "value": "ShowAuto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:ToolTipRepresentation>ShowAuto</ns0:ToolTipRepresentation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d400ef49336c6a1d1f6f578ee29178c933948b9bc76d17faedc3517bc1e0f6b4"
+    },
+    {
+      "kind": "Button",
+      "name": "ToolTipRepresentation",
+      "value": "Balloon",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:ToolTipRepresentation>Balloon</ns0:ToolTipRepresentation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "4f416a4b682b257ffc495d17787e9b28429b34edf62701fb45e8b241488de33c"
+    },
+    {
+      "kind": "Table",
+      "name": "ToolTipRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:ToolTipRepresentation>None</ns0:ToolTipRepresentation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5df38483b5ebc5ad2fa0d1896498b15dbfbdafabbc113780bd0f23660811ce0e"
+    },
+    {
+      "kind": "Table",
+      "name": "ToolTipRepresentation",
+      "value": "Button",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:ToolTipRepresentation>Button</ns0:ToolTipRepresentation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7881eb92a1826d630b4ec18fd6acfef85507bae3757e2f81acde47caea34b157"
+    },
+    {
+      "kind": "Table",
+      "name": "ToolTipRepresentation",
+      "value": "ShowBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowBottom</ns0:ToolTipRepresentation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0c6feeadee28246047569185994c86f0d3c81256173863ff68c46c7ae837e105"
+    },
+    {
+      "kind": "Table",
+      "name": "ToolTipRepresentation",
+      "value": "ShowTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowTop</ns0:ToolTipRepresentation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "9831d4a2d3292c95da6a09dfb019c0fbb22ffe4ba203ec0acb4f0ac01778d367"
+    },
+    {
+      "kind": "Table",
+      "name": "ToolTipRepresentation",
+      "value": "ShowLeft",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowLeft</ns0:ToolTipRepresentation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5badcc04199e826b941706a328037ac227dd1924bb5cf48bd73586542f615f17"
+    },
+    {
+      "kind": "Table",
+      "name": "ToolTipRepresentation",
+      "value": "ShowRight",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowRight</ns0:ToolTipRepresentation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "560589699ef567ae6b91edfbb7f5f7a5b2aa7661f38ae72a49ce0616f60dd54d"
+    },
+    {
+      "kind": "Table",
+      "name": "ToolTipRepresentation",
+      "value": "ShowAuto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:ToolTipRepresentation>ShowAuto</ns0:ToolTipRepresentation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "9d748098db9043c129eff989537e875cfda4a84d2670b47160075c2794c9e8fb"
+    },
+    {
+      "kind": "Table",
+      "name": "ToolTipRepresentation",
+      "value": "Balloon",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:ToolTipRepresentation>Balloon</ns0:ToolTipRepresentation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5686dce7f6a5e6e34942fb8b773d2e0c95dc4f36f2dc13ebecb35b19d87e1d67"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>None</ns0:ToolTipRepresentation></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "2cf433e6c079a1f4cfefa8e38ee559654c7761417089be165cf4b297196e3615"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "Button",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>Button</ns0:ToolTipRepresentation></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1b0e951553bf72ecf57c66f18e2c669760a8940f73ecec816fdcb38d47242c78"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "ShowBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>ShowBottom</ns0:ToolTipRepresentation></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "45f070ab82b9c00d4526facf7af18b23322450fdadd5a8e3fc314a86b157781e"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "ShowTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>ShowTop</ns0:ToolTipRepresentation></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "57bbebd3ad2b09f36d240b32fa9c0fc45ec326b764841d516467f2b07fb7a36b"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "ShowLeft",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>ShowLeft</ns0:ToolTipRepresentation></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "9038ddce9450a384cd776c70912297475bf47a6c40b51fded3a9030d976d5367"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "ShowRight",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>ShowRight</ns0:ToolTipRepresentation></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "2730882641b6b9e82c047e9676f37d3f7576bbbce4db0b5bc43e0c70d036c913"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "ShowAuto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>ShowAuto</ns0:ToolTipRepresentation></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7e2f76710c69a800efc0fdfee872da270ada5984d237cbd87a34aa9da5814aa8"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "Balloon",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>Balloon</ns0:ToolTipRepresentation></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "29f480a1702026037018ac4f02cf8b50daf571d653cbb6d1b858304e3eb18058"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>None</ns0:ToolTipRepresentation></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "576438fdb7b22a6fe4449a89f0ab5740de1ad07d1b1d9de3658a1413b1266c11"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "Button",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>Button</ns0:ToolTipRepresentation></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "a77c20b307f4f1f2389ae16d356481546d35424bb9843b03fe5f9c88123cc3c4"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "ShowBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>ShowBottom</ns0:ToolTipRepresentation></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "4f877b7cebdff33d65e4173b2c5e942e87256fb2dc1a941dc9867eb4764deeed"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "ShowTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>ShowTop</ns0:ToolTipRepresentation></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6046845129651d9bb89ed3bea24bd0cf8d51fa0d3a4e4f4f20c69f4370840027"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "ShowLeft",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>ShowLeft</ns0:ToolTipRepresentation></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "06c33eda011acc2626af4e236e2095999b01a62e092ae05f300c508943173524"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "ShowRight",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>ShowRight</ns0:ToolTipRepresentation></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "dbb19e0328bcacc1ed4f4e23fe5fc103578205dfb930b62c49e92f264ad5052d"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "ShowAuto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>ShowAuto</ns0:ToolTipRepresentation></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "21c82b66cb094eeec6697a1db6dacf8e2624c901721bb65b8a719f8c1b0ed8ad"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "ToolTipRepresentation",
+      "value": "Balloon",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:ToolTipRepresentation>Balloon</ns0:ToolTipRepresentation></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6a95360cf653e82890e2f5ee7161ae22f3f05b5fbebea52699f6a3f7ef266198"
+    },
+    {
+      "kind": "Table",
+      "name": "Representation",
+      "value": "List",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:Representation>List</ns0:Representation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0385ebb3e14c5ecf6bfc7c46869d47b25a7fe84b249e3387ee636c2205e6a7a7"
+    },
+    {
+      "kind": "Table",
+      "name": "Representation",
+      "value": "Tree",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:Representation>Tree</ns0:Representation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5b8fead69481da44433cc6f30b5d049d81624bd50adb6b1f41c5c889912beba4"
+    },
+    {
+      "kind": "Table",
+      "name": "Representation",
+      "value": "HierarchicalList",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:Representation>HierarchicalList</ns0:Representation></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5c932726a7777b30cf224f7f0706bcf5d831ae33ae333c1cb1d80dfdda3b7e0d"
+    },
+    {
+      "kind": "Pages",
+      "name": "PagesRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:PagesRepresentation>None</ns0:PagesRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "69bc6d22e6d750d3ee19c848d49e089937146e16d8b0363cd7eb6bc6ec605d3c"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "Group",
+      "value": "Vertical",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b91d5b890053bb7a65cc95e68adb2e1223ca55974f544892618a5c13ca19d3d3"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "Group",
+      "value": "Horizontal",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Horizontal</ns0:Group><ns0:ChildItems /></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "85e847c96a7e0260e8f7a4b11775927fdb903988c0af12eecc2ec6e6e547904e"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "GroupHorizontalAlign",
+      "value": "Left",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:GroupHorizontalAlign>Left</ns0:GroupHorizontalAlign></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6c6971f31970086b218662e6cf625c88985c4f78ef28517b31bdbb2382c61961"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "GroupHorizontalAlign",
+      "value": "Center",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:GroupHorizontalAlign>Center</ns0:GroupHorizontalAlign></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "39a5bbab7c20966607c7ff61fe16aebab643dfb7b020cd0ba0867b2023cef18d"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "GroupHorizontalAlign",
+      "value": "Right",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:GroupHorizontalAlign>Right</ns0:GroupHorizontalAlign></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "49893d790ad0ad5807bfd6ef655a304435ba740e900168675642ede7f0609143"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "GroupVerticalAlign",
+      "value": "Top",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:GroupVerticalAlign>Top</ns0:GroupVerticalAlign></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "daaa1288ae23aa268a93c280f93bf8ec37d80bb75d7cb753abad4abb5f1c0aa1"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "GroupVerticalAlign",
+      "value": "Center",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:GroupVerticalAlign>Center</ns0:GroupVerticalAlign></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b5595954dbe2cbb8c6937421e1e496b0af6fbab773b66b4747796a86467de52f"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "GroupVerticalAlign",
+      "value": "Bottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:GroupVerticalAlign>Bottom</ns0:GroupVerticalAlign></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "88a00563724acb0b11ad53791e562e72681f6bab93db569fe003ad19c40afe7f"
+    },
+    {
+      "kind": "Pages",
+      "name": "PagesRepresentation",
+      "value": "TabsOnTop",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:PagesRepresentation>TabsOnTop</ns0:PagesRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3c9aaa4c12aaa5b2b6388cdd3ff8de0a156010344825d9bb81a62ae5aabab97e"
+    },
+    {
+      "kind": "Pages",
+      "name": "PagesRepresentation",
+      "value": "TabsOnBottom",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:PagesRepresentation>TabsOnBottom</ns0:PagesRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0edc8bbe433b808a0941bb56bf669660ac166b6061b758516c831c1bf2c60c11"
+    },
+    {
+      "kind": "Pages",
+      "name": "PagesRepresentation",
+      "value": "None",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:PagesRepresentation>None</ns0:PagesRepresentation></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "69bc6d22e6d750d3ee19c848d49e089937146e16d8b0363cd7eb6bc6ec605d3c"
+    },
+    {
+      "kind": "Button",
+      "name": "Representation",
+      "value": "Auto",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:Representation>Auto</ns0:Representation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "aab2df5ee1a9fc0c807103cf7231d664bf749a11f1e0d6bb1f15da6b1a2f8efd"
+    },
+    {
+      "kind": "Button",
+      "name": "Representation",
+      "value": "Picture",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:Representation>Picture</ns0:Representation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "86579441e57a322a907f900fe8b1fd6770162229100cb4975b58440236db3178"
+    },
+    {
+      "kind": "Button",
+      "name": "Representation",
+      "value": "Text",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:Representation>Text</ns0:Representation></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8b818da74417310b4c3556a4e537ce9df7dd1c31f612fce2852f647a17223445"
+    }
+  ]
+}

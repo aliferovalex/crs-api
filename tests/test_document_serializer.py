@@ -7,7 +7,7 @@ import xml.etree.ElementTree as E
 import test_constant_serializer as const
 import constant_serializer as c
 import metadata_serializer as s
-import document_serializer as d
+import flat_object_serializer as d
 
 
 def xml():
@@ -30,7 +30,7 @@ def fixture():
 
 class DocumentSerializerTests(unittest.TestCase):
     def test_body_common_properties_and_generated_slots(self):
-        oid,name,body,ids=d.document_xml(xml())
+        oid,name,body,ids=d.object_xml(xml(), '8.5.1.1529', 'Document')
         n=s.Parser(body.decode('utf-8-sig')).documents()[0][1]
         self.assertEqual((oid,name),(const.CID,'XML_Document'))
         self.assertEqual([s.val(n[i]) for i in list(range(1,9))+[26,27]],ids)
@@ -46,10 +46,10 @@ class DocumentSerializerTests(unittest.TestCase):
             for key in ('TypeId','ValueId'):
                 value=str(uuid.uuid4());ids.append(value);E.SubElement(node,'{%s}%s'%(c.READABLE,key)).text=value
         text=E.tostring(root,encoding='unicode')
-        self.assertEqual(d.document_xml(text)[3],ids)
-        self.assertEqual(d.document_xml(text)[2],d.document_xml(text)[2])
+        self.assertEqual(d.object_xml(text, '8.5.1.1529', 'Document')[3],ids)
+        self.assertEqual(d.object_xml(text, '8.5.1.1529', 'Document')[2],d.object_xml(text, '8.5.1.1529', 'Document')[2])
         info[1][0].text=ids[0]
-        with self.assertRaisesRegex(ValueError,'Duplicate generated'):d.document_xml(E.tostring(root,encoding='unicode'))
+        with self.assertRaisesRegex(ValueError,'Duplicate generated'):d.object_xml(E.tostring(root,encoding='unicode'), '8.5.1.1529', 'Document')
 
     def test_rejects_nondefault_properties_children_and_wrong_class(self):
         for text in (xml().replace('</Properties>','<NumberLength>12</NumberLength></Properties>'),
@@ -58,7 +58,7 @@ class DocumentSerializerTests(unittest.TestCase):
                      xml().replace('<ChildObjects/>','<ChildObjects><Attribute/></ChildObjects>'),
                      xml().replace('Document uuid','Catalog uuid').replace('</Document>','</Catalog>'),
                      '<!DOCTYPE x>'+xml()):
-            with self.subTest(text=text),self.assertRaises(ValueError):d.document_xml(text)
+            with self.subTest(text=text),self.assertRaises(ValueError):d.object_xml(text, '8.5.1.1529', 'Document')
 
     def test_document_graph_on_legacy_versions(self):
         for platform in ('8.5.1.1529','8.3.27.2342'):
@@ -71,7 +71,7 @@ class DocumentSerializerTests(unittest.TestCase):
             self.assertTrue(all(len(entry.find('{%s}second'%s.NS))==0 for entry in features))
             raw=s.inflate(base64.b64decode(result['data'])[18:]);_,pos=s.read_record(raw,0);storage,end=s.read_record(raw,pos+4)
             s.validate_storage(storage)
-        with self.assertRaisesRegex(ValueError,'legacy platform'):d.document_xml(xml(),'8.5.4.1878')
+        with self.assertRaisesRegex(ValueError,'legacy platform'):d.object_xml(xml(),'8.5.4.1878', 'Document')
 
 
 if __name__=='__main__':unittest.main()

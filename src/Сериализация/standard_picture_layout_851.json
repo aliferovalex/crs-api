@@ -1,0 +1,16 @@
+{
+  "source": "Native 8.5.1.1529 exports of six form pictures and transparency, plus three appearance circles from demo schema conditional appearance.",
+  "empty_template": "{4,0,{0},\"\",-1,-1,1,0,\"\"}",
+  "transparent_slot": 6,
+  "references": {
+    "AppearanceCircleRed": "{0,c1a61df2-f280-49d0-a8b3-7e5fc6f56ff7}",
+    "AppearanceCircleYellow": "{0,8d7e5026-9c1c-4542-bec0-2b729c84e139}",
+    "AppearanceCircleGreen": "{0,71cbcb5c-f3f0-4ffd-a4d0-19b802b5ed6b}",
+    "Refresh": "{0,fc4f29e0-d168-4fe0-8e64-e982fabf2595}",
+    "Print": "{-13}",
+    "CreateListItem": "{0,977e831a-0e73-4d60-af51-091a6fa8612e}",
+    "DeleteListItem": "{0,167a160b-fa48-4337-87ab-7e0fe95c4b5a}",
+    "Write": "{0,894cf65b-4109-4533-a1d7-c87b1fcc80a3}",
+    "Information": "{0,4b54770b-d069-4c0e-9b17-5cc2a01134d9}"
+  }
+}

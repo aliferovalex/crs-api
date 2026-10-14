@@ -1,6 +1,5 @@
 """Read indexed streams from a native complete-version storage (duplicates allowed)."""
-import base64,hashlib,json,struct,sys,uuid
-from pathlib import Path
+import base64,hashlib,struct,uuid
 import metadata_serializer as s
 
 
@@ -51,13 +50,15 @@ def extract(data,oid):
     return found
 
 
+def from_request(request):
+    encoded=request['storage']
+    if not isinstance(encoded,str) or len(encoded)>s.MAX_BYTES*2:raise ValueError('Oversized version input')
+    return extract(base64.b64decode(encoded,validate=True),request['object_id'])
+
+
 def main():
-    try:
-        request=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8-sig'));encoded=request['storage']
-        if not isinstance(encoded,str) or len(encoded)>s.MAX_BYTES*2:raise ValueError('Oversized version input')
-        result=dict(ok=True,**extract(base64.b64decode(encoded,validate=True),request['object_id']))
-    except (ValueError,KeyError,IndexError,TypeError) as error:result=dict(ok=False,error=str(error))
-    Path(sys.argv[2]).write_text(json.dumps(result,ensure_ascii=False),encoding='utf-8')
+    from serializer_cli import run
+    run(from_request)
 
 
 if __name__=='__main__':main()

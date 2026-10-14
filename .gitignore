@@ -4,4 +4,5 @@ oscript_modules
 *.ospx
 coverage
 __pycache__/
+.python-deps/
 .vscode/launch.json

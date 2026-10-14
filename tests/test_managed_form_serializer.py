@@ -34,7 +34,7 @@ class ManagedFormTests(unittest.TestCase):
     def test_document_form(self):
         r=catalog.fixture();docs=s.context_metadata(base64.b64decode(r['context']),r['object_id'])
         docs[0][2]=s.atom(c.identifiers.class_id('Document'));docs[0][9]=s.atom('XML_Document',True)
-        body=document.d.document_xml(document.xml())[2]
+        body=document.d.object_xml(document.xml(), '8.5.1.1529', 'Document')[2]
         r.update(form_kind='Document',snapshot=store(docs,body),context=base64.b64encode(s.storage([s.text_bytes(docs)],s.text_bytes([[s.atom(0)]]))).decode())
         result=forms.serialize(r);_,new,body,external,parent,_=catalog.records(result)
         self.assertEqual(s.val(new[0][2]),c.identifiers.class_id('DocumentForm'))
@@ -70,6 +70,13 @@ class ManagedFormTests(unittest.TestCase):
         r['name']='AnotherForm';second=forms.serialize(r);_,new,_,_,parent,_=catalog.records(second)
         self.assertEqual(s.val(new[0][10]),'1')
         self.assertEqual({v for v,cls in c.children(parent[0])},{first['object_id'],second['object_id']})
+        # Native deletion retains surviving positions; the next free slot is
+        # determined from metadata positions rather than collection length.
+        context_docs=s.context_metadata(base64.b64decode(context),first['object_id']);context_docs[0][10]=s.atom(7)
+        owner_docs=s.context_metadata(base64.b64decode(context),r['object_id'])
+        r['context']=base64.b64encode(s.storage([s.text_bytes(owner_docs),s.text_bytes(context_docs)],s.text_bytes([[s.atom(0)]]))).decode()
+        third=forms.serialize(r)
+        self.assertEqual(next(item['pos'] for item in third['descriptions'] if item['id']==third['object_id']),8)
 
 
 if __name__=='__main__':unittest.main()

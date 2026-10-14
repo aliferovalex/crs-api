@@ -1,0 +1,84 @@
+{
+  "Catalog": {},
+  "Document": {"inline_module_suffixes": [".2"]},
+  "Enum": {},
+  "CommonModule": {},
+  "DataProcessor": {
+    "folder": "DataProcessors",
+    "modules": {
+      "ObjectModule": ".0",
+      "ManagerModule": ".2"
+    }
+  },
+  "Report": {
+    "folder": "Reports",
+    "modules": {
+      "ObjectModule": ".0",
+      "ManagerModule": ".2"
+    }
+  },
+  "Subsystem": {
+    "folder": "Subsystems",
+    "modules": {}
+  },
+  "Role": {
+    "folder": "Roles",
+    "modules": {}
+  },
+  "CommandGroup": {
+    "folder": "CommandGroups",
+    "modules": {}
+  },
+  "SessionParameter": {
+    "folder": "SessionParameters",
+    "modules": {}
+  },
+  "HTTPService": {
+    "folder": "HTTPServices",
+    "modules": {}
+  },
+  "WebService": {
+    "folder": "WebServices",
+    "modules": {}
+  },
+  "InformationRegister": {
+    "folder": "InformationRegisters",
+    "modules": {
+      "RecordSetModule": ".1",
+      "ManagerModule": ".2"
+    }
+  },
+  "DocumentJournal": {
+    "folder": "DocumentJournals",
+    "modules": {}
+  },
+  "AccumulationRegister": {
+    "folder": "AccumulationRegisters",
+    "modules": {
+      "RecordSetModule": ".1",
+      "ManagerModule": ".2"
+    },
+    "reverse_references": {
+      "kind": "Document",
+      "property": "RegisterRecords"
+    }
+  },
+  "ChartOfAccounts": {
+    "folder": "ChartsOfAccounts",
+    "modules": {
+      "ObjectModule": ".14",
+      "ManagerModule": ".15"
+    }
+  },
+  "AccountingRegister": {
+    "folder": "AccountingRegisters",
+    "modules": {
+      "RecordSetModule": ".6",
+      "ManagerModule": ".7"
+    },
+    "reverse_references": {
+      "kind": "Document",
+      "property": "RegisterRecords"
+    }
+  }
+}

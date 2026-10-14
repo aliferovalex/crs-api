@@ -1,6 +1,7 @@
 {
   "source": "https://raw.githubusercontent.com/saby-integration/v8unpack/main/src/v8unpack/metadata_types.py",
   "names": {
+    "3daea016-69b7-4ed4-9453-127911372fe6": "Template",
     "cf4abeab-37b2-11d4-940f-008048da11f9": "Configuration",
     "2deed9b8-0056-4ffe-a473-c20a6c32a0bc": "AccountingRegister",
     "b64d9a40-1642-11d6-a3c7-0050bae0a776": "AccumulationRegister",
@@ -51,7 +52,9 @@
     "d26096fb-7a5d-4df9-af63-47d04771fa9b": "WSReference",
     "cc9df798-7c94-4616-97d2-7aa0b7bc515e": "XDTOPackage",
     "fdf816d2-1ead-11d5-b975-0050bae0a95d": "CatalogForm",
-    "fb880e93-47d7-4127-9357-a20e69c17545": "DocumentForm"
+    "fb880e93-47d7-4127-9357-a20e69c17545": "DocumentForm",
+    "d5b0e5ed-256d-401c-9c36-f630cafd8a62": "DataProcessorForm",
+    "a3b368c0-29e2-11d6-a3c7-0050bae0a776": "ReportForm"
   },
   "groups": {
     "General": "9cd510cd-abfc-11d4-9434-004095e12fc7",
@@ -61,7 +64,9 @@
     "DocFlow": "51f2d5d8-ea4d-4064-8892-82951750031e",
     "DataSource": "e68182ea-4237-4383-967f-90c1e3370bc7",
     "Integration": "fb282519-d103-4dd3-bc12-cb271d631dfc",
-    "CatalogAttributes": "cf4abea7-37b2-11d4-940f-008048da11f9"
+    "CatalogAttributes": "cf4abea7-37b2-11d4-940f-008048da11f9",
+    "CatalogTabularSections": "932159f9-95b2-4e76-a8dd-8849fe5c5ded",
+    "TabularSectionAttributes": "888744e1-b616-11d4-9436-004095e12fc7"
   },
   "features": {
     "ConstantCollectionChanged": "3b294bed-fed0-4338-ba85-4a9e4d03f4ed"

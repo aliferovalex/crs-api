@@ -1,0 +1,508 @@
+{
+  "source": "Native 8.5.1.1529 border exports; expected SHA256 covers the whole interface.",
+  "cases": [
+    {
+      "kind": "InputField",
+      "name": "BorderColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:BorderColor>#123456</ns0:BorderColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "28162da20baad0c9e0e746f07746f27aea519d6c33d8617f63315bc71868d8e2"
+    },
+    {
+      "kind": "InputField",
+      "name": "BorderColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:BorderColor>web:Red</ns0:BorderColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "18417664b5f58a589805ae22dd7b02342b122ec05947d71c37369c5419e850f8"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "BorderColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:BorderColor>#123456</ns0:BorderColor></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "85cc002cbcfe73b15180e57bfe021519f4420455c3c7507a4976e48e71530140"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "BorderColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:BorderColor>web:Red</ns0:BorderColor></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5db64b01ba078e6ca04947cbdc11701dbebed99185be8de42e61d72994d77fca"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Single"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Single</ns1:style></ns0:Border></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b4609202d33dc9eacd17dc5736dde42adb8bf9aa905f456673b87074a917c155"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Double"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Double</ns1:style></ns0:Border></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1da9e4146d6e726314bafbe0aa1effe3238555994586ce77763e67068ae86412"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Underline"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Underline</ns1:style></ns0:Border></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1565f9622ac11d0ce522d891ec6889dbbe60cc0b7780c6e7a904be30e57cb986"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "DoubleUnderline"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">DoubleUnderline</ns1:style></ns0:Border></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "69d65209275364eb1108b1788e512c6ca5ae74a0a9758c918979116034d314ed"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Overline"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Overline</ns1:style></ns0:Border></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c547ea185f88e100dbbd05c0da76be8c23b352f4fca9df73eeec8a3ddf89dba4"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Embossed"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Embossed</ns1:style></ns0:Border></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "922384961bf216da14505d5e8f4b30364a2b0fd6807d125fb8ebaef6236a3cb7"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Indented"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Indented</ns1:style></ns0:Border></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "a755b23639159e528a4d4c392112a1a09f2b3adf0b850769983bed7faaeb3333"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "WithoutBorder"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">WithoutBorder</ns1:style></ns0:Border></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "dbd147051900abee5f494130b2d2338c14ef01561ff8625637a719acb9d6e6c2"
+    },
+    {
+      "kind": "LabelField",
+      "name": "BorderColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:BorderColor>#123456</ns0:BorderColor></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "994fa16be5efcc40e586fb7c771fdee2114d76d7ac22ac07ceadcebc192793ee"
+    },
+    {
+      "kind": "LabelField",
+      "name": "BorderColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:BorderColor>web:Red</ns0:BorderColor></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0fb2bfada7e075a19e97d796964460d7acff49d8e3b8e3346cef5bbe5b5b008e"
+    },
+    {
+      "kind": "Button",
+      "name": "BorderColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:BorderColor>#123456</ns0:BorderColor></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3e9fa34adaad0673e836e56650d360485de13f1f3cc3d4fad599766bd6003191"
+    },
+    {
+      "kind": "Button",
+      "name": "BorderColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:BorderColor>web:Red</ns0:BorderColor></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "691ce6136c821cb0ae5850800f622aac09bf5c8303f57c2378d7888d971a84c2"
+    },
+    {
+      "kind": "Table",
+      "name": "BorderColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:BorderColor>#123456</ns0:BorderColor></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3ecb56b5308ecc56bbb5d1df983862a74cddeabd1336ac14865b22b80150712b"
+    },
+    {
+      "kind": "Table",
+      "name": "BorderColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:BorderColor>web:Red</ns0:BorderColor></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b9b1fdfeb4f0b3ec3966675a2982c31c5310b5ed6090635f1e90acba21774c2e"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Single"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Single</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1100aaf36cc91b4da4eee068236bf677aac78d460008115b6380dba45052555d"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Double"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Double</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "587e47f404bfa0eb35c871723f643f7650278379cb533023e274924ba648fd7c"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Underline"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Underline</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7ee2fbcd73737b4b8a0a7513dbc48528ed43e350b5b381120abeb3c96059df17"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "DoubleUnderline"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">DoubleUnderline</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5430429e93f194d53794d3c739a1a6e93d9cdf621ee00b522abf1228e7de7d60"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Overline"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Overline</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "76813a32b9287639988f18527e2dc54e3c56ffaceb6078fb6ca934017dc155d1"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Embossed"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Embossed</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5c9a7460160ec05216e666367574b1fefd5070f31be3f74dd707cc31c2d3c295"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Indented"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Indented</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "621ec3b2928401122124c7ea3da55019a691a759c32f7fa80fc266866704a64b"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "WithoutBorder"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">WithoutBorder</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ba809bb3e0b6b21a72041dc80120cc5446854100d1e1de44a3c60f453a69409b"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "BorderColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:BorderColor>#123456</ns0:BorderColor></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d68e0382a8422ca72851935b56a9059483f585aea6cf5b4a1304ad53513ed07b"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "BorderColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:BorderColor>web:Red</ns0:BorderColor></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "13414b799be37730da34e741c438052cec9c4164326e1da74bc063d75f7e5727"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Single"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Single</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5f4a05a4911c5964a92b5e63e6a966159a1e5ca4f73915b02f02e9cd8a93ad37"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Double"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Double</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "28b6089d95dc9faa72f7dcb5379728f781e3fabbe09b416540a4130b3b899fa2"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Underline"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Underline</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8c04d9d692ec18ead4cd4149bb1b1332afd146b91a88b684474b778a06a0d0cb"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "DoubleUnderline"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">DoubleUnderline</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "9882be4042e00f876387f48cebd4a0f6f749ce994777b468351f3ed4e9238627"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Overline"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Overline</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7c75521b5722b1599e972936f073a5e134483ce0f375600458060f3c8012c54b"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Embossed"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Embossed</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d9be286bfd6e25708da418e9c5a8de67c853e440232a21f0fa1d5958081095e5"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "Indented"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Indented</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8a10395f10f0ef73f2f0d2b7018d41f960493cb7bf5b915f3fb7a05786f6b736"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "width": "1",
+        "style": "WithoutBorder"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"1\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">WithoutBorder</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0b5d57521049694e88d741a335d17e326c6cafe1c59c951e194a0b0fcd4e73f8"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "BorderColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:BorderColor>#123456</ns0:BorderColor></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "16c852e22b23851095455b88a2e0d98d6b5e256e5938025afe7d8cfd4d4371db"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "BorderColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:BorderColor>web:Red</ns0:BorderColor></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7f4972aabeca65670243e67ec4b39e0aa7154c28546e0fa1dfb26a79e7b1f6f8"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "style": "Single",
+        "width": "0"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"0\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Single</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "688b6d729c7a5e5203b9b7b9d654b7ea04eeb45262b8d7ccb6b8c601d8c2d3fe"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "style": "Single",
+        "width": "2"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"2\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Single</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d7b9b1bf61c8f6ba57e988a5809289808a5a8476e63de7bcef5b5a5e640207c3"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "style": "Single",
+        "width": "5"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"5\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Single</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "f24a04dde4423b47f1ff6bab0bf20355b947012819db7b136f360d40b0db4b82"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "style": "Double"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border><ns1:style xsi:type=\"v8ui:ControlBorderType\">Double</ns1:style></ns0:Border></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1ea02a62e4ddd16fb5c5fa42f72ec9795c17d55222c84966de958a7371b62383"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "width": "3"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"3\" /></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5f583d65bc30474e3223feb6dfc18d74490cfe6d02d096f27d9ab52f3d654d53"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {},
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border /></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "e9a128d277aa9edfade166bc16b2504f4967909cf4eeddab3c173789eab156ff"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "style": "Single",
+        "width": "0"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"0\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Single</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "316ebf284e52a1a46e9ea0b85a3c202ff781684c2eeee00c7d30082daee30c7e"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "style": "Single",
+        "width": "2"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"2\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Single</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1931c40a72951c242d35a5d1a18563748146e186279dce21ac177f4080b9dd9a"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "style": "Single",
+        "width": "5"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"5\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Single</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "2ae2506dd105f1f93d31376ea89d2fde2c997a968f69c4156d3e7ca4849180ca"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "style": "Double"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border><ns1:style xsi:type=\"v8ui:ControlBorderType\">Double</ns1:style></ns0:Border></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "a3632172c396f05ff02c5182c64dc67a79fb749456518b9d0e4421236a15014e"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {
+        "width": "3"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border width=\"3\" /></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "f0ceb6b4713016c90c6aaa419c076115ee7527b1609d5e06d3fe9a76a57e1247"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Border",
+      "value": {},
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Border /></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d4a6555ea04a29b927e7333ea6d68b8cf4ba3544f74ab330a55786398657b307"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "ref": "style:ControlBorder"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border ref=\"style:ControlBorder\" /></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "28199b7e47f154ee69685f4c22def68c48211c2238236624142f3b528ee20030"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Border",
+      "value": {
+        "ref": "style:ControlBorder",
+        "width": "2"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Border ref=\"style:ControlBorder\" width=\"2\" /></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "f028d60acdeee65ff5ab475a5b8f82075e78d235924e759bbf345e3a463725fc"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "style": "Double",
+        "width": "2"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"2\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Double</ns1:style></ns0:Border></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d2e7580501919256660f86ad9a61ea4d95e19e085e3c7460bae258de48203eb4"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {},
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border /></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "974a0d96c4f91046e586a8e445695cba799d817402ae6e68ff058cfc4cd7a988"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "width": "3"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"3\" /></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "db6bf56d591759e77e2988b3ec2004c4ad5da010ac5c1f9f895cbc880d29c50e"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Border",
+      "value": {
+        "style": "Single",
+        "width": "5"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/ui\" xmlns:ns3=\"http://v8.1c.ru/8.1/data/core\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Border width=\"5\"><ns1:style xsi:type=\"v8ui:ControlBorderType\">Single</ns1:style></ns0:Border></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns3:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns3:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "2ce5151c3cce5ea89e53bbe2eced27791fe143a67fe8f99ea67cfcb50bfcfcca"
+    }
+  ]
+}

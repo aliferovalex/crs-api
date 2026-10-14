@@ -4,7 +4,7 @@ import unittest
 import uuid
 import xml.etree.ElementTree as E
 import test_constant_serializer as const
-import catalog_serializer as cat
+import flat_object_serializer as cat
 import constant_serializer as c
 import metadata_serializer as s
 
@@ -17,7 +17,7 @@ def xml():
 
 class CatalogSerializerTests(unittest.TestCase):
     def test_generated_types_and_common_properties(self):
-        oid,name,body,ids=cat.catalog_xml(xml())
+        oid,name,body,ids=cat.object_xml(xml(), '8.5.1.1529', 'Catalog')
         n=s.Parser(body.decode('utf-8-sig')).documents()[0][1]
         self.assertEqual((oid,name),(const.CID,'XML_Catalog'))
         self.assertEqual([s.val(n[i]) for i in list(range(1,9))+[34,35]],ids)
@@ -34,11 +34,11 @@ class CatalogSerializerTests(unittest.TestCase):
             for key in ('TypeId','ValueId'):
                 value=str(uuid.uuid4());ids.append(value);E.SubElement(node,'{%s}%s'%(c.READABLE,key)).text=value
         text=E.tostring(root,encoding='unicode')
-        self.assertEqual(cat.catalog_xml(text)[3],ids)
-        self.assertEqual(cat.catalog_xml(text)[2],cat.catalog_xml(text)[2])
+        self.assertEqual(cat.object_xml(text, '8.5.1.1529', 'Catalog')[3],ids)
+        self.assertEqual(cat.object_xml(text, '8.5.1.1529', 'Catalog')[2],cat.object_xml(text, '8.5.1.1529', 'Catalog')[2])
         info[1][0].text=ids[0]
         with self.assertRaisesRegex(ValueError,'Duplicate generated'):
-            cat.catalog_xml(E.tostring(root,encoding='unicode'))
+            cat.object_xml(E.tostring(root,encoding='unicode'), '8.5.1.1529', 'Catalog')
 
     def test_unsupported_children_properties_and_platform(self):
         cases=[xml().replace('<ChildObjects/>','<ChildObjects><Attribute/></ChildObjects>'),
@@ -46,8 +46,8 @@ class CatalogSerializerTests(unittest.TestCase):
                xml().replace('</Properties>','<Name>Duplicate</Name></Properties>'),
                '<!DOCTYPE x>'+xml()]
         for text in cases:
-            with self.subTest(text=text),self.assertRaises(ValueError):cat.catalog_xml(text)
-        with self.assertRaisesRegex(ValueError,'platform'):cat.catalog_xml(xml(),'8.5.4.1878')
+            with self.subTest(text=text),self.assertRaises(ValueError):cat.object_xml(text, '8.5.1.1529', 'Catalog')
+        with self.assertRaisesRegex(ValueError,'platform'):cat.object_xml(xml(),'8.5.4.1878', 'Catalog')
 
     def test_catalog_creation_graph_and_empty_features(self):
         request=const.fixture('8.5.1.1529')

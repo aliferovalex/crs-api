@@ -13,6 +13,7 @@ import sys
 import uuid
 import xml.etree.ElementTree as ET
 import zlib
+from pathlib import Path
 from dataclasses import dataclass
 import metadata_identifiers as identifiers
 import platform_profiles as platforms
@@ -24,7 +25,6 @@ ZERO = "00000000-0000-0000-0000-000000000000"
 SERIALIZER = bytes.fromhex("0201534b6ff4888dc14ea0d5ebb6bda0a70d")
 EOF_MARKER = bytes.fromhex("eee6eb24e5811f44ab292f34ce20ab33")
 HEADER = struct.pack("<III", 0x11223344, 2, 3)
-INDEX_HEADER = bytes.fromhex("11223344") + struct.pack("<II", 2, 3)
 MAX_BYTES = 16 * 1024 * 1024
 PROPERTY_SLOTS = {'NamePrefix': 42, 'Vendor': 14, 'Version': 15, 'UpdateCatalogAddress': 16}
 ROOT_FEATURE_CLASS = identifiers.group_id('General')
@@ -142,7 +142,8 @@ def render_native_text(node):
 
 
 def native_body_bytes(documents):
-    return b"\xef\xbb\xbf" + ",".join(render_native_text(x) for x in documents).encode("utf-8")
+    from v8unpack_backend import assemble,to_model
+    return assemble(to_model(documents))
 
 
 def record(data):
@@ -253,38 +254,6 @@ def metadata_relations(relation):
     return pairs
 
 
-def xml_comment(before_text, after_text, object_id, name, current_comment):
-    if "<!DOCTYPE" in before_text.upper() or "<!DOCTYPE" in after_text.upper():
-        raise ValueError("DOCTYPE is unsupported")
-    before, after = ET.fromstring(before_text), ET.fromstring(after_text)
-    def target(root):
-        configs = [e for e in root.iter() if e.tag.rsplit("}", 1)[-1] == "Configuration"]
-        if len(configs) != 1 or configs[0].get("uuid", "").lower() != object_id.lower():
-            raise ValueError("XML must contain the requested Configuration UUID")
-        props = [e for e in configs[0] if e.tag.rsplit("}", 1)[-1] == "Properties"]
-        if len(props) != 1:
-            raise ValueError("Missing or duplicate Configuration.Properties")
-        comments = [e for e in props[0] if e.tag.rsplit("}", 1)[-1] == "Comment"]
-        names = [e for e in props[0] if e.tag.rsplit("}", 1)[-1] == "Name"]
-        if len(comments) != 1 or len(names) != 1 or (names[0].text or "") != name or len(comments[0]):
-            raise ValueError("Invalid Name or Comment in XML")
-        return comments[0]
-    source, changed = target(before), target(after)
-    if (source.text or "") != current_comment:
-        raise ValueError("Baseline XML Comment does not match the server snapshot")
-    new_comment = changed.text or ""
-    if new_comment == current_comment:
-        raise ValueError("XML Comment has not changed")
-    source.text = changed.text
-    def canonical(e):
-        # Ignore indentation between elements, preserve all leaf property text.
-        return (e.tag, sorted(e.attrib.items()), (e.text or "") if not len(e) else (e.text or "").strip(),
-                (e.tail or "").strip(), tuple(canonical(c) for c in e))
-    if canonical(before) != canonical(after):
-        raise ValueError("Only Configuration.Comment may change; other XML changes are unsupported")
-    return new_comment
-
-
 def common_properties(node, object_id, platform='8.5.4.1878'):
     # Configuration stores common properties under its feature ID, not root UUID.
     if (len(node) != 1 or not isinstance(node[0], list) or len(node[0]) < 2
@@ -354,7 +323,7 @@ def synonym_value(node):
     return pairs
 
 
-def xml_property_patches(before_text, after_text, object_id, common, documents, platform='8.5.4.1878'):
+def xml_property_patches(before_text, after_text, object_id, common, documents, platform='8.5.4.1878', allowed=None,allow_unchanged=False):
     if '<!DOCTYPE' in before_text.upper() or '<!DOCTYPE' in after_text.upper():
         raise ValueError('DOCTYPE is unsupported')
     before, after = ET.fromstring(before_text), ET.fromstring(after_text)
@@ -395,7 +364,7 @@ def xml_property_patches(before_text, after_text, object_id, common, documents, 
         return pairs
     patches = []
     props = None
-    for key in ('Comment', 'Synonym', *PROPERTY_SLOTS):
+    for key in allowed if allowed is not None else ('Comment', 'Synonym', *PROPERTY_SLOTS):
         old, new = unique(source, key, False), unique(changed, key, False)
         if old is None and new is None:
             continue
@@ -428,23 +397,23 @@ def xml_property_patches(before_text, after_text, object_id, common, documents, 
         old[:] = copy.deepcopy(list(new))
     if canonical(before) != canonical(after):
         raise ValueError('Unsupported XML changes outside supported Configuration properties')
-    if not patches:
+    if not patches and not allow_unchanged:
         raise ValueError('Supported XML properties have not changed')
     return patches
 
 
-def configuration_xml_values(after_text, object_id, common, documents, platform):
+def configuration_xml_values(after_text, object_id, common, documents, platform, allowed=None):
     """Read every supported target property, including unchanged values.
 
-    The baseline validator still protects unsupported XML sections. It is not
-    used as a list of changes to apply.
+    XML validation protects unsupported sections separately. All provided target
+    values are serialized, including unchanged values.
     """
     root = ET.fromstring(after_text)
     config = next(e for e in root.iter() if e.tag.rsplit('}',1)[-1]=='Configuration')
     properties = next(e for e in config if e.tag.rsplit('}',1)[-1]=='Properties')
     values = {e.tag.rsplit('}',1)[-1]:e for e in properties}
     result=[]
-    for key in ('Comment','Synonym',*PROPERTY_SLOTS):
+    for key in allowed if allowed is not None else ('Comment','Synonym',*PROPERTY_SLOTS):
         if key not in values:
             continue
         node=values[key]
@@ -457,6 +426,109 @@ def configuration_xml_values(after_text, object_id, common, documents, platform)
             native=atom(node.text or '',True)
         result.append((token.start,token.end,render(native)))
     return result
+
+
+def configuration_baseline_from_snapshot(after_text, object_id, common, documents, platform, context):
+    """Validate a target XML against the native snapshot, without a prior dump.
+
+    Unmapped properties are accepted only for the verified default native profile.
+    Omitted properties remain intact; children and internal IDs cannot be edited.
+    """
+    if '<!DOCTYPE' in after_text.upper():
+        raise ValueError('DOCTYPE is unsupported')
+    root = ET.fromstring(after_text)
+    local = lambda e: e.tag.rsplit('}', 1)[-1]
+    if local(root) != 'MetaDataObject' or len(root) != 1 or local(root[0]) != 'Configuration':
+        raise ValueError('Expected one Configuration XML object')
+    if any(key != 'version' for key in root.attrib) or root.get('version', '2.21') != '2.21':
+        raise ValueError('Unsupported Configuration XML version or attributes')
+    config = root[0]
+    if config.attrib != {'uuid': object_id}:
+        raise ValueError('XML must contain the requested Configuration UUID')
+    sections = {}
+    for node in config:
+        key = local(node)
+        if key not in ('Properties', 'InternalInfo', 'ChildObjects') or key in sections or node.attrib:
+            raise ValueError('Unsupported or duplicate Configuration section: ' + key)
+        sections[key] = node
+    if 'Properties' not in sections:
+        raise ValueError('Missing Configuration.Properties')
+    props = sections['Properties']; names = [local(n) for n in props]
+    if len(set(names)) != len(names):
+        raise ValueError('Duplicate XML property')
+    supported = {'Name', 'Comment', 'Synonym', *PROPERTY_SLOTS}
+    for node in props:
+        if local(node) in supported and (node.attrib or (local(node) != 'Synonym' and len(node))):
+            raise ValueError('Unsupported XML property attributes or children')
+    unmapped = [n for n in props if local(n) not in supported]
+    def canonical(e):
+        return [e.tag, [list(pair) for pair in sorted(e.attrib.items())],
+                (e.text or '') if not len(e) else (e.text or '').strip(), [canonical(c) for c in e]]
+    if unmapped:
+        if not platforms.legacy(platform):
+            raise ValueError('Unmapped Configuration properties require the verified legacy profile')
+        profile = json.loads(Path(__file__).with_name('configuration_profile_851.json').read_text(encoding='utf-8'))
+        native = configuration_properties(documents, platform)
+        if render(common[5:]) != profile['common_tail'] or any(render(native[int(i)]) != value for i, value in profile['native_slots'].items()):
+            raise ValueError('Source Configuration properties are outside the verified native profile')
+        # The default language is a reference, so resolve its actual name from context.
+        import constant_serializer as c
+        objects = c.context_objects(context)
+        for node in unmapped:
+            key = local(node)
+            if key == 'DefaultLanguage':
+                lang = val(native[10])
+                expected = '' if lang == ZERO else 'Language.' + val(objects[lang][0][9])
+                if node.attrib or len(node) or (node.text or '') != expected:
+                    raise ValueError('Unsupported Configuration.DefaultLanguage change')
+            elif key not in profile['xml_properties'] or canonical(node) != profile['xml_properties'][key]:
+                raise ValueError('Unsupported Configuration property: ' + key)
+    if 'InternalInfo' in sections:
+        actual = {ROOT_FEATURE_CLASS: val(common[1][2]).lower()}
+        def ids(node):
+            result = []
+            if isinstance(node, list):
+                if len(node) == 3 and all(isinstance(x, Atom) for x in node) and [val(x) for x in node[:2]] == ['1','0']:
+                    result.append(val(node[2]).lower())
+                for child in node: result.extend(ids(child))
+            return result
+        for group in documents[0][3:]:
+            if isinstance(group, list) and len(group) == 2 and isinstance(group[0], Atom):
+                if val(group[0]) == ROOT_FEATURE_CLASS: continue
+                found = ids(group[1])
+                if len(found) == 1: actual[val(group[0])] = found[0]
+        expected = {}
+        for node in sections['InternalInfo']:
+            if local(node) != 'ContainedObject' or node.attrib or len(node) != 2 or [local(n) for n in node] != ['ClassId','ObjectId'] or any(n.attrib or len(n) for n in node):
+                raise ValueError('Unsupported Configuration.InternalInfo')
+            cls, oid = [(n.text or '').lower() for n in node]
+            if cls in expected: raise ValueError('Duplicate internal class')
+            expected[cls] = oid
+        if expected != actual:
+            raise ValueError('XML internal UUIDs do not match native body')
+    if 'ChildObjects' in sections:
+        import constant_serializer as c
+        objects = c.context_objects(context)
+        expected = []
+        for oid, cls in c.children(context_metadata(base64.b64decode(context), object_id)[0]):
+            name = identifiers.class_labels().get(cls)
+            if name is None: raise ValueError('Unknown Configuration child class')
+            expected.append((name, val(objects[oid][0][9])))
+        target = sections['ChildObjects']
+        if any(n.attrib or len(n) for n in target) or sorted((local(n), n.text or '') for n in target) != sorted(expected):
+            raise ValueError('Configuration child changes are unsupported')
+    # Existing validation checks scalar/synonym shape and protects all XML attributes.
+    for node in props:
+        key = local(node)
+        if key == 'Comment': node.text = val(common[4])
+        elif key in PROPERTY_SLOTS: node.text = val(configuration_properties(documents, platform)[PROPERTY_SLOTS[key]])
+        elif key == 'Synonym':
+            node[:] = []
+            for lang, content in synonym_value(common[3]):
+                item = ET.SubElement(node, '{http://v8.1c.ru/8.1/data/core}item')
+                ET.SubElement(item, '{http://v8.1c.ru/8.1/data/core}lang').text = lang
+                ET.SubElement(item, '{http://v8.1c.ru/8.1/data/core}content').text = content
+    return ET.tostring(root, encoding='unicode')
 
 
 def context_metadata(data, object_id):
@@ -476,8 +548,13 @@ def context_metadata(data, object_id):
 
 
 def serialize(request):
+    import packet_builder as packets
     platforms.profile(request['platform'])
-    for key in ('snapshot', 'context', 'before_xml', 'after_xml'):
+    mode = request.get('mode', 'comment')
+    if mode not in ('comment', 'properties'):
+        raise ValueError('Unsupported serialization mode')
+    allowed = ('Comment',) if mode == 'comment' else None
+    for key in ('snapshot', 'context', 'after_xml'):
         if not isinstance(request[key], str) or len(request[key]) > MAX_BYTES * 2:
             raise ValueError("Oversized or invalid serializer input")
     snapshot = base64.b64decode(request["snapshot"], validate=True)
@@ -511,10 +588,15 @@ def serialize(request):
     text = original_raw.decode("utf-8-sig")
     documents = Parser(text).documents()
     common = common_properties(documents, object_id, request['platform'])
-    if platforms.legacy(request['platform']):
-        if '<!DOCTYPE' in request['before_xml'].upper():
+    before_xml = request.get('before_xml')
+    if before_xml is None:
+        before_xml = configuration_baseline_from_snapshot(request['after_xml'], object_id, common, documents, request['platform'], request['context'])
+    if not isinstance(before_xml, str) or len(before_xml) > MAX_BYTES * 2:
+        raise ValueError('Oversized or invalid baseline XML')
+    if platforms.legacy(request['platform']) and request.get('before_xml') is not None:
+        if '<!DOCTYPE' in before_xml.upper():
             raise ValueError('DOCTYPE is unsupported')
-        before_root = ET.fromstring(request['before_xml'])
+        before_root = ET.fromstring(before_xml)
         refs = []
         for contained in before_root.iter():
             if contained.tag.rsplit('}', 1)[-1] == 'ContainedObject':
@@ -523,32 +605,18 @@ def serialize(request):
                     refs.append(fields.get('ObjectId', '').lower())
         if refs != [val(common[1][2]).lower()]:
             raise ValueError('XML common properties UUID does not match native body')
-    mode = request.get('mode', 'comment')
-    if mode == 'comment':
-        new_comment = xml_comment(request["before_xml"], request["after_xml"], object_id, val(common[2]), val(common[4]))
-        patches = [(common[4].start, common[4].end, render(atom(new_comment, True)))]
-    elif mode == 'properties':
-        xml_property_patches(request['before_xml'], request['after_xml'], object_id, common, documents, request['platform'])
-        patches = configuration_xml_values(request['after_xml'], object_id, common, documents, request['platform'])
-    else:
-        raise ValueError('Unsupported serialization mode')
+    xml_property_patches(before_xml, request['after_xml'], object_id, common, documents, request['platform'], allowed)
+    patches = configuration_xml_values(request['after_xml'], object_id, common, documents, request['platform'], allowed)
     new_text = text
     for start, end, replacement in sorted(patches, reverse=True):
         new_text = new_text[:start] + replacement + new_text[end:]
     new_raw = b"\xef\xbb\xbf" + new_text.encode("utf-8")
     new_data = compress(new_raw)
     # Experimental client version; this does not reproduce the native hash algorithm.
-    version_bytes = uuid.uuid4().bytes_le + struct.pack("<I", zlib.crc32(new_raw))
-    local = version_bytes.hex()
-    original64 = base64.b64encode(bytes.fromhex(original)).decode()
-    local64 = base64.b64encode(version_bytes).decode()
-    m[0], m[5], m[6], m[7], m[8] = atom(6), atom(4294967295), atom(0), atom(original64), atom(local64)
+    version_bytes = packets.content_version(new_raw)
+    packets.commit_metadata(m, bytes.fromhex(original), version_bytes)
     m[15:17] = copy.deepcopy(saved[15:17])
     new_meta = text_bytes(meta)
-    manifest = text_bytes([[atom(0), atom(1), atom(object_id),
-                            atom(hashlib.sha1(new_meta).hexdigest(), True),
-                            atom(hashlib.sha1(new_data).hexdigest(), True), atom(0)]])
-    snapshot_out = storage([new_meta, new_data], manifest)
     features = copy.deepcopy(m[13])
     children = []
     for group in (m[12], m[13]):
@@ -563,61 +631,19 @@ def serialize(request):
     child_types = [atom(len(children))]
     for pair in children:
         child_types.extend(pair)
-    descriptor = [atom(object_id), copy.deepcopy(m[2]), atom(ZERO), copy.deepcopy(m[9]), copy.deepcopy(m[10]),
-                  atom(4294967295), atom(0), copy.deepcopy(m[3]), copy.deepcopy(m[4]), atom(original64), atom(local64), atom(0)]
-    graph = [[atom(1), atom(object_id), descriptor], [atom(1), [atom(object_id)] + features],
-             [atom(1), graph_relations(object_id, m[14])], [atom(1), atom(object_id), copy.deepcopy(m[3])],
-             [atom(1), atom(object_id), atom(1)], [atom(1), atom(object_id), child_types], [atom(0)],
-             [atom(1), atom(object_id), [atom(0)]], [atom(1), atom(object_id), atom(1)],
-             [atom(1), atom(object_id), atom(1)], atom(0), [atom(0)], atom(0), [atom(0)], [atom(1), [atom(0)]]]
-    raw = record(text_bytes([graph])) + struct.pack("<I", 0) + record(snapshot_out)
-    payload = SERIALIZER + compress(raw)
-    ET.register_namespace("crs", NS)
-    root = ET.Element("{%s}call" % NS, alias=request["repository"], name="DevDepot_commitObjects", version=request["platform"])
-    def element(parent, tag, value=None, text=None):
-        e = ET.SubElement(parent, "{%s}%s" % (NS, tag))
-        if value is not None:
-            e.set("value", str(value))
-        e.text = text
-        return e
-    params = element(root, "params")
-    element(params, "clientVerID", str(uuid.UUID(request["repository_version"])))
-    element(params, "data", text=base64.b64encode(payload).decode())
-    for section in ("requested", "changes"):
-        entry = element(element(params, section), "value")
-        element(entry, "first", object_id)
-        second = element(entry, "second")
-        detail = element(second, "_super") if section == "changes" else second
-        supernode = element(detail, "_super")
-        element(supernode, "id", object_id)
-        element(supernode, "classID", ROOT_CLASS)
-        for key, value in (("name", val(m[9])), ("pos", val(m[10])), ("verNum", -1), ("selfVerNum", 0),
-                           ("parentID", val(m[3])), ("ownerID", val(m[4]))):
-            element(detail, key, value)
-        v = element(detail, "version")
-        element(v, "original", original)
-        element(v, "local", local)
-        element(detail, "removed", "false")
-        if section == "changes":
-            element(second, "externals")
-    element(params, "objectsToRemove")
-    element(params, "code", "")
-    element(params, "comment", text="")
-    element(params, "features")
-    return ET.tostring(root, encoding="unicode"), new_raw
+    graph = packets.change_graph(m, child_types, features)
+    payload = packets.assemble(graph, [packets.ObjectRecord(object_id, new_meta, new_data)])
+    xml = packets.request_xml(request, payload, {object_id: meta}, {object_id: bytes.fromhex(original)}, {object_id: version_bytes})
+    return xml, new_raw
 
 
 def main():
     # All paths and object data arrive through JSON, never shell interpolation.
-    from pathlib import Path
-    try:
-        request = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8-sig"))
-        xml, _ = serialize(request)
-        result = {"ok": True, "request_xml": xml}
-    except (ValueError, KeyError, IndexError, TypeError, zlib.error, ET.ParseError) as error:
-        result = {"ok": False, "error": str(error)}
-    Path(sys.argv[2]).write_text(json.dumps(result, ensure_ascii=False), encoding="utf-8")
+    from serializer_cli import run
+    run(lambda request: {"request_xml": serialize(request)[0]})
 
 
 if __name__ == "__main__":
+    # Helpers import this module too; retain one AST class identity in CLI mode.
+    sys.modules['metadata_serializer'] = sys.modules[__name__]
     main()

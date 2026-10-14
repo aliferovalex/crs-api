@@ -1,10 +1,10 @@
 """Metadata Form.xml beside Ext/Form.xml: complete verified description."""
-import copy,json
-from pathlib import Path
+import copy
 from xml.etree import ElementTree as E
 import metadata_serializer as s
 import constant_serializer as c
 import platform_profiles as platforms
+import managed_form_profiles as form_profiles
 
 Q='{'+c.MD+'}'
 
@@ -22,6 +22,7 @@ def read(text,kind,platform):
     if len(fields)!=len(obj[0]) or any(v.tag!=Q+k for k,v in fields.items()):raise ValueError('Duplicate or foreign form metadata property')
     defaults={'FormType':'Managed','IncludeHelpInContents':'false','UseInInterfaceCompatibilityMode':'Any'}
     if kind=='CommonForm':defaults.update(UseStandardCommands='true',ExtendedPresentation='',Explanation='')
+    if kind in ('DataProcessor','Report'):defaults.update(ExtendedPresentation='')
     for key,node in fields.items():
         if key in ('Name','Synonym','Comment'):continue
         if key=='UsePurposes':
@@ -41,10 +42,10 @@ def read(text,kind,platform):
 
 def convert(raw,text,kind,platform):
     oid,name,common=read(text,kind,platform)
-    docs=s.Parser(raw.decode('utf-8-sig')).documents();previous=docs[0][1][1][1]
+    docs=s.Parser(raw.decode('utf-8-sig')).documents();previous=form_profiles.common(docs[0],kind)
     if s.val(previous[1][2])!=oid or s.val(previous[2])!=name:raise ValueError('Form metadata UUID or name mismatch; rename is unsupported')
-    layout=json.loads(Path(__file__).with_name({'Catalog':'catalog_form_layout_851.json','Document':'document_form_layout_851.json','CommonForm':'common_form_layout_851.json'}[kind]).read_text(encoding='utf-8'))
-    baseline=s.Parser(layout['body_template']).documents();baseline[0][1][1][1]=copy.deepcopy(previous)
+    layout=form_profiles.layout(kind)
+    baseline=s.Parser(layout['body_template']).documents();form_profiles.replace_common(baseline[0],kind,copy.deepcopy(previous))
     if s.render(baseline)!=s.render(docs):raise ValueError('Source form properties are outside the verified XML profile')
     for index in (2,3,4):previous[index]=copy.deepcopy(common[index])
     return s.native_body_bytes(docs)

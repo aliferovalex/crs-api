@@ -5,7 +5,7 @@ import unittest
 import uuid
 import test_catalog_serializer as catalog
 import test_constant_serializer as const
-import catalog_form_serializer as form
+import managed_form_serializer as form
 import metadata_serializer as s
 import constant_serializer as c
 
@@ -17,7 +17,7 @@ def fixture():
     m[1]=s.atom(const.CID);m[2]=s.atom(c.identifiers.class_id('Catalog'));m[3]=s.atom(request['object_id'])
     m[9]=s.atom('XML_Catalog',True);m[11]=m[12]=m[13]=[s.atom(0)]
     m[14]=[s.atom(1),m[3],s.atom(1)];m[15]=s.atom(c.identifiers.class_id('Catalog')+'.XML_Catalog',True)
-    oid,name,body,ids=catalog.cat.catalog_xml(catalog.xml());data=s.compress(body);metadata=s.text_bytes(docs)
+    oid,name,body,ids=catalog.cat.object_xml(catalog.xml(), '8.5.1.1529', 'Catalog');data=s.compress(body);metadata=s.text_bytes(docs)
     manifest=s.text_bytes([[s.atom(0),s.atom(1),s.atom(oid),s.atom(hashlib.sha1(metadata).hexdigest(),True),s.atom(hashlib.sha1(data).hexdigest(),True),s.atom(0)]])
     return dict(platform='8.5.1.1529',object_id=oid,original_version=uuid.UUID(s.val(m[7])).bytes_le.hex()+'00000000',
         snapshot=base64.b64encode(s.storage([metadata,data],manifest)).decode(),

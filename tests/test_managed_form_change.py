@@ -3,7 +3,7 @@ import base64,copy,hashlib,json,struct,unittest,uuid
 from pathlib import Path
 from xml.etree import ElementTree as E
 import test_catalog_attribute_serializer as attributes
-import catalog_attribute_serializer
+import catalog_change_serializer
 import metadata_serializer as s
 import metadata_identifiers as ids
 import external_data
@@ -15,7 +15,7 @@ VER='99999999-9999-4999-8999-999999999999'
 
 
 def fixture():
-    r=attributes.fixture();created=catalog_attribute_serializer.serialize(r)
+    r=attributes.fixture();created=catalog_change_serializer.serialize(r)
     call=E.fromstring(created['request_xml']);raw=s.inflate(base64.b64decode(call.find('{%s}params/{%s}data'%(s.NS,s.NS)).text)[18:])
     _,pos=s.read_record(raw,0);storage,pos=s.read_record(raw,pos+4);meta,pos=s.read_record(storage,12);owner_data,pos=s.read_record(storage,pos)
     owner=s.Parser(meta.decode('utf-8-sig')).documents();m=owner[0];m[0]=s.atom(5);m[5]=m[6]=s.atom(1)

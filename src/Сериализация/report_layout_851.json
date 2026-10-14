@@ -1,0 +1,48 @@
+{
+  "template": "{1,{20,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{0,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,0,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{0},{0},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000},5,{3daea016-69b7-4ed4-9453-127911372fe6,0},{7e7123e0-29e2-11d6-a3c7-0050bae0a776,0},{a3b368c0-29e2-11d6-a3c7-0050bae0a776,0},{b077d780-29e2-11d6-a3c7-0050bae0a776,0},{e7ff38c0-ec3c-47a0-ae90-20c73ca72246,0}}",
+  "defaults": {
+    "UseStandardCommands": "true",
+    "DefaultForm": "",
+    "AuxiliaryForm": "",
+    "MainDataCompositionSchema": "",
+    "DefaultSettingsForm": "",
+    "AuxiliarySettingsForm": "",
+    "DefaultVariantForm": "",
+    "AuxiliaryVariantForm": "",
+    "VariantsStorage": "",
+    "SettingsStorage": "",
+    "IncludeHelpInContents": "false",
+    "ExtendedPresentation": "",
+    "Explanation": ""
+  },
+  "generated_slots": [
+    1,
+    2,
+    12,
+    13
+  ],
+  "generated_categories": [
+    "Object",
+    "Manager"
+  ],
+  "input_fields": [],
+  "child_collections": {"Form": {"kind": "ReportForm", "slot": 5}, "Template": {"kind": "Template", "slot": 3}},
+  "reference_values": {
+    "DefaultForm": {"path": [1, 4], "target": "ReportForm", "owner_kind": "Report"},
+    "MainDataCompositionSchema": {"path": [1, 5], "target": "Template", "owner_kind": "Report", "owned_tag": "Template"},
+    "AuxiliaryForm": {"path": [1, 14], "target": "ReportForm", "owner_kind": "Report"}
+  },
+  "scalar_properties": {
+    "UseStandardCommands": {"path": [1, 7], "values": {"false": 0, "true": 1}},
+    "IncludeHelpInContents": {"path": [1, 11], "values": {"false": 0, "true": 1}}
+  },
+  "localized_properties": {
+    "ExtendedPresentation": [1, 15],
+    "Explanation": [1, 16]
+  },
+  "common_path": [
+    1,
+    3,
+    1
+  ]
+}

@@ -5,17 +5,18 @@ or Designer is used. Native layout is deliberately limited to verified defaults.
 """
 import base64
 import copy
-import hashlib
 import json
 import re
-import struct
-import sys
 import uuid
 import xml.etree.ElementTree as E
-import zlib
+from pathlib import Path
 import metadata_serializer as s
+import type_description_xml as types
+import packet_builder as packets
 import metadata_identifiers as identifiers
 import platform_profiles as platforms
+import object_xml_profiles as profiles
+import object_graph
 
 CLASS = identifiers.class_id('Constant')
 LANGUAGE = identifiers.class_id('Language')
@@ -86,7 +87,7 @@ def inspect(request):
     m = objects[oid][0]
     if s.val(m[2]) != s.ROOT_CLASS or s.val(m[3]) != s.ZERO:
         raise ValueError('Configuration root required')
-    return [child for child, cls in children(m)]
+    return [child for child in object_graph.closure(objects,oid,children) if child!=oid]
 
 def constant_xml(text, platform='8.5.4.1878'):
     platforms.profile(platform)
@@ -135,17 +136,9 @@ def constant_xml(text, platform='8.5.4.1878'):
             if not re.fullmatch('[a-zA-Z][a-zA-Z0-9_-]*',lang) or lang in [pair[0] for pair in synonyms]:
                 raise ValueError('Invalid or duplicate Synonym language')
             synonyms.append((lang,content))
-    typ = fields['Type']
-    if [n.tag for n in typ] != ['{%s}Type'%CORE,'{%s}StringQualifiers'%CORE] or typ[0].text != 'xs:string':
-        raise ValueError('Only String type is supported')
-    qualifiers = typ[1]
-    if typ.attrib or qualifiers.attrib or typ[0].attrib or len(typ[0]) or any(n.attrib or len(n) for n in qualifiers):
-        raise ValueError('Unsupported Type structure')
-    if [n.tag for n in qualifiers] != ['{%s}Length'%CORE,'{%s}AllowedLength'%CORE]:
-        raise ValueError('Unsupported string qualifiers')
-    length = int(qualifiers[0].text)
-    if not 1 <= length <= 1024 or qualifiers[1].text != 'Variable':
-        raise ValueError('Only variable strings of length 1..1024 are supported')
+    pattern=types.read(fields.get('Type'))
+    if not platforms.legacy(platform) and s.val(pattern[1][0])!='S':
+        raise ValueError('Non-string scalar types require the verified legacy profile')
     docs = s.Parser(TEMPLATE).documents();native = docs[0][1];common = native[1][1][1]
     if platforms.legacy(platform):
         common[0] = s.atom(3)
@@ -153,7 +146,7 @@ def constant_xml(text, platform='8.5.4.1878'):
     common[1][2],common[2],common[4] = s.atom(oid),s.atom(name,True),s.atom(value('Comment') if 'Comment' in fields else '',True)
     common[3] = [s.atom(len(synonyms))]
     for lang,content in synonyms:common[3].extend([s.atom(lang,True),s.atom(content,True)])
-    native[1][1][2][1][1] = s.atom(length)
+    native[1][1][2] = pattern
     internal = constant.find('{%s}InternalInfo'%MD)
     ids=[]
     if internal is not None:
@@ -169,33 +162,55 @@ def constant_xml(text, platform='8.5.4.1878'):
     for index,value_ in zip((2,3,4,5,13,14),ids):native[index]=s.atom(value_)
     return oid,name,s.native_body_bytes(docs),ids
 
-def descriptor(m):
-    return [m[1],m[2],m[3],m[9],m[10],m[5],m[6],m[3],m[4],m[7],m[8],s.atom(0)]
-
 def serialize(request):
     kind = request.get("object_type", "Constant")
-    if kind not in ("Constant", "Catalog", "Document", "Enum", "CommonModule"):raise ValueError("Unsupported creation type")
+    if kind not in profiles.creation_types():raise ValueError("Unsupported creation type")
     object_class = identifiers.class_id(kind)
     platforms.profile(request['platform'])
     rid=guid(request['object_id']);objects=context_objects(request['context']);root=objects[rid]
-    inspect(request)
-    oldchildren=children(root[0]);expected={rid}|{oid for oid,_ in oldchildren}
-    allowed_classes = (CLASS,LANGUAGE) + (tuple(identifiers.class_id(v) for v in ('Catalog','Document','Enum','CommonModule')) if platforms.legacy(request['platform']) else ())
-    if any(cls not in allowed_classes for _,cls in oldchildren):
-        raise ValueError('Only a flat Configuration with Languages, Constants, Catalogs, Documents, Enums and CommonModules is supported')
-    if set(request['snapshots'])!=expected:raise ValueError('Snapshots must cover root and all existing children')
+    existing_order=inspect(request)
+    oldchildren=children(root[0]);expected={rid}|set(existing_order)
+    if not platforms.legacy(request['platform']) and expected!={rid}|{oid for oid,_ in oldchildren}:raise ValueError('Modern profile requires a flat object tree')
+    allowed_classes = (CLASS,LANGUAGE) + (tuple(identifiers.class_id(v) for v in profiles.profiles()) if platforms.legacy(request['platform']) else ())
+    if not platforms.legacy(request['platform']) and any(cls not in allowed_classes for _,cls in oldchildren):
+        raise ValueError('Only a flat Configuration with verified object profiles is supported')
+    if set(request['snapshots'])!=expected:raise ValueError('Snapshots must cover the complete object and dependency graph')
     if any(not isinstance(v,str) for v in request['snapshots'].values()) or sum(len(v) for v in request['snapshots'].values())>s.MAX_BYTES*2:
         raise ValueError('Oversized or invalid snapshots')
-    if kind in ('Catalog','Document','Enum','CommonModule'):
-        from flat_object_serializer import object_xml
-        cid,name,body,generated=object_xml(request[kind.lower()+'_xml'], request['platform'],kind)
+    form_inputs=request.get('forms',[]);new_forms=[];form_names={}
+    if not isinstance(form_inputs,list) or len(form_inputs)>256 or (form_inputs and kind!='Catalog'):raise ValueError('Invalid creation forms')
+    for entry in form_inputs:
+        if not isinstance(entry,dict) or set(entry)!={'name','definition_xml','form_xml','module_text'}:raise ValueError('Invalid creation form files')
+        import form_definition_xml
+        fid,fname,_=form_definition_xml.read(entry['definition_xml'],'Catalog',request['platform'])
+        if fname!=entry['name'] or fname.casefold() in {n.casefold() for n in form_names} or fid in form_names.values():raise ValueError('Duplicate or mismatched creation form')
+        if not isinstance(entry['form_xml'],str):raise ValueError('Creation form requires complete Form.xml')
+        form_names[fname]=fid
+    if sum(len(json.dumps(entry).encode('utf-8')) for entry in form_inputs)>s.MAX_BYTES:raise ValueError('Oversized creation forms')
+    if kind!='Constant':
+        if kind=='Catalog':
+            from catalog_object_xml import create
+            cid,name,body,generated=create(request['catalog_xml'],request['platform'],form_names)
+            if form_inputs:
+                import managed_form_serializer
+                owner=s.Parser(body.decode('utf-8-sig')).documents()[0]
+                for entry in form_inputs:
+                    import metadata_references
+                    references=metadata_references.resolve(entry['form_xml'],request)
+                    fid,form_body,external=managed_form_serializer.create_native('Catalog',entry['name'],request['platform'],owner,entry['definition_xml'],entry['form_xml'],entry['module_text'],references)
+                    new_forms.append((fid,entry['name'],form_body,external))
+                generated+=list(form_names.values())
+                if len(set(generated+[cid]))!=len(generated)+1:raise ValueError('Duplicate Catalog, inline or form UUID')
+        else:
+            from flat_object_serializer import object_xml
+            cid,name,body,generated=object_xml(request[kind.lower()+'_xml'], request['platform'],kind,objects)
     else:
         cid,name,body,generated=constant_xml(request['constant_xml'], request['platform'])
     if cid in objects or any(s.val(objects[oid][0][9]).casefold()==name.casefold() for oid,cls in oldchildren if cls==object_class):
         raise ValueError(f'{kind} UUID or name already exists')
     known=set(objects)
     if any(g in known for g in generated):raise ValueError('Generated type UUID collides with an object')
-    raws={};versions={};originals={};externals={};external_data={}
+    raws={};versions={};originals={};externals={};external_data={};inline_streams=[]
     for oid in sorted(expected):
         data=base64.b64decode(request['snapshots'][oid],validate=True);s.validate_storage(data)
         meta,pos=s.read_record(data,12);content,pos=s.read_record(data,pos)
@@ -208,29 +223,23 @@ def serialize(request):
         if {s.val(v) for v in saved[13][1:]}!={s.val(v) for v in m[13][1:]} or s.metadata_relations(saved[14])!=s.metadata_relations(m[14]):
             raise ValueError('Snapshot/context relations or features mismatch')
         m[15:17]=copy.deepcopy(saved[15:17])
-        if oid!=rid and children(m):raise ValueError('Nested object data is unsupported')
         refs=m[11]
-        external_context=objects[oid][2]
-        if s.render(external_context)!='{0}':
-            if (len(refs)!=3 or len(external_context)!=2 or s.val(external_context[0])!='1'
-                    or len(external_context[1])!=3 or s.val(external_context[1][0])!=s.val(refs[1])
-                    or s.val(external_context[1][1])!=s.val(refs[2]) or s.val(external_context[1][2])!='1'):
-                raise ValueError('Unsupported external context')
         # updateInfo lists external versions to retrieve; commit includes only
         # newly supplied streams. Existing streams remain stored on the server.
-        objects[oid][2]=[s.atom(0)]
+        owned={}
         if s.render(refs)!='{0}':
-            if (s.val(m[2])!=identifiers.class_id('CommonModule') or len(refs)!=3
-                    or s.val(refs[0])!='1' or s.val(refs[1])!=oid+'.0'):
-                raise ValueError('Unsupported external object map')
-            version=uuid.UUID(guid(s.val(refs[2]))).bytes_le+bytes(4)
-            refs[2]=s.atom(base64.b64encode(version).decode())
-            externals[oid]=[dict(name=oid+'.0',version=version.hex(),action=0)]
-        if oid!=rid and s.val(m[3])!=rid:raise ValueError('Invalid child parent')
+            object_kind=identifiers.class_labels().get(s.val(m[2]))
+            if object_kind in profiles.profiles():
+                import inline_command_xml as commands
+                layout=json.loads(Path(__file__).with_name(object_kind.lower()+'_layout_851.json').read_text(encoding='utf-8'))
+                if layout.get('command_collections'):owned=commands.streams(s.Parser(s.inflate(content).decode('utf-8-sig')).documents()[0],layout)
+            inline_streams.extend(dict(object_id=oid,name=stream) for stream in owned.values())
+        preserved=packets.preserve_external_versions(objects[oid],oid,owned.values())
+        if preserved:externals[oid]=preserved
         if s.val(m[4])!=s.ZERO:raise ValueError('Owned objects unsupported')
         originals[oid]=uuid.UUID(s.val(m[7])).bytes_le+bytes(4)
         raws[oid]=s.inflate(content)
-        versions[oid]=uuid.UUID(s.val(m[8])).bytes_le+struct.pack('<I',zlib.crc32(raws[oid]))
+        versions[oid]=packets.content_version(raws[oid],uuid.UUID(s.val(m[8])))
     for metadata in objects.values():known.update(re.findall(r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}', s.render(metadata).lower()))
     for raw in raws.values():known.update(re.findall(r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}',raw.decode('utf-8-sig').lower()))
     if any(g in known for g in generated+[cid]):raise ValueError('New UUID collides with existing native data')
@@ -254,104 +263,108 @@ def serialize(request):
     # Existing descriptors must stay identical to their source descriptions.
     # Previously stored duplicate positions require a separate native repair.
     raws[rid]=b'\xef\xbb\xbf'+(text[:row.start]+s.render(updated)+text[row.end:]).encode('utf-8')
-    versions[rid]=uuid.uuid4().bytes_le+struct.pack('<I',zlib.crc32(raws[rid]))
-    versions[cid]=uuid.uuid4().bytes_le+struct.pack('<I',zlib.crc32(body));originals[cid]=versions[cid];raws[cid]=body
+    versions[rid]=packets.content_version(raws[rid])
+    versions[cid]=packets.content_version(body);originals[cid]=versions[cid];raws[cid]=body
     rm=root[0];rmap=rm[12];constrow=next((r for r in rmap[1:] if s.val(r[0])==object_class),None)
     if constrow is None:rmap[0]=s.atom(len(rmap));rmap.append([s.atom(object_class),s.atom(1),s.atom(cid)])
     else:constrow[1]=s.atom(len(constrow)-1);constrow.append(s.atom(cid))
     # Native relation arrays are column-wise: all UUIDs, then all flags.
     count=int(s.val(rm[14][0]));relationids=list(rm[14][1:1+count]);flags=list(rm[14][1+count:])
-    if len(flags)!=count or {s.val(n) for n in relationids}!={oid for oid,_ in oldchildren}:
+    if len(flags)!=count or not {oid for oid,_ in oldchildren}.issubset({s.val(n) for n in relationids}):
         raise ValueError('Invalid root relation columns')
     rm[14]=[s.atom(count+1)]+relationids+[s.atom(cid)]+flags+[s.atom(1)]
     original64=base64.b64encode(originals[cid]).decode()
     cm=[s.atom(6),s.atom(cid),s.atom(object_class),s.atom(rid),s.atom(s.ZERO),s.atom(4294967295),s.atom(0),s.atom(original64),s.atom(original64),s.atom(name,True),s.atom(constant_positions[cid]),[s.atom(0)],[s.atom(0)],[s.atom(0)],[s.atom(1),s.atom(rid),s.atom(1)],s.atom(object_class+'.'+name,True),s.atom(0)]
     objects[cid]=[cm,copy.deepcopy(root[1]),[s.atom(0)]]
+    if kind not in ('Constant','Catalog'):
+        layout=json.loads(Path(__file__).with_name(kind.lower()+'_layout_851.json').read_text(encoding='utf-8'))
+        if layout.get('inline_collections'):
+            import inline_object_xml
+            features=inline_object_xml.features(s.Parser(body.decode('utf-8-sig')).documents()[0],layout)
+            cm[13]=[s.atom(len(features))]+[s.atom(v) for v in features]
+        dependencies=[];native=s.Parser(body.decode('utf-8-sig')).documents()[0]
+        for profile in layout.get('reference_values',{}).values():
+            value=native
+            for slot in profile['path']:value=value[slot]
+            key=s.val(value)
+            if key!=s.ZERO and key not in dependencies:dependencies.append(key)
+        for profile in layout.get('reference_lists',{}).values():
+            row=native
+            for slot in profile['path']:row=row[slot]
+            for item in row[2:]:
+                value=item
+                for slot in profile['id_path']:value=value[slot]
+                key=s.val(value)
+                if key not in dependencies:dependencies.append(key)
+        if dependencies:cm[14]=[s.atom(len(dependencies)+1),s.atom(rid)]+[s.atom(v) for v in dependencies]+[s.atom(1)]+[s.atom(0) for v in dependencies]
+    if kind=='Catalog':
+        from catalog_object_xml import inline_features
+        inline=inline_features(s.Parser(body.decode('utf-8-sig')).documents()[0])
+        cm[13]=[s.atom(len(inline))]+[s.atom(value) for value in inline]
+        if new_forms:
+            cls=identifiers.class_id('CatalogForm');cm[12]=[s.atom(1),[s.atom(cls),s.atom(len(new_forms))]+[s.atom(fid) for fid,_,_,_ in new_forms]]
+            # The collection order in the Catalog XML defines form positions.
+            positions={s.val(value):i for i,value in enumerate(s.Parser(body.decode('utf-8-sig')).documents()[0][7][2:])}
+            for fid,fname,form_body,external in new_forms:
+                versions[fid]=packets.content_version(form_body);originals[fid]=versions[fid];raws[fid]=form_body
+                external_version=packets.external_version();version64=base64.b64encode(external_version).decode();form64=base64.b64encode(versions[fid]).decode();external_name=fid+'.0'
+                fm=[s.atom(6),s.atom(fid),s.atom(cls),s.atom(cid),s.atom(s.ZERO),s.atom(4294967295),s.atom(0),s.atom(form64),s.atom(form64),s.atom(fname,True),s.atom(positions[fid]),
+                    [s.atom(1),s.atom(external_name,True),s.atom(version64)],[s.atom(0)],[s.atom(0)],[s.atom(1),s.atom(cid),s.atom(1)],s.atom(s.val(cm[15])+cls+'.'+fname,True),s.atom(0)]
+                objects[fid]=[fm,copy.deepcopy(root[1]),[s.atom(1),[s.atom(external_name,True),s.atom(version64),s.atom(0)]]]
+                external_data[fid]=[(external_name,s.compress(external))];externals[fid]=[dict(name=external_name,version=external_version.hex(),action=0)]
     if kind=='CommonModule':
         from commonmodule_serializer import module_container
-        external_name=cid+'.0';external_version=uuid.uuid4().bytes_le+bytes(4)
+        external_name=cid+'.0';external_version=packets.external_version()
         external64=base64.b64encode(external_version).decode()
         cm[11]=[s.atom(1),s.atom(external_name,True),s.atom(external64)]
         objects[cid][2]=[s.atom(1),[s.atom(external_name,True),s.atom(external64),s.atom(1)]]
-        external_data[cid]=s.compress(module_container(request['source_text']))
+        external_data[cid]=[(external_name,s.compress(module_container(request['source_text']))) ]
         externals[cid]=[dict(name=external_name,version=external_version.hex(),action=1)]
-    order=[cid,rid]+[oid for oid,_ in oldchildren]
+    modules=request.get('modules',{})
+    if not isinstance(modules,dict) or set(modules)-set(profiles.module_files(kind)):raise ValueError('Unsupported object module files')
+    if modules:
+        from commonmodule_serializer import module_container
+        cm[11]=[s.atom(len(modules))];objects[cid][2]=[s.atom(len(modules))];external_data[cid]=[];externals[cid]=[]
+        for filename,suffix in profiles.module_files(kind).items():
+            if filename not in modules:continue
+            stream=cid+suffix;version=packets.external_version();version64=base64.b64encode(version).decode()
+            cm[11].extend([s.atom(stream,True),s.atom(version64)]);objects[cid][2].append([s.atom(stream,True),s.atom(version64),s.atom(1)])
+            external_data[cid].append((stream,s.compress(module_container(modules[filename]))));externals[cid].append(dict(name=stream,version=version.hex(),action=1))
+    import inline_command_xml as commands
+    layout=json.loads(Path(__file__).with_name(kind.lower()+'_layout_851.json').read_text(encoding='utf-8')) if kind in profiles.profiles() else {}
+    owned=commands.streams(s.Parser(body.decode('utf-8-sig')).documents()[0],layout)
+    inline_modules=commands.module_inputs(request.get('inline_modules',{}),owned)
+    if inline_modules:
+        from commonmodule_serializer import module_container
+        external_data.setdefault(cid,[]);externals.setdefault(cid,[])
+        for owner,text in inline_modules.items():
+            stream=owned[owner];version=packets.external_version();version64=base64.b64encode(version).decode()
+            cm[11].extend([s.atom(stream,True),s.atom(version64)]);cm[11][0]=s.atom((len(cm[11])-1)//2)
+            objects[cid][2].append([s.atom(stream,True),s.atom(version64),s.atom(1)]);objects[cid][2][0]=s.atom(len(objects[cid][2])-1)
+            external_data[cid].append((stream,s.compress(module_container(text))));externals[cid].append(dict(name=stream,version=version.hex(),action=1))
+        inline_streams.extend(dict(object_id=cid,name=stream) for stream in owned.values())
+    nested=set(existing_order)-{oid for oid,_ in oldchildren}
+    import related_object_changes
+    changed_existing=related_object_changes.apply(request,objects,raws,versions,cid,kind)
+    order=[fid for fid,_,_,_ in new_forms]+[cid,rid]+[oid for oid,_ in oldchildren]+sorted(nested)
     for oid in order:
-        m=objects[oid][0];m[0]=s.atom(6);m[5]=s.atom(4294967295);m[6]=s.atom(0)
-        m[7]=s.atom(base64.b64encode(originals[oid]).decode());m[8]=s.atom(base64.b64encode(versions[oid]).decode())
-    desc={oid:descriptor(objects[oid][0]) for oid in order}
-    a=s.atom
-    graph=[[a(2),a(rid),desc[rid],a(cid),desc[cid]],
-           [a(len(order)-1)]+[[a(oid)]+objects[oid][0][13] for oid in order if oid!=cid],
-           [a(len(order))]+[s.graph_relations(oid,objects[oid][0][14]) for oid in [rid,cid]+[v for v in order if v not in (rid,cid)]],
-           [a(2),a(rid),a(s.ZERO),a(cid),a(rid)],
-           [a(len(order))], [a(len(order)-1)],
-           [a(2),a(cid),[a(1),a(cid),desc[cid]],a(rid),[a(len(order))]],
-           [a(len(order))], [a(2),a(rid),a(1),a(cid),a(1)],
-           [a(1),a(rid),a(1)],a(0),[a(0)],a(0),[a(0)],[a(1),[a(0)]]]
-    for oid in [rid,cid]+[v for v in order if v not in (rid,cid)]:graph[4].extend([a(oid),a(1)])
-    for oid in [rid]+[v for v in order if v not in (rid,cid)]:
-        pairs=children(objects[oid][0]);childmap=[a(len(pairs))]
-        for child,cls in sorted(pairs):childmap.extend([a(child),a(cls)])
-        graph[5].extend([a(oid),childmap])
-    for oid in [rid]+[v for v in order if v not in (rid,cid)]+[cid]:graph[6][-1].extend([a(oid),desc[oid]])
-    for oid in order:graph[7].extend([a(oid),objects[oid][0][11]])
-    records=[];manifest=[a(0),a(len(order))]
-    for oid in order:
-        meta=s.text_bytes(objects[oid]);data=s.compress(raws[oid]);records.extend([meta,data])
-        extra=external_data.get(oid)
-        manifest.extend([a(oid),a(hashlib.sha1(meta).hexdigest(),True),a(hashlib.sha1(data).hexdigest(),True),a(1 if extra is not None else 0)])
-        if extra is not None:
-            records.append(extra)
-            manifest.extend([a(oid+'.0',True),a(hashlib.sha1(extra).hexdigest(),True)])
-    snapshot=s.storage(records,s.text_bytes([manifest]));s.validate_storage(snapshot)
-    payload=s.SERIALIZER+s.compress(s.record(s.text_bytes([graph]))+bytes(4)+s.record(snapshot))
-    E.register_namespace('crs',s.NS)
-    call=E.Element('{%s}call'%s.NS,alias=request['repository'],name='DevDepot_commitObjects',version=request['platform'])
-    def field(parent,key,value=None,text=None):
-        node=E.SubElement(parent,'{%s}%s'%(s.NS,key));node.text=text
-        if value is not None:node.set('value',str(value))
-        return node
-    p=field(call,'params');field(p,'clientVerID',guid(request['repository_version']));field(p,'data',text=base64.b64encode(payload).decode())
-    for section in ('requested','changes'):
-        container=field(p,section)
-        for oid in order:
-            m=objects[oid][0];entry=field(container,'value');field(entry,'first',oid);second=field(entry,'second')
-            detail=field(second,'_super') if section=='changes' else second
-            supernode=field(detail,'_super');field(supernode,'id',oid);field(supernode,'classID',s.val(m[2]))
-            for key,index in [('name',9),('pos',10)]:field(detail,key,s.val(m[index]))
-            field(detail,'verNum',-1);field(detail,'selfVerNum',0)
-            for key,index in [('parentID',3),('ownerID',4)]:field(detail,key,s.val(m[index]))
-            ver=field(detail,'version');field(ver,'original',originals[oid].hex());field(ver,'local',versions[oid].hex());field(detail,'removed','false')
-            if section=='changes':
-                ext=field(second,'externals')
-                for item in externals.get(oid,[]):
-                    entry=field(ext,'value');field(entry,'first',item['name']);detail=field(entry,'second');supernode=field(detail,'_super')
-                    field(supernode,'name',item['name']);field(supernode,'verID',item['version']);field(detail,'action',item['action'])
-    field(p,'objectsToRemove');field(p,'code',s.val(s.configuration_properties(docs, request['platform'])[15]));field(p,'comment',text='')
-    features=field(p,'features')
-    for oid in ([rid] if kind == 'Constant' else [rid,cid]):
-        feature=field(features,'value');field(feature,'first',oid);values=field(feature,'second')
-        if kind == 'Constant':field(values,'value',identifiers.feature_id('ConstantCollectionChanged'))
-    descriptions=[]
-    for oid in order:
-        m=objects[oid][0]
-        descriptions.append(dict(id=oid,class_id=s.val(m[2]),name=s.val(m[9]),pos=int(s.val(m[10])),
-                                 parent_id=s.val(m[3]),owner_id=s.val(m[4]),
-                                 original=originals[oid].hex(),local=versions[oid].hex()))
-    return dict(request_xml=E.tostring(call,encoding='unicode'),object_id=cid,name=name,
+        packets.commit_metadata(objects[oid][0],originals[oid],versions[oid])
+    graph=packets.subtree_creation_graph(objects,rid,[cid]+[fid for fid,_,_,_ in new_forms],order,children,changed_existing) if new_forms or nested or changed_existing else packets.top_level_creation_graph(objects,rid,cid,order,children)
+    payload=packets.assemble(graph,[packets.ObjectRecord(oid,s.text_bytes(objects[oid]),s.compress(raws[oid]),
+        tuple(external_data.get(oid,()))) for oid in order])
+    version_code=s.val(s.configuration_properties(docs,request['platform'])[15])
+    features={rid:[identifiers.feature_id('ConstantCollectionChanged')]} if kind=='Constant' else {rid:[],cid:[]}
+    xml=packets.request_xml(request,payload,{oid:objects[oid] for oid in order},originals,versions,externals,version_code,features)
+    descriptions=[packets.description(objects[oid][0],originals[oid],versions[oid]) for oid in order]
+    result=dict(request_xml=xml,object_id=cid,name=name,
                 descriptions=descriptions,data=base64.b64encode(payload).decode(),
                 version_code=s.val(s.configuration_properties(docs, request['platform'])[15]),existing_objects=sorted(expected),
                 externals=[dict(object_id=oid,**item) for oid,items in externals.items() for item in items])
+    if inline_streams:result['inline_streams']=inline_streams
+    return result
 
 def main():
-    from pathlib import Path
-    try:
-        request=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8-sig'))
-        result={'ok':True}
-        result.update({'children':inspect(request)} if request.get('mode')=='inspect' else serialize(request))
-    except (ValueError,KeyError,IndexError,TypeError,zlib.error,E.ParseError) as error:
-        result={'ok':False,'error':str(error)}
-    Path(sys.argv[2]).write_text(json.dumps(result,ensure_ascii=False),encoding='utf-8')
+    from serializer_cli import run
+    run(lambda request: {'children':inspect(request)} if request.get('mode')=='inspect' else serialize(request))
 
 if __name__=='__main__':main()

@@ -7,7 +7,7 @@ import metadata_serializer as s
 import metadata_identifiers as ids
 import external_data
 import catalog_object_xml as catalog
-import delete_form_serializer as deletion
+import delete_owned_object_serializer as deletion
 import test_managed_form_change as forms
 from test_managed_form_serializer import store
 

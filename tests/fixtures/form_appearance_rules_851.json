@@ -1,0 +1,1118 @@
+{
+  "source": "Native 8.5.1.1529 CF appearance exports; expected hash covers whole interface.",
+  "cases": [
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>#123456</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "953639f34d2012509cf4cdd380ee590c2d52002034af9f3ff5f260dd69029658"
+    },
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>web:Red</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "66ffc2967c78f06b6a9d12be8c9aa9a87f0bfadf542852bb1ea461fa7873170d"
+    },
+    {
+      "kind": "InputField",
+      "name": "BackColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:BackColor>#123456</ns0:BackColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "cdd826a4b7e39babc4f9c2bd78d0f19a2ff9456e491e51fb573f8e0d1b6fe9ec"
+    },
+    {
+      "kind": "InputField",
+      "name": "BackColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:BackColor>web:Red</ns0:BackColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "09b640864efb0e986998dc4440867c9ff6330b1e009c387f6478ff5b926a593b"
+    },
+    {
+      "kind": "InputField",
+      "name": "TitleTextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleTextColor>#123456</ns0:TitleTextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c8a9bf11c5ef50400d2c8b2f08dbdb05b8d4c342a515d696e45faba172d5226d"
+    },
+    {
+      "kind": "InputField",
+      "name": "TitleTextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleTextColor>web:Red</ns0:TitleTextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "48eaeba18e76b4bf277600e3407e0aecb779760353b14dd4f016effb7723c429"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "f7b779484194b6c186b01a994b3c5da504070c8371bf8c2b5160f0821728d5af"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3ca195cfcabfa1daa29d40f6c04aeabdecd8aeb547ad57ec4aaa2232cb4dd683"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "63cb99abb8a325a2c1122c3e63778976f179bc88f6cae16db4a7deed1ec9bbde"
+    },
+    {
+      "kind": "InputField",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleFont ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "cdbe90cff2f922619939ba6eb17bdc9e14a0e173ae94af955cda223370345fb1"
+    },
+    {
+      "kind": "InputField",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleFont ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "67ee2692ae11c7f009fe800d252ce55d79ab69f51c6ae0d945a82fdeb251821c"
+    },
+    {
+      "kind": "InputField",
+      "name": "TitleFont",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleFont faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8ca7540e28f7585bc0d9df9f129d902dde1ffc53ed0d07506e728bf15b138041"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TextColor>#123456</ns0:TextColor></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "08ddf20b4db29bf3b2c7f63fd7bc602317b36960073ae137aad11059dd06543d"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TextColor>web:Red</ns0:TextColor></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6241825e0e01757f3db7e0d2a0cd1261e55526973560647fbb44b2c29a8f9e86"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "BackColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:BackColor>#123456</ns0:BackColor></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "27115f65952d54c68f3ae67dd8165429d4971772f4ed1523eb2283479e700824"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "BackColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:BackColor>web:Red</ns0:BackColor></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7c34696452c1196cdf69cbf03e599c7268907718d673b122f46d3513c0d154ae"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleTextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleTextColor>#123456</ns0:TitleTextColor></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3038f3528202fbbeb19e1e3e700a2d8c7953fdb17b116dce9b9ed34405c7b4d4"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleTextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleTextColor>web:Red</ns0:TitleTextColor></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7e0547d3f49cf3288eca92573ef0fc02cb517cd1fe93e7c6877ac3da72845cef"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "45c112b8b26bc33422b540209e4a330d971208858621e8a60a78d95d16cc35da"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b5f60d2497afad703cac2f5d120e7c98da0827032e5fafca62dabcd62f01279e"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:Font faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "748c428cef78e6662d22e51acbb0d2c870c7febd24558dc29113cfcc29df2ba6"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleFont ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "9468921018ebd9fb7d2c7cb00b9838417c07b5f2622fca20ff2050494492c5de"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleFont ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "fe7491c7208d03f3658b9a04892c525e01602ce489c7e989738604be0b060ac2"
+    },
+    {
+      "kind": "CheckBoxField",
+      "name": "TitleFont",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:CheckBoxField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Flag</ns0:DataPath><ns0:TitleFont faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:CheckBoxField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0992b8240d9b5da411b7c1a24f7a16ba5c8df2b2ff01451e5799481bd9f4f98e"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>#123456</ns0:TextColor></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5ae70efd783a0e15a2ba0996e3ee7574ab52e4a5322aed096718e2c2bb6b079a"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>web:Red</ns0:TextColor></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3ac3d4b7fe90b09c5f8b0fa83a7d96b691a30f374138441606718c4876663bda"
+    },
+    {
+      "kind": "LabelField",
+      "name": "BackColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:BackColor>#123456</ns0:BackColor></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8876876a8c05ebba7f1d185e9b2858a529a24ee6b29f41950056064f224d3a5f"
+    },
+    {
+      "kind": "LabelField",
+      "name": "BackColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:BackColor>web:Red</ns0:BackColor></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "cec16289406b602b0a5f45233b6dc722b7acb5c09db8c1c954dc759c3ed0a4f1"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleTextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleTextColor>#123456</ns0:TitleTextColor></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "9f7503f57f1cbd80cd404e1e568808e9b0eabf04b3bf4f6efde9409786c27ddd"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleTextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleTextColor>web:Red</ns0:TitleTextColor></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "72ca0cac2d8eee1d40e367fadbbdd4a636a39b5f8b1afe6c442801ce6125decb"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "618e24de3ea74ec7fd243dc985bf9618883cb1cddb93cc3a5bdedeb8be39099d"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "69b6d29f3c75d3f27d0d60661a2833be53d61ed329e804f76ab1d25c25dff943"
+    },
+    {
+      "kind": "LabelField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "32e828f5b8797fe86b59753862a8848cd24b5a9a185f0a95b50fd065f68cb494"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleFont ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5df2346f1b7103464f5b3968f7aa8ef1510eea91e5998d5268dd1c5583bd0452"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleFont ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c403c5b50d55839f66136db4c0857853860afaf4e6b7d17b0d72d834dbb9af6a"
+    },
+    {
+      "kind": "LabelField",
+      "name": "TitleFont",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TitleFont faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:LabelField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d369206b1118cfca34d926e7e3232a28205044425b11239d476642989fe9b669"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "BackColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:BackColor>#123456</ns0:BackColor></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8c5fe49deed5eda139f98176cd1eed7bd376aaa234676f2dd8bb2302f051199a"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "BackColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:BackColor>web:Red</ns0:BackColor></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "47d8ae4776bbf0647c0c2260d51f695ce1bd3c293320d52be3d1a52c9326af55"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "TitleTextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:TitleTextColor>#123456</ns0:TitleTextColor></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3a6b88cdd7b015b0b9e4bcdc2563e161ffea8a6dd1baf75b226eaa12b59a4800"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "TitleTextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:TitleTextColor>web:Red</ns0:TitleTextColor></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "a34dd0e7ba0a3baef38095f7eebb7dd491ec0275e71caf021a04c52fca12c5d6"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:TitleFont ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "947c3b579852333f1c3260aea0f94c065a1540103a367afc1a07ee888615afc0"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:TitleFont ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8ed74643bce93edc604d69a7ea88e750d9af6a53afe083eb5077d5420adf7d88"
+    },
+    {
+      "kind": "UsualGroup",
+      "name": "TitleFont",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:UsualGroup name=\"Probe\" id=\"100\"><ns0:Group>Vertical</ns0:Group><ns0:ChildItems /><ns0:TitleFont faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:UsualGroup></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "30b1f0c6c1d77d253f279396f77ca83ee02dbdbe6a747c14b4b6ae5304b51f68"
+    },
+    {
+      "kind": "Pages",
+      "name": "TitleTextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:TitleTextColor>#123456</ns0:TitleTextColor></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d1f0a5a59ee5b022821c020404ade48769578374e8019fc5fb22da88f57b1ed3"
+    },
+    {
+      "kind": "Pages",
+      "name": "TitleTextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:TitleTextColor>web:Red</ns0:TitleTextColor></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ab45478fe078063d42bc7409581e2ca050a9aa8f2056f2ff5442121ee65abff2"
+    },
+    {
+      "kind": "Pages",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:TitleFont ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "724e28ce11410577d86ab8b5c08cbfc4dfaab0eae679e00d174f5160baf0ec37"
+    },
+    {
+      "kind": "Pages",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:TitleFont ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "25187743beb9e350d94cb9a0254c08547b3617ed2caa2607f57f922cd20586a6"
+    },
+    {
+      "kind": "Pages",
+      "name": "TitleFont",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:TitleFont faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "e88dacbf10d8e7b06d6bb686ff6ef2e5b723afa5be5b0e9aed35e3c7bb27c8e8"
+    },
+    {
+      "kind": "Page",
+      "name": "BackColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:BackColor>#123456</ns0:BackColor></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8097f89d3b808229afe34dea8e13d9c4c9532ab10082abf555fb5191876c46d1"
+    },
+    {
+      "kind": "Page",
+      "name": "BackColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:BackColor>web:Red</ns0:BackColor></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "e703d6fc5ffd00aebe8295cff61d5db63ab82f0bbfaf89ec15ba4bb7d0a62226"
+    },
+    {
+      "kind": "Page",
+      "name": "TitleTextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:TitleTextColor>#123456</ns0:TitleTextColor></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "321597f69575618645fc0c1c704c63429418bdd4972a60364790c63b80ea6543"
+    },
+    {
+      "kind": "Page",
+      "name": "TitleTextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:TitleTextColor>web:Red</ns0:TitleTextColor></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6529e97639c2059a0813a7c1a17dc6496ec4819f9ab1caa625fa20548abe00d1"
+    },
+    {
+      "kind": "Page",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:TitleFont ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d4ccee6951d50ffd5ed83d6da2db2acd39e9eafae7f5ffc09a1e2cd57cae47fb"
+    },
+    {
+      "kind": "Page",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:TitleFont ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "3fcd73aad98347c8f7eda6606503758e8155fb3b92206d03d9c549e794df049d"
+    },
+    {
+      "kind": "Page",
+      "name": "TitleFont",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Pages name=\"Wrapper\" id=\"900\"><ns0:ChildItems><ns0:Page name=\"Probe\" id=\"100\"><ns0:ChildItems /><ns0:TitleFont faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:Page></ns0:ChildItems></ns0:Pages></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "62dda3dc74f37ade02a1351ee29b008d53ea39d7b93e3eab00d1d17b3e71a2f8"
+    },
+    {
+      "kind": "Button",
+      "name": "TextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:TextColor>#123456</ns0:TextColor></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "634af5113d63a956f1c5a0e378ca72bb60039eb636ec16e041ba2fb12f490801"
+    },
+    {
+      "kind": "Button",
+      "name": "TextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:TextColor>web:Red</ns0:TextColor></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6e7f34653e39281fd907443f4c3d3d2fdefb8046f3e972b97c330596a221a3c8"
+    },
+    {
+      "kind": "Button",
+      "name": "BackColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:BackColor>#123456</ns0:BackColor></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5e401336c5bee6b4f159f0968c3d58fcb0b05b84c5ee3fc36097fb308c7e5353"
+    },
+    {
+      "kind": "Button",
+      "name": "BackColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:BackColor>web:Red</ns0:BackColor></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6429346009c241c7738ae94e954f450eb6409231bb98ea9813fab3201778c2ab"
+    },
+    {
+      "kind": "Button",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "259d129135dd620f6336cace8f546e2b4a5c76dfa0be3ff444038b671d18b3f7"
+    },
+    {
+      "kind": "Button",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:Font ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "219e265348954d050365b3006f450656daf25f2bf112a25023400180ca154882"
+    },
+    {
+      "kind": "Button",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Button name=\"Probe\" id=\"100\"><ns0:Type>UsualButton</ns0:Type><ns0:CommandName>Form.Command.Run</ns0:CommandName><ns0:Font faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:Button></ns0:ChildItems><ns0:Commands><ns0:Command name=\"Run\" id=\"1\"><ns0:Action>Run</ns0:Action></ns0:Command></ns0:Commands><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ec81ef95b37caf5329af75e6a57368ee6ee92b64c8321e60f2d88cfd4858958e"
+    },
+    {
+      "kind": "Table",
+      "name": "TextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TextColor>#123456</ns0:TextColor></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "fc0d5b764dfbe093cb2052705bfd086fbc93af535a335a710988dea2b2037663"
+    },
+    {
+      "kind": "Table",
+      "name": "TextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TextColor>web:Red</ns0:TextColor></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "cfa430c16c62682c3a8a6b6e953865304826d7937861e8b92fe0fe2182c1ccd6"
+    },
+    {
+      "kind": "Table",
+      "name": "BackColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:BackColor>#123456</ns0:BackColor></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1ea0e6e8a4038010a678aebc184a165cb7fc7cf182114a3c1036af4bf3be9495"
+    },
+    {
+      "kind": "Table",
+      "name": "BackColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:BackColor>web:Red</ns0:BackColor></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "113c2abc54212da6f3bf416d5a52623180b187de8f9534b34ceb6c13ae88ea2c"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleTextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleTextColor>#123456</ns0:TitleTextColor></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "50a3c5f3d88a7a52f3d7c95729f3f8979025f80c32f840624c451bd52053a5f3"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleTextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleTextColor>web:Red</ns0:TitleTextColor></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5574204ba240e0807a5c85e66f6c5169af95793f2f7d111ba0f9a488c52e1078"
+    },
+    {
+      "kind": "Table",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "be8271e19010e3b708d93af9ed07db29383dfb26387289c3d61b710002753000"
+    },
+    {
+      "kind": "Table",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:Font ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "bb4c7dd3bf02aa97bcb38a05451e3279cb84852e3e873339ca3e8305c5679a52"
+    },
+    {
+      "kind": "Table",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:Font faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "0364910549f893a365176f9c98cc047631392ff229d043adc7cc5a944629648d"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleFont ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b249054fcd42fef9eee7620e097d961caf0e01f50dcd587ea4a4b5ffd7ea564e"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleFont",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleFont ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d1a130542847deb239bf3e63c4ce16a90137372c0bf707e7fc6d902d821467e5"
+    },
+    {
+      "kind": "Table",
+      "name": "TitleFont",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:Table name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Rows</ns0:DataPath><ns0:ChildItems /><ns0:TitleFont faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:Table></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "892e1112e0e7a6ec9028ab74dd34eaf0906176e55d451fd065d6ac23ecdcfe64"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "TextColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:TextColor>#123456</ns0:TextColor></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "43a85da0a960e7243ac8e1c7b4526c6561af87044963da9c92fc9263f6574185"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "TextColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:TextColor>web:Red</ns0:TextColor></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "d6f7a57827a81ba2c85e53d1c46e0ff2545b5943aef6b63b6196d19a9176079d"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "BackColor",
+      "value": "#123456",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:BackColor>#123456</ns0:BackColor></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5ad7aae81e5817b2d7b20a72656fe0823c67f90a0565ee60c62b02649a190cb2"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "BackColor",
+      "value": "web:Red",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:BackColor>web:Red</ns0:BackColor></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "41c289fbdaf4c72395a5d1a64828f1fd7bbd6308a992fd24a3c0ee865e71afdd"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b12a8c39854f106c4dfa56f067fdfb718a46349836acfb43cc0b743f1f30d664"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Font ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1c92d063f728a4596f46ef815cef77ae9c68324c0bf68d86131e64620e384bd5"
+    },
+    {
+      "kind": "LabelDecoration",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:LabelDecoration name=\"Probe\" id=\"100\"><ns0:Font faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:LabelDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "350e14e46c599c65db6baa2150581fe281a651566e3a3a73ffc6657cd82c1891"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "bbf67c48e89723a25cf2c090be949a8453d2410a1d2909d437c835123ffa7450"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Font ref=\"style:NormalTextFont\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"StyleItem\" /></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "4dd8f5772135ee5957cd589569e6bdf28243216af7474b5f3de3a256ad8a9b8c"
+    },
+    {
+      "kind": "PictureDecoration",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "height": "12",
+        "bold": "true",
+        "italic": "false",
+        "underline": "false",
+        "strikeout": "false",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:PictureDecoration name=\"Probe\" id=\"100\"><ns0:Font faceName=\"Arial\" height=\"12\" bold=\"true\" italic=\"false\" underline=\"false\" strikeout=\"false\" kind=\"Absolute\" /></ns0:PictureDecoration></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ce865206922c4d25adfba5052416bc82321444234d7beb21adf80526bca970d8"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "kind": "Absolute",
+        "height": "9.5"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Arial\" kind=\"Absolute\" height=\"9.5\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1c02513732fc616636d732807f7326c90db980ebe73ba22b1969ee9c97f464c3"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "kind": "Absolute",
+        "height": "0"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Arial\" kind=\"Absolute\" height=\"0\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "f951d9495a19a75bb093db820f15cec93fa31dba9298499bee83c26255922525"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "kind": "Absolute",
+        "bold": "true"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Arial\" kind=\"Absolute\" bold=\"true\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "1043039fdea655ffdc7a951852ab9fe4d2d930edce7f34dbe2d885168f5b46e4"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "kind": "Absolute",
+        "bold": "false"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Arial\" kind=\"Absolute\" bold=\"false\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "56ed0574cb2a974d016f59fb588e11b35d67d6d3c4079402722071999c4944f1"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "kind": "Absolute",
+        "italic": "true"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Arial\" kind=\"Absolute\" italic=\"true\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "4bafdf0d4aa5a9e61e364c55063b0f1f2822c60944f893959e2036767fdf2a42"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "kind": "Absolute",
+        "underline": "true"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Arial\" kind=\"Absolute\" underline=\"true\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "08f7ecf71b4d70acfd2decfd3a16e19e5ed8f283cbaaea93cf29a14ea1e9b53c"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "kind": "Absolute",
+        "strikeout": "true"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Arial\" kind=\"Absolute\" strikeout=\"true\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "4afbb185e05f4b66b99e7b2b7322e32e6f89ac2029bbbee596fa4b651f617b9c"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "faceName": "Arial",
+        "kind": "Absolute"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Arial\" kind=\"Absolute\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "2f321857dad4dd0bb06991a7a883d68ab7ba06300fb9f8db290b5e894dc22408"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem",
+        "height": "9.5"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" height=\"9.5\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "9c44a26c1425bcec758a04648fe9e580110ce205ca01e9d4d2aef90441d0f398"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem",
+        "height": "0"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" height=\"0\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "cef1b2ac17c5b97e9a3dd6c395edc220d7dc7bdb667c5f700c40e7ebe42a7e8d"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem",
+        "bold": "true"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" bold=\"true\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "ab7cbcf522ffdff4322ab3babf53fad253672ee619e78cc6cb998a9dea476b74"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem",
+        "bold": "false"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" bold=\"false\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "6afa86f76909aaa3a40a547eb318b40c996a36301b04e9d1cddafb61ad60d873"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem",
+        "italic": "true"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" italic=\"true\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "fa066ef0326caaf21f602b9ff40c156d3d91a3e6372e3a1aae02661b6f28abfe"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem",
+        "underline": "true"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" underline=\"true\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "8525a043523b290974cfa0a11262b01a7858226c6dcaa51bef48d07079e3267d"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem",
+        "strikeout": "true"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" strikeout=\"true\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "468c9077e6d399c3568c66e05516ce636617317378ef0ed3d061d7a737374c6d"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "ref": "style:NormalTextFont",
+        "kind": "StyleItem"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font ref=\"style:NormalTextFont\" kind=\"StyleItem\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "f7b779484194b6c186b01a994b3c5da504070c8371bf8c2b5160f0821728d5af"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {},
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "c80f5b70f68c09d84d14ba1020148eb03ff796b3276b48be7a57fcf1d7b37989"
+    },
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "#00FF7A",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>#00FF7A</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "5e900de545fa67e7ccef94250510727b52be4307d4e9ece48583854c6cbef3e1"
+    },
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "web:Black",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>web:Black</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "cf5f8d98e8daee0362a4a01b6b18f303422f3473fe1430dbd2727064e1831b75"
+    },
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "web:Blue",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>web:Blue</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "069c5d7a0e1a01fc49ff65d5f56dac29eca68e799e7539c8bf2bbd98d78468a3"
+    },
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "web:White",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>web:White</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "bb9ea5a10a75d8389dff2f3c1e0814c66a6c59fabf75acba11cc8721dba32443"
+    },
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "web:Lime",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>web:Lime</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "7833322ad7ea9afded3c606178541070b07bfe888e82d713cc8a4a895fe57674"
+    },
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "web:Yellow",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>web:Yellow</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "dcf7b14b78a46727f77039b9e4190993ccea8be0e9535118240a058a7412fc46"
+    },
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "web:Gray",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>web:Gray</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "cd2fefab8a165af54caba51f8d209cc5b67392493db7f46b166445fe9656a7d7"
+    },
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "win:ButtonFace",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>win:ButtonFace</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "a87151edaef53fd6f9836811b511965181c2234076388b506b1d17c4f823f605"
+    },
+    {
+      "kind": "InputField",
+      "name": "TextColor",
+      "value": "win:WindowBackground",
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:TextColor>win:WindowBackground</ns0:TextColor></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "b3e452f5b46921cf7fd591fb0ce9089229cefef2fa73b13f84474bc7a794b703"
+    },
+    {
+      "kind": "InputField",
+      "name": "Font",
+      "value": {
+        "faceName": "Times New Roman",
+        "kind": "Absolute",
+        "height": "14.5",
+        "bold": "false",
+        "italic": "true",
+        "underline": "false",
+        "strikeout": "true"
+      },
+      "xml": "<ns0:Form xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\" version=\"2.21\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\"><ns0:UseForFoldersAndItems>Items</ns0:UseForFoldersAndItems><ns0:AutoCommandBar name=\"FormCommandBar\" id=\"-1\" /><ns0:ChildItems><ns0:InputField name=\"Probe\" id=\"100\"><ns0:DataPath>Object.Description</ns0:DataPath><ns0:Font faceName=\"Times New Roman\" kind=\"Absolute\" height=\"14.5\" bold=\"false\" italic=\"true\" underline=\"false\" strikeout=\"true\" /></ns0:InputField></ns0:ChildItems><ns0:Attributes><ns0:Attribute name=\"Object\" id=\"1\"><ns0:Type><ns1:Type>cfg:CatalogObject.CRSAPI_FullCatalog</ns1:Type></ns0:Type><ns0:MainAttribute>true</ns0:MainAttribute></ns0:Attribute></ns0:Attributes></ns0:Form>",
+      "sha256": "61984e4d8c8f6351a96f8f72c8b4fd7357c92179f201d8d8cd1bf48f5ca046dd"
+    }
+  ]
+}

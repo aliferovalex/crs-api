@@ -40,7 +40,7 @@ class XMLTests(unittest.TestCase):
         name=s.val(owner[1][9][1][2])
         r.update(form_xml=xml(name,[('Renamed',2,'Description'),('AttributeField',20,'TestAttribute')]),
                  module_text='&AtClient\nProcedure Test()\n    Message("A & B");\nEndProcedure')
-        f=x.interface(extra(managed_form_change.serialize(r)));(i,n,end),_=x.controls(f)
+        f=x.interface(extra(managed_form_change.serialize(r)));i,n,end=x.elements.form_collection(f)
         self.assertEqual(n,2)
         self.assertEqual([s.val(f[1][j+1][6]) for j in range(i+1,end,2)],['Renamed','AttributeField'])
         self.assertIn('Message("A & B")',s.val(f[2]));self.assertIn('\r\n',s.val(f[2]))

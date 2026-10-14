@@ -1,0 +1,5505 @@
+{
+  "source": "Native 8.5.1.1529 property, event, enum, color and font batch exports; references and mappings explicitly verified.",
+  "profiles": {
+    "InputField": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                13
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              43
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                43
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "ReadOnly": {
+          "codec": "bool",
+          "paths": [
+            [
+              14
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                14
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "AutoMaxWidth": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              49
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                49
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              52
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                52
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "PasswordMode": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              7
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                7
+              ],
+              "value": "2"
+            }
+          ],
+          "example": "true"
+        },
+        "MultiLine": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              8
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                8
+              ],
+              "value": "2"
+            }
+          ],
+          "example": "true"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              39,
+              2
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                2
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "17"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              39,
+              3
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                3
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "7"
+        },
+        "ToolTip": {
+          "codec": "localized",
+          "paths": [
+            [
+              10
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                10
+              ],
+              "value": "{1,0}"
+            }
+          ],
+          "example": "Bulk tip"
+        },
+        "TitleLocation": {
+          "codec": "enum",
+          "values": {
+            "Left": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "2"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "4"
+              }
+            ],
+            "Top": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "3"
+              }
+            ],
+            "Bottom": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "5"
+              }
+            ],
+            "None": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "0"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                7
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "HorizontalAlign": {
+          "codec": "enum",
+          "values": {
+            "Left": [
+              {
+                "path": [
+                  23
+                ],
+                "value": "0"
+              }
+            ],
+            "Center": [
+              {
+                "path": [
+                  23
+                ],
+                "value": "1"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  23
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                23
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "VerticalAlign": {
+          "codec": "enum",
+          "values": {
+            "Top": [
+              {
+                "path": [
+                  27
+                ],
+                "value": "0"
+              }
+            ],
+            "Center": [
+              {
+                "path": [
+                  27
+                ],
+                "value": "1"
+              }
+            ],
+            "Bottom": [
+              {
+                "path": [
+                  27
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                27
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "ToolTipRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "1"
+              }
+            ],
+            "Button": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "3"
+              }
+            ],
+            "ShowBottom": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "7"
+              }
+            ],
+            "ShowTop": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "5"
+              }
+            ],
+            "ShowLeft": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "6"
+              }
+            ],
+            "ShowRight": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "8"
+              }
+            ],
+            "ShowAuto": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "4"
+              }
+            ],
+            "Balloon": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                50
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "TextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              39,
+              37
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                37
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "BackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              39,
+              38
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                38
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "TitleTextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              31
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                31
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Font": {
+          "codec": "font",
+          "paths": [
+            [
+              39,
+              40
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                40
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "TitleFont": {
+          "codec": "font",
+          "paths": [
+            [
+              32
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                32
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "BorderColor": {
+          "codec": "color",
+          "paths": [
+            [
+              39,
+              39
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                39
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "ShowInHeader": {
+          "codec": "bool",
+          "paths": [
+            [
+              20
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                20
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "ShowInFooter": {
+          "codec": "bool",
+          "paths": [
+            [
+              21
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                21
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "AutoCellHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              28
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                28
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "HeaderHorizontalAlign": {
+          "codec": "enum",
+          "values": {
+            "Left": [],
+            "Center": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "1"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "3"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                24
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "FooterHorizontalAlign": {
+          "codec": "enum",
+          "values": {
+            "Left": [
+              {
+                "path": [
+                  25
+                ],
+                "value": "0"
+              }
+            ],
+            "Center": [
+              {
+                "path": [
+                  25
+                ],
+                "value": "1"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  25
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                25
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "FooterText": {
+          "codec": "localized",
+          "paths": [
+            [
+              19
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                19
+              ],
+              "value": "{1,0}"
+            }
+          ]
+        },
+        "FooterFont": {
+          "codec": "font",
+          "paths": [
+            [
+              36
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                36
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "FooterTextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              34
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                34
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "FooterBackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              35
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                35
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Format": {
+          "codec": "localized",
+          "paths": [
+            [
+              39,
+              29
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                29
+              ],
+              "value": "{1,0}"
+            }
+          ]
+        },
+        "EditFormat": {
+          "codec": "localized",
+          "paths": [
+            [
+              39,
+              30
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                30
+              ],
+              "value": "{1,0}"
+            }
+          ]
+        },
+        "Mask": {
+          "codec": "string",
+          "paths": [
+            [
+              39,
+              18
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                18
+              ],
+              "value": "\"\""
+            }
+          ]
+        },
+        "ChoiceList": {
+          "codec": "choice_list",
+          "paths": [
+            [
+              39,
+              1
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                1
+              ],
+              "value": "{3,0}"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "path": [
+            39,
+            36
+          ],
+          "names": {
+            "AutoComplete": "178a97c4-0ffe-4fcc-93e6-505369939da5",
+            "StartChoice": "1960479b-4d89-4eba-8b39-0aa802020558",
+            "Opening": "ac5a9c5a-5f1d-4fc5-b88c-a187038c16d1",
+            "Clearing": "b50dc41b-c15a-4ebe-a17f-d01e51c47de6",
+            "ChoiceProcessing": "f72043b8-2d79-414e-bc4e-3972fe9dbca1"
+          }
+        },
+        {
+          "path": [
+            40
+          ],
+          "names": {
+            "OnChange": "fe115cc8-9e33-4684-a166-bd5136fe7a9f"
+          }
+        }
+      ]
+    },
+    "CheckBoxField": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                13
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              43
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                43
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "ReadOnly": {
+          "codec": "bool",
+          "paths": [
+            [
+              14
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                14
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "ToolTip": {
+          "codec": "localized",
+          "paths": [
+            [
+              10
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                10
+              ],
+              "value": "{1,0}"
+            }
+          ],
+          "example": "Bulk tip"
+        },
+        "TitleLocation": {
+          "codec": "enum",
+          "values": {
+            "Left": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "2"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "4"
+              }
+            ],
+            "Top": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "3"
+              }
+            ],
+            "Bottom": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "5"
+              }
+            ],
+            "None": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "0"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                7
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "ToolTipRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "1"
+              }
+            ],
+            "Button": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "3"
+              }
+            ],
+            "ShowBottom": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "7"
+              }
+            ],
+            "ShowTop": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "5"
+              }
+            ],
+            "ShowLeft": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "6"
+              }
+            ],
+            "ShowRight": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "8"
+              }
+            ],
+            "ShowAuto": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "4"
+              }
+            ],
+            "Balloon": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                50
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "TextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              39,
+              6
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                6
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "BackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              39,
+              3
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                3
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "TitleTextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              31
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                31
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Font": {
+          "codec": "font",
+          "paths": [
+            [
+              39,
+              7
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                7
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "TitleFont": {
+          "codec": "font",
+          "paths": [
+            [
+              32
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                32
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "BorderColor": {
+          "codec": "color",
+          "paths": [
+            [
+              39,
+              2
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                2
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "ShowInHeader": {
+          "codec": "bool",
+          "paths": [
+            [
+              20
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                20
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "ShowInFooter": {
+          "codec": "bool",
+          "paths": [
+            [
+              21
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                21
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "AutoCellHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              28
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                28
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "HeaderHorizontalAlign": {
+          "codec": "enum",
+          "values": {
+            "Left": [],
+            "Center": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "1"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "3"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                24
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "FooterHorizontalAlign": {
+          "codec": "enum",
+          "values": {
+            "Left": [
+              {
+                "path": [
+                  25
+                ],
+                "value": "0"
+              }
+            ],
+            "Center": [
+              {
+                "path": [
+                  25
+                ],
+                "value": "1"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  25
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                25
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "FooterText": {
+          "codec": "localized",
+          "paths": [
+            [
+              19
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                19
+              ],
+              "value": "{1,0}"
+            }
+          ]
+        },
+        "FooterFont": {
+          "codec": "font",
+          "paths": [
+            [
+              36
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                36
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "FooterTextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              34
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                34
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "FooterBackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              35
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                35
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "EditFormat": {
+          "codec": "localized",
+          "paths": [
+            [
+              39,
+              5
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                5
+              ],
+              "value": "{1,0}"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "path": [
+            40
+          ],
+          "names": {
+            "OnChange": "fe115cc8-9e33-4684-a166-bd5136fe7a9f"
+          }
+        }
+      ]
+    },
+    "LabelField": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                13
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              43
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                43
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "ReadOnly": {
+          "codec": "bool",
+          "paths": [
+            [
+              14
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                14
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "AutoMaxWidth": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              15
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                15
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              18
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                18
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "PasswordMode": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              11
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                11
+              ],
+              "value": "2"
+            }
+          ],
+          "example": "true"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              39,
+              1
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                1
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "17"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              39,
+              2
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                2
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "7"
+        },
+        "ToolTip": {
+          "codec": "localized",
+          "paths": [
+            [
+              10
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                10
+              ],
+              "value": "{1,0}"
+            }
+          ],
+          "example": "Bulk tip"
+        },
+        "TitleLocation": {
+          "codec": "enum",
+          "values": {
+            "Left": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "2"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "4"
+              }
+            ],
+            "Top": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "3"
+              }
+            ],
+            "Bottom": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "5"
+              }
+            ],
+            "None": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "0"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                7
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "HorizontalAlign": {
+          "codec": "enum",
+          "values": {
+            "Left": [
+              {
+                "path": [
+                  23
+                ],
+                "value": "0"
+              }
+            ],
+            "Center": [
+              {
+                "path": [
+                  23
+                ],
+                "value": "1"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  23
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                23
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "VerticalAlign": {
+          "codec": "enum",
+          "values": {
+            "Top": [
+              {
+                "path": [
+                  27
+                ],
+                "value": "0"
+              }
+            ],
+            "Center": [
+              {
+                "path": [
+                  27
+                ],
+                "value": "1"
+              }
+            ],
+            "Bottom": [
+              {
+                "path": [
+                  27
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                27
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "ToolTipRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "1"
+              }
+            ],
+            "Button": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "3"
+              }
+            ],
+            "ShowBottom": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "7"
+              }
+            ],
+            "ShowTop": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "5"
+              }
+            ],
+            "ShowLeft": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "6"
+              }
+            ],
+            "ShowRight": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "8"
+              }
+            ],
+            "ShowAuto": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "4"
+              }
+            ],
+            "Balloon": [
+              {
+                "path": [
+                  50
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                50
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "TextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              39,
+              8
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                8
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "BackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              39,
+              9
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                9
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "TitleTextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              31
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                31
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Font": {
+          "codec": "font",
+          "paths": [
+            [
+              39,
+              10
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                10
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "TitleFont": {
+          "codec": "font",
+          "paths": [
+            [
+              32
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                32
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "Border": {
+          "codec": "border",
+          "paths": [
+            [
+              39,
+              14
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                14
+              ],
+              "value": "{3,0,{0},0,1,0,48312c09-257f-4b29-b280-284dd89efc1e}"
+            }
+          ]
+        },
+        "BorderColor": {
+          "codec": "color",
+          "paths": [
+            [
+              39,
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                13
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "ShowInHeader": {
+          "codec": "bool",
+          "paths": [
+            [
+              20
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                20
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "ShowInFooter": {
+          "codec": "bool",
+          "paths": [
+            [
+              21
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                21
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "AutoCellHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              28
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                28
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "HeaderHorizontalAlign": {
+          "codec": "enum",
+          "values": {
+            "Left": [],
+            "Center": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "1"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "3"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                24
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "FooterHorizontalAlign": {
+          "codec": "enum",
+          "values": {
+            "Left": [
+              {
+                "path": [
+                  25
+                ],
+                "value": "0"
+              }
+            ],
+            "Center": [
+              {
+                "path": [
+                  25
+                ],
+                "value": "1"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  25
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                25
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "FooterText": {
+          "codec": "localized",
+          "paths": [
+            [
+              19
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                19
+              ],
+              "value": "{1,0}"
+            }
+          ]
+        },
+        "FooterFont": {
+          "codec": "font",
+          "paths": [
+            [
+              36
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                36
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "FooterTextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              34
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                34
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "FooterBackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              35
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                35
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Format": {
+          "codec": "localized",
+          "paths": [
+            [
+              39,
+              6
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                6
+              ],
+              "value": "{1,0}"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "path": [
+            39,
+            12
+          ],
+          "names": {
+            "URLProcessing": "509eca20-d6e4-4fef-a0f8-3a6b44c64178",
+            "Click": "eba5f295-c611-4dd9-84b5-22911ad60c53"
+          }
+        },
+        {
+          "path": [
+            40
+          ],
+          "names": {
+            "OnChange": "fe115cc8-9e33-4684-a166-bd5136fe7a9f"
+          }
+        }
+      ]
+    },
+    "UsualGroup": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              10
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                10
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              {
+                "after_children": 0
+              }
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 0
+                }
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "ReadOnly": {
+          "codec": "bool",
+          "paths": [
+            [
+              11
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                11
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "ShowTitle": {
+          "codec": "bool",
+          "paths": [
+            [
+              20,
+              4
+            ],
+            [
+              20,
+              41
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                20,
+                4
+              ],
+              "value": "1"
+            },
+            {
+              "path": [
+                20,
+                41
+              ],
+              "value": "2"
+            }
+          ],
+          "example": "false"
+        },
+        "Hyperlink": {
+          "codec": "bool",
+          "paths": [
+            [
+              20,
+              31
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                20,
+                31
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              12
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                12
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "17"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                13
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "7"
+        },
+        "ToolTip": {
+          "codec": "localized",
+          "paths": [
+            [
+              8
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                8
+              ],
+              "value": "{1,0}"
+            }
+          ],
+          "example": "Bulk tip"
+        },
+        "ToolTipRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "1"
+              }
+            ],
+            "Button": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "3"
+              }
+            ],
+            "ShowBottom": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "7"
+              }
+            ],
+            "ShowTop": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "5"
+              }
+            ],
+            "ShowLeft": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "6"
+              }
+            ],
+            "ShowRight": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "8"
+              }
+            ],
+            "ShowAuto": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "4"
+              }
+            ],
+            "Balloon": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 1
+                }
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "Group": {
+          "codec": "enum",
+          "values": {
+            "Vertical": [],
+            "Horizontal": [
+              {
+                "path": [
+                  20,
+                  1
+                ],
+                "value": "1"
+              },
+              {
+                "path": [
+                  20,
+                  22
+                ],
+                "value": "1"
+              },
+              {
+                "path": [
+                  20,
+                  27
+                ],
+                "value": "1"
+              },
+              {
+                "path": [
+                  20,
+                  36
+                ],
+                "value": "1"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                20,
+                1
+              ],
+              "value": "0"
+            },
+            {
+              "path": [
+                20,
+                22
+              ],
+              "value": "0"
+            },
+            {
+              "path": [
+                20,
+                27
+              ],
+              "value": "0"
+            },
+            {
+              "path": [
+                20,
+                36
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "GroupHorizontalAlign": {
+          "codec": "enum",
+          "values": {
+            "Left": [
+              {
+                "path": [
+                  {
+                    "after_children": 5
+                  }
+                ],
+                "value": "0"
+              }
+            ],
+            "Center": [
+              {
+                "path": [
+                  {
+                    "after_children": 5
+                  }
+                ],
+                "value": "1"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  {
+                    "after_children": 5
+                  }
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 5
+                }
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "GroupVerticalAlign": {
+          "codec": "enum",
+          "values": {
+            "Top": [
+              {
+                "path": [
+                  {
+                    "after_children": 6
+                  }
+                ],
+                "value": "0"
+              }
+            ],
+            "Center": [
+              {
+                "path": [
+                  {
+                    "after_children": 6
+                  }
+                ],
+                "value": "1"
+              }
+            ],
+            "Bottom": [
+              {
+                "path": [
+                  {
+                    "after_children": 6
+                  }
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 6
+                }
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "BackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              20,
+              9
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                20,
+                9
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "TitleTextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              16
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                16
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "TitleFont": {
+          "codec": "font",
+          "paths": [
+            [
+              17
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                17
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "path": [
+            20,
+            33
+          ],
+          "names": {
+            "Click": "a3da1388-983a-4d28-87f2-5096d7e3a4ef"
+          }
+        }
+      ]
+    },
+    "Pages": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              10
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                10
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              {
+                "after_children": 0
+              }
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 0
+                }
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "ReadOnly": {
+          "codec": "bool",
+          "paths": [
+            [
+              11
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                11
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              12
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                12
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "17"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                13
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "7"
+        },
+        "ToolTip": {
+          "codec": "localized",
+          "paths": [
+            [
+              8
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                8
+              ],
+              "value": "{1,0}"
+            }
+          ],
+          "example": "Bulk tip"
+        },
+        "ToolTipRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "1"
+              }
+            ],
+            "Button": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "3"
+              }
+            ],
+            "ShowBottom": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "7"
+              }
+            ],
+            "ShowTop": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "5"
+              }
+            ],
+            "ShowLeft": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "6"
+              }
+            ],
+            "ShowRight": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "8"
+              }
+            ],
+            "ShowAuto": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "4"
+              }
+            ],
+            "Balloon": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 1
+                }
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "PagesRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  20,
+                  1
+                ],
+                "value": "0"
+              },
+              {
+                "path": [
+                  20,
+                  5
+                ],
+                "value": "0"
+              }
+            ],
+            "TabsOnTop": [
+              {
+                "path": [
+                  20,
+                  5
+                ],
+                "value": "1"
+              }
+            ],
+            "TabsOnBottom": [
+              {
+                "path": [
+                  20,
+                  1
+                ],
+                "value": "2"
+              },
+              {
+                "path": [
+                  20,
+                  5
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                20,
+                1
+              ],
+              "value": "1"
+            },
+            {
+              "path": [
+                20,
+                5
+              ],
+              "value": "6"
+            }
+          ]
+        },
+        "TitleTextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              16
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                16
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "TitleFont": {
+          "codec": "font",
+          "paths": [
+            [
+              17
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                17
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "path": [
+            20,
+            2
+          ],
+          "names": {
+            "OnCurrentPageChange": "526c501f-ed3f-4db4-8731-fd0324707501"
+          }
+        }
+      ]
+    },
+    "Page": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              10
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                10
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              {
+                "after_children": 0
+              }
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 0
+                }
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "ReadOnly": {
+          "codec": "bool",
+          "paths": [
+            [
+              11
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                11
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "ShowTitle": {
+          "codec": "bool",
+          "paths": [
+            [
+              20,
+              6
+            ],
+            [
+              20,
+              23
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                20,
+                6
+              ],
+              "value": "1"
+            },
+            {
+              "path": [
+                20,
+                23
+              ],
+              "value": "2"
+            }
+          ],
+          "example": "false"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              12
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                12
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "17"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                13
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "7"
+        },
+        "ToolTip": {
+          "codec": "localized",
+          "paths": [
+            [
+              8
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                8
+              ],
+              "value": "{1,0}"
+            }
+          ],
+          "example": "Bulk tip"
+        },
+        "ToolTipRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "1"
+              }
+            ],
+            "Button": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "3"
+              }
+            ],
+            "ShowBottom": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "7"
+              }
+            ],
+            "ShowTop": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "5"
+              }
+            ],
+            "ShowLeft": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "6"
+              }
+            ],
+            "ShowRight": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "8"
+              }
+            ],
+            "ShowAuto": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "4"
+              }
+            ],
+            "Balloon": [
+              {
+                "path": [
+                  {
+                    "after_children": 1
+                  }
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 1
+                }
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "BackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              20,
+              9
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                20,
+                9
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "TitleTextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              16
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                16
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "TitleFont": {
+          "codec": "font",
+          "paths": [
+            [
+              17
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                17
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        }
+      },
+      "events": null
+    },
+    "Button": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              7
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                7
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              26
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                26
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxWidth": {
+          "codec": "bool",
+          "paths": [
+            [
+              34
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                34
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              37
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                37
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              16
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                16
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "17"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              17
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                17
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "7"
+        },
+        "ToolTipRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  30
+                ],
+                "value": "1"
+              }
+            ],
+            "Button": [
+              {
+                "path": [
+                  30
+                ],
+                "value": "3"
+              }
+            ],
+            "ShowBottom": [
+              {
+                "path": [
+                  30
+                ],
+                "value": "7"
+              }
+            ],
+            "ShowTop": [
+              {
+                "path": [
+                  30
+                ],
+                "value": "5"
+              }
+            ],
+            "ShowLeft": [
+              {
+                "path": [
+                  30
+                ],
+                "value": "6"
+              }
+            ],
+            "ShowRight": [
+              {
+                "path": [
+                  30
+                ],
+                "value": "8"
+              }
+            ],
+            "ShowAuto": [
+              {
+                "path": [
+                  30
+                ],
+                "value": "4"
+              }
+            ],
+            "Balloon": [
+              {
+                "path": [
+                  30
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                30
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "Representation": {
+          "codec": "enum",
+          "values": {
+            "Auto": [],
+            "Picture": [
+              {
+                "path": [
+                  10
+                ],
+                "value": "1"
+              }
+            ],
+            "Text": [
+              {
+                "path": [
+                  10
+                ],
+                "value": "0"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                10
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "TextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              20
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                20
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "BackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              19
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                19
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Font": {
+          "codec": "font",
+          "paths": [
+            [
+              22
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                22
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "BorderColor": {
+          "codec": "color",
+          "paths": [
+            [
+              21
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                21
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        }
+      },
+      "events": null
+    },
+    "Table": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                13
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              {
+                "after_children": 2
+              }
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 2
+                }
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "ReadOnly": {
+          "codec": "bool",
+          "paths": [
+            [
+              14
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                14
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "AutoMaxWidth": {
+          "codec": "bool",
+          "paths": [
+            [
+              {
+                "after_children": 22
+              }
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 22
+                }
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              {
+                "after_children": 25
+              }
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 25
+                }
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              19
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                19
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "17"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              20
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                20
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "7"
+        },
+        "ToolTip": {
+          "codec": "localized",
+          "paths": [
+            [
+              10
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                10
+              ],
+              "value": "{1,0}"
+            }
+          ],
+          "example": "Bulk tip"
+        },
+        "TitleLocation": {
+          "codec": "enum",
+          "values": {
+            "Left": [
+              {
+                "path": [
+                  6
+                ],
+                "value": "2"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  6
+                ],
+                "value": "4"
+              }
+            ],
+            "Top": [
+              {
+                "path": [
+                  6
+                ],
+                "value": "3"
+              }
+            ],
+            "Bottom": [
+              {
+                "path": [
+                  6
+                ],
+                "value": "5"
+              }
+            ],
+            "None": [],
+            "Auto": [
+              {
+                "path": [
+                  6
+                ],
+                "value": "1"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                6
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "ToolTipRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  {
+                    "after_children": 9
+                  }
+                ],
+                "value": "1"
+              }
+            ],
+            "Button": [
+              {
+                "path": [
+                  {
+                    "after_children": 9
+                  }
+                ],
+                "value": "3"
+              }
+            ],
+            "ShowBottom": [
+              {
+                "path": [
+                  {
+                    "after_children": 9
+                  }
+                ],
+                "value": "7"
+              }
+            ],
+            "ShowTop": [
+              {
+                "path": [
+                  {
+                    "after_children": 9
+                  }
+                ],
+                "value": "5"
+              }
+            ],
+            "ShowLeft": [
+              {
+                "path": [
+                  {
+                    "after_children": 9
+                  }
+                ],
+                "value": "6"
+              }
+            ],
+            "ShowRight": [
+              {
+                "path": [
+                  {
+                    "after_children": 9
+                  }
+                ],
+                "value": "8"
+              }
+            ],
+            "ShowAuto": [
+              {
+                "path": [
+                  {
+                    "after_children": 9
+                  }
+                ],
+                "value": "4"
+              }
+            ],
+            "Balloon": [
+              {
+                "path": [
+                  {
+                    "after_children": 9
+                  }
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 9
+                }
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "Representation": {
+          "codec": "enum",
+          "values": {
+            "List": [
+              {
+                "path": [
+                  3
+                ],
+                "value": "0"
+              }
+            ],
+            "Tree": [
+              {
+                "path": [
+                  3
+                ],
+                "value": "2"
+              }
+            ],
+            "HierarchicalList": []
+          },
+          "defaults": [
+            {
+              "path": [
+                3
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "TextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              46
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                46
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "BackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              45
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                45
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "TitleTextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              49
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                49
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Font": {
+          "codec": "font",
+          "paths": [
+            [
+              48
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                48
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "TitleFont": {
+          "codec": "font",
+          "paths": [
+            [
+              50
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                50
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "BorderColor": {
+          "codec": "color",
+          "paths": [
+            [
+              47
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                47
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Header": {
+          "codec": "bool",
+          "paths": [
+            [
+              26
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                26
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "Footer": {
+          "codec": "bool",
+          "paths": [
+            [
+              28
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                28
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "HorizontalLines": {
+          "codec": "enum",
+          "values": {
+            "true": [
+              {
+                "path": [
+                  {
+                    "after_children": 37
+                  }
+                ],
+                "value": "1"
+              }
+            ],
+            "false": [
+              {
+                "path": [
+                  32
+                ],
+                "value": "0"
+              },
+              {
+                "path": [
+                  {
+                    "after_children": 37
+                  }
+                ],
+                "value": "0"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 37
+                }
+              ],
+              "value": "2"
+            },
+            {
+              "path": [
+                32
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "VerticalLines": {
+          "codec": "enum",
+          "values": {
+            "true": [
+              {
+                "path": [
+                  33
+                ],
+                "value": "1"
+              },
+              {
+                "path": [
+                  {
+                    "after_children": 38
+                  }
+                ],
+                "value": "1"
+              }
+            ],
+            "false": [
+              {
+                "path": [
+                  {
+                    "after_children": 38
+                  }
+                ],
+                "value": "0"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                33
+              ],
+              "value": "0"
+            },
+            {
+              "path": [
+                {
+                  "after_children": 38
+                }
+              ],
+              "value": "2"
+            }
+          ]
+        },
+        "UseAlternationRowColor": {
+          "codec": "enum",
+          "values": {
+            "true": [
+              {
+                "path": [
+                  {
+                    "after_children": 47
+                  }
+                ],
+                "value": "1"
+              }
+            ],
+            "false": [
+              {
+                "path": [
+                  36
+                ],
+                "value": "0"
+              },
+              {
+                "path": [
+                  {
+                    "after_children": 47
+                  }
+                ],
+                "value": "0"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                {
+                  "after_children": 47
+                }
+              ],
+              "value": "2"
+            },
+            {
+              "path": [
+                36
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "ChangeRowSet": {
+          "codec": "bool",
+          "paths": [
+            [
+              17
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                17
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "ChangeRowOrder": {
+          "codec": "bool",
+          "paths": [
+            [
+              18
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                18
+              ],
+              "value": "1"
+            }
+          ]
+        },
+        "AutoInsertNewRow": {
+          "codec": "bool",
+          "paths": [
+            [
+              37
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                37
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "HeightInTableRows": {
+          "codec": "int",
+          "paths": [
+            [
+              21
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                21
+              ],
+              "value": "0"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "path": [
+            {
+              "before_children": 6
+            }
+          ],
+          "names": {
+            "DragCheck": "0d644ff6-443b-4390-86fa-7f9105e42711",
+            "Selection": "1282f000-23b6-4887-87f4-9e8e79db3d32",
+            "BeforeAddRow": "2391e7b8-7235-45d7-ab7e-6ff3dc086396",
+            "BeforeDeleteRow": "2ccfdec5-583d-4eca-8319-e55de492665a",
+            "OnActivateRow": "60edb81d-887b-478e-94ee-7fef2b13393d",
+            "DragStart": "6d4d6747-a823-4f61-ab31-a426572f2c6c",
+            "Drag": "8ad48496-8d0b-4f6c-ae48-99d95227884b",
+            "ChoiceProcessing": "8bfdb5eb-62dc-4851-8a2c-e983526356bf",
+            "BeforeRowChange": "ab930362-ff94-4dcb-ad16-188805d23e3c",
+            "AfterDeleteRow": "de65638d-a806-4a76-bc10-f62bbc86e0e7",
+            "OnChange": "fe115cc8-9e33-4684-a166-bd5136fe7a9f"
+          }
+        }
+      ],
+      "event_header": {
+        "table_counter": true,
+        "defaults": {
+          "13": "{\"U\"}",
+          "19": "{\"S\",\"\"}"
+        }
+      }
+    },
+    "LabelDecoration": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              9
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                9
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              21
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                21
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxWidth": {
+          "codec": "bool",
+          "paths": [
+            [
+              27
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                27
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              30
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                30
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Hyperlink": {
+          "codec": "bool",
+          "paths": [
+            [
+              18,
+              1
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                18,
+                1
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              10
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                10
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "17"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              11
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                11
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "7"
+        },
+        "ToolTip": {
+          "codec": "localized",
+          "paths": [
+            [
+              8
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                8
+              ],
+              "value": "{1,0}"
+            }
+          ],
+          "example": "Bulk tip"
+        },
+        "HorizontalAlign": {
+          "codec": "enum",
+          "values": {
+            "Left": [],
+            "Center": [
+              {
+                "path": [
+                  18,
+                  2
+                ],
+                "value": "1"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  18,
+                  2
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": [
+              {
+                "path": [
+                  18,
+                  2
+                ],
+                "value": "3"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                18,
+                2
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "VerticalAlign": {
+          "codec": "enum",
+          "values": {
+            "Top": [
+              {
+                "path": [
+                  18,
+                  3
+                ],
+                "value": "0"
+              }
+            ],
+            "Center": [
+              {
+                "path": [
+                  18,
+                  3
+                ],
+                "value": "1"
+              }
+            ],
+            "Bottom": [
+              {
+                "path": [
+                  18,
+                  3
+                ],
+                "value": "2"
+              }
+            ],
+            "Auto": []
+          },
+          "defaults": [
+            {
+              "path": [
+                18,
+                3
+              ],
+              "value": "3"
+            }
+          ]
+        },
+        "ToolTipRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "1"
+              }
+            ],
+            "Button": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "3"
+              }
+            ],
+            "ShowBottom": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "7"
+              }
+            ],
+            "ShowTop": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "5"
+              }
+            ],
+            "ShowLeft": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "6"
+              }
+            ],
+            "ShowRight": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "8"
+              }
+            ],
+            "ShowAuto": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "4"
+              }
+            ],
+            "Balloon": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                24
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "TextColor": {
+          "codec": "color",
+          "paths": [
+            [
+              14
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                14
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "BackColor": {
+          "codec": "color",
+          "paths": [
+            [
+              18,
+              6
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                18,
+                6
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Font": {
+          "codec": "font",
+          "paths": [
+            [
+              15
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                15
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "Border": {
+          "codec": "border",
+          "paths": [
+            [
+              18,
+              8
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                18,
+                8
+              ],
+              "value": "{3,0,{0},0,1,0,48312c09-257f-4b29-b280-284dd89efc1e}"
+            }
+          ]
+        },
+        "BorderColor": {
+          "codec": "color",
+          "paths": [
+            [
+              18,
+              7
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                18,
+                7
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Title": {
+          "codec": "rich_title",
+          "paths": [
+            [
+              7
+            ],
+            [
+              23
+            ]
+          ],
+          "defaults": [
+            {
+              "path": [
+                7
+              ],
+              "value": "{1,0}"
+            },
+            {
+              "path": [
+                23
+              ],
+              "value": "{1,{1,0},0}"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "path": [
+            18,
+            5
+          ],
+          "names": {
+            "Click": "11707a99-4eb9-4373-bc8c-84891483a034",
+            "URLProcessing": "d710ea07-5c96-4c43-ab6e-e138d3653780"
+          }
+        }
+      ]
+    },
+    "PictureDecoration": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              9
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                9
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              21
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                21
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxWidth": {
+          "codec": "bool",
+          "paths": [
+            [
+              27
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                27
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              30
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                30
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Hyperlink": {
+          "codec": "bool",
+          "paths": [
+            [
+              18,
+              2
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                18,
+                2
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              10
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                10
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "17"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              11
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                11
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "7"
+        },
+        "ToolTip": {
+          "codec": "localized",
+          "paths": [
+            [
+              8
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                8
+              ],
+              "value": "{1,0}"
+            }
+          ],
+          "example": "Bulk tip"
+        },
+        "ToolTipRepresentation": {
+          "codec": "enum",
+          "values": {
+            "None": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "1"
+              }
+            ],
+            "Button": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "3"
+              }
+            ],
+            "ShowBottom": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "7"
+              }
+            ],
+            "ShowTop": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "5"
+              }
+            ],
+            "ShowLeft": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "6"
+              }
+            ],
+            "ShowRight": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "8"
+              }
+            ],
+            "ShowAuto": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "4"
+              }
+            ],
+            "Balloon": [
+              {
+                "path": [
+                  24
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                24
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "Font": {
+          "codec": "font",
+          "paths": [
+            [
+              15
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                15
+              ],
+              "value": "{8,3,0,1,100}"
+            }
+          ]
+        },
+        "Border": {
+          "codec": "border",
+          "paths": [
+            [
+              18,
+              7
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                18,
+                7
+              ],
+              "value": "{3,0,{0},0,1,0,48312c09-257f-4b29-b280-284dd89efc1e}"
+            }
+          ]
+        },
+        "BorderColor": {
+          "codec": "color",
+          "paths": [
+            [
+              18,
+              6
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                18,
+                6
+              ],
+              "value": "{4,4,{0},4}"
+            }
+          ]
+        },
+        "Title": {
+          "codec": "rich_title",
+          "paths": [
+            [
+              7
+            ],
+            [
+              23
+            ]
+          ],
+          "defaults": [
+            {
+              "path": [
+                7
+              ],
+              "value": "{1,0}"
+            },
+            {
+              "path": [
+                23
+              ],
+              "value": "{1,{1,0},0}"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "path": [
+            18,
+            10
+          ],
+          "names": {
+            "DragCheck": "0d644ff6-443b-4390-86fa-7f9105e42711",
+            "DragStart": "6d4d6747-a823-4f61-ab31-a426572f2c6c",
+            "Drag": "8ad48496-8d0b-4f6c-ae48-99d95227884b",
+            "Click": "9874537f-454c-40ae-83e9-3b9cefbc6d08"
+          }
+        }
+      ]
+    },
+    "Form": {
+      "properties": {},
+      "events": [
+        {
+          "path": [
+            1,
+            {
+              "before_controls": 4
+            }
+          ],
+          "names": {
+            "AfterWrite": "047d4d09-961c-4bdc-8519-eef10674c35b",
+            "ChoiceProcessing": "1d632984-de3c-4b4b-ad9f-d69682a10182",
+            "AfterWriteAtServer": "213d1900-dcad-4616-9f20-3f077156a40f",
+            "NotificationProcessing": "3699f6a3-9a2a-4c82-a775-6ff4824a08ca",
+            "OnReadAtServer": "390d5e4b-e732-4c88-8748-9e211a416984",
+            "OnOpen": "3ccc650e-f631-4cae-8e33-3eaac610b5f9",
+            "BeforeClose": "52dbb775-1631-4fd5-8c55-1615b5881dac",
+            "BeforeWrite": "9cc34712-da5f-4faa-a653-343d2085fbe8",
+            "OnCreateAtServer": "9f2e5ddb-3492-4f5d-8f0d-416b8d1d5c5b",
+            "BeforeWriteAtServer": "bf0ac0e1-bcbb-4dfe-8fc4-0b1923b461a6",
+            "OnWriteAtServer": "c1bc0d3e-d35e-4207-a06b-ece68ed25314",
+            "OnClose": "ca21cd18-35b2-4281-b5c8-016ecc8da8ac",
+            "URLProcessing": "e0cd9bdf-88fa-428c-9f1f-86f7f73b11e2"
+          }
+        }
+      ],
+      "event_header": {
+        "counter": 18,
+        "defaults": {
+          "24": "{\"B\",0}",
+          "25": "{\"U\"}",
+          "26": "{\"B\",1}"
+        }
+      }
+    },
+    "RadioButtonField": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                13
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              43
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                43
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "ReadOnly": {
+          "codec": "bool",
+          "paths": [
+            [
+              14
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                14
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "ChoiceList": {
+          "codec": "choice_list",
+          "paths": [
+            [
+              39,
+              1
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                1
+              ],
+              "value": "{3,0}"
+            }
+          ]
+        },
+        "RadioButtonType": {
+          "codec": "enum",
+          "values": {
+            "Auto": [],
+            "Tumbler": [
+              {
+                "path": [
+                  39,
+                  7
+                ],
+                "value": "2"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                39,
+                7
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "ColumnsCount": {
+          "codec": "int",
+          "paths": [
+            [
+              39,
+              2
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                2
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        "EqualColumnsWidth": {
+          "codec": "enum",
+          "values": {
+            "true": [
+              {
+                "path": [
+                  39,
+                  11
+                ],
+                "value": "1"
+              }
+            ],
+            "false": [
+              {
+                "path": [
+                  39,
+                  11
+                ],
+                "value": "0"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                39,
+                11
+              ],
+              "value": "2"
+            }
+          ]
+        },
+        "TitleLocation": {
+          "codec": "enum",
+          "values": {
+            "Auto": [],
+            "Left": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "2"
+              }
+            ],
+            "Right": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "4"
+              }
+            ],
+            "Top": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "3"
+              }
+            ],
+            "Bottom": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "5"
+              }
+            ],
+            "None": [
+              {
+                "path": [
+                  7
+                ],
+                "value": "0"
+              }
+            ]
+          },
+          "defaults": [
+            {
+              "path": [
+                7
+              ],
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "path": [
+            40
+          ],
+          "names": {
+            "OnChange": "fe115cc8-9e33-4684-a166-bd5136fe7a9f"
+          }
+        }
+      ]
+    },
+    "ProgressBarField": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                13
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              43
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                43
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "ReadOnly": {
+          "codec": "bool",
+          "paths": [
+            [
+              14
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                14
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "AutoMaxWidth": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              11
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                11
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              14
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                14
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              39,
+              1
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                1
+              ],
+              "value": "32"
+            }
+          ],
+          "example": "23"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              39,
+              2
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                2
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "11"
+        }
+      },
+      "events": null
+    },
+    "CalendarField": {
+      "properties": {
+        "Enabled": {
+          "codec": "bool",
+          "paths": [
+            [
+              13
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                13
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Visible": {
+          "codec": "bool",
+          "paths": [
+            [
+              43
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                43
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "ReadOnly": {
+          "codec": "bool",
+          "paths": [
+            [
+              14
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                14
+              ],
+              "value": "0"
+            }
+          ],
+          "example": "true"
+        },
+        "AutoMaxWidth": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              19
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                19
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "AutoMaxHeight": {
+          "codec": "bool",
+          "paths": [
+            [
+              39,
+              22
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                22
+              ],
+              "value": "1"
+            }
+          ],
+          "example": "false"
+        },
+        "Width": {
+          "codec": "int",
+          "paths": [
+            [
+              39,
+              1
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                1
+              ],
+              "value": "16"
+            }
+          ],
+          "example": "23"
+        },
+        "Height": {
+          "codec": "int",
+          "paths": [
+            [
+              39,
+              2
+            ]
+          ],
+          "fixed": [],
+          "defaults": [
+            {
+              "path": [
+                39,
+                2
+              ],
+              "value": "9"
+            }
+          ],
+          "example": "11"
+        }
+      },
+      "events": [
+        {
+          "path": [
+            39,
+            14
+          ],
+          "names": {
+            "Selection": "2feb1ee9-b750-4352-bb4c-67ba1c608dc6",
+            "OnActivateDate": "3793cac5-9f9a-4b7c-adda-386e5cccf794"
+          }
+        },
+        {
+          "path": [
+            40
+          ],
+          "names": {
+            "OnChange": "fe115cc8-9e33-4684-a166-bd5136fe7a9f"
+          }
+        }
+      ]
+    }
+  }
+}

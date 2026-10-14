@@ -7,7 +7,7 @@ import test_metadata_serializer as metadata
 import platform_profiles as p
 import metadata_serializer as s
 import constant_serializer as c
-import catalog_serializer as cat
+import flat_object_serializer as cat
 
 LEGACY=('8.5.1.1529','8.5.1.1150','8.5.1.9999','8.5.0.1','8.3.27.2342','8.3.10.1','8.2.19.1')
 
@@ -40,10 +40,10 @@ class PlatformProfileTests(unittest.TestCase):
             body=c.constant_xml(const.xml(),version)[2]
             common=s.Parser(body.decode('utf-8-sig')).documents()[0][1][1][1][1]
             self.assertEqual((s.val(common[0]),len(common)),('3',9))
-            self.assertEqual(len(cat.catalog_xml(catalog.xml(),version)[3]),10)
+            self.assertEqual(len(cat.object_xml(catalog.xml(),version, 'Catalog')[3]),10)
 
     def test_old_xml_revision_and_incompatible_snapshot(self):
-        self.assertEqual(len(cat.catalog_xml(catalog.xml().replace('2.21','2.16'),'8.3.10.1')[3]),10)
+        self.assertEqual(len(cat.object_xml(catalog.xml().replace('2.21','2.16'),'8.3.10.1', 'Catalog')[3]),10)
         for attrs in ({'version':'2.22'},{'version':'2.-1'},{'version':'3.0'},{'unknown':'x'}):
             self.assertFalse(p.xml_attributes(attrs,'8.3.27.2342'))
         request,_=metadata.property_fixture('8.5.4.1878');request['platform']='8.3.27.2342'

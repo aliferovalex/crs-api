@@ -1,0 +1,21 @@
+{
+  "template": "{1,{2,\"crsprobe\",{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},2,20},1,{ec6896c2-9b28-42d8-9140-48491146b8ea,0}}",
+  "defaults": {
+    "RootURL": "crsprobe",
+    "ReuseSessions": "AutoUse",
+    "SessionMaxAge": "20"
+  },
+  "generated_slots": [],
+  "generated_categories": [],
+  "input_fields": [],
+  "common_path": [
+    1,
+    2
+  ],
+  "string_slots": {
+    "RootURL": [
+      1,
+      1
+    ]
+  }
+}

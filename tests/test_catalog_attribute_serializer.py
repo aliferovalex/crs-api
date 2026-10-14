@@ -4,7 +4,7 @@ import unittest
 import uuid
 from xml.etree import ElementTree as E
 import test_catalog_form_serializer as catalog
-import catalog_attribute_serializer as attributes
+import catalog_change_serializer as attributes
 import metadata_serializer as s
 
 

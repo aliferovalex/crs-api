@@ -1,0 +1,23 @@
+{
+  "template": "{1,{4,\"urn:crs-probe\",{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{0,0},\"ws1.1cws\",{0},2,20},1,{36186084-c23a-43bd-876c-a3a8ba1a9622,0}}",
+  "defaults": {
+    "Namespace": "urn:crs-probe",
+    "XDTOPackages": "",
+    "DescriptorFileName": "ws1.1cws",
+    "ReuseSessions": "AutoUse",
+    "SessionMaxAge": "20"
+  },
+  "generated_slots": [],
+  "generated_categories": [],
+  "input_fields": [],
+  "common_path": [
+    1,
+    2
+  ],
+  "string_slots": {
+    "Namespace": [
+      1,
+      1
+    ]
+  }
+}

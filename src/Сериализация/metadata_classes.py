@@ -4,9 +4,6 @@ The UUIDs are read from the snapshot, including empty collections. Labels are
 optional hints from metadata_class_names.json, not a platform registry.
 """
 import base64
-import json
-from pathlib import Path
-import sys
 import uuid
 import metadata_serializer as s
 import metadata_identifiers as identifiers
@@ -111,12 +108,8 @@ def catalog(request):
 
 
 def main():
-    try:
-        request = json.loads(Path(sys.argv[1]).read_text(encoding='utf-8-sig'))
-        result = catalog(request)
-    except Exception as error:
-        result = dict(ok=False, error=str(error))
-    Path(sys.argv[2]).write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
+    from serializer_cli import run
+    run(catalog)
 
 
 if __name__ == '__main__':

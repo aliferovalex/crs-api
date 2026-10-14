@@ -3,7 +3,7 @@ import base64,copy,unittest
 from xml.etree import ElementTree as E
 import metadata_serializer as s
 import catalog_object_xml as catalog
-import catalog_attribute_serializer
+import catalog_change_serializer
 import test_catalog_attribute_serializer as attr
 import test_commonmodule_change as module
 import commonmodule_serializer
@@ -29,12 +29,12 @@ class WholeObjectTests(unittest.TestCase):
         top=catalog.export(source,{},r['platform']);props=top[0].find(catalog.Q+'Properties')
         props.find(catalog.Q+'Comment').text='Whole Catalog'
         template=copy.deepcopy(source)
-        first=body(catalog_attribute_serializer.serialize(r))[1][0][6][2]
+        first=body(catalog_change_serializer.serialize(r))[1][0][6][2]
         node=catalog.attribute_export(first)
         node.find(catalog.Q+'Properties/'+catalog.Q+'Type/{'+catalog.c.CORE+'}StringQualifiers/{'+catalog.c.CORE+'}Length').text='120'
         top[0].find(catalog.Q+'ChildObjects').append(node)
         r.pop('name');r.pop('length');r['object_xml']=E.tostring(top,encoding='unicode')
-        result=catalog_attribute_serializer.serialize(r);meta,docs=body(result)
+        result=catalog_change_serializer.serialize(r);meta,docs=body(result)
         self.assertNotIn('attribute_id',result)
         self.assertEqual(s.val(docs[0][1][9][1][4]),'Whole Catalog')
         self.assertEqual(s.val(docs[0][6][2][0][1][1][2][1][1]),'120')
@@ -50,7 +50,7 @@ class WholeObjectTests(unittest.TestCase):
             elif mutation=='generated':top[0].find('.//{'+catalog.c.READABLE+'}TypeId').text='11111111-1111-4111-8111-111111111111'
             else:E.SubElement(top[0].find(catalog.Q+'ChildObjects'),catalog.Q+'Form').text='Missing'
             with self.subTest(mutation=mutation),self.assertRaises(ValueError):
-                catalog_attribute_serializer.serialize(dict(r,object_xml=E.tostring(top,encoding='unicode')))
+                catalog_change_serializer.serialize(dict(r,object_xml=E.tostring(top,encoding='unicode')))
 
     def test_module_whole_description_and_code(self):
         r=module.fixture();snapshot=base64.b64decode(r['snapshot']);_,pos=s.read_record(snapshot,12);data,_=s.read_record(snapshot,pos)

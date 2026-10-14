@@ -1,0 +1,18 @@
+{
+  "template": "{1,{22,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,{0,0},1,{4,0,{0},\"\",-1,-1,1,0,\"\"},{0},{0,0},0},1,{37f2fa9a-b276-11d4-9435-004095e12fc7,0}}",
+  "defaults": {
+    "IncludeHelpInContents": "true",
+    "IncludeInCommandInterface": "true",
+    "UseOneCommand": "false",
+    "Explanation": "",
+    "Picture": "",
+    "Content": ""
+  },
+  "generated_slots": [],
+  "generated_categories": [],
+  "input_fields": [],
+  "common_path": [
+    1,
+    1
+  ]
+}

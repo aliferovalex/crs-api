@@ -1,0 +1,81 @@
+{
+  "source": "Native 8.5.1.1529 fonts and colors: verified compound values and references.",
+  "font": {
+    "version": 8,
+    "style_kind": 2,
+    "inherit_template": "{8,3,0,1,100}",
+    "absolute_template": "{8,0,0,0,0,0,0,400,0,0,0,0,0,0,0,0,\"\",1,100,0}",
+    "flags_slot": 2,
+    "absolute_slots": {
+      "faceName": 16,
+      "height": 3,
+      "bold": 7,
+      "italic": 8,
+      "underline": 9,
+      "strikeout": 10
+    },
+    "bits": {
+      "faceName": 1,
+      "height": 2,
+      "bold": 4,
+      "italic": 8,
+      "underline": 16,
+      "strikeout": 32
+    },
+    "style_order": [
+      "height",
+      "bold",
+      "italic",
+      "underline",
+      "strikeout"
+    ],
+    "scale_tail": "{1,100}",
+    "references": {
+      "http://v8.1c.ru/8.1/data/ui/style": {
+        "NormalTextFont": "{-31}"
+      }
+    }
+  },
+  "color": {
+    "rgb_template": "{4,0,{RGB_VALUE},0}",
+    "references": {
+      "http://v8.1c.ru/8.1/data/ui/colors/web": {
+        "Red": "{4,2,{119},2}",
+        "Black": "{4,2,{8},2}",
+        "Blue": "{4,2,{10},2}",
+        "White": "{4,2,{143},2}",
+        "Lime": "{4,2,{80},2}",
+        "Yellow": "{4,2,{145},2}",
+        "Gray": "{4,2,{52},2}"
+      },
+      "http://v8.1c.ru/8.1/data/ui/colors/windows": {
+        "ButtonFace": "{4,1,{15},1}",
+        "WindowBackground": "{4,1,{5},1}"
+      }
+    }
+  },
+  "border": {
+    "template": "{3,0,{0},0,0,0,00000000-0000-0000-0000-000000000000}",
+    "width_slot": 4,
+    "style_slot": 3,
+    "type_slot": 6,
+    "control_type_id": "48312c09-257f-4b29-b280-284dd89efc1e",
+    "reference_template": "{3,1,{0},0,0,0}",
+    "reference_slot": 2,
+    "references": {
+      "http://v8.1c.ru/8.1/data/ui/style": {
+        "ControlBorder": "{-18}"
+      }
+    },
+    "styles": {
+      "Single": 1,
+      "Double": 200,
+      "Underline": 4,
+      "DoubleUnderline": 5,
+      "Overline": 7,
+      "Embossed": 2,
+      "Indented": 3,
+      "WithoutBorder": 0
+    }
+  }
+}
