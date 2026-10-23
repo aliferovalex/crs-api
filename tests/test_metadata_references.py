@@ -7,12 +7,10 @@ import sys
 import unittest
 import uuid
 from pathlib import Path
-from xml.etree import ElementTree as E
 sys.path.insert(0,str(next((Path(__file__).resolve().parents[1]/'src').rglob('metadata_references.py')).parent))
-import metadata_serializer as s
+import native_metadata as s
 import metadata_references as refs
 import managed_form_xml as x
-import managed_form_elements as elements
 import v8unpack_backend as b
 
 

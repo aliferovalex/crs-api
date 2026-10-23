@@ -1,11 +1,11 @@
 """XML adapter/upstream model contract and upstream loss detection."""
-import copy,unittest
+import unittest
 from unittest.mock import patch
-import metadata_serializer as s
+import native_metadata as s
 import v8unpack_backend as backend
 import managed_form_xml as forms
 import test_managed_form_xml as fixture
-import managed_form_serializer
+import managed_form_operations
 import test_catalog_form_serializer as creation
 
 
@@ -18,7 +18,7 @@ class BackendTests(unittest.TestCase):
 
     def test_whole_xml_exposes_tree_and_data_and_upstream_assembles_it(self):
         r=creation.fixture();r.update(form_xml=fixture.xml(),module_text='// entire module')
-        raw=fixture.extra(managed_form_serializer.serialize(r))
+        raw=fixture.extra(managed_form_operations.create(r))
         paths={'Object.Code':s.Parser('{2,{1},{-2}}').documents()[0],
                'Object.Description':s.Parser('{2,{1},{-3}}').documents()[0]}
         model=forms.model_from_xml(raw,fixture.xml(fields=[('Renamed',2,'Description')]),'// replaced',paths,'XML_Catalog')
@@ -32,7 +32,7 @@ class BackendTests(unittest.TestCase):
 
     def test_upstream_loss_is_rejected(self):
         r=creation.fixture();r.update(form_xml=fixture.xml())
-        raw=fixture.extra(managed_form_serializer.serialize(r));model=backend.form_model(forms.interface(raw))
+        raw=fixture.extra(managed_form_operations.create(r));model=backend.form_model(forms.interface(raw))
         model['elements']['tree']=[]
         with self.assertRaisesRegex(ValueError,'changed XML-mapped'):
             backend.assemble_form(model)

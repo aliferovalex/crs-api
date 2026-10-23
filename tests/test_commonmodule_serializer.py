@@ -5,16 +5,18 @@ import struct
 import unittest
 import uuid
 import test_enum_serializer as enum
-import test_constant_serializer as const
+import test_object_creation_serializer as const
 import commonmodule_serializer as module
-import constant_serializer as c
-import metadata_serializer as s
+import metadata_identifiers
+import xml_namespaces
+import object_creation_serializer as c
+import native_metadata as s
 
 
 def xml():
     return ('<MetaDataObject xmlns="%s" version="2.21"><CommonModule uuid="%s">'
             '<Properties><Name>XML_Module</Name><Server>true</Server></Properties>'
-            '</CommonModule></MetaDataObject>') % (c.MD, const.CID)
+            '</CommonModule></MetaDataObject>') % (xml_namespaces.MD, const.CID)
 
 
 def fixture():
@@ -24,12 +26,12 @@ def fixture():
     meta, pos = s.read_record(raw, 12)
     data, pos = s.read_record(raw, pos)
     docs = s.Parser(s.inflate(data).decode('utf-8-sig')).documents()
-    docs[0].append([s.atom(c.identifiers.class_id('CommonModule')), s.atom(0)])
+    docs[0].append([s.atom(metadata_identifiers.class_id('CommonModule')), s.atom(0)])
     data = s.compress(s.text_bytes(docs))
     manifest = s.text_bytes([[s.atom(0), s.atom(1), s.atom(rid),
         s.atom(hashlib.sha1(meta).hexdigest(), True), s.atom(hashlib.sha1(data).hexdigest(), True), s.atom(0)]])
     r['snapshots'][rid] = base64.b64encode(s.storage([meta, data], manifest)).decode()
-    r.update(object_type='CommonModule', commonmodule_xml=xml(), source_text='Function Value() Export\n Return "Тест";\nEndFunction\n')
+    r.update(object_type='CommonModule', object_xml=xml(), source_text='Function Value() Export\n Return "Тест";\nEndFunction\n')
     return r
 
 
@@ -72,7 +74,11 @@ class CommonModuleTests(unittest.TestCase):
         self.assertEqual((oid, name, ids), (const.CID, 'XML_Module', []))
         self.assertEqual(s.val(doc[1][1][1][2]), const.CID)
         self.assertEqual(s.val(doc[1][3]), '1')
-        for text in (xml().replace('true', 'false'), xml().replace('<Server>true</Server>', '<Global>true</Global>'), xml().replace('</Properties>', '<Unknown/></Properties>')):
+        without_server=s.Parser(module.module_xml(xml().replace('true','false'))[2].decode('utf-8-sig')).documents()[0]
+        self.assertEqual(s.val(without_server[1][3]),'0')
+        global_module=s.Parser(module.module_xml(xml().replace('<Server>true</Server>','<Global>true</Global>'))[2].decode('utf-8-sig')).documents()[0]
+        self.assertEqual(s.val(global_module[1][6]),'1')
+        for text in (xml().replace('true','unknown'), xml().replace('</Properties>','<Server>false</Server></Properties>'), xml().replace('</Properties>', '<Unknown/></Properties>')):
             with self.assertRaises(ValueError): module.module_xml(text)
         with self.assertRaises(ValueError): module.module_xml(xml(), '8.5.4.1878')
 
@@ -112,7 +118,7 @@ class CommonModuleTests(unittest.TestCase):
             manifest = s.text_bytes([[s.atom(0), s.atom(1), s.atom(oid), s.atom(hashlib.sha1(meta).hexdigest(), True), s.atom(hashlib.sha1(body).hexdigest(), True), s.atom(0)]])
             snapshots[oid] = base64.b64encode(s.storage([meta, body], manifest)).decode()
         r.update(context=base64.b64encode(s.storage(records, s.text_bytes([[s.atom(0)]]))).decode(), snapshots=snapshots,
-                 commonmodule_xml=xml().replace(const.CID, 'dddddddd-dddd-4ddd-8ddd-dddddddddddd').replace('XML_Module', 'Next_Module'))
+                 object_xml=xml().replace(const.CID, 'dddddddd-dddd-4ddd-8ddd-dddddddddddd').replace('XML_Module', 'Next_Module'))
         second = c.serialize(r); _, objects = contents(second)
         previous = next(v for v in second['externals'] if v['object_id'] == const.CID)
         self.assertEqual(previous['action'], 0)

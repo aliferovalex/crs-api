@@ -1,12 +1,12 @@
 """Recursive controls, command identities, events and complete module replacement."""
-import base64,copy,sys,unittest
+import base64, sys, unittest
 from pathlib import Path
 from xml.etree import ElementTree as E
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'/'Сериализация'))
-import metadata_serializer as s,managed_form_xml as x,managed_form_elements as e
-import managed_form_serializer,managed_form_change,external_data
+import native_metadata as s, managed_form_xml as x, managed_form_elements as e
+import managed_form_operations,managed_form_operations,external_data
 import test_catalog_form_serializer as creation
-import test_managed_form_change as change
+import test_managed_form_operations as change
 from test_managed_form_xml import xml,extra
 
 
@@ -30,7 +30,7 @@ def extended():
 class ExtendedFormTests(unittest.TestCase):
     def native(self,root=None):
         r=creation.fixture();r['form_xml']=E.tostring(root if root is not None else extended(),encoding='unicode')
-        return extra(managed_form_serializer.serialize(r))
+        return extra(managed_form_operations.create(r))
 
     def test_recursive_tree_properties_command_and_events(self):
         form=x.interface(self.native());index,_,_=e.form_collection(form);group=form[1][index+2]
@@ -64,15 +64,15 @@ class ExtendedFormTests(unittest.TestCase):
             with self.subTest(mutation=mutation),self.assertRaises(ValueError):self.native(root)
 
     def test_module_only_keeps_interface_and_metadata(self):
-        r=change.fixture();r.pop('attribute_name')
+        r=change.fixture()
         previous=external_data.extract(base64.b64decode(r['storage']),r['object_id'])
         source=s.inflate(base64.b64decode(previous['externals'][0]['data']));old=x.interface(source)
         for text in ('\ufeff&AtClient\nProcedure Тест()\n    Message("Кириллица");\nEndProcedure',''):
-            result=managed_form_change.serialize(dict(r,module_text=text));new=x.interface(extra(result))
+            result=managed_form_operations.change(dict(r,module_text=text));new=x.interface(extra(result))
             self.assertEqual(s.render(old[:2]+old[3:]),s.render(new[:2]+new[3:]))
             self.assertEqual(s.val(new[2]),text.removeprefix('\ufeff').replace('\n','\r\n'))
-        with self.assertRaises(ValueError):managed_form_change.serialize(dict(r,module_text='bad\0code'))
-        with self.assertRaises(ValueError):managed_form_change.serialize(dict(r,module_text=None))
+        with self.assertRaises(ValueError):managed_form_operations.change(dict(r,module_text='bad\0code'))
+        with self.assertRaises(ValueError):managed_form_operations.change(dict(r,module_text=None))
 
 
 if __name__=='__main__':unittest.main()

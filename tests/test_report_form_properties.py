@@ -3,9 +3,9 @@ import json
 import sys
 import unittest
 from pathlib import Path
-sys.path.insert(0,str(next((Path(__file__).resolve().parents[1]/'src').rglob('managed_form_serializer.py')).parent))
-import metadata_serializer as s
-import managed_form_serializer as forms
+sys.path.insert(0,str(next((Path(__file__).resolve().parents[1]/'src').rglob('managed_form_operations.py')).parent))
+import native_metadata as s
+import managed_form_operations as forms
 import managed_form_xml as xml
 import v8unpack_backend as backend
 

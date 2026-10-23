@@ -2,7 +2,7 @@
 import copy,json,re
 from pathlib import Path
 from xml.etree import ElementTree as E
-import metadata_serializer as s
+import native_metadata as s
 
 Q='{http://v8.1c.ru/8.3/xcf/logform}'
 CORE='{http://v8.1c.ru/8.1/data/core}'
@@ -78,33 +78,57 @@ def rename_auxiliary(entry,previous,name):
         if not isinstance(value,list):continue
         if len(value)>6 and isinstance(value[0],s.Atom) and s.val(value[0]) in ('6','12','22') and isinstance(value[6],s.Atom) and s.val(value[6]).startswith(previous):
             value[6]=s.atom(name+s.val(value[6])[len(previous):],True)
+        # Table search controls also reference their source by name in slot 24.
+        # Retarget this typed reference, preserving arbitrary user text.
+        if len(value)==25 and isinstance(value[0],s.Atom) and s.val(value[0])=='6' and isinstance(value[24],s.Atom) and value[24].quoted:
+            for suffix in ('','СтрокаПоиска','УправлениеПоиском'):
+                if s.val(value[24])==previous+suffix:value[24]=s.atom(name+suffix,True);break
         rename_auxiliary(value,previous,name)
 
 
 def table_addition(xml,entry,kind,table_name):
     """Accept native-exported default search/view additions without losing edits."""
-    names={'SearchStringAddition':('СтрокаПоиска','SearchStringRepresentation'),
-           'ViewStatusAddition':('СостояниеПросмотра','ViewStatusRepresentation'),
-           'SearchControlAddition':('УправлениеПоиском','SearchControl')}
-    suffix,source_type=names[kind]
+    names={'SearchStringAddition':('SearchStringRepresentation','0'),
+           'ViewStatusAddition':('ViewStatusRepresentation','1'),
+           'SearchControlAddition':('SearchControl','2')}
+    source_type,source_number=names[kind]
     if set(xml.attrib)!={'name','id'} or not re.fullmatch('[1-9][0-9]{0,8}',xml.get('id','')):raise ValueError('Invalid table addition')
     props=fields(xml,{'AdditionSource','ContextMenu','ExtendedTooltip'});source=props.get('AdditionSource')
     if source is None or source.attrib:raise ValueError('Missing table addition source')
     parts=fields(source,{'Item','Type'})
     if set(parts)!={'Item','Type'} or scalar(parts['Item'])!=table_name or scalar(parts['Type'])!=source_type:raise ValueError('Unsupported table addition source')
-    candidates=[v for v in entry if isinstance(v,list) and len(v)>6 and isinstance(v[0],s.Atom) and s.val(v[0])=='6' and s.val(v[6])==table_name+suffix]
+    candidates=[v for v in entry if isinstance(v,list) and len(v)==25 and isinstance(v[0],s.Atom) and s.val(v[0])=='6'
+        and isinstance(v[19],list) and len(v[19])==2 and s.val(v[19][0])==s.val(entry[1][0]) and s.val(v[19][1])==source_number
+        and isinstance(v[24],s.Atom) and s.val(v[24])=='']
     if len(candidates)!=1:raise ValueError('Unsupported native table addition')
-    target=candidates[0];previous=s.val(target[6]);name=identifier(xml.get('name'));target[6]=s.atom(name,True);rename_auxiliary(target,previous,name)
+    target=candidates[0];previous=s.val(target[6]);name=identifier(xml.get('name'));target[6]=s.atom(name,True);rename_auxiliary(entry,previous,name)
     for key,version in [('ContextMenu','22'),('ExtendedTooltip','12')]:
         if key in props:auxiliary(props[key],target,version)
 
 
+def bind_table_additions(entry):
+    """Search/status controls must refer to this table, including hidden copies."""
+    for value in entry:
+        if not isinstance(value,list) or not value or not isinstance(value[0],s.Atom) or s.val(value[0])!='6':continue
+        if (len(value)!=25 or s.val(value[18])!='2' or not isinstance(value[19],list)
+                or len(value[19])!=2 or any(not isinstance(v,s.Atom) for v in value[19])
+                or s.val(value[5]) not in ('0','1','2') or s.val(value[19][1])!=s.val(value[5])):
+            raise ValueError('Unsupported native table addition binding')
+        value[19][0]=copy.deepcopy(entry[1][0])
+
+
 def auxiliary(xml,entry,version,bar_type='8'):
     if len(xml) or set(xml.attrib)!={'name','id'} or not re.fullmatch('[1-9][0-9]{0,8}',xml.get('id','')):raise ValueError('Unsupported auxiliary control')
+    def identity(value):
+        if not isinstance(value,list) or not value or not isinstance(value[0],s.Atom):return False
+        if len(value)==1:return s.val(value[0])=='0'
+        return (len(value)==2 and re.fullmatch('[1-9][0-9]{0,8}',s.val(value[0]))
+                and isinstance(value[1],s.Atom) and len(entry[1])==2 and s.val(value[1])==s.val(entry[1][1]))
     matches=[v for v in entry if isinstance(v,list) and len(v)>6 and isinstance(v[0],s.Atom) and s.val(v[0])==version and isinstance(v[6],s.Atom)
-        and isinstance(v[1],list) and len(v[1])==1 and isinstance(v[1][0],s.Atom) and s.val(v[1][0])=='0' and (version!='22' or s.val(v[5])==bar_type)]
+        and identity(v[1]) and (version!='22' or s.val(v[5])==bar_type)]
     if len(matches)!=1:raise ValueError('Unsupported auxiliary native layout')
     matches[0][6]=s.atom(identifier(xml.get('name')),True)
+    if len(matches[0][1])==2:matches[0][1][0]=s.atom(int(xml.get('id')))
 
 
 def identifier(value):
@@ -282,6 +306,7 @@ def replace_tree(form,items,paths,command_ids,namespaces=None):
                 if nested is None:nested=E.Element(Q+'ChildItems')
                 child_entries=build(nested,depth+1,path);child_index=offsets['children'];_,_,old_end=collection(entry,child_index)
                 entry[child_index]=s.atom(len(child_entries)//2);entry[child_index+1:old_end]=child_entries
+                bind_table_additions(entry)
                 if 'AutoCommandBar' in props:auxiliary(props['AutoCommandBar'],entry,'22','9')
                 for key in ('SearchStringAddition','ViewStatusAddition','SearchControlAddition'):
                     if key in props:table_addition(props[key],entry,key,name)

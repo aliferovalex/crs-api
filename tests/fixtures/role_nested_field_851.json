@@ -1,0 +1,46 @@
+{
+  "source": "Independent Configurator 8.5.1.1529 import, native CF and XML export of a relative tabular-section field RLS condition.",
+  "cf_sha256": "685a934a2f27c8ece4208f392f7d4cc92ec8275cef5029cdc22c7555bbc8b7aa",
+  "definitions": [
+    {
+      "object_id": "68db7bad-ed09-4d7b-ad9b-f537eb26d881",
+      "kind": "Attribute",
+      "name": "ProbeValue",
+      "qualified_name": "Catalog.ProbeCatalog.TabularSection.ProbeRows.Attribute.ProbeValue",
+      "parent_id": "f8db06d4-8707-4ec5-96c6-d7c8998ad0a1",
+      "stored_id": "95035609-d02a-4e3b-95ef-ea1d763cb983",
+      "stored": false
+    },
+    {
+      "object_id": "95035609-d02a-4e3b-95ef-ea1d763cb983",
+      "kind": "Catalog",
+      "name": "ProbeCatalog",
+      "qualified_name": "Catalog.ProbeCatalog",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "95035609-d02a-4e3b-95ef-ea1d763cb983",
+      "stored": true
+    },
+    {
+      "object_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "kind": "Configuration",
+      "name": "\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f",
+      "qualified_name": "Configuration.\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f",
+      "parent_id": "00000000-0000-0000-0000-000000000000",
+      "stored_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored": true
+    },
+    {
+      "object_id": "f8db06d4-8707-4ec5-96c6-d7c8998ad0a1",
+      "kind": "TabularSection",
+      "name": "ProbeRows",
+      "qualified_name": "Catalog.ProbeCatalog.TabularSection.ProbeRows",
+      "parent_id": "95035609-d02a-4e3b-95ef-ea1d763cb983",
+      "stored_id": "95035609-d02a-4e3b-95ef-ea1d763cb983",
+      "stored": false
+    }
+  ],
+  "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>ProbeRows.ProbeValue</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+  "body": "{10,\r\n{1,\r\n{\r\n{1,95035609-d02a-4e3b-95ef-ea1d763cb983,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0,f8db06d4-8707-4ec5-96c6-d7c8998ad0a1},\r\n{0,68db7bad-ed09-4d7b-ad9b-f537eb26d881}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}",
+  "owner": "Catalog.ProbeCatalog",
+  "field": "ProbeRows.ProbeValue"
+}

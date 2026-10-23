@@ -1,0 +1,119 @@
+{
+  "source": "Native repository snapshot relation descriptors before and after independent permission/RLS HTTP commits in a disposable Configurator 8.5.1.1529 repository.",
+  "definitions": [
+    {
+      "object_id": "0fb60d64-670c-4869-a381-7f563c401c24",
+      "kind": "Document",
+      "name": "ProbeDocument",
+      "qualified_name": "Document.ProbeDocument",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "0fb60d64-670c-4869-a381-7f563c401c24",
+      "stored": true
+    },
+    {
+      "object_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "kind": "ExchangePlan",
+      "name": "ProbeExchangePlan",
+      "qualified_name": "ExchangePlan.ProbeExchangePlan",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "stored": true
+    },
+    {
+      "object_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "kind": "Task",
+      "name": "ProbeTask",
+      "qualified_name": "Task.ProbeTask",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "stored": true
+    },
+    {
+      "object_id": "8493712c-6960-4e8f-9324-90fa3d5b318c",
+      "kind": "AccumulationRegister",
+      "name": "ProbeAccumulationRegister",
+      "qualified_name": "AccumulationRegister.ProbeAccumulationRegister",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "8493712c-6960-4e8f-9324-90fa3d5b318c",
+      "stored": true
+    },
+    {
+      "object_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "kind": "Catalog",
+      "name": "ProbeCatalog",
+      "qualified_name": "Catalog.ProbeCatalog",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "stored": true
+    },
+    {
+      "object_id": "9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64",
+      "kind": "InformationRegister",
+      "name": "ProbeInformationRegister",
+      "qualified_name": "InformationRegister.ProbeInformationRegister",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64",
+      "stored": true
+    },
+    {
+      "object_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "kind": "BusinessProcess",
+      "name": "ProbeBusinessProcess",
+      "qualified_name": "BusinessProcess.ProbeBusinessProcess",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "stored": true
+    },
+    {
+      "object_id": "d3ec8062-3649-40f1-af09-2a5cb49a1779",
+      "kind": "DocumentJournal",
+      "name": "ProbeDocumentJournal",
+      "qualified_name": "DocumentJournal.ProbeDocumentJournal",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "d3ec8062-3649-40f1-af09-2a5cb49a1779",
+      "stored": true
+    },
+    {
+      "object_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "kind": "ChartOfCharacteristicTypes",
+      "name": "ProbeChartOfCharacteristicTypes",
+      "qualified_name": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "stored": true
+    },
+    {
+      "object_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "kind": "Configuration",
+      "name": "\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f",
+      "qualified_name": "Configuration.\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f",
+      "parent_id": "00000000-0000-0000-0000-000000000000",
+      "stored_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored": true
+    }
+  ],
+  "samples": [
+    {
+      "name": "ProbeStandard08",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "relations": {
+        "966b6efa-7b84-4091-90c1-27b7dc4b88a1": 1,
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      },
+      "xml": "<ns0:Rights xmlns:ns0=\"http://v8.1c.ru/8.2/roles\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\" xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n\t<ns0:setForNewObjects>false</ns0:setForNewObjects>\n\t<ns0:setForAttributesByDefault>false</ns0:setForAttributesByDefault>\n\t<ns0:independentRightsOfChildObjects>true</ns0:independentRightsOfChildObjects>\n\t<ns0:object>\n\t\t<ns0:name>Catalog.ProbeCatalog.StandardAttribute.Code</ns0:name>\n\t\t<ns0:right>\n\t\t\t<ns0:name>View</ns0:name>\n\t\t\t<ns0:value>true</ns0:value>\n\t\t</ns0:right>\n\t<ns0:right><ns0:name>Edit</ns0:name><ns0:value>true</ns0:value></ns0:right></ns0:object>\n</ns0:Rights>",
+      "definition_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Role uuid=\"12f36731-2c2e-466c-b322-4c24059c7ac7\">\n\t\t<Properties>\n\t\t\t<Name>ProbeStandard08</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t</Properties>\n\t</Role>\n</MetaDataObject>"
+    },
+    {
+      "name": "ProbeStandardRLS08",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "relations": {
+        "966b6efa-7b84-4091-90c1-27b7dc4b88a1": 1,
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Code</field>\n\t\t\t\t<condition>WHERE TRUE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "definition_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Role uuid=\"9e5e85d9-57b7-429b-ad06-a3bc5d2fc0c7\">\n\t\t<Properties>\n\t\t\t<Name>ProbeStandardRLS08</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t</Properties>\n\t</Role>\n</MetaDataObject>"
+    }
+  ]
+}

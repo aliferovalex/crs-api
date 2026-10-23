@@ -1,0 +1,82 @@
+{
+  "template": "{1,{16,{27,{2,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{\"Pattern\",{\"S\",100,1}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"S\",\"\"},0,0,0},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,1,1,{0},{0},00000000-0000-0000-0000-000000000000,0,0,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,0,0},0}",
+  "defaults": {
+    "UseStandardCommands": "true",
+    "DefaultForm": "",
+    "ExtendedPresentation": "",
+    "Explanation": "",
+    "PasswordMode": "false",
+    "Format": "",
+    "EditFormat": "",
+    "ToolTip": "",
+    "MarkNegatives": "false",
+    "Mask": "",
+    "MultiLine": "false",
+    "ExtendedEdit": "false",
+    "MinValue": "",
+    "MaxValue": "",
+    "FillChecking": "DontCheck",
+    "ChoiceFoldersAndItems": "Items",
+    "ChoiceParameterLinks": "",
+    "ChoiceParameters": "",
+    "QuickChoice": "Auto",
+    "ChoiceForm": "",
+    "LinkByType": "",
+    "ChoiceHistoryOnInput": "Auto",
+    "DataLockControlMode": "Managed",
+    "DataHistory": "DontUse",
+    "UpdateDataHistoryImmediatelyAfterWrite": "false",
+    "ExecuteAfterWriteDataHistoryVersionProcessing": "false"
+  },
+  "common_path": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "type_path": [
+    1,
+    1,
+    1,
+    2
+  ],
+  "type_required": true,
+  "generated_slots": [
+    2,
+    3,
+    4,
+    5,
+    13,
+    14
+  ],
+  "generated_categories": [
+    "Manager",
+    "ValueManager",
+    "ValueKey"
+  ],
+  "input_fields": [],
+  "supported_platforms": [
+    "legacy",
+    "modern"
+  ],
+  "property_attributes": {
+    "MinValue": {
+      "{http://www.w3.org/2001/XMLSchema-instance}nil": "true"
+    },
+    "MaxValue": {
+      "{http://www.w3.org/2001/XMLSchema-instance}nil": "true"
+    }
+  },
+  "platform_overrides": {
+    "modern": {
+      "template": "{1,{16,{27,{2,{4,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0,0,3},{\"Pattern\",{\"S\",100,1}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"S\",\"\"},0,0,0},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,1,1,{0},{0},00000000-0000-0000-0000-000000000000,0,0,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,0,0},0}",
+      "allowed_type_codes": [
+        "S"
+      ]
+    }
+  },
+  "sections": [
+    "Properties",
+    "InternalInfo"
+  ]
+}

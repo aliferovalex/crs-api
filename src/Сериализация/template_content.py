@@ -2,7 +2,7 @@
 import base64
 from pathlib import Path
 from xml.etree import ElementTree as E
-import metadata_serializer as s
+import native_metadata as s
 import schema_content
 import template_references
 

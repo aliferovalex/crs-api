@@ -3,12 +3,16 @@ import base64
 import hashlib
 import json
 import re
+import sys
 import unittest
 import uuid
 from pathlib import Path
 from xml.etree import ElementTree as E
-import metadata_serializer as s
-import flat_object_serializer as flat
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'/'Сериализация'))
+import metadata_context
+import xml_namespaces
+import native_metadata as s
+import metadata_object_xml as flat
 import object_change_serializer as change
 import inline_object_xml as inline
 import test_object_xml_profiles as objects
@@ -17,7 +21,7 @@ import test_catalog_form_serializer as catalog
 
 
 def fixture(kind='DataProcessor',text=None,externals=False):
-    request=catalog.fixture();docs=s.context_metadata(base64.b64decode(request['context']),request['object_id'])
+    request=catalog.fixture();docs=metadata_context.context_metadata(base64.b64decode(request['context']),request['object_id'])
     text=text or objects.xml(kind);oid,name,raw,_=flat.object_xml(text,'8.5.1.1529',kind)
     m=docs[0];m[1],m[2],m[9]=s.atom(oid),s.atom(change.ids.class_id(kind)),s.atom(name,True)
     m[12]=[s.atom(0)];layout=json.loads(Path(flat.__file__).with_name(kind.lower()+'_layout_851.json').read_text(encoding='utf-8'))
@@ -46,6 +50,17 @@ def unpack(result):
 
 
 class ObjectChangeTests(unittest.TestCase):
+    def test_external_map_order_may_differ_between_snapshot_and_context(self):
+        request,docs,_=fixture(externals=True)
+        streams=docs[0][11]
+        docs[0][11]=[streams[0]]+streams[3:5]+streams[1:3]
+        docs[2][1:]=reversed(docs[2][1:])
+        request['context']=base64.b64encode(s.storage([s.text_bytes(docs)],s.text_bytes([[s.atom(0)]]))).decode()
+        _,updated,_,_,_=unpack(change.serialize(request))
+        self.assertEqual([s.val(updated[0][11][i]) for i in (1,3)],[s.val(streams[i]) for i in (3,1)])
+        for index in (2,4):
+            self.assertEqual(base64.b64decode(s.val(updated[0][11][index]))[:16],uuid.UUID(s.val(streams[index])).bytes_le)
+
     def test_processor_and_report_properties_change_and_clear_without_replacing_modules(self):
         import v8unpack_backend as backend
         for kind in ('DataProcessor','Report'):
@@ -85,7 +100,7 @@ class ObjectChangeTests(unittest.TestCase):
         self.assertEqual(backend.signature(s.Parser(raw.decode('utf-8-sig')).documents()),backend.signature(s.Parser(case['body']).documents()))
 
     def test_enum_value_collection_updates_body_and_feature_map(self):
-        q='{'+change.c.MD+'}'
+        q='{'+xml_namespaces.MD+'}'
         top=E.fromstring(objects.xml('Enum'));children=top[0].find(q+'ChildObjects')
         identifiers=[str(uuid.uuid4()) for _ in range(3)]
         for index,key in enumerate(identifiers[:2]):
@@ -109,11 +124,11 @@ class ObjectChangeTests(unittest.TestCase):
     def test_common_properties_in_multiple_profiles(self):
         for kind in objects.PATHS:
             request,_,raw=fixture(kind)
-            top=E.fromstring(request['object_xml']);top[0][0].find('{'+change.c.MD+'}Comment').text='Updated'
+            top=E.fromstring(request['object_xml']);top[0][0].find('{'+xml_namespaces.MD+'}Comment').text='Updated'
             request['object_xml']=E.tostring(top,encoding='unicode');_,_,body,_,_=unpack(change.serialize(request))
             source=s.Parser(raw.decode('utf-8-sig')).documents()[0];target=s.Parser(body.decode('utf-8-sig')).documents()[0]
             common=change.at(target,objects.PATHS[kind]);self.assertEqual(s.val(common[4]),'Updated')
-            change.replace(target,objects.PATHS[kind]+[4],change.at(source,objects.PATHS[kind]+[4]))
+            common[4]=change.at(source,objects.PATHS[kind]+[4])
             self.assertEqual(s.render(source),s.render(target))
 
     def test_complete_inline_collection_replaces_removed_and_changed_fields(self):
@@ -142,7 +157,7 @@ class ObjectChangeTests(unittest.TestCase):
     def test_scalar_parameter_type_replaced_from_complete_xml(self):
         request,_,_=fixture('SessionParameter');top=E.fromstring(request['object_xml'])
         import type_description_xml as types
-        top[0][0].append(types.export(s.Parser('{"Pattern",{"B"}}').documents()[0],'{'+change.c.MD+'}Type'))
+        top[0][0].append(types.export(s.Parser('{"Pattern",{"B"}}').documents()[0],'{'+xml_namespaces.MD+'}Type'))
         request['object_xml']=E.tostring(top,encoding='unicode');_,_,raw,_,_=unpack(change.serialize(request))
         layout=json.loads(Path(flat.__file__).with_name('sessionparameter_layout_851.json').read_text(encoding='utf-8'))
         self.assertEqual(s.render(change.at(s.Parser(raw.decode('utf-8-sig')).documents()[0],layout['type_path'])),'{"Pattern",{"B"}}')
@@ -150,10 +165,10 @@ class ObjectChangeTests(unittest.TestCase):
     def test_identity_and_generated_identifier_changes_rejected(self):
         request,_,raw=fixture();top=E.fromstring(request['object_xml']);top[0][0][0].text='AnotherName';request['object_xml']=E.tostring(top,encoding='unicode')
         with self.assertRaisesRegex(ValueError,'identity'):change.serialize(request)
-        request,_,_=fixture();top=E.fromstring(request['object_xml']);info=E.SubElement(top[0],'{'+change.c.MD+'}InternalInfo')
+        request,_,_=fixture();top=E.fromstring(request['object_xml']);info=E.SubElement(top[0],'{'+xml_namespaces.MD+'}InternalInfo')
         for category in ('Object','Manager'):
-            node=E.SubElement(info,'{'+change.c.READABLE+'}GeneratedType',name='DataProcessor'+category+'.ProfileTest',category=category)
-            for tag in ('TypeId','ValueId'):E.SubElement(node,'{'+change.c.READABLE+'}'+tag).text=str(uuid.uuid4())
+            node=E.SubElement(info,'{'+xml_namespaces.READABLE+'}GeneratedType',name='DataProcessor'+category+'.ProfileTest',category=category)
+            for tag in ('TypeId','ValueId'):E.SubElement(node,'{'+xml_namespaces.READABLE+'}'+tag).text=str(uuid.uuid4())
         request['object_xml']=E.tostring(top,encoding='unicode')
         with self.assertRaisesRegex(ValueError,'generated identifiers'):change.serialize(request)
 

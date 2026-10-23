@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "source": {
+    "platform": "8.5.1.1529",
+    "cf_sha256": "cedccadc540b512f4ae9b6221f8068280160eb13b36c2d63910b37f666ac4a4a"
+  },
+  "types": {
+    "cfg:CatalogObject": "cf4abea6-37b2-11d4-940f-008048da11f9",
+    "cfg:DocumentObject": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+    "cfg:BusinessProcessObject": "fcd3404e-1523-48ce-9bc0-ecdb822684a1",
+    "cfg:ChartOfCalculationTypesObject": "30b100d6-b29f-47ac-aec7-cb8ca8a54767",
+    "cfg:ChartOfAccountsObject": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+    "cfg:ChartOfCharacteristicTypesObject": "82a1b659-b220-4d94-a9bd-14d757b95a48",
+    "cfg:TaskObject": "3e63355c-1378-4953-be9b-1deb5fb6bec5"
+  },
+  "groups": {
+    "cfg:CatalogObject": "Main",
+    "cfg:DocumentObject": "Main",
+    "cfg:BusinessProcessObject": "DocFlow",
+    "cfg:ChartOfCalculationTypesObject": "Calculation",
+    "cfg:ChartOfAccountsObject": "Accounting",
+    "cfg:ChartOfCharacteristicTypesObject": "Main",
+    "cfg:TaskObject": "DocFlow"
+  }
+}

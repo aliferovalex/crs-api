@@ -1,0 +1,11 @@
+{
+  "source": "Configurator 8.5.1.1529 synthetic ValueTable and ValueTree import/dump",
+  "attribute_template": "{9,{1},0,\"\",{1,0},{\"Pattern\"},{0,{0,{\"B\",1},0}},{0,{0,{\"B\",1},0}},{0,0},{0,0},0,0,0,0,{0,0},{0,0}}",
+  "column_template": "{5,1,0,\"\",{1,0},{\"Pattern\"},{0,{0,{\"B\",1},0}},{0,{0,{\"B\",1},0}},{0,0},0}",
+  "collection_types": {
+    "v8:ValueTable": "acf6192e-81ca-46ef-93a6-5a6968b78663",
+    "v8:ValueTree": "e603c0f2-92fb-4d47-8f38-a44a381cf235"
+  },
+  "column_count_slot": 13,
+  "columns_slot": 14
+}

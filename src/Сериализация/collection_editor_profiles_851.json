@@ -1,0 +1,14 @@
+{
+  "InformationRegister": {
+    "Form": {
+      "class_id": "13134204-f60b-11d5-a3c7-0050bae0a776",
+      "lookup": "snapshot_class_collection",
+      "evidence": "tests/fixtures/native_register_collections_851.json"
+    },
+    "Template": {
+      "class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+      "lookup": "snapshot_class_collection",
+      "evidence": "tests/fixtures/native_register_collections_851.json"
+    }
+  }
+}

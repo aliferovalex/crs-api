@@ -2,32 +2,41 @@
 import base64,copy,json,unittest,uuid
 from pathlib import Path
 from xml.etree import ElementTree as E
-import metadata_serializer as s
-import delete_owned_object_serializer as deletion
+import configuration_xml
+import metadata_context
+import xml_namespaces
+import metadata_common_xml
+import native_metadata as s
+import delete_object_serializer as deletion
 import test_child_object_xml as children
-import test_constant_serializer as roots
-from test_managed_form_serializer import store
+import test_object_creation_serializer as roots
+from test_managed_form_creation import store
 
-Q='{'+deletion.c.MD+'}'
+Q='{'+xml_namespaces.MD+'}'
 
 
 def fixture(kind):
     if kind=='DocumentForm':
-        request,parent,form=children.fixture();objects=deletion.c.context_objects(request['context']);tree=E.fromstring(request['object_xml']);tree[0].find(Q+'ChildObjects').clear();snapshot=request['snapshot'];fid=children.FID;parent_id=request['object_id']
+        request,parent,form=children.fixture();objects=metadata_context.context_objects(request['context']);tree=E.fromstring(request['object_xml']);tree[0].find(Q+'ChildObjects').clear();snapshot=request['snapshot'];fid=children.FID;parent_id=request['object_id']
         data=base64.b64decode(snapshot);_,pos=s.read_record(data,12);body,_=s.read_record(data,pos);native=s.Parser(s.inflate(body).decode('utf-8-sig')).documents()[0][1];layout=json.loads(Path(deletion.__file__).with_name('document_layout_851.json').read_text(encoding='utf-8'))
-        info=E.SubElement(tree[0],Q+'InternalInfo');xr='{'+deletion.c.READABLE+'}'
+        info=E.SubElement(tree[0],Q+'InternalInfo');xr='{'+xml_namespaces.READABLE+'}'
         for index,category in enumerate(('Object','Ref','Selection','List','Manager')):
             typ=E.SubElement(info,xr+'GeneratedType',name='Document'+category+'.XML_Document',category=category)
             for tag,slot in zip(('TypeId','ValueId'),layout['generated_slots'][index*2:index*2+2]):E.SubElement(typ,xr+tag).text=s.val(native[slot])
         xml=E.tostring(tree,encoding='unicode')
     else:
-        r=roots.fixture('8.5.1.1529');objects=deletion.c.context_objects(r['context']);parent_id=r['object_id'];parent=objects[parent_id];fid=children.FID;cls=deletion.ids.class_id('CommonForm')
+        r=roots.fixture('8.5.1.1529');objects=metadata_context.context_objects(r['context']);parent_id=r['object_id'];parent=objects[parent_id];fid=children.FID;cls=deletion.ids.class_id('CommonForm')
         source=base64.b64decode(r['snapshots'][parent_id]);_,pos=s.read_record(source,12);body,_=s.read_record(source,pos);docs=s.Parser(s.inflate(body).decode('utf-8-sig')).documents();docs[0].append([s.atom(cls),s.atom(1),s.atom(fid)])
         parent[0][12][0]=s.atom(len(parent[0][12]));parent[0][12].append([s.atom(cls),s.atom(1),s.atom(fid)])
         form=copy.deepcopy(parent);form[0][1],form[0][2],form[0][3],form[0][9],form[0][10]=s.atom(fid),s.atom(cls),s.atom(parent_id),s.atom('StoredForm',True),s.atom(0);form[0][11]=form[0][12]=form[0][13]=[s.atom(0)];form[0][14]=[s.atom(1),s.atom(parent_id),s.atom(1)];form[2]=[s.atom(0)];objects[fid]=form
-        snapshot=store(parent,s.native_body_bytes(docs));common=s.common_properties(docs,parent_id,r['platform'])
-        tree=E.Element(Q+'MetaDataObject',version='2.21');obj=E.SubElement(tree,Q+'Configuration',uuid=parent_id);props=E.SubElement(obj,Q+'Properties');deletion.catalog_object_xml.common_xml(props,common);child=E.SubElement(obj,Q+'ChildObjects')
-        for oid,cls in deletion.c.children(parent[0]):
+        # Synthetic root fixture lacked its Language collection in the body.
+        # The editor checks every stored collection, including unchanged ones.
+        for child_class in {cls for oid,cls in metadata_context.children(parent[0]) if cls!=deletion.ids.class_id('CommonForm')}:
+            keys=[oid for oid,cls in metadata_context.children(parent[0]) if cls==child_class]
+            docs[0].append([s.atom(child_class),s.atom(len(keys))]+[s.atom(oid) for oid in keys])
+        snapshot=store(parent,s.native_body_bytes(docs));common=configuration_xml.common_properties(docs,parent_id,r['platform'])
+        tree=E.Element(Q+'MetaDataObject',version='2.21');obj=E.SubElement(tree,Q+'Configuration',uuid=parent_id);props=E.SubElement(obj,Q+'Properties');metadata_common_xml.write(props, common);child=E.SubElement(obj,Q+'ChildObjects')
+        for oid,cls in metadata_context.children(parent[0]):
             if oid!=fid:E.SubElement(child,Q+deletion.ids.class_labels()[cls]).text=s.val(objects[oid][0][9])
         xml=E.tostring(tree,encoding='unicode')
     layout=json.loads(Path(deletion.__file__).with_name('document_form_layout_851.json' if kind=='DocumentForm' else 'common_form_layout_851.json').read_text(encoding='utf-8'))

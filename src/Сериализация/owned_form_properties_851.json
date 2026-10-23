@@ -1,0 +1,529 @@
+{
+  "AccountingRegister": {
+    "body_size": 9,
+    "body_version": "1",
+    "header_version": "21",
+    "properties": {
+      "DefaultListForm": [
+        1,
+        19
+      ],
+      "AuxiliaryListForm": [
+        1,
+        25
+      ]
+    }
+  },
+  "AccumulationRegister": {
+    "body_size": 9,
+    "body_version": "1",
+    "header_version": "28",
+    "properties": {
+      "DefaultListForm": [
+        1,
+        14
+      ],
+      "AuxiliaryListForm": [
+        1,
+        22
+      ]
+    }
+  },
+  "BusinessProcess": {
+    "body_size": 8,
+    "body_version": "1",
+    "header_version": "30",
+    "properties": {
+      "DefaultObjectForm": [
+        1,
+        22
+      ],
+      "DefaultListForm": [
+        1,
+        23
+      ],
+      "DefaultChoiceForm": [
+        1,
+        24
+      ],
+      "AuxiliaryObjectForm": [
+        1,
+        32
+      ],
+      "AuxiliaryListForm": [
+        1,
+        33
+      ],
+      "AuxiliaryChoiceForm": [
+        1,
+        34
+      ]
+    }
+  },
+  "CalculationRegister": {
+    "body_size": 10,
+    "body_version": "1",
+    "header_version": "21",
+    "properties": {
+      "DefaultListForm": [
+        1,
+        23
+      ],
+      "AuxiliaryListForm": [
+        1,
+        29
+      ]
+    }
+  },
+  "Catalog": {
+    "body_size": 8,
+    "body_version": "1",
+    "header_version": "57",
+    "properties": {
+      "DefaultObjectForm": [
+        1,
+        21
+      ],
+      "DefaultFolderForm": [
+        1,
+        22
+      ],
+      "DefaultListForm": [
+        1,
+        23
+      ],
+      "DefaultChoiceForm": [
+        1,
+        24
+      ],
+      "DefaultFolderChoiceForm": [
+        1,
+        25
+      ],
+      "AuxiliaryObjectForm": [
+        1,
+        26
+      ],
+      "AuxiliaryFolderForm": [
+        1,
+        27
+      ],
+      "AuxiliaryListForm": [
+        1,
+        28
+      ],
+      "AuxiliaryChoiceForm": [
+        1,
+        29
+      ],
+      "AuxiliaryFolderChoiceForm": [
+        1,
+        30
+      ]
+    }
+  },
+  "ChartOfAccounts": {
+    "body_size": 10,
+    "body_version": "1",
+    "header_version": "32",
+    "properties": {
+      "DefaultObjectForm": [
+        1,
+        28
+      ],
+      "DefaultListForm": [
+        1,
+        29
+      ],
+      "DefaultChoiceForm": [
+        1,
+        30
+      ],
+      "AuxiliaryObjectForm": [
+        1,
+        40
+      ],
+      "AuxiliaryListForm": [
+        1,
+        41
+      ],
+      "AuxiliaryChoiceForm": [
+        1,
+        42
+      ]
+    }
+  },
+  "ChartOfCalculationTypes": {
+    "body_size": 8,
+    "body_version": "1",
+    "header_version": "35",
+    "properties": {
+      "DefaultObjectForm": [
+        1,
+        32
+      ],
+      "DefaultListForm": [
+        1,
+        33
+      ],
+      "DefaultChoiceForm": [
+        1,
+        34
+      ],
+      "AuxiliaryObjectForm": [
+        1,
+        45
+      ],
+      "AuxiliaryListForm": [
+        1,
+        46
+      ],
+      "AuxiliaryChoiceForm": [
+        1,
+        47
+      ]
+    }
+  },
+  "ChartOfCharacteristicType": {
+    "body_size": 8,
+    "body_version": "1",
+    "header_version": "34",
+    "properties": {
+      "DefaultObjectForm": [
+        1,
+        26
+      ],
+      "DefaultFolderForm": [
+        1,
+        27
+      ],
+      "DefaultListForm": [
+        1,
+        28
+      ],
+      "DefaultChoiceForm": [
+        1,
+        29
+      ],
+      "DefaultFolderChoiceForm": [
+        1,
+        30
+      ],
+      "AuxiliaryObjectForm": [
+        1,
+        39
+      ],
+      "AuxiliaryFolderForm": [
+        1,
+        40
+      ],
+      "AuxiliaryListForm": [
+        1,
+        41
+      ],
+      "AuxiliaryChoiceForm": [
+        1,
+        42
+      ],
+      "AuxiliaryFolderChoiceForm": [
+        1,
+        43
+      ]
+    }
+  },
+  "DataProcessor": {
+    "body_size": 8,
+    "body_version": "1",
+    "header_version": "17",
+    "properties": {
+      "DefaultForm": [
+        1,
+        4
+      ],
+      "AuxiliaryForm": [
+        1,
+        9
+      ]
+    }
+  },
+  "DocumentJournal": {
+    "body_size": 7,
+    "body_version": "1",
+    "header_version": "26",
+    "properties": {
+      "DefaultForm": [
+        1,
+        4
+      ],
+      "AuxiliaryForm": [
+        1,
+        13
+      ]
+    }
+  },
+  "Document": {
+    "body_size": 8,
+    "body_version": "1",
+    "header_version": "40",
+    "properties": {
+      "DefaultObjectForm": [
+        1,
+        16
+      ],
+      "DefaultListForm": [
+        1,
+        17
+      ],
+      "DefaultChoiceForm": [
+        1,
+        18
+      ],
+      "AuxiliaryObjectForm": [
+        1,
+        35
+      ],
+      "AuxiliaryListForm": [
+        1,
+        36
+      ],
+      "AuxiliaryChoiceForm": [
+        1,
+        37
+      ]
+    }
+  },
+  "Enum": {
+    "body_size": 7,
+    "body_version": "1",
+    "header_version": "20",
+    "properties": {
+      "DefaultListForm": [
+        1,
+        9
+      ],
+      "DefaultChoiceForm": [
+        1,
+        10
+      ],
+      "AuxiliaryListForm": [
+        1,
+        13
+      ],
+      "AuxiliaryChoiceForm": [
+        1,
+        14
+      ]
+    }
+  },
+  "ExchangePlan": {
+    "body_size": 8,
+    "body_version": "1",
+    "header_version": "37",
+    "properties": {
+      "DefaultObjectForm": [
+        1,
+        14
+      ],
+      "DefaultListForm": [
+        1,
+        19
+      ],
+      "DefaultChoiceForm": [
+        1,
+        20
+      ],
+      "AuxiliaryObjectForm": [
+        1,
+        31
+      ],
+      "AuxiliaryListForm": [
+        1,
+        32
+      ],
+      "AuxiliaryChoiceForm": [
+        1,
+        33
+      ]
+    }
+  },
+  "FilterCriterion": {
+    "body_size": 5,
+    "body_version": "1",
+    "header_version": "14",
+    "properties": {
+      "DefaultForm": [
+        1,
+        8
+      ],
+      "AuxiliaryForm": [
+        1,
+        9
+      ]
+    }
+  },
+  "InformationRegister": {
+    "body_size": 9,
+    "body_version": "1",
+    "header_version": "33",
+    "properties": {
+      "DefaultRecordForm": [
+        1,
+        16
+      ],
+      "DefaultListForm": [
+        1,
+        17
+      ],
+      "AuxiliaryRecordForm": [
+        1,
+        27
+      ],
+      "AuxiliaryListForm": [
+        1,
+        28
+      ]
+    }
+  },
+  "Report": {
+    "body_size": 8,
+    "body_version": "1",
+    "header_version": "20",
+    "properties": {
+      "DefaultForm": [
+        1,
+        4
+      ],
+      "AuxiliaryForm": [
+        1,
+        14
+      ],
+      "DefaultSettingsForm": [
+        1,
+        6
+      ],
+      "AuxiliarySettingsForm": [
+        1,
+        17
+      ],
+      "DefaultVariantForm": [
+        1,
+        10
+      ],
+      "AuxiliaryVariantForm": [
+        1,
+        18
+      ]
+    }
+  },
+  "SettingsStorage": {
+    "body_size": 5,
+    "body_version": "1",
+    "header_version": "2",
+    "properties": {
+      "DefaultSaveForm": [
+        1,
+        5
+      ],
+      "DefaultLoadForm": [
+        1,
+        4
+      ],
+      "AuxiliarySaveForm": [
+        1,
+        7
+      ],
+      "AuxiliaryLoadForm": [
+        1,
+        6
+      ]
+    }
+  },
+  "Task": {
+    "body_size": 9,
+    "body_version": "1",
+    "header_version": "33",
+    "properties": {
+      "DefaultObjectForm": [
+        1,
+        15
+      ],
+      "DefaultListForm": [
+        1,
+        16
+      ],
+      "DefaultChoiceForm": [
+        1,
+        17
+      ],
+      "AuxiliaryObjectForm": [
+        1,
+        35
+      ],
+      "AuxiliaryListForm": [
+        1,
+        36
+      ],
+      "AuxiliaryChoiceForm": [
+        1,
+        37
+      ]
+    }
+  },
+  "DimensionTable": {
+    "body_size": 7,
+    "body_version": "1",
+    "header_version": "0",
+    "properties": {
+      "DefaultObjectForm": [
+        1,
+        12
+      ],
+      "DefaultListForm": [
+        1,
+        11
+      ],
+      "DefaultChoiceForm": [
+        1,
+        10
+      ]
+    }
+  },
+  "Cube": {
+    "body_size": 9,
+    "body_version": "1",
+    "header_version": "0",
+    "properties": {
+      "DefaultRecordForm": [
+        1,
+        18
+      ],
+      "DefaultListForm": [
+        1,
+        17
+      ]
+    }
+  },
+  "Table": {
+    "body_size": 7,
+    "body_version": "1",
+    "header_version": "11",
+    "properties": {
+      "DefaultObjectForm": [
+        1,
+        26
+      ],
+      "DefaultRecordForm": [
+        1,
+        25
+      ],
+      "DefaultListForm": [
+        1,
+        24
+      ],
+      "DefaultChoiceForm": [
+        1,
+        23
+      ]
+    }
+  }
+}

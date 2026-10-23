@@ -1,8 +1,8 @@
 """Whole-XML updates of existing recorders in the same creation transaction."""
 import copy,json
 from pathlib import Path
-import metadata_serializer as s
-import flat_object_serializer as flat
+import native_metadata as s
+import metadata_object_xml as flat
 import object_xml_profiles as profiles
 import packet_builder as packets
 import metadata_identifiers as ids
@@ -19,7 +19,8 @@ def apply(request,objects,raws,versions,new_id,kind):
         oid=entry['object_id']
         if oid==new_id or oid in changed or oid not in raws or s.val(objects[oid][0][2])!=ids.class_id(entry['kind']):raise ValueError('Related object is missing, duplicated or has another class')
         source=s.Parser(raws[oid].decode('utf-8-sig')).documents()[0]
-        actual_oid,name,raw,_=flat.object_xml(entry['object_xml'],request['platform'],entry['kind'],objects)
+        import metadata_type_references
+        actual_oid,name,raw,_=flat.object_xml(entry['object_xml'],request['platform'],entry['kind'],objects,type_references=metadata_type_references.resolve(entry['object_xml'],request))
         target=s.Parser(raw.decode('utf-8-sig')).documents()[0]
         if actual_oid!=oid or name!=s.val(objects[oid][0][9]):raise ValueError('Related object identity mismatch')
         layout=json.loads(Path(__file__).with_name(entry['kind'].lower()+'_layout_851.json').read_text(encoding='utf-8'))

@@ -7,13 +7,12 @@ import unittest
 from pathlib import Path
 from xml.etree import ElementTree as E
 sys.path.insert(0,str(next((Path(__file__).resolve().parents[1]/'src').rglob('managed_form_rules.py')).parent))
-import metadata_serializer as s
+import native_metadata as s
 import managed_form_xml as x
 import managed_form_elements as elements
 import v8unpack_backend as b
 import choice_list_xml as choices
 import typed_value_xml as values
-import appearance_xml
 
 
 class ChoiceListTests(unittest.TestCase):

@@ -1,5 +1,5 @@
 """Ownership traversal and live dependency closure for repository snapshots."""
-import metadata_serializer as s
+import native_metadata as s
 
 
 def closure(objects,root,children):

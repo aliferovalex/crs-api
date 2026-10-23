@@ -1,32 +1,6 @@
-"""Inline command definitions use common properties and owned module streams."""
-import copy
-from xml.etree import ElementTree as E
-import metadata_serializer as s
-import constant_serializer as c
-
-Q='{'+c.MD+'}'
-
-
-def at(node,path):
-    for slot in path:node=node[slot]
-    return node
-
-
-def read(node,profile):
-    if node.tag!=Q+'Command' or set(node.attrib)!={'uuid'} or len(node)!=1 or node[0].tag!=Q+'Properties' or node[0].attrib:raise ValueError('Expected inline Command/Properties')
-    oid=c.guid(node.get('uuid'));fields={n.tag.removeprefix(Q):n for n in node[0]}
-    if len(fields)!=len(node[0]) or any(n.tag!=Q+k for k,n in fields.items()):raise ValueError('Duplicate or foreign command property')
-    for key,n in fields.items():
-        if key in ('Name','Synonym','Comment'):continue
-        if key not in profile['defaults'] or n.attrib or len(n) or (n.text or '')!=profile['defaults'][key]:raise ValueError('Unsupported command property: '+key)
-    top=E.Element(Q+'MetaDataObject',version='2.21');obj=E.SubElement(top,Q+'Constant',uuid=oid);props=E.SubElement(obj,Q+'Properties')
-    for key in ('Name','Synonym','Comment'):
-        if key in fields:props.append(copy.deepcopy(fields[key]))
-    E.SubElement(E.SubElement(props,Q+'Type'),'{'+c.CORE+'}Type').text='xs:boolean'
-    _,name,raw,_=c.constant_xml(E.tostring(top,encoding='unicode'),'8.5.1.1529');common=s.Parser(raw.decode('utf-8-sig')).documents()[0][1][1][1][1]
-    entry=s.Parser(profile['template']).documents()[0];at(entry,profile['common_path'][:-1])[profile['common_path'][-1]]=copy.deepcopy(common);at(entry,profile['id_path'][:-1])[profile['id_path'][-1]]=s.atom(oid)
-    return oid,name,entry
-
+"""Owned module stream identities for inline commands."""
+import native_metadata as s
+from inline_metadata_xml import at
 
 def features(body,layout):
     return [s.val(at(entry,profile['id_path'])) for profile in layout.get('command_collections',{}).values() for entry in body[profile['slot']][2:]]
@@ -34,6 +8,26 @@ def features(body,layout):
 
 def streams(body,layout):
     return {s.val(at(entry,profile['id_path'])):s.val(at(entry,profile['id_path']))+profile['module_suffix'] for profile in layout.get('command_collections',{}).values() for entry in body[profile['slot']][2:]}
+
+
+def preserve_owner_streams(docs,oid,body,kind,platform):
+    """Retain owner files and modules proven to belong to its inline commands."""
+    import object_xml_profiles as profiles
+    import packet_builder
+    layout=profiles.layout(kind,platform) if kind in profiles.profiles() else {}
+    template=s.Parser(layout['template']).documents()[0] if layout.get('command_collections') else None
+    for rule in layout.get('command_collections',{}).values():
+        row=body[rule['slot']]
+        if (not isinstance(row,list) or len(row)<2 or s.val(row[0])!=s.val(template[rule['slot']][0])
+                or s.val(row[1])!=str(len(row)-2)):raise ValueError('Invalid owner command collection')
+    commands=features(body,layout)
+    if len(set(commands))!=len(commands):raise ValueError('Duplicate owner command UUID')
+    owned=streams(body,layout)
+    owner_features=docs[0][13]
+    if (not owner_features or s.val(owner_features[0])!=str(len(owner_features)-1)
+            or len({s.val(value) for value in owner_features[1:]})!=len(owner_features)-1):raise ValueError('Invalid owner feature map')
+    if set(owned)-{s.val(value) for value in owner_features[1:]}:raise ValueError('Command stream owner is absent from the feature map')
+    return packet_builder.preserve_external_versions(docs,oid,owned.values())
 
 
 def module_inputs(values,owners):

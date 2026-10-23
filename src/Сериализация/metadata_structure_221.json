@@ -1,0 +1,6098 @@
+{
+  "schema_version": 1,
+  "xml_format": "2.21",
+  "source": {
+    "url": "https://raw.githubusercontent.com/yellow-hammer/namespace-forest/0023896332406bdc163f746daaf91756d26a54bd/schemas/designer/2.21/v8.1c.ru-8.3-MDClasses.xsd",
+    "sha256": "40d5cda450c347ebca883398a3f74cb4c4082536636c5d493a986fc347581f93"
+  },
+  "native_profile": "8.5.1.1529",
+  "classes": {
+    "AccountingFlag": {
+      "xml_name": "AccountingFlag",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillFromFillingValue",
+        "FillValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput",
+        "DataHistory"
+      ],
+      "runtime_name": "AccountingFlag",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "AccountingRegister": {
+      "xml_name": "AccountingRegister",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Dimension",
+          "xml_type": "tns:Dimension",
+          "storage": "inline_xml",
+          "item_type": "Dimension",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccountingRegisterDimension",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "35b63b9d-0adf-4625-a047-10ae874c19a3",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Resource",
+          "xml_type": "tns:Resource",
+          "storage": "inline_xml",
+          "item_type": "Resource",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccountingRegisterResource",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              5
+            ],
+            "collection_id": "63405499-7491-4ce3-ac72-43433cbe4112",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccountingRegisterAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              7
+            ],
+            "collection_id": "9d28ee33-9c7e-4a1b-8f13-50aa9b36607b",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccountingRegisterForm",
+          "item_class_id": "d3b5d6eb-4ea2-4610-a3e2-624d4e815934",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "d3b5d6eb-4ea2-4610-a3e2-624d4e815934",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccountingRegisterCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
+            "collection_id": "7162da60-f7fe-4d78-ad5d-e31700f9af18",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "IncludeHelpInContents",
+        "Help",
+        "ChartOfAccounts",
+        "Correspondence",
+        "PeriodAdjustmentLength",
+        "DefaultListForm",
+        "AuxiliaryListForm",
+        "RecordSetModule",
+        "ManagerModule",
+        "StandardAttributes",
+        "DataLockControlMode",
+        "EnableTotalsSplitting",
+        "FullTextSearch",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "AccountingRegister",
+      "class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+      "modules": {
+        "RecordSetModule": ".6",
+        "ManagerModule": ".7"
+      },
+      "native_identity_path": [
+        1,
+        15,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "AccumulationRegister": {
+      "xml_name": "AccumulationRegister",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Resource",
+          "xml_type": "tns:Resource",
+          "storage": "inline_xml",
+          "item_type": "Resource",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccumulationRegisterResource",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              5
+            ],
+            "collection_id": "b64d9a41-1642-11d6-a3c7-0050bae0a776",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccumulationRegisterAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
+            "collection_id": "b64d9a42-1642-11d6-a3c7-0050bae0a776",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Dimension",
+          "xml_type": "tns:Dimension",
+          "storage": "inline_xml",
+          "item_type": "Dimension",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccumulationRegisterDimension",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              7
+            ],
+            "collection_id": "b64d9a43-1642-11d6-a3c7-0050bae0a776",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccumulationRegisterForm",
+          "item_class_id": "b64d9a44-1642-11d6-a3c7-0050bae0a776",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "b64d9a44-1642-11d6-a3c7-0050bae0a776",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccumulationRegisterCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              4
+            ],
+            "collection_id": "99f328af-a77f-4572-a2d8-80ed20c81890",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "DefaultListForm",
+        "AuxiliaryListForm",
+        "RegisterType",
+        "IncludeHelpInContents",
+        "Help",
+        "RecordSetModule",
+        "ManagerModule",
+        "StandardAttributes",
+        "DataLockControlMode",
+        "FullTextSearch",
+        "EnableTotalsSplitting",
+        "Aggregates",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "AccumulationRegister",
+      "class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+      "modules": {
+        "RecordSetModule": ".1",
+        "ManagerModule": ".2"
+      },
+      "native_identity_path": [
+        1,
+        13,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "AddressingAttribute": {
+      "xml_name": "AddressingAttribute",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillFromFillingValue",
+        "FillValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput",
+        "Indexing",
+        "AddressingDimension",
+        "FullTextSearch",
+        "DataHistory"
+      ],
+      "runtime_name": "AddressingAttribute",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Attribute": {
+      "xml_name": "Attribute",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput",
+        "Indexing",
+        "FullTextSearch",
+        "DataHistory",
+        "FillFromFillingValue",
+        "FillValue",
+        "Use",
+        "ScheduleLink",
+        "BinaryDataStorageLocationUse",
+        "BinaryDataStorageLocationUseField"
+      ],
+      "runtime_name": "Attribute",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Bot": {
+      "xml_name": "Bot",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Predefined",
+        "Picture",
+        "Module"
+      ],
+      "runtime_name": "Bot",
+      "class_id": "6e6dc072-b7ac-41e7-8f88-278d25b6da2a",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "BusinessProcess": {
+      "xml_name": "BusinessProcess",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "BusinessProcessAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "BusinessProcessTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "BusinessProcessForm",
+          "item_class_id": "3f7a8120-b71a-4265-98bf-4d9bc09b7719",
+          "class_id_evidence": "v8unpack_enum",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3f7a8120-b71a-4265-98bf-4d9bc09b7719",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "BusinessProcessCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "ObjectModule",
+        "ManagerModule",
+        "Flowchart",
+        "EditType",
+        "InputByString",
+        "CreateOnInput",
+        "SearchStringModeOnInputByString",
+        "ChoiceDataGetModeOnInputByString",
+        "FullTextSearchOnInputByString",
+        "DefaultObjectForm",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "AuxiliaryObjectForm",
+        "AuxiliaryListForm",
+        "AuxiliaryChoiceForm",
+        "ChoiceHistoryOnInput",
+        "NumberType",
+        "NumberLength",
+        "NumberAllowedLength",
+        "CheckUnique",
+        "StandardAttributes",
+        "Characteristics",
+        "Autonumbering",
+        "BasedOn",
+        "NumberPeriodicity",
+        "Task",
+        "CreateTaskInPrivilegedMode",
+        "DataLockFields",
+        "DataLockControlMode",
+        "IncludeHelpInContents",
+        "Help",
+        "FullTextSearch",
+        "ObjectPresentation",
+        "ExtendedObjectPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "DataHistory",
+        "UpdateDataHistoryImmediatelyAfterWrite",
+        "ExecuteAfterWriteDataHistoryVersionProcessing",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "BusinessProcess",
+      "class_id": "fcd3404e-1523-48ce-9bc0-ecdb822684a1",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "CalculationRegister": {
+      "xml_name": "CalculationRegister",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Resource",
+          "xml_type": "tns:Resource",
+          "storage": "inline_xml",
+          "item_type": "Resource",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CalculationRegisterResource",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CalculationRegisterAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Dimension",
+          "xml_type": "tns:Dimension",
+          "storage": "inline_xml",
+          "item_type": "Dimension",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CalculationRegisterDimension",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Recalculation",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Recalculation",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Recalculation",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CalculationRegisterForm",
+          "item_class_id": "a2cb086c-db98-43e4-a1a9-0760ab048f8d",
+          "class_id_evidence": "v8unpack_enum",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "a2cb086c-db98-43e4-a1a9-0760ab048f8d",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CalculationRegisterCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "DefaultListForm",
+        "AuxiliaryListForm",
+        "Periodicity",
+        "ActionPeriod",
+        "BasePeriod",
+        "Schedule",
+        "ScheduleValue",
+        "ScheduleDate",
+        "ChartOfCalculationTypes",
+        "RecordSetModule",
+        "ManagerModule",
+        "IncludeHelpInContents",
+        "Help",
+        "StandardAttributes",
+        "DataLockControlMode",
+        "FullTextSearch",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "CalculationRegister",
+      "class_id": "f2de87a8-64e5-45eb-a22d-b3aedab050e7",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        15,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "Catalog": {
+      "xml_name": "Catalog",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CatalogAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
+            "collection_id": "cf4abea7-37b2-11d4-940f-008048da11f9",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CatalogTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              5
+            ],
+            "collection_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+            "serializer": "tabular_section_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CatalogForm",
+          "item_class_id": "fdf816d2-1ead-11d5-b975-0050bae0a95d",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              7
+            ],
+            "collection_id": "fdf816d2-1ead-11d5-b975-0050bae0a95d",
+            "serializer": "child_object_xml",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "child_object_xml",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CatalogCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              4
+            ],
+            "collection_id": "4fe87c89-9ad4-43f6-9fdb-9dc83b3879c6",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Hierarchical",
+        "HierarchyType",
+        "LimitLevelCount",
+        "LevelCount",
+        "FoldersOnTop",
+        "UseStandardCommands",
+        "Owners",
+        "SubordinationUse",
+        "CodeLength",
+        "DescriptionLength",
+        "CodeType",
+        "CodeAllowedLength",
+        "CodeSeries",
+        "CheckUnique",
+        "Autonumbering",
+        "DefaultPresentation",
+        "StandardAttributes",
+        "Characteristics",
+        "Predefined",
+        "PredefinedDataUpdate",
+        "EditType",
+        "QuickChoice",
+        "ChoiceMode",
+        "InputByString",
+        "SearchStringModeOnInputByString",
+        "FullTextSearchOnInputByString",
+        "ChoiceDataGetModeOnInputByString",
+        "DefaultObjectForm",
+        "DefaultFolderForm",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "DefaultFolderChoiceForm",
+        "AuxiliaryObjectForm",
+        "AuxiliaryFolderForm",
+        "AuxiliaryListForm",
+        "AuxiliaryChoiceForm",
+        "AuxiliaryFolderChoiceForm",
+        "ObjectModule",
+        "ManagerModule",
+        "IncludeHelpInContents",
+        "Help",
+        "BasedOn",
+        "DataLockFields",
+        "DataLockControlMode",
+        "FullTextSearch",
+        "ObjectPresentation",
+        "ExtendedObjectPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "CreateOnInput",
+        "ChoiceHistoryOnInput",
+        "DataHistory",
+        "UpdateDataHistoryImmediatelyAfterWrite",
+        "ExecuteAfterWriteDataHistoryVersionProcessing",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "Catalog",
+      "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+      "modules": {
+        "ObjectModule": ".0",
+        "ManagerModule": ".3"
+      },
+      "native_identity_path": [
+        1,
+        9,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "ChartOfAccounts": {
+      "xml_name": "ChartOfAccounts",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfAccountsAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              7
+            ],
+            "collection_id": "6e65cbf5-daa8-4d8d-bef8-59723f4e5777",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfAccountsTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "AccountingFlag",
+          "xml_type": "tns:AccountingFlag",
+          "storage": "inline_xml",
+          "item_type": "AccountingFlag",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfAccountsAccountingFlag",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              8
+            ],
+            "collection_id": "78bd1243-c4df-46c3-8138-e147465cb9a4",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "ExtDimensionAccountingFlag",
+          "xml_type": "tns:ExtDimensionAccountingFlag",
+          "storage": "inline_xml",
+          "item_type": "ExtDimensionAccountingFlag",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfAccountsExtDimensionAccountingFlag",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              9
+            ],
+            "collection_id": "c70ca527-5042-4cad-a315-dcb4007e32a3",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfAccountsForm",
+          "item_class_id": "5372e285-03db-4f8c-8565-fe56f1aea40e",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "5372e285-03db-4f8c-8565-fe56f1aea40e",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfAccountsCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "IncludeHelpInContents",
+        "Help",
+        "BasedOn",
+        "ExtDimensionTypes",
+        "MaxExtDimensionCount",
+        "CodeMask",
+        "CodeLength",
+        "DescriptionLength",
+        "CodeSeries",
+        "CheckUnique",
+        "DefaultPresentation",
+        "StandardAttributes",
+        "Characteristics",
+        "StandardTabularSections",
+        "Predefined",
+        "PredefinedDataUpdate",
+        "EditType",
+        "QuickChoice",
+        "ChoiceMode",
+        "InputByString",
+        "SearchStringModeOnInputByString",
+        "FullTextSearchOnInputByString",
+        "ChoiceDataGetModeOnInputByString",
+        "CreateOnInput",
+        "ChoiceHistoryOnInput",
+        "DefaultObjectForm",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "AuxiliaryObjectForm",
+        "AuxiliaryListForm",
+        "AuxiliaryChoiceForm",
+        "ObjectModule",
+        "ManagerModule",
+        "AutoOrderByCode",
+        "OrderLength",
+        "DataLockFields",
+        "DataLockControlMode",
+        "FullTextSearch",
+        "DataHistory",
+        "ObjectPresentation",
+        "ExtendedObjectPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "UpdateDataHistoryImmediatelyAfterWrite",
+        "ExecuteAfterWriteDataHistoryVersionProcessing",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "ChartOfAccounts",
+      "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+      "modules": {
+        "ObjectModule": ".14",
+        "ManagerModule": ".15"
+      },
+      "native_identity_path": [
+        1,
+        15,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "ChartOfCalculationTypes": {
+      "xml_name": "ChartOfCalculationTypes",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfCalculationTypesAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfCalculationTypesTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfCalculationTypesForm",
+          "item_class_id": "a7f8f92a-7a4b-484b-937e-42d242e64144",
+          "class_id_evidence": "v8unpack_enum",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "a7f8f92a-7a4b-484b-937e-42d242e64144",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfCalculationTypesCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "CodeLength",
+        "DescriptionLength",
+        "CodeType",
+        "CodeAllowedLength",
+        "DefaultPresentation",
+        "EditType",
+        "QuickChoice",
+        "ChoiceMode",
+        "InputByString",
+        "SearchStringModeOnInputByString",
+        "FullTextSearchOnInputByString",
+        "ChoiceDataGetModeOnInputByString",
+        "CreateOnInput",
+        "ChoiceHistoryOnInput",
+        "DefaultObjectForm",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "AuxiliaryObjectForm",
+        "AuxiliaryListForm",
+        "AuxiliaryChoiceForm",
+        "ObjectModule",
+        "ManagerModule",
+        "BasedOn",
+        "DependenceOnCalculationTypes",
+        "BaseCalculationTypes",
+        "ActionPeriodUse",
+        "StandardAttributes",
+        "Characteristics",
+        "StandardTabularSections",
+        "Predefined",
+        "PredefinedDataUpdate",
+        "IncludeHelpInContents",
+        "Help",
+        "DataLockFields",
+        "DataLockControlMode",
+        "FullTextSearch",
+        "ObjectPresentation",
+        "ExtendedObjectPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "DataHistory",
+        "UpdateDataHistoryImmediatelyAfterWrite",
+        "ExecuteAfterWriteDataHistoryVersionProcessing",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "ChartOfCalculationTypes",
+      "class_id": "30b100d6-b29f-47ac-aec7-cb8ca8a54767",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "ChartOfCharacteristicTypes": {
+      "xml_name": "ChartOfCharacteristicTypes",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfCharacteristicTypeAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "31182525-9346-4595-81f8-6f91a72ebe06",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries",
+            "evidence": "Independent native characteristic-plan XML/CF matrix, 8.5.1.1529"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfCharacteristicTypeTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              5
+            ],
+            "collection_id": "54e36536-7863-42fd-bea3-c5edd3122fdc",
+            "serializer": "tabular_section_xml",
+            "format": "collection_uuid,count,inline_entries",
+            "evidence": "Independent native characteristic-plan XML/CF matrix, 8.5.1.1529"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfCharacteristicTypeForm",
+          "item_class_id": "eb2b78a8-40a6-4b7e-b1b3-6ca9966cbc94",
+          "class_id_evidence": "v8unpack_enum",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "eb2b78a8-40a6-4b7e-b1b3-6ca9966cbc94",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfCharacteristicTypeCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
+            "collection_id": "95b5e1d4-abfa-4a16-818d-a5b07b7d3f73",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries",
+            "evidence": "Independent native characteristic-plan XML/CF matrix, 8.5.1.1529"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "IncludeHelpInContents",
+        "Help",
+        "CharacteristicExtValues",
+        "Type",
+        "Hierarchical",
+        "FoldersOnTop",
+        "CodeLength",
+        "CodeAllowedLength",
+        "DescriptionLength",
+        "CodeSeries",
+        "CheckUnique",
+        "Autonumbering",
+        "DefaultPresentation",
+        "StandardAttributes",
+        "Characteristics",
+        "Predefined",
+        "PredefinedDataUpdate",
+        "EditType",
+        "QuickChoice",
+        "ChoiceMode",
+        "InputByString",
+        "CreateOnInput",
+        "SearchStringModeOnInputByString",
+        "ChoiceDataGetModeOnInputByString",
+        "FullTextSearchOnInputByString",
+        "ChoiceHistoryOnInput",
+        "DefaultObjectForm",
+        "DefaultFolderForm",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "DefaultFolderChoiceForm",
+        "AuxiliaryObjectForm",
+        "AuxiliaryFolderForm",
+        "AuxiliaryListForm",
+        "AuxiliaryChoiceForm",
+        "AuxiliaryFolderChoiceForm",
+        "ObjectModule",
+        "ManagerModule",
+        "BasedOn",
+        "DataLockFields",
+        "DataLockControlMode",
+        "FullTextSearch",
+        "ObjectPresentation",
+        "ExtendedObjectPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "DataHistory",
+        "UpdateDataHistoryImmediatelyAfterWrite",
+        "ExecuteAfterWriteDataHistoryVersionProcessing",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "ChartOfCharacteristicType",
+      "class_id": "82a1b659-b220-4d94-a9bd-14d757b95a48",
+      "modules": {
+        "ObjectModule": ".15",
+        "ManagerModule": ".16"
+      },
+      "native_identity_path": [
+        1,
+        13,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "Column": {
+      "xml_name": "Column",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Indexing",
+        "References"
+      ],
+      "runtime_name": "Column",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Command": {
+      "xml_name": "Command",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Group",
+        "CommandParameterType",
+        "ParameterUseMode",
+        "ModifiesData",
+        "Representation",
+        "ToolTip",
+        "Picture",
+        "Shortcut",
+        "CommandModule",
+        "OnMainServerUnavalableBehavior"
+      ],
+      "runtime_name": "Command",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "CommandGroup": {
+      "xml_name": "CommandGroup",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Representation",
+        "ToolTip",
+        "Picture",
+        "Category"
+      ],
+      "runtime_name": "CommandGroup",
+      "class_id": "1c57eabe-7349-44b3-b1de-ebfeab67b47d",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        6,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "CommonAttribute": {
+      "xml_name": "CommonAttribute",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillFromFillingValue",
+        "FillValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput",
+        "Content",
+        "AutoUse",
+        "DataSeparation",
+        "SeparatedDataUse",
+        "DataSeparationValue",
+        "DataSeparationUse",
+        "ConditionalSeparation",
+        "UsersSeparation",
+        "AuthenticationSeparation",
+        "ConfigurationExtensionsSeparation",
+        "Indexing",
+        "FullTextSearch",
+        "DataHistory"
+      ],
+      "runtime_name": "CommonAttribute",
+      "class_id": "15794563-ccec-41f6-a83c-ec5f7b9a5bc1",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "CommonCommand": {
+      "xml_name": "CommonCommand",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Group",
+        "Representation",
+        "ToolTip",
+        "Picture",
+        "Shortcut",
+        "CommandModule",
+        "IncludeHelpInContents",
+        "Help",
+        "CommandParameterType",
+        "ParameterUseMode",
+        "ModifiesData",
+        "OnMainServerUnavalableBehavior"
+      ],
+      "runtime_name": "CommonCommand",
+      "class_id": "2f1a5187-fb0e-4b05-9489-dc5dd6412348",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "CommonForm": {
+      "xml_name": "CommonForm",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Form",
+        "FormType",
+        "IncludeHelpInContents",
+        "Help",
+        "UsePurposes",
+        "UseStandardCommands",
+        "ExtendedPresentation",
+        "Explanation",
+        "UseInInterfaceCompatibilityMode"
+      ],
+      "runtime_name": "CommonForm",
+      "class_id": "07ee8426-87f1-11d5-b99c-0050bae0a95d",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {
+        "Ext/Form.xml": {
+          "serializer": "managed_form_xml",
+          "status": "partial"
+        },
+        "Ext/Form/Module.bsl": {
+          "serializer": "managed_form_xml",
+          "status": "supported"
+        }
+      }
+    },
+    "CommonModule": {
+      "xml_name": "CommonModule",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Module",
+        "Global",
+        "ClientManagedApplication",
+        "Server",
+        "ExternalConnection",
+        "ClientOrdinaryApplication",
+        "Client",
+        "ServerCall",
+        "Privileged",
+        "ReturnValuesReuse"
+      ],
+      "runtime_name": "CommonModule",
+      "class_id": "0fe48980-252d-11d6-a3c7-0050bae0a776",
+      "modules": {
+        "Module": ".0"
+      },
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "CommonPicture": {
+      "xml_name": "CommonPicture",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Picture",
+        "AvailabilityForChoice",
+        "AvailabilityForAppearance"
+      ],
+      "runtime_name": "CommonPicture",
+      "class_id": "7dcd43d9-aca5-4926-b549-1842e6a4e8cf",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "CommonTemplate": {
+      "xml_name": "CommonTemplate",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "TemplateType",
+        "Template"
+      ],
+      "runtime_name": "CommonTemplate",
+      "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {
+        "Ext/Template.xml": {
+          "serializer": "template_content",
+          "status": "supported_for_selected_template_types"
+        },
+        "Ext/Template.bin": {
+          "serializer": "template_content",
+          "status": "supported_for_selected_template_types"
+        },
+        "Ext/Template.txt": {
+          "serializer": "template_content",
+          "status": "supported_for_selected_template_types"
+        }
+      }
+    },
+    "Configuration": {
+      "xml_name": "Configuration",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Language",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Language",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Language",
+          "item_class_id": "9cd510ce-abfc-11d4-9434-004095e12fc7",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "9cd510ce-abfc-11d4-9434-004095e12fc7",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Subsystem",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Subsystem",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Subsystem",
+          "item_class_id": "37f2fa9a-b276-11d4-9435-004095e12fc7",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "37f2fa9a-b276-11d4-9435-004095e12fc7",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "StyleItem",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "StyleItem",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "StyleItem",
+          "item_class_id": "58848766-36ea-4076-8800-e91eb49590d7",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "58848766-36ea-4076-8800-e91eb49590d7",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Style",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Style",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Style",
+          "item_class_id": "3e5404af-6ef8-4c73-ad11-91bd2dfac4c8",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3e5404af-6ef8-4c73-ad11-91bd2dfac4c8",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "CommonPicture",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "CommonPicture",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CommonPicture",
+          "item_class_id": "7dcd43d9-aca5-4926-b549-1842e6a4e8cf",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "7dcd43d9-aca5-4926-b549-1842e6a4e8cf",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Interface",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Interface",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Interface",
+          "item_class_id": "39bddf6a-0c3c-452b-921c-d99cfa1c2f1b",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "39bddf6a-0c3c-452b-921c-d99cfa1c2f1b",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "SessionParameter",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "SessionParameter",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "SessionParameter",
+          "item_class_id": "24c43748-c938-45d0-8d14-01424a72b11e",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "24c43748-c938-45d0-8d14-01424a72b11e",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Role",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Role",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Role",
+          "item_class_id": "09736b02-9cac-4e3f-b4f7-d3e9576ab948",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "09736b02-9cac-4e3f-b4f7-d3e9576ab948",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "CommonTemplate",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "CommonTemplate",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CommonTemplate",
+          "item_class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "FilterCriterion",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "FilterCriterion",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "FilterCriterion",
+          "item_class_id": "3e7bfcc0-067d-11d6-a3c7-0050bae0a776",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3e7bfcc0-067d-11d6-a3c7-0050bae0a776",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "CommonModule",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "CommonModule",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CommonModule",
+          "item_class_id": "0fe48980-252d-11d6-a3c7-0050bae0a776",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "0fe48980-252d-11d6-a3c7-0050bae0a776",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "CommonAttribute",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "CommonAttribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CommonAttribute",
+          "item_class_id": "15794563-ccec-41f6-a83c-ec5f7b9a5bc1",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "15794563-ccec-41f6-a83c-ec5f7b9a5bc1",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "ExchangePlan",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "ExchangePlan",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExchangePlan",
+          "item_class_id": "857c4a91-e5f4-4fac-86ec-787626f1c108",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "857c4a91-e5f4-4fac-86ec-787626f1c108",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "XDTOPackage",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "XDTOPackage",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "XDTOPackage",
+          "item_class_id": "cc9df798-7c94-4616-97d2-7aa0b7bc515e",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "cc9df798-7c94-4616-97d2-7aa0b7bc515e",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "WebService",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "WebService",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "WebService",
+          "item_class_id": "8657032e-7740-4e1d-a3ba-5dd6e8afb78f",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "8657032e-7740-4e1d-a3ba-5dd6e8afb78f",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "HTTPService",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "HTTPService",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "HTTPService",
+          "item_class_id": "0fffc09c-8f4c-47cc-b41c-8d5c5a221d79",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "0fffc09c-8f4c-47cc-b41c-8d5c5a221d79",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "WSReference",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "WSReference",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "WSReference",
+          "item_class_id": "d26096fb-7a5d-4df9-af63-47d04771fa9b",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "d26096fb-7a5d-4df9-af63-47d04771fa9b",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "EventSubscription",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "EventSubscription",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "EventSubscription",
+          "item_class_id": "4e828da6-0f44-4b5b-b1c0-a2b3cfe7bdcc",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "4e828da6-0f44-4b5b-b1c0-a2b3cfe7bdcc",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "ScheduledJob",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "ScheduledJob",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ScheduledJob",
+          "item_class_id": "11bdaf85-d5ad-4d91-bb24-aa0eee139052",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "11bdaf85-d5ad-4d91-bb24-aa0eee139052",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "SettingsStorage",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "SettingsStorage",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "SettingsStorage",
+          "item_class_id": "46b4cd97-fd13-4eaa-aba2-3bddd7699218",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "46b4cd97-fd13-4eaa-aba2-3bddd7699218",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "FunctionalOption",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "FunctionalOption",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "FunctionalOption",
+          "item_class_id": "af547940-3268-434f-a3e7-e47d6d2638c3",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "af547940-3268-434f-a3e7-e47d6d2638c3",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "FunctionalOptionsParameter",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "FunctionalOptionsParameter",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "FunctionalOptionsParameter",
+          "item_class_id": "30d554db-541e-4f62-8970-a1c6dcfeb2bc",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "30d554db-541e-4f62-8970-a1c6dcfeb2bc",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "DefinedType",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "DefinedType",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DefinedType",
+          "item_class_id": "c045099e-13b9-4fb6-9d50-fca00202971e",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "c045099e-13b9-4fb6-9d50-fca00202971e",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "CommonCommand",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "CommonCommand",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CommonCommand",
+          "item_class_id": "2f1a5187-fb0e-4b05-9489-dc5dd6412348",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "2f1a5187-fb0e-4b05-9489-dc5dd6412348",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "CommandGroup",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "CommandGroup",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CommandGroup",
+          "item_class_id": "1c57eabe-7349-44b3-b1de-ebfeab67b47d",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "1c57eabe-7349-44b3-b1de-ebfeab67b47d",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Constant",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Constant",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Constant",
+          "item_class_id": "0195e80c-b157-11d4-9435-004095e12fc7",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "0195e80c-b157-11d4-9435-004095e12fc7",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "CommonForm",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "CommonForm",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CommonForm",
+          "item_class_id": "07ee8426-87f1-11d5-b99c-0050bae0a95d",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "07ee8426-87f1-11d5-b99c-0050bae0a95d",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Catalog",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Catalog",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Catalog",
+          "item_class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Document",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Document",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Document",
+          "item_class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "DocumentNumerator",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "DocumentNumerator",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DocumentNumerators",
+          "item_class_id": "36a8e346-9aaa-4af9-bdbd-83be3c177977",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "36a8e346-9aaa-4af9-bdbd-83be3c177977",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Sequence",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Sequence",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Sequences",
+          "item_class_id": "bc587f20-35d9-11d6-a3c7-0050bae0a776",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "bc587f20-35d9-11d6-a3c7-0050bae0a776",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "DocumentJournal",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "DocumentJournal",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DocumentJournal",
+          "item_class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Enum",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Enum",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Enum",
+          "item_class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Report",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Report",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Report",
+          "item_class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "DataProcessor",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "DataProcessor",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DataProcessor",
+          "item_class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "InformationRegister",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "InformationRegister",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "InformationRegister",
+          "item_class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "AccumulationRegister",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "AccumulationRegister",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccumulationRegister",
+          "item_class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "ChartOfCharacteristicTypes",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "ChartOfCharacteristicTypes",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfCharacteristicType",
+          "item_class_id": "82a1b659-b220-4d94-a9bd-14d757b95a48",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "82a1b659-b220-4d94-a9bd-14d757b95a48",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "ChartOfAccounts",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "ChartOfAccounts",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfAccounts",
+          "item_class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "AccountingRegister",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "AccountingRegister",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "AccountingRegister",
+          "item_class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "ChartOfCalculationTypes",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "ChartOfCalculationTypes",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ChartOfCalculationTypes",
+          "item_class_id": "30b100d6-b29f-47ac-aec7-cb8ca8a54767",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "30b100d6-b29f-47ac-aec7-cb8ca8a54767",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "CalculationRegister",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "CalculationRegister",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CalculationRegister",
+          "item_class_id": "f2de87a8-64e5-45eb-a22d-b3aedab050e7",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "f2de87a8-64e5-45eb-a22d-b3aedab050e7",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "BusinessProcess",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "BusinessProcess",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "BusinessProcess",
+          "item_class_id": "fcd3404e-1523-48ce-9bc0-ecdb822684a1",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "fcd3404e-1523-48ce-9bc0-ecdb822684a1",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Task",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Task",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Task",
+          "item_class_id": "3e63355c-1378-4953-be9b-1deb5fb6bec5",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3e63355c-1378-4953-be9b-1deb5fb6bec5",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "ExternalDataSource",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "ExternalDataSource",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExternalDataSource",
+          "item_class_id": "5274d9fc-9c3a-4a71-8f5e-a0db8ab23de5",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "5274d9fc-9c3a-4a71-8f5e-a0db8ab23de5",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "IntegrationService",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "IntegrationService",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "IntegrationService",
+          "item_class_id": "bf3420b0-f6f9-41a0-b83a-fe9d4ab0b65d",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "bf3420b0-f6f9-41a0-b83a-fe9d4ab0b65d",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Bot",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Bot",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Bot",
+          "item_class_id": "6e6dc072-b7ac-41e7-8f88-278d25b6da2a",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "6e6dc072-b7ac-41e7-8f88-278d25b6da2a",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "WebSocketClient",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "WebSocketClient",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "WebSocketClient",
+          "item_class_id": "a7641777-7813-45c6-96ef-9d51587a6ac6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "a7641777-7813-45c6-96ef-9d51587a6ac6",
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "PaletteColor",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "PaletteColor",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "PaletteColor",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": "automatic_deletion.owner_content",
+            "lookup": "class UUID collection in current snapshot",
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ConfigurationExtensionPurpose",
+        "KeepMappingToExtendedConfigurationObjectsByIDs",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "NamePrefix",
+        "ConfigurationExtensionCompatibilityMode",
+        "DefaultRunMode",
+        "UsePurposes",
+        "ScriptVariant",
+        "DefaultRoles",
+        "Vendor",
+        "Version",
+        "UpdateCatalogAddress",
+        "ParentConfigurations",
+        "ManagedApplicationModule",
+        "SessionModule",
+        "ExternalConnectionModule",
+        "OrdinaryApplicationModule",
+        "ApplicationModule",
+        "IncludeHelpInContents",
+        "Help",
+        "UseManagedFormInOrdinaryApplication",
+        "UseOrdinaryFormInManagedApplication",
+        "AdditionalFullTextSearchDictionaries",
+        "CommonSettingsStorage",
+        "ReportsUserSettingsStorage",
+        "ReportsVariantsStorage",
+        "FormDataSettingsStorage",
+        "DynamicListsUserSettingsStorage",
+        "URLExternalDataStorage",
+        "Content",
+        "DefaultReportForm",
+        "DefaultReportVariantForm",
+        "DefaultReportSettingsForm",
+        "DefaultDynamicListSettingsForm",
+        "DefaultSearchForm",
+        "DefaultDataHistoryChangeHistoryForm",
+        "DefaultDataHistoryVersionDataForm",
+        "DefaultDataHistoryVersionDifferencesForm",
+        "DefaultCollaborationSystemUsersChoiceForm",
+        "AuxiliaryReportForm",
+        "AuxiliaryReportVariantForm",
+        "AuxiliaryReportSettingsForm",
+        "AuxiliaryDynamicListSettingsForm",
+        "AuxiliaryDataHistoryChangeHistoryForm",
+        "AuxiliaryDataHistoryVersionDataForm",
+        "AuxiliaryDataHistoryVersionDifferencesForm",
+        "AuxiliaryCollaborationSystemUsersChoiceForm",
+        "DefaultReportAppearanceTemplate",
+        "RequiredMobileApplicationPermissions",
+        "UsedMobileApplicationFunctionalities",
+        "MobileApplicationURLs",
+        "AllowedIncomingShareRequestTypes",
+        "MobileClientSignature",
+        "MobileClientSign",
+        "CommandInterface",
+        "HomePageWorkArea",
+        "StartPageWorkingArea",
+        "MainSectionCommandInterface",
+        "MainSectionPicture",
+        "ClientApplicationInterface",
+        "ClientApplicationTheme",
+        "MainClientApplicationWindowMode",
+        "DefaultInterface",
+        "DefaultStyle",
+        "DefaultLanguage",
+        "BriefInformation",
+        "DetailedInformation",
+        "Logo",
+        "Splash",
+        "Copyright",
+        "VendorInformationAddress",
+        "ConfigurationInformationAddress",
+        "DataLockControlMode",
+        "BinaryDataStorageMode",
+        "BinaryDataBlockStorageUseMode",
+        "ObjectAutonumerationMode",
+        "ModalityUseMode",
+        "SynchronousPlatformExtensionAndAddInCallUseMode",
+        "SynchronousExtensionAndAddInCallUseMode",
+        "InterfaceCompatibilityMode",
+        "Version85InterfaceMigrationMode",
+        "CompatibilityMode",
+        "DefaultConstantsForm",
+        "DefaultConstantForm",
+        "StandaloneConfigurationRestrictionRoles",
+        "DatabaseTablespacesUseMode",
+        "Caption",
+        "ShortCaption",
+        "MainClientApplicationWindowInterfaceVariant",
+        "ClientApplicationWindowsOpenVariant"
+      ],
+      "runtime_name": "Configuration",
+      "class_id": "cf4abeab-37b2-11d4-940f-008048da11f9",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        0
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "Constant": {
+      "xml_name": "Constant",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "UseStandardCommands",
+        "DefaultForm",
+        "ExtendedPresentation",
+        "Explanation",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput",
+        "ValueManagerModule",
+        "ManagerModule",
+        "DataLockControlMode",
+        "DataHistory",
+        "UpdateDataHistoryImmediatelyAfterWrite",
+        "ExecuteAfterWriteDataHistoryVersionProcessing"
+      ],
+      "runtime_name": "Constant",
+      "class_id": "0195e80c-b157-11d4-9435-004095e12fc7",
+      "modules": {
+        "ValueManagerModule": ".0",
+        "ManagerModule": ".1"
+      },
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Cube": {
+      "xml_name": "Cube",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "DimensionTable",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "DimensionTable",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DimensionTable",
+          "item_class_id": "631411f3-8c65-4066-a78f-57a72e015c1c",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "631411f3-8c65-4066-a78f-57a72e015c1c",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          },
+          "class_id_evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+        },
+        {
+          "xml_name": "Dimension",
+          "xml_type": "tns:Dimension",
+          "storage": "inline_xml",
+          "item_type": "Dimension",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CubeDimension",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Resource",
+          "xml_type": "tns:Resource",
+          "storage": "inline_xml",
+          "item_type": "Resource",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CubeResource",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CubeForm",
+          "item_class_id": "3448e506-5add-4fce-a604-7305466b2d8e",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3448e506-5add-4fce-a604-7305466b2d8e",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          },
+          "class_id_evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "CubeCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "NameInDataSource",
+        "Characteristics",
+        "UseStandardCommands",
+        "DefaultRecordForm",
+        "DefaultListForm",
+        "RecordPresentation",
+        "ExtendedRecordPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "RecordSetModule",
+        "ManagerModule",
+        "IncludeHelpInContents",
+        "Help"
+      ],
+      "runtime_name": "Cube",
+      "class_id": "2bb208ca-e441-4023-9ab9-32a7807a85d0",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "DataProcessor": {
+      "xml_name": "DataProcessor",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DataProcessorAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              7
+            ],
+            "collection_id": "ec6bb5e5-b7a8-4d75-bec9-658107a699cf",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DataProcessorTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+            "serializer": "tabular_section_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DataProcessorForm",
+          "item_class_id": "d5b0e5ed-256d-401c-9c36-f630cafd8a62",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
+            "collection_id": "d5b0e5ed-256d-401c-9c36-f630cafd8a62",
+            "serializer": "child_object_xml",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              4
+            ],
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "child_object_xml",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DataProcessorCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              5
+            ],
+            "collection_id": "45556acb-826a-4f73-898a-6025fc9536e1",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "DefaultForm",
+        "AuxiliaryForm",
+        "ObjectModule",
+        "ManagerModule",
+        "IncludeHelpInContents",
+        "Help",
+        "ExtendedPresentation",
+        "Explanation"
+      ],
+      "runtime_name": "DataProcessor",
+      "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+      "modules": {
+        "ObjectModule": ".0",
+        "ManagerModule": ".2"
+      },
+      "native_identity_path": [
+        1,
+        3,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "DefinedType": {
+      "xml_name": "DefinedType",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type"
+      ],
+      "runtime_name": "DefinedType",
+      "class_id": "c045099e-13b9-4fb6-9d50-fca00202971e",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        3,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Dimension": {
+      "xml_name": "Dimension",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "DocumentMap",
+        "RegisterRecordsMap",
+        "RegisterDimension",
+        "LeadingRegisterData",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput",
+        "DenyIncompleteValues",
+        "BaseDimension",
+        "ScheduleLink",
+        "Indexing",
+        "FullTextSearch",
+        "UseInTotals",
+        "FillFromFillingValue",
+        "FillValue",
+        "Master",
+        "MainFilter",
+        "DataHistory",
+        "Balance",
+        "AccountingFlag",
+        "TypeReductionMode"
+      ],
+      "runtime_name": "Dimension",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "DimensionTable": {
+      "xml_name": "DimensionTable",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Field",
+          "xml_type": "tns:Field",
+          "storage": "inline_xml",
+          "item_type": "Field",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DimensionTableField",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DimensionTableForm",
+          "item_class_id": "2367cec0-5648-49d7-95f0-76d387653517",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "2367cec0-5648-49d7-95f0-76d387653517",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          },
+          "class_id_evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DimensionTableCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "NameInDataSource",
+        "PresentationField",
+        "HierarchyNameInDataSource",
+        "LevelNumber",
+        "Hierarchical",
+        "UnfilledParentValue",
+        "UseStandardCommands",
+        "QuickChoice",
+        "DefaultObjectForm",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "ObjectPresentation",
+        "ExtendedObjectPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "ObjectModule",
+        "ManagerModule",
+        "IncludeHelpInContents",
+        "Help"
+      ],
+      "runtime_name": "DimensionTable",
+      "class_id": "631411f3-8c65-4066-a78f-57a72e015c1c",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "Document": {
+      "xml_name": "Document",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DocumentAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              5
+            ],
+            "collection_id": "45e46cbc-3e24-4165-8b7b-cc98a6f80211",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DocumentForm",
+          "item_class_id": "fb880e93-47d7-4127-9357-a20e69c17545",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              7
+            ],
+            "collection_id": "fb880e93-47d7-4127-9357-a20e69c17545",
+            "serializer": "child_object_xml",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DocumentTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+            "serializer": "tabular_section_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DocumentCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
+            "collection_id": "b544fc6a-2ba3-4885-8fb2-cb289fb6d65e",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "Numerator",
+        "NumberType",
+        "NumberLength",
+        "NumberAllowedLength",
+        "NumberPeriodicity",
+        "CheckUnique",
+        "Autonumbering",
+        "StandardAttributes",
+        "Characteristics",
+        "BasedOn",
+        "InputByString",
+        "CreateOnInput",
+        "SearchStringModeOnInputByString",
+        "FullTextSearchOnInputByString",
+        "ChoiceDataGetModeOnInputByString",
+        "DefaultObjectForm",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "AuxiliaryObjectForm",
+        "AuxiliaryListForm",
+        "AuxiliaryChoiceForm",
+        "ObjectModule",
+        "ManagerModule",
+        "Posting",
+        "RealTimePosting",
+        "RegisterRecordsDeletion",
+        "RegisterRecordsWritingOnPost",
+        "SequenceFilling",
+        "RegisterRecords",
+        "PostInPrivilegedMode",
+        "UnpostInPrivilegedMode",
+        "IncludeHelpInContents",
+        "Help",
+        "DataLockFields",
+        "DataLockControlMode",
+        "FullTextSearch",
+        "ObjectPresentation",
+        "ExtendedObjectPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "ChoiceHistoryOnInput",
+        "DataHistory",
+        "UpdateDataHistoryImmediatelyAfterWrite",
+        "ExecuteAfterWriteDataHistoryVersionProcessing",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "Document",
+      "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+      "modules": {
+        "ObjectModule": ".0",
+        "ManagerModule": ".2"
+      },
+      "native_identity_path": [
+        1,
+        9,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "DocumentJournal": {
+      "xml_name": "DocumentJournal",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Column",
+          "xml_type": "tns:Column",
+          "storage": "inline_xml",
+          "item_type": "Column",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DocumentJournalColumn",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DocumentJournalForm",
+          "item_class_id": "ec81ad10-ca07-11d5-b9a5-0050bae0a95d",
+          "class_id_evidence": "v8unpack_enum",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "ec81ad10-ca07-11d5-b9a5-0050bae0a95d",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "DocumentJournalCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "DefaultForm",
+        "AuxiliaryForm",
+        "UseStandardCommands",
+        "RegisteredDocuments",
+        "IncludeHelpInContents",
+        "Help",
+        "ManagerModule",
+        "StandardAttributes",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "DocumentJournal",
+      "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+      "modules": {
+        "ManagerModule": ".1"
+      },
+      "native_identity_path": [
+        1,
+        3,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "DocumentNumerator": {
+      "xml_name": "DocumentNumerator",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "NumberType",
+        "NumberLength",
+        "NumberAllowedLength",
+        "NumberPeriodicity",
+        "CheckUnique"
+      ],
+      "runtime_name": "DocumentNumerators",
+      "class_id": "36a8e346-9aaa-4af9-bdbd-83be3c177977",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Enum": {
+      "xml_name": "Enum",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "EnumValue",
+          "xml_type": "tns:EnumValue",
+          "storage": "inline_xml",
+          "item_type": "EnumValue",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "EnumEnumValue",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
+            "collection_id": "bee0a08c-07eb-40c0-8544-5c364c171465",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "EnumForm",
+          "item_class_id": "33f2e54b-37ce-4a7a-a569-b648d7aa4634",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "33f2e54b-37ce-4a7a-a569-b648d7aa4634",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "EnumCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              5
+            ],
+            "collection_id": "6d8d73a7-ba29-401d-9032-3872ec2d6433",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "StandardAttributes",
+        "Characteristics",
+        "QuickChoice",
+        "ChoiceMode",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "AuxiliaryListForm",
+        "AuxiliaryChoiceForm",
+        "ManagerModule",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "ChoiceHistoryOnInput"
+      ],
+      "runtime_name": "Enum",
+      "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+      "modules": {
+        "ManagerModule": ".0"
+      },
+      "native_identity_path": [
+        1,
+        5,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "EnumValue": {
+      "xml_name": "EnumValue",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Color"
+      ],
+      "runtime_name": "EnumValue",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "EventSubscription": {
+      "xml_name": "EventSubscription",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Source",
+        "Event",
+        "Handler"
+      ],
+      "runtime_name": "EventSubscription",
+      "class_id": "4e828da6-0f44-4b5b-b1c0-a2b3cfe7bdcc",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "ExchangePlan": {
+      "xml_name": "ExchangePlan",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExchangePlanAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExchangePlanTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExchangePlanForm",
+          "item_class_id": "87c509ab-3d38-4d67-b379-aca796298578",
+          "class_id_evidence": "v8unpack_enum",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "87c509ab-3d38-4d67-b379-aca796298578",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExchangePlanCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "CodeLength",
+        "CodeAllowedLength",
+        "DescriptionLength",
+        "Content",
+        "DefaultPresentation",
+        "EditType",
+        "QuickChoice",
+        "ChoiceMode",
+        "InputByString",
+        "SearchStringModeOnInputByString",
+        "FullTextSearchOnInputByString",
+        "ChoiceDataGetModeOnInputByString",
+        "DefaultObjectForm",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "AuxiliaryObjectForm",
+        "AuxiliaryListForm",
+        "AuxiliaryChoiceForm",
+        "ObjectModule",
+        "ManagerModule",
+        "StandardAttributes",
+        "Characteristics",
+        "BasedOn",
+        "DistributedInfoBase",
+        "IncludeConfigurationExtensions",
+        "CreateOnInput",
+        "ChoiceHistoryOnInput",
+        "IncludeHelpInContents",
+        "Help",
+        "DataLockFields",
+        "DataLockControlMode",
+        "FullTextSearch",
+        "ObjectPresentation",
+        "ExtendedObjectPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "DataHistory",
+        "UpdateDataHistoryImmediatelyAfterWrite",
+        "ExecuteAfterWriteDataHistoryVersionProcessing",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "ExchangePlan",
+      "class_id": "857c4a91-e5f4-4fac-86ec-787626f1c108",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        12,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "ExtDimensionAccountingFlag": {
+      "xml_name": "ExtDimensionAccountingFlag",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillFromFillingValue",
+        "FillValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput",
+        "DataHistory"
+      ],
+      "runtime_name": "ExtDimensionAccountingFlag",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "ExternalDataProcessor": {
+      "xml_name": "ExternalDataProcessor",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExternalDataProcessorAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExternalDataProcessorTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExternalDataProcessorForm",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "DefaultForm",
+        "AuxiliaryForm",
+        "ObjectModule",
+        "Help"
+      ],
+      "runtime_name": "ExternalDataProcessor",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "ExternalDataSource": {
+      "xml_name": "ExternalDataSource",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Table",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Table",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Table",
+          "item_class_id": "e3403acd-1c95-421b-87e4-4dfa29d38b52",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              5
+            ],
+            "collection_id": "e3403acd-1c95-421b-87e4-4dfa29d38b52",
+            "serializer": "native_collection_editor",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "tests/fixtures/external_source_collections_851.json"
+          }
+        },
+        {
+          "xml_name": "Cube",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Cube",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Cube",
+          "item_class_id": "2bb208ca-e441-4023-9ab9-32a7807a85d0",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "2bb208ca-e441-4023-9ab9-32a7807a85d0",
+            "serializer": "native_collection_editor",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "tests/fixtures/external_source_collections_851.json"
+          }
+        },
+        {
+          "xml_name": "Function",
+          "xml_type": "tns:Function",
+          "storage": "inline_xml",
+          "item_type": "Function",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExternalDataSourceFunction",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "DataLockControlMode"
+      ],
+      "runtime_name": "ExternalDataSource",
+      "class_id": "5274d9fc-9c3a-4a71-8f5e-a0db8ab23de5",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "ExternalReport": {
+      "xml_name": "ExternalReport",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExternalReportAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExternalReportTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ExternalReportForm",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "DefaultForm",
+        "AuxiliaryForm",
+        "MainDataCompositionSchema",
+        "DefaultSettingsForm",
+        "AuxiliarySettingsForm",
+        "DefaultVariantForm",
+        "AuxiliaryVariantForm",
+        "VariantsStorage",
+        "SettingsStorage",
+        "ObjectModule",
+        "Help"
+      ],
+      "runtime_name": "ExternalReport",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Field": {
+      "xml_name": "Field",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillFromFillingValue",
+        "FillValue",
+        "FillChecking",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceHistoryOnInput",
+        "ChoiceForm",
+        "NameInDataSource",
+        "ReadOnly",
+        "AllowNull"
+      ],
+      "runtime_name": "Field",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "FilterCriterion": {
+      "xml_name": "FilterCriterion",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "FilterCriterionForm",
+          "item_class_id": "00867c40-06b1-11d6-a3c7-0050bae0a776",
+          "class_id_evidence": "v8unpack_enum",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "00867c40-06b1-11d6-a3c7-0050bae0a776",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "FilterCriterionCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "UseStandardCommands",
+        "Content",
+        "DefaultForm",
+        "AuxiliaryForm",
+        "ManagerModule",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation"
+      ],
+      "runtime_name": "FilterCriterion",
+      "class_id": "3e7bfcc0-067d-11d6-a3c7-0050bae0a776",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        5,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "Form": {
+      "xml_name": "Form",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Form",
+        "FormType",
+        "IncludeHelpInContents",
+        "Help",
+        "UsePurposes",
+        "ExtendedPresentation",
+        "UseInInterfaceCompatibilityMode"
+      ],
+      "runtime_name": "Form",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {
+        "Ext/Form.xml": {
+          "serializer": "managed_form_xml",
+          "status": "partial"
+        },
+        "Ext/Form/Module.bsl": {
+          "serializer": "managed_form_xml",
+          "status": "supported"
+        }
+      }
+    },
+    "Function": {
+      "xml_name": "Function",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "ReturnValue",
+        "Type",
+        "ExpressionInDataSource"
+      ],
+      "runtime_name": "Function",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "FunctionalOption": {
+      "xml_name": "FunctionalOption",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Location",
+        "PrivilegedGetMode",
+        "Content"
+      ],
+      "runtime_name": "FunctionalOption",
+      "class_id": "af547940-3268-434f-a3e7-e47d6d2638c3",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "FunctionalOptionsParameter": {
+      "xml_name": "FunctionalOptionsParameter",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Use"
+      ],
+      "runtime_name": "FunctionalOptionsParameter",
+      "class_id": "30d554db-541e-4f62-8970-a1c6dcfeb2bc",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "HTTPService": {
+      "xml_name": "HTTPService",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "URLTemplate",
+          "xml_type": "tns:URLTemplate",
+          "storage": "inline_xml",
+          "item_type": "URLTemplate",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "HTTPServiceURLTemplate",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "ec6896c2-9b28-42d8-9140-48491146b8ea",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "RootURL",
+        "Module",
+        "ReuseSessions",
+        "SessionMaxAge"
+      ],
+      "runtime_name": "HTTPService",
+      "class_id": "0fffc09c-8f4c-47cc-b41c-8d5c5a221d79",
+      "modules": {
+        "Module": ".0"
+      },
+      "native_identity_path": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "InformationRegister": {
+      "xml_name": "InformationRegister",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Resource",
+          "xml_type": "tns:Resource",
+          "storage": "inline_xml",
+          "item_type": "Resource",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "InformationRegisterResource",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "13134202-f60b-11d5-a3c7-0050bae0a776",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "InformationRegisterAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              7
+            ],
+            "collection_id": "a2207540-1400-11d6-a3c7-0050bae0a776",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Dimension",
+          "xml_type": "tns:Dimension",
+          "storage": "inline_xml",
+          "item_type": "Dimension",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "InformationRegisterDimension",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              4
+            ],
+            "collection_id": "13134203-f60b-11d5-a3c7-0050bae0a776",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "InformationRegisterForm",
+          "item_class_id": "13134204-f60b-11d5-a3c7-0050bae0a776",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "13134204-f60b-11d5-a3c7-0050bae0a776",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "InformationRegisterCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              8
+            ],
+            "collection_id": "b44ba719-945c-445c-8aab-1088fa4df16e",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "EditType",
+        "DefaultRecordForm",
+        "DefaultListForm",
+        "AuxiliaryRecordForm",
+        "AuxiliaryListForm",
+        "StandardAttributes",
+        "InformationRegisterPeriodicity",
+        "WriteMode",
+        "MainFilterOnPeriod",
+        "IncludeHelpInContents",
+        "Help",
+        "RecordSetModule",
+        "ManagerModule",
+        "DataLockControlMode",
+        "FullTextSearch",
+        "EnableTotalsSliceFirst",
+        "EnableTotalsSliceLast",
+        "RecordPresentation",
+        "ExtendedRecordPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "DataHistory",
+        "UpdateDataHistoryImmediatelyAfterWrite",
+        "ExecuteAfterWriteDataHistoryVersionProcessing",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "InformationRegister",
+      "class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+      "modules": {
+        "RecordSetModule": ".1",
+        "ManagerModule": ".2"
+      },
+      "native_identity_path": [
+        1,
+        15,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "IntegrationService": {
+      "xml_name": "IntegrationService",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "IntegrationServiceChannel",
+          "xml_type": "tns:IntegrationServiceChannel",
+          "storage": "inline_xml",
+          "item_type": "IntegrationServiceChannel",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "IntegrationServiceIntegrationServiceChannel",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "ExternalIntegrationServiceAddress",
+        "Module"
+      ],
+      "runtime_name": "IntegrationService",
+      "class_id": "bf3420b0-f6f9-41a0-b83a-fe9d4ab0b65d",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "IntegrationServiceChannel": {
+      "xml_name": "IntegrationServiceChannel",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "ExternalIntegrationServiceChannelName",
+        "ReceiveMessageProcessing",
+        "MessageDirection",
+        "Transactioned"
+      ],
+      "runtime_name": "IntegrationServiceChannel",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Interface": {
+      "xml_name": "Interface",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Interface",
+        "Switchable"
+      ],
+      "runtime_name": "Interface",
+      "class_id": "39bddf6a-0c3c-452b-921c-d99cfa1c2f1b",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Language": {
+      "xml_name": "Language",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "LanguageCode"
+      ],
+      "runtime_name": "Language",
+      "class_id": "9cd510ce-abfc-11d4-9434-004095e12fc7",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Method": {
+      "xml_name": "Method",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "HTTPMethod",
+        "Handler"
+      ],
+      "runtime_name": "Method",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Operation": {
+      "xml_name": "Operation",
+      "exported": false,
+      "collections": [
+        {
+          "xml_name": "Parameter",
+          "xml_type": "tns:Parameter",
+          "storage": "inline_xml",
+          "item_type": "Parameter",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "OperationParameter",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              2
+            ],
+            "collection_id": "b78a00b2-2260-4ef5-a70c-17889cfee695",
+            "serializer": "inline_metadata_xml",
+            "format": "unknown",
+            "path_scope": "inline_object"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "XDTOReturningValueType",
+        "Nillable",
+        "Transactioned",
+        "ProcedureName",
+        "DataLockControlMode"
+      ],
+      "runtime_name": "Operation",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "PaletteColor": {
+      "xml_name": "PaletteColor",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Color"
+      ],
+      "runtime_name": "PaletteColor",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Parameter": {
+      "xml_name": "Parameter",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "XDTOValueType",
+        "Nillable",
+        "TransferDirection"
+      ],
+      "runtime_name": "Parameter",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Recalculation": {
+      "xml_name": "Recalculation",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Dimension",
+          "xml_type": "tns:Dimension",
+          "storage": "inline_xml",
+          "item_type": "Dimension",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "RecalculationDimension",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "RecordSetModule",
+        "DataLockControlMode"
+      ],
+      "runtime_name": "Recalculation",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Report": {
+      "xml_name": "Report",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ReportAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              4
+            ],
+            "collection_id": "7e7123e0-29e2-11d6-a3c7-0050bae0a776",
+            "serializer": "inline_object_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ReportTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
+            "collection_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+            "serializer": "tabular_section_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ReportForm",
+          "item_class_id": "a3b368c0-29e2-11d6-a3c7-0050bae0a776",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              5
+            ],
+            "collection_id": "a3b368c0-29e2-11d6-a3c7-0050bae0a776",
+            "serializer": "child_object_xml",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "child_object_xml",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "ReportCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              7
+            ],
+            "collection_id": "e7ff38c0-ec3c-47a0-ae90-20c73ca72246",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "DefaultForm",
+        "AuxiliaryForm",
+        "MainDataCompositionSchema",
+        "DefaultSettingsForm",
+        "AuxiliarySettingsForm",
+        "DefaultVariantForm",
+        "AuxiliaryVariantForm",
+        "VariantsStorage",
+        "SettingsStorage",
+        "ObjectModule",
+        "ManagerModule",
+        "IncludeHelpInContents",
+        "Help",
+        "ExtendedPresentation",
+        "Explanation"
+      ],
+      "runtime_name": "Report",
+      "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+      "modules": {
+        "ObjectModule": ".0",
+        "ManagerModule": ".2"
+      },
+      "native_identity_path": [
+        1,
+        3,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "Resource": {
+      "xml_name": "Resource",
+      "exported": false,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput",
+        "Balance",
+        "AccountingFlag",
+        "ExtDimensionAccountingFlag",
+        "FullTextSearch",
+        "FillFromFillingValue",
+        "FillValue",
+        "Indexing",
+        "DataHistory",
+        "NameInDataSource",
+        "BinaryDataStorageLocationUse",
+        "BinaryDataStorageLocationUseField"
+      ],
+      "runtime_name": "Resource",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Role": {
+      "xml_name": "Role",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Rights"
+      ],
+      "runtime_name": "Role",
+      "class_id": "09736b02-9cac-4e3f-b4f7-d3e9576ab948",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {
+        "Ext/Rights.xml": {
+          "serializer": "object_file_content",
+          "status": "partial",
+          "native_suffix": ".0"
+        }
+      }
+    },
+    "ScheduledJob": {
+      "xml_name": "ScheduledJob",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "MethodName",
+        "Description",
+        "Key",
+        "Schedule",
+        "Use",
+        "Predefined",
+        "RestartCountOnFailure",
+        "RestartIntervalOnFailure"
+      ],
+      "runtime_name": "ScheduledJob",
+      "class_id": "11bdaf85-d5ad-4d91-bb24-aa0eee139052",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Sequence": {
+      "xml_name": "Sequence",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Dimension",
+          "xml_type": "tns:Dimension",
+          "storage": "inline_xml",
+          "item_type": "Dimension",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "SequencesDimension",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "MoveBoundaryOnPosting",
+        "Documents",
+        "RegisterRecords",
+        "RecordSetModule",
+        "DataLockControlMode",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "Sequences",
+      "class_id": "bc587f20-35d9-11d6-a3c7-0050bae0a776",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "SessionParameter": {
+      "xml_name": "SessionParameter",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type"
+      ],
+      "runtime_name": "SessionParameter",
+      "class_id": "24c43748-c938-45d0-8d14-01424a72b11e",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "SettingsStorage": {
+      "xml_name": "SettingsStorage",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "SettingsStorageForm",
+          "item_class_id": "b8533c0c-2342-4db3-91a2-c2b08cbf6b23",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              4
+            ],
+            "collection_id": "b8533c0c-2342-4db3-91a2-c2b08cbf6b23",
+            "serializer": "child_object_xml",
+            "format": "class_uuid,count,object_uuids"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "child_object_xml",
+            "format": "class_uuid,count,object_uuids"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "DefaultSaveForm",
+        "DefaultLoadForm",
+        "AuxiliarySaveForm",
+        "AuxiliaryLoadForm",
+        "ManagerModule"
+      ],
+      "runtime_name": "SettingsStorage",
+      "class_id": "46b4cd97-fd13-4eaa-aba2-3bddd7699218",
+      "modules": {
+        "ManagerModule": ".8"
+      },
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "Style": {
+      "xml_name": "Style",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Style"
+      ],
+      "runtime_name": "Style",
+      "class_id": "3e5404af-6ef8-4c73-ad11-91bd2dfac4c8",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "StyleItem": {
+      "xml_name": "StyleItem",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Type",
+        "Value"
+      ],
+      "runtime_name": "StyleItem",
+      "class_id": "58848766-36ea-4076-8800-e91eb49590d7",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Subsystem": {
+      "xml_name": "Subsystem",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Subsystem",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Subsystem",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Subsystem",
+          "item_class_id": "37f2fa9a-b276-11d4-9435-004095e12fc7",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "candidate_path": [
+              3
+            ],
+            "candidate_evidence": "subsystem_layout_851.json template; write handler not implemented",
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "IncludeHelpInContents",
+        "UseOneCommand",
+        "Help",
+        "IncludeInCommandInterface",
+        "CommandInterface",
+        "Explanation",
+        "Picture",
+        "Content"
+      ],
+      "runtime_name": "Subsystem",
+      "class_id": "37f2fa9a-b276-11d4-9435-004095e12fc7",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Table": {
+      "xml_name": "Table",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Field",
+          "xml_type": "tns:Field",
+          "storage": "inline_xml",
+          "item_type": "Field",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "TableField",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "TableForm",
+          "item_class_id": "17816ebc-4068-496e-adc4-8879945a832f",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "17816ebc-4068-496e-adc4-8879945a832f",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          },
+          "class_id_evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "TableCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "TableType",
+        "NameInDataSource",
+        "ExpressionInDataSource",
+        "TableDataType",
+        "KeyFields",
+        "PresentationField",
+        "ParentField",
+        "UnfilledParentValue",
+        "Characteristics",
+        "UseStandardCommands",
+        "QuickChoice",
+        "InputByString",
+        "CreateOnInput",
+        "SearchStringModeOnInputByString",
+        "ChoiceDataGetModeOnInputByString",
+        "ChoiceHistoryOnInput",
+        "DefaultObjectForm",
+        "DefaultRecordForm",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "ObjectPresentation",
+        "ExtendedObjectPresentation",
+        "RecordPresentation",
+        "ExtendedRecordPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "ObjectModule",
+        "RecordSetModule",
+        "ManagerModule",
+        "IncludeHelpInContents",
+        "Help",
+        "ReadOnly",
+        "TransactionsIsolationLevel",
+        "DataVersionField",
+        "EditType",
+        "BasedOn",
+        "DataLockFields",
+        "DataLockControlMode"
+      ],
+      "runtime_name": "Table",
+      "class_id": "e3403acd-1c95-421b-87e4-4dfa29d38b52",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "TabularSection": {
+      "xml_name": "TabularSection",
+      "exported": false,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "TabularSectionAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          },
+          "owner_native_profiles": {
+            "Catalog": {
+              "status": "verified_profile",
+              "collection_id": "888744e1-b616-11d4-9436-004095e12fc7",
+              "serializer": "tabular_section_xml"
+            },
+            "Document": {
+              "status": "verified_profile",
+              "collection_id": "888744e1-b616-11d4-9436-004095e12fc7",
+              "serializer": "tabular_section_xml"
+            },
+            "DataProcessor": {
+              "status": "verified_profile",
+              "collection_id": "5d24a9d1-098e-11d6-b9b8-0050bae0a95d",
+              "serializer": "tabular_section_xml"
+            },
+            "Report": {
+              "status": "verified_profile",
+              "collection_id": "c339c860-29e2-11d6-a3c7-0050bae0a776",
+              "serializer": "tabular_section_xml"
+            },
+            "ChartOfCharacteristicType": {
+              "status": "verified_profile",
+              "collection_id": "888744e1-b616-11d4-9436-004095e12fc7",
+              "serializer": "tabular_section_xml"
+            }
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "ToolTip",
+        "FillChecking",
+        "StandardAttributes",
+        "Use",
+        "LineNumberLength"
+      ],
+      "runtime_name": "TabularSection",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "Task": {
+      "xml_name": "Task",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Attribute",
+          "xml_type": "tns:Attribute",
+          "storage": "inline_xml",
+          "item_type": "Attribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "TaskAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "TabularSection",
+          "xml_type": "tns:TabularSection",
+          "storage": "inline_xml",
+          "item_type": "TabularSection",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "TaskTabularSection",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Form",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Form",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "TaskForm",
+          "item_class_id": "3f58cbfb-4172-4e54-be49-561a579bb38b",
+          "class_id_evidence": "v8unpack_enum",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3f58cbfb-4172-4e54-be49-561a579bb38b",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "Template",
+          "xml_type": "xs:string",
+          "storage": "stored_name",
+          "item_type": "Template",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "Template",
+          "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+          "class_id_evidence": "project_dictionary",
+          "native": {
+            "status": "snapshot_collection",
+            "path": null,
+            "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+            "serializer": "native_collection_editor",
+            "lookup": "snapshot_class_collection",
+            "format": "class_uuid,count,object_uuids",
+            "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
+          }
+        },
+        {
+          "xml_name": "AddressingAttribute",
+          "xml_type": "tns:AddressingAttribute",
+          "storage": "inline_xml",
+          "item_type": "AddressingAttribute",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "TaskAddressingAttribute",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        },
+        {
+          "xml_name": "Command",
+          "xml_type": "tns:Command",
+          "storage": "inline_xml",
+          "item_type": "Command",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "TaskCommand",
+          "item_class_id": null,
+          "native": {
+            "status": "unmapped",
+            "path": null,
+            "collection_id": null,
+            "serializer": null,
+            "format": "unknown"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "UseStandardCommands",
+        "ObjectModule",
+        "ManagerModule",
+        "NumberType",
+        "NumberLength",
+        "NumberAllowedLength",
+        "CheckUnique",
+        "Autonumbering",
+        "TaskNumberAutoPrefix",
+        "DescriptionLength",
+        "Addressing",
+        "MainAddressingAttribute",
+        "CurrentPerformer",
+        "BasedOn",
+        "StandardAttributes",
+        "Characteristics",
+        "DefaultPresentation",
+        "EditType",
+        "InputByString",
+        "SearchStringModeOnInputByString",
+        "FullTextSearchOnInputByString",
+        "ChoiceDataGetModeOnInputByString",
+        "CreateOnInput",
+        "DefaultObjectForm",
+        "DefaultListForm",
+        "DefaultChoiceForm",
+        "AuxiliaryObjectForm",
+        "AuxiliaryListForm",
+        "AuxiliaryChoiceForm",
+        "ChoiceHistoryOnInput",
+        "IncludeHelpInContents",
+        "Help",
+        "DataLockFields",
+        "DataLockControlMode",
+        "FullTextSearch",
+        "ObjectPresentation",
+        "ExtendedObjectPresentation",
+        "ListPresentation",
+        "ExtendedListPresentation",
+        "Explanation",
+        "DataHistory",
+        "UpdateDataHistoryImmediatelyAfterWrite",
+        "ExecuteAfterWriteDataHistoryVersionProcessing",
+        "AdditionalIndexes"
+      ],
+      "runtime_name": "Task",
+      "class_id": "3e63355c-1378-4953-be9b-1deb5fb6bec5",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": true,
+      "content_files": {}
+    },
+    "Template": {
+      "xml_name": "Template",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "TemplateType",
+        "Template"
+      ],
+      "runtime_name": "Template",
+      "class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {
+        "Ext/Template.xml": {
+          "serializer": "template_content",
+          "status": "supported_for_selected_template_types"
+        },
+        "Ext/Template.bin": {
+          "serializer": "template_content",
+          "status": "supported_for_selected_template_types"
+        },
+        "Ext/Template.txt": {
+          "serializer": "template_content",
+          "status": "supported_for_selected_template_types"
+        }
+      }
+    },
+    "URLTemplate": {
+      "xml_name": "URLTemplate",
+      "exported": false,
+      "collections": [
+        {
+          "xml_name": "Method",
+          "xml_type": "tns:Method",
+          "storage": "inline_xml",
+          "item_type": "Method",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "URLTemplateMethod",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              2
+            ],
+            "collection_id": "21c96ea8-c8fc-424a-a0b4-e1ffb2fa1a73",
+            "serializer": "inline_metadata_xml",
+            "format": "unknown",
+            "path_scope": "inline_object"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Template"
+      ],
+      "runtime_name": "URLTemplate",
+      "class_id": null,
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "WSReference": {
+      "xml_name": "WSReference",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "LocationURL",
+        "WSDefinition"
+      ],
+      "runtime_name": "WSReference",
+      "class_id": "d26096fb-7a5d-4df9-af63-47d04771fa9b",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "WebService": {
+      "xml_name": "WebService",
+      "exported": true,
+      "collections": [
+        {
+          "xml_name": "Operation",
+          "xml_type": "tns:Operation",
+          "storage": "inline_xml",
+          "item_type": "Operation",
+          "min_occurs": "0",
+          "max_occurs": "unbounded",
+          "runtime_item_kind": "WebServiceOperation",
+          "item_class_id": null,
+          "native": {
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
+            "collection_id": "36186084-c23a-43bd-876c-a3a8ba1a9622",
+            "serializer": "inline_metadata_xml",
+            "format": "collection_uuid,count,inline_entries"
+          }
+        }
+      ],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Namespace",
+        "Module",
+        "XDTOPackages",
+        "DescriptorFileName",
+        "ReuseSessions",
+        "SessionMaxAge"
+      ],
+      "runtime_name": "WebService",
+      "class_id": "8657032e-7740-4e1d-a3ba-5dd6e8afb78f",
+      "modules": {
+        "Module": ".0"
+      },
+      "native_identity_path": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "WebSocketClient": {
+      "xml_name": "WebSocketClient",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Predefined",
+        "Module",
+        "ServerURL",
+        "User",
+        "Password",
+        "Headers",
+        "UseOSProxy",
+        "UseOSAuthentication",
+        "Timeout",
+        "AutoConnect"
+      ],
+      "runtime_name": "WebSocketClient",
+      "class_id": "a7641777-7813-45c6-96ef-9d51587a6ac6",
+      "modules": {},
+      "native_identity_path": null,
+      "automatic_deletion_supported": false,
+      "content_files": {}
+    },
+    "XDTOPackage": {
+      "xml_name": "XDTOPackage",
+      "exported": true,
+      "collections": [],
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "ObjectBelonging",
+        "ExtendedConfigurationObject",
+        "Namespace",
+        "Package"
+      ],
+      "runtime_name": "XDTOPackage",
+      "class_id": "cc9df798-7c94-4616-97d2-7aa0b7bc515e",
+      "modules": {},
+      "native_identity_path": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "automatic_deletion_supported": false,
+      "content_files": {
+        "Ext/Package.bin": {
+          "serializer": "object_file_content",
+          "status": "supported",
+          "native_suffix": ".0"
+        }
+      }
+    }
+  }
+}

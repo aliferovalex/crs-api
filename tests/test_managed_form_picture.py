@@ -1,9 +1,9 @@
 """Standard references, decoration variants and complete picture replacement."""
-import copy,sys,unittest
+import sys, unittest
 from pathlib import Path
 from xml.etree import ElementTree as E
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src/Сериализация'))
-import metadata_serializer as s,managed_form_xml as x,managed_form_serializer as creation
+import native_metadata as s, managed_form_xml as x, managed_form_operations as creation
 import picture_xml as picture,v8unpack_backend as backend
 import test_catalog_form_serializer as fixture
 from test_managed_form_xml import xml,extra
@@ -20,7 +20,7 @@ def root(name='Refresh',transparent='true'):
 
 def native(value):
     request=fixture.fixture();request['form_xml']=E.tostring(value,encoding='unicode')
-    return extra(creation.serialize(request))
+    return extra(creation.create(request))
 
 
 def change(raw,value):

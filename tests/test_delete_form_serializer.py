@@ -1,15 +1,17 @@
 """Deletion is an inactive graph object plus a full updated parent, not a body."""
-import base64,copy,hashlib,unittest,uuid,sys
+import base64, unittest, uuid, sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'/'Сериализация'))
 from xml.etree import ElementTree as E
-import metadata_serializer as s
+import metadata_context
+import metadata_object_xml
+import native_metadata as s
 import metadata_identifiers as ids
 import external_data
-import catalog_object_xml as catalog
-import delete_owned_object_serializer as deletion
-import test_managed_form_change as forms
-from test_managed_form_serializer import store
+import metadata_object_xml as catalog
+import delete_object_serializer as deletion
+import test_managed_form_operations as forms
+from test_managed_form_creation import store
 
 
 def fixture():
@@ -18,9 +20,9 @@ def fixture():
     body=s.Parser(s.inflate(records[s.val(manifest[4])]).decode('utf-8-sig')).documents()[0]
     owner[0][12]=[s.atom(1),[s.atom(ids.class_id('CatalogForm')),s.atom(1),s.atom(forms.FID)]]
     body[7]=[body[7][0],s.atom(1),s.atom(forms.FID)]
-    fd=s.context_metadata(base64.b64decode(r['context']),forms.FID)
+    fd=metadata_context.context_metadata(base64.b64decode(r['context']),forms.FID)
     context=s.storage([s.text_bytes(owner),s.text_bytes(fd)],s.text_bytes([[s.atom(0)]]))
-    top=catalog.export(body,{'Form':forms.FID},r['platform']);children=top[0].find(catalog.Q+'ChildObjects')
+    top=metadata_object_xml.export(body, {'Form': forms.FID}, r['platform'], 'Catalog');children=top[0].find(catalog.Q+'ChildObjects')
     children.remove(children.find(catalog.Q+'Form'))
     return dict(platform=r['platform'],form_id=forms.FID,original_version=uuid.UUID(s.val(owner[0][7])).bytes_le.hex()+'00000000',
         form_original_version=r['original_version'],snapshot=store(owner,s.native_body_bytes([body])),form_snapshot=r['snapshot'],

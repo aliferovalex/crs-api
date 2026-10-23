@@ -1,15 +1,18 @@
 """Whole target descriptions, identifiers and stale unchanged properties."""
 import base64,copy,unittest
 from xml.etree import ElementTree as E
-import metadata_serializer as s
-import catalog_object_xml as catalog
-import catalog_change_serializer
+import configuration_serializer
+import xml_namespaces
+import inline_attribute_xml
+import metadata_object_xml
+import native_metadata as s
+import metadata_object_xml as catalog
+import object_change_serializer
 import test_catalog_attribute_serializer as attr
 import test_commonmodule_change as module
 import commonmodule_serializer
-import test_metadata_serializer as root
-import form_definition_xml
-import managed_form_serializer
+import test_configuration_serializer as root
+import managed_form_operations
 import test_catalog_form_serializer as forms
 
 
@@ -26,15 +29,15 @@ class WholeObjectTests(unittest.TestCase):
     def test_catalog_complete_properties_and_inline_attribute_list(self):
         r=attr.fixture();snapshot=base64.b64decode(r['snapshot']);_,pos=s.read_record(snapshot,12);data,_=s.read_record(snapshot,pos)
         source=s.Parser(s.inflate(data).decode('utf-8-sig')).documents()[0]
-        top=catalog.export(source,{},r['platform']);props=top[0].find(catalog.Q+'Properties')
+        top=metadata_object_xml.export(source, {}, r['platform'], 'Catalog');props=top[0].find(catalog.Q+'Properties')
         props.find(catalog.Q+'Comment').text='Whole Catalog'
         template=copy.deepcopy(source)
-        first=body(catalog_change_serializer.serialize(r))[1][0][6][2]
-        node=catalog.attribute_export(first)
-        node.find(catalog.Q+'Properties/'+catalog.Q+'Type/{'+catalog.c.CORE+'}StringQualifiers/{'+catalog.c.CORE+'}Length').text='120'
+        first=body(object_change_serializer.serialize(r))[1][0][6][2]
+        node=inline_attribute_xml.attribute_export(first)
+        node.find(catalog.Q+'Properties/'+catalog.Q+'Type/{'+xml_namespaces.CORE+'}StringQualifiers/{'+xml_namespaces.CORE+'}Length').text='120'
         top[0].find(catalog.Q+'ChildObjects').append(node)
-        r.pop('name');r.pop('length');r['object_xml']=E.tostring(top,encoding='unicode')
-        result=catalog_change_serializer.serialize(r);meta,docs=body(result)
+        r['object_xml']=E.tostring(top,encoding='unicode')
+        result=object_change_serializer.serialize(r);meta,docs=body(result)
         self.assertNotIn('attribute_id',result)
         self.assertEqual(s.val(docs[0][1][9][1][4]),'Whole Catalog')
         self.assertEqual(s.val(docs[0][6][2][0][1][1][2][1][1]),'120')
@@ -45,17 +48,17 @@ class WholeObjectTests(unittest.TestCase):
         r=attr.fixture();_,pos=s.read_record(base64.b64decode(r['snapshot']),12);data,_=s.read_record(base64.b64decode(r['snapshot']),pos)
         source=s.Parser(s.inflate(data).decode('utf-8-sig')).documents()[0]
         for mutation in ('section','generated','form'):
-            top=catalog.export(source,{},r['platform'])
+            top=metadata_object_xml.export(source, {}, r['platform'], 'Catalog')
             if mutation=='section':E.SubElement(top[0].find(catalog.Q+'ChildObjects'),catalog.Q+'TabularSection',uuid=attr.catalog.const.CID)
-            elif mutation=='generated':top[0].find('.//{'+catalog.c.READABLE+'}TypeId').text='11111111-1111-4111-8111-111111111111'
+            elif mutation=='generated':top[0].find('.//{'+xml_namespaces.READABLE+'}TypeId').text='11111111-1111-4111-8111-111111111111'
             else:E.SubElement(top[0].find(catalog.Q+'ChildObjects'),catalog.Q+'Form').text='Missing'
             with self.subTest(mutation=mutation),self.assertRaises(ValueError):
-                catalog_change_serializer.serialize(dict(r,object_xml=E.tostring(top,encoding='unicode')))
+                object_change_serializer.serialize(dict(r,object_xml=E.tostring(top,encoding='unicode')))
 
     def test_module_whole_description_and_code(self):
         r=module.fixture();snapshot=base64.b64decode(r['snapshot']);_,pos=s.read_record(snapshot,12);data,_=s.read_record(snapshot,pos)
         old=s.Parser(s.inflate(data).decode('utf-8-sig')).documents()[0]
-        top=E.fromstring(commonmodule_serializer.module_xml_from_native(old[1][1]))
+        top=catalog.export(old,{},r['platform'],'CommonModule')
         top[0].find(catalog.Q+'Properties/'+catalog.Q+'Comment').text='Whole Module'
         r['object_xml']=E.tostring(top,encoding='unicode')
         meta,docs=body(commonmodule_serializer.serialize_change(r))
@@ -70,7 +73,7 @@ class WholeObjectTests(unittest.TestCase):
         before.find('.//Vendor').text='Stale';after.find('.//Vendor').text='Stale'
         after.find('.//Comment').text='Changed'
         r.update(before_xml=E.tostring(before,encoding='unicode'),after_xml=E.tostring(after,encoding='unicode'))
-        with self.assertRaisesRegex(ValueError,'Baseline XML Vendor'):s.serialize(r)
+        with self.assertRaisesRegex(ValueError,'Baseline XML Vendor'):configuration_serializer.serialize(r)
 
     def test_form_definition_from_complete_xml_preserves_uuid_and_properties(self):
         r=forms.fixture();oid='44444444-4444-4444-8444-444444444444'
@@ -80,12 +83,12 @@ class WholeObjectTests(unittest.TestCase):
         E.SubElement(props,catalog.Q+'Synonym');E.SubElement(props,catalog.Q+'Comment').text='Whole Form Definition'
         E.SubElement(props,catalog.Q+'FormType').text='Managed'
         r['definition_xml']=E.tostring(top,encoding='unicode')
-        result=managed_form_serializer.serialize(r);meta,docs=body(result)
+        result=managed_form_operations.create(r);meta,docs=body(result)
         self.assertEqual(result['object_id'],oid)
         common=docs[0][1][1][1];self.assertEqual(s.val(common[4]),'Whole Form Definition')
         self.assertEqual(s.val(common[1][2]),oid)
         props.find(catalog.Q+'FormType').text='Ordinary'
-        with self.assertRaises(ValueError):managed_form_serializer.serialize(dict(r,definition_xml=E.tostring(top,encoding='unicode')))
+        with self.assertRaises(ValueError):managed_form_operations.create(dict(r,definition_xml=E.tostring(top,encoding='unicode')))
 
 
 if __name__=='__main__':unittest.main()

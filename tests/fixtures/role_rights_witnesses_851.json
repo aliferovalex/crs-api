@@ -1,0 +1,627 @@
+{
+  "source": "Independent Configurator 8.5.1.1529 saved demo compilation and XML export; object and role names omitted. No ordering assumptions.",
+  "cf_sha256": "a95f4edd2c6c454f4f684ebb191ec992b20dd0265babfeb5d6268e6f668824cc",
+  "samples": [
+    {
+      "xml": {
+        "Read": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "33200740-82b0-4de7-8556-d3fb25ca4328": -1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": -1,
+        "c0028105-4cc1-41ca-aef1-bfbd8fc8f8c4": -1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": -1,
+        "fb88c756-91c9-4351-9cdf-e027879886c6": -1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": -1,
+        "b53db6ed-6e5b-4035-8d24-f10083d646ed": -1,
+        "d76b72ba-5388-4b7f-af64-1b351f63a1e1": -1,
+        "798cf688-ad74-44fe-a464-236b49e910e0": -1,
+        "fa6dbe86-856a-4ac4-b8ac-bce99f8b8b22": -1,
+        "b5f861d3-d9c5-45ec-98bf-0ed4d489a351": -1,
+        "64319ca1-f3d8-472e-82ce-5da233e6daaa": -1,
+        "1b762bf9-df7f-4255-bbe6-f7578f41368d": -1,
+        "b162ff57-0296-483e-9af8-dc37576802cb": -1,
+        "c4ab1331-e58d-4a46-ad2e-fe6d80b72aa4": -1,
+        "a679c969-8ea1-4b8b-9e61-8a414ba448f4": -1,
+        "5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb": -1,
+        "9342b152-a7ae-4c79-9b7b-f4f028a36479": -1,
+        "8497054a-ffd1-4ca7-bdfe-340b9ddc050a": -1,
+        "479a42c0-c3e9-4ae7-bf4a-75cebc14fec4": -1
+      }
+    },
+    {
+      "xml": {
+        "Use": true,
+        "View": true
+      },
+      "native": {
+        "c6de80da-a4f7-4ce9-bbeb-0b00ea564ec1": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1
+      }
+    },
+    {
+      "xml": {
+        "ThinClient": true,
+        "WebClient": true,
+        "MobileClient": true,
+        "MainWindowModeWorkplace": true,
+        "MainWindowModeFullscreenWorkplace": true,
+        "MainWindowModeKiosk": true,
+        "SaveUserData": true,
+        "Output": true
+      },
+      "native": {
+        "900e3c92-6e18-4874-846a-b28780b5b54c": -1,
+        "10b8ce49-ae3d-4a2e-afe7-1e3648bd59f7": -1,
+        "4d87a22d-ca7f-40ba-a367-a4eae62f4a7f": -1,
+        "8fb221e3-0d4f-43f2-ad71-1984cad63375": -1,
+        "fd05f656-7a23-43a4-8996-f480a806fb97": -1,
+        "1c799cf9-342d-4bf7-9b6f-951a009228ce": -1,
+        "3c00c6ee-844e-4620-85e4-671e72f114d9": 1,
+        "bd33c881-192c-4ef7-a51d-b146e38c5078": 1,
+        "1e50809b-73ed-4935-bb77-2616c4cabdf5": 1,
+        "29da0973-3b85-40e5-89da-bce02dbab08e": -1,
+        "02119c69-f08a-4142-9426-3725d74b7719": -1,
+        "07ef4641-f7da-417a-bd75-35c40a17c2f7": -1,
+        "265eec41-3ce1-4a07-bc3b-253d44c9a4f4": -1,
+        "3762abec-3836-446a-83ce-3e05001bca8b": -1,
+        "d066966a-ff6a-4a41-bd68-6191cab083bc": -1,
+        "f6168734-8b8d-4a88-ab39-ef6b51758e83": 1,
+        "b9b44b51-3ac9-47cd-8b5a-df51afdcceb0": -1,
+        "818fc6c3-4691-44e3-a80c-e8d424730ead": 1,
+        "155a0b35-4343-4047-989b-d385373b063e": 1,
+        "f7c6a0bb-bca6-4cd3-9146-832971cd7073": -1,
+        "4df6d046-3bf8-4dda-991c-53ba664296a5": -1,
+        "d8682bbb-7800-4aa0-8590-d3cb11fe2a29": 1,
+        "399d7390-8d83-4a57-b4d7-c902c15b701f": -1,
+        "7b8359dd-7d4e-4bcd-a61c-b4b26eae19c6": -1,
+        "eb29e198-c338-4a20-a253-be6fc3dd44d9": -1,
+        "31c3d4f6-7d02-4654-a14e-06aacafcb4fa": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Insert": true,
+        "Update": true,
+        "Delete": true,
+        "View": true,
+        "InteractiveInsert": true,
+        "Edit": true,
+        "InteractiveDelete": true,
+        "InteractiveSetDeletionMark": true,
+        "InteractiveClearDeletionMark": true,
+        "InteractiveDeleteMarked": true,
+        "InputByString": true,
+        "InteractiveDeletePredefinedData": true,
+        "InteractiveSetDeletionMarkPredefinedData": true,
+        "InteractiveClearDeletionMarkPredefinedData": true,
+        "InteractiveDeleteMarkedPredefinedData": true,
+        "ReadDataHistory": true,
+        "ReadDataHistoryOfMissingData": true,
+        "UpdateDataHistory": true,
+        "UpdateDataHistoryOfMissingData": true,
+        "UpdateDataHistorySettings": true,
+        "UpdateDataHistoryVersionComment": true,
+        "ViewDataHistory": true,
+        "EditDataHistoryVersionComment": true,
+        "SwitchToDataHistoryVersion": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "33200740-82b0-4de7-8556-d3fb25ca4328": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "c0028105-4cc1-41ca-aef1-bfbd8fc8f8c4": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "fb88c756-91c9-4351-9cdf-e027879886c6": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1,
+        "b53db6ed-6e5b-4035-8d24-f10083d646ed": 1,
+        "d76b72ba-5388-4b7f-af64-1b351f63a1e1": 1,
+        "798cf688-ad74-44fe-a464-236b49e910e0": 1,
+        "fa6dbe86-856a-4ac4-b8ac-bce99f8b8b22": 1,
+        "b5f861d3-d9c5-45ec-98bf-0ed4d489a351": 1,
+        "013a262e-165f-4815-bdae-7a1bed6a68e4": 1,
+        "408c56c0-e210-4e2e-8e82-610050a08a39": 1,
+        "e7f9daf9-eac2-4ada-9c26-c380858f3589": 1,
+        "65e5f92c-40ff-4130-9652-c0e7612d0609": 1,
+        "64319ca1-f3d8-472e-82ce-5da233e6daaa": 1,
+        "1b762bf9-df7f-4255-bbe6-f7578f41368d": 1,
+        "b162ff57-0296-483e-9af8-dc37576802cb": 1,
+        "c4ab1331-e58d-4a46-ad2e-fe6d80b72aa4": 1,
+        "a679c969-8ea1-4b8b-9e61-8a414ba448f4": 1,
+        "5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb": 1,
+        "9342b152-a7ae-4c79-9b7b-f4f028a36479": 1,
+        "8497054a-ffd1-4ca7-bdfe-340b9ddc050a": 1,
+        "479a42c0-c3e9-4ae7-bf4a-75cebc14fec4": 1
+      }
+    },
+    {
+      "xml": {
+        "Edit": false
+      },
+      "native": {
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": -1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Insert": true,
+        "Update": true,
+        "Delete": true,
+        "View": true,
+        "InteractiveInsert": true,
+        "Edit": true,
+        "InteractiveDelete": true,
+        "InteractiveSetDeletionMark": true,
+        "InteractiveClearDeletionMark": true,
+        "InteractiveDeleteMarked": true,
+        "InputByString": true,
+        "InteractiveDeletePredefinedData": true,
+        "InteractiveSetDeletionMarkPredefinedData": true,
+        "InteractiveClearDeletionMarkPredefinedData": true,
+        "InteractiveDeleteMarkedPredefinedData": true,
+        "ReadDataHistory": true,
+        "ReadDataHistoryOfMissingData": true,
+        "UpdateDataHistoryVersionComment": true,
+        "ViewDataHistory": true,
+        "EditDataHistoryVersionComment": true,
+        "SwitchToDataHistoryVersion": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "33200740-82b0-4de7-8556-d3fb25ca4328": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "c0028105-4cc1-41ca-aef1-bfbd8fc8f8c4": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "fb88c756-91c9-4351-9cdf-e027879886c6": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1,
+        "b53db6ed-6e5b-4035-8d24-f10083d646ed": 1,
+        "d76b72ba-5388-4b7f-af64-1b351f63a1e1": 1,
+        "798cf688-ad74-44fe-a464-236b49e910e0": 1,
+        "fa6dbe86-856a-4ac4-b8ac-bce99f8b8b22": 1,
+        "b5f861d3-d9c5-45ec-98bf-0ed4d489a351": 1,
+        "013a262e-165f-4815-bdae-7a1bed6a68e4": 1,
+        "408c56c0-e210-4e2e-8e82-610050a08a39": 1,
+        "e7f9daf9-eac2-4ada-9c26-c380858f3589": 1,
+        "65e5f92c-40ff-4130-9652-c0e7612d0609": 1,
+        "64319ca1-f3d8-472e-82ce-5da233e6daaa": 1,
+        "1b762bf9-df7f-4255-bbe6-f7578f41368d": 1,
+        "5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb": 1,
+        "9342b152-a7ae-4c79-9b7b-f4f028a36479": 1,
+        "8497054a-ffd1-4ca7-bdfe-340b9ddc050a": 1,
+        "479a42c0-c3e9-4ae7-bf4a-75cebc14fec4": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Update": true,
+        "View": true,
+        "Edit": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Update": true,
+        "View": true,
+        "Edit": true,
+        "ReadDataHistory": true,
+        "ReadDataHistoryOfMissingData": true,
+        "UpdateDataHistoryVersionComment": true,
+        "ViewDataHistory": true,
+        "EditDataHistoryVersionComment": true,
+        "SwitchToDataHistoryVersion": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1,
+        "64319ca1-f3d8-472e-82ce-5da233e6daaa": 1,
+        "1b762bf9-df7f-4255-bbe6-f7578f41368d": 1,
+        "5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb": 1,
+        "9342b152-a7ae-4c79-9b7b-f4f028a36479": 1,
+        "8497054a-ffd1-4ca7-bdfe-340b9ddc050a": 1,
+        "479a42c0-c3e9-4ae7-bf4a-75cebc14fec4": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Insert": true,
+        "Update": true,
+        "Delete": true,
+        "Posting": true,
+        "UndoPosting": true,
+        "View": true,
+        "ReadDataHistory": true,
+        "ReadDataHistoryOfMissingData": true,
+        "UpdateDataHistoryVersionComment": true,
+        "ViewDataHistory": true,
+        "EditDataHistoryVersionComment": true,
+        "SwitchToDataHistoryVersion": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "33200740-82b0-4de7-8556-d3fb25ca4328": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "c0028105-4cc1-41ca-aef1-bfbd8fc8f8c4": 1,
+        "e060de25-bffd-42fd-bb09-f3a788d65760": 1,
+        "f55a8f7f-2c65-404f-b530-093d9006adba": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "64319ca1-f3d8-472e-82ce-5da233e6daaa": 1,
+        "1b762bf9-df7f-4255-bbe6-f7578f41368d": 1,
+        "5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb": 1,
+        "9342b152-a7ae-4c79-9b7b-f4f028a36479": 1,
+        "8497054a-ffd1-4ca7-bdfe-340b9ddc050a": 1,
+        "479a42c0-c3e9-4ae7-bf4a-75cebc14fec4": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "View": true,
+        "ReadDataHistory": true,
+        "ReadDataHistoryOfMissingData": true,
+        "UpdateDataHistoryVersionComment": true,
+        "ViewDataHistory": true,
+        "EditDataHistoryVersionComment": true,
+        "SwitchToDataHistoryVersion": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "64319ca1-f3d8-472e-82ce-5da233e6daaa": 1,
+        "1b762bf9-df7f-4255-bbe6-f7578f41368d": 1,
+        "5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb": 1,
+        "9342b152-a7ae-4c79-9b7b-f4f028a36479": 1,
+        "8497054a-ffd1-4ca7-bdfe-340b9ddc050a": 1,
+        "479a42c0-c3e9-4ae7-bf4a-75cebc14fec4": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Update": true,
+        "View": true,
+        "Edit": true,
+        "TotalsControl": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1,
+        "24abfe06-289a-48c5-8bb4-032c733e45c5": 1
+      }
+    },
+    {
+      "xml": {
+        "UpdateDataBaseConfiguration": true,
+        "ExclusiveMode": true,
+        "ActiveUsers": true,
+        "EventLog": true,
+        "ThinClient": true,
+        "WebClient": true,
+        "MobileClient": true,
+        "ThickClient": true,
+        "ExternalConnection": true,
+        "Automation": true,
+        "MainWindowModeNormal": true,
+        "MainWindowModeWorkplace": true,
+        "MainWindowModeEmbeddedWorkplace": true,
+        "MainWindowModeFullscreenWorkplace": true,
+        "MainWindowModeKiosk": true,
+        "AnalyticsSystemClient": true,
+        "SaveUserData": true,
+        "InteractiveOpenExtDataProcessors": true,
+        "InteractiveOpenExtReports": true,
+        "Output": true
+      },
+      "native": {
+        "4d87a22d-ca7f-40ba-a367-a4eae62f4a7f": 1,
+        "8fb221e3-0d4f-43f2-ad71-1984cad63375": 1,
+        "fd05f656-7a23-43a4-8996-f480a806fb97": 1,
+        "1c799cf9-342d-4bf7-9b6f-951a009228ce": 1,
+        "3c00c6ee-844e-4620-85e4-671e72f114d9": 1,
+        "bd33c881-192c-4ef7-a51d-b146e38c5078": 1,
+        "1e50809b-73ed-4935-bb77-2616c4cabdf5": 1,
+        "29da0973-3b85-40e5-89da-bce02dbab08e": 1,
+        "02119c69-f08a-4142-9426-3725d74b7719": 1,
+        "07ef4641-f7da-417a-bd75-35c40a17c2f7": 1,
+        "d066966a-ff6a-4a41-bd68-6191cab083bc": 1,
+        "f6168734-8b8d-4a88-ab39-ef6b51758e83": 1,
+        "b9b44b51-3ac9-47cd-8b5a-df51afdcceb0": 1,
+        "818fc6c3-4691-44e3-a80c-e8d424730ead": 1,
+        "155a0b35-4343-4047-989b-d385373b063e": 1,
+        "f7c6a0bb-bca6-4cd3-9146-832971cd7073": 1,
+        "d8682bbb-7800-4aa0-8590-d3cb11fe2a29": 1,
+        "7b8359dd-7d4e-4bcd-a61c-b4b26eae19c6": 1,
+        "eb29e198-c338-4a20-a253-be6fc3dd44d9": 1,
+        "31c3d4f6-7d02-4654-a14e-06aacafcb4fa": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Insert": true,
+        "Update": true,
+        "Delete": true,
+        "View": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "33200740-82b0-4de7-8556-d3fb25ca4328": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "c0028105-4cc1-41ca-aef1-bfbd8fc8f8c4": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Insert": true,
+        "Update": true,
+        "Delete": true,
+        "Posting": true,
+        "UndoPosting": true,
+        "View": true,
+        "InteractiveInsert": true,
+        "Edit": true,
+        "InteractiveSetDeletionMark": true,
+        "InteractiveClearDeletionMark": true,
+        "InteractiveDeleteMarked": true,
+        "InteractivePosting": true,
+        "InteractivePostingRegular": true,
+        "InteractiveUndoPosting": true,
+        "InteractiveChangeOfPosted": true,
+        "InputByString": true,
+        "ReadDataHistory": true,
+        "ReadDataHistoryOfMissingData": true,
+        "UpdateDataHistoryVersionComment": true,
+        "ViewDataHistory": true,
+        "EditDataHistoryVersionComment": true,
+        "SwitchToDataHistoryVersion": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "33200740-82b0-4de7-8556-d3fb25ca4328": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "c0028105-4cc1-41ca-aef1-bfbd8fc8f8c4": 1,
+        "e060de25-bffd-42fd-bb09-f3a788d65760": 1,
+        "f55a8f7f-2c65-404f-b530-093d9006adba": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "fb88c756-91c9-4351-9cdf-e027879886c6": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1,
+        "d76b72ba-5388-4b7f-af64-1b351f63a1e1": 1,
+        "798cf688-ad74-44fe-a464-236b49e910e0": 1,
+        "fa6dbe86-856a-4ac4-b8ac-bce99f8b8b22": 1,
+        "5d167fcc-b11f-403a-9a37-1eda64c19df1": 1,
+        "21b4742a-d335-4234-bf0f-a3074a0e31ac": 1,
+        "4d0d77ec-8511-430d-bd77-8407f27bc8f4": 1,
+        "b0c0cbfc-f2cc-4b80-8460-5d5d7a599d9d": 1,
+        "b5f861d3-d9c5-45ec-98bf-0ed4d489a351": 1,
+        "64319ca1-f3d8-472e-82ce-5da233e6daaa": 1,
+        "1b762bf9-df7f-4255-bbe6-f7578f41368d": 1,
+        "5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb": 1,
+        "9342b152-a7ae-4c79-9b7b-f4f028a36479": 1,
+        "8497054a-ffd1-4ca7-bdfe-340b9ddc050a": 1,
+        "479a42c0-c3e9-4ae7-bf4a-75cebc14fec4": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Update": true,
+        "Delete": true,
+        "View": true,
+        "Edit": true,
+        "InteractiveDelete": true,
+        "InteractiveSetDeletionMark": true,
+        "InteractiveClearDeletionMark": true,
+        "InteractiveDeleteMarked": true,
+        "InteractiveDeletePredefinedData": true,
+        "InteractiveSetDeletionMarkPredefinedData": true,
+        "InteractiveClearDeletionMarkPredefinedData": true,
+        "InteractiveDeleteMarkedPredefinedData": true,
+        "ReadDataHistory": true,
+        "ReadDataHistoryOfMissingData": true,
+        "UpdateDataHistoryVersionComment": true,
+        "ViewDataHistory": true,
+        "EditDataHistoryVersionComment": true,
+        "SwitchToDataHistoryVersion": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "c0028105-4cc1-41ca-aef1-bfbd8fc8f8c4": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1,
+        "b53db6ed-6e5b-4035-8d24-f10083d646ed": 1,
+        "d76b72ba-5388-4b7f-af64-1b351f63a1e1": 1,
+        "798cf688-ad74-44fe-a464-236b49e910e0": 1,
+        "fa6dbe86-856a-4ac4-b8ac-bce99f8b8b22": 1,
+        "013a262e-165f-4815-bdae-7a1bed6a68e4": 1,
+        "408c56c0-e210-4e2e-8e82-610050a08a39": 1,
+        "e7f9daf9-eac2-4ada-9c26-c380858f3589": 1,
+        "65e5f92c-40ff-4130-9652-c0e7612d0609": 1,
+        "64319ca1-f3d8-472e-82ce-5da233e6daaa": 1,
+        "1b762bf9-df7f-4255-bbe6-f7578f41368d": 1,
+        "5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb": 1,
+        "9342b152-a7ae-4c79-9b7b-f4f028a36479": 1,
+        "8497054a-ffd1-4ca7-bdfe-340b9ddc050a": 1,
+        "479a42c0-c3e9-4ae7-bf4a-75cebc14fec4": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Insert": true,
+        "Update": true,
+        "Delete": true,
+        "View": true,
+        "InteractiveInsert": true,
+        "Edit": true,
+        "InteractiveDelete": true,
+        "InteractiveSetDeletionMark": true,
+        "InteractiveClearDeletionMark": true,
+        "InteractiveDeleteMarked": true,
+        "InputByString": true,
+        "InteractiveDeletePredefinedData": true,
+        "InteractiveSetDeletionMarkPredefinedData": true,
+        "InteractiveClearDeletionMarkPredefinedData": true,
+        "InteractiveDeleteMarkedPredefinedData": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "33200740-82b0-4de7-8556-d3fb25ca4328": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "c0028105-4cc1-41ca-aef1-bfbd8fc8f8c4": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "fb88c756-91c9-4351-9cdf-e027879886c6": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1,
+        "b53db6ed-6e5b-4035-8d24-f10083d646ed": 1,
+        "d76b72ba-5388-4b7f-af64-1b351f63a1e1": 1,
+        "798cf688-ad74-44fe-a464-236b49e910e0": 1,
+        "fa6dbe86-856a-4ac4-b8ac-bce99f8b8b22": 1,
+        "b5f861d3-d9c5-45ec-98bf-0ed4d489a351": 1,
+        "013a262e-165f-4815-bdae-7a1bed6a68e4": 1,
+        "408c56c0-e210-4e2e-8e82-610050a08a39": 1,
+        "e7f9daf9-eac2-4ada-9c26-c380858f3589": 1,
+        "65e5f92c-40ff-4130-9652-c0e7612d0609": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Update": true,
+        "View": true,
+        "Edit": true,
+        "ReadDataHistory": true,
+        "UpdateDataHistory": true,
+        "UpdateDataHistorySettings": true,
+        "UpdateDataHistoryVersionComment": true,
+        "ViewDataHistory": true,
+        "EditDataHistoryVersionComment": true,
+        "SwitchToDataHistoryVersion": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1,
+        "64319ca1-f3d8-472e-82ce-5da233e6daaa": 1,
+        "b162ff57-0296-483e-9af8-dc37576802cb": 1,
+        "a679c969-8ea1-4b8b-9e61-8a414ba448f4": 1,
+        "5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb": 1,
+        "9342b152-a7ae-4c79-9b7b-f4f028a36479": 1,
+        "8497054a-ffd1-4ca7-bdfe-340b9ddc050a": 1,
+        "479a42c0-c3e9-4ae7-bf4a-75cebc14fec4": 1
+      }
+    },
+    {
+      "xml": {
+        "Get": true,
+        "Set": true
+      },
+      "native": {
+        "499e8968-ca89-43f0-9955-8756058b1b53": 1,
+        "1d306db2-d97e-4b57-9b28-5d21e838cd9e": 1
+      }
+    },
+    {
+      "xml": {
+        "Get": true
+      },
+      "native": {
+        "499e8968-ca89-43f0-9955-8756058b1b53": 1
+      }
+    },
+    {
+      "xml": {
+        "Use": true
+      },
+      "native": {
+        "c6de80da-a4f7-4ce9-bbeb-0b00ea564ec1": 1
+      }
+    },
+    {
+      "xml": {
+        "Read": true,
+        "Update": true
+      },
+      "native": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1
+      }
+    }
+  ],
+  "expected_resolved": {
+    "Delete": "c0028105-4cc1-41ca-aef1-bfbd8fc8f8c4",
+    "Edit": "b7bab52d-c1b1-4bd8-8276-02db08d42352",
+    "Get": "499e8968-ca89-43f0-9955-8756058b1b53",
+    "Insert": "33200740-82b0-4de7-8556-d3fb25ca4328",
+    "Read": "1c87578f-9e09-4ec0-a991-5629c87b1588",
+    "Set": "1d306db2-d97e-4b57-9b28-5d21e838cd9e",
+    "TotalsControl": "24abfe06-289a-48c5-8bb4-032c733e45c5",
+    "Update": "287b74b8-3a66-4a76-ba27-4f1f6a93770e",
+    "Use": "c6de80da-a4f7-4ce9-bbeb-0b00ea564ec1",
+    "View": "aa6448f2-be0f-42ea-ba26-1af7f52b5b65"
+  },
+  "expected_unresolved": [
+    "ActiveUsers",
+    "AnalyticsSystemClient",
+    "Automation",
+    "EditDataHistoryVersionComment",
+    "EventLog",
+    "ExclusiveMode",
+    "ExternalConnection",
+    "InputByString",
+    "InteractiveChangeOfPosted",
+    "InteractiveClearDeletionMark",
+    "InteractiveClearDeletionMarkPredefinedData",
+    "InteractiveDelete",
+    "InteractiveDeleteMarked",
+    "InteractiveDeleteMarkedPredefinedData",
+    "InteractiveDeletePredefinedData",
+    "InteractiveInsert",
+    "InteractiveOpenExtDataProcessors",
+    "InteractiveOpenExtReports",
+    "InteractivePosting",
+    "InteractivePostingRegular",
+    "InteractiveSetDeletionMark",
+    "InteractiveSetDeletionMarkPredefinedData",
+    "InteractiveUndoPosting",
+    "MainWindowModeEmbeddedWorkplace",
+    "MainWindowModeFullscreenWorkplace",
+    "MainWindowModeKiosk",
+    "MainWindowModeNormal",
+    "MainWindowModeWorkplace",
+    "MobileClient",
+    "Output",
+    "Posting",
+    "ReadDataHistory",
+    "ReadDataHistoryOfMissingData",
+    "SaveUserData",
+    "SwitchToDataHistoryVersion",
+    "ThickClient",
+    "ThinClient",
+    "UndoPosting",
+    "UpdateDataBaseConfiguration",
+    "UpdateDataHistory",
+    "UpdateDataHistoryOfMissingData",
+    "UpdateDataHistorySettings",
+    "UpdateDataHistoryVersionComment",
+    "ViewDataHistory",
+    "WebClient"
+  ]
+}

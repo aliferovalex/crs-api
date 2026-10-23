@@ -1,0 +1,10 @@
+{
+  "source": "Saved independent native CF and XML export; only the opaque restriction query text replaced with TRUE. UUID ordering unchanged.",
+  "native": "{1,3,1c87578f-9e09-4ec0-a991-5629c87b1588,1,aa6448f2-be0f-42ea-ba26-1af7f52b5b65,1,b5f861d3-d9c5-45ec-98bf-0ed4d489a351,1,1,{1c87578f-9e09-4ec0-a991-5629c87b1588,{1,{1,\"TRUE\",0}}}}",
+  "states": {
+    "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+    "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+    "b5f861d3-d9c5-45ec-98bf-0ed4d489a351": 1
+  },
+  "extended": true
+}

@@ -1,0 +1,107 @@
+{
+  "source": {
+    "platform": "8.5.1.1529",
+    "cf_sha256": "087522fde1dbbd21b16e09a6c460c2c8c3b55edf3ddc6528576c3d01d3caadc3"
+  },
+  "samples": [
+    {
+      "id": "6a7f2f0d-d235-4001-9f1a-42d1c9d8c4bd",
+      "name": "ProbeDefault",
+      "path": "CommonModules\\ProbeDefault.xml",
+      "overrides": {},
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<CommonModule uuid=\"6a7f2f0d-d235-4001-9f1a-42d1c9d8c4bd\">\n\t\t<Properties>\n\t\t\t<Name>ProbeDefault</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Native common-module flags probe</Comment>\n\t\t\t<Global>false</Global>\n\t\t\t<ClientManagedApplication>false</ClientManagedApplication>\n\t\t\t<Server>true</Server>\n\t\t\t<ExternalConnection>false</ExternalConnection>\n\t\t\t<ClientOrdinaryApplication>false</ClientOrdinaryApplication>\n\t\t\t<ServerCall>false</ServerCall>\n\t\t\t<Privileged>false</Privileged>\n\t\t\t<ReturnValuesReuse>DontUse</ReturnValuesReuse>\n\t\t</Properties>\n\t</CommonModule>\n</MetaDataObject>",
+      "body": "{1,\r\n{12,\r\n{3,\r\n{1,0,6a7f2f0d-d235-4001-9f1a-42d1c9d8c4bd},\"ProbeDefault\",\r\n{0},\"Native common-module flags probe\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,0,0,0,0,0,0},0}"
+    },
+    {
+      "id": "f6e7bc2d-93df-43b7-a170-637c9da3c4e2",
+      "name": "ProbeGlobal",
+      "path": "CommonModules\\ProbeGlobal.xml",
+      "overrides": {
+        "Global": "true"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<CommonModule uuid=\"f6e7bc2d-93df-43b7-a170-637c9da3c4e2\">\n\t\t<Properties>\n\t\t\t<Name>ProbeGlobal</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Native common-module flags probe</Comment>\n\t\t\t<Global>true</Global>\n\t\t\t<ClientManagedApplication>false</ClientManagedApplication>\n\t\t\t<Server>true</Server>\n\t\t\t<ExternalConnection>false</ExternalConnection>\n\t\t\t<ClientOrdinaryApplication>false</ClientOrdinaryApplication>\n\t\t\t<ServerCall>false</ServerCall>\n\t\t\t<Privileged>false</Privileged>\n\t\t\t<ReturnValuesReuse>DontUse</ReturnValuesReuse>\n\t\t</Properties>\n\t</CommonModule>\n</MetaDataObject>",
+      "body": "{1,\r\n{12,\r\n{3,\r\n{1,0,f6e7bc2d-93df-43b7-a170-637c9da3c4e2},\"ProbeGlobal\",\r\n{0},\"Native common-module flags probe\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,0,0,1,0,0,0},0}"
+    },
+    {
+      "id": "20291579-df38-442d-9ab7-154e2b5d2a20",
+      "name": "ProbeClientManagedApplication",
+      "path": "CommonModules\\ProbeClientManagedApplication.xml",
+      "overrides": {
+        "ClientManagedApplication": "true"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<CommonModule uuid=\"20291579-df38-442d-9ab7-154e2b5d2a20\">\n\t\t<Properties>\n\t\t\t<Name>ProbeClientManagedApplication</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Native common-module flags probe</Comment>\n\t\t\t<Global>false</Global>\n\t\t\t<ClientManagedApplication>true</ClientManagedApplication>\n\t\t\t<Server>true</Server>\n\t\t\t<ExternalConnection>false</ExternalConnection>\n\t\t\t<ClientOrdinaryApplication>false</ClientOrdinaryApplication>\n\t\t\t<ServerCall>false</ServerCall>\n\t\t\t<Privileged>false</Privileged>\n\t\t\t<ReturnValuesReuse>DontUse</ReturnValuesReuse>\n\t\t</Properties>\n\t</CommonModule>\n</MetaDataObject>",
+      "body": "{1,\r\n{12,\r\n{3,\r\n{1,0,20291579-df38-442d-9ab7-154e2b5d2a20},\"ProbeClientManagedApplication\",\r\n{0},\"Native common-module flags probe\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,0,0,0,1,0,0},0}"
+    },
+    {
+      "id": "57fcf4e4-6b0c-41b6-8a37-8d38dfb56443",
+      "name": "ProbeExternalConnection",
+      "path": "CommonModules\\ProbeExternalConnection.xml",
+      "overrides": {
+        "ExternalConnection": "true"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<CommonModule uuid=\"57fcf4e4-6b0c-41b6-8a37-8d38dfb56443\">\n\t\t<Properties>\n\t\t\t<Name>ProbeExternalConnection</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Native common-module flags probe</Comment>\n\t\t\t<Global>false</Global>\n\t\t\t<ClientManagedApplication>false</ClientManagedApplication>\n\t\t\t<Server>true</Server>\n\t\t\t<ExternalConnection>true</ExternalConnection>\n\t\t\t<ClientOrdinaryApplication>false</ClientOrdinaryApplication>\n\t\t\t<ServerCall>false</ServerCall>\n\t\t\t<Privileged>false</Privileged>\n\t\t\t<ReturnValuesReuse>DontUse</ReturnValuesReuse>\n\t\t</Properties>\n\t</CommonModule>\n</MetaDataObject>",
+      "body": "{1,\r\n{12,\r\n{3,\r\n{1,0,57fcf4e4-6b0c-41b6-8a37-8d38dfb56443},\"ProbeExternalConnection\",\r\n{0},\"Native common-module flags probe\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,1,0,0,0,0,0},0}"
+    },
+    {
+      "id": "8baad7e4-7c7c-4de9-a675-3203d556cbee",
+      "name": "ProbeClientOrdinaryApplication",
+      "path": "CommonModules\\ProbeClientOrdinaryApplication.xml",
+      "overrides": {
+        "ClientOrdinaryApplication": "true"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<CommonModule uuid=\"8baad7e4-7c7c-4de9-a675-3203d556cbee\">\n\t\t<Properties>\n\t\t\t<Name>ProbeClientOrdinaryApplication</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Native common-module flags probe</Comment>\n\t\t\t<Global>false</Global>\n\t\t\t<ClientManagedApplication>false</ClientManagedApplication>\n\t\t\t<Server>true</Server>\n\t\t\t<ExternalConnection>false</ExternalConnection>\n\t\t\t<ClientOrdinaryApplication>true</ClientOrdinaryApplication>\n\t\t\t<ServerCall>false</ServerCall>\n\t\t\t<Privileged>false</Privileged>\n\t\t\t<ReturnValuesReuse>DontUse</ReturnValuesReuse>\n\t\t</Properties>\n\t</CommonModule>\n</MetaDataObject>",
+      "body": "{1,\r\n{12,\r\n{3,\r\n{1,0,8baad7e4-7c7c-4de9-a675-3203d556cbee},\"ProbeClientOrdinaryApplication\",\r\n{0},\"Native common-module flags probe\",0,0,00000000-0000-0000-0000-000000000000,0},1,1,0,0,0,0,0,0},0}"
+    },
+    {
+      "id": "bdd938d7-3593-4981-9afc-bd582aa593f3",
+      "name": "ProbeServerCall",
+      "path": "CommonModules\\ProbeServerCall.xml",
+      "overrides": {
+        "ServerCall": "true"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<CommonModule uuid=\"bdd938d7-3593-4981-9afc-bd582aa593f3\">\n\t\t<Properties>\n\t\t\t<Name>ProbeServerCall</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Native common-module flags probe</Comment>\n\t\t\t<Global>false</Global>\n\t\t\t<ClientManagedApplication>false</ClientManagedApplication>\n\t\t\t<Server>true</Server>\n\t\t\t<ExternalConnection>false</ExternalConnection>\n\t\t\t<ClientOrdinaryApplication>false</ClientOrdinaryApplication>\n\t\t\t<ServerCall>true</ServerCall>\n\t\t\t<Privileged>false</Privileged>\n\t\t\t<ReturnValuesReuse>DontUse</ReturnValuesReuse>\n\t\t</Properties>\n\t</CommonModule>\n</MetaDataObject>",
+      "body": "{1,\r\n{12,\r\n{3,\r\n{1,0,bdd938d7-3593-4981-9afc-bd582aa593f3},\"ProbeServerCall\",\r\n{0},\"Native common-module flags probe\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,0,0,0,0,0,1},0}"
+    },
+    {
+      "id": "00e16a0d-67b2-47ae-b396-8670175903ba",
+      "name": "ProbePrivileged",
+      "path": "CommonModules\\ProbePrivileged.xml",
+      "overrides": {
+        "Privileged": "true"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<CommonModule uuid=\"00e16a0d-67b2-47ae-b396-8670175903ba\">\n\t\t<Properties>\n\t\t\t<Name>ProbePrivileged</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Native common-module flags probe</Comment>\n\t\t\t<Global>false</Global>\n\t\t\t<ClientManagedApplication>false</ClientManagedApplication>\n\t\t\t<Server>true</Server>\n\t\t\t<ExternalConnection>false</ExternalConnection>\n\t\t\t<ClientOrdinaryApplication>false</ClientOrdinaryApplication>\n\t\t\t<ServerCall>false</ServerCall>\n\t\t\t<Privileged>true</Privileged>\n\t\t\t<ReturnValuesReuse>DontUse</ReturnValuesReuse>\n\t\t</Properties>\n\t</CommonModule>\n</MetaDataObject>",
+      "body": "{1,\r\n{12,\r\n{3,\r\n{1,0,00e16a0d-67b2-47ae-b396-8670175903ba},\"ProbePrivileged\",\r\n{0},\"Native common-module flags probe\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,0,1,0,0,0,0},0}"
+    },
+    {
+      "id": "3e94a2a5-f523-4a59-a346-0efcc0cddb51",
+      "name": "ProbeServer",
+      "path": "CommonModules\\ProbeServer.xml",
+      "overrides": {
+        "Server": "false",
+        "ClientOrdinaryApplication": "true"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<CommonModule uuid=\"3e94a2a5-f523-4a59-a346-0efcc0cddb51\">\n\t\t<Properties>\n\t\t\t<Name>ProbeServer</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Native common-module flags probe</Comment>\n\t\t\t<Global>false</Global>\n\t\t\t<ClientManagedApplication>false</ClientManagedApplication>\n\t\t\t<Server>false</Server>\n\t\t\t<ExternalConnection>false</ExternalConnection>\n\t\t\t<ClientOrdinaryApplication>true</ClientOrdinaryApplication>\n\t\t\t<ServerCall>false</ServerCall>\n\t\t\t<Privileged>false</Privileged>\n\t\t\t<ReturnValuesReuse>DontUse</ReturnValuesReuse>\n\t\t</Properties>\n\t</CommonModule>\n</MetaDataObject>",
+      "body": "{1,\r\n{12,\r\n{3,\r\n{1,0,3e94a2a5-f523-4a59-a346-0efcc0cddb51},\"ProbeServer\",\r\n{0},\"Native common-module flags probe\",0,0,00000000-0000-0000-0000-000000000000,0},1,0,0,0,0,0,0,0},0}"
+    },
+    {
+      "id": "98c3b2d1-439d-4bc8-aad8-b44e9d5799ea",
+      "name": "ProbeDuringRequest",
+      "path": "CommonModules\\ProbeDuringRequest.xml",
+      "overrides": {
+        "ReturnValuesReuse": "DuringRequest"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<CommonModule uuid=\"98c3b2d1-439d-4bc8-aad8-b44e9d5799ea\">\n\t\t<Properties>\n\t\t\t<Name>ProbeDuringRequest</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Native common-module flags probe</Comment>\n\t\t\t<Global>false</Global>\n\t\t\t<ClientManagedApplication>false</ClientManagedApplication>\n\t\t\t<Server>true</Server>\n\t\t\t<ExternalConnection>false</ExternalConnection>\n\t\t\t<ClientOrdinaryApplication>false</ClientOrdinaryApplication>\n\t\t\t<ServerCall>false</ServerCall>\n\t\t\t<Privileged>false</Privileged>\n\t\t\t<ReturnValuesReuse>DuringRequest</ReturnValuesReuse>\n\t\t</Properties>\n\t</CommonModule>\n</MetaDataObject>",
+      "body": "{1,\r\n{12,\r\n{3,\r\n{1,0,98c3b2d1-439d-4bc8-aad8-b44e9d5799ea},\"ProbeDuringRequest\",\r\n{0},\"Native common-module flags probe\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,0,0,0,0,1,0},0}"
+    },
+    {
+      "id": "e1881d03-446a-408c-857a-6b3a8446b2f4",
+      "name": "ProbeDuringSession",
+      "path": "CommonModules\\ProbeDuringSession.xml",
+      "overrides": {
+        "ReturnValuesReuse": "DuringSession"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<CommonModule uuid=\"e1881d03-446a-408c-857a-6b3a8446b2f4\">\n\t\t<Properties>\n\t\t\t<Name>ProbeDuringSession</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Native common-module flags probe</Comment>\n\t\t\t<Global>false</Global>\n\t\t\t<ClientManagedApplication>false</ClientManagedApplication>\n\t\t\t<Server>true</Server>\n\t\t\t<ExternalConnection>false</ExternalConnection>\n\t\t\t<ClientOrdinaryApplication>false</ClientOrdinaryApplication>\n\t\t\t<ServerCall>false</ServerCall>\n\t\t\t<Privileged>false</Privileged>\n\t\t\t<ReturnValuesReuse>DuringSession</ReturnValuesReuse>\n\t\t</Properties>\n\t</CommonModule>\n</MetaDataObject>",
+      "body": "{1,\r\n{12,\r\n{3,\r\n{1,0,e1881d03-446a-408c-857a-6b3a8446b2f4},\"ProbeDuringSession\",\r\n{0},\"Native common-module flags probe\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,0,0,0,0,2,0},0}"
+    }
+  ]
+}

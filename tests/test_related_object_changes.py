@@ -1,17 +1,19 @@
 """A new register and its whole recorder XML form one coherent change."""
-import base64,copy,unittest
+import copy, unittest
 from xml.etree import ElementTree as E
 import test_object_xml_profiles as fixture
-import constant_serializer as c,flat_object_serializer as flat,related_object_changes as related,metadata_serializer as s
-import packet_builder as packets
+import metadata_object_xml as flat, related_object_changes as related, native_metadata as s
 
-Q='{'+c.MD+'}';XR='{'+c.READABLE+'}'
+import metadata_context
+import metadata_identifiers
+import xml_namespaces
+Q='{'+xml_namespaces.MD+'}';XR='{'+xml_namespaces.READABLE+'}'
 DOC='77777777-7777-4777-8777-777777777771';REG='77777777-7777-4777-8777-777777777772';OLD='77777777-7777-4777-8777-777777777773'
 
 def input():
-    r=fixture.request('Document');objects=c.context_objects(r['context']);rid=r['object_id'];template=objects[rid]
+    r=fixture.request('Document');objects=metadata_context.context_objects(r['context']);rid=r['object_id'];template=objects[rid]
     for oid,kind,name in [(DOC,'Document','Recorder'),(REG,'AccumulationRegister','NewRegister'),(OLD,'InformationRegister','ExistingRegister')]:
-        d=copy.deepcopy(template);m=d[0];m[1]=s.atom(oid);m[2]=s.atom(c.identifiers.class_id(kind));m[3]=s.atom(rid);m[9]=s.atom(name,True);m[12]=[s.atom(0)];m[14]=[s.atom(1),s.atom(rid),s.atom(1)];objects[oid]=d
+        d=copy.deepcopy(template);m=d[0];m[1]=s.atom(oid);m[2]=s.atom(metadata_identifiers.class_id(kind));m[3]=s.atom(rid);m[9]=s.atom(name,True);m[12]=[s.atom(0)];m[14]=[s.atom(1),s.atom(rid),s.atom(1)];objects[oid]=d
     top=E.fromstring(fixture.xml('Document'));obj=top[0];obj.set('uuid',DOC);obj[0].find(Q+'Name').text='Recorder'
     records=E.SubElement(obj[0],Q+'RegisterRecords');E.SubElement(records,XR+'Item').text='InformationRegister.ExistingRegister'
     _,_,raw,ids=flat.object_xml(E.tostring(top,encoding='unicode'),'8.5.1.1529','Document',objects)

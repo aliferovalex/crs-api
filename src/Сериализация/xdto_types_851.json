@@ -1,0 +1,62 @@
+{
+  "source": "Independent Configurator 8.5.1.1529 compilation; demo native-851.cf and web builtin type witnesses",
+  "types": {
+    "http://www.w3.org/2001/XMLSchema": [
+      "anyType",
+      "anySimpleType",
+      "string",
+      "boolean",
+      "decimal",
+      "float",
+      "double",
+      "duration",
+      "dateTime",
+      "time",
+      "date",
+      "gYearMonth",
+      "gYear",
+      "gMonthDay",
+      "gDay",
+      "gMonth",
+      "hexBinary",
+      "base64Binary",
+      "anyURI",
+      "QName",
+      "NOTATION",
+      "normalizedString",
+      "token",
+      "language",
+      "NMTOKEN",
+      "NMTOKENS",
+      "Name",
+      "NCName",
+      "ID",
+      "IDREF",
+      "IDREFS",
+      "ENTITY",
+      "ENTITIES",
+      "integer",
+      "nonPositiveInteger",
+      "negativeInteger",
+      "long",
+      "int",
+      "short",
+      "byte",
+      "nonNegativeInteger",
+      "unsignedLong",
+      "unsignedInt",
+      "unsignedShort",
+      "unsignedByte",
+      "positiveInteger"
+    ],
+    "http://v8.1c.ru/8.1/data/core": [
+      "ValueStorage"
+    ],
+    "http://v8.1c.ru/8.2/data/spreadsheet": [
+      "SpreadsheetDocument"
+    ],
+    "http://v8.1c.ru/8.3/data/ext": [
+      "DeliverableNotificationSubscriberID"
+    ]
+  }
+}

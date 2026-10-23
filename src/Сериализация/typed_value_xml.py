@@ -2,7 +2,7 @@
 import re
 from datetime import datetime
 from decimal import Decimal
-import metadata_serializer as s
+import native_metadata as s
 
 XSI='{http://www.w3.org/2001/XMLSchema-instance}'
 XSD='http://www.w3.org/2001/XMLSchema'

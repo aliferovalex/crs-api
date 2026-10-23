@@ -1,10 +1,12 @@
 """Inline Enum values, generated UUIDs and creation graph regression checks."""
 import base64,hashlib,json,unittest,xml.etree.ElementTree as E
 from pathlib import Path
-import test_constant_serializer as const
-import metadata_serializer as s
-import constant_serializer as c
-import flat_object_serializer as enum
+import test_object_creation_serializer as const
+import metadata_identifiers
+import xml_namespaces
+import native_metadata as s
+import object_creation_serializer as c
+import metadata_object_xml as enum
 
 V1='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa'
 V2='bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb'
@@ -14,16 +16,16 @@ def xml():
             '<Properties><Name>XML_Enum</Name><Comment>Enum test</Comment></Properties>'
             '<ChildObjects><EnumValue uuid="%s"><Properties><Name>First</Name><Color>auto</Color></Properties></EnumValue>'
             '<EnumValue uuid="%s"><Properties><Name>Second</Name></Properties></EnumValue></ChildObjects>'
-            '</Enum></MetaDataObject>')%(c.MD,const.CID,V1,V2)
+            '</Enum></MetaDataObject>')%(xml_namespaces.MD,const.CID,V1,V2)
 
 def fixture():
     request=const.fixture('8.5.1.1529');rid=request['object_id']
     data=base64.b64decode(request['snapshots'][rid]);meta,pos=s.read_record(data,12);body,pos=s.read_record(data,pos)
-    docs=s.Parser(s.inflate(body).decode('utf-8-sig')).documents();docs[0].append([s.atom(c.identifiers.class_id('Enum')),s.atom(0)])
+    docs=s.Parser(s.inflate(body).decode('utf-8-sig')).documents();docs[0].append([s.atom(metadata_identifiers.class_id('Enum')),s.atom(0)])
     body=s.compress(s.text_bytes(docs));m=s.Parser(meta.decode('utf-8-sig')).documents()[0]
     manifest=s.text_bytes([[s.atom(0),s.atom(1),m[1],s.atom(hashlib.sha1(meta).hexdigest(),True),s.atom(hashlib.sha1(body).hexdigest(),True),s.atom(0)]])
     request['snapshots'][rid]=base64.b64encode(s.storage([meta,body],manifest)).decode()
-    request.update(object_type='Enum',enum_xml=xml());return request
+    request.update(object_type='Enum',object_xml=xml());return request
 
 class EnumSerializerTests(unittest.TestCase):
     def test_localized_properties_match_complete_native_objects(self):
@@ -89,7 +91,7 @@ class EnumSerializerTests(unittest.TestCase):
             with self.subTest(text=text),self.assertRaises(ValueError):enum.object_xml(text, '8.5.1.1529', 'Enum')
 
     def test_empty_values_and_legacy_profile(self):
-        root=E.fromstring(xml());root[0].remove(root[0].find('{%s}ChildObjects'%c.MD))
+        root=E.fromstring(xml());root[0].remove(root[0].find('{%s}ChildObjects'%xml_namespaces.MD))
         oid,name,body,ids=enum.object_xml(E.tostring(root,encoding='unicode'),'8.3.27.2342', 'Enum')
         self.assertEqual(len(ids),6)
         self.assertEqual(s.val(s.Parser(body.decode('utf-8-sig')).documents()[0][-1][1]),'0')
@@ -99,7 +101,7 @@ class EnumSerializerTests(unittest.TestCase):
         result=c.serialize(fixture());call=E.fromstring(result['request_xml'])
         new=next(v for v in result['descriptions'] if v['id']==const.CID)
         self.assertEqual(new['name'],'XML_Enum')
-        self.assertEqual(new['class_id'],c.identifiers.class_id('Enum'))
+        self.assertEqual(new['class_id'],metadata_identifiers.class_id('Enum'))
         raw=s.inflate(base64.b64decode(result['data'])[18:]);_,pos=s.read_record(raw,0);storage,end=s.read_record(raw,pos+4)
         s.validate_storage(storage)
         meta,pos=s.read_record(storage,12);body,pos=s.read_record(storage,pos)

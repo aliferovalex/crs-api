@@ -1,6 +1,6 @@
 """Read indexed streams from a native complete-version storage (duplicates allowed)."""
 import base64,hashlib,struct,uuid
-import metadata_serializer as s
+import native_metadata as s
 
 
 def records(data):
@@ -25,10 +25,11 @@ def records(data):
     return payloads,s.Parser(payloads[data[-56:-36].hex()].decode('utf-8-sig')).documents()[0]
 
 
-def extract(data,oid):
-    oid=str(uuid.UUID(oid));payloads,manifest=records(data)
+def extract_many(data,object_ids=None):
+    wanted=None if object_ids is None else {str(uuid.UUID(oid)) for oid in object_ids}
+    payloads,manifest=records(data)
     if len(manifest)<2 or s.val(manifest[0])!='0':raise ValueError('Unsupported version manifest')
-    pos=2;seen=set();found=None
+    pos=2;seen=set();found={}
     for _ in range(int(s.val(manifest[1]))):
         object_id=str(uuid.UUID(s.val(manifest[pos])));meta_hash=s.val(manifest[pos+1]);body_hash=s.val(manifest[pos+2]);count=int(s.val(manifest[pos+3]));pos+=4
         if object_id in seen or count<0 or count>1024 or meta_hash not in payloads or body_hash not in payloads:raise ValueError('Invalid version object manifest')
@@ -37,17 +38,22 @@ def extract(data,oid):
             name=s.val(manifest[pos]);digest=s.val(manifest[pos+1]);pos+=2
             if name in streams or digest not in payloads:raise ValueError('Invalid external manifest')
             streams[name]=payloads[digest]
-        if object_id==oid:
+        if wanted is None or object_id in wanted:
             docs=s.Parser(payloads[meta_hash].decode('utf-8-sig')).documents();m=docs[0]
-            if len(m)!=17 or s.val(m[0])!='5' or s.val(m[1])!=oid:raise ValueError('Unsupported external object metadata')
+            if len(m)!=17 or s.val(m[0])!='5' or s.val(m[1])!=object_id:raise ValueError('Unsupported external object metadata')
             refs=m[11]
             if len(refs)!=1+2*int(s.val(refs[0])) or set(streams)!={s.val(v) for v in refs[1::2]}:raise ValueError('External versions/manifest mismatch')
             versions={s.val(refs[i]):uuid.UUID(s.val(refs[i+1])).bytes_le.hex()+'00000000' for i in range(1,len(refs),2)}
-            found=dict(data=base64.b64encode(payloads[body_hash]).decode(),object_id=oid,class_id=s.val(m[2]),parent_id=s.val(m[3]),version_number=int(s.val(m[5])),
+            found[object_id]=dict(data=base64.b64encode(payloads[body_hash]).decode(),object_id=object_id,class_id=s.val(m[2]),parent_id=s.val(m[3]),version_number=int(s.val(m[5])),
                 original=uuid.UUID(s.val(m[7])).bytes_le.hex(),local=uuid.UUID(s.val(m[8])).bytes_le.hex(),
                 externals=[dict(name=name,version=versions[name],data=base64.b64encode(blob).decode()) for name,blob in streams.items()])
-    if pos!=len(manifest) or found is None:raise ValueError('Object missing or malformed version manifest')
+    if pos!=len(manifest) or wanted is not None and set(found)!=wanted:raise ValueError('Object missing or malformed version manifest')
     return found
+
+
+def extract(data,oid):
+    oid=str(uuid.UUID(oid))
+    return extract_many(data,{oid})[oid]
 
 
 def from_request(request):

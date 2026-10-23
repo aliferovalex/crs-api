@@ -1,13 +1,15 @@
 """Legacy version routing and serialization, without a live repository."""
 import unittest
 import xml.etree.ElementTree as E
-import test_constant_serializer as const
+import test_object_creation_serializer as const
 import test_catalog_serializer as catalog
-import test_metadata_serializer as metadata
+import test_configuration_serializer as metadata
 import platform_profiles as p
-import metadata_serializer as s
-import constant_serializer as c
-import flat_object_serializer as cat
+import configuration_serializer
+import metadata_object_xml
+import native_metadata as s
+import object_creation_serializer as c
+import metadata_object_xml as cat
 
 LEGACY=('8.5.1.1529','8.5.1.1150','8.5.1.9999','8.5.0.1','8.3.27.2342','8.3.10.1','8.2.19.1')
 
@@ -28,7 +30,7 @@ class PlatformProfileTests(unittest.TestCase):
             request['platform']=version
             request['mode']='comment'
             request['after_xml']=request['before_xml'].replace('<Comment>До</Comment>','<Comment>После</Comment>')
-            packet,raw=s.serialize(request)
+            packet,raw=configuration_serializer.serialize(request)
             self.assertEqual(E.fromstring(packet).get('version'),version)
             self.assertEqual(raw,original.replace('"До"'.encode(),'"После"'.encode(),1))
 
@@ -37,7 +39,7 @@ class PlatformProfileTests(unittest.TestCase):
             request=const.fixture('8.5.1.1529');request['platform']=version
             result=c.serialize(request)
             self.assertEqual(E.fromstring(result['request_xml']).get('version'),version)
-            body=c.constant_xml(const.xml(),version)[2]
+            body=metadata_object_xml.object_xml(const.xml(), version, kind='Constant')[2]
             common=s.Parser(body.decode('utf-8-sig')).documents()[0][1][1][1][1]
             self.assertEqual((s.val(common[0]),len(common)),('3',9))
             self.assertEqual(len(cat.object_xml(catalog.xml(),version, 'Catalog')[3]),10)
@@ -47,7 +49,7 @@ class PlatformProfileTests(unittest.TestCase):
         for attrs in ({'version':'2.22'},{'version':'2.-1'},{'version':'3.0'},{'unknown':'x'}):
             self.assertFalse(p.xml_attributes(attrs,'8.3.27.2342'))
         request,_=metadata.property_fixture('8.5.4.1878');request['platform']='8.3.27.2342'
-        with self.assertRaisesRegex(ValueError,'layout'):s.serialize(request)
+        with self.assertRaisesRegex(ValueError,'layout'):configuration_serializer.serialize(request)
 
 
 if __name__=='__main__':unittest.main()

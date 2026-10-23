@@ -1,12 +1,13 @@
 """Inline register fields and context-resolved cross-object references."""
-import base64,copy,json,unittest
-from pathlib import Path
+import base64, copy, unittest
 from xml.etree import ElementTree as E
 import test_object_xml_profiles as fixture
-import constant_serializer as c,flat_object_serializer as flat,metadata_serializer as s,type_description_xml as types
-import inline_object_xml as inline
+import metadata_context
+import metadata_identifiers
+import xml_namespaces
+import object_creation_serializer as c, metadata_object_xml as flat, native_metadata as s, type_description_xml as types
 
-Q='{'+c.MD+'}';XR='{'+c.READABLE+'}'
+Q='{'+xml_namespaces.MD+'}';XR='{'+xml_namespaces.READABLE+'}'
 IDS=['77777777-7777-4777-8777-777777777771','77777777-7777-4777-8777-777777777772','77777777-7777-4777-8777-777777777773']
 
 def xml():
@@ -18,7 +19,7 @@ def xml():
 
 class RegisterProfileTests(unittest.TestCase):
     def test_all_inline_types_and_complete_packet_feature_map(self):
-        r=fixture.request('InformationRegister');r['informationregister_xml']=xml();r['modules']={'RecordSetModule':'// all records','ManagerModule':'// manager'}
+        r=fixture.request('InformationRegister');r['object_xml']=xml();r['modules']={'RecordSetModule':'// all records','ManagerModule':'// manager'}
         result=c.serialize(r);transport=s.inflate(base64.b64decode(result['data'])[18:]);_,pos=s.read_record(transport,0);storage,_=s.read_record(transport,pos+4)
         meta,pos=s.read_record(storage,12);body,pos=s.read_record(storage,pos);m=s.Parser(meta.decode('utf-8-sig')).documents()[0];native=s.Parser(s.inflate(body).decode('utf-8-sig')).documents()[0]
         self.assertEqual({s.val(v) for v in m[13][1:]},set(IDS));self.assertEqual({s.val(v) for v in m[11][1::2]},{fixture.OID+'.1',fixture.OID+'.2'})
@@ -35,9 +36,9 @@ class RegisterProfileTests(unittest.TestCase):
             with self.subTest(case=case),self.assertRaises(ValueError):flat.object_xml(E.tostring(root,encoding='unicode'),'8.5.1.1529','InformationRegister')
 
     def test_journal_references_resolve_to_instance_uuid(self):
-        r=fixture.request('DocumentJournal');objects=c.context_objects(r['context']);template=copy.deepcopy(next(iter(objects.values())))
-        template[0][1]=s.atom(IDS[0]);template[0][2]=s.atom(c.identifiers.class_id('Document'));template[0][9]=s.atom('TestDocument',True)
-        root=E.fromstring(r['documentjournal_xml']);node=E.SubElement(root[0][0],Q+'RegisteredDocuments');E.SubElement(node,XR+'Item').text='Document.TestDocument';text=E.tostring(root,encoding='unicode')
+        r=fixture.request('DocumentJournal');objects=metadata_context.context_objects(r['context']);template=copy.deepcopy(next(iter(objects.values())))
+        template[0][1]=s.atom(IDS[0]);template[0][2]=s.atom(metadata_identifiers.class_id('Document'));template[0][9]=s.atom('TestDocument',True)
+        root=E.fromstring(r['object_xml']);node=E.SubElement(root[0][0],Q+'RegisteredDocuments');E.SubElement(node,XR+'Item').text='Document.TestDocument';text=E.tostring(root,encoding='unicode')
         raw=flat.object_xml(text,'8.5.1.1529','DocumentJournal',{IDS[0]:template})[2];native=s.Parser(raw.decode('utf-8-sig')).documents()[0]
         self.assertEqual(s.val(native[1][6][2][2][1]),IDS[0])
         with self.assertRaisesRegex(ValueError,'Missing'):flat.object_xml(text,'8.5.1.1529','DocumentJournal',{})
@@ -45,8 +46,8 @@ class RegisterProfileTests(unittest.TestCase):
         E.SubElement(node,XR+'Item').text='Document.TestDocument'
         with self.assertRaisesRegex(ValueError,'duplicate'):flat.object_xml(E.tostring(root,encoding='unicode'),'8.5.1.1529','DocumentJournal',{IDS[0]:template})
 
-    def test_unsupported_periodicity_write_mode_and_missing_documents_reject(self):
-        for key,value in [('InformationRegisterPeriodicity','Day'),('WriteMode','RecorderSubordinate')]:
+    def test_unknown_periodicity_write_mode_and_missing_documents_reject(self):
+        for key,value in [('InformationRegisterPeriodicity','Unknown'),('WriteMode','Unknown')]:
             root=E.fromstring(xml());E.SubElement(root[0][0],Q+key).text=value
             with self.subTest(key=key),self.assertRaisesRegex(ValueError,'property'):flat.object_xml(E.tostring(root,encoding='unicode'),'8.5.1.1529','InformationRegister')
         with self.assertRaisesRegex(ValueError,'Required'):flat.object_xml(fixture.xml('DocumentJournal'),'8.5.1.1529','DocumentJournal')
@@ -59,7 +60,7 @@ class RegisterProfileTests(unittest.TestCase):
         self.assertEqual(s.val(s.Parser(raw.decode('utf-8-sig')).documents()[0][5][1]),'1')
         props.remove(props.find(Q+'Type'));props.append(types.export(s.Parser('{"Pattern",{"B"}}').documents()[0],Q+'Type'))
         with self.assertRaisesRegex(ValueError,'scalar type'):flat.object_xml(E.tostring(root,encoding='unicode'),'8.5.1.1529','AccumulationRegister')
-        r=fixture.request('AccumulationRegister');r['accumulationregister_xml']=text
+        r=fixture.request('AccumulationRegister');r['object_xml']=text
         with self.assertRaisesRegex(ValueError,'recorder'):c.serialize(r)
 
 if __name__=='__main__':unittest.main()

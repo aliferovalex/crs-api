@@ -1,7 +1,7 @@
 """Verified standard Picture XML references shared by form adapters."""
 import copy,json
 from pathlib import Path
-import metadata_serializer as s
+import native_metadata as s
 
 XR='{http://v8.1c.ru/8.3/xcf/readable}'
 

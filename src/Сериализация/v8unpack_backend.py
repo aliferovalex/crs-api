@@ -23,13 +23,13 @@ def runtime():
 
 def to_model(node):
     """v8unpack keeps scalar tokens quoted in the strings of its raw arrays."""
-    import metadata_serializer as s
+    import native_metadata as s
     if isinstance(node,list):return [to_model(v) for v in node]
     return s.render(node)
 
 
 def signature(node):
-    import metadata_serializer as s
+    import native_metadata as s
     if isinstance(node,list):return [signature(v) for v in node]
     value=s.val(node)
     if not node.quoted and value.startswith('#base64:'):value='#base64:'+''.join(value[8:].split())
@@ -38,7 +38,7 @@ def signature(node):
 
 def assemble(model):
     """Build JSON/raw through upstream, validate and preserve native formatting."""
-    import metadata_serializer as s
+    import native_metadata as s
     decoder=runtime()()
     # Upstream guesses Base64 for any long token, including quoted BSL text.
     # Mask long quoted tokens before assembly and restore them in one pass.
@@ -147,7 +147,7 @@ def assemble_form(model):
         try:FormElements4(state).encode(directory,'Form',directory,state.form[0][0])
         except Exception as error:raise ValueError('v8unpack form assembly failed: '+str(error)) from None
     result=assemble(state.form[0])
-    import metadata_serializer as s
+    import native_metadata as s
     expected=s.Parser(','.join(_raw(v) for v in model['expected'])).documents()
     if signature(s.Parser(result.decode('utf-8-sig')).documents())!=signature(expected):
         raise ValueError('v8unpack form handler changed XML-mapped properties')

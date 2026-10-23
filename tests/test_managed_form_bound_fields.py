@@ -1,8 +1,8 @@
-import copy,sys,unittest
+import sys, unittest
 from pathlib import Path
 from xml.etree import ElementTree as E
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src/Сериализация'))
-import metadata_serializer as s,managed_form_xml as x,managed_form_serializer as creation,v8unpack_backend as b
+import native_metadata as s, managed_form_xml as x, managed_form_operations as creation, v8unpack_backend as b
 from test_managed_form_table import owner,xml as table_xml
 
 

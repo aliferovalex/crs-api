@@ -1,0 +1,521 @@
+{
+  "template": "{1,{34,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{0,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}},1,{0,0},0,00000000-0000-0000-0000-000000000000,{\"Pattern\",{\"B\"}},0,1,9,1,25,1,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,2,0,{1,{0,2,{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,{-9}},{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,{-8}}}},1,0,1,1,{0},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{0},{0},{0},{0},{0},1,{0,{0}},1,{1,{0,0}},0,{1,2,0},0,0,0,0},5,{31182525-9346-4595-81f8-6f91a72ebe06,0},{3daea016-69b7-4ed4-9453-127911372fe6,0},{54e36536-7863-42fd-bea3-c5edd3122fdc,0},{95b5e1d4-abfa-4a16-818d-a5b07b7d3f73,0},{eb2b78a8-40a6-4b7e-b1b3-6ca9966cbc94,0}}",
+  "defaults": {
+    "UseStandardCommands": "true",
+    "IncludeHelpInContents": "false",
+    "CharacteristicExtValues": "",
+    "Hierarchical": "false",
+    "FoldersOnTop": "true",
+    "CodeLength": "9",
+    "CodeAllowedLength": "Variable",
+    "DescriptionLength": "25",
+    "CodeSeries": "WholeCharacteristicKind",
+    "CheckUnique": "true",
+    "Autonumbering": "true",
+    "DefaultPresentation": "AsDescription",
+    "Characteristics": "",
+    "PredefinedDataUpdate": "Auto",
+    "EditType": "InDialog",
+    "QuickChoice": "false",
+    "ChoiceMode": "BothWays",
+    "CreateOnInput": "DontUse",
+    "SearchStringModeOnInputByString": "Begin",
+    "ChoiceDataGetModeOnInputByString": "Directly",
+    "FullTextSearchOnInputByString": "DontUse",
+    "ChoiceHistoryOnInput": "Auto",
+    "DefaultObjectForm": "",
+    "DefaultFolderForm": "",
+    "DefaultListForm": "",
+    "DefaultChoiceForm": "",
+    "DefaultFolderChoiceForm": "",
+    "AuxiliaryObjectForm": "",
+    "AuxiliaryFolderForm": "",
+    "AuxiliaryListForm": "",
+    "AuxiliaryChoiceForm": "",
+    "AuxiliaryFolderChoiceForm": "",
+    "BasedOn": "",
+    "DataLockFields": "",
+    "DataLockControlMode": "Managed",
+    "FullTextSearch": "Use",
+    "ObjectPresentation": "",
+    "ExtendedObjectPresentation": "",
+    "ListPresentation": "",
+    "ExtendedListPresentation": "",
+    "Explanation": "",
+    "DataHistory": "DontUse",
+    "UpdateDataHistoryImmediatelyAfterWrite": "false",
+    "ExecuteAfterWriteDataHistoryVersionProcessing": "false"
+  },
+  "common_path": [
+    1,
+    13,
+    1
+  ],
+  "generated_slots": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "generated_categories": [
+    "Object",
+    "Ref",
+    "Selection",
+    "List",
+    "Characteristic",
+    "Manager"
+  ],
+  "generated_prefixes": {
+    "Object": "ChartOfCharacteristicTypesObject",
+    "Ref": "ChartOfCharacteristicTypesRef",
+    "Selection": "ChartOfCharacteristicTypesSelection",
+    "List": "ChartOfCharacteristicTypesList",
+    "Characteristic": "Characteristic",
+    "Manager": "ChartOfCharacteristicTypesManager"
+  },
+  "reference_prefix": "ChartOfCharacteristicTypesRef",
+  "additional_reference_categories": [
+    "Characteristic"
+  ],
+  "type_path": [
+    1,
+    18
+  ],
+  "type_required": true,
+  "input_fields": [
+    "Description",
+    "Code"
+  ],
+  "field_references": {
+    "type_id": "60ea359f-3a6e-48bb-8e71-d2a457572918",
+    "standards": {
+      "Code": {
+        "code": -8,
+        "length_property": "CodeLength",
+        "length_path": [
+          1,
+          21
+        ]
+      },
+      "Description": {
+        "code": -9,
+        "length_property": "DescriptionLength",
+        "length_path": [
+          1,
+          23
+        ]
+      }
+    },
+    "attributes_path": [
+      3
+    ],
+    "attribute_common_path": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "index_property": "Indexing",
+    "indexed_values": [
+      "Index"
+    ],
+    "indexing_path": [
+      0,
+      2
+    ],
+    "indexed_native_values": [
+      "1"
+    ]
+  },
+  "field_lists": {
+    "InputByString": {
+      "path": [
+        1,
+        33,
+        1
+      ],
+      "requires_indexing": true,
+      "scalar_types": [
+        "S",
+        "N"
+      ]
+    },
+    "DataLockFields": {
+      "path": [
+        1,
+        52,
+        1
+      ]
+    }
+  },
+  "scalar_properties": {
+    "UseStandardCommands": {
+      "path": [
+        1,
+        14
+      ],
+      "values": {
+        "true": 1,
+        "false": 0
+      },
+      "quoted": false
+    },
+    "IncludeHelpInContents": {
+      "path": [
+        1,
+        16
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      },
+      "quoted": false
+    },
+    "Hierarchical": {
+      "path": [
+        1,
+        19
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      },
+      "quoted": false
+    },
+    "FoldersOnTop": {
+      "path": [
+        1,
+        20
+      ],
+      "values": {
+        "true": 1,
+        "false": 0
+      },
+      "quoted": false
+    },
+    "CodeLength": {
+      "path": [
+        1,
+        21
+      ],
+      "integer": {
+        "min": 1,
+        "max": 2147483647
+      }
+    },
+    "CodeAllowedLength": {
+      "path": [
+        1,
+        49
+      ],
+      "values": {
+        "Variable": 1,
+        "Fixed": 0
+      },
+      "quoted": false
+    },
+    "DescriptionLength": {
+      "path": [
+        1,
+        23
+      ],
+      "integer": {
+        "min": 1,
+        "max": 2147483647
+      }
+    },
+    "CodeSeries": {
+      "path": [
+        1,
+        35
+      ],
+      "values": {
+        "WholeCharacteristicKind": 0,
+        "WithinSubordination": 1
+      },
+      "quoted": false
+    },
+    "CheckUnique": {
+      "path": [
+        1,
+        34
+      ],
+      "values": {
+        "true": 1,
+        "false": 0
+      },
+      "quoted": false
+    },
+    "Autonumbering": {
+      "path": [
+        1,
+        22
+      ],
+      "values": {
+        "true": 1,
+        "false": 0
+      },
+      "quoted": false
+    },
+    "DefaultPresentation": {
+      "path": [
+        1,
+        24
+      ],
+      "values": {
+        "AsDescription": 1,
+        "AsCode": 0
+      },
+      "quoted": false
+    },
+    "PredefinedDataUpdate": {
+      "path": [
+        1,
+        53
+      ],
+      "values": {
+        "Auto": 0,
+        "AutoUpdate": 1,
+        "DontAutoUpdate": 2
+      },
+      "quoted": false
+    },
+    "EditType": {
+      "path": [
+        1,
+        25
+      ],
+      "values": {
+        "InDialog": 1,
+        "InList": 0,
+        "BothWays": 2
+      },
+      "quoted": false
+    },
+    "QuickChoice": {
+      "path": [
+        1,
+        32
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      },
+      "quoted": false
+    },
+    "ChoiceMode": {
+      "path": [
+        1,
+        31
+      ],
+      "values": {
+        "BothWays": 2,
+        "FromForm": 0,
+        "QuickChoice": 1
+      },
+      "quoted": false
+    },
+    "SearchStringModeOnInputByString": {
+      "path": [
+        1,
+        54,
+        0
+      ],
+      "values": {
+        "Begin": 1,
+        "AnyPart": 2
+      },
+      "quoted": false
+    },
+    "FullTextSearchOnInputByString": {
+      "path": [
+        1,
+        54,
+        1
+      ],
+      "values": {
+        "DontUse": 2,
+        "Use": 1
+      },
+      "quoted": false
+    },
+    "CreateOnInput": {
+      "path": [
+        1,
+        51
+      ],
+      "values": {
+        "DontUse": 1,
+        "Use": 2
+      },
+      "quoted": false
+    },
+    "ChoiceHistoryOnInput": {
+      "path": [
+        1,
+        55
+      ],
+      "values": {
+        "Auto": 0,
+        "DontUse": 1
+      },
+      "quoted": false
+    },
+    "FullTextSearch": {
+      "path": [
+        1,
+        37
+      ],
+      "values": {
+        "Use": 1,
+        "DontUse": 0
+      },
+      "quoted": false
+    },
+    "DataHistory": {
+      "path": [
+        1,
+        56
+      ],
+      "values": {
+        "DontUse": 0,
+        "Use": 1
+      },
+      "quoted": false
+    },
+    "UpdateDataHistoryImmediatelyAfterWrite": {
+      "path": [
+        1,
+        57
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      },
+      "quoted": false
+    },
+    "ExecuteAfterWriteDataHistoryVersionProcessing": {
+      "path": [
+        1,
+        58
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      },
+      "quoted": false
+    }
+  },
+  "inline_collections": {
+    "Attribute": {
+      "slot": 3,
+      "template": "{{3,{27,{2,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{\"Pattern\",{\"S\",64,1}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"S\",\"\"},0,0,0},0,0,1,1,0,{1,00000000-0000-0000-0000-000000000000}},0}",
+      "defaults": {}
+    }
+  },
+  "tabular_collections": {
+    "TabularSection": {
+      "slot": 5,
+      "kind": "ChartOfCharacteristicType"
+    }
+  },
+  "command_collections": {
+    "Command": {
+      "slot": 6,
+      "template": "{{0,{0,0,0,{1,{2,00000000-0000-0000-0000-000000000000,078a6af8-d22c-4248-9c33-7e90075a3d2c},{9,{4,0,{0},\"\",-1,-1,1,0,\"\"},3,{0},1,{0,0,0},0,{1,77ea1b8f-dd79-4717-9dba-5628e7f348cf},{\"Pattern\"},{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,0,0}}}},0}",
+      "common_path": [
+        0,
+        1,
+        3,
+        2,
+        9
+      ],
+      "id_path": [
+        0,
+        1,
+        3,
+        1,
+        1
+      ],
+      "defaults": {
+        "Group": "NavigationPanelOrdinary",
+        "CommandParameterType": "",
+        "ParameterUseMode": "Single",
+        "ModifiesData": "false",
+        "Representation": "Auto",
+        "ToolTip": "",
+        "Picture": "",
+        "Shortcut": "",
+        "OnMainServerUnavalableBehavior": "Auto"
+      },
+      "module_suffix": ".2",
+      "scalar_properties": {
+        "ModifiesData": {
+          "path": [
+            0,
+            1,
+            3,
+            2,
+            10
+          ],
+          "values": {
+            "false": 0,
+            "true": 1
+          }
+        },
+        "Representation": {
+          "path": [
+            0,
+            1,
+            3,
+            2,
+            2
+          ],
+          "values": {
+            "Auto": 3,
+            "Text": 0,
+            "Picture": 1,
+            "PictureAndText": 2
+          }
+        },
+        "ParameterUseMode": {
+          "path": [
+            0,
+            1,
+            3,
+            2,
+            11
+          ],
+          "values": {
+            "Single": 0,
+            "Multiple": 1
+          }
+        }
+      },
+      "localized_properties": {
+        "ToolTip": [
+          0,
+          1,
+          3,
+          2,
+          3
+        ]
+      },
+      "type_path": [
+        0,
+        1,
+        3,
+        2,
+        8
+      ]
+    }
+  }
+}

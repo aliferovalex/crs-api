@@ -3,13 +3,16 @@ import copy,unittest
 from xml.etree import ElementTree as E
 import test_object_xml_profiles as fixture
 import test_related_object_changes as recorder
-import flat_object_serializer as flat,constant_serializer as c,metadata_serializer as s,related_object_changes as related,type_description_xml as types
+import metadata_object_xml as flat, object_creation_serializer as c, native_metadata as s, related_object_changes as related, type_description_xml as types
 
-Q='{'+c.MD+'}';CHART='77777777-7777-4777-8777-777777777779'
+import metadata_context
+import metadata_identifiers
+import xml_namespaces
+Q='{'+xml_namespaces.MD+'}';CHART='77777777-7777-4777-8777-777777777779'
 
 def accounting():
-    r=fixture.request('AccountingRegister');objects=c.context_objects(r['context']);d=copy.deepcopy(next(iter(objects.values())))
-    d[0][1]=s.atom(CHART);d[0][2]=s.atom(c.identifiers.class_id('ChartOfAccounts'));d[0][9]=s.atom('Accounts',True);objects[CHART]=d
+    r=fixture.request('AccountingRegister');objects=metadata_context.context_objects(r['context']);d=copy.deepcopy(next(iter(objects.values())))
+    d[0][1]=s.atom(CHART);d[0][2]=s.atom(metadata_identifiers.class_id('ChartOfAccounts'));d[0][9]=s.atom('Accounts',True);objects[CHART]=d
     root=E.fromstring(fixture.xml('AccountingRegister'));E.SubElement(root[0][0],Q+'ChartOfAccounts').text='ChartOfAccounts.Accounts'
     node=E.SubElement(root[0].find(Q+'ChildObjects'),Q+'Resource',uuid=recorder.OLD);props=E.SubElement(node,Q+'Properties');E.SubElement(props,Q+'Name').text='Amount'
     props.append(types.export(s.Parser('{"Pattern",{"N",15,2,0}}').documents()[0],Q+'Type'))
@@ -33,7 +36,7 @@ class AccountingProfileTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'scalar type'):flat.object_xml(E.tostring(root,encoding='unicode'),'8.5.1.1529','AccountingRegister',objects)
 
     def test_accounting_reuses_whole_recorder_update(self):
-        r,objects,raws,versions=recorder.input();objects[recorder.REG][0][2]=s.atom(c.identifiers.class_id('AccountingRegister'))
+        r,objects,raws,versions=recorder.input();objects[recorder.REG][0][2]=s.atom(metadata_identifiers.class_id('AccountingRegister'))
         r['related_objects'][0]['object_xml']=r['related_objects'][0]['object_xml'].replace('AccumulationRegister.NewRegister','AccountingRegister.NewRegister')
         self.assertEqual(related.apply(r,objects,raws,versions,recorder.REG,'AccountingRegister'),[recorder.DOC])
         self.assertEqual(s.metadata_relations(objects[recorder.DOC][0][14])[recorder.REG],0)

@@ -1,0 +1,56 @@
+{
+  "source": "Independent Configurator 8.5.1.1529 compilation; owner metadata bodies unchanged",
+  "cases": [
+    {
+      "kind": "Catalog",
+      "modules": {
+        "ObjectModule": ".0",
+        "ManagerModule": ".3"
+      },
+      "sources": {
+        "ObjectModule": "// CRS native module Catalog ObjectModule\n",
+        "ManagerModule": "// CRS native module Catalog ManagerModule\n"
+      }
+    },
+    {
+      "kind": "Document",
+      "modules": {
+        "ObjectModule": ".0",
+        "ManagerModule": ".2"
+      },
+      "sources": {
+        "ObjectModule": "// CRS native module Document ObjectModule\n",
+        "ManagerModule": "// CRS native module Document ManagerModule\n"
+      }
+    },
+    {
+      "kind": "Enum",
+      "modules": {
+        "ManagerModule": ".0"
+      },
+      "sources": {
+        "ManagerModule": "// CRS native module Enum ManagerModule\n"
+      }
+    },
+    {
+      "kind": "Constant",
+      "modules": {
+        "ValueManagerModule": ".0",
+        "ManagerModule": ".1"
+      },
+      "sources": {
+        "ValueManagerModule": "// CRS native module Constant ValueManagerModule\n",
+        "ManagerModule": "// CRS native module Constant ManagerModule\n"
+      }
+    },
+    {
+      "kind": "DocumentJournal",
+      "modules": {
+        "ManagerModule": ".1"
+      },
+      "sources": {
+        "ManagerModule": "// CRS native module DocumentJournal ManagerModule\n"
+      }
+    }
+  ]
+}

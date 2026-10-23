@@ -9,7 +9,7 @@ from pathlib import Path
 sys.path.insert(0,str(next((Path(__file__).resolve().parents[1]/'src').rglob('template_content.py')).parent))
 import template_content as content
 import template_serializer as templates
-import metadata_serializer as s
+import native_metadata as s
 from test_catalog_form_serializer import records
 
 

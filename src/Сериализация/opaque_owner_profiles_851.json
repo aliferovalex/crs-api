@@ -1,0 +1,12 @@
+{
+  "ExternalDataSource": {
+    "owner_xml": "ExternalDataSource",
+    "owner_common_path": [1, 1, 1],
+    "owner_identity_path": [1, 1, 1, 1, 2],
+    "source": "tests/fixtures/external_source_collections_851.json",
+    "collections": {
+      "Cube": {"kind": "Cube", "path": [3]},
+      "Table": {"kind": "Table", "path": [5]}
+    }
+  }
+}

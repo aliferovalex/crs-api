@@ -6,9 +6,10 @@ import uuid
 import sys
 import unittest
 from pathlib import Path
-sys.path.insert(0,str(next((Path(__file__).resolve().parents[1]/'src').rglob('managed_form_serializer.py')).parent))
-import metadata_serializer as s
-import managed_form_serializer as forms
+sys.path.insert(0,str(next((Path(__file__).resolve().parents[1]/'src').rglob('managed_form_operations.py')).parent))
+import metadata_context
+import native_metadata as s
+import managed_form_operations as forms
 import managed_form_xml as xml
 import managed_form_profiles as profiles
 import v8unpack_backend as backend
@@ -61,7 +62,7 @@ class OwnerFormTests(unittest.TestCase):
     def test_creation_packet_matches_native_form_and_owner_collection(self):
         for case in self.cases:
             with self.subTest(kind=case['kind']):
-                result=forms.serialize(request(case))
+                result=forms.create(request(case))
                 _,metadata,body,external,owner,owner_body=packets.records(result)
                 self.assertEqual(result['object_id'],case['form_id'])
                 self.assertEqual(s.val(metadata[0][2]),forms.identifiers.class_id(case['kind']+'Form'))
@@ -81,8 +82,8 @@ class OwnerFormTests(unittest.TestCase):
     def test_creation_preserves_owner_module_versions_without_copying_payloads(self):
         for case in self.cases:
             with self.subTest(kind=case['kind']):
-                r=request(case,externals=True);before=s.context_metadata(base64.b64decode(r['context']),case['owner_id'])
-                result=forms.serialize(r);graph,_,_,_,owner,_=packets.records(result)
+                r=request(case,externals=True);before=metadata_context.context_metadata(base64.b64decode(r['context']),case['owner_id'])
+                result=forms.create(r);graph,_,_,_,owner,_=packets.records(result)
                 rows={row['name']:row for row in result['externals'] if row['object_id']==case['owner_id']}
                 self.assertEqual(len(rows),2)
                 for index in (2,4):

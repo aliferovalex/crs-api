@@ -1,36 +1,18 @@
 """CommonModule properties and its native info/text external container."""
-import copy
-import json
 import struct
+import copy
 import uuid
-import metadata_serializer as s
+import native_metadata as s
 import serialization_context as contexts
 import packet_builder as packets
 import metadata_identifiers as identifiers
 import platform_profiles as platforms
+import native_content
 
 
 def module_xml(text, platform='8.5.1.1529'):
-    from flat_object_serializer import object_xml
+    from metadata_object_xml import object_xml
     return object_xml(text, platform, 'CommonModule')
-
-
-def module_xml_from_native(common):
-    """Complete XML input for the compatibility source-only operation."""
-    import xml.etree.ElementTree as E
-    from pathlib import Path
-    import constant_serializer as c
-    q='{'+c.MD+'}'
-    top=E.Element(q+'MetaDataObject',version='2.21');obj=E.SubElement(top,q+'CommonModule',uuid=s.val(common[1][2]))
-    props=E.SubElement(obj,q+'Properties');E.SubElement(props,q+'Name').text=s.val(common[2])
-    synonym=E.SubElement(props,q+'Synonym')
-    for lang,content in s.synonym_value(common[3]):
-        item=E.SubElement(synonym,'{'+c.CORE+'}item')
-        E.SubElement(item,'{'+c.CORE+'}lang').text=lang;E.SubElement(item,'{'+c.CORE+'}content').text=content
-    E.SubElement(props,q+'Comment').text=s.val(common[4])
-    layout=json.loads(Path(__file__).with_name('commonmodule_layout_851.json').read_text(encoding='utf-8'))
-    for key,value in layout['defaults'].items():E.SubElement(props,q+key).text=value
-    return E.tostring(top,encoding='unicode')
 
 
 def module_container(source):
@@ -61,7 +43,7 @@ def module_container(source):
     return bytes(content)
 
 
-def serialize_change(request):
+def compile_change(request):
     """Replace the sole external source stream of an existing CommonModule."""
     if not platforms.legacy(request['platform']):
         raise ValueError('CommonModule changes require legacy platform profile')
@@ -75,11 +57,14 @@ def serialize_change(request):
             or s.metadata_relations(saved[0][14]) != s.metadata_relations(m[14])):
         raise ValueError('Expected a flat existing CommonModule')
     name = oid + '.0'; refs = m[11]
-    if len(refs) != 3 or s.val(refs[0]) != '1' or s.val(refs[1]) != name:
+    empty_source=s.render(refs)=='{0}'
+    if not empty_source and (len(refs) != 3 or s.val(refs[0]) != '1' or s.val(refs[1]) != name):
         raise ValueError('Expected the sole module source external stream')
-    uuid.UUID(s.val(refs[2]))
+    if not empty_source:uuid.UUID(s.val(refs[2]))
     externals = docs[2]
-    if (len(externals) != 2 or s.val(externals[0]) != '1' or len(externals[1]) != 3
+    if empty_source:
+        if s.render(externals)!='{0}' or s.render(saved[2])!='{0}':raise ValueError('Unsupported empty module external context')
+    elif (len(externals) != 2 or s.val(externals[0]) != '1' or len(externals[1]) != 3
             or s.val(externals[1][0]) != name or s.val(externals[1][1]) != s.val(refs[2])
             or s.val(externals[1][2]) != '1' or s.render(saved[2]) != '{0}'):
         raise ValueError('Unsupported module external context')
@@ -93,14 +78,26 @@ def serialize_change(request):
     if (len(common) != 9 or s.val(common[0]) != '3' or len(common[1]) != 3
             or s.val(common[1][2]) != oid or s.val(common[2]) != s.val(m[9])):
         raise ValueError('Module body/description mismatch')
-    xml_id,xml_name,new_raw,_=module_xml(request.get('object_xml',module_xml_from_native(common)),request['platform'])
-    if xml_id!=oid or xml_name!=s.val(m[9]):raise ValueError('CommonModule UUID or name mismatch; rename is unsupported')
-    baseline=s.Parser(new_raw.decode('utf-8-sig')).documents()
-    baseline[0][1][1]=copy.deepcopy(common)
-    if s.render(baseline)!=s.render(body):raise ValueError('Source CommonModule properties are outside the verified XML profile')
-    raw=new_raw;data=s.compress(raw)
+    import metadata_object_xml
+    xml=request.get('object_xml')
+    if xml is None:
+        import xml_namespaces
+        xml=xml_namespaces.serialize(metadata_object_xml.export(body[0],{},request['platform'],'CommonModule'))
+    raw,_=metadata_object_xml.change(xml,request['platform'],'CommonModule',body[0],allow_rename=request.get('_allow_rename',False))
+    m[9]=copy.deepcopy(s.Parser(raw.decode('utf-8-sig')).documents()[0][1][1][2])
+    if request.get('preserve_content'):
+        if request.get('clear_module_text') and (not empty_source or request.get('source_text')!=''):raise ValueError('Cannot preserve and clear a module stream')
+        return native_content.body_change(docs,saved,raw,oid)
+    if request.get('clear_module_text'):
+        if request.get('source_text')!='':raise ValueError('Cleared CommonModule must have empty source text')
+        return native_content.external_change(docs,saved,raw,name,None,None)
     external_data = s.compress(module_container(request['source_text']))
-    return packets.pack_external_change(docs, saved, data, oid, name, original, raw, external_data)
+    return native_content.external_change(docs, saved, raw, name, external_data, packets.external_version())
+
+
+def serialize_change(request):
+    if request.get('clear_module_text'):raise ValueError('Use complete-export preparation to remove a CommonModule source stream')
+    return packets.pack_external_change(compile_change(request), request['original_version'].lower())
 
 
 def main():

@@ -2,10 +2,10 @@
 import json,re
 from decimal import Decimal,InvalidOperation
 from functools import lru_cache
-from io import StringIO
 from pathlib import Path
 from xml.etree import ElementTree as E
-import metadata_serializer as s
+import native_metadata as s
+import xml_namespaces
 
 
 @lru_cache(maxsize=1)
@@ -14,11 +14,7 @@ def profile():
 
 
 def namespaces(xml):
-    result={}
-    for _,(prefix,uri) in E.iterparse(StringIO(xml),events=('start-ns',)):
-        if prefix in result and result[prefix]!=uri:raise ValueError('Ambiguous appearance namespace prefix')
-        result[prefix]=uri
-    return result
+    return xml_namespaces.namespace_bindings(xml,'appearance')
 
 
 def reference(text,bindings):

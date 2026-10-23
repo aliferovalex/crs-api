@@ -1,11 +1,12 @@
 """Existing children survive whole parent edits; missing refs cannot erase them."""
 import base64,copy,unittest
 from xml.etree import ElementTree as E
-import metadata_serializer as s
+import xml_namespaces
+import native_metadata as s
 import object_change_serializer as change
 import test_document_serializer as document
 import test_object_change_serializer as snapshots
-from test_managed_form_serializer import store
+from test_managed_form_creation import store
 
 FID='99999999-9999-4999-8999-999999999999'
 
@@ -19,7 +20,7 @@ def fixture(omitted_snapshot_map=False):
     if omitted_snapshot_map:saved[0][12]=[s.atom(0)]
     request['snapshot']=store(saved,s.native_body_bytes(body))
     request['context']=base64.b64encode(s.storage([s.text_bytes(docs),s.text_bytes(form)],s.text_bytes([[s.atom(0)]]))).decode()
-    tree=E.fromstring(request['object_xml']);E.SubElement(tree[0].find('{'+change.c.MD+'}ChildObjects'),'{'+change.c.MD+'}Form').text='StoredForm'
+    tree=E.fromstring(request['object_xml']);E.SubElement(tree[0].find('{'+xml_namespaces.MD+'}ChildObjects'),'{'+xml_namespaces.MD+'}Form').text='StoredForm'
     request['object_xml']=E.tostring(tree,encoding='unicode')
     return request,docs,form
 
@@ -34,7 +35,7 @@ class ChildObjectTests(unittest.TestCase):
 
     def test_deleted_duplicated_or_foreign_reference_rejected(self):
         for action in ('remove','duplicate','unknown'):
-            request,_,_=fixture();root=E.fromstring(request['object_xml']);children=root[0].find('{'+change.c.MD+'}ChildObjects')
+            request,_,_=fixture();root=E.fromstring(request['object_xml']);children=root[0].find('{'+xml_namespaces.MD+'}ChildObjects')
             if action=='remove':children.remove(children[0])
             elif action=='duplicate':children.append(copy.deepcopy(children[0]))
             else:children[0].text='AnotherForm'

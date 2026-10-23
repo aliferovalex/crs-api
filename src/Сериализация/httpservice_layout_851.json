@@ -17,5 +17,88 @@
       1,
       1
     ]
+  },
+  "structured_collections": {
+    "URLTemplate": {
+      "xml_name": "URLTemplate",
+      "template": "{{0,\"\",{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}},1,{21c96ea8-c8fc-424a-a0b4-e1ffb2fa1a73,0}}",
+      "common_path": [
+        0,
+        2
+      ],
+      "id_path": [
+        0,
+        2,
+        1,
+        2
+      ],
+      "defaults": {},
+      "slot": 3,
+      "collection_id": "ec6896c2-9b28-42d8-9140-48491146b8ea",
+      "string_properties": {
+        "Template": [
+          0,
+          1
+        ]
+      },
+      "children": {
+        "Method": {
+          "xml_name": "Method",
+          "template": "{{0,\"\",3,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}},0}",
+          "common_path": [
+            0,
+            3
+          ],
+          "id_path": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "defaults": {},
+          "path": [
+            2
+          ],
+          "collection_id": "21c96ea8-c8fc-424a-a0b4-e1ffb2fa1a73",
+          "string_properties": {
+            "Handler": [
+              0,
+              1
+            ]
+          },
+          "scalar_properties": {
+            "HTTPMethod": {
+              "path": [
+                0,
+                2
+              ],
+              "values": {
+                "GET": 3,
+                "HEAD": 4,
+                "PUT": 14,
+                "POST": 11,
+                "DELETE": 2,
+                "PATCH": 10,
+                "MERGE": 6,
+                "OPTIONS": 9,
+                "TRACE": 15,
+                "CONNECT": 0,
+                "PROPFIND": 12,
+                "PROPPATCH": 13,
+                "MOVE": 8,
+                "COPY": 1,
+                "LOCK": 5,
+                "UNLOCK": 16,
+                "MKCOL": 7,
+                "Any": 1000
+              }
+            }
+          },
+          "required_properties": [
+            "HTTPMethod"
+          ]
+        }
+      }
+    }
   }
 }

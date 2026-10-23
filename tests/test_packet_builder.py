@@ -1,9 +1,9 @@
 """Commit storage preserves manifest order and independently named streams."""
-import base64,hashlib,sys,unittest,copy
+import hashlib, sys, unittest, copy
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'/'Сериализация'))
 import packet_builder as p
-import metadata_serializer as s
+import native_metadata as s
 
 
 class PacketBuilderTests(unittest.TestCase):

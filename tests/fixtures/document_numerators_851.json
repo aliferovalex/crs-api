@@ -1,0 +1,193 @@
+{
+  "provenance": {
+    "platform": "8.5.1.1529",
+    "method": "Independent Configurator compilation and full CF/XML export; nine numerator variants and three referencing documents",
+    "cf_sha256": "5c65fd15e356347ca7adbf0b870209d8a5a60e2ffedacf2a4fbfd8dd90399ce0"
+  },
+  "samples": [
+    {
+      "id": "63ef788e-a812-43a5-bdc4-df9e1a2beaa6",
+      "name": "ProbeDefault",
+      "label": "Default",
+      "kind": "DocumentNumerators",
+      "path": "DocumentNumerators\\ProbeDefault.xml",
+      "baseline": null,
+      "overrides": {},
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<DocumentNumerator uuid=\"63ef788e-a812-43a5-bdc4-df9e1a2beaa6\">\n\t\t<Properties>\n\t\t\t<Name>ProbeDefault</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<NumberType>String</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Nonperiodical</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t</Properties>\n\t</DocumentNumerator>\n</MetaDataObject>",
+      "body": "{1,\r\n{3,\r\n{3,\r\n{1,0,63ef788e-a812-43a5-bdc4-df9e1a2beaa6},\"ProbeDefault\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,9,0,1,1},0}",
+      "native_relations": {
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "113c5d3d-1394-4460-8a4d-0dfc7c54a5ff",
+      "name": "UseDefault",
+      "label": "DocumentDefault",
+      "kind": "Document",
+      "path": "Documents\\UseDefault.xml",
+      "numerator_id": "63ef788e-a812-43a5-bdc4-df9e1a2beaa6",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Document uuid=\"113c5d3d-1394-4460-8a4d-0dfc7c54a5ff\">\n\t\t<InternalInfo>\n\t\t\t<xr:GeneratedType name=\"DocumentObject.UseDefault\" category=\"Object\">\n\t\t\t\t<xr:TypeId>0b0fb987-6606-4b25-81d9-05598fdf51dd</xr:TypeId>\n\t\t\t\t<xr:ValueId>a45464fa-982e-40a4-a1cf-2a0f4f235f02</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentRef.UseDefault\" category=\"Ref\">\n\t\t\t\t<xr:TypeId>08bb06d5-6523-418a-a9e2-22c8763e4330</xr:TypeId>\n\t\t\t\t<xr:ValueId>12549b34-371a-44d2-9a1f-db8a44286183</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentSelection.UseDefault\" category=\"Selection\">\n\t\t\t\t<xr:TypeId>8bbd0353-98d3-4f57-9fc5-c473dea6158a</xr:TypeId>\n\t\t\t\t<xr:ValueId>10186304-5b08-47ee-8c58-1c049598e211</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentList.UseDefault\" category=\"List\">\n\t\t\t\t<xr:TypeId>acdb42bd-2a77-4162-bb8c-16197259e0e7</xr:TypeId>\n\t\t\t\t<xr:ValueId>6c315470-4fb3-44de-9d31-569131fe7eb4</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentManager.UseDefault\" category=\"Manager\">\n\t\t\t\t<xr:TypeId>a24bcb28-e966-4bb1-a245-16cafdd95474</xr:TypeId>\n\t\t\t\t<xr:ValueId>d075bfcd-7946-4b17-afc5-87530b4b6e29</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t</InternalInfo>\n\t\t<Properties>\n\t\t\t<Name>UseDefault</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<UseStandardCommands>true</UseStandardCommands>\n\t\t\t<Numerator>DocumentNumerator.ProbeDefault</Numerator>\n\t\t\t<NumberType>String</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Nonperiodical</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t\t<Autonumbering>true</Autonumbering>\n\t\t\t<Characteristics/>\n\t\t\t<BasedOn/>\n\t\t\t<InputByString>\n\t\t\t\t<xr:Field>Document.UseDefault.StandardAttribute.Number</xr:Field>\n\t\t\t</InputByString>\n\t\t\t<CreateOnInput>Use</CreateOnInput>\n\t\t\t<SearchStringModeOnInputByString>Begin</SearchStringModeOnInputByString>\n\t\t\t<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>\n\t\t\t<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>\n\t\t\t<DefaultObjectForm/>\n\t\t\t<DefaultListForm/>\n\t\t\t<DefaultChoiceForm/>\n\t\t\t<AuxiliaryObjectForm/>\n\t\t\t<AuxiliaryListForm/>\n\t\t\t<AuxiliaryChoiceForm/>\n\t\t\t<Posting>Allow</Posting>\n\t\t\t<RealTimePosting>Allow</RealTimePosting>\n\t\t\t<RegisterRecordsDeletion>AutoDeleteOnUnpost</RegisterRecordsDeletion>\n\t\t\t<RegisterRecordsWritingOnPost>WriteSelected</RegisterRecordsWritingOnPost>\n\t\t\t<SequenceFilling>AutoFill</SequenceFilling>\n\t\t\t<RegisterRecords/>\n\t\t\t<PostInPrivilegedMode>true</PostInPrivilegedMode>\n\t\t\t<UnpostInPrivilegedMode>true</UnpostInPrivilegedMode>\n\t\t\t<IncludeHelpInContents>false</IncludeHelpInContents>\n\t\t\t<DataLockFields/>\n\t\t\t<DataLockControlMode>Managed</DataLockControlMode>\n\t\t\t<FullTextSearch>Use</FullTextSearch>\n\t\t\t<ObjectPresentation/>\n\t\t\t<ExtendedObjectPresentation/>\n\t\t\t<ListPresentation/>\n\t\t\t<ExtendedListPresentation/>\n\t\t\t<Explanation/>\n\t\t\t<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>\n\t\t\t<DataHistory>DontUse</DataHistory>\n\t\t\t<UpdateDataHistoryImmediatelyAfterWrite>false</UpdateDataHistoryImmediatelyAfterWrite>\n\t\t\t<ExecuteAfterWriteDataHistoryVersionProcessing>false</ExecuteAfterWriteDataHistoryVersionProcessing>\n\t\t</Properties>\n\t\t<ChildObjects/>\n\t</Document>\n</MetaDataObject>",
+      "body": "{1,\r\n{40,0b0fb987-6606-4b25-81d9-05598fdf51dd,a45464fa-982e-40a4-a1cf-2a0f4f235f02,08bb06d5-6523-418a-a9e2-22c8763e4330,12549b34-371a-44d2-9a1f-db8a44286183,8bbd0353-98d3-4f57-9fc5-c473dea6158a,10186304-5b08-47ee-8c58-1c049598e211,acdb42bd-2a77-4162-bb8c-16197259e0e7,6c315470-4fb3-44de-9d31-569131fe7eb4,\r\n{0,\r\n{3,\r\n{1,0,113c5d3d-1394-4460-8a4d-0dfc7c54a5ff},\"UseDefault\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},63ef788e-a812-43a5-bdc4-df9e1a2beaa6,1,9,0,1,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,0,2,0,\r\n{0,0},1,\r\n{0,0},0,a24bcb28-e966-4bb1-a245-16cafdd95474,d075bfcd-7946-4b17-afc5-87530b4b6e29,0,\r\n{1,\r\n{0,1,\r\n{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,\r\n{-2}\r\n}\r\n}\r\n},1,1,\r\n{0},1,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0},0,1,\r\n{0,\r\n{0}\r\n},2,\r\n{1,\r\n{0,0}\r\n},\r\n{1,2,0},0,0,0,0},5,\r\n{21c53e09-8950-4b5e-a6a0-1054f1bbc274,0},\r\n{3daea016-69b7-4ed4-9453-127911372fe6,0},\r\n{45e46cbc-3e24-4165-8b7b-cc98a6f80211,0},\r\n{b544fc6a-2ba3-4885-8fb2-cb289fb6d65e,0},\r\n{fb880e93-47d7-4127-9357-a20e69c17545,0}\r\n}",
+      "native_relations": {
+        "63ef788e-a812-43a5-bdc4-df9e1a2beaa6": 0,
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "91efe348-179b-4537-8d31-53ac8085dc16",
+      "name": "ProbeNumber",
+      "label": "Number",
+      "kind": "DocumentNumerators",
+      "path": "DocumentNumerators\\ProbeNumber.xml",
+      "baseline": "Default",
+      "overrides": {
+        "NumberType": "Number"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<DocumentNumerator uuid=\"91efe348-179b-4537-8d31-53ac8085dc16\">\n\t\t<Properties>\n\t\t\t<Name>ProbeNumber</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<NumberType>Number</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Nonperiodical</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t</Properties>\n\t</DocumentNumerator>\n</MetaDataObject>",
+      "body": "{1,\r\n{3,\r\n{3,\r\n{1,0,91efe348-179b-4537-8d31-53ac8085dc16},\"ProbeNumber\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,9,0,1,1},0}",
+      "native_relations": {
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "3164eae5-0b63-4331-8bec-b01cf5cab660",
+      "name": "UseNumber",
+      "label": "DocumentNumber",
+      "kind": "Document",
+      "path": "Documents\\UseNumber.xml",
+      "numerator_id": "91efe348-179b-4537-8d31-53ac8085dc16",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Document uuid=\"3164eae5-0b63-4331-8bec-b01cf5cab660\">\n\t\t<InternalInfo>\n\t\t\t<xr:GeneratedType name=\"DocumentObject.UseNumber\" category=\"Object\">\n\t\t\t\t<xr:TypeId>7d3ad1d9-0bee-45d6-bacd-0fb57fa1e160</xr:TypeId>\n\t\t\t\t<xr:ValueId>64105b6f-208b-4c4f-9f87-ab1f5599ebbd</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentRef.UseNumber\" category=\"Ref\">\n\t\t\t\t<xr:TypeId>175ebdf3-3523-4b83-aba4-a746c779f362</xr:TypeId>\n\t\t\t\t<xr:ValueId>1c6ca4db-595f-49c1-8754-27756ce3671d</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentSelection.UseNumber\" category=\"Selection\">\n\t\t\t\t<xr:TypeId>92f5c38a-801e-4a56-be9e-4f38adb31ab4</xr:TypeId>\n\t\t\t\t<xr:ValueId>2aee47e5-f39f-4626-9872-36cd53112cb8</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentList.UseNumber\" category=\"List\">\n\t\t\t\t<xr:TypeId>df6181fc-4baa-4a0c-ba49-80ab8366f556</xr:TypeId>\n\t\t\t\t<xr:ValueId>5f7e724d-d154-47f5-b406-b6a352125963</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentManager.UseNumber\" category=\"Manager\">\n\t\t\t\t<xr:TypeId>4585410c-d25b-4415-8ae3-63219e6b7382</xr:TypeId>\n\t\t\t\t<xr:ValueId>f9e01296-7e2c-4a68-bb3c-ee008bcd8e57</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t</InternalInfo>\n\t\t<Properties>\n\t\t\t<Name>UseNumber</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<UseStandardCommands>true</UseStandardCommands>\n\t\t\t<Numerator>DocumentNumerator.ProbeNumber</Numerator>\n\t\t\t<NumberType>Number</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Nonperiodical</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t\t<Autonumbering>true</Autonumbering>\n\t\t\t<Characteristics/>\n\t\t\t<BasedOn/>\n\t\t\t<InputByString>\n\t\t\t\t<xr:Field>Document.UseNumber.StandardAttribute.Number</xr:Field>\n\t\t\t</InputByString>\n\t\t\t<CreateOnInput>Use</CreateOnInput>\n\t\t\t<SearchStringModeOnInputByString>Begin</SearchStringModeOnInputByString>\n\t\t\t<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>\n\t\t\t<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>\n\t\t\t<DefaultObjectForm/>\n\t\t\t<DefaultListForm/>\n\t\t\t<DefaultChoiceForm/>\n\t\t\t<AuxiliaryObjectForm/>\n\t\t\t<AuxiliaryListForm/>\n\t\t\t<AuxiliaryChoiceForm/>\n\t\t\t<Posting>Allow</Posting>\n\t\t\t<RealTimePosting>Allow</RealTimePosting>\n\t\t\t<RegisterRecordsDeletion>AutoDeleteOnUnpost</RegisterRecordsDeletion>\n\t\t\t<RegisterRecordsWritingOnPost>WriteSelected</RegisterRecordsWritingOnPost>\n\t\t\t<SequenceFilling>AutoFill</SequenceFilling>\n\t\t\t<RegisterRecords/>\n\t\t\t<PostInPrivilegedMode>true</PostInPrivilegedMode>\n\t\t\t<UnpostInPrivilegedMode>true</UnpostInPrivilegedMode>\n\t\t\t<IncludeHelpInContents>false</IncludeHelpInContents>\n\t\t\t<DataLockFields/>\n\t\t\t<DataLockControlMode>Managed</DataLockControlMode>\n\t\t\t<FullTextSearch>Use</FullTextSearch>\n\t\t\t<ObjectPresentation/>\n\t\t\t<ExtendedObjectPresentation/>\n\t\t\t<ListPresentation/>\n\t\t\t<ExtendedListPresentation/>\n\t\t\t<Explanation/>\n\t\t\t<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>\n\t\t\t<DataHistory>DontUse</DataHistory>\n\t\t\t<UpdateDataHistoryImmediatelyAfterWrite>false</UpdateDataHistoryImmediatelyAfterWrite>\n\t\t\t<ExecuteAfterWriteDataHistoryVersionProcessing>false</ExecuteAfterWriteDataHistoryVersionProcessing>\n\t\t</Properties>\n\t\t<ChildObjects/>\n\t</Document>\n</MetaDataObject>",
+      "body": "{1,\r\n{40,7d3ad1d9-0bee-45d6-bacd-0fb57fa1e160,64105b6f-208b-4c4f-9f87-ab1f5599ebbd,175ebdf3-3523-4b83-aba4-a746c779f362,1c6ca4db-595f-49c1-8754-27756ce3671d,92f5c38a-801e-4a56-be9e-4f38adb31ab4,2aee47e5-f39f-4626-9872-36cd53112cb8,df6181fc-4baa-4a0c-ba49-80ab8366f556,5f7e724d-d154-47f5-b406-b6a352125963,\r\n{0,\r\n{3,\r\n{1,0,3164eae5-0b63-4331-8bec-b01cf5cab660},\"UseNumber\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},91efe348-179b-4537-8d31-53ac8085dc16,0,9,0,1,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,0,2,0,\r\n{0,0},1,\r\n{0,0},0,4585410c-d25b-4415-8ae3-63219e6b7382,f9e01296-7e2c-4a68-bb3c-ee008bcd8e57,0,\r\n{1,\r\n{0,1,\r\n{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,\r\n{-2}\r\n}\r\n}\r\n},1,1,\r\n{0},1,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0},0,1,\r\n{0,\r\n{0}\r\n},2,\r\n{1,\r\n{0,0}\r\n},\r\n{1,2,0},0,0,0,0},5,\r\n{21c53e09-8950-4b5e-a6a0-1054f1bbc274,0},\r\n{3daea016-69b7-4ed4-9453-127911372fe6,0},\r\n{45e46cbc-3e24-4165-8b7b-cc98a6f80211,0},\r\n{b544fc6a-2ba3-4885-8fb2-cb289fb6d65e,0},\r\n{fb880e93-47d7-4127-9357-a20e69c17545,0}\r\n}",
+      "native_relations": {
+        "91efe348-179b-4537-8d31-53ac8085dc16": 0,
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "530b4b2b-87e5-439d-8db1-0d761e764660",
+      "name": "ProbeLength",
+      "label": "Length",
+      "kind": "DocumentNumerators",
+      "path": "DocumentNumerators\\ProbeLength.xml",
+      "baseline": "Default",
+      "overrides": {
+        "NumberLength": "12"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<DocumentNumerator uuid=\"530b4b2b-87e5-439d-8db1-0d761e764660\">\n\t\t<Properties>\n\t\t\t<Name>ProbeLength</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<NumberType>String</NumberType>\n\t\t\t<NumberLength>12</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Nonperiodical</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t</Properties>\n\t</DocumentNumerator>\n</MetaDataObject>",
+      "body": "{1,\r\n{3,\r\n{3,\r\n{1,0,530b4b2b-87e5-439d-8db1-0d761e764660},\"ProbeLength\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,12,0,1,1},0}",
+      "native_relations": {
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "165fc307-ca86-4788-ad07-f42b49ec361b",
+      "name": "ProbeFixed",
+      "label": "Fixed",
+      "kind": "DocumentNumerators",
+      "path": "DocumentNumerators\\ProbeFixed.xml",
+      "baseline": "Default",
+      "overrides": {
+        "NumberAllowedLength": "Fixed"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<DocumentNumerator uuid=\"165fc307-ca86-4788-ad07-f42b49ec361b\">\n\t\t<Properties>\n\t\t\t<Name>ProbeFixed</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<NumberType>String</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Fixed</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Nonperiodical</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t</Properties>\n\t</DocumentNumerator>\n</MetaDataObject>",
+      "body": "{1,\r\n{3,\r\n{3,\r\n{1,0,165fc307-ca86-4788-ad07-f42b49ec361b},\"ProbeFixed\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,9,0,1,0},0}",
+      "native_relations": {
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "aad4a2f8-9636-4a66-8492-1455c9b1a591",
+      "name": "ProbeYear",
+      "label": "Year",
+      "kind": "DocumentNumerators",
+      "path": "DocumentNumerators\\ProbeYear.xml",
+      "baseline": "Default",
+      "overrides": {
+        "NumberPeriodicity": "Year"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<DocumentNumerator uuid=\"aad4a2f8-9636-4a66-8492-1455c9b1a591\">\n\t\t<Properties>\n\t\t\t<Name>ProbeYear</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<NumberType>String</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Year</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t</Properties>\n\t</DocumentNumerator>\n</MetaDataObject>",
+      "body": "{1,\r\n{3,\r\n{3,\r\n{1,0,aad4a2f8-9636-4a66-8492-1455c9b1a591},\"ProbeYear\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,9,1,1,1},0}",
+      "native_relations": {
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "9304d194-a436-4327-8b32-dc4864d513fe",
+      "name": "UseYear",
+      "label": "DocumentYear",
+      "kind": "Document",
+      "path": "Documents\\UseYear.xml",
+      "numerator_id": "aad4a2f8-9636-4a66-8492-1455c9b1a591",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Document uuid=\"9304d194-a436-4327-8b32-dc4864d513fe\">\n\t\t<InternalInfo>\n\t\t\t<xr:GeneratedType name=\"DocumentObject.UseYear\" category=\"Object\">\n\t\t\t\t<xr:TypeId>3e1246ee-539f-444a-946e-cae59c56cc32</xr:TypeId>\n\t\t\t\t<xr:ValueId>99a3bf34-25ca-4bb8-82cd-82b030369bdc</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentRef.UseYear\" category=\"Ref\">\n\t\t\t\t<xr:TypeId>94ab202d-bb89-4af2-8c0f-e70a7c8c77a7</xr:TypeId>\n\t\t\t\t<xr:ValueId>d2b2aab6-46e1-49d8-a0ab-4b3586b5a00c</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentSelection.UseYear\" category=\"Selection\">\n\t\t\t\t<xr:TypeId>e975e996-8141-450d-ae29-76d78dea80e7</xr:TypeId>\n\t\t\t\t<xr:ValueId>1a54a143-fb6b-461b-858b-2efab591d454</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentList.UseYear\" category=\"List\">\n\t\t\t\t<xr:TypeId>d9d345d9-a4bb-491c-8f0f-0827af6152cf</xr:TypeId>\n\t\t\t\t<xr:ValueId>d283f401-e1ce-4507-900f-fa192e140a14</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"DocumentManager.UseYear\" category=\"Manager\">\n\t\t\t\t<xr:TypeId>03d3b7b2-2e70-4a90-94b6-b07a437ec44f</xr:TypeId>\n\t\t\t\t<xr:ValueId>1f9442b9-81af-42cd-85dc-2d94b2306af1</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t</InternalInfo>\n\t\t<Properties>\n\t\t\t<Name>UseYear</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<UseStandardCommands>true</UseStandardCommands>\n\t\t\t<Numerator>DocumentNumerator.ProbeYear</Numerator>\n\t\t\t<NumberType>String</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Year</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t\t<Autonumbering>true</Autonumbering>\n\t\t\t<Characteristics/>\n\t\t\t<BasedOn/>\n\t\t\t<InputByString>\n\t\t\t\t<xr:Field>Document.UseYear.StandardAttribute.Number</xr:Field>\n\t\t\t</InputByString>\n\t\t\t<CreateOnInput>Use</CreateOnInput>\n\t\t\t<SearchStringModeOnInputByString>Begin</SearchStringModeOnInputByString>\n\t\t\t<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>\n\t\t\t<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>\n\t\t\t<DefaultObjectForm/>\n\t\t\t<DefaultListForm/>\n\t\t\t<DefaultChoiceForm/>\n\t\t\t<AuxiliaryObjectForm/>\n\t\t\t<AuxiliaryListForm/>\n\t\t\t<AuxiliaryChoiceForm/>\n\t\t\t<Posting>Allow</Posting>\n\t\t\t<RealTimePosting>Allow</RealTimePosting>\n\t\t\t<RegisterRecordsDeletion>AutoDeleteOnUnpost</RegisterRecordsDeletion>\n\t\t\t<RegisterRecordsWritingOnPost>WriteSelected</RegisterRecordsWritingOnPost>\n\t\t\t<SequenceFilling>AutoFill</SequenceFilling>\n\t\t\t<RegisterRecords/>\n\t\t\t<PostInPrivilegedMode>true</PostInPrivilegedMode>\n\t\t\t<UnpostInPrivilegedMode>true</UnpostInPrivilegedMode>\n\t\t\t<IncludeHelpInContents>false</IncludeHelpInContents>\n\t\t\t<DataLockFields/>\n\t\t\t<DataLockControlMode>Managed</DataLockControlMode>\n\t\t\t<FullTextSearch>Use</FullTextSearch>\n\t\t\t<ObjectPresentation/>\n\t\t\t<ExtendedObjectPresentation/>\n\t\t\t<ListPresentation/>\n\t\t\t<ExtendedListPresentation/>\n\t\t\t<Explanation/>\n\t\t\t<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>\n\t\t\t<DataHistory>DontUse</DataHistory>\n\t\t\t<UpdateDataHistoryImmediatelyAfterWrite>false</UpdateDataHistoryImmediatelyAfterWrite>\n\t\t\t<ExecuteAfterWriteDataHistoryVersionProcessing>false</ExecuteAfterWriteDataHistoryVersionProcessing>\n\t\t</Properties>\n\t\t<ChildObjects/>\n\t</Document>\n</MetaDataObject>",
+      "body": "{1,\r\n{40,3e1246ee-539f-444a-946e-cae59c56cc32,99a3bf34-25ca-4bb8-82cd-82b030369bdc,94ab202d-bb89-4af2-8c0f-e70a7c8c77a7,d2b2aab6-46e1-49d8-a0ab-4b3586b5a00c,e975e996-8141-450d-ae29-76d78dea80e7,1a54a143-fb6b-461b-858b-2efab591d454,d9d345d9-a4bb-491c-8f0f-0827af6152cf,d283f401-e1ce-4507-900f-fa192e140a14,\r\n{0,\r\n{3,\r\n{1,0,9304d194-a436-4327-8b32-dc4864d513fe},\"UseYear\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},aad4a2f8-9636-4a66-8492-1455c9b1a591,1,9,1,1,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,0,2,0,\r\n{0,0},1,\r\n{0,0},0,03d3b7b2-2e70-4a90-94b6-b07a437ec44f,1f9442b9-81af-42cd-85dc-2d94b2306af1,0,\r\n{1,\r\n{0,1,\r\n{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,\r\n{-2}\r\n}\r\n}\r\n},1,1,\r\n{0},1,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0},0,1,\r\n{0,\r\n{0}\r\n},2,\r\n{1,\r\n{0,0}\r\n},\r\n{1,2,0},0,0,0,0},5,\r\n{21c53e09-8950-4b5e-a6a0-1054f1bbc274,0},\r\n{3daea016-69b7-4ed4-9453-127911372fe6,0},\r\n{45e46cbc-3e24-4165-8b7b-cc98a6f80211,0},\r\n{b544fc6a-2ba3-4885-8fb2-cb289fb6d65e,0},\r\n{fb880e93-47d7-4127-9357-a20e69c17545,0}\r\n}",
+      "native_relations": {
+        "aad4a2f8-9636-4a66-8492-1455c9b1a591": 0,
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "3685df85-6204-4217-a710-08f841a660b2",
+      "name": "ProbeQuarter",
+      "label": "Quarter",
+      "kind": "DocumentNumerators",
+      "path": "DocumentNumerators\\ProbeQuarter.xml",
+      "baseline": "Default",
+      "overrides": {
+        "NumberPeriodicity": "Quarter"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<DocumentNumerator uuid=\"3685df85-6204-4217-a710-08f841a660b2\">\n\t\t<Properties>\n\t\t\t<Name>ProbeQuarter</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<NumberType>String</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Quarter</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t</Properties>\n\t</DocumentNumerator>\n</MetaDataObject>",
+      "body": "{1,\r\n{3,\r\n{3,\r\n{1,0,3685df85-6204-4217-a710-08f841a660b2},\"ProbeQuarter\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,9,2,1,1},0}",
+      "native_relations": {
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "56164738-a9ec-4963-ba61-fafd89c6118b",
+      "name": "ProbeMonth",
+      "label": "Month",
+      "kind": "DocumentNumerators",
+      "path": "DocumentNumerators\\ProbeMonth.xml",
+      "baseline": "Default",
+      "overrides": {
+        "NumberPeriodicity": "Month"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<DocumentNumerator uuid=\"56164738-a9ec-4963-ba61-fafd89c6118b\">\n\t\t<Properties>\n\t\t\t<Name>ProbeMonth</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<NumberType>String</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Month</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t</Properties>\n\t</DocumentNumerator>\n</MetaDataObject>",
+      "body": "{1,\r\n{3,\r\n{3,\r\n{1,0,56164738-a9ec-4963-ba61-fafd89c6118b},\"ProbeMonth\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,9,3,1,1},0}",
+      "native_relations": {
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "ab836005-94c9-4e16-aeac-caac1a1c404f",
+      "name": "ProbeDay",
+      "label": "Day",
+      "kind": "DocumentNumerators",
+      "path": "DocumentNumerators\\ProbeDay.xml",
+      "baseline": "Default",
+      "overrides": {
+        "NumberPeriodicity": "Day"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<DocumentNumerator uuid=\"ab836005-94c9-4e16-aeac-caac1a1c404f\">\n\t\t<Properties>\n\t\t\t<Name>ProbeDay</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<NumberType>String</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Day</NumberPeriodicity>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t</Properties>\n\t</DocumentNumerator>\n</MetaDataObject>",
+      "body": "{1,\r\n{3,\r\n{3,\r\n{1,0,ab836005-94c9-4e16-aeac-caac1a1c404f},\"ProbeDay\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,9,4,1,1},0}",
+      "native_relations": {
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    },
+    {
+      "id": "40ae91c5-df48-48da-baaf-0e8d0f4e14cc",
+      "name": "ProbeNonUnique",
+      "label": "NonUnique",
+      "kind": "DocumentNumerators",
+      "path": "DocumentNumerators\\ProbeNonUnique.xml",
+      "baseline": "Default",
+      "overrides": {
+        "CheckUnique": "false"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<DocumentNumerator uuid=\"40ae91c5-df48-48da-baaf-0e8d0f4e14cc\">\n\t\t<Properties>\n\t\t\t<Name>ProbeNonUnique</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t\t<NumberType>String</NumberType>\n\t\t\t<NumberLength>9</NumberLength>\n\t\t\t<NumberAllowedLength>Variable</NumberAllowedLength>\n\t\t\t<NumberPeriodicity>Nonperiodical</NumberPeriodicity>\n\t\t\t<CheckUnique>false</CheckUnique>\n\t\t</Properties>\n\t</DocumentNumerator>\n</MetaDataObject>",
+      "body": "{1,\r\n{3,\r\n{3,\r\n{1,0,40ae91c5-df48-48da-baaf-0e8d0f4e14cc},\"ProbeNonUnique\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,9,0,0,1},0}",
+      "native_relations": {
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      }
+    }
+  ]
+}

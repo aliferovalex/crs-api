@@ -1,0 +1,895 @@
+{
+  "source": "Independent Configurator 8.5.1.1529 imports and exports of single-standard-field RLS conditions; two stored conditions omitted by the native XML exporter are retained as unsupported witnesses.",
+  "cf_sha256": "c0f4715c5b2f5f3028edf206d84987844735237b189e8e8efe786cc5ab118408",
+  "samples": [
+    {
+      "name": "ProbeStandardRLS00",
+      "id": "4743ef73-c287-44e7-9e0c-82ade7e2db8b",
+      "kind": "Catalog",
+      "field": "PredefinedDataName",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "owner": "Catalog.ProbeCatalog",
+      "exported_fields": [
+        "Predefined",
+        "PredefinedDataName"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Predefined</field>\n\t\t\t\t<field>PredefinedDataName</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,966b6efa-7b84-4091-90c1-27b7dc4b88a1,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",2,\r\n{\r\n{0},\r\n{-13}\r\n},\r\n{\r\n{0},\r\n{-10}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS01",
+      "id": "d6d7704a-0380-4cf2-abc3-cd321e4072c1",
+      "kind": "Catalog",
+      "field": "Predefined",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "owner": "Catalog.ProbeCatalog",
+      "exported_fields": [
+        "Predefined",
+        "PredefinedDataName"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Predefined</field>\n\t\t\t\t<field>PredefinedDataName</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,966b6efa-7b84-4091-90c1-27b7dc4b88a1,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",2,\r\n{\r\n{0},\r\n{-10}\r\n},\r\n{\r\n{0},\r\n{-13}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS02",
+      "id": "63dd61e2-72d3-444b-8c0f-be8ca7441b34",
+      "kind": "Catalog",
+      "field": "Ref",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "owner": "Catalog.ProbeCatalog",
+      "exported_fields": [
+        "Ref"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Ref</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,966b6efa-7b84-4091-90c1-27b7dc4b88a1,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-8}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS03",
+      "id": "d1d1fcbb-9f93-420e-a8a8-34cd4cda452f",
+      "kind": "Catalog",
+      "field": "DeletionMark",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "owner": "Catalog.ProbeCatalog",
+      "exported_fields": [
+        "DeletionMark"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>DeletionMark</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,966b6efa-7b84-4091-90c1-27b7dc4b88a1,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-7}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS04",
+      "id": "f4f176a5-e5f3-4c02-a63d-f8c2177ebddb",
+      "kind": "Catalog",
+      "field": "IsFolder",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "owner": "Catalog.ProbeCatalog",
+      "exported_fields": [
+        "IsFolder"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>IsFolder</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,966b6efa-7b84-4091-90c1-27b7dc4b88a1,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-6}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS05",
+      "id": "3f61b4fe-2e11-4429-b297-41772ce2f8d7",
+      "kind": "Catalog",
+      "field": "Owner",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "owner": "Catalog.ProbeCatalog",
+      "exported_fields": [
+        "Owner"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Owner</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,966b6efa-7b84-4091-90c1-27b7dc4b88a1,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-5}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS06",
+      "id": "05b5f2a9-700c-4a9e-ac2e-0c539aa8b620",
+      "kind": "Catalog",
+      "field": "Parent",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "owner": "Catalog.ProbeCatalog",
+      "exported_fields": [
+        "Parent"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Parent</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,966b6efa-7b84-4091-90c1-27b7dc4b88a1,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-4}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS07",
+      "id": "d44ba53a-509d-4876-b1e7-beb75ba2ea6f",
+      "kind": "Catalog",
+      "field": "Description",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "owner": "Catalog.ProbeCatalog",
+      "exported_fields": [
+        "Description"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Description</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,966b6efa-7b84-4091-90c1-27b7dc4b88a1,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-3}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS08",
+      "id": "9e5e85d9-57b7-429b-ad06-a3bc5d2fc0c7",
+      "kind": "Catalog",
+      "field": "Code",
+      "owner_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "owner": "Catalog.ProbeCatalog",
+      "exported_fields": [
+        "Code"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Code</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,966b6efa-7b84-4091-90c1-27b7dc4b88a1,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-2}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS09",
+      "id": "2790aa12-4579-4a63-a264-eaa338fd5dd8",
+      "kind": "InformationRegister",
+      "field": "Active",
+      "owner_id": "9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64",
+      "owner": "InformationRegister.ProbeInformationRegister",
+      "exported_fields": [
+        "Active"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>InformationRegister.ProbeInformationRegister</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Active</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-5}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS10",
+      "id": "a7d6a1aa-5855-4169-acc4-4c29468c2a53",
+      "kind": "InformationRegister",
+      "field": "LineNumber",
+      "owner_id": "9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64",
+      "owner": "InformationRegister.ProbeInformationRegister",
+      "exported_fields": [
+        "LineNumber"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>InformationRegister.ProbeInformationRegister</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>LineNumber</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-4}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS11",
+      "id": "e363e580-7821-452c-95fc-630695dfaabf",
+      "kind": "InformationRegister",
+      "field": "Recorder",
+      "owner_id": "9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64",
+      "owner": "InformationRegister.ProbeInformationRegister",
+      "exported_fields": [
+        "Recorder"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>InformationRegister.ProbeInformationRegister</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Recorder</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-3}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS12",
+      "id": "d9388a5e-9eee-43e2-baef-084200563076",
+      "kind": "InformationRegister",
+      "field": "Period",
+      "owner_id": "9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64",
+      "owner": "InformationRegister.ProbeInformationRegister",
+      "exported_fields": [
+        "Period"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>InformationRegister.ProbeInformationRegister</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Period</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-2}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS14",
+      "id": "c9bcb233-3a5f-416d-8dfb-dcca7de865b1",
+      "kind": "AccumulationRegister",
+      "field": "Active",
+      "owner_id": "8493712c-6960-4e8f-9324-90fa3d5b318c",
+      "owner": "AccumulationRegister.ProbeAccumulationRegister",
+      "exported_fields": [
+        "Active"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>AccumulationRegister.ProbeAccumulationRegister</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Active</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,8493712c-6960-4e8f-9324-90fa3d5b318c,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-5}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS15",
+      "id": "fce91996-c44b-4862-8361-f678db1ee310",
+      "kind": "AccumulationRegister",
+      "field": "LineNumber",
+      "owner_id": "8493712c-6960-4e8f-9324-90fa3d5b318c",
+      "owner": "AccumulationRegister.ProbeAccumulationRegister",
+      "exported_fields": [
+        "LineNumber"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>AccumulationRegister.ProbeAccumulationRegister</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>LineNumber</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,8493712c-6960-4e8f-9324-90fa3d5b318c,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-4}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS16",
+      "id": "a191c24c-441a-46a6-8f72-343eabb3d097",
+      "kind": "AccumulationRegister",
+      "field": "Recorder",
+      "owner_id": "8493712c-6960-4e8f-9324-90fa3d5b318c",
+      "owner": "AccumulationRegister.ProbeAccumulationRegister",
+      "exported_fields": [
+        "Recorder"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>AccumulationRegister.ProbeAccumulationRegister</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Recorder</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,8493712c-6960-4e8f-9324-90fa3d5b318c,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-3}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS17",
+      "id": "c6c719cb-9486-4191-ba86-f3bcbce874cc",
+      "kind": "AccumulationRegister",
+      "field": "Period",
+      "owner_id": "8493712c-6960-4e8f-9324-90fa3d5b318c",
+      "owner": "AccumulationRegister.ProbeAccumulationRegister",
+      "exported_fields": [
+        "Period"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>AccumulationRegister.ProbeAccumulationRegister</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Period</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,8493712c-6960-4e8f-9324-90fa3d5b318c,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-2}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS18",
+      "id": "1ba9298a-3f01-4891-858f-45cd7d6725e8",
+      "kind": "Document",
+      "field": "Posted",
+      "owner_id": "0fb60d64-670c-4869-a381-7f563c401c24",
+      "owner": "Document.ProbeDocument",
+      "exported_fields": [
+        "Posted"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Document.ProbeDocument</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Posted</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,0fb60d64-670c-4869-a381-7f563c401c24,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-7}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS19",
+      "id": "6bba7859-def6-4842-8193-33f000b80013",
+      "kind": "Document",
+      "field": "Ref",
+      "owner_id": "0fb60d64-670c-4869-a381-7f563c401c24",
+      "owner": "Document.ProbeDocument",
+      "exported_fields": [
+        "Ref"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Document.ProbeDocument</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Ref</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,0fb60d64-670c-4869-a381-7f563c401c24,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-5}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS20",
+      "id": "b30eb5a6-6726-4a5b-9f49-08da38f1532a",
+      "kind": "Document",
+      "field": "DeletionMark",
+      "owner_id": "0fb60d64-670c-4869-a381-7f563c401c24",
+      "owner": "Document.ProbeDocument",
+      "exported_fields": [
+        "DeletionMark"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Document.ProbeDocument</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>DeletionMark</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,0fb60d64-670c-4869-a381-7f563c401c24,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-4}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS21",
+      "id": "f25a35f1-5f86-4e10-9caf-dfa2b4f1a7df",
+      "kind": "Document",
+      "field": "Date",
+      "owner_id": "0fb60d64-670c-4869-a381-7f563c401c24",
+      "owner": "Document.ProbeDocument",
+      "exported_fields": [
+        "Date"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Document.ProbeDocument</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Date</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,0fb60d64-670c-4869-a381-7f563c401c24,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-3}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS22",
+      "id": "ecf049b2-9bef-4195-9d79-f7618d029b59",
+      "kind": "Document",
+      "field": "Number",
+      "owner_id": "0fb60d64-670c-4869-a381-7f563c401c24",
+      "owner": "Document.ProbeDocument",
+      "exported_fields": [
+        "Number"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Document.ProbeDocument</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Number</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,0fb60d64-670c-4869-a381-7f563c401c24,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-2}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS23",
+      "id": "c8bb7e68-fd38-4b2e-b2c0-e2a8f80fb4bd",
+      "kind": "ExchangePlan",
+      "field": "ReceivedNo",
+      "owner_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "owner": "ExchangePlan.ProbeExchangePlan",
+      "exported_fields": [
+        "ReceivedNo"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ExchangePlan.ProbeExchangePlan</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>ReceivedNo</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,580173e2-c3e2-47fe-b0a5-6c5ff23d6267,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-10}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS24",
+      "id": "71092562-b8c5-463c-952d-e607b4d68434",
+      "kind": "ExchangePlan",
+      "field": "SentNo",
+      "owner_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "owner": "ExchangePlan.ProbeExchangePlan",
+      "exported_fields": [
+        "SentNo"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ExchangePlan.ProbeExchangePlan</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>SentNo</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,580173e2-c3e2-47fe-b0a5-6c5ff23d6267,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-9}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS25",
+      "id": "d9f6d4e4-2e9b-4d76-8c51-704788e6dd2b",
+      "kind": "ExchangePlan",
+      "field": "Ref",
+      "owner_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "owner": "ExchangePlan.ProbeExchangePlan",
+      "exported_fields": [
+        "Ref"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ExchangePlan.ProbeExchangePlan</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Ref</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,580173e2-c3e2-47fe-b0a5-6c5ff23d6267,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-6}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS26",
+      "id": "56ef8159-a56b-4277-b11f-c5eb1d2640aa",
+      "kind": "ExchangePlan",
+      "field": "DeletionMark",
+      "owner_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "owner": "ExchangePlan.ProbeExchangePlan",
+      "exported_fields": [
+        "DeletionMark"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ExchangePlan.ProbeExchangePlan</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>DeletionMark</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,580173e2-c3e2-47fe-b0a5-6c5ff23d6267,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-4}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS27",
+      "id": "173cf5fd-cd13-43df-9880-cb56fd696d03",
+      "kind": "ExchangePlan",
+      "field": "Description",
+      "owner_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "owner": "ExchangePlan.ProbeExchangePlan",
+      "exported_fields": [
+        "Description"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ExchangePlan.ProbeExchangePlan</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Description</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,580173e2-c3e2-47fe-b0a5-6c5ff23d6267,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-3}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS28",
+      "id": "cba6263a-47c9-489a-9555-bce45d453396",
+      "kind": "ExchangePlan",
+      "field": "Code",
+      "owner_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "owner": "ExchangePlan.ProbeExchangePlan",
+      "exported_fields": [
+        "Code"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ExchangePlan.ProbeExchangePlan</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Code</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,580173e2-c3e2-47fe-b0a5-6c5ff23d6267,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-2}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS29",
+      "id": "5ca9d3d8-8dd3-4bef-a361-28e78c46917a",
+      "kind": "ExchangePlan",
+      "field": "ExchangeDate",
+      "owner_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "owner": "ExchangePlan.ProbeExchangePlan",
+      "exported_fields": [
+        "ExchangeDate"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ExchangePlan.ProbeExchangePlan</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>ExchangeDate</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,580173e2-c3e2-47fe-b0a5-6c5ff23d6267,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-14}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS30",
+      "id": "bdccd351-9414-439d-83d3-13fb8c45e183",
+      "kind": "ExchangePlan",
+      "field": "ThisNode",
+      "owner_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "owner": "ExchangePlan.ProbeExchangePlan",
+      "exported_fields": [
+        "ThisNode"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ExchangePlan.ProbeExchangePlan</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>ThisNode</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,580173e2-c3e2-47fe-b0a5-6c5ff23d6267,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-13}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS31",
+      "id": "61371bff-6800-4668-8d30-9a4075ab481a",
+      "kind": "ChartOfCharacteristicTypes",
+      "field": "PredefinedDataName",
+      "owner_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "owner": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "exported_fields": [
+        "Predefined",
+        "PredefinedDataName"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Predefined</field>\n\t\t\t\t<field>PredefinedDataName</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,ecc82b24-ed5d-4818-a694-80d9361c23b4,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",2,\r\n{\r\n{0},\r\n{-14}\r\n},\r\n{\r\n{0},\r\n{-5}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS32",
+      "id": "d1efe203-b14c-4fef-b102-8900a59f818c",
+      "kind": "ChartOfCharacteristicTypes",
+      "field": "ValueType",
+      "owner_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "owner": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "exported_fields": [
+        "ValueType"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>ValueType</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,ecc82b24-ed5d-4818-a694-80d9361c23b4,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-11}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS33",
+      "id": "47e4579d-2d63-4b40-92ea-8a8b1e48e7da",
+      "kind": "ChartOfCharacteristicTypes",
+      "field": "Description",
+      "owner_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "owner": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "exported_fields": [
+        "Description"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Description</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,ecc82b24-ed5d-4818-a694-80d9361c23b4,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-9}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS34",
+      "id": "743f9ad2-8b6c-45bc-97f3-a0b016054b94",
+      "kind": "ChartOfCharacteristicTypes",
+      "field": "Code",
+      "owner_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "owner": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "exported_fields": [
+        "Code"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Code</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,ecc82b24-ed5d-4818-a694-80d9361c23b4,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-8}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS35",
+      "id": "00d23769-4fcb-4bf6-be74-6c1e10b6053b",
+      "kind": "ChartOfCharacteristicTypes",
+      "field": "IsFolder",
+      "owner_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "owner": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "exported_fields": [
+        "IsFolder"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>IsFolder</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,ecc82b24-ed5d-4818-a694-80d9361c23b4,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-7}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS36",
+      "id": "cbe06451-cccb-4784-bb1d-ca6553ae2f5e",
+      "kind": "ChartOfCharacteristicTypes",
+      "field": "Parent",
+      "owner_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "owner": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "exported_fields": [
+        "Parent"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Parent</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,ecc82b24-ed5d-4818-a694-80d9361c23b4,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-6}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS37",
+      "id": "14267d94-cedc-4215-bbf1-16ca7b92b16d",
+      "kind": "ChartOfCharacteristicTypes",
+      "field": "Predefined",
+      "owner_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "owner": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "exported_fields": [
+        "Predefined",
+        "PredefinedDataName"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Predefined</field>\n\t\t\t\t<field>PredefinedDataName</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,ecc82b24-ed5d-4818-a694-80d9361c23b4,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",2,\r\n{\r\n{0},\r\n{-5}\r\n},\r\n{\r\n{0},\r\n{-14}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS38",
+      "id": "39f59a81-c2d7-4c80-a911-21c0e4143fb3",
+      "kind": "ChartOfCharacteristicTypes",
+      "field": "DeletionMark",
+      "owner_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "owner": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "exported_fields": [
+        "DeletionMark"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>DeletionMark</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,ecc82b24-ed5d-4818-a694-80d9361c23b4,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-4}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS39",
+      "id": "4f7278e8-0f08-48ee-bcf8-ea50ca066487",
+      "kind": "ChartOfCharacteristicTypes",
+      "field": "Ref",
+      "owner_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "owner": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "exported_fields": [
+        "Ref"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Ref</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,ecc82b24-ed5d-4818-a694-80d9361c23b4,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-2}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS41",
+      "id": "267f517e-3fdd-4089-8208-a399d42367ca",
+      "kind": "DocumentJournal",
+      "field": "Ref",
+      "owner_id": "d3ec8062-3649-40f1-af09-2a5cb49a1779",
+      "owner": "DocumentJournal.ProbeDocumentJournal",
+      "exported_fields": [
+        "Ref"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>DocumentJournal.ProbeDocumentJournal</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Ref</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,d3ec8062-3649-40f1-af09-2a5cb49a1779,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-101}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS42",
+      "id": "677d2d62-21cc-47eb-ba27-9020e0b43746",
+      "kind": "DocumentJournal",
+      "field": "Date",
+      "owner_id": "d3ec8062-3649-40f1-af09-2a5cb49a1779",
+      "owner": "DocumentJournal.ProbeDocumentJournal",
+      "exported_fields": [
+        "Date"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>DocumentJournal.ProbeDocumentJournal</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Date</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,d3ec8062-3649-40f1-af09-2a5cb49a1779,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-100}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS43",
+      "id": "27a21f80-a4b6-4135-bf25-3524774f0252",
+      "kind": "DocumentJournal",
+      "field": "Posted",
+      "owner_id": "d3ec8062-3649-40f1-af09-2a5cb49a1779",
+      "owner": "DocumentJournal.ProbeDocumentJournal",
+      "exported_fields": [
+        "Posted"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>DocumentJournal.ProbeDocumentJournal</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Posted</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,d3ec8062-3649-40f1-af09-2a5cb49a1779,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-7}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS44",
+      "id": "35fd7f9f-23c7-4b5c-a494-f442baaaa1cd",
+      "kind": "DocumentJournal",
+      "field": "DeletionMark",
+      "owner_id": "d3ec8062-3649-40f1-af09-2a5cb49a1779",
+      "owner": "DocumentJournal.ProbeDocumentJournal",
+      "exported_fields": [
+        "DeletionMark"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>DocumentJournal.ProbeDocumentJournal</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>DeletionMark</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,d3ec8062-3649-40f1-af09-2a5cb49a1779,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-4}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS45",
+      "id": "91554786-6e34-4099-853c-395bef926eac",
+      "kind": "DocumentJournal",
+      "field": "Number",
+      "owner_id": "d3ec8062-3649-40f1-af09-2a5cb49a1779",
+      "owner": "DocumentJournal.ProbeDocumentJournal",
+      "exported_fields": [
+        "Number"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>DocumentJournal.ProbeDocumentJournal</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Number</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,d3ec8062-3649-40f1-af09-2a5cb49a1779,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-2}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS46",
+      "id": "5394f357-9569-4e05-b2e1-6319ba1be85f",
+      "kind": "Task",
+      "field": "Executed",
+      "owner_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "owner": "Task.ProbeTask",
+      "exported_fields": [
+        "Executed"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Task.ProbeTask</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Executed</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,7670e4fb-c8dc-445e-bf50-7dba5b8a458d,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-10}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS47",
+      "id": "8bc99bc6-727d-4821-9edc-a9fd23a22562",
+      "kind": "Task",
+      "field": "Description",
+      "owner_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "owner": "Task.ProbeTask",
+      "exported_fields": [
+        "Description"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Task.ProbeTask</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Description</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,7670e4fb-c8dc-445e-bf50-7dba5b8a458d,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-9}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS48",
+      "id": "6ce3b398-f9aa-4446-a43f-806909ca34bb",
+      "kind": "Task",
+      "field": "RoutePoint",
+      "owner_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "owner": "Task.ProbeTask",
+      "exported_fields": [
+        "RoutePoint"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Task.ProbeTask</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>RoutePoint</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,7670e4fb-c8dc-445e-bf50-7dba5b8a458d,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-8}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS49",
+      "id": "bb48d9f3-957b-42f4-bd75-fddb3963bb65",
+      "kind": "Task",
+      "field": "BusinessProcess",
+      "owner_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "owner": "Task.ProbeTask",
+      "exported_fields": [
+        "BusinessProcess"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Task.ProbeTask</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>BusinessProcess</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,7670e4fb-c8dc-445e-bf50-7dba5b8a458d,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-7}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS50",
+      "id": "5db0014d-8dda-4504-acf2-5c0bc7b998b4",
+      "kind": "Task",
+      "field": "Ref",
+      "owner_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "owner": "Task.ProbeTask",
+      "exported_fields": [
+        "Ref"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Task.ProbeTask</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Ref</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,7670e4fb-c8dc-445e-bf50-7dba5b8a458d,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-5}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS51",
+      "id": "dd160604-b8e4-4ad9-a561-cb9f176b9ff7",
+      "kind": "Task",
+      "field": "DeletionMark",
+      "owner_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "owner": "Task.ProbeTask",
+      "exported_fields": [
+        "DeletionMark"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Task.ProbeTask</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>DeletionMark</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,7670e4fb-c8dc-445e-bf50-7dba5b8a458d,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-4}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS52",
+      "id": "8a71d105-135d-4eb4-8e83-8ecb6255c3ed",
+      "kind": "Task",
+      "field": "Date",
+      "owner_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "owner": "Task.ProbeTask",
+      "exported_fields": [
+        "Date"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Task.ProbeTask</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Date</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,7670e4fb-c8dc-445e-bf50-7dba5b8a458d,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-3}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS53",
+      "id": "8e399b27-eefc-4cc3-81e1-e2e3e517992f",
+      "kind": "Task",
+      "field": "Number",
+      "owner_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "owner": "Task.ProbeTask",
+      "exported_fields": [
+        "Number"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Task.ProbeTask</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Number</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,7670e4fb-c8dc-445e-bf50-7dba5b8a458d,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-2}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS54",
+      "id": "df9938c1-fe6a-4496-b1e1-8ee43e24ebc1",
+      "kind": "BusinessProcess",
+      "field": "Started",
+      "owner_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "owner": "BusinessProcess.ProbeBusinessProcess",
+      "exported_fields": [
+        "Started"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>BusinessProcess.ProbeBusinessProcess</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Started</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,b14957ee-2c14-4710-bcd6-d0c5741a5748,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-9}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS55",
+      "id": "e468fc9f-bb54-46e7-84b7-f63605971b91",
+      "kind": "BusinessProcess",
+      "field": "HeadTask",
+      "owner_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "owner": "BusinessProcess.ProbeBusinessProcess",
+      "exported_fields": [
+        "HeadTask"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>BusinessProcess.ProbeBusinessProcess</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>HeadTask</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,b14957ee-2c14-4710-bcd6-d0c5741a5748,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-8}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS56",
+      "id": "e7468776-6c6c-4ab0-8d7f-8ccfe46be5c8",
+      "kind": "BusinessProcess",
+      "field": "Completed",
+      "owner_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "owner": "BusinessProcess.ProbeBusinessProcess",
+      "exported_fields": [
+        "Completed"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>BusinessProcess.ProbeBusinessProcess</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Completed</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,b14957ee-2c14-4710-bcd6-d0c5741a5748,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-7}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS57",
+      "id": "4a5907d2-b1e4-4dca-b1b9-82716e945bd2",
+      "kind": "BusinessProcess",
+      "field": "Ref",
+      "owner_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "owner": "BusinessProcess.ProbeBusinessProcess",
+      "exported_fields": [
+        "Ref"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>BusinessProcess.ProbeBusinessProcess</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Ref</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,b14957ee-2c14-4710-bcd6-d0c5741a5748,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-5}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS58",
+      "id": "92ccfce5-e437-4c43-89e1-448841ab5123",
+      "kind": "BusinessProcess",
+      "field": "DeletionMark",
+      "owner_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "owner": "BusinessProcess.ProbeBusinessProcess",
+      "exported_fields": [
+        "DeletionMark"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>BusinessProcess.ProbeBusinessProcess</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>DeletionMark</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,b14957ee-2c14-4710-bcd6-d0c5741a5748,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-4}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS59",
+      "id": "49edf878-151f-4ab2-84d5-28a3e874128a",
+      "kind": "BusinessProcess",
+      "field": "Date",
+      "owner_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "owner": "BusinessProcess.ProbeBusinessProcess",
+      "exported_fields": [
+        "Date"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>BusinessProcess.ProbeBusinessProcess</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Date</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,b14957ee-2c14-4710-bcd6-d0c5741a5748,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-3}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    },
+    {
+      "name": "ProbeStandardRLS60",
+      "id": "b50b4b55-f003-4d97-be25-f58e37fd6a5b",
+      "kind": "BusinessProcess",
+      "field": "Number",
+      "owner_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "owner": "BusinessProcess.ProbeBusinessProcess",
+      "exported_fields": [
+        "Number"
+      ],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>BusinessProcess.ProbeBusinessProcess</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>Number</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,b14957ee-2c14-4710-bcd6-d0c5741a5748,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-2}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}"
+    }
+  ],
+  "unsupported": [
+    {
+      "name": "ProbeStandardRLS13",
+      "id": "f48c88ee-3349-4cee-9f1a-e47ecd1f96b2",
+      "kind": "AccumulationRegister",
+      "field": "RecordType",
+      "owner_id": "8493712c-6960-4e8f-9324-90fa3d5b318c",
+      "owner": "AccumulationRegister.ProbeAccumulationRegister",
+      "exported_fields": [],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>AccumulationRegister.ProbeAccumulationRegister</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,8493712c-6960-4e8f-9324-90fa3d5b318c,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-9}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}",
+      "input_xml": "<?xml version='1.0' encoding='utf-8'?>\n<ns0:Rights xmlns:ns0=\"http://v8.1c.ru/8.2/roles\" version=\"2.21\"><ns0:setForNewObjects>false</ns0:setForNewObjects><ns0:setForAttributesByDefault>false</ns0:setForAttributesByDefault><ns0:independentRightsOfChildObjects>true</ns0:independentRightsOfChildObjects><ns0:object><ns0:name>AccumulationRegister.ProbeAccumulationRegister</ns0:name><ns0:right><ns0:name>Read</ns0:name><ns0:value>true</ns0:value><ns0:restrictionByCondition><ns0:field>RecordType</ns0:field><ns0:condition>WHERE FALSE</ns0:condition></ns0:restrictionByCondition></ns0:right></ns0:object></ns0:Rights>"
+    },
+    {
+      "name": "ProbeStandardRLS40",
+      "id": "811fa553-8bf7-40e5-abf9-2fccb0f9dacb",
+      "kind": "DocumentJournal",
+      "field": "Type",
+      "owner_id": "d3ec8062-3649-40f1-af09-2a5cb49a1779",
+      "owner": "DocumentJournal.ProbeDocumentJournal",
+      "exported_fields": [],
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>true</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>DocumentJournal.ProbeDocumentJournal</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t</object>\n</Rights>",
+      "body": "{10,\r\n{1,\r\n{\r\n{1,d3ec8062-3649-40f1-af09-2a5cb49a1779,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{-60003}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,1,4294967295}",
+      "input_xml": "<?xml version='1.0' encoding='utf-8'?>\n<ns0:Rights xmlns:ns0=\"http://v8.1c.ru/8.2/roles\" version=\"2.21\"><ns0:setForNewObjects>false</ns0:setForNewObjects><ns0:setForAttributesByDefault>false</ns0:setForAttributesByDefault><ns0:independentRightsOfChildObjects>true</ns0:independentRightsOfChildObjects><ns0:object><ns0:name>DocumentJournal.ProbeDocumentJournal</ns0:name><ns0:right><ns0:name>Read</ns0:name><ns0:value>true</ns0:value><ns0:restrictionByCondition><ns0:field>Type</ns0:field><ns0:condition>WHERE FALSE</ns0:condition></ns0:restrictionByCondition></ns0:right></ns0:object></ns0:Rights>"
+    }
+  ],
+  "definitions": [
+    {
+      "object_id": "0fb60d64-670c-4869-a381-7f563c401c24",
+      "kind": "Document",
+      "name": "ProbeDocument",
+      "qualified_name": "Document.ProbeDocument",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "0fb60d64-670c-4869-a381-7f563c401c24",
+      "stored": true
+    },
+    {
+      "object_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "kind": "ExchangePlan",
+      "name": "ProbeExchangePlan",
+      "qualified_name": "ExchangePlan.ProbeExchangePlan",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "580173e2-c3e2-47fe-b0a5-6c5ff23d6267",
+      "stored": true
+    },
+    {
+      "object_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "kind": "Task",
+      "name": "ProbeTask",
+      "qualified_name": "Task.ProbeTask",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "7670e4fb-c8dc-445e-bf50-7dba5b8a458d",
+      "stored": true
+    },
+    {
+      "object_id": "8493712c-6960-4e8f-9324-90fa3d5b318c",
+      "kind": "AccumulationRegister",
+      "name": "ProbeAccumulationRegister",
+      "qualified_name": "AccumulationRegister.ProbeAccumulationRegister",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "8493712c-6960-4e8f-9324-90fa3d5b318c",
+      "stored": true
+    },
+    {
+      "object_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "kind": "Catalog",
+      "name": "ProbeCatalog",
+      "qualified_name": "Catalog.ProbeCatalog",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "966b6efa-7b84-4091-90c1-27b7dc4b88a1",
+      "stored": true
+    },
+    {
+      "object_id": "9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64",
+      "kind": "InformationRegister",
+      "name": "ProbeInformationRegister",
+      "qualified_name": "InformationRegister.ProbeInformationRegister",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "9ac7d8a3-f482-48e5-8b8d-a2f7d15eca64",
+      "stored": true
+    },
+    {
+      "object_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "kind": "BusinessProcess",
+      "name": "ProbeBusinessProcess",
+      "qualified_name": "BusinessProcess.ProbeBusinessProcess",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "b14957ee-2c14-4710-bcd6-d0c5741a5748",
+      "stored": true
+    },
+    {
+      "object_id": "d3ec8062-3649-40f1-af09-2a5cb49a1779",
+      "kind": "DocumentJournal",
+      "name": "ProbeDocumentJournal",
+      "qualified_name": "DocumentJournal.ProbeDocumentJournal",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "d3ec8062-3649-40f1-af09-2a5cb49a1779",
+      "stored": true
+    },
+    {
+      "object_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "kind": "ChartOfCharacteristicTypes",
+      "name": "ProbeChartOfCharacteristicTypes",
+      "qualified_name": "ChartOfCharacteristicTypes.ProbeChartOfCharacteristicTypes",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "ecc82b24-ed5d-4818-a694-80d9361c23b4",
+      "stored": true
+    },
+    {
+      "object_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "kind": "Configuration",
+      "name": "\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f",
+      "qualified_name": "Configuration.\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f",
+      "parent_id": "00000000-0000-0000-0000-000000000000",
+      "stored_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored": true
+    }
+  ]
+}

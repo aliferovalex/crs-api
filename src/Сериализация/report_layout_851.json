@@ -26,23 +26,185 @@
     "Manager"
   ],
   "input_fields": [],
-  "child_collections": {"Form": {"kind": "ReportForm", "slot": 5}, "Template": {"kind": "Template", "slot": 3}},
+  "child_collections": {
+    "Form": {
+      "kind": "ReportForm",
+      "slot": 5
+    },
+    "Template": {
+      "kind": "Template",
+      "slot": 3
+    }
+  },
   "reference_values": {
-    "DefaultForm": {"path": [1, 4], "target": "ReportForm", "owner_kind": "Report"},
-    "MainDataCompositionSchema": {"path": [1, 5], "target": "Template", "owner_kind": "Report", "owned_tag": "Template"},
-    "AuxiliaryForm": {"path": [1, 14], "target": "ReportForm", "owner_kind": "Report"}
+    "MainDataCompositionSchema": {
+      "path": [
+        1,
+        5
+      ],
+      "target": "Template",
+      "owner_kind": "Report",
+      "owned_tag": "Template"
+    }
   },
   "scalar_properties": {
-    "UseStandardCommands": {"path": [1, 7], "values": {"false": 0, "true": 1}},
-    "IncludeHelpInContents": {"path": [1, 11], "values": {"false": 0, "true": 1}}
+    "UseStandardCommands": {
+      "path": [
+        1,
+        7
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "IncludeHelpInContents": {
+      "path": [
+        1,
+        11
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    }
   },
   "localized_properties": {
-    "ExtendedPresentation": [1, 15],
-    "Explanation": [1, 16]
+    "ExtendedPresentation": [
+      1,
+      15
+    ],
+    "Explanation": [
+      1,
+      16
+    ]
   },
   "common_path": [
     1,
     3,
     1
-  ]
+  ],
+  "inline_collections": {
+    "Attribute": {
+      "slot": 4,
+      "template": "{{0,{27,{2,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{\"Pattern\",{\"S\",80,1}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"S\",\"\"},0,0,0}},0}",
+      "defaults": {},
+      "filling": false,
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput"
+      ]
+    }
+  },
+  "tabular_collections": {
+    "TabularSection": {
+      "slot": 6,
+      "kind": "Report"
+    }
+  },
+  "command_collections": {
+    "Command": {
+      "slot": 7,
+      "template": "{{0,{1,{2,00000000-0000-0000-0000-000000000000,078a6af8-d22c-4248-9c33-7e90075a3d2c},{9,{4,0,{0},\"\",-1,-1,1,0,\"\"},3,{0},1,{0,0,0},0,{1,77ea1b8f-dd79-4717-9dba-5628e7f348cf},{\"Pattern\"},{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,0,0}}},0}",
+      "common_path": [
+        0,
+        1,
+        2,
+        9
+      ],
+      "id_path": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "defaults": {
+        "Group": "NavigationPanelOrdinary",
+        "CommandParameterType": "",
+        "ParameterUseMode": "Single",
+        "ModifiesData": "false",
+        "Representation": "Auto",
+        "ToolTip": "",
+        "Picture": "",
+        "Shortcut": "",
+        "OnMainServerUnavalableBehavior": "Auto"
+      },
+      "module_suffix": ".2",
+      "scalar_properties": {
+        "ModifiesData": {
+          "path": [
+            0,
+            1,
+            2,
+            10
+          ],
+          "values": {
+            "false": 0,
+            "true": 1
+          }
+        },
+        "Representation": {
+          "path": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "values": {
+            "Auto": 3,
+            "Text": 0,
+            "Picture": 1,
+            "PictureAndText": 2
+          }
+        },
+        "ParameterUseMode": {
+          "path": [
+            0,
+            1,
+            2,
+            11
+          ],
+          "values": {
+            "Single": 0,
+            "Multiple": 1
+          }
+        }
+      },
+      "localized_properties": {
+        "ToolTip": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "type_path": [
+        0,
+        1,
+        2,
+        8
+      ]
+    }
+  }
 }

@@ -4,8 +4,9 @@ from pathlib import Path
 from xml.etree import ElementTree as E
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'/'Сериализация'))
 import preparation_plan as p
-import metadata_serializer as s
-import test_metadata_serializer as root
+import metadata_context
+import native_metadata as s
+import test_configuration_serializer as root
 
 CID='33333333-3333-4333-8333-333333333333';FID='44444444-4444-4444-8444-444444444444'
 
@@ -28,11 +29,12 @@ class PreparationPlanTests(unittest.TestCase):
 
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.dir=Path(self.temp.name)
-        r,_=root.property_fixture('8.5.1.1529');self.objects={root.ID:s.context_metadata(base64.b64decode(r['context']),root.ID)}
+        r,_=root.property_fixture('8.5.1.1529');self.objects={root.ID:metadata_context.context_metadata(base64.b64decode(r['context']),root.ID)}
 
     def add(self,oid,kind,parent,name='Item'):
         docs=copy.deepcopy(self.objects[root.ID]);m=docs[0]
         m[1],m[2],m[3],m[9]=s.atom(oid),s.atom(p.ids.class_id(kind)),s.atom(parent),s.atom(name,True)
+        m[12],m[13],m[14]=[s.atom(0)],[s.atom(0)],[s.atom(0)]
         self.objects[oid]=docs
 
     def xml(self,path,kind,oid,name='Item'):
@@ -42,6 +44,11 @@ class PreparationPlanTests(unittest.TestCase):
         return path
 
     def plan(self,path,**options):
+        for oid,docs in self.objects.items():
+            rows={}
+            for child,child_docs in self.objects.items():
+                if s.val(child_docs[0][3])==oid:rows.setdefault(s.val(child_docs[0][2]),[]).append(child)
+            docs[0][12]=[s.atom(len(rows))]+[[s.atom(cls),s.atom(len(children))]+[s.atom(child) for child in children] for cls,children in rows.items()]
         context=s.storage([s.text_bytes(d) for d in self.objects.values()],s.text_bytes([[s.atom(0)]]))
         return p.plan(dict(xml_path=str(path),context=base64.b64encode(context).decode(),options=options))
 
@@ -93,19 +100,24 @@ class PreparationPlanTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'array'):self.plan(path,related_xml_paths=str(recorder))
 
     def test_processor_reads_whole_module_files_and_rejects_unknown_companions(self):
-        path=self.xml(Path('DataProcessors/Item.xml'),'DataProcessor',CID)
-        ext=path.with_suffix('')/'Ext';ext.mkdir(parents=True)
-        (ext/'ObjectModule.bsl').write_text('// object module',encoding='utf-8');(ext/'ManagerModule.bsl').write_text('',encoding='utf-8')
-        self.assertEqual(self.plan(path)['modules'],{'ObjectModule':'// object module','ManagerModule':''})
-        (ext/'Unknown.xml').write_text('<Lost/>',encoding='utf-8')
-        with self.assertRaisesRegex(ValueError,'companion'):self.plan(path)
+        for kind,folder,names in [('DataProcessor','DataProcessors',['ObjectModule','ManagerModule']),('Catalog','Catalogs',['ObjectModule','ManagerModule']),('Document','Documents',['ObjectModule','ManagerModule']),('Enum','Enums',['ManagerModule']),('Constant','Constants',['ValueManagerModule','ManagerModule']),('DocumentJournal','DocumentJournals',['ManagerModule'])]:
+            with self.subTest(kind=kind):
+                path=self.xml(Path(folder)/'Item.xml',kind,CID);ext=path.with_suffix('')/'Ext';ext.mkdir(parents=True)
+                sources={name:'// complete '+name if i==0 else '' for i,name in enumerate(names)}
+                for name,text in sources.items():(ext/(name+'.bsl')).write_text(text,encoding='utf-8')
+                self.assertEqual(self.plan(path)['modules'],sources)
+                (ext/'Unknown.xml').write_text('<Lost/>',encoding='utf-8')
+                with self.assertRaisesRegex(ValueError,'companion'):self.plan(path)
 
     def test_command_modules_are_discovered_for_creation_and_change(self):
-        path=self.xml(Path('Documents/Item.xml'),'Document',CID);tree=E.parse(path);q=p.Q;command=E.SubElement(E.SubElement(tree.getroot()[0],q+'ChildObjects'),q+'Command',uuid=FID);E.SubElement(E.SubElement(command,q+'Properties'),q+'Name').text='TestCommand';tree.write(path,encoding='utf-8')
-        module=path.with_suffix('')/'Commands/TestCommand/Ext/CommandModule.bsl';module.parent.mkdir(parents=True);module.write_text('// full command',encoding='utf-8')
-        expected=[dict(object_id=FID,source_text='// full command')]
-        self.assertEqual(self.plan(path)['inline_modules'],expected)
-        self.add(CID,'Document',root.ID);self.assertEqual(self.plan(path)['inline_modules'],expected)
+        for kind,folder in [('Document','Documents'),('DataProcessor','DataProcessors'),('Report','Reports')]:
+            with self.subTest(kind=kind):
+                self.objects.pop(CID,None)
+                path=self.xml(Path(folder)/'Item.xml',kind,CID);tree=E.parse(path);q=p.Q;command=E.SubElement(E.SubElement(tree.getroot()[0],q+'ChildObjects'),q+'Command',uuid=FID);E.SubElement(E.SubElement(command,q+'Properties'),q+'Name').text='TestCommand';tree.write(path,encoding='utf-8')
+                module=path.with_suffix('')/'Commands/TestCommand/Ext/CommandModule.bsl';module.parent.mkdir(parents=True);module.write_text('// full command',encoding='utf-8')
+                expected=[dict(object_id=FID,source_text='// full command')]
+                self.assertEqual(self.plan(path)['inline_modules'],expected)
+                self.add(CID,kind,root.ID);self.assertEqual(self.plan(path)['inline_modules'],expected)
 
     def test_new_catalog_reads_all_referenced_forms_and_modules(self):
         path=self.xml(Path('Catalogs/Item.xml'),'Catalog',CID)
@@ -117,7 +129,9 @@ class PreparationPlanTests(unittest.TestCase):
         plan=self.plan(path);self.assertEqual(plan['forms'][0]['module_text'],'// entire module');self.assertEqual(plan['forms'][0]['form_xml'],'<Form/>')
         (ext/'Form/Module.bsl').unlink();self.assertIsNone(self.plan(path)['forms'][0]['module_text'])
         # File discovery is for creation; an existing Catalog does not create forms implicitly.
-        self.add(CID,'Catalog',root.ID);self.assertEqual(self.plan(path)['forms'],[]);self.objects.pop(CID)
+        self.add(CID,'Catalog',root.ID)
+        with self.assertRaisesRegex(ValueError,'creation package'):self.plan(path)
+        self.objects.pop(CID)
         self.add(FID,'CatalogForm',CID,'NewForm')
         with self.assertRaisesRegex(ValueError,'mismatch'):self.plan(path)
         self.objects.pop(FID);(ext/'Form.xml').unlink()

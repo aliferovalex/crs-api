@@ -1,0 +1,47 @@
+{
+  "sources": [
+    {
+      "platform": "8.5.1.1529",
+      "evidence": "Independent saved native demo CF and XML metadata identities"
+    },
+    {
+      "platform": "8.3.27.2342",
+      "evidence": "Saved repository CF; 598635 ordinary headers joined to a complete XML identity index; 18 obsolete references excluded"
+    }
+  ],
+  "header_version": 1,
+  "ordinary_selector": 0,
+  "kinds": {
+    "AccumulationRegister": 0,
+    "AddressingAttribute": 1,
+    "Attribute": 1,
+    "BusinessProcess": 0,
+    "Catalog": 0,
+    "ChartOfCharacteristicTypes": 0,
+    "Command": 0,
+    "CommonAttribute": 0,
+    "CommonCommand": 0,
+    "CommonForm": 0,
+    "Configuration": 0,
+    "Constant": 0,
+    "DataProcessor": 0,
+    "Dimension": 1,
+    "Document": 0,
+    "DocumentJournal": 0,
+    "ExchangePlan": 0,
+    "ExternalDataSource": 0,
+    "Field": 1,
+    "FilterCriterion": 0,
+    "InformationRegister": 0,
+    "Method": 0,
+    "Operation": 0,
+    "Report": 0,
+    "Resource": 1,
+    "Sequence": 0,
+    "SessionParameter": 0,
+    "Subsystem": 0,
+    "Table": 0,
+    "TabularSection": 1,
+    "Task": 0
+  }
+}

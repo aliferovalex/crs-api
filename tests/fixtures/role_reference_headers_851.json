@@ -1,0 +1,218 @@
+{
+  "source": {
+    "platform": "8.5.1.1529",
+    "evidence": "Independent saved native demo CF and XML metadata identities"
+  },
+  "samples": [
+    {
+      "object_id": "01997809-c86f-4db8-bfad-b6510c15aeeb",
+      "kind": "ExchangePlan",
+      "name": "\u041c\u043e\u0431\u0438\u043b\u044c\u043d\u044b\u0435",
+      "qualified_name": "ExchangePlan.\u041c\u043e\u0431\u0438\u043b\u044c\u043d\u044b\u0435",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "01997809-c86f-4db8-bfad-b6510c15aeeb",
+      "stored": true,
+      "native": "{1,01997809-c86f-4db8-bfad-b6510c15aeeb,0,0}"
+    },
+    {
+      "object_id": "fee2ca3f-0095-4191-ae35-f4886abc787d",
+      "kind": "DataProcessor",
+      "name": "\u0420\u0430\u0431\u043e\u0447\u0435\u0435\u041c\u0435\u0441\u0442\u043e\u041a\u0430\u0441\u0441\u0438\u0440\u0430",
+      "qualified_name": "DataProcessor.\u0420\u0430\u0431\u043e\u0447\u0435\u0435\u041c\u0435\u0441\u0442\u043e\u041a\u0430\u0441\u0441\u0438\u0440\u0430",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "fee2ca3f-0095-4191-ae35-f4886abc787d",
+      "stored": true,
+      "native": "{1,fee2ca3f-0095-4191-ae35-f4886abc787d,0,0}"
+    },
+    {
+      "object_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "kind": "Configuration",
+      "name": "\u0414\u0435\u043c\u043e\u043d\u0441\u0442\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0435\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435",
+      "qualified_name": "Configuration.\u0414\u0435\u043c\u043e\u043d\u0441\u0442\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0435\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435",
+      "parent_id": "00000000-0000-0000-0000-000000000000",
+      "stored_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored": true,
+      "native": "{1,a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c,0,0}"
+    },
+    {
+      "object_id": "5a77ed34-389a-45e7-85f4-1a2a7b95fd80",
+      "kind": "Catalog",
+      "name": "\u0422\u043e\u0432\u0430\u0440\u044b",
+      "qualified_name": "Catalog.\u0422\u043e\u0432\u0430\u0440\u044b",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "5a77ed34-389a-45e7-85f4-1a2a7b95fd80",
+      "stored": true,
+      "native": "{1,5a77ed34-389a-45e7-85f4-1a2a7b95fd80,0,0}"
+    },
+    {
+      "object_id": "eee0660d-aea1-41b6-84d3-eeb0db70a9c1",
+      "kind": "Attribute",
+      "name": "\u0420\u0430\u0441\u0447\u0435\u0442\u043d\u044b\u0439\u0421\u0447\u0435\u0442\u041f\u043e\u043a\u0443\u043f\u0430\u0442\u0435\u043b\u044f",
+      "qualified_name": "Document.\u041f\u043e\u0441\u0442\u0443\u043f\u043b\u0435\u043d\u0438\u0435\u0414\u0435\u043d\u0435\u0433.Attribute.\u0420\u0430\u0441\u0447\u0435\u0442\u043d\u044b\u0439\u0421\u0447\u0435\u0442\u041f\u043e\u043a\u0443\u043f\u0430\u0442\u0435\u043b\u044f",
+      "parent_id": "fd455a27-23d6-458c-827d-779819b10f57",
+      "stored_id": "fd455a27-23d6-458c-827d-779819b10f57",
+      "stored": false,
+      "native": "{1,eee0660d-aea1-41b6-84d3-eeb0db70a9c1,0,1}"
+    },
+    {
+      "object_id": "c4c43c07-2e0b-4776-8ffe-5f434f6c69b0",
+      "kind": "Constant",
+      "name": "\u0410\u0434\u0440\u0435\u0441IMAP\u0421\u0435\u0440\u0432\u0435\u0440\u0430",
+      "qualified_name": "Constant.\u0410\u0434\u0440\u0435\u0441IMAP\u0421\u0435\u0440\u0432\u0435\u0440\u0430",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "c4c43c07-2e0b-4776-8ffe-5f434f6c69b0",
+      "stored": true,
+      "native": "{1,c4c43c07-2e0b-4776-8ffe-5f434f6c69b0,0,0}"
+    },
+    {
+      "object_id": "f976b602-f27a-4b54-86f5-f2329f184dee",
+      "kind": "InformationRegister",
+      "name": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435\u0418\u0441\u0445\u043e\u0434\u044f\u0449\u0438\u0445\u041f\u0438\u0441\u0435\u043c",
+      "qualified_name": "InformationRegister.\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435\u0418\u0441\u0445\u043e\u0434\u044f\u0449\u0438\u0445\u041f\u0438\u0441\u0435\u043c",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "f976b602-f27a-4b54-86f5-f2329f184dee",
+      "stored": true,
+      "native": "{1,f976b602-f27a-4b54-86f5-f2329f184dee,0,0}"
+    },
+    {
+      "object_id": "c116721c-e207-4d3a-8652-ace8038824d0",
+      "kind": "FilterCriterion",
+      "name": "\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b\u041a\u043e\u043d\u0442\u0440\u0430\u0433\u0435\u043d\u0442\u0430",
+      "qualified_name": "FilterCriterion.\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b\u041a\u043e\u043d\u0442\u0440\u0430\u0433\u0435\u043d\u0442\u0430",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "c116721c-e207-4d3a-8652-ace8038824d0",
+      "stored": true,
+      "native": "{1,c116721c-e207-4d3a-8652-ace8038824d0,0,0}"
+    },
+    {
+      "object_id": "fd455a27-23d6-458c-827d-779819b10f57",
+      "kind": "Document",
+      "name": "\u041f\u043e\u0441\u0442\u0443\u043f\u043b\u0435\u043d\u0438\u0435\u0414\u0435\u043d\u0435\u0433",
+      "qualified_name": "Document.\u041f\u043e\u0441\u0442\u0443\u043f\u043b\u0435\u043d\u0438\u0435\u0414\u0435\u043d\u0435\u0433",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "fd455a27-23d6-458c-827d-779819b10f57",
+      "stored": true,
+      "native": "{1,fd455a27-23d6-458c-827d-779819b10f57,0,0}"
+    },
+    {
+      "object_id": "9ae23c50-0b5c-47aa-847f-3f2228403d02",
+      "kind": "Report",
+      "name": "\u0414\u0430\u0448\u0431\u043e\u0440\u0434\u041d\u0430\u0447\u0430\u043b\u043e",
+      "qualified_name": "Report.\u0414\u0430\u0448\u0431\u043e\u0440\u0434\u041d\u0430\u0447\u0430\u043b\u043e",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "9ae23c50-0b5c-47aa-847f-3f2228403d02",
+      "stored": true,
+      "native": "{1,9ae23c50-0b5c-47aa-847f-3f2228403d02,0,0}"
+    },
+    {
+      "object_id": "96ef0e75-a210-425d-86d1-beb68cdcf5b1",
+      "kind": "Command",
+      "name": "\u041f\u0443\u0442\u0435\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c\u041f\u043e\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u0438",
+      "qualified_name": "DataProcessor.\u041f\u0443\u0442\u0435\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c.Command.\u041f\u0443\u0442\u0435\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c\u041f\u043e\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u0438",
+      "parent_id": "74dbb7bf-0757-456d-9b0c-68fe8fec7f67",
+      "stored_id": "74dbb7bf-0757-456d-9b0c-68fe8fec7f67",
+      "stored": false,
+      "native": "{1,96ef0e75-a210-425d-86d1-beb68cdcf5b1,0,0}"
+    },
+    {
+      "object_id": "e718af75-1653-4321-aa29-30ac89cada0a",
+      "kind": "DocumentJournal",
+      "name": "\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u044b\u0435\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b",
+      "qualified_name": "DocumentJournal.\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u044b\u0435\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "e718af75-1653-4321-aa29-30ac89cada0a",
+      "stored": true,
+      "native": "{1,e718af75-1653-4321-aa29-30ac89cada0a,0,0}"
+    },
+    {
+      "object_id": "e8e5572d-2b9b-4e8b-aa3e-0bb8f6c6b1dd",
+      "kind": "CommonCommand",
+      "name": "\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c\u0421\u043a\u0430\u043d\u0435\u0440\u0428\u0442\u0440\u0438\u0445\u043a\u043e\u0434\u043e\u0432",
+      "qualified_name": "CommonCommand.\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c\u0421\u043a\u0430\u043d\u0435\u0440\u0428\u0442\u0440\u0438\u0445\u043a\u043e\u0434\u043e\u0432",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "e8e5572d-2b9b-4e8b-aa3e-0bb8f6c6b1dd",
+      "stored": true,
+      "native": "{1,e8e5572d-2b9b-4e8b-aa3e-0bb8f6c6b1dd,0,0}"
+    },
+    {
+      "object_id": "6d161857-6b7c-4551-81ae-fcc5215aaa37",
+      "kind": "CommonForm",
+      "name": "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0430\u041f\u043e\u0447\u0442\u044b",
+      "qualified_name": "CommonForm.\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0430\u041f\u043e\u0447\u0442\u044b",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "6d161857-6b7c-4551-81ae-fcc5215aaa37",
+      "stored": true,
+      "native": "{1,6d161857-6b7c-4551-81ae-fcc5215aaa37,0,0}"
+    },
+    {
+      "object_id": "af9279d9-ced0-4735-8fab-28669b9f971d",
+      "kind": "AccumulationRegister",
+      "name": "\u0412\u0437\u0430\u0438\u043c\u043e\u0440\u0430\u0441\u0447\u0435\u0442\u044b",
+      "qualified_name": "AccumulationRegister.\u0412\u0437\u0430\u0438\u043c\u043e\u0440\u0430\u0441\u0447\u0435\u0442\u044b",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "af9279d9-ced0-4735-8fab-28669b9f971d",
+      "stored": true,
+      "native": "{1,af9279d9-ced0-4735-8fab-28669b9f971d,0,0}"
+    },
+    {
+      "object_id": "f48ea467-ed8d-43d0-a9e7-77c8917d642d",
+      "kind": "Subsystem",
+      "name": "\u0417\u0430\u043a\u0443\u043f\u043a\u0438",
+      "qualified_name": "Subsystem.\u0417\u0430\u043a\u0443\u043f\u043a\u0438",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "f48ea467-ed8d-43d0-a9e7-77c8917d642d",
+      "stored": true,
+      "native": "{1,f48ea467-ed8d-43d0-a9e7-77c8917d642d,0,0}"
+    },
+    {
+      "object_id": "167ee2ef-335b-4fbd-8096-b2f542661c8d",
+      "kind": "ChartOfCharacteristicTypes",
+      "name": "\u0412\u0438\u0434\u044b\u0425\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a",
+      "qualified_name": "ChartOfCharacteristicTypes.\u0412\u0438\u0434\u044b\u0425\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "167ee2ef-335b-4fbd-8096-b2f542661c8d",
+      "stored": true,
+      "native": "{1,167ee2ef-335b-4fbd-8096-b2f542661c8d,0,0}"
+    },
+    {
+      "object_id": "0b3b80be-7c19-48dc-be95-bb442c3e76c1",
+      "kind": "SessionParameter",
+      "name": "\u042f\u0449\u0438\u043aIMAP",
+      "qualified_name": "SessionParameter.\u042f\u0449\u0438\u043aIMAP",
+      "parent_id": "a3a9949e-f1f0-4b3a-821f-a85a9fb2fb3c",
+      "stored_id": "0b3b80be-7c19-48dc-be95-bb442c3e76c1",
+      "stored": true,
+      "native": "{1,0b3b80be-7c19-48dc-be95-bb442c3e76c1,0,0}"
+    },
+    {
+      "object_id": "c70eb2d6-228b-4f7f-b6a5-2293dc3699cd",
+      "kind": "Operation",
+      "name": "\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c\u0414\u0430\u043d\u043d\u044b\u0435",
+      "qualified_name": "WebService.MAExchange.Operation.\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c\u0414\u0430\u043d\u043d\u044b\u0435",
+      "parent_id": "f5b4c121-5c69-4a35-8768-edd0500528ad",
+      "stored_id": "f5b4c121-5c69-4a35-8768-edd0500528ad",
+      "stored": false,
+      "native": "{1,c70eb2d6-228b-4f7f-b6a5-2293dc3699cd,0,0}"
+    },
+    {
+      "object_id": "3015dea0-329a-472f-a1c3-2a7da18a9d9c",
+      "kind": "Dimension",
+      "name": "\u0412\u0438\u0434\u0426\u0435\u043d",
+      "qualified_name": "InformationRegister.\u0426\u0435\u043d\u044b\u0422\u043e\u0432\u0430\u0440\u043e\u0432.Dimension.\u0412\u0438\u0434\u0426\u0435\u043d",
+      "parent_id": "9c8fea36-8fa4-40fd-af44-ed2c1c12cb26",
+      "stored_id": "9c8fea36-8fa4-40fd-af44-ed2c1c12cb26",
+      "stored": false,
+      "native": "{1,3015dea0-329a-472f-a1c3-2a7da18a9d9c,0,1}"
+    },
+    {
+      "object_id": "025a118c-8ec7-445b-b43b-46caf7a8e15e",
+      "kind": "Resource",
+      "name": "\u041a\u0443\u0440\u0441",
+      "qualified_name": "InformationRegister.\u041a\u0443\u0440\u0441\u044b\u0412\u0430\u043b\u044e\u0442.Resource.\u041a\u0443\u0440\u0441",
+      "parent_id": "4483701b-b25a-4446-8d5c-d307e5b15711",
+      "stored_id": "4483701b-b25a-4446-8d5c-d307e5b15711",
+      "stored": false,
+      "native": "{1,025a118c-8ec7-445b-b43b-46caf7a8e15e,0,1}"
+    }
+  ]
+}

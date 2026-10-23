@@ -5,9 +5,11 @@ buttons, form commands and selected event bindings.
 Unknown XML is rejected rather than discarded. Native data remains the baseline
 for properties that have no implemented XML mapping.
 """
-import re
+import json,re
+from functools import lru_cache
+from pathlib import Path
 from xml.etree import ElementTree as E
-import metadata_serializer as s
+import native_metadata as s
 import managed_form_elements as elements
 
 NS = 'http://v8.1c.ru/8.3/xcf/logform'
@@ -18,7 +20,7 @@ Q = '{' + NS + '}'
 class ObjectPaths(dict):
     """Native paths plus the set of bindings that represent tabular collections."""
     def __init__(self,*args,**kwargs):
-        super().__init__(*args,**kwargs);self.tables=set();self.types={};self.references={}
+        super().__init__(*args,**kwargs);self.tables=set();self.types={};self.references={};self.main_types={};self.main_collections=set()
 
 
 def scalar_type(pattern):
@@ -27,7 +29,7 @@ def scalar_type(pattern):
 
 
 def tabular_paths(owner,kind,paths):
-    import catalog_tabular_xml as tabular
+    import tabular_section_xml as tabular
     for entry in tabular.collection(owner,kind):
         common=tabular.common(entry);name='Object.'+s.val(common[2]);oid=s.val(common[1][2])
         if name in paths:raise ValueError('Ambiguous tabular form binding')
@@ -40,59 +42,104 @@ def tabular_paths(owner,kind,paths):
     return paths
 
 
-def catalog_paths(owner):
-    """Resolve XML paths using the parent's native inline attribute UUIDs."""
-    result = ObjectPaths({name:s.Parser(value).documents()[0] for name,value in
-              [('Object.Code','{2,{1},{-2}}'), ('Object.Description','{2,{1},{-3}}')]})
-    result.types.update({'Object.Code':'S','Object.Description':'S'})
-    for entry in owner[6][2:]:
-        common = entry[0][1][1][1]
-        name = 'Object.' + s.val(common[2])
-        if name in result:
-            raise ValueError('Ambiguous Catalog attribute path')
-        result[name] = s.Parser('{2,{1},{0,'+s.val(common[1][2])+'}}').documents()[0]
-        result.types[name]=scalar_type(entry[0][1][1][2])
-    return tabular_paths(owner,'Catalog',result)
-
-
 def object_paths(owner,kind):
-    if kind=='Catalog':return catalog_paths(owner)
+    import managed_form_bindings as bindings
+    profile=bindings.owners().get(kind,{})
+    if 'inline_groups' in profile:
+        result=ObjectPaths()
+        if owner is not None:
+            bindings.attach_types(result,owner,kind);bindings.register_fields(result,owner,kind)
+            if profile.get('tabular_sections'):tabular_paths(owner,kind,result)
+        return result
+    return bindings.attach_types(_object_paths(owner,kind),owner,kind)
+
+
+def _object_paths(owner,kind):
     if kind=='CommonForm':return ObjectPaths()
     if kind in ('DataProcessor','Report'):return ObjectPaths()
-    if kind!='Document':raise ValueError('Unsupported form owner kind')
-    result=ObjectPaths({name:s.Parser(value).documents()[0] for name,value in
-            [('Object.Number','{2,{1},{-2}}'),('Object.Date','{2,{1},{-3}}')]})
-    result.types.update({'Object.Number':'S','Object.Date':'D'})
-    if owner is not None:
-        for entry in owner[5][2:]:
-            common=entry[0][1][1][1];name='Object.'+s.val(common[2])
-            if name in result:raise ValueError('Ambiguous Document attribute path')
-            result[name]=s.Parser('{2,{1},{0,'+s.val(common[1][2])+'}}').documents()[0]
-            result.types[name]=scalar_type(entry[0][1][1][2])
-    return tabular_paths(owner,'Document',result) if owner is not None else result
+    import managed_form_profiles as profiles
+    if kind in profiles.KINDS:return ObjectPaths()
+    raise ValueError('Unsupported form owner kind')
 
 
-def scalar_attributes(form,attrs):
-    """Replace the whole scalar attribute collection of a common form."""
+@lru_cache(maxsize=1)
+def attribute_layout():
+    return json.loads(Path(__file__).with_name('managed_form_attribute_layout_851.json').read_text(encoding='utf-8'))
+
+
+def attribute_identity(node,tag,names,numbers):
+    name=node.get('name','');number=node.get('id','')
+    if (node.tag!=Q+tag or set(node.attrib)!={'name','id'}
+            or not re.fullmatch(r'[^\W\d]\w{0,79}',name,re.UNICODE)
+            or not number.isdecimal() or not 1<=int(number)<=2147483647
+            or name.casefold() in names or int(number) in numbers
+            or (node.text or '').strip()):
+        raise ValueError('Unsupported or duplicate form '+tag)
+    names.add(name.casefold());numbers.add(int(number))
+    return name,int(number)
+
+
+def attribute_columns(node,entry,paths,name,number):
+    """Rebuild all columns for both intrinsic collection types, including paths."""
     import type_description_xml as types
-    if attrs is not None and (attrs.attrib or len(attrs)>256):raise ValueError('Invalid form Attributes')
-    entries=[];paths=ObjectPaths();numbers=set();names=set()
-    for node in ([] if attrs is None else attrs):
-        name=node.get('name','');number=node.get('id','')
-        if (node.tag!=Q+'Attribute' or set(node.attrib)!={'name','id'}
-                or not re.fullmatch(r'[^\W\d]\w{0,79}',name,re.UNICODE)
-                or not number.isdecimal() or not 1<=int(number)<=2147483647
-                or name.casefold() in names or int(number) in numbers
-                or len(node)!=1 or node[0].tag!=Q+'Type'):
-            raise ValueError('Unsupported or duplicate scalar form attribute')
-        names.add(name.casefold());numbers.add(int(number))
-        entry=s.Parser('{9,{1},0,"",{1,0},{"Pattern"},{0,{0,{"B",1},0}},{0,{0,{"B",1},0}},{0,0},{0,0},0,0,0,0,{0,0},{0,0}}').documents()[0]
-        entry[1]=[s.atom(int(number))];entry[3]=s.atom(name,True);entry[5]=types.read(node[0]);entries.append(entry)
-        paths[name]=[s.atom(1),[s.atom(int(number))]]
-        paths.types[name]=scalar_type(entry[5])
+    if node is not None and (node.attrib or len(node)>256 or (node.text or '').strip()):raise ValueError('Invalid form Columns')
+    layout=attribute_layout();names=set();numbers=set();columns=[]
+    for column in ([] if node is None else node):
+        column_name,column_id=attribute_identity(column,'Column',names,numbers)
+        props=elements.fields(column,{'Type','Title'})
+        native=s.Parser(layout['column_template']).documents()[0]
+        native[1]=s.atom(column_id);native[3]=s.atom(column_name,True);native[4]=elements.title(props.get('Title'))
+        native[5]=types.read_form(props.get('Type'),paths.references);columns.append(native)
+        path=name+'.'+column_name
+        if path in paths:raise ValueError('Ambiguous form column binding')
+        paths[path]=[s.atom(2),[s.atom(number)],[s.atom(column_id)]]
+        paths.types[path]=scalar_type(native[5])
+    entry[layout['column_count_slot']]=s.atom(len(columns))
+    entry[layout['columns_slot']:layout['columns_slot']]=columns
+
+
+def attributes_from_xml(form,attrs,paths=None,main=None,main_type=None):
+    """Replace all attributes, retaining the verified native main-object type."""
+    import type_description_xml as types
+    if attrs is not None and (attrs.attrib or len(attrs)>256 or (attrs.text or '').strip()):raise ValueError('Invalid form Attributes')
+    entries=[];numbers=set();names=set()
+    result=ObjectPaths(paths or {})
+    if paths is not None:
+        result.tables.update(getattr(paths,'tables',set()))
+        result.types.update(getattr(paths,'types',{}))
+        result.references.update(getattr(paths,'references',{}))
+        result.main_types.update(getattr(paths,'main_types',{}));result.main_collections.update(getattr(paths,'main_collections',set()))
     previous=int(s.val(form[3][1]))
+    main_entry=None
+    if main is not None:
+        if main_type is None:raise ValueError('Main attribute type context is required')
+        main_entry=s.Parser(attribute_layout()['attribute_template']).documents()[0]
+        main_entry[5]=[s.atom('Pattern',True),[s.atom('#',True),s.atom(main_type)]];main_entry[10]=s.atom(1)
+    for node in ([] if attrs is None else attrs):
+        name,number=attribute_identity(node,'Attribute',names,numbers)
+        props=elements.fields(node,{'Type','Title','MainAttribute'} if node is main else {'Type','Title','Columns'})
+        if node is main:
+            main_entry[1]=[s.atom(number)];main_entry[3]=s.atom(name,True)
+            main_entry[4]=elements.title(props.get('Title'))
+            entries.append(main_entry)
+            continue
+        layout=attribute_layout();entry=s.Parser(layout['attribute_template']).documents()[0]
+        entry[1]=[s.atom(number)];entry[3]=s.atom(name,True);entry[4]=elements.title(props.get('Title'))
+        type_node=props.get('Type');collection=None
+        if type_node is not None and not type_node.attrib and len(type_node)==1 and type_node[0].tag=='{'+CORE+'}Type' and not type_node[0].attrib and not len(type_node[0]):
+            collection=layout['collection_types'].get(type_node[0].text)
+        if collection is None:
+            if 'Columns' in props:raise ValueError('Columns require a ValueTable or ValueTree attribute')
+            entry[5]=types.read_form(type_node,result.references)
+        else:
+            entry[5]=[s.atom('Pattern',True),[s.atom('#',True),s.atom(collection)]]
+            result.tables.add(name);attribute_columns(props.get('Columns'),entry,result,name,number)
+        entries.append(entry)
+        if name in result:raise ValueError('Ambiguous form attribute binding')
+        result[name]=[s.atom(1),[s.atom(number)]]
+        result.types[name]=scalar_type(entry[5])
     form[3][2:2+previous]=entries;form[3][1]=s.atom(len(entries))
-    return paths
+    return result
 
 
 def interface(raw):
@@ -100,33 +147,6 @@ def interface(raw):
     if len(docs) != 1 or len(docs[0]) != 10 or s.val(docs[0][0]) != '4' or s.val(docs[0][1][0]) != '59':
         raise ValueError('Unsupported managed interface layout')
     return docs[0]
-
-
-def append_attribute(raw, attribute, paths, object_name):
-    """Compatibility adapter: build a whole XML document, then use convert()."""
-    form = interface(raw); index, count, end = elements.form_collection(form)
-    root = E.Element(Q+'Form', version='2.21')
-    E.SubElement(root,Q+'UseForFoldersAndItems').text = 'Items'
-    E.SubElement(root,Q+'AutoCommandBar',name='FormCommandBar',id='-1')
-    items = E.SubElement(root,Q+'ChildItems'); maximum = 0
-    reverse = {s.render(value):key for key,value in paths.items()}
-    wanted = 'Object.'+attribute
-    for i in range(index+1,end,2):
-        entry = form[1][i+1]; name = s.val(entry[6]); number = int(s.val(entry[1][0]))
-        path = reverse.get(s.render(entry[11]))
-        if path is None:
-            raise ValueError('Unknown existing field binding')
-        if name == attribute or path == wanted:
-            raise ValueError('Field already exists')
-        maximum = max(maximum, number)
-        field = E.SubElement(items,Q+'InputField',name=name,id=str(number))
-        E.SubElement(field,Q+'DataPath').text = path
-    field = E.SubElement(items,Q+'InputField',name=attribute,id=str(max(20,maximum+10)))
-    E.SubElement(field,Q+'DataPath').text = wanted
-    attr = E.SubElement(E.SubElement(root,Q+'Attributes'),Q+'Attribute',name='Object',id='1')
-    E.SubElement(E.SubElement(attr,Q+'Type'),'{'+CORE+'}Type').text = 'cfg:CatalogObject.'+object_name
-    E.SubElement(attr,Q+'MainAttribute').text = 'true'
-    return convert(raw,E.tostring(root,encoding='unicode'),paths=paths,object_name=object_name)
 
 
 def model_from_xml(raw, form_xml=None, module_text=None, paths=None, object_name=None,kind='Catalog',configuration_id=None):
@@ -154,27 +174,34 @@ def model_from_xml(raw, form_xml=None, module_text=None, paths=None, object_name
             seen.add(child.tag)
             key=child.tag.removeprefix(Q)
             if key in defaults and (child.attrib or len(child) or child.text!=defaults[key]):raise ValueError('Unsupported document form property: '+key)
+        attrs = root.find(Q+'Attributes')
+        scalar=kind=='CommonForm' or attrs is None or not any(node.find(Q+'MainAttribute') is not None for node in attrs)
         usage = root.find(Q+'UseForFoldersAndItems')
-        if (kind=='Catalog' and usage is None) or (usage is not None and (kind!='Catalog' or usage.attrib or len(usage) or usage.text!='Items')):
-            raise ValueError('Only Catalog item forms are supported by the XML profile')
+        import managed_form_bindings
+        expected_usage=managed_form_bindings.owners().get(kind,{}).get('form_usage')
+        if (expected_usage is not None and not scalar and usage is None) or (usage is not None and (expected_usage is None or usage.attrib or len(usage) or usage.text!=expected_usage)):
+            raise ValueError('Unsupported form item/folder usage for owner: '+kind)
         bar = root.find(Q+'AutoCommandBar')
         if bar is None or len(bar) or bar.attrib != {'name':'FormCommandBar', 'id':'-1'}:
             raise ValueError('Only the default AutoCommandBar is supported')
         attrs = root.find(Q+'Attributes')
-        expected_type = 'cfg:'+kind+'Object.' + (object_name or '')
-        if kind=='CommonForm':
-            references=getattr(paths,'references',{})
-            paths=scalar_attributes(form,attrs);paths.references=references
-        elif attrs is None or attrs.attrib or len(attrs) != 1:
-            raise ValueError('Expected the sole main Object attribute')
-        attr = attrs[0] if kind!='CommonForm' else None
-        if kind!='CommonForm' and (attr.tag != Q+'Attribute' or attr.attrib != {'name':'Object', 'id':'1'} or len(attr) != 2):
-            raise ValueError('Unsupported form attributes')
+        main_attrs=[] if attrs is None else [node for node in attrs if node.find(Q+'MainAttribute') is not None]
+        if not scalar and len(main_attrs)!=1:raise ValueError('Expected one main attribute')
+        attr = main_attrs[0] if not scalar else None
         type_node = attr.find(Q+'Type') if attr is not None else None; main = attr.find(Q+'MainAttribute') if attr is not None else None
-        if kind!='CommonForm' and (type_node is None or type_node.attrib or len(type_node) != 1
+        if not scalar and (type_node is None or type_node.attrib or len(type_node) != 1
                 or type_node[0].tag != '{'+CORE+'}Type' or type_node[0].attrib or len(type_node[0])
-                or type_node[0].text != expected_type or main is None or main.attrib or len(main) or main.text != 'true'):
-            raise ValueError('Form main Object type does not match its owner')
+                or main is None or main.attrib or len(main) or main.text != 'true'):
+            raise ValueError('Main attribute binding has an unsupported type description')
+        main_id=None
+        if not scalar:
+            import managed_form_bindings as bindings
+            name,number=attribute_identity(attr,'Attribute',set(),set());key=type_node[0].text or ''
+            main_id=bindings.main_type(paths,form,key,kind,object_name or '')
+            paths=bindings.retarget(paths,name,number,key in getattr(paths,'main_collections',set()))
+        if scalar:
+            scalar_paths=ObjectPaths();scalar_paths.references.update(getattr(paths,'references',{}))
+        paths=attributes_from_xml(form,attrs,scalar_paths if scalar else paths,attr,main_id)
         items = root.find(Q+'ChildItems')
         if items is None:items=E.Element(Q+'ChildItems')
         if items.attrib or len(items) > 256:

@@ -1,0 +1,50 @@
+{
+  "source": "Independent Configurator 8.5.1.1529 demo compilation; raw state tables only, without object names. All 348 observed tables have version marker 0.",
+  "tables": [
+    {
+      "native": "{0,b7bab52d-c1b1-4bd8-8276-02db08d42352,-1}",
+      "states": {
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": -1
+      }
+    },
+    {
+      "native": "{0,c6de80da-a4f7-4ce9-bbeb-0b00ea564ec1,1,aa6448f2-be0f-42ea-ba26-1af7f52b5b65,1}",
+      "states": {
+        "c6de80da-a4f7-4ce9-bbeb-0b00ea564ec1": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1
+      }
+    },
+    {
+      "native": "{0,1c87578f-9e09-4ec0-a991-5629c87b1588,1,287b74b8-3a66-4a76-ba27-4f1f6a93770e,1,aa6448f2-be0f-42ea-ba26-1af7f52b5b65,1,b7bab52d-c1b1-4bd8-8276-02db08d42352,1}",
+      "states": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1
+      }
+    },
+    {
+      "native": "{0,1c87578f-9e09-4ec0-a991-5629c87b1588,1,287b74b8-3a66-4a76-ba27-4f1f6a93770e,1,aa6448f2-be0f-42ea-ba26-1af7f52b5b65,1,b7bab52d-c1b1-4bd8-8276-02db08d42352,1,24abfe06-289a-48c5-8bb4-032c733e45c5,1}",
+      "states": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "287b74b8-3a66-4a76-ba27-4f1f6a93770e": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "b7bab52d-c1b1-4bd8-8276-02db08d42352": 1,
+        "24abfe06-289a-48c5-8bb4-032c733e45c5": 1
+      }
+    },
+    {
+      "native": "{0,1c87578f-9e09-4ec0-a991-5629c87b1588,1,aa6448f2-be0f-42ea-ba26-1af7f52b5b65,1,64319ca1-f3d8-472e-82ce-5da233e6daaa,1,1b762bf9-df7f-4255-bbe6-f7578f41368d,1,5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb,1,9342b152-a7ae-4c79-9b7b-f4f028a36479,1,8497054a-ffd1-4ca7-bdfe-340b9ddc050a,1,479a42c0-c3e9-4ae7-bf4a-75cebc14fec4,1}",
+      "states": {
+        "1c87578f-9e09-4ec0-a991-5629c87b1588": 1,
+        "aa6448f2-be0f-42ea-ba26-1af7f52b5b65": 1,
+        "64319ca1-f3d8-472e-82ce-5da233e6daaa": 1,
+        "1b762bf9-df7f-4255-bbe6-f7578f41368d": 1,
+        "5b3ea0e2-fdb9-41f6-bf6c-25747906b4cb": 1,
+        "9342b152-a7ae-4c79-9b7b-f4f028a36479": 1,
+        "8497054a-ffd1-4ca7-bdfe-340b9ddc050a": 1,
+        "479a42c0-c3e9-4ae7-bf4a-75cebc14fec4": 1
+      }
+    }
+  ]
+}

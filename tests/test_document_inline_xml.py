@@ -2,12 +2,12 @@
 import json,unittest
 from pathlib import Path
 from xml.etree import ElementTree as E
-import metadata_serializer as s
-import flat_object_serializer as flat
+import native_metadata as s
+import metadata_object_xml as flat
 import inline_object_xml as inline
 import object_change_serializer as change
-import catalog_tabular_xml as tabular
-import test_catalog_tabular_xml as tables
+import tabular_section_xml as tabular
+import test_tabular_section_xml as tables
 import test_document_serializer as document
 import test_object_change_serializer as snapshots
 

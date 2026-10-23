@@ -3,16 +3,18 @@ import base64
 import unittest
 import uuid
 import xml.etree.ElementTree as E
-import test_constant_serializer as const
-import flat_object_serializer as cat
-import constant_serializer as c
-import metadata_serializer as s
+import test_object_creation_serializer as const
+import metadata_object_xml as cat
+import metadata_identifiers
+import xml_namespaces
+import object_creation_serializer as c
+import native_metadata as s
 
 
 def xml():
     return ('<MetaDataObject xmlns="%s" version="2.21"><Catalog uuid="%s">'
             '<Properties><Name>XML_Catalog</Name><Comment>Catalog test</Comment>'
-            '</Properties><ChildObjects/></Catalog></MetaDataObject>')%(c.MD,const.CID)
+            '</Properties><ChildObjects/></Catalog></MetaDataObject>')%(xml_namespaces.MD,const.CID)
 
 
 class CatalogSerializerTests(unittest.TestCase):
@@ -27,12 +29,12 @@ class CatalogSerializerTests(unittest.TestCase):
         self.assertEqual((s.val(n[17]),s.val(n[19])),('9','25'))
 
     def test_explicit_generated_types_round_trip(self):
-        root=E.fromstring(xml());obj=root[0];info=E.SubElement(obj,'{%s}InternalInfo'%c.MD)
+        root=E.fromstring(xml());obj=root[0];info=E.SubElement(obj,'{%s}InternalInfo'%xml_namespaces.MD)
         ids=[]
         for category in ('Object','Ref','Selection','List','Manager'):
-            node=E.SubElement(info,'{%s}GeneratedType'%c.READABLE,name='Catalog'+category+'.XML_Catalog',category=category)
+            node=E.SubElement(info,'{%s}GeneratedType'%xml_namespaces.READABLE,name='Catalog'+category+'.XML_Catalog',category=category)
             for key in ('TypeId','ValueId'):
-                value=str(uuid.uuid4());ids.append(value);E.SubElement(node,'{%s}%s'%(c.READABLE,key)).text=value
+                value=str(uuid.uuid4());ids.append(value);E.SubElement(node,'{%s}%s'%(xml_namespaces.READABLE,key)).text=value
         text=E.tostring(root,encoding='unicode')
         self.assertEqual(cat.object_xml(text, '8.5.1.1529', 'Catalog')[3],ids)
         self.assertEqual(cat.object_xml(text, '8.5.1.1529', 'Catalog')[2],cat.object_xml(text, '8.5.1.1529', 'Catalog')[2])
@@ -42,7 +44,7 @@ class CatalogSerializerTests(unittest.TestCase):
 
     def test_unsupported_children_properties_and_platform(self):
         cases=[xml().replace('<ChildObjects/>','<ChildObjects><Attribute/></ChildObjects>'),
-               xml().replace('</Properties>','<Hierarchical>true</Hierarchical></Properties>'),
+               xml().replace('</Properties>','<Hierarchical>unknown</Hierarchical></Properties>'),
                xml().replace('</Properties>','<Name>Duplicate</Name></Properties>'),
                '<!DOCTYPE x>'+xml()]
         for text in cases:
@@ -55,16 +57,16 @@ class CatalogSerializerTests(unittest.TestCase):
         rid=request['object_id'];data=base64.b64decode(request['snapshots'][rid])
         meta,pos=s.read_record(data,12);compressed,pos=s.read_record(data,pos)
         docs=s.Parser(s.inflate(compressed).decode('utf-8-sig')).documents()
-        docs[0].append([s.atom(c.identifiers.class_id('Catalog')),s.atom(0)])
+        docs[0].append([s.atom(metadata_identifiers.class_id('Catalog')),s.atom(0)])
         import hashlib
         body=s.compress(s.text_bytes(docs))
         m=s.Parser(meta.decode('utf-8-sig')).documents()[0]
         manifest=s.text_bytes([[s.atom(0),s.atom(1),m[1],s.atom(hashlib.sha1(meta).hexdigest(),True),s.atom(hashlib.sha1(body).hexdigest(),True),s.atom(0)]])
         request['snapshots'][rid]=base64.b64encode(s.storage([meta,body],manifest)).decode()
-        request.update(object_type='Catalog',catalog_xml=xml())
+        request.update(object_type='Catalog',object_xml=xml())
         result=c.serialize(request)
         new=next(v for v in result['descriptions'] if v['id']==const.CID)
-        self.assertEqual(new['class_id'],c.identifiers.class_id('Catalog'))
+        self.assertEqual(new['class_id'],metadata_identifiers.class_id('Catalog'))
         p=E.fromstring(result['request_xml']).find('{%s}params'%s.NS)
         features=p.find('{%s}features'%s.NS)
         self.assertEqual(len(features),2)

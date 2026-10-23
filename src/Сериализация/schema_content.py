@@ -142,7 +142,7 @@ def _normalize(doc, type_ids, style_ids):
                 if following is not None:node.insertBefore(child, following)
                 else:node.appendChild(child)
         if kind == ('http://v8.1c.ru/8.3/xcf/readable', 'Picture'):
-            import metadata_serializer as s
+            import native_metadata as s
             import picture_xml
             fields = {item.localName: item for item in _elements(node)}
             if set(fields) != {'Ref', 'LoadTransparent'} or len(_elements(node)) != 2 or any(

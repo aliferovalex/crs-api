@@ -1,0 +1,13 @@
+{
+  "source": "Saved independent native CF and XML export. Resource UUID and condition unchanged; field label anonymized. Query text in the four templates anonymized separately in source XML and native AST, keeping original envelopes and names.",
+  "field_xml": "<ns0:restrictionByCondition xmlns:ns0=\"http://v8.1c.ru/8.2/roles\">\n\t\t\t\t<ns0:field>Field</ns0:field>\n\t\t\t\t<ns0:condition>\u0413\u0414\u0415 \u041b\u041e\u0416\u042c</ns0:condition>\n\t\t\t</ns0:restrictionByCondition>\n\t\t",
+  "field_path": "{{0},{0,d0634a8e-676f-4f49-9a38-7cb80cfa9fdf}}",
+  "field_native": "{2,{1,\"\",0},{1,\"\u0413\u0414\u0415 \u041b\u041e\u0416\u042c\",1,{{0},{0,d0634a8e-676f-4f49-9a38-7cb80cfa9fdf}}}}",
+  "templates_xml": [
+    "<ns0:restrictionTemplate xmlns:ns0=\"http://v8.1c.ru/8.2/roles\">\n\t\t<ns0:name>\u041f\u043e\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u043c</ns0:name>\n\t\t<ns0:condition>SELECT\n\"sample\"</ns0:condition>\n\t</ns0:restrictionTemplate>\n\t",
+    "<ns0:restrictionTemplate xmlns:ns0=\"http://v8.1c.ru/8.2/roles\">\n\t\t<ns0:name>\u041f\u043e\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u043c\u0418\u041d\u0430\u0431\u043e\u0440\u0430\u043c\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043d\u043d\u044b\u0439</ns0:name>\n\t\t<ns0:condition>SELECT\n\"sample\"</ns0:condition>\n\t</ns0:restrictionTemplate>\n\t",
+    "<ns0:restrictionTemplate xmlns:ns0=\"http://v8.1c.ru/8.2/roles\">\n\t\t<ns0:name>\u041f\u043e\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u043c\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043d\u043d\u044b\u0439</ns0:name>\n\t\t<ns0:condition>SELECT\n\"sample\"</ns0:condition>\n\t</ns0:restrictionTemplate>\n\t",
+    "<ns0:restrictionTemplate xmlns:ns0=\"http://v8.1c.ru/8.2/roles\">\n\t\t<ns0:name>\u041f\u043e\u041d\u0430\u0431\u043e\u0440\u0430\u043c\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0439</ns0:name>\n\t\t<ns0:condition>SELECT\n\"sample\"</ns0:condition>\n\t</ns0:restrictionTemplate>\n"
+  ],
+  "templates_native": "{4,{\"\u041f\u043e\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u043c\",\"SELECT\r\n\"\"sample\"\"\"},{\"\u041f\u043e\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u043c\u0418\u041d\u0430\u0431\u043e\u0440\u0430\u043c\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043d\u043d\u044b\u0439\",\"SELECT\r\n\"\"sample\"\"\"},{\"\u041f\u043e\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u043c\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043d\u043d\u044b\u0439\",\"SELECT\r\n\"\"sample\"\"\"},{\"\u041f\u043e\u041d\u0430\u0431\u043e\u0440\u0430\u043c\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0439\",\"SELECT\r\n\"\"sample\"\"\"}}"
+}

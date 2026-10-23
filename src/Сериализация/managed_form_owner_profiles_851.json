@@ -1,0 +1,473 @@
+{
+  "AccountingRegister": {
+    "common_path": [
+      1,
+      1
+    ],
+    "body_template": "{1,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      15,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      15,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "AccountingRegister",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "AccumulationRegister": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      13,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      13,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "AccumulationRegister",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "BusinessProcess": {
+    "common_path": [
+      1,
+      1
+    ],
+    "body_template": "{1,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "BusinessProcess",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "CalculationRegister": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      15,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      15,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "CalculationRegister",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "Catalog": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      9,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      9,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "Catalog",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "ChartOfAccounts": {
+    "common_path": [
+      1,
+      1
+    ],
+    "body_template": "{1,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      15,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      15,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "ChartOfAccounts",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "ChartOfCalculationTypes": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      1,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "ChartOfCalculationTypes",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "ChartOfCharacteristicType": {
+    "common_path": [
+      1,
+      1
+    ],
+    "body_template": "{1,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      13,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      13,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "ChartOfCharacteristicTypes",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "DataProcessor": {
+    "common_path": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0},{0}}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      3,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      3,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "DataProcessor",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "Document": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      9,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      9,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "Document",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "DocumentJournal": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      3,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      3,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "DocumentJournal",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "Enum": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      5,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      5,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "Enum",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "ExchangePlan": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      12
+    ],
+    "owner_identity_path": [
+      1,
+      12,
+      1,
+      2
+    ],
+    "owner_xml": "ExchangePlan",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "FilterCriterion": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      5,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      5,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "FilterCriterion",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "InformationRegister": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      15,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      15,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "InformationRegister",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "Report": {
+    "common_path": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0},{0}}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      3,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      3,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "Report",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "SettingsStorage": {
+    "common_path": [
+      1,
+      1,
+      1
+    ],
+    "body_template": "{1,{0,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0}},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      1,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "SettingsStorage",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "Task": {
+    "common_path": [
+      1,
+      1
+    ],
+    "body_template": "{1,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "Task",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "Table": {
+    "common_path": [
+      1,
+      1
+    ],
+    "body_template": "{1,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      1,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "Table",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "Cube": {
+    "common_path": [
+      1,
+      1
+    ],
+    "body_template": "{1,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      1,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "Cube",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  },
+  "DimensionTable": {
+    "common_path": [
+      1,
+      1
+    ],
+    "body_template": "{1,{14,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},0,1,{2,{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,1},{\"#\",1708fdaa-cbce-4289-b373-07a5a74bee91,2}},0},0}",
+    "external_template": "{4,{59,0,0,0,0,1,0,0,00000000-0000-0000-0000-000000000000,1,{1,0},1,0,1,1,1,0,1,0,{0,1,0},{0},1,{22,{-1,02023637-7868-4a5f-8576-835a76e0c9ba},0,0,0,9,\"FormCommandBar\",{1,0},{1,0},0,1,0,0,0,2,2,{4,4,{0},4},{8,3,0,1,100},{0,0,0},1,{1,0,1,0},0,1,0,0,0,3,3,0},0,\"\",\"\",0,1,\"\",0,0,0,0,0,0,3,3,0,1,0,100,1,1,0,0,0,{59,0},1,{1,0},{4,0,{0},\"\",-1,-1,1,0,\"\"},0,0,3,0,2,4,0,0,2,0},\"\",{4,0,0,0,{#base64:77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxTZXR0\r\r\naW5ncyB4bWxucz0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhLWNvbXBvc2l0aW9u\r\r\nLXN5c3RlbS9zZXR0aW5ncyIgeG1sbnM6ZGNzY29yPSJodHRwOi8vdjguMWMucnUv\r\r\nOC4xL2RhdGEtY29tcG9zaXRpb24tc3lzdGVtL2NvcmUiIHhtbG5zOnBhbD0iaHR0\r\r\ncDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL2NvbG9ycy9wYWxldHRlIiB4bWxuczpz\r\r\ndHlsZT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpL3N0eWxlIiB4bWxuczpz\r\r\neXM9Imh0dHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9mb250cy9zeXN0ZW0iIHht\r\r\nbG5zOnY4PSJodHRwOi8vdjguMWMucnUvOC4xL2RhdGEvY29yZSIgeG1sbnM6djh1\r\r\naT0iaHR0cDovL3Y4LjFjLnJ1LzguMS9kYXRhL3VpIiB4bWxuczp3ZWI9Imh0dHA6\r\r\nLy92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2ViIiB4bWxuczp3aW49Imh0\r\r\ndHA6Ly92OC4xYy5ydS84LjEvZGF0YS91aS9jb2xvcnMvd2luZG93cyIgeG1sbnM6\r\r\neHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2k9\r\r\nImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIi8+}},{0,0},{0,0},{0,0},{0,0},0,0}",
+    "owner_common_path": [
+      1,
+      1,
+      1
+    ],
+    "owner_identity_path": [
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "owner_xml": "DimensionTable",
+    "source": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute"
+  }
+}

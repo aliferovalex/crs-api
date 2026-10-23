@@ -1,7 +1,30 @@
 {
-  "Catalog": {},
-  "Document": {"inline_module_suffixes": [".2"]},
-  "Enum": {},
+  "Constant": {
+    "change_platforms": [
+      "legacy"
+    ],
+    "modules": {
+      "ValueManagerModule": ".0",
+      "ManagerModule": ".1"
+    }
+  },
+  "Catalog": {
+    "modules": {
+      "ObjectModule": ".0",
+      "ManagerModule": ".3"
+    }
+  },
+  "Document": {
+    "modules": {
+      "ObjectModule": ".0",
+      "ManagerModule": ".2"
+    }
+  },
+  "Enum": {
+    "modules": {
+      "ManagerModule": ".0"
+    }
+  },
   "CommonModule": {},
   "DataProcessor": {
     "folder": "DataProcessors",
@@ -23,7 +46,15 @@
   },
   "Role": {
     "folder": "Roles",
-    "modules": {}
+    "modules": {},
+    "files": {
+      "Rights": {
+        "file": "Rights.xml",
+        "suffix": ".0",
+        "codec": "role-rights",
+        "partial": true
+      }
+    }
   },
   "CommandGroup": {
     "folder": "CommandGroups",
@@ -35,11 +66,15 @@
   },
   "HTTPService": {
     "folder": "HTTPServices",
-    "modules": {}
+    "modules": {
+      "Module": ".0"
+    }
   },
   "WebService": {
     "folder": "WebServices",
-    "modules": {}
+    "modules": {
+      "Module": ".0"
+    }
   },
   "InformationRegister": {
     "folder": "InformationRegisters",
@@ -50,7 +85,9 @@
   },
   "DocumentJournal": {
     "folder": "DocumentJournals",
-    "modules": {}
+    "modules": {
+      "ManagerModule": ".1"
+    }
   },
   "AccumulationRegister": {
     "folder": "AccumulationRegisters",
@@ -79,6 +116,49 @@
     "reverse_references": {
       "kind": "Document",
       "property": "RegisterRecords"
+    }
+  },
+  "XDTOPackage": {
+    "folder": "XDTOPackages",
+    "modules": {},
+    "files": {
+      "Package": {
+        "file": "Package.bin",
+        "suffix": ".0",
+        "codec": "xdto-package",
+        "required": true
+      }
+    }
+  },
+  "DefinedType": {
+    "folder": "DefinedTypes",
+    "modules": {}
+  },
+  "ScheduledJob": {
+    "folder": "ScheduledJobs",
+    "modules": {}
+  },
+  "SettingsStorage": {
+    "folder": "SettingsStorages",
+    "modules": {
+      "ManagerModule": ".8"
+    }
+  },
+  "EventSubscription": {
+    "folder": "EventSubscriptions",
+    "modules": {}
+  },
+  "DocumentNumerators": {
+    "xml_kind": "DocumentNumerator",
+    "folder": "DocumentNumerators",
+    "modules": {}
+  },
+  "ChartOfCharacteristicType": {
+    "xml_kind": "ChartOfCharacteristicTypes",
+    "folder": "ChartsOfCharacteristicTypes",
+    "modules": {
+      "ObjectModule": ".15",
+      "ManagerModule": ".16"
     }
   }
 }

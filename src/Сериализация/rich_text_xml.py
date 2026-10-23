@@ -1,6 +1,6 @@
 """Whole formatted titles: raw markup and the native plain text projection."""
 import copy
-import metadata_serializer as s
+import native_metadata as s
 
 
 def plain_text(text):

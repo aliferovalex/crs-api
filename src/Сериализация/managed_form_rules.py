@@ -3,7 +3,7 @@ import copy,json,re
 from functools import lru_cache
 from pathlib import Path
 from xml.etree import ElementTree as E
-import metadata_serializer as s
+import native_metadata as s
 
 
 @lru_cache(maxsize=1)

@@ -1,22 +1,27 @@
 """Whole XML schema templates and their shared owned-object commit layout."""
+import configuration_xml
+import metadata_context
+import xml_namespaces
 import base64
 import copy
 import re
 import uuid
 from xml.etree import ElementTree as E
-import metadata_serializer as s
+import native_metadata as s
 import metadata_identifiers as ids
 import metadata_localized_xml as localized
-import constant_serializer as c
 import platform_profiles as platforms
 import serialization_context as contexts
 import packet_builder as packets
-import schema_content
-import template_references
 import template_content
+import managed_form_profiles as owner_profiles
+import metadata_structure
 
-Q = '{' + c.MD + '}'
-OWNERS = {'Catalog', 'Document', 'DataProcessor', 'Report'}
+Q = '{' + xml_namespaces.MD + '}'
+OWNERS = {kind for kind in owner_profiles.owner_profiles()
+          if metadata_structure.profile(kind)['automatic_deletion_supported']
+          and any(row['storage']=='stored_name' and row['runtime_item_kind']=='Template' and row['native']['status']!='unmapped'
+                  for row in metadata_structure.profile(kind)['collections'])}
 
 
 def definition(text, platform):
@@ -39,7 +44,7 @@ def definition(text, platform):
     name = fields['Name'].text or ''
     if not re.fullmatch(r'[^\W\d]\w{0,79}', name, re.UNICODE) or fields['TemplateType'].text not in template_content.PROFILES:
         raise ValueError('Expected a named supported template (including DataCompositionSchema)')
-    oid = c.guid(obj.get('uuid'));a = s.atom
+    oid = metadata_context.guid(obj.get('uuid'));a = s.atom
     common = [a(3), [a(1), a(0), a(oid)], a(name, True), localized.read(fields['Synonym']),
               a(fields['Comment'].text or '', True), a(0), a(0), a(s.ZERO), a(0)]
     return oid, name, common
@@ -65,7 +70,7 @@ def collection(body, metadata, objects, template_kind='Template'):
             for child in node:
                 walk(child)
     walk(body)
-    pairs = c.children(metadata);expected = {oid for oid, kind in pairs if kind == cls}
+    pairs = metadata_context.children(metadata);expected = {oid for oid, kind in pairs if kind == cls}
     if len(rows) != 1 or int(s.val(rows[0][1])) != len(rows[0])-2 or \
             len(rows[0])-2 != len(expected) or {s.val(v) for v in rows[0][2:]} != expected:
         raise ValueError('Template collection/context mismatch')
@@ -75,24 +80,24 @@ def collection(body, metadata, objects, template_kind='Template'):
     return rows[0], pairs, expected
 
 
-def create(request):
-    oid = c.guid(request['object_id']);fid, name, child_raw = native_definition(request['definition_xml'], request['platform'])
+def create(request,*,contents_only=False):
+    oid = metadata_context.guid(request['object_id']);fid, name, child_raw = native_definition(request['definition_xml'], request['platform'])
     frame = contexts.read(request, oid);docs, saved, m = frame.docs, frame.saved, frame.metadata
     template_kind=metadata_kind(request['definition_xml'])
-    objects = c.context_objects(request['context']);cls = ids.class_id(template_kind)
+    objects = metadata_context.context_objects(request['context']);cls = ids.class_id(template_kind)
     kind = ids.class_labels().get(s.val(m[2]))
     allowed={'Configuration'} if template_kind=='CommonTemplate' else OWNERS
     if kind not in allowed or s.val(m[4]) != s.ZERO or fid in objects:
         raise ValueError('Unsupported Template owner or duplicate UUID')
-    if (s.render(saved[0][12]) != '{0}' and sorted(c.children(m)) != sorted(c.children(saved[0]))) or \
+    if (s.render(saved[0][12]) != '{0}' and sorted(metadata_context.children(m)) != sorted(metadata_context.children(saved[0]))) or \
             s.metadata_relations(m[14]) != s.metadata_relations(saved[0][14]) or s.render(m[13]) != s.render(saved[0][13]):
         raise ValueError('Template owner snapshot/context maps differ')
     original = contexts.original_version(request['original_version'], m)
     raw = s.inflate(frame.data);body = s.Parser(raw.decode('utf-8-sig')).documents()
     if kind=='Configuration':
-        common=s.common_properties(body,oid,request['platform'])
+        common=configuration_xml.common_properties(body,oid,request['platform'])
         if s.val(m[3])!=s.ZERO:raise ValueError('Expected Configuration root')
-    else:common = body[0][1][9][1] if kind in ('Catalog', 'Document') else body[0][1][3][1]
+    else:common = owner_profiles.owner_common(body[0],kind)
     if kind!='Configuration' and (s.val(common[1][2]) != oid or s.val(common[2]) != s.val(m[9])):
         raise ValueError('Template owner body/metadata identity mismatch')
     row, pairs, expected = collection(body, m, objects,template_kind)
@@ -102,8 +107,9 @@ def create(request):
     a = s.atom;changed = [row[0], a(len(row)-1)] + list(row[2:]) + [a(fid)]
     text = raw.decode('utf-8-sig');owner_raw = b'\xef\xbb\xbf'+(text[:row.start]+s.render(changed)+text[row.end:]).encode('utf-8')
     external = template_content.convert(request)
-    packets.preserve_external_versions(copy.deepcopy(saved), oid)
-    kept = packets.preserve_external_versions(docs, oid)
+    import inline_command_xml
+    inline_command_xml.preserve_owner_streams(copy.deepcopy(saved),oid,body[0],kind,request['platform'])
+    kept=inline_command_xml.preserve_owner_streams(docs,oid,body[0],kind,request['platform'])
     versions = {oid: packets.content_version(owner_raw), fid: packets.content_version(child_raw)}
     originals = {oid: bytes.fromhex(original), fid: versions[fid]}
     packets.commit_metadata(m, originals[oid], versions[oid])
@@ -121,6 +127,10 @@ def create(request):
           a(('' if kind=='Configuration' else s.val(m[15]))+cls+'.'+name, True), a(0)]
     fd = [fm, copy.deepcopy(saved[1]), [a(1), [a(stream, True), a(ev64), a(0)]]]
     commit = {oid: docs, fid: fd}
+    if contents_only:
+        from native_content import ObjectContent, CreationContent
+        return CreationContent({fid:ObjectContent(fd,child_raw,[(stream,s.compress(external))],
+                               [dict(name=stream,version=ev.hex(),action=0)])},'')
     graph = packets.owned_object_creation_graph(commit, oid, fid, pairs+[(fid, cls)])
     payload = packets.assemble(graph, [packets.ObjectRecord(fid, s.text_bytes(fd), s.compress(child_raw), ((stream, s.compress(external)),)),
                                        packets.ObjectRecord(oid, s.text_bytes(docs), s.compress(owner_raw))])
@@ -129,18 +139,19 @@ def create(request):
                 externals=[dict(object_id=fid, name=stream, version=ev.hex(), action=0)]+[dict(object_id=oid, **v) for v in kept])
 
 
-def change(request):
+def compile_change(request):
+    if not platforms.legacy(request['platform']):raise ValueError('Template serialization requires legacy profile')
     import external_data
-    oid = c.guid(request['object_id']);frame = contexts.read(request, oid);m = frame.metadata
+    oid = metadata_context.guid(request['object_id']);frame = contexts.read(request, oid);m = frame.metadata
     template_kind=metadata_kind(request['definition_xml']);common_slot=1 if template_kind=='CommonTemplate' else 2
     fid, name, raw = native_definition(request['definition_xml'], request['platform'])
-    if fid != oid or name != s.val(m[9]) or s.val(m[2]) != ids.class_id(template_kind) or s.val(m[4]) != s.ZERO or \
+    if fid != oid or (name != s.val(m[9]) and not request.get('_allow_rename',False)) or s.val(m[2]) != ids.class_id(template_kind) or s.val(m[4]) != s.ZERO or \
             any(s.render(m[i]) != '{0}' for i in (12, 13)):
         raise ValueError('Template metadata identity or maps mismatch')
     old = s.Parser(s.inflate(frame.data).decode('utf-8-sig')).documents()
     expected = copy.deepcopy(old);expected[0][1][common_slot] = s.Parser(raw.decode('utf-8-sig')).documents()[0][1][common_slot]
     if s.render(expected) != s.render(s.Parser(raw.decode('utf-8-sig')).documents()) or \
-            s.val(old[0][1][common_slot][1][2]) != oid or s.val(old[0][1][common_slot][2]) != name:
+            s.val(old[0][1][common_slot][1][2]) != oid or s.val(old[0][1][common_slot][2]) != s.val(m[9]):
         raise ValueError('Unsupported source Template definition')
     original = contexts.original_version(request['original_version'], m);stream = oid+'.0'
     if len(m[11]) != 3 or s.val(m[11][0]) != '1' or s.val(m[11][1]) != stream or \
@@ -153,8 +164,16 @@ def change(request):
             current['externals'][0]['version'] != uuid.UUID(s.val(m[11][2])).bytes_le.hex()+'00000000':
         raise ValueError('Template version storage/snapshot mismatch')
     template_content.validate_source(s.inflate(base64.b64decode(current['externals'][0]['data'], validate=True)),request['definition_xml'])
+    import native_content
+    m[9]=s.atom(name,True)
+    if request.get('preserve_content'):
+        return native_content.body_change(frame.docs,frame.saved,raw,oid)
     external = template_content.convert(request)
-    return packets.pack_external_change(frame.docs, frame.saved, s.compress(raw), oid, stream, original, raw, s.compress(external))
+    return native_content.external_change(frame.docs, frame.saved, raw, stream, s.compress(external), packets.external_version())
+
+
+def change(request):
+    return packets.pack_external_change(compile_change(request), request['original_version'].lower())
 
 
 def serialize(request):

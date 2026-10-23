@@ -2,10 +2,15 @@
 import base64,hashlib,unittest
 from xml.etree import ElementTree as E
 import test_catalog_serializer as fixture
-import test_catalog_tabular_xml as tables
-import catalog_object_xml as catalog
-import constant_serializer as c
-import metadata_serializer as s
+import test_tabular_section_xml as tables
+import inline_object_xml
+import metadata_object_xml
+import object_xml_profiles
+import metadata_object_xml as catalog
+import metadata_identifiers
+import xml_namespaces
+import object_creation_serializer as c
+import native_metadata as s
 import test_managed_form_xml as form_fixture
 import managed_form_xml as form_xml
 
@@ -16,7 +21,7 @@ def forms_request():
     root=E.fromstring(xml());inputs=[]
     for i,fid in enumerate(FIDS):
         name='NewForm'+str(i);E.SubElement(root[0].find(catalog.Q+'ChildObjects'),catalog.Q+'Form').text=name
-        definition='<MetaDataObject xmlns="'+c.MD+'" version="2.21"><Form uuid="'+fid+'"><Properties><Name>'+name+'</Name></Properties></Form></MetaDataObject>'
+        definition='<MetaDataObject xmlns="'+xml_namespaces.MD+'" version="2.21"><Form uuid="'+fid+'"><Properties><Name>'+name+'</Name></Properties></Form></MetaDataObject>'
         inputs.append(dict(name=name,definition_xml=definition,form_xml=form_fixture.xml(),module_text='// Module '+str(i)))
     r=request(E.tostring(root,encoding='unicode'));r['forms']=inputs
     return r
@@ -32,15 +37,31 @@ def request(text):
     r=fixture.const.fixture('8.5.1.1529');rid=r['object_id']
     data=base64.b64decode(r['snapshots'][rid]);meta,pos=s.read_record(data,12);compressed,pos=s.read_record(data,pos)
     docs=s.Parser(s.inflate(compressed).decode('utf-8-sig')).documents()
-    docs[0].append([s.atom(c.identifiers.class_id('Catalog')),s.atom(0)])
+    docs[0].append([s.atom(metadata_identifiers.class_id('Catalog')),s.atom(0)])
     body=s.compress(s.text_bytes(docs));m=s.Parser(meta.decode('utf-8-sig')).documents()[0]
     manifest=s.text_bytes([[s.atom(0),s.atom(1),m[1],s.atom(hashlib.sha1(meta).hexdigest(),True),s.atom(hashlib.sha1(body).hexdigest(),True),s.atom(0)]])
     r['snapshots'][rid]=base64.b64encode(s.storage([meta,body],manifest)).decode()
-    r.update(object_type='Catalog',catalog_xml=text)
+    r.update(object_type='Catalog',object_xml=text)
     return r
 
 
 class FullCatalogCreationTests(unittest.TestCase):
+    def test_new_catalog_can_assign_its_new_forms_to_all_roles(self):
+        r=forms_request();root=E.fromstring(r['object_xml']);props=root[0].find(catalog.Q+'Properties')
+        import owned_form_properties,configuration_batch
+        for name in owned_form_properties.profiles()['Catalog']['properties']:
+            node=props.find(catalog.Q+name)
+            if node is None:node=E.SubElement(props,catalog.Q+name)
+            node.text='Catalog.XML_Catalog.Form.NewForm0'
+        r['object_xml']=E.tostring(root,encoding='unicode');result=c.serialize(r)
+        _,records=configuration_batch.read_packet(result['data'])
+        parent=next(row for row in records if row.object_id==fixture.const.CID)
+        native=s.Parser(s.inflate(parent.body).decode('utf-8-sig')).documents()[0]
+        metadata=s.Parser(parent.metadata.decode('utf-8-sig')).documents()[0]
+        for path in owned_form_properties.profiles()['Catalog']['properties'].values():
+            self.assertEqual(s.val(owned_form_properties.at(native,path)),FIDS[0])
+        self.assertEqual(s.metadata_relations(metadata[14])[FIDS[0]],0)
+
     def test_catalog_forms_are_created_in_one_graph_with_complete_streams(self):
         r=forms_request();result=c.serialize(r);transport=s.inflate(base64.b64decode(result['data'])[18:])
         raw,pos=s.read_record(transport,0);graph=s.Parser(raw.decode('utf-8-sig')).documents()[0]
@@ -77,13 +98,13 @@ class FullCatalogCreationTests(unittest.TestCase):
             with self.subTest(mutation=mutation),self.assertRaises(ValueError):c.serialize(r)
 
     def test_complete_body_with_generated_root_ids(self):
-        oid,name,raw,ids=catalog.create(xml(),'8.5.1.1529')
+        oid,name,raw,ids=metadata_object_xml.create(xml(), '8.5.1.1529', 'Catalog')
         body=s.Parser(raw.decode('utf-8-sig')).documents()[0]
         self.assertEqual((oid,name),(fixture.const.CID,'XML_Catalog'))
-        self.assertEqual(set(catalog.inline_features(body)),{tables.SID,tables.AID,tables.BID})
+        self.assertEqual(set(inline_object_xml.features(body, object_xml_profiles.layout('Catalog'))), {tables.SID, tables.AID, tables.BID})
         self.assertEqual(len(ids),17)  # 10 root types, 3 inline features, 4 section types.
-        exported=E.tostring(catalog.export(body,{},'8.5.1.1529'),encoding='unicode')
-        self.assertEqual(catalog.create(exported,'8.5.1.1529')[2],raw)
+        exported=E.tostring(metadata_object_xml.export(body, {}, '8.5.1.1529', 'Catalog'), encoding='unicode')
+        self.assertEqual(metadata_object_xml.create(exported, '8.5.1.1529', 'Catalog')[2], raw)
 
     def test_creation_graph_and_metadata_include_inline_features(self):
         result=c.serialize(request(xml()));transport=s.inflate(base64.b64decode(result['data'])[18:])
@@ -96,9 +117,9 @@ class FullCatalogCreationTests(unittest.TestCase):
         self.assertEqual({s.val(v) for v in m[13][1:]},expected)
 
     def test_inline_uuid_collision_with_existing_repository_is_rejected(self):
-        r=request(xml());root=E.fromstring(r['catalog_xml'])
+        r=request(xml());root=E.fromstring(r['object_xml'])
         root[0].find(catalog.Q+'ChildObjects')[0].set('uuid',r['object_id'])
-        r['catalog_xml']=E.tostring(root,encoding='unicode')
+        r['object_xml']=E.tostring(root,encoding='unicode')
         with self.assertRaisesRegex(ValueError,'collides'):c.serialize(r)
 
     def test_duplicate_generated_uuid_and_separate_forms_are_rejected(self):
@@ -107,7 +128,7 @@ class FullCatalogCreationTests(unittest.TestCase):
             if mutation=='generated':children[0].find(catalog.Q+'InternalInfo')[0][0].text=tables.AID
             elif mutation=='form':E.SubElement(children,catalog.Q+'Form').text='SeparateForm'
             else:E.SubElement(children,catalog.Q+'Unknown')
-            with self.subTest(mutation=mutation),self.assertRaises(ValueError):catalog.create(E.tostring(root,encoding='unicode'),'8.5.1.1529')
+            with self.subTest(mutation=mutation),self.assertRaises(ValueError):metadata_object_xml.create(E.tostring(root, encoding='unicode'), '8.5.1.1529', 'Catalog')
 
 
 if __name__=='__main__':unittest.main()

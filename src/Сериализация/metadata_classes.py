@@ -5,7 +5,7 @@ optional hints from metadata_class_names.json, not a platform registry.
 """
 import base64
 import uuid
-import metadata_serializer as s
+import native_metadata as s
 import metadata_identifiers as identifiers
 
 ROOT_CLASS = identifiers.class_id('Configuration')

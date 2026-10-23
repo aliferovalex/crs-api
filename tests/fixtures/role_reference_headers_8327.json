@@ -1,0 +1,319 @@
+{
+  "source": {
+    "platform": "8.3.27.2342",
+    "evidence": "Saved repository CF; 598635 ordinary headers joined to a complete XML identity index; 18 obsolete references excluded"
+  },
+  "note": "Object names anonymized consistently; native UUIDs, kinds and ownership unchanged.",
+  "samples": [
+    {
+      "object_id": "ff76e85a-6d29-41d3-a83e-f4a34139c6b2",
+      "kind": "Constant",
+      "name": "Object7c3dc34e76a5",
+      "qualified_name": "Constant.Object7c3dc34e76a5",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "ff76e85a-6d29-41d3-a83e-f4a34139c6b2",
+      "stored": true,
+      "native": "{1,ff76e85a-6d29-41d3-a83e-f4a34139c6b2,0,0}"
+    },
+    {
+      "object_id": "feb1a5c1-c805-4079-8f05-8a44f51b0b02",
+      "kind": "CommonForm",
+      "name": "Objectb8f142f5b879",
+      "qualified_name": "CommonForm.Objectb8f142f5b879",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "feb1a5c1-c805-4079-8f05-8a44f51b0b02",
+      "stored": true,
+      "native": "{1,feb1a5c1-c805-4079-8f05-8a44f51b0b02,0,0}"
+    },
+    {
+      "object_id": "feb0fc9c-1025-42fc-b7c4-b0e15642e074",
+      "kind": "Dimension",
+      "name": "Objectd399432b791a",
+      "qualified_name": "AccumulationRegister.Objecte5ed9b7641c3.Dimension.Objectd399432b791a",
+      "parent_id": "4c4af2e4-ea14-4364-b2f3-09202522f9b3",
+      "stored_id": "4c4af2e4-ea14-4364-b2f3-09202522f9b3",
+      "stored": false,
+      "native": "{1,feb0fc9c-1025-42fc-b7c4-b0e15642e074,0,1}"
+    },
+    {
+      "object_id": "efc69b75-faa9-484c-8524-9026bd2b0ef0",
+      "kind": "DataProcessor",
+      "name": "Object9759e99487e6",
+      "qualified_name": "DataProcessor.Object9759e99487e6",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "efc69b75-faa9-484c-8524-9026bd2b0ef0",
+      "stored": true,
+      "native": "{1,efc69b75-faa9-484c-8524-9026bd2b0ef0,0,0}"
+    },
+    {
+      "object_id": "e641fe3a-58da-4318-ba66-262799f5bf00",
+      "kind": "CommonCommand",
+      "name": "Object1b43ca094307",
+      "qualified_name": "CommonCommand.Object1b43ca094307",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "e641fe3a-58da-4318-ba66-262799f5bf00",
+      "stored": true,
+      "native": "{1,e641fe3a-58da-4318-ba66-262799f5bf00,0,0}"
+    },
+    {
+      "object_id": "e18b4527-8727-4a10-9e99-a80012debe6c",
+      "kind": "SessionParameter",
+      "name": "Object36f09c3d2bc7",
+      "qualified_name": "SessionParameter.Object36f09c3d2bc7",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "e18b4527-8727-4a10-9e99-a80012debe6c",
+      "stored": true,
+      "native": "{1,e18b4527-8727-4a10-9e99-a80012debe6c,0,0}"
+    },
+    {
+      "object_id": "e085e8ed-55c1-447c-9b4a-f9d0c1eea6f1",
+      "kind": "Attribute",
+      "name": "Objectb2015e0a2d4c",
+      "qualified_name": "Catalog.Object59c8d782f040.TabularSection.Object7d6176e100d8.Attribute.Objectb2015e0a2d4c",
+      "parent_id": "e1337d35-106e-4b4a-a3bf-542791a70aba",
+      "stored_id": "149822bd-d650-42ea-bcaa-cd98e7e22a73",
+      "stored": false,
+      "native": "{1,e085e8ed-55c1-447c-9b4a-f9d0c1eea6f1,0,1}"
+    },
+    {
+      "object_id": "d61fb36d-6f30-4ac9-aa7a-acef592f6e60",
+      "kind": "InformationRegister",
+      "name": "Objectd46e29db6a37",
+      "qualified_name": "InformationRegister.Objectd46e29db6a37",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "d61fb36d-6f30-4ac9-aa7a-acef592f6e60",
+      "stored": true,
+      "native": "{1,d61fb36d-6f30-4ac9-aa7a-acef592f6e60,0,0}"
+    },
+    {
+      "object_id": "bc5eca9b-32d8-44e0-a127-8ad1f47d7957",
+      "kind": "AddressingAttribute",
+      "name": "Object424d020ca566",
+      "qualified_name": "Task.Objectcb9fb124d5ad.AddressingAttribute.Object424d020ca566",
+      "parent_id": "3ad08f4a-6202-4099-b6cc-bc116e6731a0",
+      "stored_id": "3ad08f4a-6202-4099-b6cc-bc116e6731a0",
+      "stored": false,
+      "native": "{1,bc5eca9b-32d8-44e0-a127-8ad1f47d7957,0,1}"
+    },
+    {
+      "object_id": "b18d312b-f9c3-4f37-ac77-d499e949f154",
+      "kind": "Catalog",
+      "name": "Object2803d355329a",
+      "qualified_name": "Catalog.Object2803d355329a",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "b18d312b-f9c3-4f37-ac77-d499e949f154",
+      "stored": true,
+      "native": "{1,b18d312b-f9c3-4f37-ac77-d499e949f154,0,0}"
+    },
+    {
+      "object_id": "e1337d35-106e-4b4a-a3bf-542791a70aba",
+      "kind": "TabularSection",
+      "name": "Object7d6176e100d8",
+      "qualified_name": "Catalog.Object59c8d782f040.TabularSection.Object7d6176e100d8",
+      "parent_id": "149822bd-d650-42ea-bcaa-cd98e7e22a73",
+      "stored_id": "149822bd-d650-42ea-bcaa-cd98e7e22a73",
+      "stored": false,
+      "native": "{1,e1337d35-106e-4b4a-a3bf-542791a70aba,0,1}"
+    },
+    {
+      "object_id": "a677003e-0155-4eda-bded-2560a16f43b8",
+      "kind": "ExchangePlan",
+      "name": "Objectdba8c579368d",
+      "qualified_name": "ExchangePlan.Objectdba8c579368d",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "a677003e-0155-4eda-bded-2560a16f43b8",
+      "stored": true,
+      "native": "{1,a677003e-0155-4eda-bded-2560a16f43b8,0,0}"
+    },
+    {
+      "object_id": "6a97d922-5e1c-4444-b461-133bbe1528eb",
+      "kind": "Resource",
+      "name": "Object1a5d144b55fb",
+      "qualified_name": "AccumulationRegister.Objecte5ed9b7641c3.Resource.Object1a5d144b55fb",
+      "parent_id": "4c4af2e4-ea14-4364-b2f3-09202522f9b3",
+      "stored_id": "4c4af2e4-ea14-4364-b2f3-09202522f9b3",
+      "stored": false,
+      "native": "{1,6a97d922-5e1c-4444-b461-133bbe1528eb,0,1}"
+    },
+    {
+      "object_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "kind": "Configuration",
+      "name": "Object514619ab5f78",
+      "qualified_name": "Configuration.Object514619ab5f78",
+      "parent_id": "00000000-0000-0000-0000-000000000000",
+      "stored_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored": true,
+      "native": "{1,61ee2494-c14a-4992-8c93-8e78b20bea27,0,0}"
+    },
+    {
+      "object_id": "5a76c7e2-120d-407c-883c-2af208d07dd0",
+      "kind": "Report",
+      "name": "Object4a08aef8cd6b",
+      "qualified_name": "Report.Object4a08aef8cd6b",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "5a76c7e2-120d-407c-883c-2af208d07dd0",
+      "stored": true,
+      "native": "{1,5a76c7e2-120d-407c-883c-2af208d07dd0,0,0}"
+    },
+    {
+      "object_id": "3d90b231-42ad-4f55-bf7a-a2010de0f3c0",
+      "kind": "Subsystem",
+      "name": "Object8421b5f5da29",
+      "qualified_name": "Subsystem.Object8421b5f5da29",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "3d90b231-42ad-4f55-bf7a-a2010de0f3c0",
+      "stored": true,
+      "native": "{1,3d90b231-42ad-4f55-bf7a-a2010de0f3c0,0,0}"
+    },
+    {
+      "object_id": "34ef378e-bb04-4a92-9e7d-94102fbfda4f",
+      "kind": "Command",
+      "name": "Object04033781ff66",
+      "qualified_name": "DataProcessor.Object901c5b2489cf.Command.Object04033781ff66",
+      "parent_id": "0d2702f1-b0ef-44c0-8213-7726790505ce",
+      "stored_id": "0d2702f1-b0ef-44c0-8213-7726790505ce",
+      "stored": false,
+      "native": "{1,34ef378e-bb04-4a92-9e7d-94102fbfda4f,0,0}"
+    },
+    {
+      "object_id": "bbbdcc01-a167-40f7-8617-bd40cc58ffc4",
+      "kind": "FilterCriterion",
+      "name": "Object168b47109600",
+      "qualified_name": "FilterCriterion.Object168b47109600",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "bbbdcc01-a167-40f7-8617-bd40cc58ffc4",
+      "stored": true,
+      "native": "{1,bbbdcc01-a167-40f7-8617-bd40cc58ffc4,0,0}"
+    },
+    {
+      "object_id": "4748c85f-2194-49d9-b683-8ed90e324f94",
+      "kind": "Document",
+      "name": "Objecte498b3b055e3",
+      "qualified_name": "Document.Objecte498b3b055e3",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "4748c85f-2194-49d9-b683-8ed90e324f94",
+      "stored": true,
+      "native": "{1,4748c85f-2194-49d9-b683-8ed90e324f94,0,0}"
+    },
+    {
+      "object_id": "65efaa10-3239-4f0f-a08e-88c89d9d8d5a",
+      "kind": "Operation",
+      "name": "Object51830587cfbf",
+      "qualified_name": "WebService.Objectd5254f60b26a.Operation.Object51830587cfbf",
+      "parent_id": "a4ed8b24-bd23-45a7-9f34-61b25b91d0c6",
+      "stored_id": "a4ed8b24-bd23-45a7-9f34-61b25b91d0c6",
+      "stored": false,
+      "native": "{1,65efaa10-3239-4f0f-a08e-88c89d9d8d5a,0,0}"
+    },
+    {
+      "object_id": "69cf317c-c2e6-4c58-9f74-9dc55232027c",
+      "kind": "AccumulationRegister",
+      "name": "Object33b724332195",
+      "qualified_name": "AccumulationRegister.Object33b724332195",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "69cf317c-c2e6-4c58-9f74-9dc55232027c",
+      "stored": true,
+      "native": "{1,69cf317c-c2e6-4c58-9f74-9dc55232027c,0,0}"
+    },
+    {
+      "object_id": "1055d15b-8cb5-4ff0-a526-7fd20a08a96c",
+      "kind": "ChartOfCharacteristicTypes",
+      "name": "Object160d4ca3d273",
+      "qualified_name": "ChartOfCharacteristicTypes.Object160d4ca3d273",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "1055d15b-8cb5-4ff0-a526-7fd20a08a96c",
+      "stored": true,
+      "native": "{1,1055d15b-8cb5-4ff0-a526-7fd20a08a96c,0,0}"
+    },
+    {
+      "object_id": "4740ae5d-b3d7-4432-9f4f-90cbcdf4b446",
+      "kind": "DocumentJournal",
+      "name": "Object4b0b93e884af",
+      "qualified_name": "DocumentJournal.Object4b0b93e884af",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "4740ae5d-b3d7-4432-9f4f-90cbcdf4b446",
+      "stored": true,
+      "native": "{1,4740ae5d-b3d7-4432-9f4f-90cbcdf4b446,0,0}"
+    },
+    {
+      "object_id": "dad11c2e-08fc-4a6b-8829-8be6c64c15fc",
+      "kind": "BusinessProcess",
+      "name": "Objectab74357e804f",
+      "qualified_name": "BusinessProcess.Objectab74357e804f",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "dad11c2e-08fc-4a6b-8829-8be6c64c15fc",
+      "stored": true,
+      "native": "{1,dad11c2e-08fc-4a6b-8829-8be6c64c15fc,0,0}"
+    },
+    {
+      "object_id": "3ad08f4a-6202-4099-b6cc-bc116e6731a0",
+      "kind": "Task",
+      "name": "Objectcb9fb124d5ad",
+      "qualified_name": "Task.Objectcb9fb124d5ad",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "3ad08f4a-6202-4099-b6cc-bc116e6731a0",
+      "stored": true,
+      "native": "{1,3ad08f4a-6202-4099-b6cc-bc116e6731a0,0,0}"
+    },
+    {
+      "object_id": "f801bf0b-8af3-47a6-afa3-86394c220406",
+      "kind": "Field",
+      "name": "Object2352227b4bf0",
+      "qualified_name": "ExternalDataSource.Object1eb6c9e83ecc.Table.Object22abaa5696cf.Field.Object2352227b4bf0",
+      "parent_id": "c8c626d3-817c-471d-9146-f4f9d93b72bd",
+      "stored_id": "c8c626d3-817c-471d-9146-f4f9d93b72bd",
+      "stored": false,
+      "native": "{1,f801bf0b-8af3-47a6-afa3-86394c220406,0,1}"
+    },
+    {
+      "object_id": "17462a87-b56b-40ea-badf-754485d47e82",
+      "kind": "Method",
+      "name": "Object4559885053c6",
+      "qualified_name": "HTTPService.Objecteb3551bf7f07.URLTemplate.Object9c370b0cfa69.Method.Object4559885053c6",
+      "parent_id": "5eb6829d-3ac0-444b-adc2-b49cb9c5cc01",
+      "stored_id": "a36967bc-f6ec-4f35-af3b-951cc59cf5d1",
+      "stored": false,
+      "native": "{1,17462a87-b56b-40ea-badf-754485d47e82,0,0}"
+    },
+    {
+      "object_id": "782225bd-f1cc-4542-80a8-278ee1eeb5ec",
+      "kind": "CommonAttribute",
+      "name": "Object3eda4698209b",
+      "qualified_name": "CommonAttribute.Object3eda4698209b",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "782225bd-f1cc-4542-80a8-278ee1eeb5ec",
+      "stored": true,
+      "native": "{1,782225bd-f1cc-4542-80a8-278ee1eeb5ec,0,0}"
+    },
+    {
+      "object_id": "d190fc86-1a45-45e0-b7a4-6813d09ae3eb",
+      "kind": "Sequence",
+      "name": "Object9e2c930dd655",
+      "qualified_name": "Sequence.Object9e2c930dd655",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "d190fc86-1a45-45e0-b7a4-6813d09ae3eb",
+      "stored": true,
+      "native": "{1,d190fc86-1a45-45e0-b7a4-6813d09ae3eb,0,0}"
+    },
+    {
+      "object_id": "c8d47d56-8047-44d5-ac1e-987ee9247b85",
+      "kind": "ExternalDataSource",
+      "name": "Object1eb6c9e83ecc",
+      "qualified_name": "ExternalDataSource.Object1eb6c9e83ecc",
+      "parent_id": "61ee2494-c14a-4992-8c93-8e78b20bea27",
+      "stored_id": "c8d47d56-8047-44d5-ac1e-987ee9247b85",
+      "stored": true,
+      "native": "{1,c8d47d56-8047-44d5-ac1e-987ee9247b85,0,0}"
+    },
+    {
+      "object_id": "8de7ce65-2f5e-4b89-ad77-aa9efbe0aa96",
+      "kind": "Table",
+      "name": "Objectaefd94e36533",
+      "qualified_name": "ExternalDataSource.Object1eb6c9e83ecc.Table.Objectaefd94e36533",
+      "parent_id": "c8d47d56-8047-44d5-ac1e-987ee9247b85",
+      "stored_id": "8de7ce65-2f5e-4b89-ad77-aa9efbe0aa96",
+      "stored": true,
+      "native": "{1,8de7ce65-2f5e-4b89-ad77-aa9efbe0aa96,0,0}"
+    }
+  ]
+}

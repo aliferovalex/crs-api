@@ -1,0 +1,44 @@
+{
+  "objects": [
+    {
+      "kind": "Catalog",
+      "name": "CRSAPI_TestCatalog",
+      "object_id": "b4b86818-cac6-4297-91ac-892430772b59",
+      "body": "{1,\r\n{57,31c96041-0c39-44ec-9415-93908669a75c,0f4e9fd2-871c-4473-8de6-e80eb121bfbc,c2ba45b6-aa82-404e-8298-b247b370b4cf,d6b6ec68-3de7-4532-8f63-f3592200a26e,41f0ded7-95ed-4abe-a0ed-c8894d75c851,e1748785-98d6-44e3-b488-253307d05490,6a0fd32a-9b3a-44d2-a0d8-bc0adbcc9d0f,3939e01c-20bd-482a-8986-4f05d19e4e24,\r\n{0,\r\n{3,\r\n{1,0,b4b86818-cac6-4297-91ac-892430772b59},\"CRSAPI_TestCatalog\",\r\n{1,\"ru\",\"CRSAPI test catalog\"},\"CRS whole catalog XML\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},2,1,\r\n{0,0},1,1,1,0,9,1,25,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,1,\r\n{0,0},0,d2de9d72-f2e3-4720-a705-b7a93ea50247,7f7c5243-4600-4663-b9bc-fc35e6ca9e19,0,0,0,0,2,0,\r\n{1,\r\n{0,2,\r\n{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,\r\n{-3}\r\n},\r\n{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,\r\n{-2}\r\n}\r\n}\r\n},1,1,\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0},1,\r\n{0,\r\n{0}\r\n},2,\r\n{1,\r\n{0,0}\r\n},0,\r\n{1,2,0},0,0,0,0},5,\r\n{3daea016-69b7-4ed4-9453-127911372fe6,0},\r\n{4fe87c89-9ad4-43f6-9fdb-9dc83b3879c6,0},\r\n{932159f9-95b2-4e76-a8dd-8849fe5c5ded,0},\r\n{cf4abea7-37b2-11d4-940f-008048da11f9,1,\r\n{\r\n{6,\r\n{27,\r\n{2,\r\n{3,\r\n{1,0,4d39a8db-fe3a-44c0-8d0d-1d1e32778b64},\"CRSAPI_TestAttribute\",\r\n{0},\"CRS whole attribute XML\",0,0,00000000-0000-0000-0000-000000000000,0},\r\n{\"Pattern\",\r\n{\"S\",120,1}\r\n}\r\n},0,\r\n{0},\r\n{0},0,\"\",0,\r\n{\"U\"},\r\n{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,\r\n{5006,0},\r\n{3,0,0},\r\n{0,0},0,\r\n{0},\r\n{\"S\",\"\"},0,0,0},0,0,1,1,0,\r\n{1,00000000-0000-0000-0000-000000000000}\r\n},0}\r\n},\r\n{fdf816d2-1ead-11d5-b975-0050bae0a95d,2,d5a5083a-a79c-4dcc-a8e6-15a6b228534a,87e306bd-1a99-489b-bab4-d651b7c07c5e}\r\n}"
+    },
+    {
+      "kind": "Document",
+      "name": "CRSAPI_TestDocument",
+      "object_id": "bd2e066c-477a-4961-aa2d-7041016a3bd0",
+      "body": "{1,\r\n{40,8cefceb3-d233-4013-82f8-366ed14cb033,86a01d6e-8b4c-43a1-aa7d-ad0216e6f3ef,5fa8eb11-80ce-48fe-bb05-2c00e04ed6eb,58388cae-e232-4309-b396-c762f7df9c51,2a1a7167-e4e7-42a4-ae04-5b9a9759a0e8,1e90191a-291d-4fb4-9500-c7d5fc603189,05ee6af4-6fe3-4c51-931a-76739cc14c47,0b8e13af-e75c-44b1-8cc4-ffe22dd0a46b,\r\n{0,\r\n{3,\r\n{1,0,bd2e066c-477a-4961-aa2d-7041016a3bd0},\"CRSAPI_TestDocument\",\r\n{1,\"ru\",\"CRSAPI test document\"},\"\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},00000000-0000-0000-0000-000000000000,1,9,0,1,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,0,2,0,\r\n{0,0},1,\r\n{0,0},0,c96dbeb0-6977-401d-a99e-194be91faa95,636c1dce-43ad-4dfa-afa6-a751b5dd0d39,0,\r\n{1,\r\n{0,1,\r\n{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,\r\n{-2}\r\n}\r\n}\r\n},1,1,\r\n{0},1,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0},0,1,\r\n{0,\r\n{0}\r\n},2,\r\n{1,\r\n{0,0}\r\n},\r\n{1,2,0},0,0,0,0},5,\r\n{21c53e09-8950-4b5e-a6a0-1054f1bbc274,0},\r\n{3daea016-69b7-4ed4-9453-127911372fe6,0},\r\n{45e46cbc-3e24-4165-8b7b-cc98a6f80211,0},\r\n{b544fc6a-2ba3-4885-8fb2-cb289fb6d65e,0},\r\n{fb880e93-47d7-4127-9357-a20e69c17545,1,08976104-f4f9-4f2f-a921-149018be5509}\r\n}"
+    },
+    {
+      "kind": "Enum",
+      "name": "CRSAPI_TestEnum",
+      "object_id": "0f839ac8-f766-4c75-b770-de6e52c49c36",
+      "body": "{1,\r\n{20,6839ee57-f428-4b62-8f8e-329442c53c3e,c9a7b080-5b20-4f85-89e7-f11741b4859b,0e2eeb08-54ee-41b0-8df4-71300a555c16,e3245ba4-c366-4ea5-af27-50e3e6aa203d,\r\n{0,\r\n{3,\r\n{1,0,0f839ac8-f766-4c75-b770-de6e52c49c36},\"CRSAPI_TestEnum\",\r\n{0},\"Enum from XML\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},0,e772ed32-3ee3-4b4c-86b2-0b72a425a4d7,3e58d9a7-8f06-4323-81aa-06cfda6c0f82,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,2,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0,\r\n{0}\r\n},0},4,\r\n{33f2e54b-37ce-4a7a-a569-b648d7aa4634,0},\r\n{3daea016-69b7-4ed4-9453-127911372fe6,0},\r\n{6d8d73a7-ba29-401d-9032-3872ec2d6433,0},\r\n{bee0a08c-07eb-40c0-8544-5c364c171465,2,\r\n{\r\n{1,\r\n{3,\r\n{1,0,c9e2edff-b36d-47aa-9eb6-98e2afc4325a},\"First\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},\r\n{4,4,\r\n{0},4}\r\n},0},\r\n{\r\n{1,\r\n{3,\r\n{1,0,65bbf686-209e-4687-9ffa-74eaf043bf27},\"Second\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},\r\n{4,4,\r\n{0},4}\r\n},0}\r\n}\r\n}"
+    }
+  ],
+  "cases": [
+    {
+      "name": "Message",
+      "xml": "<ns0:Type xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\">\n\t\t\t\t<ns1:Type>xs:boolean</ns1:Type>\n\t\t\t\t<ns1:Type>xs:string</ns1:Type>\n\t\t\t\t<ns1:Type>xs:dateTime</ns1:Type>\n\t\t\t\t<ns1:Type>xs:decimal</ns1:Type>\n\t\t\t\t<ns1:Type>cfg:CatalogRef.CRSAPI_TestCatalog</ns1:Type>\n\t\t\t\t<ns1:NumberQualifiers>\n\t\t\t\t\t<ns1:Digits>15</ns1:Digits>\n\t\t\t\t\t<ns1:FractionDigits>2</ns1:FractionDigits>\n\t\t\t\t\t<ns1:AllowedSign>Any</ns1:AllowedSign>\n\t\t\t\t</ns1:NumberQualifiers>\n\t\t\t\t<ns1:StringQualifiers>\n\t\t\t\t\t<ns1:Length>100</ns1:Length>\n\t\t\t\t\t<ns1:AllowedLength>Variable</ns1:AllowedLength>\n\t\t\t\t</ns1:StringQualifiers>\n\t\t\t\t<ns1:DateQualifiers>\n\t\t\t\t\t<ns1:DateFractions>DateTime</ns1:DateFractions>\n\t\t\t\t</ns1:DateQualifiers>\n\t\t\t</ns0:Type>\n\t\t",
+      "pattern": "{\"Pattern\",{\"B\"},{\"S\",100,1},{\"D\"},{\"N\",15,2,0},{\"#\",c2ba45b6-aa82-404e-8298-b247b370b4cf}}"
+    },
+    {
+      "name": "Amount",
+      "xml": "<ns0:Type xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\">\n\t\t\t\t<ns1:Type>cfg:CatalogRef.CRSAPI_TestCatalog</ns1:Type>\n\t\t\t</ns0:Type>\n\t\t",
+      "pattern": "{\"Pattern\",{\"#\",c2ba45b6-aa82-404e-8298-b247b370b4cf}}"
+    },
+    {
+      "name": "Flag",
+      "xml": "<ns0:Type xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\">\n\t\t\t\t<ns1:Type>cfg:DocumentRef.CRSAPI_TestDocument</ns1:Type>\n\t\t\t\t<ns1:Type>cfg:EnumRef.CRSAPI_TestEnum</ns1:Type>\n\t\t\t\t<ns1:Type>cfg:CatalogRef.CRSAPI_TestCatalog</ns1:Type>\n\t\t\t</ns0:Type>\n\t\t",
+      "pattern": "{\"Pattern\",{\"#\",5fa8eb11-80ce-48fe-bb05-2c00e04ed6eb},{\"#\",6839ee57-f428-4b62-8f8e-329442c53c3e},{\"#\",c2ba45b6-aa82-404e-8298-b247b370b4cf}}"
+    },
+    {
+      "name": "Moment",
+      "xml": "<ns0:Type xmlns:ns0=\"http://v8.1c.ru/8.3/xcf/logform\" xmlns:ns1=\"http://v8.1c.ru/8.1/data/core\">\n\t\t\t\t<ns1:Type>xs:dateTime</ns1:Type>\n\t\t\t\t<ns1:DateQualifiers>\n\t\t\t\t\t<ns1:DateFractions>DateTime</ns1:DateFractions>\n\t\t\t\t</ns1:DateQualifiers>\n\t\t\t</ns0:Type>\n\t\t",
+      "pattern": "{\"Pattern\",{\"D\"}}"
+    }
+  ]
+}

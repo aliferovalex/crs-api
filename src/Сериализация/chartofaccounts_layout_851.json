@@ -75,5 +75,442 @@
     "Description",
     "Code"
   ],
-  "template": "{1,{32,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{0,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}},1,0,{0,0},00000000-0000-0000-0000-000000000000,0,\"\",9,25,0,0,0,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,2,0,{1,{0,2,{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,{-8}},{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,{-7}}}},1,0,1,1,{0},{0},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{0},{0},{0},{0},{0},{0,{0}},1,{1,{0,0}},0,{1,2,0},0,0,0,0},7,{0df30176-6865-4787-9fc8-609eb144174f,0},{3daea016-69b7-4ed4-9453-127911372fe6,0},{4c7fec95-d1bd-4508-8a01-f1db090d9af8,0},{5372e285-03db-4f8c-8565-fe56f1aea40e,0},{6e65cbf5-daa8-4d8d-bef8-59723f4e5777,0},{78bd1243-c4df-46c3-8138-e147465cb9a4,0},{c70ca527-5042-4cad-a315-dcb4007e32a3,0}}"
+  "template": "{1,{32,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{0,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}},1,0,{0,0},00000000-0000-0000-0000-000000000000,0,\"\",9,25,0,0,0,1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,2,0,{1,{0,2,{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,{-8}},{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,{-7}}}},1,0,1,1,{0},{0},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{0},{0},{0},{0},{0},{0,{0}},1,{1,{0,0}},0,{1,2,0},0,0,0,0},7,{0df30176-6865-4787-9fc8-609eb144174f,0},{3daea016-69b7-4ed4-9453-127911372fe6,0},{4c7fec95-d1bd-4508-8a01-f1db090d9af8,0},{5372e285-03db-4f8c-8565-fe56f1aea40e,0},{6e65cbf5-daa8-4d8d-bef8-59723f4e5777,0},{78bd1243-c4df-46c3-8138-e147465cb9a4,0},{c70ca527-5042-4cad-a315-dcb4007e32a3,0}}",
+  "reference_lists": {
+    "BasedOn": {
+      "path": [
+        1,
+        18
+      ],
+      "item_template": "{\"#\",157fa490-4ce9-11d4-9415-008048da11f9,{1,00000000-0000-0000-0000-000000000000}}",
+      "id_path": [
+        2,
+        1
+      ],
+      "target": [
+        "Catalog",
+        "Document",
+        "ChartOfAccounts"
+      ],
+      "xml_type": "MDObjectRef",
+      "exclude_self_dependency": true
+    }
+  },
+  "reference_values": {
+    "ExtDimensionTypes": {
+      "path": [1, 19],
+      "target": "ChartOfCharacteristicType",
+      "required_when_nonzero": [1, 20]
+    }
+  },
+  "scalar_properties": {
+    "MaxExtDimensionCount": {
+      "path": [1, 20],
+      "integer": {"min": 0, "max": 2147483647}
+    },
+    "UseStandardCommands": {
+      "path": [
+        1,
+        16
+      ],
+      "values": {
+        "true": 1,
+        "false": 0
+      },
+      "quoted": false
+    },
+    "IncludeHelpInContents": {
+      "path": [
+        1,
+        17
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      },
+      "quoted": false
+    },
+    "CodeLength": {
+      "path": [
+        1,
+        22
+      ],
+      "integer": {
+        "min": 0,
+        "max": 2147483647
+      }
+    },
+    "DescriptionLength": {
+      "path": [
+        1,
+        23
+      ],
+      "integer": {
+        "min": 0,
+        "max": 2147483647
+      }
+    },
+    "CodeSeries": {
+      "path": [
+        1,
+        35
+      ],
+      "values": {
+        "WholeChartOfAccounts": 0,
+        "WithinSubordination": 1
+      },
+      "quoted": false
+    },
+    "CheckUnique": {
+      "path": [
+        1,
+        34
+      ],
+      "values": {
+        "true": 1,
+        "false": 0
+      },
+      "quoted": false
+    },
+    "DefaultPresentation": {
+      "path": [
+        1,
+        26
+      ],
+      "values": {
+        "AsCode": 0,
+        "AsDescription": 1
+      },
+      "quoted": false
+    },
+    "PredefinedDataUpdate": {
+      "path": [
+        1,
+        51
+      ],
+      "values": {
+        "Auto": 0,
+        "AutoUpdate": 1,
+        "DontAutoUpdate": 2
+      },
+      "quoted": false
+    },
+    "EditType": {
+      "path": [
+        1,
+        27
+      ],
+      "values": {
+        "InDialog": 1,
+        "InList": 0,
+        "BothWays": 2
+      },
+      "quoted": false
+    },
+    "QuickChoice": {
+      "path": [
+        1,
+        32
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      },
+      "quoted": false
+    },
+    "ChoiceMode": {
+      "path": [
+        1,
+        31
+      ],
+      "values": {
+        "BothWays": 2,
+        "FromForm": 0,
+        "QuickChoice": 1
+      },
+      "quoted": false
+    },
+    "SearchStringModeOnInputByString": {
+      "path": [
+        1,
+        52,
+        0
+      ],
+      "values": {
+        "Begin": 1,
+        "AnyPart": 2
+      },
+      "quoted": false
+    },
+    "FullTextSearchOnInputByString": {
+      "path": [
+        1,
+        52,
+        1
+      ],
+      "values": {
+        "DontUse": 2,
+        "Use": 1
+      },
+      "quoted": false
+    },
+    "CreateOnInput": {
+      "path": [
+        1,
+        49
+      ],
+      "values": {
+        "DontUse": 1,
+        "Use": 2
+      },
+      "quoted": false
+    },
+    "ChoiceHistoryOnInput": {
+      "path": [
+        1,
+        53
+      ],
+      "values": {
+        "Auto": 0,
+        "DontUse": 1
+      },
+      "quoted": false
+    },
+    "AutoOrderByCode": {
+      "path": [
+        1,
+        24
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      },
+      "quoted": false
+    },
+    "OrderLength": {
+      "path": [
+        1,
+        25
+      ],
+      "integer": {
+        "min": 0,
+        "max": 2147483647
+      }
+    },
+    "FullTextSearch": {
+      "path": [
+        1,
+        37
+      ],
+      "values": {
+        "Use": 1,
+        "DontUse": 0
+      },
+      "quoted": false
+    },
+    "DataHistory": {
+      "path": [
+        1,
+        54
+      ],
+      "values": {
+        "DontUse": 0,
+        "Use": 1
+      },
+      "quoted": false
+    },
+    "CodeMask": {
+      "path": [
+        1,
+        21
+      ],
+      "string": true,
+      "quoted": true
+    },
+    "UpdateDataHistoryImmediatelyAfterWrite": {
+      "path": [
+        1,
+        55
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      },
+      "quoted": false
+    },
+    "ExecuteAfterWriteDataHistoryVersionProcessing": {
+      "path": [
+        1,
+        56
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      },
+      "quoted": false
+    }
+  },
+  "inline_collections": {
+    "Attribute": {
+      "slot": 7,
+      "template": "{{3,{27,{2,{3,{1,0,00000000-0000-0000-0000-000000000000},\"SearchKey\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{\"Pattern\",{\"S\",64,1}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"S\",\"\"},0,0,0},0,1,1,0,{1,00000000-0000-0000-0000-000000000000}},0}",
+      "defaults": {}
+    },
+    "AccountingFlag": {
+      "slot": 8,
+      "xml_name": "AccountingFlag",
+      "template": "{{6,{27,{2,{3,{1,0,00000000-0000-0000-0000-000000000000},\"FlagOne\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{\"Pattern\",{\"B\"}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"U\"},0,0,0},1},0}",
+      "defaults": {},
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillFromFillingValue",
+        "FillValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput",
+        "DataHistory"
+      ],
+      "allowed_type_codes": [
+        "S",
+        "N",
+        "B",
+        "D"
+      ]
+    },
+    "ExtDimensionAccountingFlag": {
+      "slot": 9,
+      "xml_name": "ExtDimensionAccountingFlag",
+      "template": "{{6,{27,{2,{3,{1,0,00000000-0000-0000-0000-000000000000},\"DimensionOne\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{\"Pattern\",{\"B\"}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"U\"},0,0,0},1},0}",
+      "defaults": {},
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillFromFillingValue",
+        "FillValue",
+        "FillChecking",
+        "ChoiceFoldersAndItems",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceForm",
+        "LinkByType",
+        "ChoiceHistoryOnInput",
+        "DataHistory"
+      ],
+      "allowed_type_codes": [
+        "S",
+        "N",
+        "B",
+        "D"
+      ]
+    }
+  },
+  "field_references": {
+    "type_id": "60ea359f-3a6e-48bb-8e71-d2a457572918",
+    "standards": {
+      "Code": {
+        "code": -7,
+        "length_property": "CodeLength",
+        "length_path": [
+          1,
+          22
+        ]
+      },
+      "Description": {
+        "code": -8,
+        "length_property": "DescriptionLength",
+        "length_path": [
+          1,
+          23
+        ]
+      },
+      "Parent": {
+        "code": -6
+      },
+      "DeletionMark": {
+        "code": -4
+      },
+      "Order": {
+        "code": -17,
+        "length_property": "OrderLength",
+        "length_path": [
+          1,
+          25
+        ]
+      }
+    },
+    "attributes_path": [
+      7
+    ],
+    "attribute_common_path": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "index_property": "Indexing",
+    "indexed_values": [
+      "Index"
+    ],
+    "indexing_path": [
+      0,
+      2
+    ],
+    "indexed_native_values": [
+      "1"
+    ]
+  },
+  "field_lists": {
+    "InputByString": {
+      "path": [
+        1,
+        33,
+        1
+      ],
+      "requires_indexing": true,
+      "standard_fields": [
+        "Code",
+        "Description"
+      ]
+    },
+    "DataLockFields": {
+      "path": [
+        1,
+        50,
+        1
+      ]
+    }
+  }
 }

@@ -11,7 +11,8 @@ import uuid
 import zlib
 from dataclasses import dataclass
 import xml.etree.ElementTree as E
-import metadata_serializer as s
+import native_metadata as s
+import xml_namespaces
 
 
 def content_version(raw, identifier=None):
@@ -91,14 +92,14 @@ def child_map(pairs):
     return result
 
 
-def pack_body_change(request,docs,saved,raw,original,pairs,descriptor_order=None):
+def pack_body_change(request,docs,saved,raw,original,pairs,descriptor_order=None,externals=None):
     """Pack a verified whole-body replacement; callers supply class-specific maps."""
     m=docs[0];oid=s.val(m[1]);version=content_version(raw);source=bytes.fromhex(original)
     commit_metadata(m,source,version)
     m[15:17]=copy.deepcopy(saved[0][15:17]);docs[1]=copy.deepcopy(saved[1])
-    graph=change_graph(m,child_map(pairs))
+    graph=change_graph(m,child_map(pairs),externals=m[11] if externals is not None else None)
     payload=assemble(graph,[ObjectRecord(oid,s.text_bytes(docs),s.compress(raw))])
-    return request_xml(request,payload,{oid:docs},{oid:source},{oid:version},descriptor_order=descriptor_order)
+    return request_xml(request,payload,{oid:docs},{oid:source},{oid:version},externals={oid:externals} if externals is not None else None,descriptor_order=descriptor_order)
 
 
 def change_graph(metadata, children, features=None, externals=None):
@@ -171,12 +172,13 @@ def subtree_creation_graph(objects, parent, new_ids, order, children,changed_ids
 
 
 def deletion_graph(objects, kept, parent, removed, pairs, old_relations):
+    removed={removed} if isinstance(removed,str) else set(removed)
     a=s.atom;m=kept[parent][0];descriptors=[a(len(kept))];parents=[a(len(kept))];flags=[a(len(kept))];active=[a(len(objects))]
     for oid,d in kept.items():
         descriptors.extend([a(oid),descriptor(d[0])]);parents.extend([a(oid),d[0][3]]);flags.extend([a(oid),a(1)])
-    for oid in objects:active.extend([a(oid),a(0 if oid==removed else 1)])
+    for oid in objects:active.extend([a(oid),a(0 if oid in removed else 1)])
     return [descriptors,[a(1),[a(parent)]+copy.deepcopy(m[13])],[a(0)],parents,active,
-        [a(1),a(parent),child_map((oid,cls) for oid,cls in pairs if oid!=removed)],
+        [a(1),a(parent),child_map((oid,cls) for oid,cls in pairs if oid not in removed)],
         [a(0)],[a(1),a(parent),m[11]],flags,copy.deepcopy(flags),
         a(1),[a(len(old_relations))]+old_relations,a(0),[a(0)],[a(1),[a(0)]]]
 
@@ -208,24 +210,19 @@ def request_xml(request, payload, objects, originals, versions, externals=None, 
     for oid,values in (features or {}).items():
         node=field(feature_node,'value');field(node,'first',oid);values_node=field(node,'second')
         for value in values:field(values_node,'value',value)
-    return E.tostring(call,encoding='unicode')
+    return xml_namespaces.serialize(call)
 
 
-def pack_external_change(docs, saved, data, oid, name, original, raw, external_data):
+def pack_external_change(content, original):
     """Shared single-object commit with one replaced external stream."""
-    m = docs[0]
-    stream_version = external_version()
-    external64 = base64.b64encode(stream_version).decode()
+    docs, raw, streams, externals = content
+    m = docs[0];oid = s.val(m[1]);stream = externals[0]
     local = content_version(raw)
     a = s.atom
     commit_metadata(m, bytes.fromhex(original), local)
-    m[11] = [a(1), a(name, True), a(external64)]
-    m[15:17] = copy.deepcopy(saved[0][15:17])
-    docs[1] = copy.deepcopy(saved[1])
-    docs[2] = [a(1), [a(name, True), a(external64), a(1)]]
     meta = s.text_bytes(docs)
     graph = change_graph(m, [a(0)], features=[a(0)], externals=m[11])
-    payload = assemble(graph, [ObjectRecord(oid, meta, data, ((name, external_data),))])
+    payload = assemble(graph, [ObjectRecord(oid, meta, s.compress(raw), tuple(streams))])
     return dict(data=base64.b64encode(payload).decode(), object_id=oid,
         class_id=s.val(m[2]), original=original, local=local.hex(),
-        external_name=name, external_version=stream_version.hex())
+        external_name=stream['name'], external_version=stream['version'])

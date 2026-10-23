@@ -1,5 +1,6 @@
 """Whole-XML references to independently stored children of a metadata object."""
-import metadata_serializer as s
+import metadata_context
+import native_metadata as s
 import metadata_identifiers as ids
 
 
@@ -7,16 +8,16 @@ def resolve(node,profile,owner,objects):
     if node.attrib or len(node) or not node.text or node.text.strip()!=node.text:
         raise ValueError('Expected a child object name reference')
     cls=ids.class_id(profile['kind'])
-    matches=[oid for oid,docs in objects.items() if s.val(docs[0][2])==cls
-             and s.val(docs[0][3])==owner and s.val(docs[0][9])==node.text]
+    import metadata_targets
+    matches=[row.object_id for row in metadata_targets.index(objects).find({cls},node.text,owner)]
     if len(matches)!=1:raise ValueError('Missing or ambiguous child reference: '+node.text)
     return matches[0]
 
 
 def validate(source,target,layout,metadata,objects,removed=()):
     """Preserve a complete existing child set, including its positional order."""
-    import constant_serializer as c
-    pairs=c.children(metadata);checked=[]
+    pass
+    pairs=metadata_context.children(metadata);checked=[]
     for profile in layout.get('child_collections',{}).values():
         cls=ids.class_id(profile['kind']);old=source[profile['slot']];new=target[profile['slot']]
         for row in (old,new):

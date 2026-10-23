@@ -1,0 +1,109 @@
+{
+  "source": "Independent Configurator 8.5.1.1529 compilation and native repository snapshot dependency descriptors; all objects belong to disposable test bases.",
+  "cf_sha256": "c5504f0c9f5b0473a63d442d53d111ec8e2868713fd167d2646934d464684d61",
+  "definitions": [
+    {
+      "object_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "kind": "Configuration",
+      "name": "\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f",
+      "qualified_name": "Configuration.\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f",
+      "parent_id": "00000000-0000-0000-0000-000000000000",
+      "stored_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored": true
+    },
+    {
+      "object_id": "95035609-d02a-4e3b-95ef-ea1d763cb983",
+      "kind": "Catalog",
+      "name": "ProbeCatalog",
+      "qualified_name": "Catalog.ProbeCatalog",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "95035609-d02a-4e3b-95ef-ea1d763cb983",
+      "stored": true
+    },
+    {
+      "object_id": "b71b0c71-3b39-478e-8c1f-0b7759f18b79",
+      "kind": "ExternalDataSource",
+      "name": "ProbeExternalDataSource",
+      "qualified_name": "ExternalDataSource.ProbeExternalDataSource",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "stored_id": "b71b0c71-3b39-478e-8c1f-0b7759f18b79",
+      "stored": true
+    },
+    {
+      "object_id": "a54e4e1d-68ee-4046-b472-f04d4dd177c3",
+      "kind": "Attribute",
+      "name": "ProbeField",
+      "qualified_name": "Catalog.ProbeCatalog.Attribute.ProbeField",
+      "parent_id": "95035609-d02a-4e3b-95ef-ea1d763cb983",
+      "stored_id": "95035609-d02a-4e3b-95ef-ea1d763cb983",
+      "stored": false
+    }
+  ],
+  "samples": [
+    {
+      "name": "ProbeRight00On",
+      "id": "e799a545-3120-426d-a6f8-f5ec0f6c55ee",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>false</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Configuration.\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f</name>\n\t\t<right>\n\t\t\t<name>ActiveUsers</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t</object>\n</Rights>",
+      "native": "{10,\r\n{1,\r\n{\r\n{1,f1fb3c51-a8b8-4ee9-a928-b0024be88951,0,0},\r\n{0,fd05f656-7a23-43a4-8996-f480a806fb97,1,d066966a-ff6a-4a41-bd68-6191cab083bc,-1,f6168734-8b8d-4a88-ab39-ef6b51758e83,-1,b9b44b51-3ac9-47cd-8b5a-df51afdcceb0,-1,818fc6c3-4691-44e3-a80c-e8d424730ead,-1,155a0b35-4343-4047-989b-d385373b063e,-1,f7c6a0bb-bca6-4cd3-9146-832971cd7073,-1}\r\n}\r\n},\r\n{0},4294967295,4294967295,0,4294967295}",
+      "relations": {
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      },
+      "definition_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Role uuid=\"e799a545-3120-426d-a6f8-f5ec0f6c55ee\">\n\t\t<Properties>\n\t\t\t<Name>ProbeRight00On</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t</Properties>\n\t</Role>\n</MetaDataObject>",
+      "body": "{1,\r\n{6,\r\n{3,\r\n{1,0,e799a545-3120-426d-a6f8-f5ec0f6c55ee},\"ProbeRight00On\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,0,0},0}"
+    },
+    {
+      "name": "ProbeRight06On",
+      "id": "9cce136d-fc56-45ac-8fe4-cdf4596cdd5d",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>false</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t\t<right>\n\t\t\t<name>Update</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t\t<right>\n\t\t\t<name>View</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t\t<right>\n\t\t\t<name>Edit</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t\t<right>\n\t\t\t<name>InteractiveClearDeletionMark</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t\t<right>\n\t\t\t<name>InteractiveClearDeletionMarkPredefinedData</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t</object>\n</Rights>",
+      "native": "{10,\r\n{1,\r\n{\r\n{1,95035609-d02a-4e3b-95ef-ea1d763cb983,0,0},\r\n{0,1c87578f-9e09-4ec0-a991-5629c87b1588,1,287b74b8-3a66-4a76-ba27-4f1f6a93770e,1,aa6448f2-be0f-42ea-ba26-1af7f52b5b65,1,b7bab52d-c1b1-4bd8-8276-02db08d42352,1,798cf688-ad74-44fe-a464-236b49e910e0,1,e7f9daf9-eac2-4ada-9c26-c380858f3589,1}\r\n}\r\n},\r\n{0},4294967295,4294967295,0,4294967295}",
+      "relations": {
+        "95035609-d02a-4e3b-95ef-ea1d763cb983": 1,
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      },
+      "definition_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Role uuid=\"9cce136d-fc56-45ac-8fe4-cdf4596cdd5d\">\n\t\t<Properties>\n\t\t\t<Name>ProbeRight06On</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t</Properties>\n\t</Role>\n</MetaDataObject>",
+      "body": "{1,\r\n{6,\r\n{3,\r\n{1,0,9cce136d-fc56-45ac-8fe4-cdf4596cdd5d},\"ProbeRight06On\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,0,0},0}"
+    },
+    {
+      "name": "ProbeRight20On",
+      "id": "7b256237-87b9-4a55-a30a-4c4a1e32dc3a",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>false</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>ExternalDataSource.ProbeExternalDataSource</name>\n\t\t<right>\n\t\t\t<name>StandardAuthenticationChange</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t</object>\n</Rights>",
+      "native": "{10,\r\n{1,\r\n{\r\n{1,b71b0c71-3b39-478e-8c1f-0b7759f18b79,0,0},\r\n{0,aad14f33-8a70-48dd-acd1-a661fe5b4263,1}\r\n}\r\n},\r\n{0},4294967295,4294967295,0,4294967295}",
+      "relations": {
+        "b71b0c71-3b39-478e-8c1f-0b7759f18b79": 1,
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      },
+      "definition_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Role uuid=\"7b256237-87b9-4a55-a30a-4c4a1e32dc3a\">\n\t\t<Properties>\n\t\t\t<Name>ProbeRight20On</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t</Properties>\n\t</Role>\n</MetaDataObject>",
+      "body": "{1,\r\n{6,\r\n{3,\r\n{1,0,7b256237-87b9-4a55-a30a-4c4a1e32dc3a},\"ProbeRight20On\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,0,0},0}"
+    },
+    {
+      "name": "ProbeInlineRights",
+      "id": "2c04704f-5dfd-4726-b6f6-ec570abf29ca",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>false</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog.Attribute.ProbeField</name>\n\t\t<right>\n\t\t\t<name>View</name>\n\t\t\t<value>true</value>\n\t\t</right>\n\t</object>\n</Rights>",
+      "native": "{10,\r\n{1,\r\n{\r\n{1,a54e4e1d-68ee-4046-b472-f04d4dd177c3,0,1},\r\n{0,aa6448f2-be0f-42ea-ba26-1af7f52b5b65,1}\r\n}\r\n},\r\n{0},4294967295,4294967295,0,4294967295}",
+      "relations": {
+        "a54e4e1d-68ee-4046-b472-f04d4dd177c3": 1,
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      },
+      "definition_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Role uuid=\"2c04704f-5dfd-4726-b6f6-ec570abf29ca\">\n\t\t<Properties>\n\t\t\t<Name>ProbeInlineRights</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t</Properties>\n\t</Role>\n</MetaDataObject>",
+      "body": "{1,\r\n{6,\r\n{3,\r\n{1,0,2c04704f-5dfd-4726-b6f6-ec570abf29ca},\"ProbeInlineRights\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,0,0},0}"
+    },
+    {
+      "name": "ProbeFieldRLS",
+      "id": "4a41d352-dc46-4c97-9cc6-c532c6c85c02",
+      "parent_id": "f1fb3c51-a8b8-4ee9-a928-b0024be88951",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Rights xmlns=\"http://v8.1c.ru/8.2/roles\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"Rights\" version=\"2.21\">\n\t<setForNewObjects>false</setForNewObjects>\n\t<setForAttributesByDefault>false</setForAttributesByDefault>\n\t<independentRightsOfChildObjects>false</independentRightsOfChildObjects>\n\t<object>\n\t\t<name>Catalog.ProbeCatalog</name>\n\t\t<right>\n\t\t\t<name>Read</name>\n\t\t\t<value>true</value>\n\t\t\t<restrictionByCondition>\n\t\t\t\t<field>ProbeField</field>\n\t\t\t\t<condition>WHERE FALSE</condition>\n\t\t\t</restrictionByCondition>\n\t\t</right>\n\t</object>\n</Rights>",
+      "native": "{10,\r\n{1,\r\n{\r\n{1,95035609-d02a-4e3b-95ef-ea1d763cb983,0,0},\r\n{1,1,1c87578f-9e09-4ec0-a991-5629c87b1588,1,1,\r\n{1c87578f-9e09-4ec0-a991-5629c87b1588,\r\n{2,\r\n{1,\"\",0},\r\n{1,\"WHERE FALSE\",1,\r\n{\r\n{0},\r\n{0,a54e4e1d-68ee-4046-b472-f04d4dd177c3}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n}\r\n},\r\n{0},4294967295,4294967295,0,4294967295}",
+      "relations": {
+        "95035609-d02a-4e3b-95ef-ea1d763cb983": 1,
+        "a54e4e1d-68ee-4046-b472-f04d4dd177c3": 1,
+        "f1fb3c51-a8b8-4ee9-a928-b0024be88951": 1
+      },
+      "definition_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Role uuid=\"4a41d352-dc46-4c97-9cc6-c532c6c85c02\">\n\t\t<Properties>\n\t\t\t<Name>ProbeFieldRLS</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment/>\n\t\t</Properties>\n\t</Role>\n</MetaDataObject>",
+      "body": "{1,\r\n{6,\r\n{3,\r\n{1,0,4a41d352-dc46-4c97-9cc6-c532c6c85c02},\"ProbeFieldRLS\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,0,0},0}"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
-import copy,json,unittest,sys
+import copy,json,unittest,sys,uuid
 from pathlib import Path
 from xml.etree import ElementTree as E
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src/Сериализация'))
-import metadata_serializer as s,managed_form_xml as x,managed_form_serializer as creation
-import catalog_tabular_xml as tabular,v8unpack_backend as backend
-import test_catalog_tabular_xml as fixtures
+import native_metadata as s, managed_form_xml as x, managed_form_operations as creation
+import tabular_section_xml as tabular,v8unpack_backend as backend
+import test_tabular_section_xml as fixtures
 import test_managed_form_xml as forms
 
 
@@ -13,6 +13,9 @@ def owner(kind='Catalog'):
     if kind=='Document':
         profile=json.loads(Path(x.__file__).with_name('document_layout_851.json').read_text(encoding='utf-8'))
         body=s.Parser(profile['template']).documents()[0]
+        for field in profile['generated_slots']:body[1][field]=s.atom(str(uuid.uuid5(uuid.NAMESPACE_URL,'document/type/'+str(field))))
+        import managed_form_profiles
+        common=managed_form_profiles.owner_common(body,kind);common[1][2]=s.atom(str(uuid.uuid5(uuid.NAMESPACE_URL,'document/owner')));common[2]=s.atom('XML_Catalog',True)
     node=fixtures.section()
     if kind=='Document':
         for typ in node.find(tabular.Q+'InternalInfo'):

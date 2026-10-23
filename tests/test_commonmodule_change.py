@@ -3,9 +3,10 @@ import base64
 import hashlib
 import unittest
 import uuid
-import test_constant_serializer as const
-import metadata_serializer as s
-import constant_serializer as c
+import test_object_creation_serializer as const
+import metadata_context
+import native_metadata as s
+import object_creation_serializer as c
 import commonmodule_serializer as module
 import test_commonmodule_serializer as create
 
@@ -33,6 +34,18 @@ def fixture():
 
 
 class CommonModuleChangeTests(unittest.TestCase):
+    def test_ordinary_client_flag_is_preserved_for_text_only_change_and_can_be_changed(self):
+        from test_managed_form_creation import store
+        from xml.etree import ElementTree as E
+        import metadata_object_xml
+        request=fixture();docs=metadata_context.context_objects(request['context'])[request['object_id']]
+        data=base64.b64decode(request['snapshot']);_,pos=s.read_record(data,12);raw,_=s.read_record(data,pos);body=s.Parser(s.inflate(raw).decode('utf-8-sig')).documents()[0]
+        body[1][2]=s.atom(1);docs[2]=[s.atom(0)];request['snapshot']=store(docs,s.native_body_bytes([body]))
+        self.assertEqual(s.val(s.Parser(module.compile_change(request).body.decode('utf-8-sig')).documents()[0][1][2]),'1')
+        root=metadata_object_xml.export(body,{},request['platform'],'CommonModule');root[0].find(metadata_object_xml.Q+'Properties/'+metadata_object_xml.Q+'ClientOrdinaryApplication').text='false'
+        request['object_xml']=E.tostring(root,encoding='unicode')
+        self.assertEqual(s.val(s.Parser(module.compile_change(request).body.decode('utf-8-sig')).documents()[0][1][2]),'0')
+
     def test_source_changes_body_and_descriptors_are_preserved(self):
         request = fixture(); result = module.serialize_change(request)
         _, pos = s.read_record(base64.b64decode(request['snapshot']), 12)
@@ -59,7 +72,7 @@ class CommonModuleChangeTests(unittest.TestCase):
             bad = dict(r); bad[field] = value
             with self.subTest(field=field), self.assertRaises(ValueError): module.serialize_change(bad)
         for mutate in ('class', 'stream', 'children', 'external-context'):
-            docs = s.context_metadata(base64.b64decode(r['context']), const.CID)
+            docs = metadata_context.context_metadata(base64.b64decode(r['context']), const.CID)
             if mutate == 'class': docs[0][2] = s.atom(c.CLASS)
             if mutate == 'stream': docs[0][11][1] = s.atom('other.0', True)
             if mutate == 'children': docs[0][12] = [s.atom(1)]

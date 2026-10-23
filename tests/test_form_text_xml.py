@@ -3,7 +3,7 @@ import hashlib,json,sys,unittest
 from pathlib import Path
 from xml.etree import ElementTree as E
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src/Сериализация'))
-import metadata_serializer as s,managed_form_xml as x,v8unpack_backend as b,rich_text_xml as rich
+import native_metadata as s, managed_form_xml as x, v8unpack_backend as b, rich_text_xml as rich
 
 
 class TextTests(unittest.TestCase):

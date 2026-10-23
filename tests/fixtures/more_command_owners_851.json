@@ -1,0 +1,1512 @@
+{
+  "source": "Independent Configurator 8.5.1.1529 owner command compilation",
+  "type_references": {
+    "cfg:CatalogRef.CRSTypeCatalog": "ba2afd30-e52c-40c2-ac98-fa1c8676e9a8"
+  },
+  "cases": [
+    {
+      "kind": "Catalog",
+      "path": "Catalogs/CRSFormOwnerCatalog.xml",
+      "id": "87eedb6d-4ab9-4df9-a37c-0d4da8cf7381",
+      "command_id": "5a4fadda-6bc3-4151-849a-f7fa372f153b",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Catalog uuid=\"87eedb6d-4ab9-4df9-a37c-0d4da8cf7381\">\n\t\t<InternalInfo>\n\t\t\t<xr:GeneratedType name=\"CatalogObject.CRSFormOwnerCatalog\" category=\"Object\">\n\t\t\t\t<xr:TypeId>836f916a-f3ac-4093-b402-0df72b6fc9d0</xr:TypeId>\n\t\t\t\t<xr:ValueId>5e7e617d-887e-4484-8b68-b7274232a0c3</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"CatalogRef.CRSFormOwnerCatalog\" category=\"Ref\">\n\t\t\t\t<xr:TypeId>9dbd9512-f088-4bab-b436-bc8ae9b876db</xr:TypeId>\n\t\t\t\t<xr:ValueId>06ca6495-c266-4d08-8a52-a269496a3b53</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"CatalogSelection.CRSFormOwnerCatalog\" category=\"Selection\">\n\t\t\t\t<xr:TypeId>5787047b-7c9c-444e-9cad-55c3c82fba69</xr:TypeId>\n\t\t\t\t<xr:ValueId>3268aedd-7bb6-4807-9e49-d691cee69841</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"CatalogList.CRSFormOwnerCatalog\" category=\"List\">\n\t\t\t\t<xr:TypeId>1db4856c-3f71-4f59-8b44-f4a074449350</xr:TypeId>\n\t\t\t\t<xr:ValueId>25ecd81c-d1dc-4fdf-910c-9c6a5be78b59</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"CatalogManager.CRSFormOwnerCatalog\" category=\"Manager\">\n\t\t\t\t<xr:TypeId>7251609e-0361-434e-9f28-675df737ffb6</xr:TypeId>\n\t\t\t\t<xr:ValueId>eae40ee2-4525-4c6b-b27d-0d98d71fe4d9</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t</InternalInfo>\n\t\t<Properties>\n\t\t\t<Name>CRSFormOwnerCatalog</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Combined properties and form roles: Catalog</Comment>\n\t\t\t<Hierarchical>false</Hierarchical>\n\t\t\t<HierarchyType>HierarchyFoldersAndItems</HierarchyType>\n\t\t\t<LimitLevelCount>false</LimitLevelCount>\n\t\t\t<LevelCount>2</LevelCount>\n\t\t\t<FoldersOnTop>true</FoldersOnTop>\n\t\t\t<UseStandardCommands>true</UseStandardCommands>\n\t\t\t<Owners/>\n\t\t\t<SubordinationUse>ToItems</SubordinationUse>\n\t\t\t<CodeLength>9</CodeLength>\n\t\t\t<DescriptionLength>25</DescriptionLength>\n\t\t\t<CodeType>String</CodeType>\n\t\t\t<CodeAllowedLength>Variable</CodeAllowedLength>\n\t\t\t<CodeSeries>WholeCatalog</CodeSeries>\n\t\t\t<CheckUnique>true</CheckUnique>\n\t\t\t<Autonumbering>true</Autonumbering>\n\t\t\t<DefaultPresentation>AsDescription</DefaultPresentation>\n\t\t\t<Characteristics/>\n\t\t\t<PredefinedDataUpdate>Auto</PredefinedDataUpdate>\n\t\t\t<EditType>InDialog</EditType>\n\t\t\t<QuickChoice>false</QuickChoice>\n\t\t\t<ChoiceMode>BothWays</ChoiceMode>\n\t\t\t<InputByString>\n\t\t\t\t<xr:Field>Catalog.CRSFormOwnerCatalog.StandardAttribute.Description</xr:Field>\n\t\t\t\t<xr:Field>Catalog.CRSFormOwnerCatalog.StandardAttribute.Code</xr:Field>\n\t\t\t</InputByString>\n\t\t\t<SearchStringModeOnInputByString>Begin</SearchStringModeOnInputByString>\n\t\t\t<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>\n\t\t\t<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>\n\t\t\t<DefaultObjectForm>Catalog.CRSFormOwnerCatalog.Form.CRSCompositeForm</DefaultObjectForm>\n\t\t\t<DefaultFolderForm>Catalog.CRSFormOwnerCatalog.Form.CRSRole_DefaultFolderForm</DefaultFolderForm>\n\t\t\t<DefaultListForm>Catalog.CRSFormOwnerCatalog.Form.CRSRole_DefaultListForm</DefaultListForm>\n\t\t\t<DefaultChoiceForm>Catalog.CRSFormOwnerCatalog.Form.CRSRole_DefaultChoiceForm</DefaultChoiceForm>\n\t\t\t<DefaultFolderChoiceForm>Catalog.CRSFormOwnerCatalog.Form.CRSRole_DefaultFolderChoiceForm</DefaultFolderChoiceForm>\n\t\t\t<AuxiliaryObjectForm>Catalog.CRSFormOwnerCatalog.Form.CRSRole_AuxiliaryObjectForm</AuxiliaryObjectForm>\n\t\t\t<AuxiliaryFolderForm>Catalog.CRSFormOwnerCatalog.Form.CRSRole_AuxiliaryFolderForm</AuxiliaryFolderForm>\n\t\t\t<AuxiliaryListForm>Catalog.CRSFormOwnerCatalog.Form.CRSRole_AuxiliaryListForm</AuxiliaryListForm>\n\t\t\t<AuxiliaryChoiceForm>Catalog.CRSFormOwnerCatalog.Form.CRSRole_AuxiliaryChoiceForm</AuxiliaryChoiceForm>\n\t\t\t<AuxiliaryFolderChoiceForm>Catalog.CRSFormOwnerCatalog.Form.CRSRole_AuxiliaryFolderChoiceForm</AuxiliaryFolderChoiceForm>\n\t\t\t<IncludeHelpInContents>false</IncludeHelpInContents>\n\t\t\t<BasedOn/>\n\t\t\t<DataLockFields/>\n\t\t\t<DataLockControlMode>Managed</DataLockControlMode>\n\t\t\t<FullTextSearch>Use</FullTextSearch>\n\t\t\t<ObjectPresentation/>\n\t\t\t<ExtendedObjectPresentation/>\n\t\t\t<ListPresentation/>\n\t\t\t<ExtendedListPresentation/>\n\t\t\t<Explanation/>\n\t\t\t<CreateOnInput>Use</CreateOnInput>\n\t\t\t<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>\n\t\t\t<DataHistory>DontUse</DataHistory>\n\t\t\t<UpdateDataHistoryImmediatelyAfterWrite>false</UpdateDataHistoryImmediatelyAfterWrite>\n\t\t\t<ExecuteAfterWriteDataHistoryVersionProcessing>false</ExecuteAfterWriteDataHistoryVersionProcessing>\n\t\t</Properties>\n\t\t<ChildObjects>\n\t\t\t<Form>NewScalarProbe</Form>\n\t\t\t<Form>CollectionsNewProbe</Form>\n\t\t\t<Form>CRSRole_DefaultObjectForm</Form>\n\t\t\t<Form>CRSRole_DefaultFolderForm</Form>\n\t\t\t<Form>CRSRole_DefaultListForm</Form>\n\t\t\t<Form>CRSRole_DefaultChoiceForm</Form>\n\t\t\t<Form>CRSRole_DefaultFolderChoiceForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryObjectForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryFolderForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryListForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryChoiceForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryFolderChoiceForm</Form>\n\t\t\t<Form>CRSCompositeForm</Form>\n\t\t\t<Template>CRSFullOwnedBinaryData</Template>\n\t\t\t<Template>CRSFullOwnedTextDocument</Template>\n\t\t\t<Template>CRSFullOwnedDataCompositionSchema</Template>\n\t\t\t<Command uuid=\"5a4fadda-6bc3-4151-849a-f7fa372f153b\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>SharedTypedCommand</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Group>NavigationPanelOrdinary</Group>\n\t\t\t\t\t<CommandParameterType>\n\t\t\t\t\t\t<v8:Type>xs:boolean</v8:Type>\n\t\t\t\t\t\t<v8:Type>cfg:CatalogRef.CRSTypeCatalog</v8:Type>\n\t\t\t\t\t</CommandParameterType>\n\t\t\t\t\t<ParameterUseMode>Multiple</ParameterUseMode>\n\t\t\t\t\t<ModifiesData>true</ModifiesData>\n\t\t\t\t\t<Representation>PictureAndText</Representation>\n\t\t\t\t\t<ToolTip>\n\t\t\t\t\t\t<v8:item>\n\t\t\t\t\t\t\t<v8:lang>en</v8:lang>\n\t\t\t\t\t\t\t<v8:content>Shared command properties</v8:content>\n\t\t\t\t\t\t</v8:item>\n\t\t\t\t\t</ToolTip>\n\t\t\t\t\t<Picture/>\n\t\t\t\t\t<Shortcut/>\n\t\t\t\t\t<OnMainServerUnavalableBehavior>Auto</OnMainServerUnavalableBehavior>\n\t\t\t\t</Properties>\n\t\t\t</Command>\n\t\t</ChildObjects>\n\t</Catalog>\n</MetaDataObject>",
+      "body": "{1,\r\n{57,836f916a-f3ac-4093-b402-0df72b6fc9d0,5e7e617d-887e-4484-8b68-b7274232a0c3,9dbd9512-f088-4bab-b436-bc8ae9b876db,06ca6495-c266-4d08-8a52-a269496a3b53,5787047b-7c9c-444e-9cad-55c3c82fba69,3268aedd-7bb6-4807-9e49-d691cee69841,1db4856c-3f71-4f59-8b44-f4a074449350,25ecd81c-d1dc-4fdf-910c-9c6a5be78b59,\r\n{0,\r\n{3,\r\n{1,0,87eedb6d-4ab9-4df9-a37c-0d4da8cf7381},\"CRSFormOwnerCatalog\",\r\n{0},\"Combined properties and form roles: Catalog\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},2,1,\r\n{0,0},1,1,1,0,9,1,25,1,20d51143-670c-46d4-960a-70565d2b444b,38e0cda7-5050-4a22-836c-f9bfd7f72ed9,39727aa1-d245-407e-affb-28afde9822c0,32cff34a-887c-4fa7-aad1-749da7ed84fc,c775b213-30a0-409c-b5f4-ba55b41090de,4550311f-677a-4d6f-b963-803dcaf6aaf7,4247010a-501a-4d33-bf71-61f84c275db6,83cfa5b4-d379-44b7-8930-4566eed6c8d9,c9c07996-5ed2-43be-a2c9-0b4cfdfa47b7,12d87acb-15e8-47ab-96ac-d36ee0ee6d53,1,\r\n{0,0},0,7251609e-0361-434e-9f28-675df737ffb6,eae40ee2-4525-4c6b-b27d-0d98d71fe4d9,0,0,0,0,2,0,\r\n{1,\r\n{0,2,\r\n{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,\r\n{-3}\r\n},\r\n{\"#\",60ea359f-3a6e-48bb-8e71-d2a457572918,\r\n{-2}\r\n}\r\n}\r\n},1,1,\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0},1,\r\n{0,\r\n{0}\r\n},2,\r\n{1,\r\n{0,0}\r\n},0,\r\n{1,2,0},0,0,0,0},5,\r\n{3daea016-69b7-4ed4-9453-127911372fe6,3,b596fa39-aa1c-405e-8658-85dff4662e4f,dafb050d-1d20-42f1-b355-af8d7c46c771,6bfd0f05-22a2-4c6a-bf27-3d4b4096b371},\r\n{4fe87c89-9ad4-43f6-9fdb-9dc83b3879c6,1,\r\n{\r\n{0,\r\n{0,0,0,\r\n{1,\r\n{2,5a4fadda-6bc3-4151-849a-f7fa372f153b,078a6af8-d22c-4248-9c33-7e90075a3d2c},\r\n{9,\r\n{4,0,\r\n{0},\"\",-1,-1,1,0,\"\"},2,\r\n{1,\"en\",\"Shared command properties\"},1,\r\n{0,0,0},0,\r\n{1,77ea1b8f-dd79-4717-9dba-5628e7f348cf},\r\n{\"Pattern\",\r\n{\"B\"},\r\n{\"#\",ba2afd30-e52c-40c2-ac98-fa1c8676e9a8}\r\n},\r\n{3,\r\n{1,0,5a4fadda-6bc3-4151-849a-f7fa372f153b},\"SharedTypedCommand\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,1,0}\r\n}\r\n}\r\n},0}\r\n},\r\n{932159f9-95b2-4e76-a8dd-8849fe5c5ded,0},\r\n{cf4abea7-37b2-11d4-940f-008048da11f9,0},\r\n{fdf816d2-1ead-11d5-b975-0050bae0a95d,13,dbf11c02-e5ab-4c7f-be58-35e7a770aaf2,66cb77cb-6659-4577-a4d0-20aa7c0ff3f1,34102692-1287-4d36-a4fa-191cd9e97ac9,38e0cda7-5050-4a22-836c-f9bfd7f72ed9,39727aa1-d245-407e-affb-28afde9822c0,32cff34a-887c-4fa7-aad1-749da7ed84fc,c775b213-30a0-409c-b5f4-ba55b41090de,4550311f-677a-4d6f-b963-803dcaf6aaf7,4247010a-501a-4d33-bf71-61f84c275db6,83cfa5b4-d379-44b7-8930-4566eed6c8d9,c9c07996-5ed2-43be-a2c9-0b4cfdfa47b7,12d87acb-15e8-47ab-96ac-d36ee0ee6d53,20d51143-670c-46d4-960a-70565d2b444b}\r\n}",
+      "forms": {
+        "CollectionsNewProbe": "66cb77cb-6659-4577-a4d0-20aa7c0ff3f1",
+        "CRSCompositeForm": "20d51143-670c-46d4-960a-70565d2b444b",
+        "CRSRole_AuxiliaryChoiceForm": "c9c07996-5ed2-43be-a2c9-0b4cfdfa47b7",
+        "CRSRole_AuxiliaryFolderChoiceForm": "12d87acb-15e8-47ab-96ac-d36ee0ee6d53",
+        "CRSRole_AuxiliaryFolderForm": "4247010a-501a-4d33-bf71-61f84c275db6",
+        "CRSRole_AuxiliaryListForm": "83cfa5b4-d379-44b7-8930-4566eed6c8d9",
+        "CRSRole_AuxiliaryObjectForm": "4550311f-677a-4d6f-b963-803dcaf6aaf7",
+        "CRSRole_DefaultChoiceForm": "32cff34a-887c-4fa7-aad1-749da7ed84fc",
+        "CRSRole_DefaultFolderChoiceForm": "c775b213-30a0-409c-b5f4-ba55b41090de",
+        "CRSRole_DefaultFolderForm": "38e0cda7-5050-4a22-836c-f9bfd7f72ed9",
+        "CRSRole_DefaultListForm": "39727aa1-d245-407e-affb-28afde9822c0",
+        "CRSRole_DefaultObjectForm": "34102692-1287-4d36-a4fa-191cd9e97ac9",
+        "NewScalarProbe": "dbf11c02-e5ab-4c7f-be58-35e7a770aaf2"
+      },
+      "templates": {
+        "CRSFullOwnedBinaryData": "b596fa39-aa1c-405e-8658-85dff4662e4f",
+        "CRSFullOwnedDataCompositionSchema": "6bfd0f05-22a2-4c6a-bf27-3d4b4096b371",
+        "CRSFullOwnedTextDocument": "dafb050d-1d20-42f1-b355-af8d7c46c771"
+      },
+      "references": [
+        {
+          "object_id": "8bae9d05-1281-408d-8ac6-d8204575ca21",
+          "class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_AccountingRegister"
+        },
+        {
+          "object_id": "6feab348-02dd-498f-86f9-4144df9141a7",
+          "class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerAccountingRegister"
+        },
+        {
+          "object_id": "50384255-ef23-4d0d-9755-6b652e94606f",
+          "class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_AccumulationRegister"
+        },
+        {
+          "object_id": "a6ffac4e-5b65-4c70-bfdd-db308eb19862",
+          "class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerAccumulationRegister"
+        },
+        {
+          "object_id": "ae5d11d4-ed34-4889-9052-f5f181d2b13a",
+          "class_id": "fcd3404e-1523-48ce-9bc0-ecdb822684a1",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerBusinessProcess"
+        },
+        {
+          "object_id": "dc1e099b-cf25-4838-9365-b82d6cfec1ae",
+          "class_id": "f2de87a8-64e5-45eb-a22d-b3aedab050e7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerCalculationRegister"
+        },
+        {
+          "object_id": "6ddd386a-3208-4610-94bb-5143bc10f68a",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Catalog"
+        },
+        {
+          "object_id": "1ed8bf82-97dd-4683-bc05-46449a036d8b",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalCatalog"
+        },
+        {
+          "object_id": "a722e752-8a73-4a11-ac63-93773e21b5da",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeCatalog"
+        },
+        {
+          "object_id": "51e054df-2ae2-4be1-9ed6-f92fd7bb20df",
+          "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_ChartOfAccounts"
+        },
+        {
+          "object_id": "87b99569-e321-4df1-95e8-87ffa3d9bb04",
+          "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerChartOfAccounts"
+        },
+        {
+          "object_id": "a6712935-7a27-4c21-a929-342abd46e3f7",
+          "class_id": "30b100d6-b29f-47ac-aec7-cb8ca8a54767",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerChartOfCalculationTypes"
+        },
+        {
+          "object_id": "a367baae-b92e-4f43-9dfc-353c9c38dd3d",
+          "class_id": "07ee8426-87f1-11d5-b99c-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalReferences"
+        },
+        {
+          "object_id": "6018f8ad-5ba2-43a3-9d48-785e09acdf93",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaCatalog"
+        },
+        {
+          "object_id": "7633609b-6b2b-47d5-bb55-f9d5b383fe34",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaDocument"
+        },
+        {
+          "object_id": "c58c58b9-a559-46ae-a5cd-47646b601797",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaEnum"
+        },
+        {
+          "object_id": "fe44e54d-9e51-4a6f-b511-5b9eb226f342",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonBinaryData"
+        },
+        {
+          "object_id": "a5f5ad04-549c-4957-af4b-9e12ff50ed04",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonDataCompositionSchema"
+        },
+        {
+          "object_id": "06a5dea5-3597-4145-b592-3d86230c6c3a",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonTextDocument"
+        },
+        {
+          "object_id": "b6a781ea-86d8-407d-ab9f-88b03c4c8147",
+          "class_id": "0195e80c-b157-11d4-9435-004095e12fc7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeConstant"
+        },
+        {
+          "object_id": "adeb5cd2-6e35-4ed9-a9c9-3aaf34990315",
+          "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_DataProcessor"
+        },
+        {
+          "object_id": "562772b9-95fe-46cd-a21c-d0ea9d7a3ede",
+          "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDataProcessor"
+        },
+        {
+          "object_id": "7cc4393f-d4fa-47ae-b6bc-46cfc5718e0b",
+          "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_DocumentJournal"
+        },
+        {
+          "object_id": "3acda3f8-ce88-44f4-88a6-7ae1ed291eeb",
+          "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDocumentJournal"
+        },
+        {
+          "object_id": "3f51c397-f215-497f-895c-d230a00251f5",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Document"
+        },
+        {
+          "object_id": "0f4b82a0-af0b-4eb9-9357-9a6219fee05f",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalDocument"
+        },
+        {
+          "object_id": "11742627-ae9d-4462-9aed-402646c0efa8",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDocument"
+        },
+        {
+          "object_id": "4d196102-8c9f-45ee-90a8-16d8c5a71099",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Enum"
+        },
+        {
+          "object_id": "3ce7ce9b-2d71-4535-89cd-6aa35c35e3f4",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerEnum"
+        },
+        {
+          "object_id": "8809b34c-08b1-4fd3-809d-8edede517647",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeEnum"
+        },
+        {
+          "object_id": "632f7ad7-e5ed-4cc6-9673-4494c8698a6e",
+          "class_id": "857c4a91-e5f4-4fac-86ec-787626f1c108",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerExchangePlan"
+        },
+        {
+          "object_id": "4953d0eb-406d-44e6-ae14-39db81ca6f90",
+          "class_id": "3e7bfcc0-067d-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerFilterCriterion"
+        },
+        {
+          "object_id": "88c46f9c-71c8-408d-9cb3-d7fcb3c08142",
+          "class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_InformationRegister"
+        },
+        {
+          "object_id": "201d0318-3ea3-4b48-a3bb-088f350377a7",
+          "class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerInformationRegister"
+        },
+        {
+          "object_id": "3b79b4a2-8038-44a0-9f4b-ffe91904ad64",
+          "class_id": "9cd510ce-abfc-11d4-9434-004095e12fc7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "Русский"
+        },
+        {
+          "object_id": "77478a5d-83eb-4f59-a77d-bf2f4741ce49",
+          "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Report"
+        },
+        {
+          "object_id": "bb6dda53-a59f-45e2-b469-898a3f13102b",
+          "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerReport"
+        },
+        {
+          "object_id": "e0d706ee-cabf-4060-a0e8-4b3b53376091",
+          "class_id": "24c43748-c938-45d0-8d14-01424a72b11e",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeSession"
+        },
+        {
+          "object_id": "450be9cf-68ed-4743-8609-58c0bbd2d768",
+          "class_id": "46b4cd97-fd13-4eaa-aba2-3bddd7699218",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerSettingsStorage"
+        },
+        {
+          "object_id": "7477df8f-b2fa-4346-b7ff-362c6135c36c",
+          "class_id": "3e63355c-1378-4953-be9b-1deb5fb6bec5",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerTask"
+        }
+      ]
+    },
+    {
+      "kind": "Enum",
+      "path": "Enums/CRSFormOwnerEnum.xml",
+      "id": "3ce7ce9b-2d71-4535-89cd-6aa35c35e3f4",
+      "command_id": "ea5d596e-3ae6-4dc8-a486-f40510365663",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<Enum uuid=\"3ce7ce9b-2d71-4535-89cd-6aa35c35e3f4\">\n\t\t<InternalInfo>\n\t\t\t<xr:GeneratedType name=\"EnumRef.CRSFormOwnerEnum\" category=\"Ref\">\n\t\t\t\t<xr:TypeId>847f7ec4-33a3-4e6e-892d-252bf8f8f607</xr:TypeId>\n\t\t\t\t<xr:ValueId>7b69d624-a33a-42cd-aa6a-498124ce7e0a</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"EnumManager.CRSFormOwnerEnum\" category=\"Manager\">\n\t\t\t\t<xr:TypeId>1cc63602-1234-4582-b61f-e44ded1311c8</xr:TypeId>\n\t\t\t\t<xr:ValueId>04c10e78-989b-4238-ba99-e1719ac08783</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"EnumList.CRSFormOwnerEnum\" category=\"List\">\n\t\t\t\t<xr:TypeId>ff6f2046-2a6b-4eac-a2eb-76fc678215b6</xr:TypeId>\n\t\t\t\t<xr:ValueId>861eb6eb-0883-49fd-ae0a-becd216ad22d</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t</InternalInfo>\n\t\t<Properties>\n\t\t\t<Name>CRSFormOwnerEnum</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Combined properties and form roles: Enum</Comment>\n\t\t\t<UseStandardCommands>false</UseStandardCommands>\n\t\t\t<Characteristics/>\n\t\t\t<QuickChoice>true</QuickChoice>\n\t\t\t<ChoiceMode>BothWays</ChoiceMode>\n\t\t\t<DefaultListForm>Enum.CRSFormOwnerEnum.Form.CRSCompositeForm</DefaultListForm>\n\t\t\t<DefaultChoiceForm>Enum.CRSFormOwnerEnum.Form.CRSRole_DefaultChoiceForm</DefaultChoiceForm>\n\t\t\t<AuxiliaryListForm>Enum.CRSFormOwnerEnum.Form.CRSRole_AuxiliaryListForm</AuxiliaryListForm>\n\t\t\t<AuxiliaryChoiceForm>Enum.CRSFormOwnerEnum.Form.CRSRole_AuxiliaryChoiceForm</AuxiliaryChoiceForm>\n\t\t\t<ListPresentation/>\n\t\t\t<ExtendedListPresentation/>\n\t\t\t<Explanation/>\n\t\t\t<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>\n\t\t</Properties>\n\t\t<ChildObjects>\n\t\t\t<EnumValue uuid=\"eb6fffbf-7ed7-4e43-ba96-837b190b28c8\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>SharedFirst</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Color>auto</Color>\n\t\t\t\t</Properties>\n\t\t\t</EnumValue>\n\t\t\t<EnumValue uuid=\"e50e9c9a-9685-46d5-b70e-4f933b2ed5ff\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>SharedSecond</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Color>auto</Color>\n\t\t\t\t</Properties>\n\t\t\t</EnumValue>\n\t\t\t<Form>NewScalarProbe</Form>\n\t\t\t<Form>CRSRole_DefaultListForm</Form>\n\t\t\t<Form>CRSRole_DefaultChoiceForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryListForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryChoiceForm</Form>\n\t\t\t<Form>CRSCompositeForm</Form>\n\t\t\t<Command uuid=\"ea5d596e-3ae6-4dc8-a486-f40510365663\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>SharedTypedCommand</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Group>NavigationPanelOrdinary</Group>\n\t\t\t\t\t<CommandParameterType>\n\t\t\t\t\t\t<v8:Type>xs:boolean</v8:Type>\n\t\t\t\t\t\t<v8:Type>cfg:CatalogRef.CRSTypeCatalog</v8:Type>\n\t\t\t\t\t</CommandParameterType>\n\t\t\t\t\t<ParameterUseMode>Multiple</ParameterUseMode>\n\t\t\t\t\t<ModifiesData>true</ModifiesData>\n\t\t\t\t\t<Representation>PictureAndText</Representation>\n\t\t\t\t\t<ToolTip>\n\t\t\t\t\t\t<v8:item>\n\t\t\t\t\t\t\t<v8:lang>en</v8:lang>\n\t\t\t\t\t\t\t<v8:content>Shared command properties</v8:content>\n\t\t\t\t\t\t</v8:item>\n\t\t\t\t\t</ToolTip>\n\t\t\t\t\t<Picture/>\n\t\t\t\t\t<Shortcut/>\n\t\t\t\t\t<OnMainServerUnavalableBehavior>Auto</OnMainServerUnavalableBehavior>\n\t\t\t\t</Properties>\n\t\t\t</Command>\n\t\t</ChildObjects>\n\t</Enum>\n</MetaDataObject>",
+      "body": "{1,\r\n{20,847f7ec4-33a3-4e6e-892d-252bf8f8f607,7b69d624-a33a-42cd-aa6a-498124ce7e0a,1cc63602-1234-4582-b61f-e44ded1311c8,04c10e78-989b-4238-ba99-e1719ac08783,\r\n{0,\r\n{3,\r\n{1,0,3ce7ce9b-2d71-4535-89cd-6aa35c35e3f4},\"CRSFormOwnerEnum\",\r\n{0},\"Combined properties and form roles: Enum\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},0,ff6f2046-2a6b-4eac-a2eb-76fc678215b6,861eb6eb-0883-49fd-ae0a-becd216ad22d,55ca206f-2785-4fca-a2d8-ea61f5d360a8,9373f370-9963-4e21-a99c-8f8e75b52bae,2,1,502da697-8e80-433e-b94e-72b66879fc31,2744889f-4acf-42a8-bc5b-5ceb1d607a67,\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0,\r\n{0}\r\n},0},4,\r\n{33f2e54b-37ce-4a7a-a569-b648d7aa4634,6,90964347-76f4-4829-b7cf-0f31be5d533d,da4a6ec6-b9db-4884-b383-f561376519ce,9373f370-9963-4e21-a99c-8f8e75b52bae,502da697-8e80-433e-b94e-72b66879fc31,2744889f-4acf-42a8-bc5b-5ceb1d607a67,55ca206f-2785-4fca-a2d8-ea61f5d360a8},\r\n{3daea016-69b7-4ed4-9453-127911372fe6,0},\r\n{6d8d73a7-ba29-401d-9032-3872ec2d6433,1,\r\n{\r\n{0,\r\n{0,0,0,\r\n{1,\r\n{2,ea5d596e-3ae6-4dc8-a486-f40510365663,078a6af8-d22c-4248-9c33-7e90075a3d2c},\r\n{9,\r\n{4,0,\r\n{0},\"\",-1,-1,1,0,\"\"},2,\r\n{1,\"en\",\"Shared command properties\"},1,\r\n{0,0,0},0,\r\n{1,77ea1b8f-dd79-4717-9dba-5628e7f348cf},\r\n{\"Pattern\",\r\n{\"B\"},\r\n{\"#\",ba2afd30-e52c-40c2-ac98-fa1c8676e9a8}\r\n},\r\n{3,\r\n{1,0,ea5d596e-3ae6-4dc8-a486-f40510365663},\"SharedTypedCommand\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,1,0}\r\n}\r\n}\r\n},0}\r\n},\r\n{bee0a08c-07eb-40c0-8544-5c364c171465,2,\r\n{\r\n{1,\r\n{3,\r\n{1,0,eb6fffbf-7ed7-4e43-ba96-837b190b28c8},\"SharedFirst\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},\r\n{4,4,\r\n{0},4}\r\n},0},\r\n{\r\n{1,\r\n{3,\r\n{1,0,e50e9c9a-9685-46d5-b70e-4f933b2ed5ff},\"SharedSecond\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},\r\n{4,4,\r\n{0},4}\r\n},0}\r\n}\r\n}",
+      "forms": {
+        "CRSCompositeForm": "55ca206f-2785-4fca-a2d8-ea61f5d360a8",
+        "CRSRole_AuxiliaryChoiceForm": "2744889f-4acf-42a8-bc5b-5ceb1d607a67",
+        "CRSRole_AuxiliaryListForm": "502da697-8e80-433e-b94e-72b66879fc31",
+        "CRSRole_DefaultChoiceForm": "9373f370-9963-4e21-a99c-8f8e75b52bae",
+        "CRSRole_DefaultListForm": "da4a6ec6-b9db-4884-b383-f561376519ce",
+        "NewScalarProbe": "90964347-76f4-4829-b7cf-0f31be5d533d"
+      },
+      "templates": {},
+      "references": [
+        {
+          "object_id": "8bae9d05-1281-408d-8ac6-d8204575ca21",
+          "class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_AccountingRegister"
+        },
+        {
+          "object_id": "6feab348-02dd-498f-86f9-4144df9141a7",
+          "class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerAccountingRegister"
+        },
+        {
+          "object_id": "50384255-ef23-4d0d-9755-6b652e94606f",
+          "class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_AccumulationRegister"
+        },
+        {
+          "object_id": "a6ffac4e-5b65-4c70-bfdd-db308eb19862",
+          "class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerAccumulationRegister"
+        },
+        {
+          "object_id": "ae5d11d4-ed34-4889-9052-f5f181d2b13a",
+          "class_id": "fcd3404e-1523-48ce-9bc0-ecdb822684a1",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerBusinessProcess"
+        },
+        {
+          "object_id": "dc1e099b-cf25-4838-9365-b82d6cfec1ae",
+          "class_id": "f2de87a8-64e5-45eb-a22d-b3aedab050e7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerCalculationRegister"
+        },
+        {
+          "object_id": "6ddd386a-3208-4610-94bb-5143bc10f68a",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Catalog"
+        },
+        {
+          "object_id": "1ed8bf82-97dd-4683-bc05-46449a036d8b",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalCatalog"
+        },
+        {
+          "object_id": "87eedb6d-4ab9-4df9-a37c-0d4da8cf7381",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerCatalog"
+        },
+        {
+          "object_id": "a722e752-8a73-4a11-ac63-93773e21b5da",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeCatalog"
+        },
+        {
+          "object_id": "51e054df-2ae2-4be1-9ed6-f92fd7bb20df",
+          "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_ChartOfAccounts"
+        },
+        {
+          "object_id": "87b99569-e321-4df1-95e8-87ffa3d9bb04",
+          "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerChartOfAccounts"
+        },
+        {
+          "object_id": "a6712935-7a27-4c21-a929-342abd46e3f7",
+          "class_id": "30b100d6-b29f-47ac-aec7-cb8ca8a54767",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerChartOfCalculationTypes"
+        },
+        {
+          "object_id": "a367baae-b92e-4f43-9dfc-353c9c38dd3d",
+          "class_id": "07ee8426-87f1-11d5-b99c-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalReferences"
+        },
+        {
+          "object_id": "6018f8ad-5ba2-43a3-9d48-785e09acdf93",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaCatalog"
+        },
+        {
+          "object_id": "7633609b-6b2b-47d5-bb55-f9d5b383fe34",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaDocument"
+        },
+        {
+          "object_id": "c58c58b9-a559-46ae-a5cd-47646b601797",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaEnum"
+        },
+        {
+          "object_id": "fe44e54d-9e51-4a6f-b511-5b9eb226f342",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonBinaryData"
+        },
+        {
+          "object_id": "a5f5ad04-549c-4957-af4b-9e12ff50ed04",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonDataCompositionSchema"
+        },
+        {
+          "object_id": "06a5dea5-3597-4145-b592-3d86230c6c3a",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonTextDocument"
+        },
+        {
+          "object_id": "b6a781ea-86d8-407d-ab9f-88b03c4c8147",
+          "class_id": "0195e80c-b157-11d4-9435-004095e12fc7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeConstant"
+        },
+        {
+          "object_id": "adeb5cd2-6e35-4ed9-a9c9-3aaf34990315",
+          "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_DataProcessor"
+        },
+        {
+          "object_id": "562772b9-95fe-46cd-a21c-d0ea9d7a3ede",
+          "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDataProcessor"
+        },
+        {
+          "object_id": "7cc4393f-d4fa-47ae-b6bc-46cfc5718e0b",
+          "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_DocumentJournal"
+        },
+        {
+          "object_id": "3acda3f8-ce88-44f4-88a6-7ae1ed291eeb",
+          "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDocumentJournal"
+        },
+        {
+          "object_id": "3f51c397-f215-497f-895c-d230a00251f5",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Document"
+        },
+        {
+          "object_id": "0f4b82a0-af0b-4eb9-9357-9a6219fee05f",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalDocument"
+        },
+        {
+          "object_id": "11742627-ae9d-4462-9aed-402646c0efa8",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDocument"
+        },
+        {
+          "object_id": "4d196102-8c9f-45ee-90a8-16d8c5a71099",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Enum"
+        },
+        {
+          "object_id": "8809b34c-08b1-4fd3-809d-8edede517647",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeEnum"
+        },
+        {
+          "object_id": "632f7ad7-e5ed-4cc6-9673-4494c8698a6e",
+          "class_id": "857c4a91-e5f4-4fac-86ec-787626f1c108",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerExchangePlan"
+        },
+        {
+          "object_id": "4953d0eb-406d-44e6-ae14-39db81ca6f90",
+          "class_id": "3e7bfcc0-067d-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerFilterCriterion"
+        },
+        {
+          "object_id": "88c46f9c-71c8-408d-9cb3-d7fcb3c08142",
+          "class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_InformationRegister"
+        },
+        {
+          "object_id": "201d0318-3ea3-4b48-a3bb-088f350377a7",
+          "class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerInformationRegister"
+        },
+        {
+          "object_id": "3b79b4a2-8038-44a0-9f4b-ffe91904ad64",
+          "class_id": "9cd510ce-abfc-11d4-9434-004095e12fc7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "Русский"
+        },
+        {
+          "object_id": "77478a5d-83eb-4f59-a77d-bf2f4741ce49",
+          "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Report"
+        },
+        {
+          "object_id": "bb6dda53-a59f-45e2-b469-898a3f13102b",
+          "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerReport"
+        },
+        {
+          "object_id": "e0d706ee-cabf-4060-a0e8-4b3b53376091",
+          "class_id": "24c43748-c938-45d0-8d14-01424a72b11e",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeSession"
+        },
+        {
+          "object_id": "450be9cf-68ed-4743-8609-58c0bbd2d768",
+          "class_id": "46b4cd97-fd13-4eaa-aba2-3bddd7699218",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerSettingsStorage"
+        },
+        {
+          "object_id": "7477df8f-b2fa-4346-b7ff-362c6135c36c",
+          "class_id": "3e63355c-1378-4953-be9b-1deb5fb6bec5",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerTask"
+        }
+      ]
+    },
+    {
+      "kind": "InformationRegister",
+      "path": "InformationRegisters/CRSFormOwnerInformationRegister.xml",
+      "id": "201d0318-3ea3-4b48-a3bb-088f350377a7",
+      "command_id": "cbcb51aa-ca98-45d5-b9b7-1c4f56609135",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<InformationRegister uuid=\"201d0318-3ea3-4b48-a3bb-088f350377a7\">\n\t\t<InternalInfo>\n\t\t\t<xr:GeneratedType name=\"InformationRegisterRecord.CRSFormOwnerInformationRegister\" category=\"Record\">\n\t\t\t\t<xr:TypeId>95746a87-709b-4834-bb6e-65ce515d69ee</xr:TypeId>\n\t\t\t\t<xr:ValueId>963c9076-5407-4314-b402-8bf06125d616</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"InformationRegisterManager.CRSFormOwnerInformationRegister\" category=\"Manager\">\n\t\t\t\t<xr:TypeId>242f6f26-36c6-44b1-82fd-fde52aea9d30</xr:TypeId>\n\t\t\t\t<xr:ValueId>61bb40ca-5ec2-4bef-ac2b-47a455a20c5f</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"InformationRegisterSelection.CRSFormOwnerInformationRegister\" category=\"Selection\">\n\t\t\t\t<xr:TypeId>8483ab29-0807-447d-8591-5b2ba33495d1</xr:TypeId>\n\t\t\t\t<xr:ValueId>700cb52d-08b0-4193-98b4-4442d730b5cb</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"InformationRegisterList.CRSFormOwnerInformationRegister\" category=\"List\">\n\t\t\t\t<xr:TypeId>dbe013e1-f793-4d2a-8af7-54bea648a8dd</xr:TypeId>\n\t\t\t\t<xr:ValueId>701571c9-8fe2-485c-9066-276bcf101887</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"InformationRegisterRecordSet.CRSFormOwnerInformationRegister\" category=\"RecordSet\">\n\t\t\t\t<xr:TypeId>c4b21cfc-2962-47a1-983b-6f73bbb9be27</xr:TypeId>\n\t\t\t\t<xr:ValueId>9f68a094-c5c6-45f0-9529-ff835990f9d0</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"InformationRegisterRecordKey.CRSFormOwnerInformationRegister\" category=\"RecordKey\">\n\t\t\t\t<xr:TypeId>43cae977-5113-40a9-a2b1-6176c1793e91</xr:TypeId>\n\t\t\t\t<xr:ValueId>464c9ca6-786a-4290-9e5a-df96b33f94fe</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"InformationRegisterRecordManager.CRSFormOwnerInformationRegister\" category=\"RecordManager\">\n\t\t\t\t<xr:TypeId>e2a34add-2f8e-4a44-8fa2-bf45be3ffc54</xr:TypeId>\n\t\t\t\t<xr:ValueId>6cc6e1d4-9372-4398-9bfa-c61d65c28ac9</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t</InternalInfo>\n\t\t<Properties>\n\t\t\t<Name>CRSFormOwnerInformationRegister</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Combined properties and form roles: InformationRegister</Comment>\n\t\t\t<UseStandardCommands>true</UseStandardCommands>\n\t\t\t<EditType>InDialog</EditType>\n\t\t\t<DefaultRecordForm>InformationRegister.CRSFormOwnerInformationRegister.Form.CRSCompositeForm</DefaultRecordForm>\n\t\t\t<DefaultListForm>InformationRegister.CRSFormOwnerInformationRegister.Form.CRSRole_DefaultListForm</DefaultListForm>\n\t\t\t<AuxiliaryRecordForm>InformationRegister.CRSFormOwnerInformationRegister.Form.CRSRole_AuxiliaryRecordForm</AuxiliaryRecordForm>\n\t\t\t<AuxiliaryListForm>InformationRegister.CRSFormOwnerInformationRegister.Form.CRSRole_AuxiliaryListForm</AuxiliaryListForm>\n\t\t\t<InformationRegisterPeriodicity>Month</InformationRegisterPeriodicity>\n\t\t\t<WriteMode>Independent</WriteMode>\n\t\t\t<MainFilterOnPeriod>false</MainFilterOnPeriod>\n\t\t\t<IncludeHelpInContents>false</IncludeHelpInContents>\n\t\t\t<DataLockControlMode>Managed</DataLockControlMode>\n\t\t\t<FullTextSearch>DontUse</FullTextSearch>\n\t\t\t<EnableTotalsSliceFirst>false</EnableTotalsSliceFirst>\n\t\t\t<EnableTotalsSliceLast>false</EnableTotalsSliceLast>\n\t\t\t<RecordPresentation/>\n\t\t\t<ExtendedRecordPresentation/>\n\t\t\t<ListPresentation/>\n\t\t\t<ExtendedListPresentation/>\n\t\t\t<Explanation/>\n\t\t\t<DataHistory>DontUse</DataHistory>\n\t\t\t<UpdateDataHistoryImmediatelyAfterWrite>false</UpdateDataHistoryImmediatelyAfterWrite>\n\t\t\t<ExecuteAfterWriteDataHistoryVersionProcessing>false</ExecuteAfterWriteDataHistoryVersionProcessing>\n\t\t</Properties>\n\t\t<ChildObjects>\n\t\t\t<Attribute uuid=\"3bf5d08d-6267-48a9-8d23-7086d2e75965\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>Value</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Type>\n\t\t\t\t\t\t<v8:Type>xs:decimal</v8:Type>\n\t\t\t\t\t\t<v8:NumberQualifiers>\n\t\t\t\t\t\t\t<v8:Digits>15</v8:Digits>\n\t\t\t\t\t\t\t<v8:FractionDigits>2</v8:FractionDigits>\n\t\t\t\t\t\t\t<v8:AllowedSign>Any</v8:AllowedSign>\n\t\t\t\t\t\t</v8:NumberQualifiers>\n\t\t\t\t\t</Type>\n\t\t\t\t\t<PasswordMode>false</PasswordMode>\n\t\t\t\t\t<Format/>\n\t\t\t\t\t<EditFormat/>\n\t\t\t\t\t<ToolTip/>\n\t\t\t\t\t<MarkNegatives>false</MarkNegatives>\n\t\t\t\t\t<Mask/>\n\t\t\t\t\t<MultiLine>false</MultiLine>\n\t\t\t\t\t<ExtendedEdit>false</ExtendedEdit>\n\t\t\t\t\t<MinValue xsi:nil=\"true\"/>\n\t\t\t\t\t<MaxValue xsi:nil=\"true\"/>\n\t\t\t\t\t<FillFromFillingValue>false</FillFromFillingValue>\n\t\t\t\t\t<FillValue xsi:nil=\"true\"/>\n\t\t\t\t\t<FillChecking>DontCheck</FillChecking>\n\t\t\t\t\t<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>\n\t\t\t\t\t<ChoiceParameterLinks/>\n\t\t\t\t\t<ChoiceParameters/>\n\t\t\t\t\t<QuickChoice>Auto</QuickChoice>\n\t\t\t\t\t<CreateOnInput>Auto</CreateOnInput>\n\t\t\t\t\t<ChoiceForm/>\n\t\t\t\t\t<LinkByType/>\n\t\t\t\t\t<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>\n\t\t\t\t\t<Indexing>DontIndex</Indexing>\n\t\t\t\t\t<FullTextSearch>Use</FullTextSearch>\n\t\t\t\t\t<DataHistory>Use</DataHistory>\n\t\t\t\t</Properties>\n\t\t\t</Attribute>\n\t\t\t<Attribute uuid=\"3c1c710a-90d6-473f-ad12-6a3def79aeab\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>CRSAtomicFlag</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Type>\n\t\t\t\t\t\t<v8:Type>xs:boolean</v8:Type>\n\t\t\t\t\t</Type>\n\t\t\t\t\t<PasswordMode>false</PasswordMode>\n\t\t\t\t\t<Format/>\n\t\t\t\t\t<EditFormat/>\n\t\t\t\t\t<ToolTip/>\n\t\t\t\t\t<MarkNegatives>false</MarkNegatives>\n\t\t\t\t\t<Mask/>\n\t\t\t\t\t<MultiLine>false</MultiLine>\n\t\t\t\t\t<ExtendedEdit>false</ExtendedEdit>\n\t\t\t\t\t<MinValue xsi:nil=\"true\"/>\n\t\t\t\t\t<MaxValue xsi:nil=\"true\"/>\n\t\t\t\t\t<FillFromFillingValue>false</FillFromFillingValue>\n\t\t\t\t\t<FillValue xsi:nil=\"true\"/>\n\t\t\t\t\t<FillChecking>DontCheck</FillChecking>\n\t\t\t\t\t<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>\n\t\t\t\t\t<ChoiceParameterLinks/>\n\t\t\t\t\t<ChoiceParameters/>\n\t\t\t\t\t<QuickChoice>Auto</QuickChoice>\n\t\t\t\t\t<CreateOnInput>Auto</CreateOnInput>\n\t\t\t\t\t<ChoiceForm/>\n\t\t\t\t\t<LinkByType/>\n\t\t\t\t\t<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>\n\t\t\t\t\t<Indexing>DontIndex</Indexing>\n\t\t\t\t\t<FullTextSearch>Use</FullTextSearch>\n\t\t\t\t\t<DataHistory>Use</DataHistory>\n\t\t\t\t</Properties>\n\t\t\t</Attribute>\n\t\t\t<Attribute uuid=\"7646f2aa-8058-4027-98fc-68d05560bb31\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>CRSAtomicSecondFlag</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Type>\n\t\t\t\t\t\t<v8:Type>xs:dateTime</v8:Type>\n\t\t\t\t\t\t<v8:DateQualifiers>\n\t\t\t\t\t\t\t<v8:DateFractions>DateTime</v8:DateFractions>\n\t\t\t\t\t\t</v8:DateQualifiers>\n\t\t\t\t\t</Type>\n\t\t\t\t\t<PasswordMode>false</PasswordMode>\n\t\t\t\t\t<Format/>\n\t\t\t\t\t<EditFormat/>\n\t\t\t\t\t<ToolTip/>\n\t\t\t\t\t<MarkNegatives>false</MarkNegatives>\n\t\t\t\t\t<Mask/>\n\t\t\t\t\t<MultiLine>false</MultiLine>\n\t\t\t\t\t<ExtendedEdit>false</ExtendedEdit>\n\t\t\t\t\t<MinValue xsi:nil=\"true\"/>\n\t\t\t\t\t<MaxValue xsi:nil=\"true\"/>\n\t\t\t\t\t<FillFromFillingValue>false</FillFromFillingValue>\n\t\t\t\t\t<FillValue xsi:nil=\"true\"/>\n\t\t\t\t\t<FillChecking>DontCheck</FillChecking>\n\t\t\t\t\t<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>\n\t\t\t\t\t<ChoiceParameterLinks/>\n\t\t\t\t\t<ChoiceParameters/>\n\t\t\t\t\t<QuickChoice>Auto</QuickChoice>\n\t\t\t\t\t<CreateOnInput>Auto</CreateOnInput>\n\t\t\t\t\t<ChoiceForm/>\n\t\t\t\t\t<LinkByType/>\n\t\t\t\t\t<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>\n\t\t\t\t\t<Indexing>DontIndex</Indexing>\n\t\t\t\t\t<FullTextSearch>Use</FullTextSearch>\n\t\t\t\t\t<DataHistory>Use</DataHistory>\n\t\t\t\t</Properties>\n\t\t\t</Attribute>\n\t\t\t<Form>NewScalarProbe</Form>\n\t\t\t<Form>RecordSetProbe</Form>\n\t\t\t<Form>CRSAtomicForm</Form>\n\t\t\t<Form>CRSRole_DefaultRecordForm</Form>\n\t\t\t<Form>CRSRole_DefaultListForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryRecordForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryListForm</Form>\n\t\t\t<Form>CRSCompositeForm</Form>\n\t\t\t<Command uuid=\"cbcb51aa-ca98-45d5-b9b7-1c4f56609135\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>SharedTypedCommand</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Group>NavigationPanelOrdinary</Group>\n\t\t\t\t\t<CommandParameterType>\n\t\t\t\t\t\t<v8:Type>xs:boolean</v8:Type>\n\t\t\t\t\t\t<v8:Type>cfg:CatalogRef.CRSTypeCatalog</v8:Type>\n\t\t\t\t\t</CommandParameterType>\n\t\t\t\t\t<ParameterUseMode>Multiple</ParameterUseMode>\n\t\t\t\t\t<ModifiesData>true</ModifiesData>\n\t\t\t\t\t<Representation>PictureAndText</Representation>\n\t\t\t\t\t<ToolTip>\n\t\t\t\t\t\t<v8:item>\n\t\t\t\t\t\t\t<v8:lang>en</v8:lang>\n\t\t\t\t\t\t\t<v8:content>Shared command properties</v8:content>\n\t\t\t\t\t\t</v8:item>\n\t\t\t\t\t</ToolTip>\n\t\t\t\t\t<Picture/>\n\t\t\t\t\t<Shortcut/>\n\t\t\t\t\t<OnMainServerUnavalableBehavior>Auto</OnMainServerUnavalableBehavior>\n\t\t\t\t</Properties>\n\t\t\t</Command>\n\t\t</ChildObjects>\n\t</InformationRegister>\n</MetaDataObject>",
+      "body": "{1,\r\n{33,95746a87-709b-4834-bb6e-65ce515d69ee,963c9076-5407-4314-b402-8bf06125d616,242f6f26-36c6-44b1-82fd-fde52aea9d30,61bb40ca-5ec2-4bef-ac2b-47a455a20c5f,8483ab29-0807-447d-8591-5b2ba33495d1,700cb52d-08b0-4193-98b4-4442d730b5cb,dbe013e1-f793-4d2a-8af7-54bea648a8dd,701571c9-8fe2-485c-9066-276bcf101887,c4b21cfc-2962-47a1-983b-6f73bbb9be27,9f68a094-c5c6-45f0-9529-ff835990f9d0,43cae977-5113-40a9-a2b1-6176c1793e91,464c9ca6-786a-4290-9e5a-df96b33f94fe,e2a34add-2f8e-4a44-8fa2-bf45be3ffc54,6cc6e1d4-9372-4398-9bfa-c61d65c28ac9,\r\n{0,\r\n{3,\r\n{1,0,201d0318-3ea3-4b48-a3bb-088f350377a7},\"CRSFormOwnerInformationRegister\",\r\n{0},\"Combined properties and form roles: InformationRegister\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},bd5d34be-c9f1-4ac8-8f87-8cd8af0cbef9,5cb9cf1d-9128-4850-8e1d-565341e40068,3,0,1,1,0,0,1,0,\r\n{0},133cd69f-dcc7-42f9-a380-717891cddebb,18a91d86-86aa-4fdb-9e87-ba916f53765c,\r\n{0},\r\n{0},\r\n{0},\r\n{0},\r\n{0},0,0,0,0,0},6,\r\n{13134202-f60b-11d5-a3c7-0050bae0a776,0},\r\n{13134203-f60b-11d5-a3c7-0050bae0a776,0},\r\n{13134204-f60b-11d5-a3c7-0050bae0a776,8,48b40bbe-28b2-4dd6-a395-353df59d43e2,ef96bf5e-98d6-4586-81a3-dc6aa2a93c88,fc71c3d2-118b-4b7b-a2d6-1a16f0fc2447,144641d3-7dde-4ce3-b354-52a5b1df51f1,5cb9cf1d-9128-4850-8e1d-565341e40068,133cd69f-dcc7-42f9-a380-717891cddebb,18a91d86-86aa-4fdb-9e87-ba916f53765c,bd5d34be-c9f1-4ac8-8f87-8cd8af0cbef9},\r\n{3daea016-69b7-4ed4-9453-127911372fe6,0},\r\n{a2207540-1400-11d6-a3c7-0050bae0a776,3,\r\n{\r\n{5,\r\n{27,\r\n{2,\r\n{3,\r\n{1,0,3bf5d08d-6267-48a9-8d23-7086d2e75965},\"Value\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},\r\n{\"Pattern\",\r\n{\"N\",15,2,0}\r\n}\r\n},0,\r\n{0},\r\n{0},0,\"\",0,\r\n{\"U\"},\r\n{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,\r\n{5006,0},\r\n{3,0,0},\r\n{0,0},0,\r\n{0},\r\n{\"U\"},0,0,0},0,1,1,0,\r\n{1,00000000-0000-0000-0000-000000000000}\r\n},0},\r\n{\r\n{5,\r\n{27,\r\n{2,\r\n{3,\r\n{1,0,3c1c710a-90d6-473f-ad12-6a3def79aeab},\"CRSAtomicFlag\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},\r\n{\"Pattern\",\r\n{\"B\"}\r\n}\r\n},0,\r\n{0},\r\n{0},0,\"\",0,\r\n{\"U\"},\r\n{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,\r\n{5006,0},\r\n{3,0,0},\r\n{0,0},0,\r\n{0},\r\n{\"U\"},0,0,0},0,1,1,0,\r\n{1,00000000-0000-0000-0000-000000000000}\r\n},0},\r\n{\r\n{5,\r\n{27,\r\n{2,\r\n{3,\r\n{1,0,7646f2aa-8058-4027-98fc-68d05560bb31},\"CRSAtomicSecondFlag\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},\r\n{\"Pattern\",\r\n{\"D\"}\r\n}\r\n},0,\r\n{0},\r\n{0},0,\"\",0,\r\n{\"U\"},\r\n{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,\r\n{5006,0},\r\n{3,0,0},\r\n{0,0},0,\r\n{0},\r\n{\"U\"},0,0,0},0,1,1,0,\r\n{1,00000000-0000-0000-0000-000000000000}\r\n},0}\r\n},\r\n{b44ba719-945c-445c-8aab-1088fa4df16e,1,\r\n{\r\n{0,\r\n{1,\r\n{2,cbcb51aa-ca98-45d5-b9b7-1c4f56609135,078a6af8-d22c-4248-9c33-7e90075a3d2c},\r\n{9,\r\n{4,0,\r\n{0},\"\",-1,-1,1,0,\"\"},2,\r\n{1,\"en\",\"Shared command properties\"},1,\r\n{0,0,0},0,\r\n{1,77ea1b8f-dd79-4717-9dba-5628e7f348cf},\r\n{\"Pattern\",\r\n{\"B\"},\r\n{\"#\",ba2afd30-e52c-40c2-ac98-fa1c8676e9a8}\r\n},\r\n{3,\r\n{1,0,cbcb51aa-ca98-45d5-b9b7-1c4f56609135},\"SharedTypedCommand\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,1,0}\r\n}\r\n},0}\r\n}\r\n}",
+      "forms": {
+        "CRSAtomicForm": "fc71c3d2-118b-4b7b-a2d6-1a16f0fc2447",
+        "CRSCompositeForm": "bd5d34be-c9f1-4ac8-8f87-8cd8af0cbef9",
+        "CRSRole_AuxiliaryListForm": "18a91d86-86aa-4fdb-9e87-ba916f53765c",
+        "CRSRole_AuxiliaryRecordForm": "133cd69f-dcc7-42f9-a380-717891cddebb",
+        "CRSRole_DefaultListForm": "5cb9cf1d-9128-4850-8e1d-565341e40068",
+        "CRSRole_DefaultRecordForm": "144641d3-7dde-4ce3-b354-52a5b1df51f1",
+        "NewScalarProbe": "48b40bbe-28b2-4dd6-a395-353df59d43e2",
+        "RecordSetProbe": "ef96bf5e-98d6-4586-81a3-dc6aa2a93c88"
+      },
+      "templates": {},
+      "references": [
+        {
+          "object_id": "8bae9d05-1281-408d-8ac6-d8204575ca21",
+          "class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_AccountingRegister"
+        },
+        {
+          "object_id": "6feab348-02dd-498f-86f9-4144df9141a7",
+          "class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerAccountingRegister"
+        },
+        {
+          "object_id": "50384255-ef23-4d0d-9755-6b652e94606f",
+          "class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_AccumulationRegister"
+        },
+        {
+          "object_id": "a6ffac4e-5b65-4c70-bfdd-db308eb19862",
+          "class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerAccumulationRegister"
+        },
+        {
+          "object_id": "ae5d11d4-ed34-4889-9052-f5f181d2b13a",
+          "class_id": "fcd3404e-1523-48ce-9bc0-ecdb822684a1",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerBusinessProcess"
+        },
+        {
+          "object_id": "dc1e099b-cf25-4838-9365-b82d6cfec1ae",
+          "class_id": "f2de87a8-64e5-45eb-a22d-b3aedab050e7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerCalculationRegister"
+        },
+        {
+          "object_id": "6ddd386a-3208-4610-94bb-5143bc10f68a",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Catalog"
+        },
+        {
+          "object_id": "1ed8bf82-97dd-4683-bc05-46449a036d8b",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalCatalog"
+        },
+        {
+          "object_id": "87eedb6d-4ab9-4df9-a37c-0d4da8cf7381",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerCatalog"
+        },
+        {
+          "object_id": "a722e752-8a73-4a11-ac63-93773e21b5da",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeCatalog"
+        },
+        {
+          "object_id": "51e054df-2ae2-4be1-9ed6-f92fd7bb20df",
+          "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_ChartOfAccounts"
+        },
+        {
+          "object_id": "87b99569-e321-4df1-95e8-87ffa3d9bb04",
+          "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerChartOfAccounts"
+        },
+        {
+          "object_id": "a6712935-7a27-4c21-a929-342abd46e3f7",
+          "class_id": "30b100d6-b29f-47ac-aec7-cb8ca8a54767",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerChartOfCalculationTypes"
+        },
+        {
+          "object_id": "a367baae-b92e-4f43-9dfc-353c9c38dd3d",
+          "class_id": "07ee8426-87f1-11d5-b99c-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalReferences"
+        },
+        {
+          "object_id": "6018f8ad-5ba2-43a3-9d48-785e09acdf93",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaCatalog"
+        },
+        {
+          "object_id": "7633609b-6b2b-47d5-bb55-f9d5b383fe34",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaDocument"
+        },
+        {
+          "object_id": "c58c58b9-a559-46ae-a5cd-47646b601797",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaEnum"
+        },
+        {
+          "object_id": "fe44e54d-9e51-4a6f-b511-5b9eb226f342",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonBinaryData"
+        },
+        {
+          "object_id": "a5f5ad04-549c-4957-af4b-9e12ff50ed04",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonDataCompositionSchema"
+        },
+        {
+          "object_id": "06a5dea5-3597-4145-b592-3d86230c6c3a",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonTextDocument"
+        },
+        {
+          "object_id": "b6a781ea-86d8-407d-ab9f-88b03c4c8147",
+          "class_id": "0195e80c-b157-11d4-9435-004095e12fc7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeConstant"
+        },
+        {
+          "object_id": "adeb5cd2-6e35-4ed9-a9c9-3aaf34990315",
+          "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_DataProcessor"
+        },
+        {
+          "object_id": "562772b9-95fe-46cd-a21c-d0ea9d7a3ede",
+          "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDataProcessor"
+        },
+        {
+          "object_id": "7cc4393f-d4fa-47ae-b6bc-46cfc5718e0b",
+          "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_DocumentJournal"
+        },
+        {
+          "object_id": "3acda3f8-ce88-44f4-88a6-7ae1ed291eeb",
+          "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDocumentJournal"
+        },
+        {
+          "object_id": "3f51c397-f215-497f-895c-d230a00251f5",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Document"
+        },
+        {
+          "object_id": "0f4b82a0-af0b-4eb9-9357-9a6219fee05f",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalDocument"
+        },
+        {
+          "object_id": "11742627-ae9d-4462-9aed-402646c0efa8",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDocument"
+        },
+        {
+          "object_id": "4d196102-8c9f-45ee-90a8-16d8c5a71099",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Enum"
+        },
+        {
+          "object_id": "3ce7ce9b-2d71-4535-89cd-6aa35c35e3f4",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerEnum"
+        },
+        {
+          "object_id": "8809b34c-08b1-4fd3-809d-8edede517647",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeEnum"
+        },
+        {
+          "object_id": "632f7ad7-e5ed-4cc6-9673-4494c8698a6e",
+          "class_id": "857c4a91-e5f4-4fac-86ec-787626f1c108",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerExchangePlan"
+        },
+        {
+          "object_id": "4953d0eb-406d-44e6-ae14-39db81ca6f90",
+          "class_id": "3e7bfcc0-067d-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerFilterCriterion"
+        },
+        {
+          "object_id": "88c46f9c-71c8-408d-9cb3-d7fcb3c08142",
+          "class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_InformationRegister"
+        },
+        {
+          "object_id": "3b79b4a2-8038-44a0-9f4b-ffe91904ad64",
+          "class_id": "9cd510ce-abfc-11d4-9434-004095e12fc7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "Русский"
+        },
+        {
+          "object_id": "77478a5d-83eb-4f59-a77d-bf2f4741ce49",
+          "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Report"
+        },
+        {
+          "object_id": "bb6dda53-a59f-45e2-b469-898a3f13102b",
+          "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerReport"
+        },
+        {
+          "object_id": "e0d706ee-cabf-4060-a0e8-4b3b53376091",
+          "class_id": "24c43748-c938-45d0-8d14-01424a72b11e",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeSession"
+        },
+        {
+          "object_id": "450be9cf-68ed-4743-8609-58c0bbd2d768",
+          "class_id": "46b4cd97-fd13-4eaa-aba2-3bddd7699218",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerSettingsStorage"
+        },
+        {
+          "object_id": "7477df8f-b2fa-4346-b7ff-362c6135c36c",
+          "class_id": "3e63355c-1378-4953-be9b-1deb5fb6bec5",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerTask"
+        }
+      ]
+    },
+    {
+      "kind": "AccumulationRegister",
+      "path": "AccumulationRegisters/CRSFormOwnerAccumulationRegister.xml",
+      "id": "a6ffac4e-5b65-4c70-bfdd-db308eb19862",
+      "command_id": "172c6ff9-af6f-41fe-9a0e-c0fc8ef39b13",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<AccumulationRegister uuid=\"a6ffac4e-5b65-4c70-bfdd-db308eb19862\">\n\t\t<InternalInfo>\n\t\t\t<xr:GeneratedType name=\"AccumulationRegisterRecord.CRSFormOwnerAccumulationRegister\" category=\"Record\">\n\t\t\t\t<xr:TypeId>cb3b68f2-f3d8-4480-80c7-f6a5edcccecb</xr:TypeId>\n\t\t\t\t<xr:ValueId>763e5986-788d-4bf1-a2c7-4af88e532688</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccumulationRegisterManager.CRSFormOwnerAccumulationRegister\" category=\"Manager\">\n\t\t\t\t<xr:TypeId>f7d22ba3-cef4-452e-966c-c76e05192eb5</xr:TypeId>\n\t\t\t\t<xr:ValueId>2ed6703d-a716-4b0a-b3b6-f3fb9da834f1</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccumulationRegisterSelection.CRSFormOwnerAccumulationRegister\" category=\"Selection\">\n\t\t\t\t<xr:TypeId>f23f2d52-3216-470c-bb13-c2ea624e86bb</xr:TypeId>\n\t\t\t\t<xr:ValueId>8441aec7-04ce-41a1-aa74-3f25fda99f42</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccumulationRegisterList.CRSFormOwnerAccumulationRegister\" category=\"List\">\n\t\t\t\t<xr:TypeId>4b090fc4-5bd4-4117-8dd7-df622d64cd4e</xr:TypeId>\n\t\t\t\t<xr:ValueId>19cd47fb-f12e-43ec-b13c-189827603a8b</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccumulationRegisterRecordSet.CRSFormOwnerAccumulationRegister\" category=\"RecordSet\">\n\t\t\t\t<xr:TypeId>c4e7bf49-b4cd-4619-8258-ecf62db20b32</xr:TypeId>\n\t\t\t\t<xr:ValueId>4d0d779a-aeae-4a37-81d7-939103b5a200</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccumulationRegisterRecordKey.CRSFormOwnerAccumulationRegister\" category=\"RecordKey\">\n\t\t\t\t<xr:TypeId>54dd83b5-0c84-43b5-89a3-98e335403db3</xr:TypeId>\n\t\t\t\t<xr:ValueId>1d19e60c-5427-48f0-9843-d216a9b50390</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t</InternalInfo>\n\t\t<Properties>\n\t\t\t<Name>CRSFormOwnerAccumulationRegister</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Combined properties and form roles: AccumulationRegister</Comment>\n\t\t\t<UseStandardCommands>true</UseStandardCommands>\n\t\t\t<DefaultListForm>AccumulationRegister.CRSFormOwnerAccumulationRegister.Form.CRSCompositeForm</DefaultListForm>\n\t\t\t<AuxiliaryListForm>AccumulationRegister.CRSFormOwnerAccumulationRegister.Form.CRSRole_AuxiliaryListForm</AuxiliaryListForm>\n\t\t\t<RegisterType>Balance</RegisterType>\n\t\t\t<IncludeHelpInContents>false</IncludeHelpInContents>\n\t\t\t<DataLockControlMode>Managed</DataLockControlMode>\n\t\t\t<FullTextSearch>DontUse</FullTextSearch>\n\t\t\t<EnableTotalsSplitting>false</EnableTotalsSplitting>\n\t\t\t<ListPresentation/>\n\t\t\t<ExtendedListPresentation/>\n\t\t\t<Explanation/>\n\t\t</Properties>\n\t\t<ChildObjects>\n\t\t\t<Resource uuid=\"88020f3d-4cc3-4af3-bbe8-1689a465f845\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>Value</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Type>\n\t\t\t\t\t\t<v8:Type>xs:decimal</v8:Type>\n\t\t\t\t\t\t<v8:NumberQualifiers>\n\t\t\t\t\t\t\t<v8:Digits>15</v8:Digits>\n\t\t\t\t\t\t\t<v8:FractionDigits>2</v8:FractionDigits>\n\t\t\t\t\t\t\t<v8:AllowedSign>Any</v8:AllowedSign>\n\t\t\t\t\t\t</v8:NumberQualifiers>\n\t\t\t\t\t</Type>\n\t\t\t\t\t<PasswordMode>false</PasswordMode>\n\t\t\t\t\t<Format/>\n\t\t\t\t\t<EditFormat/>\n\t\t\t\t\t<ToolTip/>\n\t\t\t\t\t<MarkNegatives>false</MarkNegatives>\n\t\t\t\t\t<Mask/>\n\t\t\t\t\t<MultiLine>false</MultiLine>\n\t\t\t\t\t<ExtendedEdit>false</ExtendedEdit>\n\t\t\t\t\t<MinValue xsi:nil=\"true\"/>\n\t\t\t\t\t<MaxValue xsi:nil=\"true\"/>\n\t\t\t\t\t<FillChecking>DontCheck</FillChecking>\n\t\t\t\t\t<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>\n\t\t\t\t\t<ChoiceParameterLinks/>\n\t\t\t\t\t<ChoiceParameters/>\n\t\t\t\t\t<QuickChoice>Auto</QuickChoice>\n\t\t\t\t\t<CreateOnInput>Auto</CreateOnInput>\n\t\t\t\t\t<ChoiceForm/>\n\t\t\t\t\t<LinkByType/>\n\t\t\t\t\t<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>\n\t\t\t\t\t<FullTextSearch>Use</FullTextSearch>\n\t\t\t\t</Properties>\n\t\t\t</Resource>\n\t\t\t<Form>NewScalarProbe</Form>\n\t\t\t<Form>CRSRole_DefaultListForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryListForm</Form>\n\t\t\t<Form>CRSCompositeForm</Form>\n\t\t\t<Command uuid=\"172c6ff9-af6f-41fe-9a0e-c0fc8ef39b13\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>SharedTypedCommand</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Group>NavigationPanelOrdinary</Group>\n\t\t\t\t\t<CommandParameterType>\n\t\t\t\t\t\t<v8:Type>xs:boolean</v8:Type>\n\t\t\t\t\t\t<v8:Type>cfg:CatalogRef.CRSTypeCatalog</v8:Type>\n\t\t\t\t\t</CommandParameterType>\n\t\t\t\t\t<ParameterUseMode>Multiple</ParameterUseMode>\n\t\t\t\t\t<ModifiesData>true</ModifiesData>\n\t\t\t\t\t<Representation>PictureAndText</Representation>\n\t\t\t\t\t<ToolTip>\n\t\t\t\t\t\t<v8:item>\n\t\t\t\t\t\t\t<v8:lang>en</v8:lang>\n\t\t\t\t\t\t\t<v8:content>Shared command properties</v8:content>\n\t\t\t\t\t\t</v8:item>\n\t\t\t\t\t</ToolTip>\n\t\t\t\t\t<Picture/>\n\t\t\t\t\t<Shortcut/>\n\t\t\t\t\t<OnMainServerUnavalableBehavior>Auto</OnMainServerUnavalableBehavior>\n\t\t\t\t</Properties>\n\t\t\t</Command>\n\t\t</ChildObjects>\n\t</AccumulationRegister>\n</MetaDataObject>",
+      "body": "{1,\r\n{28,cb3b68f2-f3d8-4480-80c7-f6a5edcccecb,763e5986-788d-4bf1-a2c7-4af88e532688,f7d22ba3-cef4-452e-966c-c76e05192eb5,2ed6703d-a716-4b0a-b3b6-f3fb9da834f1,f23f2d52-3216-470c-bb13-c2ea624e86bb,8441aec7-04ce-41a1-aa74-3f25fda99f42,4b090fc4-5bd4-4117-8dd7-df622d64cd4e,19cd47fb-f12e-43ec-b13c-189827603a8b,c4e7bf49-b4cd-4619-8258-ecf62db20b32,4d0d779a-aeae-4a37-81d7-939103b5a200,54dd83b5-0c84-43b5-89a3-98e335403db3,1d19e60c-5427-48f0-9843-d216a9b50390,\r\n{0,\r\n{3,\r\n{1,0,a6ffac4e-5b65-4c70-bfdd-db308eb19862},\"CRSFormOwnerAccumulationRegister\",\r\n{0},\"Combined properties and form roles: AccumulationRegister\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},d50d9b56-2b3b-4dac-a16f-009f04696c4a,0,1,0,1,0,0,\r\n{0},0791a99c-e37c-4cdf-804b-1006460bfeb0,\r\n{0},\r\n{0},\r\n{0}\r\n},6,\r\n{3daea016-69b7-4ed4-9453-127911372fe6,0},\r\n{99f328af-a77f-4572-a2d8-80ed20c81890,1,\r\n{\r\n{0,\r\n{1,\r\n{2,172c6ff9-af6f-41fe-9a0e-c0fc8ef39b13,078a6af8-d22c-4248-9c33-7e90075a3d2c},\r\n{9,\r\n{4,0,\r\n{0},\"\",-1,-1,1,0,\"\"},2,\r\n{1,\"en\",\"Shared command properties\"},1,\r\n{0,0,0},0,\r\n{1,77ea1b8f-dd79-4717-9dba-5628e7f348cf},\r\n{\"Pattern\",\r\n{\"B\"},\r\n{\"#\",ba2afd30-e52c-40c2-ac98-fa1c8676e9a8}\r\n},\r\n{3,\r\n{1,0,172c6ff9-af6f-41fe-9a0e-c0fc8ef39b13},\"SharedTypedCommand\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,1,0}\r\n}\r\n},0}\r\n},\r\n{b64d9a41-1642-11d6-a3c7-0050bae0a776,1,\r\n{\r\n{5,\r\n{27,\r\n{2,\r\n{3,\r\n{1,0,88020f3d-4cc3-4af3-bbe8-1689a465f845},\"Value\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},\r\n{\"Pattern\",\r\n{\"N\",15,2,0}\r\n}\r\n},0,\r\n{0},\r\n{0},0,\"\",0,\r\n{\"U\"},\r\n{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,\r\n{5006,0},\r\n{3,0,0},\r\n{0,0},0,\r\n{0},\r\n{\"S\",\"\"},0,0,0},1},0}\r\n},\r\n{b64d9a42-1642-11d6-a3c7-0050bae0a776,0},\r\n{b64d9a43-1642-11d6-a3c7-0050bae0a776,0},\r\n{b64d9a44-1642-11d6-a3c7-0050bae0a776,4,439e18a1-b789-429f-a080-7c46e03fa24b,2bd998ba-9c4b-47b4-9cf4-499e96379ea0,0791a99c-e37c-4cdf-804b-1006460bfeb0,d50d9b56-2b3b-4dac-a16f-009f04696c4a}\r\n}",
+      "forms": {
+        "CRSCompositeForm": "d50d9b56-2b3b-4dac-a16f-009f04696c4a",
+        "CRSRole_AuxiliaryListForm": "0791a99c-e37c-4cdf-804b-1006460bfeb0",
+        "CRSRole_DefaultListForm": "2bd998ba-9c4b-47b4-9cf4-499e96379ea0",
+        "NewScalarProbe": "439e18a1-b789-429f-a080-7c46e03fa24b"
+      },
+      "templates": {},
+      "references": [
+        {
+          "object_id": "8bae9d05-1281-408d-8ac6-d8204575ca21",
+          "class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_AccountingRegister"
+        },
+        {
+          "object_id": "6feab348-02dd-498f-86f9-4144df9141a7",
+          "class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerAccountingRegister"
+        },
+        {
+          "object_id": "50384255-ef23-4d0d-9755-6b652e94606f",
+          "class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_AccumulationRegister"
+        },
+        {
+          "object_id": "ae5d11d4-ed34-4889-9052-f5f181d2b13a",
+          "class_id": "fcd3404e-1523-48ce-9bc0-ecdb822684a1",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerBusinessProcess"
+        },
+        {
+          "object_id": "dc1e099b-cf25-4838-9365-b82d6cfec1ae",
+          "class_id": "f2de87a8-64e5-45eb-a22d-b3aedab050e7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerCalculationRegister"
+        },
+        {
+          "object_id": "6ddd386a-3208-4610-94bb-5143bc10f68a",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Catalog"
+        },
+        {
+          "object_id": "1ed8bf82-97dd-4683-bc05-46449a036d8b",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalCatalog"
+        },
+        {
+          "object_id": "87eedb6d-4ab9-4df9-a37c-0d4da8cf7381",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerCatalog"
+        },
+        {
+          "object_id": "a722e752-8a73-4a11-ac63-93773e21b5da",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeCatalog"
+        },
+        {
+          "object_id": "51e054df-2ae2-4be1-9ed6-f92fd7bb20df",
+          "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_ChartOfAccounts"
+        },
+        {
+          "object_id": "87b99569-e321-4df1-95e8-87ffa3d9bb04",
+          "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerChartOfAccounts"
+        },
+        {
+          "object_id": "a6712935-7a27-4c21-a929-342abd46e3f7",
+          "class_id": "30b100d6-b29f-47ac-aec7-cb8ca8a54767",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerChartOfCalculationTypes"
+        },
+        {
+          "object_id": "a367baae-b92e-4f43-9dfc-353c9c38dd3d",
+          "class_id": "07ee8426-87f1-11d5-b99c-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalReferences"
+        },
+        {
+          "object_id": "6018f8ad-5ba2-43a3-9d48-785e09acdf93",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaCatalog"
+        },
+        {
+          "object_id": "7633609b-6b2b-47d5-bb55-f9d5b383fe34",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaDocument"
+        },
+        {
+          "object_id": "c58c58b9-a559-46ae-a5cd-47646b601797",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaEnum"
+        },
+        {
+          "object_id": "fe44e54d-9e51-4a6f-b511-5b9eb226f342",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonBinaryData"
+        },
+        {
+          "object_id": "a5f5ad04-549c-4957-af4b-9e12ff50ed04",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonDataCompositionSchema"
+        },
+        {
+          "object_id": "06a5dea5-3597-4145-b592-3d86230c6c3a",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonTextDocument"
+        },
+        {
+          "object_id": "b6a781ea-86d8-407d-ab9f-88b03c4c8147",
+          "class_id": "0195e80c-b157-11d4-9435-004095e12fc7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeConstant"
+        },
+        {
+          "object_id": "adeb5cd2-6e35-4ed9-a9c9-3aaf34990315",
+          "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_DataProcessor"
+        },
+        {
+          "object_id": "562772b9-95fe-46cd-a21c-d0ea9d7a3ede",
+          "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDataProcessor"
+        },
+        {
+          "object_id": "7cc4393f-d4fa-47ae-b6bc-46cfc5718e0b",
+          "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_DocumentJournal"
+        },
+        {
+          "object_id": "3acda3f8-ce88-44f4-88a6-7ae1ed291eeb",
+          "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDocumentJournal"
+        },
+        {
+          "object_id": "3f51c397-f215-497f-895c-d230a00251f5",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Document"
+        },
+        {
+          "object_id": "0f4b82a0-af0b-4eb9-9357-9a6219fee05f",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalDocument"
+        },
+        {
+          "object_id": "11742627-ae9d-4462-9aed-402646c0efa8",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDocument"
+        },
+        {
+          "object_id": "4d196102-8c9f-45ee-90a8-16d8c5a71099",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Enum"
+        },
+        {
+          "object_id": "3ce7ce9b-2d71-4535-89cd-6aa35c35e3f4",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerEnum"
+        },
+        {
+          "object_id": "8809b34c-08b1-4fd3-809d-8edede517647",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeEnum"
+        },
+        {
+          "object_id": "632f7ad7-e5ed-4cc6-9673-4494c8698a6e",
+          "class_id": "857c4a91-e5f4-4fac-86ec-787626f1c108",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerExchangePlan"
+        },
+        {
+          "object_id": "4953d0eb-406d-44e6-ae14-39db81ca6f90",
+          "class_id": "3e7bfcc0-067d-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerFilterCriterion"
+        },
+        {
+          "object_id": "88c46f9c-71c8-408d-9cb3-d7fcb3c08142",
+          "class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_InformationRegister"
+        },
+        {
+          "object_id": "201d0318-3ea3-4b48-a3bb-088f350377a7",
+          "class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerInformationRegister"
+        },
+        {
+          "object_id": "3b79b4a2-8038-44a0-9f4b-ffe91904ad64",
+          "class_id": "9cd510ce-abfc-11d4-9434-004095e12fc7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "Русский"
+        },
+        {
+          "object_id": "77478a5d-83eb-4f59-a77d-bf2f4741ce49",
+          "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Report"
+        },
+        {
+          "object_id": "bb6dda53-a59f-45e2-b469-898a3f13102b",
+          "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerReport"
+        },
+        {
+          "object_id": "e0d706ee-cabf-4060-a0e8-4b3b53376091",
+          "class_id": "24c43748-c938-45d0-8d14-01424a72b11e",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeSession"
+        },
+        {
+          "object_id": "450be9cf-68ed-4743-8609-58c0bbd2d768",
+          "class_id": "46b4cd97-fd13-4eaa-aba2-3bddd7699218",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerSettingsStorage"
+        },
+        {
+          "object_id": "7477df8f-b2fa-4346-b7ff-362c6135c36c",
+          "class_id": "3e63355c-1378-4953-be9b-1deb5fb6bec5",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerTask"
+        }
+      ]
+    },
+    {
+      "kind": "AccountingRegister",
+      "path": "AccountingRegisters/CRSFormOwnerAccountingRegister.xml",
+      "id": "6feab348-02dd-498f-86f9-4144df9141a7",
+      "command_id": "b1433c39-47cd-4450-b910-669ee2e0a73d",
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MetaDataObject xmlns=\"http://v8.1c.ru/8.3/MDClasses\" xmlns:app=\"http://v8.1c.ru/8.2/managed-application/core\" xmlns:cfg=\"http://v8.1c.ru/8.1/data/enterprise/current-config\" xmlns:cmi=\"http://v8.1c.ru/8.2/managed-application/cmi\" xmlns:ent=\"http://v8.1c.ru/8.1/data/enterprise\" xmlns:lf=\"http://v8.1c.ru/8.2/managed-application/logform\" xmlns:pal=\"http://v8.1c.ru/8.1/data/ui/colors/palette\" xmlns:style=\"http://v8.1c.ru/8.1/data/ui/style\" xmlns:sys=\"http://v8.1c.ru/8.1/data/ui/fonts/system\" xmlns:v8=\"http://v8.1c.ru/8.1/data/core\" xmlns:v8ui=\"http://v8.1c.ru/8.1/data/ui\" xmlns:web=\"http://v8.1c.ru/8.1/data/ui/colors/web\" xmlns:win=\"http://v8.1c.ru/8.1/data/ui/colors/windows\" xmlns:xen=\"http://v8.1c.ru/8.3/xcf/enums\" xmlns:xpr=\"http://v8.1c.ru/8.3/xcf/predef\" xmlns:xr=\"http://v8.1c.ru/8.3/xcf/readable\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" version=\"2.21\">\n\t<AccountingRegister uuid=\"6feab348-02dd-498f-86f9-4144df9141a7\">\n\t\t<InternalInfo>\n\t\t\t<xr:GeneratedType name=\"AccountingRegisterRecord.CRSFormOwnerAccountingRegister\" category=\"Record\">\n\t\t\t\t<xr:TypeId>b07605ea-8cc9-4f37-ba6f-e9f61d2fccf0</xr:TypeId>\n\t\t\t\t<xr:ValueId>5668a3c7-4c38-44fc-92c3-329cd0925e86</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccountingRegisterExtDimensions.CRSFormOwnerAccountingRegister\" category=\"ExtDimensions\">\n\t\t\t\t<xr:TypeId>877ac67d-b9c3-4d0e-a7d3-b8137149238e</xr:TypeId>\n\t\t\t\t<xr:ValueId>d7222e62-4e1b-40ff-b532-2cc7e17eb6da</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccountingRegisterRecordSet.CRSFormOwnerAccountingRegister\" category=\"RecordSet\">\n\t\t\t\t<xr:TypeId>62a053ea-e11b-4302-b39d-6a6ce42b7353</xr:TypeId>\n\t\t\t\t<xr:ValueId>594583df-63c4-4c4f-8266-4d99d8a35fa7</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccountingRegisterRecordKey.CRSFormOwnerAccountingRegister\" category=\"RecordKey\">\n\t\t\t\t<xr:TypeId>82e22d25-c8f9-4e5c-8a7e-9bb02f3f7a1b</xr:TypeId>\n\t\t\t\t<xr:ValueId>2829a518-6290-4d62-876a-496c1a10a370</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccountingRegisterSelection.CRSFormOwnerAccountingRegister\" category=\"Selection\">\n\t\t\t\t<xr:TypeId>882ca3de-64ea-44eb-b0a1-ec1c7ad16d52</xr:TypeId>\n\t\t\t\t<xr:ValueId>1ffddc69-ae17-4f03-881e-57d94bb6327b</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccountingRegisterList.CRSFormOwnerAccountingRegister\" category=\"List\">\n\t\t\t\t<xr:TypeId>79414fd0-cf21-4244-9e1e-c18109c577e7</xr:TypeId>\n\t\t\t\t<xr:ValueId>379ddaa1-ba68-43b9-9583-a3663f76e704</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t\t<xr:GeneratedType name=\"AccountingRegisterManager.CRSFormOwnerAccountingRegister\" category=\"Manager\">\n\t\t\t\t<xr:TypeId>fcf88686-650f-43b8-8bc9-520f68a7cc88</xr:TypeId>\n\t\t\t\t<xr:ValueId>15694a7c-c372-4aca-8405-89663c68ed6f</xr:ValueId>\n\t\t\t</xr:GeneratedType>\n\t\t</InternalInfo>\n\t\t<Properties>\n\t\t\t<Name>CRSFormOwnerAccountingRegister</Name>\n\t\t\t<Synonym/>\n\t\t\t<Comment>Combined properties and form roles: AccountingRegister</Comment>\n\t\t\t<UseStandardCommands>true</UseStandardCommands>\n\t\t\t<IncludeHelpInContents>false</IncludeHelpInContents>\n\t\t\t<ChartOfAccounts>ChartOfAccounts.CRSFormOwnerChartOfAccounts</ChartOfAccounts>\n\t\t\t<Correspondence>false</Correspondence>\n\t\t\t<PeriodAdjustmentLength>0</PeriodAdjustmentLength>\n\t\t\t<DefaultListForm>AccountingRegister.CRSFormOwnerAccountingRegister.Form.CRSCompositeForm</DefaultListForm>\n\t\t\t<AuxiliaryListForm>AccountingRegister.CRSFormOwnerAccountingRegister.Form.CRSRole_AuxiliaryListForm</AuxiliaryListForm>\n\t\t\t<DataLockControlMode>Managed</DataLockControlMode>\n\t\t\t<EnableTotalsSplitting>false</EnableTotalsSplitting>\n\t\t\t<FullTextSearch>DontUse</FullTextSearch>\n\t\t\t<ListPresentation/>\n\t\t\t<ExtendedListPresentation/>\n\t\t\t<Explanation/>\n\t\t</Properties>\n\t\t<ChildObjects>\n\t\t\t<Resource uuid=\"66955955-d634-460d-83d0-458c0e09c08f\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>Value</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Type>\n\t\t\t\t\t\t<v8:Type>xs:decimal</v8:Type>\n\t\t\t\t\t\t<v8:NumberQualifiers>\n\t\t\t\t\t\t\t<v8:Digits>15</v8:Digits>\n\t\t\t\t\t\t\t<v8:FractionDigits>2</v8:FractionDigits>\n\t\t\t\t\t\t\t<v8:AllowedSign>Any</v8:AllowedSign>\n\t\t\t\t\t\t</v8:NumberQualifiers>\n\t\t\t\t\t</Type>\n\t\t\t\t\t<PasswordMode>false</PasswordMode>\n\t\t\t\t\t<Format/>\n\t\t\t\t\t<EditFormat/>\n\t\t\t\t\t<ToolTip/>\n\t\t\t\t\t<MarkNegatives>false</MarkNegatives>\n\t\t\t\t\t<Mask/>\n\t\t\t\t\t<MultiLine>false</MultiLine>\n\t\t\t\t\t<ExtendedEdit>false</ExtendedEdit>\n\t\t\t\t\t<MinValue xsi:nil=\"true\"/>\n\t\t\t\t\t<MaxValue xsi:nil=\"true\"/>\n\t\t\t\t\t<FillChecking>DontCheck</FillChecking>\n\t\t\t\t\t<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>\n\t\t\t\t\t<ChoiceParameterLinks/>\n\t\t\t\t\t<ChoiceParameters/>\n\t\t\t\t\t<QuickChoice>Auto</QuickChoice>\n\t\t\t\t\t<CreateOnInput>Auto</CreateOnInput>\n\t\t\t\t\t<ChoiceForm/>\n\t\t\t\t\t<LinkByType/>\n\t\t\t\t\t<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>\n\t\t\t\t\t<Balance>true</Balance>\n\t\t\t\t\t<AccountingFlag/>\n\t\t\t\t\t<ExtDimensionAccountingFlag/>\n\t\t\t\t\t<FullTextSearch>Use</FullTextSearch>\n\t\t\t\t</Properties>\n\t\t\t</Resource>\n\t\t\t<Form>NewScalarProbe</Form>\n\t\t\t<Form>CRSRole_DefaultListForm</Form>\n\t\t\t<Form>CRSRole_AuxiliaryListForm</Form>\n\t\t\t<Form>CRSCompositeForm</Form>\n\t\t\t<Command uuid=\"b1433c39-47cd-4450-b910-669ee2e0a73d\">\n\t\t\t\t<Properties>\n\t\t\t\t\t<Name>SharedTypedCommand</Name>\n\t\t\t\t\t<Synonym/>\n\t\t\t\t\t<Comment/>\n\t\t\t\t\t<Group>NavigationPanelOrdinary</Group>\n\t\t\t\t\t<CommandParameterType>\n\t\t\t\t\t\t<v8:Type>xs:boolean</v8:Type>\n\t\t\t\t\t\t<v8:Type>cfg:CatalogRef.CRSTypeCatalog</v8:Type>\n\t\t\t\t\t</CommandParameterType>\n\t\t\t\t\t<ParameterUseMode>Multiple</ParameterUseMode>\n\t\t\t\t\t<ModifiesData>true</ModifiesData>\n\t\t\t\t\t<Representation>PictureAndText</Representation>\n\t\t\t\t\t<ToolTip>\n\t\t\t\t\t\t<v8:item>\n\t\t\t\t\t\t\t<v8:lang>en</v8:lang>\n\t\t\t\t\t\t\t<v8:content>Shared command properties</v8:content>\n\t\t\t\t\t\t</v8:item>\n\t\t\t\t\t</ToolTip>\n\t\t\t\t\t<Picture/>\n\t\t\t\t\t<Shortcut/>\n\t\t\t\t\t<OnMainServerUnavalableBehavior>Auto</OnMainServerUnavalableBehavior>\n\t\t\t\t</Properties>\n\t\t\t</Command>\n\t\t</ChildObjects>\n\t</AccountingRegister>\n</MetaDataObject>",
+      "body": "{1,\r\n{21,b07605ea-8cc9-4f37-ba6f-e9f61d2fccf0,5668a3c7-4c38-44fc-92c3-329cd0925e86,877ac67d-b9c3-4d0e-a7d3-b8137149238e,d7222e62-4e1b-40ff-b532-2cc7e17eb6da,62a053ea-e11b-4302-b39d-6a6ce42b7353,594583df-63c4-4c4f-8266-4d99d8a35fa7,82e22d25-c8f9-4e5c-8a7e-9bb02f3f7a1b,2829a518-6290-4d62-876a-496c1a10a370,882ca3de-64ea-44eb-b0a1-ec1c7ad16d52,1ffddc69-ae17-4f03-881e-57d94bb6327b,79414fd0-cf21-4244-9e1e-c18109c577e7,379ddaa1-ba68-43b9-9583-a3663f76e704,fcf88686-650f-43b8-8bc9-520f68a7cc88,15694a7c-c372-4aca-8405-89663c68ed6f,\r\n{0,\r\n{3,\r\n{1,0,6feab348-02dd-498f-86f9-4144df9141a7},\"CRSFormOwnerAccountingRegister\",\r\n{0},\"Combined properties and form roles: AccountingRegister\",0,0,00000000-0000-0000-0000-000000000000,0}\r\n},1,0,87b99569-e321-4df1-95e8-87ffa3d9bb04,5898fd8e-75f4-4843-9d3b-ff362898b886,0,1,0,0,\r\n{0},1e53a11c-fe3e-499f-8e7c-28790f6e3aca,\r\n{0},\r\n{0},\r\n{0},0},6,\r\n{35b63b9d-0adf-4625-a047-10ae874c19a3,0},\r\n{3daea016-69b7-4ed4-9453-127911372fe6,0},\r\n{63405499-7491-4ce3-ac72-43433cbe4112,1,\r\n{\r\n{2,\r\n{27,\r\n{2,\r\n{3,\r\n{1,0,66955955-d634-460d-83d0-458c0e09c08f},\"Value\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},\r\n{\"Pattern\",\r\n{\"N\",15,2,0}\r\n}\r\n},0,\r\n{0},\r\n{0},0,\"\",0,\r\n{\"U\"},\r\n{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,\r\n{5006,0},\r\n{3,0,0},\r\n{0,0},0,\r\n{0},\r\n{\"S\",\"\"},0,0,0},1,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,1},0}\r\n},\r\n{7162da60-f7fe-4d78-ad5d-e31700f9af18,1,\r\n{\r\n{0,\r\n{1,\r\n{2,b1433c39-47cd-4450-b910-669ee2e0a73d,078a6af8-d22c-4248-9c33-7e90075a3d2c},\r\n{9,\r\n{4,0,\r\n{0},\"\",-1,-1,1,0,\"\"},2,\r\n{1,\"en\",\"Shared command properties\"},1,\r\n{0,0,0},0,\r\n{1,77ea1b8f-dd79-4717-9dba-5628e7f348cf},\r\n{\"Pattern\",\r\n{\"B\"},\r\n{\"#\",ba2afd30-e52c-40c2-ac98-fa1c8676e9a8}\r\n},\r\n{3,\r\n{1,0,b1433c39-47cd-4450-b910-669ee2e0a73d},\"SharedTypedCommand\",\r\n{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},1,1,0}\r\n}\r\n},0}\r\n},\r\n{9d28ee33-9c7e-4a1b-8f13-50aa9b36607b,0},\r\n{d3b5d6eb-4ea2-4610-a3e2-624d4e815934,4,ba40288b-df91-49d1-9b1c-90ca124b54ff,af1bc82c-0077-494b-bb0b-0f5e78b6b4b8,1e53a11c-fe3e-499f-8e7c-28790f6e3aca,5898fd8e-75f4-4843-9d3b-ff362898b886}\r\n}",
+      "forms": {
+        "CRSCompositeForm": "5898fd8e-75f4-4843-9d3b-ff362898b886",
+        "CRSRole_AuxiliaryListForm": "1e53a11c-fe3e-499f-8e7c-28790f6e3aca",
+        "CRSRole_DefaultListForm": "af1bc82c-0077-494b-bb0b-0f5e78b6b4b8",
+        "NewScalarProbe": "ba40288b-df91-49d1-9b1c-90ca124b54ff"
+      },
+      "templates": {},
+      "references": [
+        {
+          "object_id": "8bae9d05-1281-408d-8ac6-d8204575ca21",
+          "class_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_AccountingRegister"
+        },
+        {
+          "object_id": "50384255-ef23-4d0d-9755-6b652e94606f",
+          "class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_AccumulationRegister"
+        },
+        {
+          "object_id": "a6ffac4e-5b65-4c70-bfdd-db308eb19862",
+          "class_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerAccumulationRegister"
+        },
+        {
+          "object_id": "ae5d11d4-ed34-4889-9052-f5f181d2b13a",
+          "class_id": "fcd3404e-1523-48ce-9bc0-ecdb822684a1",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerBusinessProcess"
+        },
+        {
+          "object_id": "dc1e099b-cf25-4838-9365-b82d6cfec1ae",
+          "class_id": "f2de87a8-64e5-45eb-a22d-b3aedab050e7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerCalculationRegister"
+        },
+        {
+          "object_id": "6ddd386a-3208-4610-94bb-5143bc10f68a",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Catalog"
+        },
+        {
+          "object_id": "1ed8bf82-97dd-4683-bc05-46449a036d8b",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalCatalog"
+        },
+        {
+          "object_id": "87eedb6d-4ab9-4df9-a37c-0d4da8cf7381",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerCatalog"
+        },
+        {
+          "object_id": "a722e752-8a73-4a11-ac63-93773e21b5da",
+          "class_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeCatalog"
+        },
+        {
+          "object_id": "51e054df-2ae2-4be1-9ed6-f92fd7bb20df",
+          "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_ChartOfAccounts"
+        },
+        {
+          "object_id": "87b99569-e321-4df1-95e8-87ffa3d9bb04",
+          "class_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerChartOfAccounts"
+        },
+        {
+          "object_id": "a6712935-7a27-4c21-a929-342abd46e3f7",
+          "class_id": "30b100d6-b29f-47ac-aec7-cb8ca8a54767",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerChartOfCalculationTypes"
+        },
+        {
+          "object_id": "a367baae-b92e-4f43-9dfc-353c9c38dd3d",
+          "class_id": "07ee8426-87f1-11d5-b99c-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalReferences"
+        },
+        {
+          "object_id": "6018f8ad-5ba2-43a3-9d48-785e09acdf93",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaCatalog"
+        },
+        {
+          "object_id": "7633609b-6b2b-47d5-bb55-f9d5b383fe34",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaDocument"
+        },
+        {
+          "object_id": "c58c58b9-a559-46ae-a5cd-47646b601797",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalSchemaEnum"
+        },
+        {
+          "object_id": "fe44e54d-9e51-4a6f-b511-5b9eb226f342",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonBinaryData"
+        },
+        {
+          "object_id": "a5f5ad04-549c-4957-af4b-9e12ff50ed04",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonDataCompositionSchema"
+        },
+        {
+          "object_id": "06a5dea5-3597-4145-b592-3d86230c6c3a",
+          "class_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFullCommonTextDocument"
+        },
+        {
+          "object_id": "b6a781ea-86d8-407d-ab9f-88b03c4c8147",
+          "class_id": "0195e80c-b157-11d4-9435-004095e12fc7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeConstant"
+        },
+        {
+          "object_id": "adeb5cd2-6e35-4ed9-a9c9-3aaf34990315",
+          "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_DataProcessor"
+        },
+        {
+          "object_id": "562772b9-95fe-46cd-a21c-d0ea9d7a3ede",
+          "class_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDataProcessor"
+        },
+        {
+          "object_id": "7cc4393f-d4fa-47ae-b6bc-46cfc5718e0b",
+          "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_DocumentJournal"
+        },
+        {
+          "object_id": "3acda3f8-ce88-44f4-88a6-7ae1ed291eeb",
+          "class_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDocumentJournal"
+        },
+        {
+          "object_id": "3f51c397-f215-497f-895c-d230a00251f5",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Document"
+        },
+        {
+          "object_id": "0f4b82a0-af0b-4eb9-9357-9a6219fee05f",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFinalDocument"
+        },
+        {
+          "object_id": "11742627-ae9d-4462-9aed-402646c0efa8",
+          "class_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerDocument"
+        },
+        {
+          "object_id": "4d196102-8c9f-45ee-90a8-16d8c5a71099",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Enum"
+        },
+        {
+          "object_id": "3ce7ce9b-2d71-4535-89cd-6aa35c35e3f4",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerEnum"
+        },
+        {
+          "object_id": "8809b34c-08b1-4fd3-809d-8edede517647",
+          "class_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeEnum"
+        },
+        {
+          "object_id": "632f7ad7-e5ed-4cc6-9673-4494c8698a6e",
+          "class_id": "857c4a91-e5f4-4fac-86ec-787626f1c108",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerExchangePlan"
+        },
+        {
+          "object_id": "4953d0eb-406d-44e6-ae14-39db81ca6f90",
+          "class_id": "3e7bfcc0-067d-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerFilterCriterion"
+        },
+        {
+          "object_id": "88c46f9c-71c8-408d-9cb3-d7fcb3c08142",
+          "class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_InformationRegister"
+        },
+        {
+          "object_id": "201d0318-3ea3-4b48-a3bb-088f350377a7",
+          "class_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerInformationRegister"
+        },
+        {
+          "object_id": "3b79b4a2-8038-44a0-9f4b-ffe91904ad64",
+          "class_id": "9cd510ce-abfc-11d4-9434-004095e12fc7",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "Русский"
+        },
+        {
+          "object_id": "77478a5d-83eb-4f59-a77d-bf2f4741ce49",
+          "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSCreate_Report"
+        },
+        {
+          "object_id": "bb6dda53-a59f-45e2-b469-898a3f13102b",
+          "class_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerReport"
+        },
+        {
+          "object_id": "e0d706ee-cabf-4060-a0e8-4b3b53376091",
+          "class_id": "24c43748-c938-45d0-8d14-01424a72b11e",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSTypeSession"
+        },
+        {
+          "object_id": "450be9cf-68ed-4743-8609-58c0bbd2d768",
+          "class_id": "46b4cd97-fd13-4eaa-aba2-3bddd7699218",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerSettingsStorage"
+        },
+        {
+          "object_id": "7477df8f-b2fa-4346-b7ff-362c6135c36c",
+          "class_id": "3e63355c-1378-4953-be9b-1deb5fb6bec5",
+          "parent_id": "00000000-0000-0000-0000-000000000000",
+          "owner_id": "00000000-0000-0000-0000-000000000000",
+          "name": "CRSFormOwnerTask"
+        }
+      ]
+    }
+  ]
+}

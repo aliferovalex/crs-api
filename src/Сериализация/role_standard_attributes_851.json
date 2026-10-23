@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "source": "Independent Configurator 8.5.1.1529 single-standard-attribute role compilation; no row ordering assumptions.",
+  "cf_sha256": "6b41cef2c3b26993d5214f3d269cb1a15922685d3c3c5a8580f42d9c3783f297",
+  "header_version": 1,
+  "selector": 1,
+  "class_id": "03f171e8-326f-41c6-9fa5-932a0b12cddf",
+  "attribute_flag": 1,
+  "kinds": {
+    "Catalog": {
+      "PredefinedDataName": -13,
+      "Predefined": -10,
+      "Ref": -8,
+      "DeletionMark": -7,
+      "IsFolder": -6,
+      "Owner": -5,
+      "Parent": -4,
+      "Description": -3,
+      "Code": -2
+    },
+    "InformationRegister": {
+      "Active": -5,
+      "LineNumber": -4,
+      "Recorder": -3,
+      "Period": -2
+    },
+    "AccumulationRegister": {
+      "RecordType": -9,
+      "Active": -5,
+      "LineNumber": -4,
+      "Recorder": -3,
+      "Period": -2
+    },
+    "Document": {
+      "Posted": -7,
+      "Ref": -5,
+      "DeletionMark": -4,
+      "Date": -3,
+      "Number": -2
+    },
+    "ExchangePlan": {
+      "ReceivedNo": -10,
+      "SentNo": -9,
+      "Ref": -6,
+      "DeletionMark": -4,
+      "Description": -3,
+      "Code": -2,
+      "ExchangeDate": -14,
+      "ThisNode": -13
+    },
+    "ChartOfCharacteristicTypes": {
+      "PredefinedDataName": -14,
+      "ValueType": -11,
+      "Description": -9,
+      "Code": -8,
+      "IsFolder": -7,
+      "Parent": -6,
+      "Predefined": -5,
+      "DeletionMark": -4,
+      "Ref": -2
+    },
+    "DocumentJournal": {
+      "Type": -60003,
+      "Ref": -101,
+      "Date": -100,
+      "Posted": -7,
+      "DeletionMark": -4,
+      "Number": -2
+    },
+    "Task": {
+      "Executed": -10,
+      "Description": -9,
+      "RoutePoint": -8,
+      "BusinessProcess": -7,
+      "Ref": -5,
+      "DeletionMark": -4,
+      "Date": -3,
+      "Number": -2
+    },
+    "BusinessProcess": {
+      "Started": -9,
+      "HeadTask": -8,
+      "Completed": -7,
+      "Ref": -5,
+      "DeletionMark": -4,
+      "Date": -3,
+      "Number": -2
+    }
+  },
+  "rls_fields": {
+    "Catalog": [
+      "Code",
+      "DeletionMark",
+      "Description",
+      "IsFolder",
+      "Owner",
+      "Parent",
+      "Predefined",
+      "PredefinedDataName",
+      "Ref"
+    ],
+    "InformationRegister": [
+      "Active",
+      "LineNumber",
+      "Period",
+      "Recorder"
+    ],
+    "AccumulationRegister": [
+      "Active",
+      "LineNumber",
+      "Period",
+      "Recorder"
+    ],
+    "Document": [
+      "Date",
+      "DeletionMark",
+      "Number",
+      "Posted",
+      "Ref"
+    ],
+    "ExchangePlan": [
+      "Code",
+      "DeletionMark",
+      "Description",
+      "ExchangeDate",
+      "ReceivedNo",
+      "Ref",
+      "SentNo",
+      "ThisNode"
+    ],
+    "ChartOfCharacteristicTypes": [
+      "Code",
+      "DeletionMark",
+      "Description",
+      "IsFolder",
+      "Parent",
+      "Predefined",
+      "PredefinedDataName",
+      "Ref",
+      "ValueType"
+    ],
+    "DocumentJournal": [
+      "Date",
+      "DeletionMark",
+      "Number",
+      "Posted",
+      "Ref"
+    ],
+    "Task": [
+      "BusinessProcess",
+      "Date",
+      "DeletionMark",
+      "Description",
+      "Executed",
+      "Number",
+      "Ref",
+      "RoutePoint"
+    ],
+    "BusinessProcess": [
+      "Completed",
+      "Date",
+      "DeletionMark",
+      "HeadTask",
+      "Number",
+      "Ref",
+      "Started"
+    ]
+  },
+  "rls_cf_sha256": "c0f4715c5b2f5f3028edf206d84987844735237b189e8e8efe786cc5ab118408"
+}

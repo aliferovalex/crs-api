@@ -1,6 +1,5 @@
 """Deletion preserves owner streams and refuses selected owned forms."""
 import base64
-import copy
 import hashlib
 import json
 import re
@@ -8,11 +7,12 @@ import sys
 import unittest
 import uuid
 from pathlib import Path
-sys.path.insert(0,str(next((Path(__file__).resolve().parents[1]/'src').rglob('delete_owned_object_serializer.py')).parent))
-import metadata_serializer as s
-import delete_owned_object_serializer as delete
+sys.path.insert(0,str(next((Path(__file__).resolve().parents[1]/'src').rglob('delete_object_serializer.py')).parent))
+import metadata_context
+import native_metadata as s
+import delete_object_serializer as delete
 import test_owner_forms as owners
-import test_managed_form_change as catalog_form
+import test_managed_form_operations as catalog_form
 
 
 def storage(docs,body,payloads=()):
@@ -24,9 +24,9 @@ def storage(docs,body,payloads=()):
 
 def request(case):
     r=owners.request(case,externals=True)
-    parent=s.context_metadata(base64.b64decode(r['context']),case['owner_id']);m=parent[0]
+    parent=metadata_context.context_metadata(base64.b64decode(r['context']),case['owner_id']);m=parent[0]
     m[12]=[s.atom(1),[s.atom(delete.ids.class_id(case['kind']+'Form')),s.atom(1),s.atom(case['form_id'])]]
-    base=catalog_form.fixture();fd=s.context_metadata(base64.b64decode(base['context']),catalog_form.FID);fm=fd[0]
+    base=catalog_form.fixture();fd=metadata_context.context_metadata(base64.b64decode(base['context']),catalog_form.FID);fm=fd[0]
     fm[1]=s.atom(case['form_id']);fm[2]=s.atom(delete.ids.class_id(case['kind']+'Form'));fm[3]=s.atom(case['owner_id']);fm[9]=s.atom(case['form_name'],True);fm[12]=fm[13]=[s.atom(0)];fm[14]=[s.atom(1),fm[3],s.atom(1)]
     name=case['form_id']+'.0';version=str(uuid.uuid4());fm[11]=[s.atom(1),s.atom(name,True),s.atom(version)];fd[2]=[s.atom(1),[s.atom(name,True),s.atom(version),s.atom(1)]]
     payloads=[(s.val(m[11][index]),s.compress(b'unchanged owner module')) for index in (1,3)]

@@ -3,7 +3,7 @@ import json
 import uuid
 from pathlib import Path
 from functools import lru_cache
-import metadata_serializer as s
+import native_metadata as s
 
 Q='{http://v8.1c.ru/8.3/xcf/logform}'
 

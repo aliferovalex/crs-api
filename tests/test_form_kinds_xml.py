@@ -3,7 +3,7 @@ import json,unittest
 from pathlib import Path
 from xml.etree import ElementTree as E
 import managed_form_xml as x
-import metadata_serializer as s
+import native_metadata as s
 import type_description_xml as types
 import test_managed_form_xml as catalog
 
@@ -12,6 +12,13 @@ def native(kind):
     filename='document_form_layout_851.json' if kind=='Document' else 'common_form_layout_851.json'
     layout=json.loads(Path(x.__file__).with_name(filename).read_text(encoding='utf-8'))
     return layout['external_template'].replace('${catalog_object_type}','11111111-1111-4111-8111-111111111111').encode('utf-8')
+
+
+def document_paths():
+    import test_document_serializer as document
+    import metadata_object_xml as objects
+    raw=objects.create(document.xml().replace('XML_Document','Doc'),'8.5.1.1529','Document')[2]
+    return x.object_paths(s.Parser(raw.decode('utf-8-sig')).documents()[0],'Document')
 
 
 def common_xml(attributes=(('Message',1,'{"Pattern",{"S",100,1}}'),)):
@@ -28,7 +35,7 @@ class FormKindsTests(unittest.TestCase):
         root=E.fromstring(catalog.xml('Doc',fields=(('Date',2,'Date'),('Number',1,'Number'))));root.remove(root.find(x.Q+'UseForFoldersAndItems'))
         root.find('.//{'+x.CORE+'}Type').text='cfg:DocumentObject.Doc'
         E.SubElement(root,x.Q+'AutoTime').text='CurrentOrLast'
-        text=E.tostring(root,encoding='unicode');raw=x.convert(native('Document'),text,paths=x.object_paths(None,'Document'),object_name='Doc',kind='Document')
+        text=E.tostring(root,encoding='unicode');raw=x.convert(native('Document'),text,paths=document_paths(),object_name='Doc',kind='Document')
         form=x.interface(raw);index,count,end=x.elements.form_collection(form)
         self.assertEqual([s.val(form[1][i+1][6]) for i in range(index+1,end,2)],['Date','Number'])
         self.assertEqual(s.render(form[1][index+2][11]),'{2,{1},{-3}}')

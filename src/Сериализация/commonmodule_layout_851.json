@@ -14,5 +14,88 @@
   "generated_categories": [],
   "input_fields": [],
   "common_slot": 1,
-  "common_direct": true
+  "common_direct": true,
+  "scalar_properties": {
+    "Global": {
+      "path": [
+        1,
+        6
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "ClientManagedApplication": {
+      "path": [
+        1,
+        7
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "ExternalConnection": {
+      "path": [
+        1,
+        4
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "ClientOrdinaryApplication": {
+      "path": [
+        1,
+        2
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "ServerCall": {
+      "path": [
+        1,
+        9
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "Privileged": {
+      "path": [
+        1,
+        5
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "Server": {
+      "path": [
+        1,
+        3
+      ],
+      "values": {
+        "true": 1,
+        "false": 0
+      }
+    },
+    "ReturnValuesReuse": {
+      "path": [
+        1,
+        8
+      ],
+      "values": {
+        "DontUse": 0,
+        "DuringRequest": 1,
+        "DuringSession": 2
+      }
+    }
+  }
 }

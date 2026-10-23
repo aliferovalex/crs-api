@@ -3,8 +3,8 @@ import copy,sys,unittest
 from pathlib import Path
 from xml.etree import ElementTree as E
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src/Сериализация'))
-import metadata_serializer as s,managed_form_xml as x,managed_form_elements as e
-import managed_form_serializer as creation,v8unpack_backend as backend
+import native_metadata as s, managed_form_xml as x, managed_form_elements as e
+import managed_form_operations as creation,v8unpack_backend as backend
 import test_catalog_form_serializer as fixture
 from test_managed_form_xml import xml,extra
 
@@ -26,7 +26,7 @@ def pages():
 
 def native(root):
     request=fixture.fixture();request['form_xml']=E.tostring(root,encoding='unicode')
-    return extra(creation.serialize(request))
+    return extra(creation.create(request))
 
 
 def change(raw,root):
