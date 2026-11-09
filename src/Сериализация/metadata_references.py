@@ -1,31 +1,41 @@
-"""Resolve enum values and form reference types from current native metadata."""
+"""Resolve design-time values and form types from proven native identities."""
 import metadata_context
 import re
 import uuid
 from xml.etree import ElementTree as E
 import native_metadata as s
 import metadata_identifiers as ids
-import typed_value_xml as values
-import appearance_xml
+import xml_qnames as values
+import xml_namespace_bindings
+import native_predefined_reader
 
 XR='http://v8.1c.ru/8.3/xcf/readable'
 
 
-def enum_name(reference):
-    parts=reference.split('.')
-    if len(parts)!=4 or parts[0]!='Enum' or parts[2]!='EnumValue' or any(not re.fullmatch(r'[^\W\d]\w{0,79}',p,re.UNICODE) for p in (parts[1],parts[3])):raise ValueError('Unsupported design-time reference: '+reference)
-    return parts[1]
+def reference_name(reference):
+    """Return (kind, owner name, value kind, item name) for a named value."""
+    if reference == '':return None, None, 'empty', None
+    parts = reference.split('.')
+    if len(parts) not in (3, 4) or any(not re.fullmatch(r'[^\W\d]\w{0,79}', p, re.UNICODE) for p in parts):
+        raise ValueError('Unsupported design-time reference: ' + reference)
+    kind, name = parts[:2]
+    if len(parts) == 4 and kind == 'Enum' and parts[2] == 'EnumValue':return kind, name, 'enum', parts[3]
+    if len(parts) == 3 and parts[2] == 'EmptyRef':
+        ids.class_id(kind)
+        return kind, name, 'empty', None
+    if len(parts) == 3 and kind in native_predefined_reader.FAMILIES:return kind, name, 'predefined', parts[2]
+    raise ValueError('Unsupported design-time reference: ' + reference)
 
 
 def required(xml):
     if xml is None:return set()
     if not isinstance(xml,str) or len(xml.encode('utf-8'))>s.MAX_BYTES or '<!DOCTYPE' in xml.upper() or '<!ENTITY' in xml.upper():raise ValueError('Invalid reference XML')
-    bindings=appearance_xml.namespaces(xml);result=set()
+    bindings=xml_namespace_bindings.namespaces(xml);result=set()
     for node in E.fromstring(xml).iter():
         kind=node.get(values.XSI+'type')
         if kind is not None and values.qname(kind,bindings)==(XR,'DesignTimeRef'):
             if len(node) or set(node.attrib)!={values.XSI+'type'}:raise ValueError('Invalid design-time reference value')
-            ref=node.text or '';enum_name(ref);result.add(ref)
+            ref=node.text or '';reference_name(ref);result.add(ref)
     return result
 
 
@@ -72,14 +82,16 @@ def features(metadata):
 def objects_for_xml(xml,request):
     refs=required(xml)
     if not refs:return refs,{}
-    objects=metadata_context.context_objects(request['context']);wanted={enum_name(ref) for ref in refs};selected={}
+    wanted={(ids.class_id(reference_name(ref)[0]),reference_name(ref)[1]) for ref in refs if ref};selected={}
+    if not wanted:return refs,selected
+    objects=metadata_context.context_objects(request['context'])
     for oid,docs in objects.items():
         m=docs[0]
-        if s.val(m[2])==ids.class_id('Enum') and s.val(m[9]) in wanted:
-            name=s.val(m[9])
-            if name in selected:raise ValueError('Ambiguous enum in context: '+name)
-            selected[name]=(oid,m)
-    if set(selected)!=wanted:raise ValueError('Referenced enum is missing from current context')
+        key=(s.val(m[2]),s.val(m[9]))
+        if key in wanted:
+            if key in selected:raise ValueError('Ambiguous reference owner in context: '+key[1])
+            selected[key]=(oid,m)
+    if set(selected)!=wanted:raise ValueError('Referenced object is missing from current context')
     return refs,selected
 
 
@@ -94,13 +106,39 @@ def plan(request):
 def resolve_values(xml,request,storage=None):
     refs=required(xml)
     if not refs:return {}
+    if refs=={''}:return {'':(s.ZERO,s.ZERO)}
     import native_references
     source=native_references.catalog(request);result={}
-    for name in {enum_name(ref) for ref in refs}:
+    for name in {reference_name(ref)[1] for ref in refs if reference_name(ref)[2]=='enum'}:
         identity=source.select('Enum',name,label='Referenced enum');entry=source.load(identity,storage,label='Enum')
         body=s.Parser(entry.body.decode('utf-8-sig')).documents()
         if len(body)!=1:raise ValueError('Unsupported enum reference documents')
         add_enum_identity(result,body[0],identity,entry.features)
+    index=request.get('_compiled_types')
+    for ref in refs:
+        kind,name,category,item=reference_name(ref)
+        if category=='enum':continue
+        if kind is None:
+            result[ref]=(s.ZERO,s.ZERO);continue
+        identity=source.select(kind,name,label='Referenced value owner')
+        if index is not None:
+            type_id,owner=index.reference('cfg:'+kind+'Ref.'+name)
+            if owner!=identity.object_id:raise ValueError('Compiled value owner differs from reference index')
+        else:type_id=source.type_id(kind,name,storage=storage)
+        if category=='empty':value_id=s.ZERO
+        else:
+            suffix=native_predefined_reader.FAMILIES[kind][1]
+            if index is not None:
+                raw=index.image.get(identity.object_id+suffix)
+            else:
+                if storage is None:raise ValueError('Predefined reference requires current version storage or compiled CF')
+                entry=source.source_files([identity],storage,label='Predefined reference')[identity.object_id]
+                raw=entry.files.get(identity.object_id+suffix)
+            if raw is None:raise ValueError('Referenced predefined stream is missing')
+            values=native_predefined_reader.read(raw,kind)
+            if item not in values:raise ValueError('Referenced predefined value is missing: '+ref)
+            value_id=values[item]
+        result[ref]=(type_id,value_id)
     if not refs<=result.keys():raise ValueError('Referenced enum value is missing')
     return {ref:result[ref] for ref in refs}
 
@@ -114,28 +152,34 @@ def resolve(xml,request,storage=None):
 
 def form_relations(xml,request,parent,previous,raw=None,storage=None):
     """Reconcile proven form type dependencies, retaining opaque relations."""
-    import form_attribute_types,native_references
+    import form_attribute_types,native_references,metadata_type_references,native_object_profiles,metadata_type_sets
     result=dict(previous);reader=native_references.catalog(request)
-    names={('Enum',enum_name(ref)) for ref in required(xml)}
-    names.update(form_attribute_types.reference_name(ref) for ref in form_attribute_types.required(xml))
+    names={reference_name(ref)[:2] for ref in required(xml) if ref}
     final={reader.select(*name,label='Referenced form type').object_id for name in names}
+    final.update(form_attribute_types.dependencies(xml,reader,storage))
     if raw is not None:
-        # Source dependencies must be checked against source versions, including
-        # objects removed from the final declaration index in this commit.
-        source=native_references.Catalog(request);atoms=set()
-        def visit(node):
-            if isinstance(node,list):
-                for child in node:visit(child)
-            elif not node.quoted:atoms.add(s.val(node))
-        import managed_form_xml
-        visit(managed_form_xml.interface(raw))
-        for oid,flag in previous.items():
-            if oid==parent or oid in final or flag!=1 or oid not in source.source:continue
-            identity=next(row for row in source.targets.targets if row.object_id==oid)
-            kind=ids.class_labels().get(identity.class_id)
-            if kind not in form_attribute_types.KINDS.values():continue
-            generated=source.type_id(kind,identity.name,storage=storage)
-            if generated in atoms:result.pop(oid)
+        # The source index remains bound to source versions and includes
+        # owners removed from the final declaration index.
+        import native_form_reader,compiled_graph
+        atoms=compiled_graph.atoms(native_form_reader.interface(raw))
+        groups={name for name,value in metadata_type_sets.profile().items() if value in atoms}
+        if '_source_types' in request:
+            index=request['_source_types']
+            managed={index.owner_for_generated(value) for value in atoms}
+            managed.update(index.object_ids_required(groups))
+        else:
+            source=native_references.Catalog(request);managed=set()
+            for oid,flag in previous.items():
+                if oid==parent or oid in final or flag!=1 or oid not in source.source:continue
+                identity=next(row for row in source.targets.targets if row.object_id==oid)
+                kind=ids.class_labels().get(identity.class_id)
+                if kind not in metadata_type_references.reference_kinds():continue
+                entry=source.load(identity,storage,label='Source form reference type')
+                generated=set(native_references.generated_ids(entry.body,identity,native_object_profiles.layout(kind,request['platform'])))
+                if generated & atoms:managed.add(oid)
+            managed.update(metadata_type_sets.dependencies(groups,source,storage))
+        for oid in managed:
+            if oid!=parent and oid not in final and result.get(oid)==1:result.pop(oid)
     result[parent]=1
     for oid in sorted(final):
         if oid!=parent:result[oid]=1

@@ -67,7 +67,7 @@
               3
             ],
             "collection_id": "35b63b9d-0adf-4625-a047-10ae874c19a3",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -86,7 +86,7 @@
               5
             ],
             "collection_id": "63405499-7491-4ce3-ac72-43433cbe4112",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -105,7 +105,7 @@
               7
             ],
             "collection_id": "9d28ee33-9c7e-4a1b-8f13-50aa9b36607b",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -123,7 +123,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "d3b5d6eb-4ea2-4610-a3e2-624d4e815934",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
             "format": "class_uuid,count,object_uuids"
@@ -143,7 +143,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
             "format": "class_uuid,count,object_uuids"
@@ -164,7 +164,7 @@
               6
             ],
             "collection_id": "7162da60-f7fe-4d78-ad5d-e31700f9af18",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries"
           }
         }
@@ -207,7 +207,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "AccumulationRegister": {
@@ -229,7 +229,7 @@
               5
             ],
             "collection_id": "b64d9a41-1642-11d6-a3c7-0050bae0a776",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -248,7 +248,7 @@
               6
             ],
             "collection_id": "b64d9a42-1642-11d6-a3c7-0050bae0a776",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -267,7 +267,7 @@
               7
             ],
             "collection_id": "b64d9a43-1642-11d6-a3c7-0050bae0a776",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -285,7 +285,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "b64d9a44-1642-11d6-a3c7-0050bae0a776",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
             "format": "class_uuid,count,object_uuids"
@@ -305,7 +305,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
             "format": "class_uuid,count,object_uuids"
@@ -326,7 +326,7 @@
               4
             ],
             "collection_id": "99f328af-a77f-4572-a2d8-80ed20c81890",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries"
           }
         }
@@ -368,7 +368,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "AddressingAttribute": {
@@ -535,7 +535,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3f7a8120-b71a-4265-98bf-4d9bc09b7719",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -555,7 +555,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -637,7 +637,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "CalculationRegister": {
@@ -726,7 +726,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "a2cb086c-db98-43e4-a1a9-0760ab048f8d",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -746,7 +746,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -808,7 +808,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "Catalog": {
@@ -830,7 +830,7 @@
               6
             ],
             "collection_id": "cf4abea7-37b2-11d4-940f-008048da11f9",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -849,7 +849,7 @@
               5
             ],
             "collection_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
-            "serializer": "tabular_section_xml",
+            "serializer": "native_tabular",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -869,7 +869,7 @@
               7
             ],
             "collection_id": "fdf816d2-1ead-11d5-b975-0050bae0a95d",
-            "serializer": "child_object_xml",
+            "serializer": "metadata_context",
             "format": "class_uuid,count,object_uuids"
           }
         },
@@ -889,7 +889,7 @@
               3
             ],
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "child_object_xml",
+            "serializer": "metadata_context",
             "format": "class_uuid,count,object_uuids"
           }
         },
@@ -908,7 +908,7 @@
               4
             ],
             "collection_id": "4fe87c89-9ad4-43f6-9fdb-9dc83b3879c6",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries"
           }
         }
@@ -989,7 +989,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "ChartOfAccounts": {
@@ -1011,7 +1011,7 @@
               7
             ],
             "collection_id": "6e65cbf5-daa8-4d8d-bef8-59723f4e5777",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -1047,7 +1047,7 @@
               8
             ],
             "collection_id": "78bd1243-c4df-46c3-8138-e147465cb9a4",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -1066,7 +1066,7 @@
               9
             ],
             "collection_id": "c70ca527-5042-4cad-a315-dcb4007e32a3",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -1084,7 +1084,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "5372e285-03db-4f8c-8565-fe56f1aea40e",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
             "format": "class_uuid,count,object_uuids"
@@ -1104,7 +1104,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
             "format": "class_uuid,count,object_uuids"
@@ -1196,7 +1196,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "ChartOfCalculationTypes": {
@@ -1251,7 +1251,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "a7f8f92a-7a4b-484b-937e-42d242e64144",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -1271,7 +1271,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -1358,7 +1358,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "ChartOfCharacteristicTypes": {
@@ -1380,7 +1380,7 @@
               3
             ],
             "collection_id": "31182525-9346-4595-81f8-6f91a72ebe06",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries",
             "evidence": "Independent native characteristic-plan XML/CF matrix, 8.5.1.1529"
           }
@@ -1400,7 +1400,7 @@
               5
             ],
             "collection_id": "54e36536-7863-42fd-bea3-c5edd3122fdc",
-            "serializer": "tabular_section_xml",
+            "serializer": "native_tabular",
             "format": "collection_uuid,count,inline_entries",
             "evidence": "Independent native characteristic-plan XML/CF matrix, 8.5.1.1529"
           }
@@ -1419,7 +1419,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "eb2b78a8-40a6-4b7e-b1b3-6ca9966cbc94",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -1439,7 +1439,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -1460,7 +1460,7 @@
               6
             ],
             "collection_id": "95b5e1d4-abfa-4a16-818d-a5b07b7d3f73",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries",
             "evidence": "Independent native characteristic-plan XML/CF matrix, 8.5.1.1529"
           }
@@ -1538,7 +1538,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "Column": {
@@ -1726,12 +1726,12 @@
       "automatic_deletion_supported": false,
       "content_files": {
         "Ext/Form.xml": {
-          "serializer": "managed_form_xml",
-          "status": "partial"
+          "status": "adapter_unverified",
+          "compiler": "ibcmd-rs"
         },
         "Ext/Form/Module.bsl": {
-          "serializer": "managed_form_xml",
-          "status": "supported"
+          "status": "adapter_unverified",
+          "compiler": "ibcmd-rs"
         }
       }
     },
@@ -1811,16 +1811,16 @@
       "automatic_deletion_supported": false,
       "content_files": {
         "Ext/Template.xml": {
-          "serializer": "template_content",
-          "status": "supported_for_selected_template_types"
+          "status": "adapter_unverified",
+          "compiler": "ibcmd-rs"
         },
         "Ext/Template.bin": {
-          "serializer": "template_content",
-          "status": "supported_for_selected_template_types"
+          "status": "adapter_unverified",
+          "compiler": "ibcmd-rs"
         },
         "Ext/Template.txt": {
-          "serializer": "template_content",
-          "status": "supported_for_selected_template_types"
+          "status": "adapter_unverified",
+          "compiler": "ibcmd-rs"
         }
       }
     },
@@ -1842,7 +1842,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "9cd510ce-abfc-11d4-9434-004095e12fc7",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -1861,7 +1861,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "37f2fa9a-b276-11d4-9435-004095e12fc7",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -1880,7 +1880,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "58848766-36ea-4076-8800-e91eb49590d7",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -1899,7 +1899,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3e5404af-6ef8-4c73-ad11-91bd2dfac4c8",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -1918,7 +1918,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "7dcd43d9-aca5-4926-b549-1842e6a4e8cf",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -1937,7 +1937,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "39bddf6a-0c3c-452b-921c-d99cfa1c2f1b",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -1956,7 +1956,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "24c43748-c938-45d0-8d14-01424a72b11e",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -1975,7 +1975,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "09736b02-9cac-4e3f-b4f7-d3e9576ab948",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -1994,7 +1994,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "0c89c792-16c3-11d5-b96b-0050bae0a95d",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2013,7 +2013,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3e7bfcc0-067d-11d6-a3c7-0050bae0a776",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2032,7 +2032,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "0fe48980-252d-11d6-a3c7-0050bae0a776",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2051,7 +2051,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "15794563-ccec-41f6-a83c-ec5f7b9a5bc1",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2070,7 +2070,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "857c4a91-e5f4-4fac-86ec-787626f1c108",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2089,7 +2089,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "cc9df798-7c94-4616-97d2-7aa0b7bc515e",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2108,7 +2108,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "8657032e-7740-4e1d-a3ba-5dd6e8afb78f",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2127,7 +2127,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "0fffc09c-8f4c-47cc-b41c-8d5c5a221d79",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2146,7 +2146,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "d26096fb-7a5d-4df9-af63-47d04771fa9b",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2165,7 +2165,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "4e828da6-0f44-4b5b-b1c0-a2b3cfe7bdcc",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2184,7 +2184,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "11bdaf85-d5ad-4d91-bb24-aa0eee139052",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2203,7 +2203,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "46b4cd97-fd13-4eaa-aba2-3bddd7699218",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2222,7 +2222,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "af547940-3268-434f-a3e7-e47d6d2638c3",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2241,7 +2241,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "30d554db-541e-4f62-8970-a1c6dcfeb2bc",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2260,7 +2260,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "c045099e-13b9-4fb6-9d50-fca00202971e",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2279,7 +2279,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "2f1a5187-fb0e-4b05-9489-dc5dd6412348",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2298,7 +2298,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "1c57eabe-7349-44b3-b1de-ebfeab67b47d",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2317,7 +2317,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "0195e80c-b157-11d4-9435-004095e12fc7",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2336,7 +2336,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "07ee8426-87f1-11d5-b99c-0050bae0a95d",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2355,7 +2355,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "cf4abea6-37b2-11d4-940f-008048da11f9",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2374,7 +2374,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2393,7 +2393,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "36a8e346-9aaa-4af9-bdbd-83be3c177977",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2412,7 +2412,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "bc587f20-35d9-11d6-a3c7-0050bae0a776",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2431,7 +2431,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "4612bd75-71b7-4a5c-8cc5-2b0b65f9fa0d",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2450,7 +2450,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "f6a80749-5ad7-400b-8519-39dc5dff2542",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2469,7 +2469,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2488,7 +2488,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2507,7 +2507,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "13134201-f60b-11d5-a3c7-0050bae0a776",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2526,7 +2526,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "b64d9a40-1642-11d6-a3c7-0050bae0a776",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2545,7 +2545,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "82a1b659-b220-4d94-a9bd-14d757b95a48",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2564,7 +2564,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "238e7e88-3c5f-48b2-8a3b-81ebbecb20ed",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2583,7 +2583,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "2deed9b8-0056-4ffe-a473-c20a6c32a0bc",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2602,7 +2602,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "30b100d6-b29f-47ac-aec7-cb8ca8a54767",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2621,7 +2621,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "f2de87a8-64e5-45eb-a22d-b3aedab050e7",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2640,7 +2640,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "fcd3404e-1523-48ce-9bc0-ecdb822684a1",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2659,7 +2659,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3e63355c-1378-4953-be9b-1deb5fb6bec5",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2678,7 +2678,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "5274d9fc-9c3a-4a71-8f5e-a0db8ab23de5",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2697,7 +2697,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "bf3420b0-f6f9-41a0-b83a-fe9d4ab0b65d",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2716,7 +2716,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "6e6dc072-b7ac-41e7-8f88-278d25b6da2a",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2735,7 +2735,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "a7641777-7813-45c6-96ef-9d51587a6ac6",
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "class_uuid,count,object_uuids"
           }
@@ -2753,7 +2753,7 @@
             "status": "unmapped",
             "path": null,
             "collection_id": null,
-            "serializer": "automatic_deletion.owner_content",
+            "serializer": "metadata_context",
             "lookup": "class UUID collection in current snapshot",
             "format": "unknown"
           }
@@ -2862,7 +2862,7 @@
         1,
         0
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "Constant": {
@@ -2936,15 +2936,15 @@
           "runtime_item_kind": "DimensionTable",
           "item_class_id": "631411f3-8c65-4066-a78f-57a72e015c1c",
           "native": {
-            "status": "snapshot_collection",
-            "path": null,
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
             "collection_id": "631411f3-8c65-4066-a78f-57a72e015c1c",
-            "serializer": "native_collection_editor",
-            "lookup": "snapshot_class_collection",
-            "format": "class_uuid,count,object_uuids",
-            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+            "serializer": "metadata_context",
+            "format": "class_uuid,count,object_uuids"
           },
-          "class_id_evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          "class_id_evidence": "project_dictionary"
         },
         {
           "xml_name": "Dimension",
@@ -2990,15 +2990,15 @@
           "runtime_item_kind": "CubeForm",
           "item_class_id": "3448e506-5add-4fce-a604-7305466b2d8e",
           "native": {
-            "status": "snapshot_collection",
-            "path": null,
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
             "collection_id": "3448e506-5add-4fce-a604-7305466b2d8e",
-            "serializer": "native_collection_editor",
-            "lookup": "snapshot_class_collection",
-            "format": "class_uuid,count,object_uuids",
-            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+            "serializer": "metadata_context",
+            "format": "class_uuid,count,object_uuids"
           },
-          "class_id_evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          "class_id_evidence": "project_dictionary"
         },
         {
           "xml_name": "Command",
@@ -3028,13 +3028,13 @@
           "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
           "class_id_evidence": "project_dictionary",
           "native": {
-            "status": "snapshot_collection",
-            "path": null,
+            "status": "verified_profile",
+            "path": [
+              4
+            ],
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
-            "lookup": "snapshot_class_collection",
-            "format": "class_uuid,count,object_uuids",
-            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+            "serializer": "metadata_context",
+            "format": "class_uuid,count,object_uuids"
           }
         }
       ],
@@ -3069,7 +3069,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "DataProcessor": {
@@ -3091,7 +3091,7 @@
               7
             ],
             "collection_id": "ec6bb5e5-b7a8-4d75-bec9-658107a699cf",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -3110,7 +3110,7 @@
               3
             ],
             "collection_id": "bf845118-327b-4682-b5c6-285d2a0eb296",
-            "serializer": "tabular_section_xml",
+            "serializer": "native_tabular",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -3130,7 +3130,7 @@
               6
             ],
             "collection_id": "d5b0e5ed-256d-401c-9c36-f630cafd8a62",
-            "serializer": "child_object_xml",
+            "serializer": "metadata_context",
             "format": "class_uuid,count,object_uuids"
           }
         },
@@ -3150,7 +3150,7 @@
               4
             ],
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "child_object_xml",
+            "serializer": "metadata_context",
             "format": "class_uuid,count,object_uuids"
           }
         },
@@ -3169,7 +3169,7 @@
               5
             ],
             "collection_id": "45556acb-826a-4f73-898a-6025fc9536e1",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries"
           }
         }
@@ -3203,7 +3203,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "DefinedType": {
@@ -3300,11 +3300,13 @@
           "runtime_item_kind": "DimensionTableField",
           "item_class_id": null,
           "native": {
-            "status": "unmapped",
-            "path": null,
-            "collection_id": null,
-            "serializer": null,
-            "format": "unknown"
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
+            "collection_id": "c7075688-01c1-41ba-bd1c-1023c8189079",
+            "serializer": "native_features",
+            "format": "collection_uuid,count,inline_entries"
           }
         },
         {
@@ -3317,15 +3319,15 @@
           "runtime_item_kind": "DimensionTableForm",
           "item_class_id": "2367cec0-5648-49d7-95f0-76d387653517",
           "native": {
-            "status": "snapshot_collection",
-            "path": null,
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
             "collection_id": "2367cec0-5648-49d7-95f0-76d387653517",
-            "serializer": "native_collection_editor",
-            "lookup": "snapshot_class_collection",
-            "format": "class_uuid,count,object_uuids",
-            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+            "serializer": "metadata_context",
+            "format": "class_uuid,count,object_uuids"
           },
-          "class_id_evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          "class_id_evidence": "project_dictionary"
         },
         {
           "xml_name": "Command",
@@ -3355,13 +3357,13 @@
           "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
           "class_id_evidence": "project_dictionary",
           "native": {
-            "status": "snapshot_collection",
-            "path": null,
+            "status": "verified_profile",
+            "path": [
+              4
+            ],
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
-            "lookup": "snapshot_class_collection",
-            "format": "class_uuid,count,object_uuids",
-            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+            "serializer": "metadata_context",
+            "format": "class_uuid,count,object_uuids"
           }
         }
       ],
@@ -3402,7 +3404,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "Document": {
@@ -3424,7 +3426,7 @@
               5
             ],
             "collection_id": "45e46cbc-3e24-4165-8b7b-cc98a6f80211",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -3444,7 +3446,7 @@
               7
             ],
             "collection_id": "fb880e93-47d7-4127-9357-a20e69c17545",
-            "serializer": "child_object_xml",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -3465,7 +3467,7 @@
               3
             ],
             "collection_id": "061d872a-5787-460e-95ac-ed74ea3a3e84",
-            "serializer": "tabular_section_xml",
+            "serializer": "native_tabular",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -3483,7 +3485,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -3504,7 +3506,7 @@
               6
             ],
             "collection_id": "b544fc6a-2ba3-4885-8fb2-cb289fb6d65e",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries"
           }
         }
@@ -3576,7 +3578,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "DocumentJournal": {
@@ -3614,7 +3616,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "ec81ad10-ca07-11d5-b9a5-0050bae0a95d",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -3634,7 +3636,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -3689,7 +3691,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "DocumentNumerator": {
@@ -3739,7 +3741,7 @@
               6
             ],
             "collection_id": "bee0a08c-07eb-40c0-8544-5c364c171465",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -3757,7 +3759,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "33f2e54b-37ce-4a7a-a569-b648d7aa4634",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
             "format": "class_uuid,count,object_uuids"
@@ -3777,7 +3779,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
             "format": "class_uuid,count,object_uuids"
@@ -3798,7 +3800,7 @@
               5
             ],
             "collection_id": "6d8d73a7-ba29-401d-9032-3872ec2d6433",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries"
           }
         }
@@ -3836,7 +3838,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "EnumValue": {
@@ -3936,7 +3938,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "87c509ab-3d38-4d67-b379-aca796298578",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -3956,7 +3958,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -4038,7 +4040,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "ExtDimensionAccountingFlag": {
@@ -4194,7 +4196,7 @@
               5
             ],
             "collection_id": "e3403acd-1c95-421b-87e4-4dfa29d38b52",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "format": "class_uuid,count,object_uuids",
             "evidence": "tests/fixtures/external_source_collections_851.json"
           }
@@ -4215,7 +4217,7 @@
               3
             ],
             "collection_id": "2bb208ca-e441-4023-9ab9-32a7807a85d0",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "format": "class_uuid,count,object_uuids",
             "evidence": "tests/fixtures/external_source_collections_851.json"
           }
@@ -4230,11 +4232,13 @@
           "runtime_item_kind": "ExternalDataSourceFunction",
           "item_class_id": null,
           "native": {
-            "status": "unmapped",
-            "path": null,
-            "collection_id": null,
-            "serializer": null,
-            "format": "unknown"
+            "status": "verified_profile",
+            "path": [
+              4
+            ],
+            "collection_id": "a98a108a-49a0-4dcf-bfd0-aa4b89eeb3f5",
+            "serializer": "native_inline",
+            "format": "collection_uuid,count,inline_entries"
           }
         }
       ],
@@ -4256,7 +4260,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "ExternalReport": {
@@ -4417,7 +4421,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "00867c40-06b1-11d6-a3c7-0050bae0a776",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -4467,7 +4471,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "Form": {
@@ -4495,12 +4499,12 @@
       "automatic_deletion_supported": false,
       "content_files": {
         "Ext/Form.xml": {
-          "serializer": "managed_form_xml",
-          "status": "partial"
+          "status": "adapter_unverified",
+          "compiler": "ibcmd-rs"
         },
         "Ext/Form/Module.bsl": {
-          "serializer": "managed_form_xml",
-          "status": "supported"
+          "status": "adapter_unverified",
+          "compiler": "ibcmd-rs"
         }
       }
     },
@@ -4584,7 +4588,7 @@
               3
             ],
             "collection_id": "ec6896c2-9b28-42d8-9140-48491146b8ea",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries"
           }
         }
@@ -4633,7 +4637,7 @@
               3
             ],
             "collection_id": "13134202-f60b-11d5-a3c7-0050bae0a776",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -4652,7 +4656,7 @@
               7
             ],
             "collection_id": "a2207540-1400-11d6-a3c7-0050bae0a776",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -4671,7 +4675,7 @@
               4
             ],
             "collection_id": "13134203-f60b-11d5-a3c7-0050bae0a776",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -4689,7 +4693,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "13134204-f60b-11d5-a3c7-0050bae0a776",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
             "format": "class_uuid,count,object_uuids"
@@ -4709,7 +4713,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "evidence": "Native 8.5.1.1529 CF/XML oracle; managed form without a main attribute",
             "format": "class_uuid,count,object_uuids"
@@ -4730,7 +4734,7 @@
               8
             ],
             "collection_id": "b44ba719-945c-445c-8aab-1088fa4df16e",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries"
           }
         }
@@ -4782,7 +4786,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "IntegrationService": {
@@ -4923,7 +4927,7 @@
               2
             ],
             "collection_id": "b78a00b2-2260-4ef5-a70c-17889cfee695",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "unknown",
             "path_scope": "inline_object"
           }
@@ -5045,7 +5049,7 @@
               4
             ],
             "collection_id": "7e7123e0-29e2-11d6-a3c7-0050bae0a776",
-            "serializer": "inline_object_xml",
+            "serializer": "native_features",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -5064,7 +5068,7 @@
               6
             ],
             "collection_id": "631b75a0-29e2-11d6-a3c7-0050bae0a776",
-            "serializer": "tabular_section_xml",
+            "serializer": "native_tabular",
             "format": "collection_uuid,count,inline_entries"
           }
         },
@@ -5084,7 +5088,7 @@
               5
             ],
             "collection_id": "a3b368c0-29e2-11d6-a3c7-0050bae0a776",
-            "serializer": "child_object_xml",
+            "serializer": "metadata_context",
             "format": "class_uuid,count,object_uuids"
           }
         },
@@ -5104,7 +5108,7 @@
               3
             ],
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "child_object_xml",
+            "serializer": "metadata_context",
             "format": "class_uuid,count,object_uuids"
           }
         },
@@ -5123,7 +5127,7 @@
               7
             ],
             "collection_id": "e7ff38c0-ec3c-47a0-ae90-20c73ca72246",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries"
           }
         }
@@ -5164,7 +5168,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "Resource": {
@@ -5240,9 +5244,9 @@
       "automatic_deletion_supported": false,
       "content_files": {
         "Ext/Rights.xml": {
-          "serializer": "object_file_content",
-          "status": "partial",
-          "native_suffix": ".0"
+          "status": "adapter_unverified",
+          "native_suffix": ".0",
+          "compiler": "ibcmd-rs"
         }
       }
     },
@@ -5364,7 +5368,7 @@
               4
             ],
             "collection_id": "b8533c0c-2342-4db3-91a2-c2b08cbf6b23",
-            "serializer": "child_object_xml",
+            "serializer": "metadata_context",
             "format": "class_uuid,count,object_uuids"
           }
         },
@@ -5384,7 +5388,7 @@
               3
             ],
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "child_object_xml",
+            "serializer": "metadata_context",
             "format": "class_uuid,count,object_uuids"
           }
         }
@@ -5413,7 +5417,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "Style": {
@@ -5523,11 +5527,13 @@
           "runtime_item_kind": "TableField",
           "item_class_id": null,
           "native": {
-            "status": "unmapped",
-            "path": null,
-            "collection_id": null,
-            "serializer": null,
-            "format": "unknown"
+            "status": "verified_profile",
+            "path": [
+              6
+            ],
+            "collection_id": "c7075688-01c1-41ba-bd1c-1023c8189079",
+            "serializer": "native_features",
+            "format": "collection_uuid,count,inline_entries"
           }
         },
         {
@@ -5540,15 +5546,15 @@
           "runtime_item_kind": "TableForm",
           "item_class_id": "17816ebc-4068-496e-adc4-8879945a832f",
           "native": {
-            "status": "snapshot_collection",
-            "path": null,
+            "status": "verified_profile",
+            "path": [
+              3
+            ],
             "collection_id": "17816ebc-4068-496e-adc4-8879945a832f",
-            "serializer": "native_collection_editor",
-            "lookup": "snapshot_class_collection",
-            "format": "class_uuid,count,object_uuids",
-            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+            "serializer": "metadata_context",
+            "format": "class_uuid,count,object_uuids"
           },
-          "class_id_evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+          "class_id_evidence": "project_dictionary"
         },
         {
           "xml_name": "Command",
@@ -5578,13 +5584,13 @@
           "item_class_id": "3daea016-69b7-4ed4-9453-127911372fe6",
           "class_id_evidence": "project_dictionary",
           "native": {
-            "status": "snapshot_collection",
-            "path": null,
+            "status": "verified_profile",
+            "path": [
+              4
+            ],
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
-            "lookup": "snapshot_class_collection",
-            "format": "class_uuid,count,object_uuids",
-            "evidence": "Native 8.5.1.1529 external-source CF/XML oracle"
+            "serializer": "metadata_context",
+            "format": "class_uuid,count,object_uuids"
           }
         }
       ],
@@ -5644,7 +5650,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "TabularSection": {
@@ -5671,27 +5677,27 @@
             "Catalog": {
               "status": "verified_profile",
               "collection_id": "888744e1-b616-11d4-9436-004095e12fc7",
-              "serializer": "tabular_section_xml"
+              "serializer": "native_tabular"
             },
             "Document": {
               "status": "verified_profile",
               "collection_id": "888744e1-b616-11d4-9436-004095e12fc7",
-              "serializer": "tabular_section_xml"
+              "serializer": "native_tabular"
             },
             "DataProcessor": {
               "status": "verified_profile",
               "collection_id": "5d24a9d1-098e-11d6-b9b8-0050bae0a95d",
-              "serializer": "tabular_section_xml"
+              "serializer": "native_tabular"
             },
             "Report": {
               "status": "verified_profile",
               "collection_id": "c339c860-29e2-11d6-a3c7-0050bae0a776",
-              "serializer": "tabular_section_xml"
+              "serializer": "native_tabular"
             },
             "ChartOfCharacteristicType": {
               "status": "verified_profile",
               "collection_id": "888744e1-b616-11d4-9436-004095e12fc7",
-              "serializer": "tabular_section_xml"
+              "serializer": "native_tabular"
             }
           }
         }
@@ -5767,7 +5773,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3f58cbfb-4172-4e54-be49-561a579bb38b",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -5787,7 +5793,7 @@
             "status": "snapshot_collection",
             "path": null,
             "collection_id": "3daea016-69b7-4ed4-9453-127911372fe6",
-            "serializer": "native_collection_editor",
+            "serializer": "metadata_context",
             "lookup": "snapshot_class_collection",
             "format": "class_uuid,count,object_uuids",
             "evidence": "Native 8.5.1.1529 all-form-owners oracle; validate against each snapshot"
@@ -5888,7 +5894,7 @@
         1,
         2
       ],
-      "automatic_deletion_supported": true,
+      "automatic_deletion_supported": false,
       "content_files": {}
     },
     "Template": {
@@ -5911,16 +5917,16 @@
       "automatic_deletion_supported": false,
       "content_files": {
         "Ext/Template.xml": {
-          "serializer": "template_content",
-          "status": "supported_for_selected_template_types"
+          "status": "adapter_unverified",
+          "compiler": "ibcmd-rs"
         },
         "Ext/Template.bin": {
-          "serializer": "template_content",
-          "status": "supported_for_selected_template_types"
+          "status": "adapter_unverified",
+          "compiler": "ibcmd-rs"
         },
         "Ext/Template.txt": {
-          "serializer": "template_content",
-          "status": "supported_for_selected_template_types"
+          "status": "adapter_unverified",
+          "compiler": "ibcmd-rs"
         }
       }
     },
@@ -5943,7 +5949,7 @@
               2
             ],
             "collection_id": "21c96ea8-c8fc-424a-a0b4-e1ffb2fa1a73",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "unknown",
             "path_scope": "inline_object"
           }
@@ -6003,7 +6009,7 @@
               3
             ],
             "collection_id": "36186084-c23a-43bd-876c-a3a8ba1a9622",
-            "serializer": "inline_metadata_xml",
+            "serializer": "native_inline",
             "format": "collection_uuid,count,inline_entries"
           }
         }
@@ -6088,9 +6094,9 @@
       "automatic_deletion_supported": false,
       "content_files": {
         "Ext/Package.bin": {
-          "serializer": "object_file_content",
-          "status": "supported",
-          "native_suffix": ".0"
+          "status": "adapter_unverified",
+          "native_suffix": ".0",
+          "compiler": "ibcmd-rs"
         }
       }
     }

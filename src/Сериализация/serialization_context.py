@@ -4,14 +4,13 @@ Complete-version storage (which can contain duplicate physical records) remains
 the responsibility of external_data, not this single-snapshot reader.
 """
 import metadata_context
-import base64,re,uuid
+import re,uuid
 from dataclasses import dataclass
 import native_metadata as s
 
 
 def decode(encoded,error):
-    if not isinstance(encoded,str) or len(encoded)>s.MAX_BYTES*2:raise ValueError(error)
-    return base64.b64decode(encoded,validate=True)
+    return s.decode_storage(encoded,error)
 
 
 @dataclass

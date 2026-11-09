@@ -11,6 +11,7 @@ import metadata_context
 import metadata_targets
 import native_metadata as s
 import serialization_context as contexts
+import native_object_profiles
 
 
 def feature_ids(metadata):
@@ -41,30 +42,18 @@ class Catalog:
         self.source=metadata_context.context_objects(request['context'])
         self.targets=metadata_targets.index(self.source) if targets is None else metadata_targets.index(targets)
         self.compiled={}
-        self.allocations={}
-
-    def declare(self,allocation):
-        import metadata_object_xml as xml
-        if not isinstance(allocation,xml.TypeAllocation):raise ValueError('Invalid native type declaration')
-        identity=self.select(allocation.kind,allocation.name,label='Declared type')
-        if identity.object_id!=allocation.object_id or identity.object_id in self.source or identity.object_id in self.allocations:raise ValueError('Duplicate or mismatched native type declaration')
-        layout=xml.profiles.layout(allocation.kind,allocation.platform)
-        values=allocation.generated
-        if len(values)!=len(layout['generated_slots']) or len(set(values+(identity.object_id,)))!=len(values)+1 or s.ZERO in values:raise ValueError('Invalid declared generated UUIDs')
-        for value in values:
-            if str(uuid.UUID(value))!=value:raise ValueError('Invalid declared generated UUID')
-        self.allocations[identity.object_id]=allocation
 
     def type_id(self,kind,name,category=None,storage=None):
-        import metadata_object_xml as xml
+        import metadata_structure
+        kind=metadata_structure.profile(kind)['runtime_name']
+        if kind not in native_object_profiles.profiles():
+            raise ValueError('Reference type requires a compiled CF index for metadata class: '+kind)
         identity=self.select(kind,name,label='Referenced type')
-        allocation=self.allocations.get(identity.object_id)
-        layout=xml.profiles.layout(kind,self.request['platform'])
+        layout=native_object_profiles.layout(kind,self.request['platform'])
         if category is None:category=layout.get('reference_category','Ref')
         categories=layout.get('generated_categories',('Object','Ref','Selection','List','Manager'))
         if category not in categories or len(layout['generated_slots'])!=len(categories)*2:raise ValueError('Unsupported generated reference category')
         position=list(categories).index(category)*2
-        if allocation is not None:return allocation.generated[position]
         entry=self.load(identity,storage,label='Reference type')
         return generated_ids(entry.body,entry.identity,layout)[position]
 
@@ -78,10 +67,6 @@ class Catalog:
     def register(self,oid,body,features):
         matches=[row for row in self.targets.targets if row.object_id==oid]
         if len(matches)!=1 or not isinstance(body,bytes) or len(body)>s.MAX_BYTES:raise ValueError('Invalid compiled reference body')
-        if oid in self.allocations:
-            import metadata_object_xml as xml
-            allocation=self.allocations[oid]
-            if tuple(generated_ids(body,matches[0],xml.profiles.layout(allocation.kind,allocation.platform)))!=allocation.generated:raise ValueError('Compiled generated UUIDs differ from declaration')
         self.compiled[oid]=Entry(matches[0],body,frozenset(features))
 
     def source_identity(self,identity):
@@ -132,7 +117,7 @@ class Catalog:
 
 
 def generated_ids(raw,identity,layout):
-    import metadata_object_xml as xml
+    import native_object_reader as xml
     docs=s.Parser(raw.decode('utf-8-sig')).documents()
     if len(docs)!=1:raise ValueError('Unsupported reference type documents')
     body=docs[0];template=s.Parser(layout['template']).documents()[0]

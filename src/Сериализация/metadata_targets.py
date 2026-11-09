@@ -36,14 +36,14 @@ class Index:
         return prefix
 
     def owned_form(self,text,owner,kind):
-        import managed_form_profiles
+        import native_form_profiles
         parents=[row for row in self.targets if row.object_id==owner and row.class_id==ids.class_id(kind)]
         if len(parents)!=1:raise ValueError('Missing or ambiguous form owner')
         prefix=self.qualified(owner)+'.Form.'
         if not text.startswith(prefix):raise ValueError('Invalid or foreign owned form reference')
         name=text[len(prefix):]
         if not name or '.' in name:raise ValueError('Invalid owned form reference')
-        cls=ids.class_id(managed_form_profiles.form_kind(kind))
+        cls=ids.class_id(native_form_profiles.form_kind(kind))
         matches=[row for row in self.find({cls},name,owner) if row.owner_id==s.ZERO]
         if len(matches)!=1 or parents[0].children is None or (matches[0].object_id,cls) not in parents[0].children:
             raise ValueError('Missing, ambiguous or unregistered owned form reference')
@@ -57,8 +57,8 @@ def index(objects):
 
 
 def creation(kind,oid,name,forms,objects=None,parent=s.ZERO,templates=None):
-    import managed_form_profiles
-    children=[Target(fid,ids.class_id(managed_form_profiles.form_kind(kind)),oid,s.ZERO,fname,frozenset()) for fname,fid in forms.items()]
+    import native_form_profiles
+    children=[Target(fid,ids.class_id(native_form_profiles.form_kind(kind)),oid,s.ZERO,fname,frozenset()) for fname,fid in forms.items()]
     children += [Target(tid,ids.class_id('Template'),oid,s.ZERO,tname,frozenset()) for tname,tid in (templates or {}).items()]
     targets=list(index(objects or {}).targets);existing=[row for row in targets if row.object_id==oid]
     if existing:
@@ -77,7 +77,7 @@ def final(objects,inventory,*,allow_rename=False):
     reference readers. Source metadata, versions and snapshots stay unchanged.
     """
     import configuration_export as export
-    classes={oid:ids.class_id(export.runtime_kind(row,inventory)) for oid,row in inventory.items()}
+    classes={oid:export.class_id(row,inventory) for oid,row in inventory.items()}
     rows=[];renames={}
     for oid,row in inventory.items():
         if oid in objects:

@@ -3,7 +3,6 @@
 The UUIDs are read from the snapshot, including empty collections. Labels are
 optional hints from metadata_class_names.json, not a platform registry.
 """
-import base64
 import uuid
 import native_metadata as s
 import metadata_identifiers as identifiers
@@ -84,10 +83,7 @@ def discover(root, root_id, labels=None):
 
 
 def catalog(request):
-    encoded = request['snapshot']
-    if not isinstance(encoded, str) or len(encoded) > s.MAX_BYTES * 2:
-        raise ValueError('Oversized or invalid snapshot')
-    data = base64.b64decode(encoded, validate=True)
+    data = s.decode_storage(request['snapshot'], 'Oversized or invalid snapshot')
     s.validate_storage(data)
     raw_metadata, pos = s.read_record(data, 12)
     metadata = s.Parser(raw_metadata.decode('utf-8-sig')).documents()

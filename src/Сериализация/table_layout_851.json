@@ -1,0 +1,419 @@
+{
+  "template": "{1,{11,{0,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,1,\"\",{0,0},00000000-0000-0000-0000-000000000000,0,1,0,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{0},{0},{0},{0},{0},{0,{0}},{1,{0,0}},{0},{0},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{\"U\"},0,{1,2,0},0,0,{0,\"\",\"\",{0,0,0}},0,0,00000000-0000-0000-0000-000000000000,1,{0,0},{1,{0,0}},0},4,{17816ebc-4068-496e-adc4-8879945a832f,0},{3daea016-69b7-4ed4-9453-127911372fe6,0},{5bb6f09e-5d80-41f6-8070-9faa4d15b69b,0},{c7075688-01c1-41ba-bd1c-1023c8189079,0}}",
+  "defaults": {
+    "TableType": "Table",
+    "NameInDataSource": "",
+    "ExpressionInDataSource": "",
+    "TableDataType": "NonobjectData",
+    "KeyFields": "",
+    "PresentationField": "",
+    "ParentField": "",
+    "UnfilledParentValue": "",
+    "Characteristics": "",
+    "UseStandardCommands": "true",
+    "QuickChoice": "false",
+    "InputByString": "",
+    "CreateOnInput": "Auto",
+    "SearchStringModeOnInputByString": "Begin",
+    "ChoiceDataGetModeOnInputByString": "Directly",
+    "ChoiceHistoryOnInput": "Auto",
+    "DefaultObjectForm": "",
+    "DefaultRecordForm": "",
+    "DefaultListForm": "",
+    "DefaultChoiceForm": "",
+    "ObjectPresentation": "",
+    "ExtendedObjectPresentation": "",
+    "RecordPresentation": "",
+    "ExtendedRecordPresentation": "",
+    "ListPresentation": "",
+    "ExtendedListPresentation": "",
+    "Explanation": "",
+    "IncludeHelpInContents": "false",
+    "ReadOnly": "false",
+    "TransactionsIsolationLevel": "Auto",
+    "DataVersionField": "",
+    "EditType": "InDialog",
+    "BasedOn": "",
+    "DataLockFields": "",
+    "DataLockControlMode": "Automatic"
+  },
+  "generated_slots": [
+    2,
+    3,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    6,
+    7,
+    4,
+    5,
+    8,
+    9,
+    36,
+    37
+  ],
+  "generated_categories": [
+    "Manager",
+    "Object",
+    "Ref",
+    "List",
+    "Record",
+    "RecordSet",
+    "RecordKey",
+    "RecordManager"
+  ],
+  "generated_prefixes": {
+    "Manager": "ExternalDataSourceTableManager",
+    "Object": "ExternalDataSourceTableObject",
+    "Ref": "ExternalDataSourceTableRef",
+    "List": "ExternalDataSourceTableList",
+    "Record": "ExternalDataSourceTableRecord",
+    "RecordSet": "ExternalDataSourceTableRecordSet",
+    "RecordKey": "ExternalDataSourceTableRecordKey",
+    "RecordManager": "ExternalDataSourceTableRecordManager"
+  },
+  "reference_prefix": "ExternalDataSourceTableRef",
+  "input_fields": [],
+  "common_path": [
+    1,
+    1,
+    1
+  ],
+  "property_attributes": {
+    "UnfilledParentValue": {
+      "{http://www.w3.org/2001/XMLSchema-instance}nil": "true"
+    }
+  },
+  "empty_strings": [
+    "NameInDataSource",
+    "ExpressionInDataSource"
+  ],
+  "string_slots": {
+    "NameInDataSource": [
+      1,
+      17
+    ],
+    "ExpressionInDataSource": {
+      "paths": [
+        [
+          1,
+          44,
+          1
+        ],
+        [
+          1,
+          44,
+          2
+        ]
+      ]
+    }
+  },
+  "scalar_properties": {
+    "TableDataType": {
+      "path": [
+        1,
+        16
+      ],
+      "values": {
+        "ObjectData": 0,
+        "NonobjectData": 1
+      }
+    },
+    "TableType": {
+      "path": [
+        1,
+        43
+      ],
+      "values": {
+        "Table": 0,
+        "Expression": 1
+      }
+    },
+    "UseStandardCommands": {
+      "path": [
+        1,
+        21
+      ],
+      "values": {
+        "true": 1,
+        "false": 0
+      }
+    },
+    "QuickChoice": {
+      "path": [
+        1,
+        20
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "CreateOnInput": {
+      "path": [
+        1,
+        40
+      ],
+      "values": {
+        "Auto": 0,
+        "DontUse": 1,
+        "Use": 2
+      }
+    },
+    "SearchStringModeOnInputByString": {
+      "path": [
+        1,
+        41,
+        0
+      ],
+      "values": {
+        "Begin": 1,
+        "AnyPart": 2
+      }
+    },
+    "ChoiceDataGetModeOnInputByString": {
+      "path": [
+        1,
+        41,
+        2
+      ],
+      "values": {
+        "Directly": 0,
+        "Background": 1
+      }
+    },
+    "ChoiceHistoryOnInput": {
+      "path": [
+        1,
+        42
+      ],
+      "values": {
+        "Auto": 0,
+        "DontUse": 1
+      }
+    },
+    "IncludeHelpInContents": {
+      "path": [
+        1,
+        22
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "ReadOnly": {
+      "path": [
+        1,
+        45
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "EditType": {
+      "path": [
+        1,
+        48
+      ],
+      "values": {
+        "InDialog": 1,
+        "InList": 0,
+        "BothWays": 2
+      }
+    },
+    "DataLockControlMode": {
+      "path": [
+        1,
+        51
+      ],
+      "values": {
+        "Automatic": 0,
+        "Managed": 1,
+        "AutomaticAndManaged": 2
+      }
+    }
+  },
+  "inline_collections": {
+    "Field": {
+      "xml_name": "Field",
+      "template": "{{1,{27,{2,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{\"Pattern\",{\"S\",100,1}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"S\",\"\"},0,0,0},\"\",0,1},0}",
+      "defaults": {},
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillFromFillingValue",
+        "FillValue",
+        "FillChecking",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceHistoryOnInput",
+        "ChoiceForm",
+        "NameInDataSource",
+        "ReadOnly",
+        "AllowNull"
+      ],
+      "string_properties": {
+        "NameInDataSource": [
+          0,
+          2
+        ]
+      },
+      "scalar_properties": {
+        "ReadOnly": {
+          "path": [
+            0,
+            3
+          ],
+          "values": {
+            "false": 0,
+            "true": 1
+          }
+        },
+        "AllowNull": {
+          "path": [
+            0,
+            4
+          ],
+          "values": {
+            "false": 0,
+            "true": 1
+          }
+        }
+      },
+      "slot": 6,
+      "collection_id": "c7075688-01c1-41ba-bd1c-1023c8189079"
+    }
+  },
+  "child_collections": {
+    "Form": {
+      "kind": "TableForm",
+      "slot": 3
+    },
+    "Template": {
+      "kind": "Template",
+      "slot": 4
+    }
+  },
+  "field_references": {
+    "type_id": "157fa490-4ce9-11d4-9415-008048da11f9",
+    "standards": {},
+    "attributes_path": [
+      6
+    ],
+    "attribute_common_path": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "inline_name": "Field",
+    "inline_selector": 1,
+    "qualified_owner": true
+  },
+  "field_lists": {
+    "KeyFields": {
+      "path": [
+        1,
+        18
+      ]
+    },
+    "PresentationField": {
+      "path": [
+        1,
+        19
+      ],
+      "format": "uuid"
+    },
+    "ParentField": {
+      "path": [
+        1,
+        38
+      ],
+      "format": "uuid"
+    },
+    "DataVersionField": {
+      "path": [
+        1,
+        47
+      ],
+      "format": "uuid"
+    },
+    "InputByString": {
+      "path": [
+        1,
+        33,
+        1
+      ],
+      "reference_overrides": {
+        "type_id": "60ea359f-3a6e-48bb-8e71-d2a457572918",
+        "inline_selector": 0
+      }
+    },
+    "DataLockFields": {
+      "path": [
+        1,
+        50,
+        1
+      ],
+      "reference_overrides": {
+        "type_id": "60ea359f-3a6e-48bb-8e71-d2a457572918",
+        "inline_selector": 0
+      }
+    }
+  },
+  "localized_properties": {
+    "RecordPresentation": [
+      1,
+      27
+    ],
+    "ExtendedRecordPresentation": [
+      1,
+      28
+    ],
+    "ListPresentation": [
+      1,
+      29
+    ],
+    "ExtendedListPresentation": [
+      1,
+      30
+    ],
+    "Explanation": [
+      1,
+      31
+    ],
+    "ObjectPresentation": [
+      1,
+      34
+    ],
+    "ExtendedObjectPresentation": [
+      1,
+      35
+    ]
+  },
+  "typed_properties": {
+    "UnfilledParentValue": [
+      1,
+      39
+    ]
+  }
+}

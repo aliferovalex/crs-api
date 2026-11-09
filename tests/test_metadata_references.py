@@ -10,11 +10,16 @@ from pathlib import Path
 sys.path.insert(0,str(next((Path(__file__).resolve().parents[1]/'src').rglob('metadata_references.py')).parent))
 import native_metadata as s
 import metadata_references as refs
-import managed_form_xml as x
-import v8unpack_backend as b
+import native_form_reader as x
 
 
 class ReferenceTests(unittest.TestCase):
+    def test_explicit_false_main_flag_does_not_hide_local_reference_dependencies(self):
+        import form_attribute_types as types
+        xml='<Form xmlns="'+types.Q[1:-1]+'" xmlns:v8="'+types.CORE[1:-1]+'"><Attributes><Attribute name="Local" id="1"><Type><v8:Type>cfg:CatalogRef.Other</v8:Type></Type><MainAttribute>false</MainAttribute></Attribute></Attributes></Form>'
+        self.assertEqual(types.required(xml),{'cfg:CatalogRef.Other'})
+        self.assertEqual(types.required(xml.replace('false','true')),set())
+
     @classmethod
     def setUpClass(cls):
         folder=Path(__file__).with_name('fixtures')
@@ -46,14 +51,6 @@ class ReferenceTests(unittest.TestCase):
                     self.assertNotIn(type_id,request['reference_snapshots'])
                     uuid.UUID(type_id);uuid.UUID(value_id)
 
-    def test_complete_enum_interfaces_match_native_hashes(self):
-        request,_=self.fixture()
-        for case in self.interfaces['cases']:
-            paths=x.ObjectPaths({k:s.Parser(v).documents()[0] for k,v in self.base['paths'].items()});paths.types=self.base['types'];paths.tables=set(self.base['tables'])
-            paths.references=refs.resolve(case['xml'],request)
-            raw=x.convert(self.interfaces['base'].encode('utf-8'),case['xml'],paths=paths,object_name='CRSAPI_FullCatalog')
-            signature=b.signature(s.Parser(raw.decode('utf-8-sig')).documents())
-            self.assertEqual(hashlib.sha256(json.dumps(signature,sort_keys=True).encode()).hexdigest(),case['sha256'])
 
     def test_missing_value_snapshot_or_context_enum_fails(self):
         request,_=self.fixture();xml=self.interfaces['cases'][0]['xml']

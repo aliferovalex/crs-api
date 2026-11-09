@@ -90,5 +90,8 @@
   },
   "features": {
     "ConstantCollectionChanged": "3b294bed-fed0-4338-ba85-4a9e4d03f4ed"
+  },
+  "value_types": {
+    "PredefinedIdentity": "ae135932-4f94-44df-92c1-c91f15a92848"
   }
 }

@@ -1,4 +1,5 @@
 """Native token trees, binary records, compression and repository storage framing."""
+import base64
 import hashlib
 import re
 import struct
@@ -23,6 +24,17 @@ HEADER = struct.pack("<III", 0x11223344, 2, 3)
 
 
 MAX_BYTES = 16 * 1024 * 1024
+MAX_STORAGE_BYTES = 256 * 1024 * 1024
+
+
+def decode_storage(encoded, error='Oversized or invalid native storage'):
+    """Bound the envelope separately from each record and inflated object."""
+    if not isinstance(encoded, str) or len(encoded) > 4 * ((MAX_STORAGE_BYTES + 2) // 3):
+        raise ValueError(error)
+    data = base64.b64decode(encoded, validate=True)
+    if len(data) > MAX_STORAGE_BYTES:
+        raise ValueError(error)
+    return data
 
 _QUOTED = re.compile(r'"[^"]*(?:""[^"]*)*"(?!")')
 _TOKEN = re.compile(r'[^,}]*')
@@ -131,8 +143,7 @@ def render_native_text(node):
 
 
 def native_body_bytes(documents):
-    from v8unpack_backend import assemble,to_model
-    return assemble(to_model(documents))
+    return b"\xef\xbb\xbf" + ",".join(render_native_text(node) for node in documents).encode("utf-8")
 
 
 def record(data):
@@ -180,7 +191,7 @@ def inflate(data):
 
 def validate_storage(data):
     """Validate the index, all indexed records and both SHA1 checksums."""
-    if len(data) < 128 or len(data) > MAX_BYTES or data[:8] != HEADER[:8]:
+    if len(data) < 128 or len(data) > MAX_STORAGE_BYTES or data[:8] != HEADER[:8]:
         raise ValueError("Unsupported or oversized native storage")
     count = struct.unpack_from('<I', data, 8)[0]
     if data[-36:-20] != EOF_MARKER or hashlib.sha1(data[:-20]).digest() != data[-20:]:

@@ -160,5 +160,24 @@
       "ObjectModule": ".15",
       "ManagerModule": ".16"
     }
+  },
+  "ExternalDataSource": {
+    "folder": "ExternalDataSources",
+    "modules": {}
+  },
+  "Cube": {
+    "folder": "Cubes",
+    "owner_kind": "ExternalDataSource",
+    "modules": {}
+  },
+  "Table": {
+    "folder": "Tables",
+    "owner_kind": "ExternalDataSource",
+    "modules": {}
+  },
+  "DimensionTable": {
+    "folder": "DimensionTables",
+    "owner_kind": "Cube",
+    "modules": {}
   }
 }

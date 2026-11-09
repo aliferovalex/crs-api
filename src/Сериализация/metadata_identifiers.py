@@ -13,6 +13,15 @@ def class_id(name):
     for identifier, label in _dictionary()['names'].items():
         if label == name:
             return identifier
+    # XML names and repository labels differ for some classes (e.g. Types/Type).
+    import metadata_structure
+    try:
+        runtime = metadata_structure.profile(name)['runtime_name']
+    except ValueError:
+        runtime = None
+    for identifier, label in _dictionary()['names'].items():
+        if label == runtime:
+            return identifier
     raise ValueError('Unknown metadata class: ' + str(name))
 
 
@@ -22,6 +31,10 @@ def group_id(name):
 
 def feature_id(name):
     return _identifier('features', name)
+
+
+def value_type_id(name):
+    return _identifier('value_types', name)
 
 
 def _identifier(section, name):

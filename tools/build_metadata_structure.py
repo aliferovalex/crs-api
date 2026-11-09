@@ -53,9 +53,9 @@ def enrich(classes,source_dir,upstream_types=None):
                     if isinstance(field,ast.Assign) and isinstance(field.value,ast.Constant) and isinstance(field.value.value,str):
                         upstream[field.targets[0].id]=field.value.value
     registry=json.loads((source_dir/'object_xml_profiles.json').read_text(encoding='utf-8-sig'))
-    editor_profiles=json.loads((source_dir/'collection_editor_profiles_851.json').read_text(encoding='utf-8-sig'))
+    editor_profiles={}
     form_owners=json.loads((source_dir/'managed_form_owner_profiles_851.json').read_text(encoding='utf-8-sig'))
-    opaque_owners=json.loads((source_dir/'opaque_owner_profiles_851.json').read_text(encoding='utf-8-sig'))
+    opaque_owners={}
     sys.path.insert(0,str(source_dir))
     import native_metadata as native_text
     layouts={}
@@ -71,18 +71,18 @@ def enrich(classes,source_dir,upstream_types=None):
             record['native_identity_path']=common+[1,2]
         else:record['native_identity_path']=None
         if kind in form_owners:record['native_identity_path']=form_owners[kind]['owner_identity_path']
-        record['automatic_deletion_supported']=kind in ('Configuration','Catalog') or (kind in registry and bool(layout.get('child_collections') or editor_profiles.get(kind)))
-        if kind in form_owners:record['automatic_deletion_supported']=True
+        record['automatic_deletion_supported']=False
+        if kind in form_owners:record['automatic_deletion_supported']=False
         if kind in opaque_owners:
             record['native_identity_path']=opaque_owners[kind]['owner_identity_path']
             record['automatic_deletion_supported']=True
         record['content_files']={}
         for name,rule in registry.get(kind,{}).get('files',{}).items():
-            record['content_files']['Ext/'+rule['file']]={'serializer':'object_file_content','status':'partial' if rule.get('partial') else 'supported','native_suffix':rule['suffix']}
+            record['content_files']['Ext/'+rule['file']]={'compiler':'ibcmd-rs','status':'partial' if rule.get('partial') else 'supported','native_suffix':rule['suffix']}
         if xml_name in ('Form','CommonForm'):
-            record['content_files']={'Ext/Form.xml':{'serializer':'managed_form_xml','status':'partial'},'Ext/Form/Module.bsl':{'serializer':'managed_form_xml','status':'supported'}}
+            record['content_files']={'Ext/Form.xml':{'compiler':'ibcmd-rs','status':'partial'},'Ext/Form/Module.bsl':{'compiler':'ibcmd-rs','status':'supported'}}
         elif xml_name in ('Template','CommonTemplate'):
-            record['content_files']={file:{'serializer':'template_content','status':'supported_for_selected_template_types'} for file in ('Ext/Template.xml','Ext/Template.bin','Ext/Template.txt')}
+            record['content_files']={file:{'compiler':'ibcmd-rs','status':'supported_for_selected_template_types'} for file in ('Ext/Template.xml','Ext/Template.bin','Ext/Template.txt')}
         if kind=='CommonModule':record['modules']={'Module':'.0'}
         for collection in record['collections']:
             tag=collection['xml_name'];storage=collection['storage']
@@ -95,17 +95,17 @@ def enrich(classes,source_dir,upstream_types=None):
                 collection['item_class_id']=upstream[child_kind];collection['class_id_evidence']='v8unpack_enum'
             elif collection['item_class_id']:collection['class_id_evidence']='project_dictionary'
             if kind=='Configuration':
-                native.update(status='snapshot_collection',collection_id=collection['item_class_id'],serializer='automatic_deletion.owner_content',lookup='class UUID collection in current snapshot')
+                native.update(status='snapshot_collection',collection_id=collection['item_class_id'],serializer='metadata_classes',lookup='class UUID collection in current snapshot')
                 if not collection['item_class_id']:native['status']='unmapped'
-            for category,handler in (('child_collections','child_object_xml'),('inline_collections','inline_object_xml'),('tabular_collections','tabular_section_xml'),('command_collections','inline_metadata_xml'),('structured_collections','inline_metadata_xml')):
+            for category,handler in (('child_collections','child_object_xml'),('inline_collections','native_features'),('tabular_collections','native_tabular'),('command_collections','native_inline'),('structured_collections','native_inline')):
                 profile=layout.get(category,{}).get(tag)
                 if profile:
                     native.update(status='verified_profile',path=[profile['slot']],collection_id=profile.get('collection_id') or profile.get('class_id') or known.get(profile.get('kind')),serializer=handler)
-            if kind=='Enum' and tag=='EnumValue':native.update(status='verified_profile',path=[layout['values_slot']],serializer='inline_object_xml')
+            if kind=='Enum' and tag=='EnumValue':native.update(status='verified_profile',path=[layout['values_slot']],serializer='native_features')
             editor_profile=editor_profiles.get(kind,{}).get(tag)
             if editor_profile:
                 if collection['item_class_id']!=editor_profile['class_id']:raise ValueError('Editor and schema collection UUIDs differ')
-                native.update(status='snapshot_collection',path=None,collection_id=editor_profile['class_id'],serializer='native_collection_editor',lookup=editor_profile['lookup'],evidence=editor_profile['evidence'])
+                native.update(status='snapshot_collection',path=None,collection_id=editor_profile['class_id'],serializer='metadata_context',lookup=editor_profile['lookup'],evidence=editor_profile['evidence'])
             if native['status']=='verified_profile' and native['collection_id'] is None and native['path'] is not None:
                 body=native_text.Parser(layout['template']).documents()[0]
                 for slot in native['path']:body=body[slot]
@@ -114,7 +114,7 @@ def enrich(classes,source_dir,upstream_types=None):
                 try:native['collection_id']=str(uuid.UUID(identifier))
                 except ValueError:pass
             if kind in form_owners and (tag in ('Form','Template') or kind=='Cube' and tag=='DimensionTable') and collection['item_class_id'] and native['status']!='verified_profile':
-                native.update(status='snapshot_collection',path=None,collection_id=collection['item_class_id'],serializer='native_collection_editor',lookup='snapshot_class_collection',evidence=form_owners[kind]['source'])
+                native.update(status='snapshot_collection',path=None,collection_id=collection['item_class_id'],serializer='metadata_context',lookup='snapshot_class_collection',evidence=form_owners[kind]['source'])
             if native['status']=='unmapped' and collection['item_class_id'] and layout.get('template'):
                 candidates=[]
                 def locate(node,path=()):
@@ -131,17 +131,17 @@ def enrich(classes,source_dir,upstream_types=None):
             explicit=opaque_owners.get(kind,{}).get('collections',{}).get(tag)
             if explicit:
                 if explicit['kind']!=collection['runtime_item_kind'] or not collection['item_class_id']:raise ValueError('Opaque owner collection class differs from schema')
-                native.update(status='verified_profile',path=explicit['path'],collection_id=collection['item_class_id'],serializer='native_collection_editor',format='class_uuid,count,object_uuids',evidence=opaque_owners[kind]['source'])
+                native.update(status='verified_profile',path=explicit['path'],collection_id=collection['item_class_id'],serializer='metadata_context',format='class_uuid,count,object_uuids',evidence=opaque_owners[kind]['source'])
     # TabularSection has an owner-specific native layout, not one global UUID.
     for owner in registry:
         profile=layouts.get(owner.lower()+'_tabular')
         if profile and 'TabularSection' in classes:
             collection=classes['TabularSection']['collections'][0]
-            collection.setdefault('owner_native_profiles',{})[owner]=dict(status='verified_profile',collection_id=profile['attribute_collection_id'],serializer='tabular_section_xml')
+            collection.setdefault('owner_native_profiles',{})[owner]=dict(status='verified_profile',collection_id=profile['attribute_collection_id'],serializer='native_tabular')
     def nested(rule):
         for tag,child in rule.get('children',{}).items():
             row=next(c for c in classes[rule['xml_name']]['collections'] if c['xml_name']==tag)
-            row['native'].update(status='verified_profile',path=child['path'],path_scope='inline_object',collection_id=child['collection_id'],serializer='inline_metadata_xml')
+            row['native'].update(status='verified_profile',path=child['path'],path_scope='inline_object',collection_id=child['collection_id'],serializer='native_inline')
             nested(child)
     for kind in registry:
         for rule in layouts.get(kind.lower(),{}).get('structured_collections',{}).values():nested(rule)

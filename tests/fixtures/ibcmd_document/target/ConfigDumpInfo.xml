@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.21">
+	<ConfigVersions>
+		<Metadata name="Catalog.CRSAPI_TestCatalog" id="b4b86818-cac6-4297-91ac-892430772b59" configVersion="267b9eada293434d947468fc68dd1b0200000000"/>
+		<Metadata name="Configuration.Конфигурация" id="dbce6d2f-1ace-431c-b0e9-f84d3fe84d65" configVersion="2ce6673c1a415344a4e4a6d87ee2f3c900000000"/>
+		<Metadata name="Constant.CRSAPI_XML851Constant" id="0ddeea11-6885-43b4-b289-82a28ad5a992" configVersion="ffc60f634498a545a617048a0e20718a00000000"/>
+		<Metadata name="Document.CRSAPI_TestDocument" id="bd2e066c-477a-4961-aa2d-7041016a3bd0" configVersion="5b636aab3cf75c4abf46fe828fb26c9f00000000"/>
+		<Metadata name="Language.Русский" id="05147c99-2bc4-41d5-adba-798fa3817b09" configVersion="74b71b59d9852e488b17ccc55564727b00000000"/>
+	</ConfigVersions>
+</ConfigDumpInfo>

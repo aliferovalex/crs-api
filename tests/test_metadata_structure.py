@@ -23,7 +23,7 @@ class MetadataStructureTests(unittest.TestCase):
         self.assertEqual(catalog['Attribute']['storage'],'inline_xml');self.assertEqual(catalog['Attribute']['native']['path'],[6])
         self.assertEqual(catalog['Command']['native']['status'],'verified_profile')
         self.assertEqual(catalog['Command']['native']['path'],[4])
-        self.assertEqual(catalog['Command']['native']['serializer'],'inline_metadata_xml')
+        self.assertEqual(catalog['Command']['native']['serializer'],'native_inline')
         for kind,slot in [('Enum',5),('InformationRegister',8),('AccumulationRegister',4),('AccountingRegister',6)]:
             command=next(row for row in structure.profile(kind)['collections'] if row['xml_name']=='Command')
             self.assertEqual(command['native']['status'],'verified_profile');self.assertEqual(command['native']['path'],[slot])
@@ -36,15 +36,27 @@ class MetadataStructureTests(unittest.TestCase):
         register={c['xml_name']:c for c in structure.profile('InformationRegister')['collections']}
         self.assertEqual(register['Form']['native']['status'],'snapshot_collection')
         self.assertIsNone(register['Form']['native']['path'])
-        self.assertIn('InformationRegister',structure.automatic_owners())
+        self.assertEqual(structure.automatic_owners(),frozenset())
         self.assertNotIn('Subsystem',structure.automatic_owners())
         self.assertIn(('Subsystem','Subsystem','stored_name'),structure.parents_of('Subsystem'))
-        self.assertIn('Catalog',structure.automatic_owners())
+        self.assertNotIn('Catalog',structure.automatic_owners())
 
     def test_aliases_and_returned_models_are_isolated(self):
         self.assertEqual(structure.profile('ChartOfCharacteristicTypes'),structure.profile('ChartOfCharacteristicType'))
         record=structure.profile('Catalog');record['collections'].clear()
         self.assertEqual(len(structure.profile('Catalog')['collections']),5)
+
+    def test_configuration_routes_are_recursive_and_exclude_external_object_roots(self):
+        routes=structure.stored_routes();pairs={(row['owner'],row['collection']) for row in routes}
+        self.assertIn(('Subsystem','Subsystem'),pairs)
+        self.assertIn(('Catalog','Form'),pairs)
+        self.assertIn(('CalculationRegister','Recalculation'),pairs)
+        self.assertNotIn(('ExternalDataProcessor','Form'),pairs)
+        self.assertNotIn(('ExternalReport','Form'),pairs)
+        missing={(row['owner'],row['collection']) for row in routes if not row['class_id']}
+        self.assertEqual(missing,{('Configuration','PaletteColor'),('CalculationRegister','Recalculation')})
+        routes[0]['owner']='Changed'
+        self.assertNotEqual(structure.stored_routes()[0]['owner'],'Changed')
 
     def test_characteristic_collections_match_verified_owner_specific_slots(self):
         rules={r['xml_name']:r['native'] for r in structure.profile('ChartOfCharacteristicType')['collections']}

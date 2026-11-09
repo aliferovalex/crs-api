@@ -9,8 +9,8 @@ from pathlib import Path
 from xml.etree import ElementTree as E
 import native_metadata as s
 import metadata_structure as structure
-import preparation_plan as preparation
-import object_xml_profiles as profiles
+import export_xml as preparation
+import native_object_profiles as profiles
 
 Q=preparation.Q
 D='{http://v8.1c.ru/8.3/xcf/dumpinfo}'
@@ -20,13 +20,22 @@ def folder(tag):
     return {'BusinessProcess':'BusinessProcesses','FilterCriterion':'FilterCriteria','ChartOfAccounts':'ChartsOfAccounts','ChartOfCharacteristicTypes':'ChartsOfCharacteristicTypes','ChartOfCalculationTypes':'ChartsOfCalculationTypes'}.get(tag,tag if tag.endswith('s') else tag+'s')
 
 
+def export_paths(base):
+    """Git worktrees and the local CRS cache are not configuration files."""
+    def walk(directory):
+        for path in sorted(directory.iterdir()):
+            if directory==base and path.name in ('.git','.gitignore','.crs-cache'):continue
+            if path.is_symlink() or base not in path.resolve().parents:raise ValueError('Export path escapes its directory')
+            if path.is_dir():yield from walk(path)
+            elif path.is_file():yield path
+    return walk(base)
+
+
 def inventory(directory):
     base=Path(directory).resolve()
     if not base.is_dir():raise ValueError('Missing export directory')
     files={};objects={};by_path={};total=0
-    for path in sorted(base.rglob('*')):
-        if path.is_symlink() or base not in path.resolve().parents:raise ValueError('Export path escapes its directory')
-        if not path.is_file():continue
+    for path in export_paths(base):
         name=path.relative_to(base).as_posix();raw=path.read_bytes();total+=len(raw)
         if len(raw)>s.MAX_BYTES or total>s.MAX_BYTES*8 or len(files)>=65536:raise ValueError('Oversized configuration export')
         files[name]=raw
@@ -96,32 +105,16 @@ def runtime_kind(record,objects):
     return structure.profile(record['kind'])['runtime_name']
 
 
-def module_companions(record,objects):
-    """Map complete-export module paths to their declared stream owners."""
-    prefix=str(Path(record['path']).with_suffix('')).replace('\\','/')+'/'
-    kind=runtime_kind(record,objects)
-    if kind=='CommonModule':return {prefix+'Ext/Module.bsl':('module_text','Module')}
-    if record['kind'] in ('Form','CommonForm'):return {prefix+'Ext/Form/Module.bsl':('module_text','Module')}
-    result={prefix+'Ext/'+module+'.bsl':('modules',module) for module in profiles.module_files(kind)}
-    if kind in profiles.profiles() and profiles.layout(kind).get('command_collections'):
-        children=record['node'].find(Q+'ChildObjects')
-        for node in ([] if children is None else children):
-            if node.tag!=Q+'Command':continue
-            name=node.findtext(Q+'Properties/'+Q+'Name') or ''
-            if not name or Path(name).name!=name or '/' in name or '\\' in name or name in ('.','..'):raise ValueError('Invalid command module path')
-            result[prefix+'Commands/'+name+'/Ext/CommandModule.bsl']=('inline_modules',metadata_context.guid(node.get('uuid')))
-    return result
-
-
-def supported_companion(record,name,objects):
-    prefix=str(Path(record['path']).with_suffix('')).replace('\\','/')+'/'
-    local=name[len(prefix):] if name.startswith(prefix) else name
-    kind=runtime_kind(record,objects)
-    if record['kind'] in ('Form','CommonForm'):return local in ('Ext/Form.xml','Ext/Form/Module.bsl')
-    if record['kind'] in ('Template','CommonTemplate'):return local in ('Ext/Template.xml','Ext/Template.txt','Ext/Template.bin')
-    if kind=='CommonModule':return local=='Ext/Module.bsl'
-    if local in {'Ext/'+rule['file'] for rule in profiles.content_files(kind).values()}:return True
-    return prefix+local in module_companions(record,objects)
+def class_id(record,objects,source_hint=None):
+    if record['parent_id']==s.ZERO:return structure.profile(record['kind'])['class_id']
+    parent=objects[record['parent_id']]
+    rules=[row for row in structure.profile(parent['kind'])['collections'] if row['storage']=='stored_name' and row['item_type']==record['kind']]
+    values={row['item_class_id'] for row in rules if row.get('item_class_id')}
+    if len(values)>1:raise ValueError('Ambiguous stored metadata class: '+record['kind'])
+    bindings={value for value in (next(iter(values),None),record.get('_class_id'),objects.get(record.get('id'),{}).get('_class_id'),source_hint) if value}
+    if len(bindings)>1:raise ValueError('Bound metadata class differs from schema/source: '+record['kind'])
+    if bindings:return next(iter(bindings))
+    raise ValueError('Missing stored metadata class: '+record['kind'])
 
 
 def fingerprint(files):
@@ -137,6 +130,19 @@ def relocated_files(prior,record):
     return {record['path'] if name==prior['path'] else new_prefix+name[len(old_prefix):]:name for name in prior['files']}
 
 
+def positions(objects):
+    """Positions are per class within the owner's declared child collection."""
+    lookup={(row['parent_id'],row['kind'],row['name']):oid for oid,row in objects.items()}
+    result={}
+    for parent,row in objects.items():
+        children=row['node'].find(Q+'ChildObjects');counts={}
+        for child in ([] if children is None else children):
+            kind=child.tag.removeprefix(Q);oid=lookup.get((parent,kind,child.text))
+            if oid is None:continue
+            result[oid]=counts.get(kind,0);counts[kind]=result[oid]+1
+    return result
+
+
 def plan(request):
     base,old_files,old,old_root=inventory(request['baseline_directory'])
     target,new_files,new,new_root=inventory(request['directory'])
@@ -145,8 +151,7 @@ def plan(request):
     if set(old)!=set(objects):raise ValueError('Source export must contain every stored repository object')
     for oid,record in old.items():
         m=objects[oid][0];kind=runtime_kind(record,old)
-        profile=structure.profile(record['kind'])
-        cls=(next(r['item_class_id'] for r in structure.profile(old[record['parent_id']]['kind'])['collections'] if r['xml_name']=='Form') if record['kind']=='Form' else profile['class_id'])
+        cls=class_id(record,old,s.val(m[2]))
         if cls!=s.val(m[2]) or record['parent_id']!=s.val(m[3]) or record['name']!=s.val(m[9]):raise ValueError('Source export identity differs from repository')
         prefix=str(Path(record['path']).with_suffix('')).replace('\\','/')+'/'
         companions={name[len(prefix):] if name.startswith(prefix) else name for name in record['files'] if name!=record['path']}
@@ -156,7 +161,7 @@ def plan(request):
         if record['kind'] in ('Template','CommonTemplate') and s.val(m[11][0])!='0' and not companions.intersection(('Ext/Template.xml','Ext/Template.bin','Ext/Template.txt')):
             raise ValueError('Source export is missing template contents')
     if old_root['id']!=new_root['id']:raise ValueError('Target export belongs to another configuration')
-    operations=[]
+    operations=[];ordinals=positions(new)
     for oid,record in new.items():
         prior=old.get(oid);changed=[]
         if prior and (prior['kind']!=record['kind'] or prior['parent_id']!=record['parent_id']):raise ValueError('Export class or owner cannot change for an existing UUID')
@@ -164,28 +169,16 @@ def plan(request):
         names=set(record['files'])|set(previous)
         for name in sorted(names):
             if old_files.get(previous.get(name,name))!=new_files.get(name):changed.append(name)
-        if prior and not changed:continue
-        source_modules=module_companions(prior,old) if prior else {}
-        old_modules={name:source_modules[source] for name,source in previous.items() if source in source_modules};new_modules=module_companions(record,new)
-        supplied={value for name,value in new_modules.items() if name in new_files};declared=set(new_modules.values());module_removals={}
-        for name in changed:
-            if name not in new_files and name in old_modules:
-                category,module=old_modules[name]
-                # The same command module can move when its command is renamed.
-                # A command removed from XML drops its stream in the owner converter.
-                if (category,module) in declared and (category,module) not in supplied:
-                    if category=='module_text':module_removals['clear_module_text']=True
-                    else:module_removals.setdefault('removed_'+category,[]).append(module)
-                continue
-            if name!=record['path'] and name not in new_modules and not supported_companion(record,name,new):raise ValueError('Unsupported changed export companion: '+name)
-            if name not in new_files:raise ValueError('Removed companion needs an explicit final content: '+name)
+        position_changed=prior is not None and oid in ordinals and int(s.val(objects[oid][0][10]))!=ordinals[oid]
+        if prior and not changed and not position_changed:continue
         operations.append(dict(operation='Изменение' if prior else 'Создание',object_id=oid,kind=runtime_kind(record,new),
-                               xml_path=str(target/record['path']),changed_files=changed,**module_removals))
+                               xml_path=str(target/record['path']),changed_files=changed,position=ordinals.get(oid),position_changed=position_changed))
     removed=[oid for oid in old if oid not in new]
     for oid in removed:
         record=old[oid]
         operations.append(dict(operation='Удаление',object_id=oid,kind=runtime_kind(record,old),parent_id=record['parent_id']))
     return dict(operations=operations,removed_ids=removed,new_ids=[oid for oid in new if oid not in old],
+                capture_ids=sorted(op['object_id'] for op in operations if op['operation']!='Создание'),
                 xml_paths=[op['xml_path'] for op in operations if op['operation']=='Изменение'],target_fingerprint=fingerprint(new_files),
                 baseline_fingerprint=fingerprint(old_files),object_count=len(new),unchanged_count=sum(oid in old and oid not in {op['object_id'] for op in operations} for oid in new))
 

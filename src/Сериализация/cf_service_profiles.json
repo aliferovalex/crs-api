@@ -1,0 +1,7 @@
+{
+  "legacy": {
+    "provenance": "Effective native CF images exported by Designer 8.5.1.1529: root-v2, version-v216 default selector, versions-v1. Older legacy builds use the existing compatibility assumption.",
+    "root_format": 2,
+    "version": [[216, 0, [1, 0]]]
+  }
+}

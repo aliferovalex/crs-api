@@ -5,4 +5,5 @@ oscript_modules
 coverage
 __pycache__/
 .python-deps/
+.crs-cache/
 .vscode/launch.json

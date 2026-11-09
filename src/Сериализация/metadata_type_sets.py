@@ -44,11 +44,11 @@ def groups():
 def dependencies(names,reader,storage=None):
     labels={groups()[name] for name in names if name in profile()}
     if not labels:return set()
-    import metadata_identifiers,configuration_xml
+    import metadata_identifiers,native_configuration_reader
     roots=[row for row in reader.targets.targets if row.class_id==metadata_identifiers.class_id('Configuration')]
     if len(roots)!=1:raise ValueError('Type-set dependencies require one Configuration root')
     root=roots[0];entry=reader.load(root,storage,label='Type-set root')
-    actual=configuration_xml.contained_objects(s.Parser(entry.body.decode('utf-8-sig')).documents(),root.object_id,reader.request['platform'])
+    actual=native_configuration_reader.contained_objects(s.Parser(entry.body.decode('utf-8-sig')).documents(),root.object_id,reader.request['platform'])
     values={actual[metadata_identifiers.group_id(label)] for label in labels}
     if not values<=entry.features:raise ValueError('Type-set root feature map differs from native body')
     return values

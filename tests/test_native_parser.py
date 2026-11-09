@@ -1,8 +1,10 @@
 """Bulk token scanning keeps escaped quotes, failures and source spans."""
+import base64
 import itertools
 from pathlib import Path
 import sys
 import unittest
+from unittest import mock
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src' / '\u0421\u0435\u0440\u0438\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f'))
 import native_metadata as s
 
@@ -22,6 +24,21 @@ def reference_string(text):
 
 
 class NativeParserTests(unittest.TestCase):
+    def test_storage_decode_checks_encoded_and_decoded_limits(self):
+        with mock.patch.object(s, 'MAX_STORAGE_BYTES', 5):
+            self.assertEqual(s.decode_storage(base64.b64encode(b'12345').decode()), b'12345')
+            for value in (None, 'A'*9, base64.b64encode(b'123456').decode(), '!!!!'):
+                with self.subTest(value=value), self.assertRaises(ValueError):
+                    s.decode_storage(value)
+
+    def test_larger_envelope_does_not_increase_record_or_inflation_limits(self):
+        with mock.patch.object(s, 'MAX_BYTES', 5):
+            self.assertEqual(s.read_record(s.record(b'12345'), 0)[0], b'12345')
+            with self.assertRaisesRegex(ValueError, 'record size'):
+                s.read_record(s.record(b'123456'), 0)
+            with self.assertRaisesRegex(ValueError, 'DEFLATE'):
+                s.inflate(s.compress(b'123456'))
+
     def test_quote_scanner_matches_character_reference(self):
         for length in range(6):
             for tail in itertools.product('"a,}\n', repeat=length):

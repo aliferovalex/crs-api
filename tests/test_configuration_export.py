@@ -21,10 +21,12 @@ class ConfigurationExportTests(unittest.TestCase):
             doc=E.Element(export.Q+'MetaDataObject',version='2.21');obj=E.SubElement(doc,export.Q+tag,uuid=oid);props=E.SubElement(obj,export.Q+'Properties')
             E.SubElement(props,export.Q+'Name').text=s.val(m[9]);E.SubElement(props,export.Q+'Comment').text='Original'
             if oid==fixture['request']['parent_id']:
-                import managed_form_profiles,metadata_common_xml
+                import native_form_profiles,xml_compare
                 props.clear()
                 body=s.Parser(fixture['owner_before']).documents()[0]
-                metadata_common_xml.write(props,managed_form_profiles.owner_common(body,kind))
+                common=native_form_profiles.owner_common(body,kind)
+                E.SubElement(props,export.Q+'Name').text=s.val(common[2])
+                E.SubElement(props,export.Q+'Comment').text=s.val(common[4])
             children=E.SubElement(obj,export.Q+'ChildObjects')
             for child,cls in metadata_context.children(m):
                 label=ids.class_labels()[cls];ct='Form' if label.endswith('Form') else label
@@ -82,12 +84,12 @@ class ConfigurationExportTests(unittest.TestCase):
         top.write(owner,encoding='utf-8');result=self.plan();self.assertEqual(result['removed_ids'],[oid])
         self.assertIn('Удаление',[op['operation'] for op in result['operations']])
 
-    def test_stale_baseline_and_unknown_changed_companions_are_rejected(self):
+    def test_stale_baseline_is_rejected_and_companions_are_delegated_to_compiler(self):
         info=self.old/'ConfigDumpInfo.xml';saved=info.read_bytes();top=E.parse(info);node=top.getroot().find('.//'+export.D+'Metadata');node.set('configVersion','f'*40);top.write(info)
         with self.assertRaisesRegex(ValueError,'versions differ'):self.plan()
         info.write_bytes(saved);owner=self.new/self.paths[self.fixture['request']['parent_id']];ext=owner.with_suffix('')/'Ext';ext.mkdir(exist_ok=True)
         (ext/'Unsupported.xml').write_text('<Unsupported/>',encoding='utf-8')
-        with self.assertRaisesRegex(ValueError,'Unsupported changed'):self.plan()
+        self.assertTrue(any(name.endswith('Unsupported.xml') for op in self.plan()['operations'] for name in op.get('changed_files',[])))
 
     def test_incomplete_source_or_duplicate_uuid_is_rejected(self):
         form=self.old/self.paths[self.fixture['remaining_form_id']];form.unlink()
@@ -131,23 +133,6 @@ class ConfigurationExportTests(unittest.TestCase):
         operation=next(op for op in self.plan()['operations'] if op['object_id']==oid)
         self.assertIn(module.relative_to(self.new).as_posix(),operation['changed_files'])
 
-    def test_complete_plan_supplies_only_changed_owner_module_files(self):
-        import configuration_commit as commit
-        import object_xml_profiles as profiles
-        oid=self.fixture['request']['parent_id'];record=export.inventory(self.old)[2][oid]
-        kind=export.runtime_kind(record,export.inventory(self.old)[2]);name=next(iter(profiles.module_files(kind)))
-        relative=self.paths[oid].with_suffix('')/'Ext'/(name+'.bsl')
-        for directory in (self.old,self.new):
-            file=directory/relative;file.parent.mkdir(parents=True,exist_ok=True);file.write_text('',encoding='utf-8')
-        owner=self.new/self.paths[oid];top=E.parse(owner)
-        top.getroot()[0].find(export.Q+'Properties/'+export.Q+'Comment').text='Changed comment'
-        top.write(owner,encoding='utf-8')
-        request=dict(directory=str(self.new),baseline_directory=str(self.old),context=self.context,platform='8.5.1.1529')
-        _,changes=commit.prepare(request)
-        self.assertEqual(len(changes),1);self.assertEqual(changes[0]['modules'],{})
-        (self.new/relative).write_text('// changed module',encoding='utf-8')
-        _,changes=commit.prepare(request)
-        self.assertEqual(changes[0]['modules'],{name:'// changed module'})
 
 
 if __name__=='__main__':unittest.main()

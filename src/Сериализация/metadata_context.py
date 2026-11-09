@@ -1,8 +1,7 @@
 """Repository updateInfo readers, UUID validation and stored child maps."""
-import base64
 import uuid
 import native_metadata as s
-from native_metadata import HEADER, MAX_BYTES, Parser, read_record, val
+from native_metadata import HEADER, MAX_STORAGE_BYTES, Parser, read_record, val
 
 
 def guid(value):
@@ -13,9 +12,7 @@ def guid(value):
 
 
 def context_objects(encoded):
-    if not isinstance(encoded,str) or len(encoded)>s.MAX_BYTES*2:
-        raise ValueError('Oversized or invalid context')
-    data = base64.b64decode(encoded, validate=True)
+    data = s.decode_storage(encoded, 'Oversized or invalid context')
     s.validate_storage(data)
     pos, objects = 12, {}
     while pos < len(data):
@@ -48,7 +45,7 @@ def children(metadata):
 
 
 def context_metadata(data, object_id):
-    if data[:8] != HEADER[:8] or len(data) > MAX_BYTES:
+    if data[:8] != HEADER[:8] or len(data) > MAX_STORAGE_BYTES:
         raise ValueError("Unsupported updateInfo context")
     pos, found = 12, []
     while pos < len(data):

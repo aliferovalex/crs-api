@@ -69,19 +69,6 @@ def read(node):
     return Table(tuple(states), tuple(restrictions), extended)
 
 
-def write(table):
-    if not isinstance(table, Table) or (table.restrictions and not table.extended):
-        raise ValueError('Invalid native rights table value')
-    result = [s.atom(len(table.states) if table.extended else 0)]
-    for oid, value in table.states:
-        result.extend((s.atom(oid), s.atom(value)))
-    if table.extended:
-        result.insert(0, s.atom(1)); result.append(s.atom(len(table.restrictions)))
-        result.extend([s.atom(oid), copy.deepcopy(matrix)] for oid, matrix in table.restrictions)
-    read(result)
-    return result
-
-
 def file_references(raw):
     """Actual object and ordinary RLS field UUIDs in a complete role stream.
 

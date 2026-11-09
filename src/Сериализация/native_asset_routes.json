@@ -1,0 +1,673 @@
+{
+  "source": "https://github.com/Untru/ibcmd-rs",
+  "revision": "1a5d40a24624898efcc2ff35c106e5f23305d47c",
+  "license": "IBCMD-LICENSE.txt",
+  "routes": [
+    {
+      "family": "Configuration",
+      "role": "OrdinaryApplicationModule",
+      "suffix": ".0",
+      "path": "Ext/OrdinaryApplicationModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Configuration",
+      "role": "ExternalConnectionModule",
+      "suffix": ".5",
+      "path": "Ext/ExternalConnectionModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Configuration",
+      "role": "ManagedApplicationModule",
+      "suffix": ".6",
+      "path": "Ext/ManagedApplicationModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Configuration",
+      "role": "SessionModule",
+      "suffix": ".7",
+      "path": "Ext/SessionModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "CommonModule",
+      "role": "Module",
+      "suffix": ".0",
+      "path": "Ext/Module.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "HTTPService",
+      "role": "Module",
+      "suffix": ".0",
+      "path": "Ext/Module.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "WebService",
+      "role": "Module",
+      "suffix": ".0",
+      "path": "Ext/Module.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Bot",
+      "role": "Module",
+      "suffix": ".1",
+      "path": "Ext/Module.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "IntegrationService",
+      "role": "Module",
+      "suffix": ".0",
+      "path": "Ext/Module.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Subsystem",
+      "role": "CommandInterface",
+      "suffix": ".1",
+      "path": "Ext/CommandInterface.xml",
+      "codec": "CommandInterface"
+    },
+    {
+      "family": "CommonCommand",
+      "role": "CommandInterface",
+      "suffix": ".0",
+      "path": "Ext/CommandInterface.xml",
+      "codec": "CommandInterface"
+    },
+    {
+      "family": "CommonCommand",
+      "role": "CommandModule",
+      "suffix": ".2",
+      "path": "Ext/CommandModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Command",
+      "role": "CommandModule",
+      "suffix": ".2",
+      "path": "Ext/CommandModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Form",
+      "role": "Form",
+      "suffix": ".0",
+      "path": "Ext/Form.xml",
+      "codec": "ManagedForm"
+    },
+    {
+      "family": "CommonForm",
+      "role": "Form",
+      "suffix": ".0",
+      "path": "Ext/Form.xml",
+      "codec": "ManagedForm"
+    },
+    {
+      "family": "FilterCriterion",
+      "role": "ManagerModule",
+      "suffix": ".0",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Constant",
+      "role": "ValueManagerModule",
+      "suffix": ".0",
+      "path": "Ext/ValueManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Constant",
+      "role": "ManagerModule",
+      "suffix": ".1",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "SettingsStorage",
+      "role": "ManagerModule",
+      "suffix": ".8",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Sequence",
+      "role": "RecordSetModule",
+      "suffix": ".0",
+      "path": "Ext/RecordSetModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Catalog",
+      "role": "ObjectModule",
+      "suffix": ".0",
+      "path": "Ext/ObjectModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Catalog",
+      "role": "ManagerModule",
+      "suffix": ".3",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Report",
+      "role": "ObjectModule",
+      "suffix": ".0",
+      "path": "Ext/ObjectModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Report",
+      "role": "ManagerModule",
+      "suffix": ".2",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "DataProcessor",
+      "role": "ObjectModule",
+      "suffix": ".0",
+      "path": "Ext/ObjectModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "DataProcessor",
+      "role": "ManagerModule",
+      "suffix": ".2",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Document",
+      "role": "ObjectModule",
+      "suffix": ".0",
+      "path": "Ext/ObjectModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Document",
+      "role": "ManagerModule",
+      "suffix": ".2",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Enum",
+      "role": "ManagerModule",
+      "suffix": ".0",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "ExchangePlan",
+      "role": "ObjectModule",
+      "suffix": ".2",
+      "path": "Ext/ObjectModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "ExchangePlan",
+      "role": "ManagerModule",
+      "suffix": ".3",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "AccountingRegister",
+      "role": "RecordSetModule",
+      "suffix": ".6",
+      "path": "Ext/RecordSetModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "AccountingRegister",
+      "role": "ManagerModule",
+      "suffix": ".7",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "AccumulationRegister",
+      "role": "RecordSetModule",
+      "suffix": ".1",
+      "path": "Ext/RecordSetModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "AccumulationRegister",
+      "role": "ManagerModule",
+      "suffix": ".2",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "CalculationRegister",
+      "role": "RecordSetModule",
+      "suffix": ".1",
+      "path": "Ext/RecordSetModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "CalculationRegister",
+      "role": "ManagerModule",
+      "suffix": ".2",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "InformationRegister",
+      "role": "RecordSetModule",
+      "suffix": ".1",
+      "path": "Ext/RecordSetModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "InformationRegister",
+      "role": "ManagerModule",
+      "suffix": ".2",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "DocumentJournal",
+      "role": "ManagerModule",
+      "suffix": ".1",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Task",
+      "role": "ObjectModule",
+      "suffix": ".6",
+      "path": "Ext/ObjectModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Task",
+      "role": "ManagerModule",
+      "suffix": ".7",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "BusinessProcess",
+      "role": "ObjectModule",
+      "suffix": ".6",
+      "path": "Ext/ObjectModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "BusinessProcess",
+      "role": "ManagerModule",
+      "suffix": ".8",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "BusinessProcess",
+      "role": "Flowchart",
+      "suffix": ".7",
+      "path": "Ext/Flowchart.xml",
+      "codec": "Deferred"
+    },
+    {
+      "family": "ChartOfAccounts",
+      "role": "ObjectModule",
+      "suffix": ".14",
+      "path": "Ext/ObjectModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "ChartOfAccounts",
+      "role": "ManagerModule",
+      "suffix": ".15",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "ChartOfCalculationTypes",
+      "role": "ObjectModule",
+      "suffix": ".0",
+      "path": "Ext/ObjectModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "ChartOfCalculationTypes",
+      "role": "ManagerModule",
+      "suffix": ".3",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "ChartOfCharacteristicTypes",
+      "role": "ObjectModule",
+      "suffix": ".15",
+      "path": "Ext/ObjectModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "ChartOfCharacteristicTypes",
+      "role": "ManagerModule",
+      "suffix": ".16",
+      "path": "Ext/ManagerModule.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "CommonPicture",
+      "role": "Picture",
+      "suffix": ".0",
+      "path": "Ext/Picture.xml",
+      "codec": "Picture"
+    },
+    {
+      "family": "CommonCommand",
+      "role": "Help",
+      "suffix": ".1",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "Catalog",
+      "role": "Help",
+      "suffix": ".1",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "DataProcessor",
+      "role": "Help",
+      "suffix": ".1",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "InformationRegister",
+      "role": "Help",
+      "suffix": ".0",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "CommonForm",
+      "role": "Help",
+      "suffix": ".1",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "Form",
+      "role": "Help",
+      "suffix": ".1",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "Subsystem",
+      "role": "Help",
+      "suffix": ".0",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "Report",
+      "role": "Help",
+      "suffix": ".1",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "Document",
+      "role": "Help",
+      "suffix": ".1",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "DocumentJournal",
+      "role": "Help",
+      "suffix": ".0",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "BusinessProcess",
+      "role": "Help",
+      "suffix": ".5",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "ChartOfCharacteristicTypes",
+      "role": "Help",
+      "suffix": ".5",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "AccumulationRegister",
+      "role": "Help",
+      "suffix": ".0",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "ExchangePlan",
+      "role": "Help",
+      "suffix": ".0",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "ChartOfAccounts",
+      "role": "Help",
+      "suffix": ".5",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "AccountingRegister",
+      "role": "Help",
+      "suffix": ".5",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "Task",
+      "role": "Help",
+      "suffix": ".5",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "ChartOfCalculationTypes",
+      "role": "Help",
+      "suffix": ".1",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "CalculationRegister",
+      "role": "Help",
+      "suffix": ".0",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "Role",
+      "role": "Rights",
+      "suffix": ".0",
+      "path": "Ext/Rights.xml",
+      "codec": "Rights"
+    },
+    {
+      "family": "AccumulationRegister",
+      "role": "Aggregates",
+      "suffix": ".3",
+      "path": "Ext/Aggregates.xml",
+      "codec": "Deferred"
+    },
+    {
+      "family": "Catalog",
+      "role": "Predefined",
+      "suffix": ".1c",
+      "path": "Ext/Predefined.xml",
+      "codec": "Predefined"
+    },
+    {
+      "family": "ChartOfCharacteristicTypes",
+      "role": "Predefined",
+      "suffix": ".7",
+      "path": "Ext/Predefined.xml",
+      "codec": "Predefined"
+    },
+    {
+      "family": "ChartOfAccounts",
+      "role": "Predefined",
+      "suffix": ".9",
+      "path": "Ext/Predefined.xml",
+      "codec": "Predefined"
+    },
+    {
+      "family": "ChartOfCalculationTypes",
+      "role": "Predefined",
+      "suffix": ".2",
+      "path": "Ext/Predefined.xml",
+      "codec": "Predefined"
+    },
+    {
+      "family": "XDTOPackage",
+      "role": "Package",
+      "suffix": ".0",
+      "path": "Ext/Package.bin",
+      "codec": "RawBinary"
+    },
+    {
+      "family": "Configuration",
+      "role": "Splash",
+      "suffix": ".2",
+      "path": "Ext/Splash.xml",
+      "codec": "Picture"
+    },
+    {
+      "family": "Configuration",
+      "role": "Logo",
+      "suffix": ".1",
+      "path": "Ext/Logo.xml",
+      "codec": "Picture"
+    },
+    {
+      "family": "Configuration",
+      "role": "Help",
+      "suffix": ".3",
+      "path": "Ext/Help.xml",
+      "codec": "Help"
+    },
+    {
+      "family": "Configuration",
+      "role": "ParentConfigurations",
+      "suffix": ".4",
+      "path": "Ext/ParentConfigurations.bin",
+      "codec": "OpaqueSupport"
+    },
+    {
+      "family": "Configuration",
+      "role": "HomePageWorkArea",
+      "suffix": ".8",
+      "path": "Ext/HomePageWorkArea.xml",
+      "codec": "Deferred"
+    },
+    {
+      "family": "Configuration",
+      "role": "MainSectionCommandInterface",
+      "suffix": ".9",
+      "path": "Ext/MainSectionCommandInterface.xml",
+      "codec": "Deferred"
+    },
+    {
+      "family": "Configuration",
+      "role": "CommandInterface",
+      "suffix": ".a",
+      "path": "Ext/CommandInterface.xml",
+      "codec": "CommandInterface"
+    },
+    {
+      "family": "Configuration",
+      "role": "MobileClientSignature",
+      "suffix": ".10",
+      "path": "Ext/MobileClientSignature.bin",
+      "codec": "OpaqueSupport"
+    },
+    {
+      "family": "Configuration",
+      "role": "ClientApplicationInterface",
+      "suffix": ".b",
+      "path": "Ext/ClientApplicationInterface.xml",
+      "codec": "Deferred"
+    },
+    {
+      "family": "Configuration",
+      "role": "MainSectionPicture",
+      "suffix": ".c",
+      "path": "Ext/MainSectionPicture.xml",
+      "codec": "Picture"
+    },
+    {
+      "family": "Configuration",
+      "role": "StandaloneContent",
+      "suffix": ".f",
+      "path": "Ext/StandaloneConfigurationContent.bin",
+      "codec": "OpaqueSupport"
+    },
+    {
+      "family": "WebSocketClient",
+      "role": "Module",
+      "suffix": ".0",
+      "path": "Ext/Module.bsl",
+      "codec": "Module"
+    },
+    {
+      "family": "Template",
+      "role": "Template",
+      "suffix": ".0",
+      "path": "Ext/Template",
+      "codec": "Template"
+    },
+    {
+      "family": "CommonTemplate",
+      "role": "Template",
+      "suffix": ".0",
+      "path": "Ext/Template",
+      "codec": "Template"
+    },
+    {
+      "family": "ExchangePlan",
+      "role": "Content",
+      "suffix": ".1",
+      "path": "Ext/Content.xml",
+      "codec": "Deferred"
+    },
+    {
+      "family": "ScheduledJob",
+      "role": "Schedule",
+      "suffix": ".0",
+      "path": "Ext/Schedule.xml",
+      "codec": "Deferred"
+    },
+    {
+      "family": "Style",
+      "role": "Style",
+      "suffix": ".0",
+      "path": "Ext/Style.xml",
+      "codec": "Deferred"
+    }
+  ],
+  "notes": "Snapshot of asset registry plus source_assets.rs routes. ManagedForm primary path is Form.xml; its embedded module is checked separately. Template extension comes from TemplateType. No XML property conversion."
+}

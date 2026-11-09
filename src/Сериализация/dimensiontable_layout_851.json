@@ -1,0 +1,192 @@
+{
+  "template": "{1,{0,{0,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,\"\",{0,1,{\"#\",157fa490-4ce9-11d4-9415-008048da11f9,{1,00000000-0000-0000-0000-000000000000}}},00000000-0000-0000-0000-000000000000,0,0,{0},{0},{0},{0},{0,{0}},{0},0,{0,{0}},\"\",0,00000000-0000-0000-0000-000000000000,{\"U\"},0,{{1,{27,{2,{3,{1,0,00000000-0000-0000-0000-000000000000},\"MEMBER_UNIQUE_NAME\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{\"Pattern\",{\"S\",1000,1}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"S\",\"\"},0,0,0},\"[MEMBER_UNIQUE_NAME]\",0,1},0},{{1,{27,{2,{3,{1,0,00000000-0000-0000-0000-000000000000},\"PARENT_UNIQUE_NAME\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{\"Pattern\",{\"#\",00000000-0000-0000-0000-000000000000}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"S\",\"\"},0,0,0},\"[PARENT_UNIQUE_NAME]\",0,1},0}},4,{2367cec0-5648-49d7-95f0-76d387653517,0},{3daea016-69b7-4ed4-9453-127911372fe6,0},{8352a2a3-943d-43a2-95d9-1c592b1d337d,0},{c7075688-01c1-41ba-bd1c-1023c8189079,0}}",
+  "defaults": {
+    "NameInDataSource": "",
+    "PresentationField": "",
+    "HierarchyNameInDataSource": "",
+    "LevelNumber": "0",
+    "Hierarchical": "false",
+    "UnfilledParentValue": "",
+    "UseStandardCommands": "false",
+    "QuickChoice": "false",
+    "DefaultObjectForm": "",
+    "DefaultListForm": "",
+    "DefaultChoiceForm": "",
+    "ObjectPresentation": "",
+    "ExtendedObjectPresentation": "",
+    "ListPresentation": "",
+    "ExtendedListPresentation": "",
+    "Explanation": "",
+    "IncludeHelpInContents": "false"
+  },
+  "generated_slots": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "generated_categories": [
+    "Manager",
+    "Object",
+    "Ref",
+    "List"
+  ],
+  "generated_prefixes": {
+    "Manager": "ExternalDataSourceCubeDimensionTableManager",
+    "Object": "ExternalDataSourceCubeDimensionTableObject",
+    "Ref": "ExternalDataSourceCubeDimensionTableRef",
+    "List": "ExternalDataSourceCubeDimensionTableList"
+  },
+  "reference_prefix": "ExternalDataSourceCubeDimensionTableRef",
+  "input_fields": [],
+  "common_path": [
+    1,
+    1,
+    1
+  ],
+  "implicit_ids": {
+    "MemberUniqueName": [
+      [
+        1,
+        14,
+        2,
+        2,
+        1
+      ],
+      [
+        1,
+        31,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    ],
+    "ParentUniqueName": [
+      [
+        1,
+        28
+      ],
+      [
+        1,
+        32,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    ]
+  },
+  "generated_bindings": [
+    {
+      "slot": 6,
+      "path": [
+        1,
+        32,
+        0,
+        1,
+        1,
+        2,
+        1,
+        1
+      ]
+    }
+  ],
+  "property_attributes": {
+    "UnfilledParentValue": {
+      "{http://www.w3.org/2001/XMLSchema-instance}nil": "true"
+    }
+  },
+  "empty_strings": [
+    "NameInDataSource"
+  ],
+  "string_slots": {
+    "NameInDataSource": [
+      1,
+      13
+    ]
+  },
+  "inline_collections": {
+    "Field": {
+      "xml_name": "Field",
+      "template": "{{1,{27,{2,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0},{\"Pattern\",{\"S\",100,1}}},0,{0},{0},0,\"\",0,{\"U\"},{\"U\"},0,00000000-0000-0000-0000-000000000000,2,0,{5006,0},{3,0,0},{0,0},0,{0},{\"S\",\"\"},0,0,0},\"\",0,1},0}",
+      "defaults": {},
+      "properties": [
+        "Name",
+        "Synonym",
+        "Comment",
+        "Type",
+        "PasswordMode",
+        "Format",
+        "EditFormat",
+        "ToolTip",
+        "MarkNegatives",
+        "Mask",
+        "MultiLine",
+        "ExtendedEdit",
+        "MinValue",
+        "MaxValue",
+        "FillFromFillingValue",
+        "FillValue",
+        "FillChecking",
+        "ChoiceParameterLinks",
+        "ChoiceParameters",
+        "QuickChoice",
+        "CreateOnInput",
+        "ChoiceHistoryOnInput",
+        "ChoiceForm",
+        "NameInDataSource",
+        "ReadOnly",
+        "AllowNull"
+      ],
+      "string_properties": {
+        "NameInDataSource": [
+          0,
+          2
+        ]
+      },
+      "scalar_properties": {
+        "ReadOnly": {
+          "path": [
+            0,
+            3
+          ],
+          "values": {
+            "false": 0,
+            "true": 1
+          }
+        },
+        "AllowNull": {
+          "path": [
+            0,
+            4
+          ],
+          "values": {
+            "false": 0,
+            "true": 1
+          }
+        }
+      },
+      "slot": 6,
+      "collection_id": "c7075688-01c1-41ba-bd1c-1023c8189079"
+    }
+  },
+  "child_collections": {
+    "Form": {
+      "kind": "DimensionTableForm",
+      "slot": 3
+    },
+    "Template": {
+      "kind": "Template",
+      "slot": 4
+    }
+  }
+}

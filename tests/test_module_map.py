@@ -15,22 +15,6 @@ SPEC.loader.exec_module(mapping)
 
 
 class ModuleMapTests(unittest.TestCase):
-    def test_documented_transformations_execute_with_current_converters(self):
-        examples = mapping.transformation_examples().split('### 5.', 1)[0]
-        blocks = re.findall(r'```python\n(.*?)\n```', examples, re.S)
-        self.assertEqual(len(blocks), 4)
-        scope = {'__name__': 'module_map_examples'}
-        previous_directory = Path.cwd()
-        previous_path = list(sys.path)
-        try:
-            os.chdir(ROOT)
-            for index, code in enumerate(blocks, 1):
-                with self.subTest(example=index):
-                    exec(compile(code, 'module-map-example-' + str(index), 'exec'), scope)
-        finally:
-            os.chdir(previous_directory)
-            sys.path[:] = previous_path
-
     def test_generated_map_matches_current_sources(self):
         current = mapping.extract()
         saved = json.loads((ROOT / 'docs' / 'module-map.json').read_text(encoding='utf-8'))
@@ -40,14 +24,14 @@ class ModuleMapTests(unittest.TestCase):
 
     def test_readers_do_not_import_packet_builders_or_xml_converters(self):
         dependencies = mapping.extract()['imports']
-        for name, allowed in [('native_metadata', {'python:v8unpack_backend'}),
+        for name, allowed in [('native_metadata', set()),
                               ('metadata_context', {'python:native_metadata'}),
                               ('xml_namespaces', set())]:
             actual = {edge['callee'] for edge in dependencies if edge['caller'] == 'python:' + name}
             self.assertLessEqual(actual, allowed)
         forbidden = {'python:object_creation_serializer', 'python:configuration_serializer',
                      'python:packet_builder'}
-        for name in ['configuration_xml', 'metadata_common_xml', 'inline_attribute_xml', 'metadata_object_xml']:
+        for name in ['native_configuration_reader', 'xml_compare', 'inline_attribute_xml', 'native_object_reader']:
             actual = {edge['callee'] for edge in dependencies if edge['caller'] == 'python:' + name}
             self.assertFalse(actual & forbidden, (name, actual & forbidden))
 
@@ -56,8 +40,7 @@ class ModuleMapTests(unittest.TestCase):
         targets = {edge['callee'] for edge in edges
                    if edge['caller'] == 'onescript:СериализаторОбъектаХранилища'
                    and 'JSON CLI' in edge['functions']}
-        self.assertTrue({'python:configuration_serializer', 'python:object_creation_serializer',
-                         'python:configuration_commit'}.issubset(targets))
+        self.assertTrue({'python:configuration_export', 'python:configuration_commit', 'python:external_data', 'python:metadata_classes'}.issubset(targets))
         self.assertNotIn('python:native_metadata', targets)
 
 

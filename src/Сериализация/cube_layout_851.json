@@ -1,0 +1,123 @@
+{
+  "template": "{1,{0,{0,{3,{1,0,00000000-0000-0000-0000-000000000000},\"\",{0},\"\",0,0,00000000-0000-0000-0000-000000000000,0}},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,\"\",0,0,00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000,{0},{0},{0},{0},{0},{0,{0}},00000000-0000-0000-0000-000000000000,00000000-0000-0000-0000-000000000000},6,{3448e506-5add-4fce-a604-7305466b2d8e,0},{3daea016-69b7-4ed4-9453-127911372fe6,0},{4ee40ec7-3469-439f-adb4-aa26ce2d3ec3,0},{631411f3-8c65-4066-a78f-57a72e015c1c,0},{7374aaf6-fe8c-4bba-8574-2075a293f0b6,0},{cead2290-2080-4077-a57b-73051d618683,0}}",
+  "defaults": {
+    "NameInDataSource": "",
+    "Characteristics": "",
+    "UseStandardCommands": "false",
+    "DefaultRecordForm": "",
+    "DefaultListForm": "",
+    "RecordPresentation": "",
+    "ExtendedRecordPresentation": "",
+    "ListPresentation": "",
+    "ExtendedListPresentation": "",
+    "Explanation": "",
+    "IncludeHelpInContents": "false"
+  },
+  "generated_slots": [
+    2,
+    3,
+    10,
+    11,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    25,
+    26,
+    12,
+    13
+  ],
+  "generated_categories": [
+    "Manager",
+    "List",
+    "RecordSet",
+    "Record",
+    "RecordKey",
+    "RecordManager",
+    "DimensionTables"
+  ],
+  "generated_prefixes": {
+    "Manager": "ExternalDataSourceCubeManager",
+    "List": "ExternalDataSourceCubeList",
+    "RecordSet": "ExternalDataSourceCubeRecordSet",
+    "Record": "ExternalDataSourceCubeRecord",
+    "RecordKey": "ExternalDataSourceCubeRecordKey",
+    "RecordManager": "ExternalDataSourceCubeRecordManager",
+    "DimensionTables": "ExternalDataSourceCubeDimensionsTablesManager"
+  },
+  "input_fields": [],
+  "common_path": [
+    1,
+    1,
+    1
+  ],
+  "string_slots": {
+    "NameInDataSource": [
+      1,
+      14
+    ]
+  },
+  "empty_strings": [
+    "NameInDataSource"
+  ],
+  "scalar_properties": {
+    "UseStandardCommands": {
+      "path": [
+        1,
+        15
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    },
+    "IncludeHelpInContents": {
+      "path": [
+        1,
+        16
+      ],
+      "values": {
+        "false": 0,
+        "true": 1
+      }
+    }
+  },
+  "localized_properties": {
+    "RecordPresentation": [
+      1,
+      19
+    ],
+    "ExtendedRecordPresentation": [
+      1,
+      20
+    ],
+    "ListPresentation": [
+      1,
+      21
+    ],
+    "ExtendedListPresentation": [
+      1,
+      22
+    ],
+    "Explanation": [
+      1,
+      23
+    ]
+  },
+  "child_collections": {
+    "Form": {
+      "kind": "CubeForm",
+      "slot": 3
+    },
+    "Template": {
+      "kind": "Template",
+      "slot": 4
+    },
+    "DimensionTable": {
+      "kind": "DimensionTable",
+      "slot": 6
+    }
+  }
+}

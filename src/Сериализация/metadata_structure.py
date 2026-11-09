@@ -25,3 +25,18 @@ def automatic_owners():
 def parents_of(kind):
     return [(v['xml_name'],c['xml_name'],c['storage']) for v in _map()['classes'].values() for c in v['collections']
             if kind in (c['item_type'],c['runtime_item_kind'])]
+
+
+def stored_routes(root='Configuration'):
+    """Reachable schema routes, not a claim of verified compiler support."""
+    visited=set();result=[]
+    def visit(kind):
+        owner=profile(kind);name=owner['xml_name']
+        if name in visited:return
+        visited.add(name)
+        for row in owner['collections']:
+            if row['storage']=='stored_name':
+                result.append(dict(owner=name,collection=row['xml_name'],item=row['item_type'],class_id=row.get('item_class_id')))
+            visit(row['item_type'])
+    visit(root)
+    return sorted(result,key=lambda row:(row['owner'],row['collection']))

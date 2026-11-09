@@ -4,9 +4,9 @@ import uuid
 from xml.etree import ElementTree as E
 import native_metadata as s
 import native_references
-import object_xml_profiles as profiles
+import native_object_profiles as profiles
 import serialization_context as contexts
-import type_description_xml as types
+import xml_type_text as types
 import metadata_type_sets as type_sets
 
 
@@ -25,29 +25,39 @@ def reference_name(value):
     return reference_definition(value)[:2]
 
 
-def required(xml):
+def required(xml,index=None):
     if not isinstance(xml,str) or len(xml.encode('utf-8'))>s.MAX_BYTES or '<!DOCTYPE' in xml.upper() or '<!ENTITY' in xml.upper():raise ValueError('Invalid metadata type XML')
     result=set()
     for node in E.fromstring(xml).iter():
         if node.tag not in (types.Q+'Type',types.Q+'TypeSet'):continue
         value=types.text(node)
         if value.startswith('cfg:'):
-            if value not in type_sets.profile():reference_name(value)
+            if index is not None:index.reference(value)
+            elif value not in type_sets.profile():reference_name(value)
             result.add(value)
     return result
 
 
 def resolve(xml,request):
-    refs=required(xml)
+    return resolve_required(required(xml,request.get('_compiled_types')),request)
+
+
+def resolve_required(refs,request,storage=None):
+    """Resolve a classified set of types for metadata or form declarations."""
     if not refs:return {}
+    if '_compiled_types' in request:return request['_compiled_types'].resolve_required(refs)
     reader=native_references.catalog(request)
-    storage=contexts.decode(request['storage'],'Metadata references require current version storage') if 'storage' in request else None
+    if storage is None and 'storage' in request:storage=contexts.decode(request['storage'],'Metadata references require current version storage')
     return {ref:(type_sets.profile()[ref] if ref in type_sets.profile() else reader.type_id(*reference_definition(ref),storage=storage)) for ref in sorted(refs)}
 
 
 def object_ids(xml,reader):
-    refs=required(xml)
-    storage=contexts.decode(reader.request['storage'],'Type-set dependencies require current version storage') if 'storage' in reader.request else None
+    return required_object_ids(required(xml,reader.request.get('_compiled_types')),reader)
+
+
+def required_object_ids(refs,reader,storage=None):
+    if '_compiled_types' in reader.request:return reader.request['_compiled_types'].object_ids_required(refs)
+    if storage is None and 'storage' in reader.request:storage=contexts.decode(reader.request['storage'],'Type-set dependencies require current version storage')
     return {reader.select(*reference_name(ref),label='Referenced type').object_id for ref in refs if ref not in type_sets.profile()}|type_sets.dependencies(refs,reader,storage)
 
 
@@ -86,8 +96,18 @@ def source_owners(request,source,layout,relations,oid,*,strict=True):
     import metadata_identifiers
     managed=set();all_types=type_ids(source);old_types=all_types-set(type_sets.profile().values())
     old_groups={name for name,value in type_sets.profile().items() if value in all_types}
-    import metadata_object_xml
-    managed.update(metadata_object_xml.reference_dependencies(source,layout,oid))
+    import native_object_reader
+    managed.update(native_object_reader.reference_dependencies(source,layout,oid))
+    if '_source_types' in request:
+        index=request['_source_types'];matched=set()
+        for value in old_types:
+            owner=index.owner_for_generated(value)
+            if owner is not None:
+                matched.add(value)
+                if owner!=oid:managed.add(owner)
+        managed.update(index.object_ids_required(old_groups))
+        if strict and matched!=old_types:raise ValueError('Source generated reference types lack verified declarations')
+        return managed
     if old_types or old_groups:
         reader=native_references.Catalog(request)
         storage=contexts.decode(request['storage'],'Source type dependencies require current version storage') if 'storage' in request else None
@@ -111,6 +131,9 @@ def reconcile(request,source,target,layout,relations,oid,xml):
     """Replace only proven structured dependencies; retain opaque relations."""
     managed=source_owners(request,source,layout,relations,oid)
     final=object_ids(xml,native_references.catalog(request))
+    import native_object_reader
+    target_relations=native_object_reader.reference_dependencies(target,layout,oid)
+    final.update(target_relations)
     # A target may still use an owner through another structured property.
     atoms=set()
     def collect(node):
@@ -121,5 +144,5 @@ def reconcile(request,source,target,layout,relations,oid,xml):
     for key in managed:
         if relations.get(key)==0 and key not in final and key not in atoms:relations.pop(key)
     for key in final:
-        if key!=oid:relations.setdefault(key,0)
+        if key!=oid:relations.setdefault(key,target_relations.get(key,0))
     return relations
