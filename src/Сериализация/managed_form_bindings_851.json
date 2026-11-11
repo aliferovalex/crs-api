@@ -518,7 +518,8 @@
             ]
           }
         }
-      ]
+      ],
+      "tabular_sections": true
     },
     "ChartOfCharacteristicType": {
       "form_usage": "Items",
@@ -580,6 +581,70 @@
           }
         }
       ],
+      "tabular_sections": true
+    },
+    "BusinessProcess": {
+      "types": {
+        "Object": [
+          1,
+          3
+        ]
+      },
+      "inline_groups": [
+        {
+          "slot": 6,
+          "class_id": "87c988de-ecbf-413b-87b0-b9516df05e28"
+        }
+      ],
+      "standard_fields": {},
+      "tabular_sections": true
+    },
+    "Task": {
+      "types": {
+        "Object": [
+          1,
+          3
+        ]
+      },
+      "inline_groups": [
+        {
+          "slot": 5,
+          "class_id": "8ddfb495-c5fc-46b9-bdc5-bcf58341bff0"
+        }
+      ],
+      "standard_fields": {},
+      "tabular_sections": true
+    },
+    "ExchangePlan": {
+      "types": {
+        "Object": [
+          1,
+          1
+        ]
+      },
+      "inline_groups": [
+        {
+          "slot": 3,
+          "class_id": "1a1b4fea-e093-470d-94ff-1d2f16cda2ab"
+        }
+      ],
+      "standard_fields": {},
+      "tabular_sections": true
+    },
+    "ChartOfCalculationTypes": {
+      "types": {
+        "Object": [
+          1,
+          2
+        ]
+      },
+      "inline_groups": [
+        {
+          "slot": 4,
+          "class_id": "0dc22ad2-476a-4794-afae-cfa7ed251752"
+        }
+      ],
+      "standard_fields": {},
       "tabular_sections": true
     }
   }

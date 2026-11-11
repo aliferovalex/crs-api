@@ -1,13 +1,16 @@
 """Resolve metadata Type names against source bodies or final declarations."""
 import re
 import uuid
-from xml.etree import ElementTree as E
 import native_metadata as s
 import native_references
 import native_object_profiles as profiles
 import serialization_context as contexts
 import xml_type_text as types
 import metadata_type_sets as type_sets
+import xml_namespaces
+import xml_qnames
+
+CONFIG_NAMESPACE='http://v8.1c.ru/8.1/data/enterprise/current-config'
 
 
 def reference_definition(value):
@@ -27,11 +30,24 @@ def reference_name(value):
 
 def required(xml,index=None):
     if not isinstance(xml,str) or len(xml.encode('utf-8'))>s.MAX_BYTES or '<!DOCTYPE' in xml.upper() or '<!ENTITY' in xml.upper():raise ValueError('Invalid metadata type XML')
+    root,scopes=xml_namespaces.parse(xml)
+    return required_nodes(root.iter(),index,scopes)
+
+
+def declared_type(node,scopes):
+    """Canonical internal key for a namespace-qualified XML type value."""
+    value=types.text(node)
+    namespace,name=xml_qnames.qname(value,xml_namespaces.context(scopes,node))
+    return 'cfg:'+name if namespace==CONFIG_NAMESPACE else None
+
+
+def required_nodes(nodes,index,scopes):
+    """Read declared types uniformly, independently of their containing property."""
     result=set()
-    for node in E.fromstring(xml).iter():
+    for node in nodes:
         if node.tag not in (types.Q+'Type',types.Q+'TypeSet'):continue
-        value=types.text(node)
-        if value.startswith('cfg:'):
+        value=declared_type(node,scopes)
+        if value is not None:
             if index is not None:index.reference(value)
             elif value not in type_sets.profile():reference_name(value)
             result.add(value)

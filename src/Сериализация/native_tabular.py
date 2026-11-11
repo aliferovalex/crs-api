@@ -9,8 +9,9 @@ Q='{http://v8.1c.ru/8.3/MDClasses}';XR='{http://v8.1c.ru/8.3/xcf/readable}'
 
 @lru_cache(maxsize=1)
 def kinds():
-    import native_object_profiles
-    return tuple(kind for kind in native_object_profiles.profiles() if Path(__file__).with_name(kind.lower()+'_tabular_layout_851.json').is_file())
+    import metadata_structure
+    return tuple(sorted({row['runtime_name'] for row in metadata_structure.classes().values()
+                         if Path(__file__).with_name(row['runtime_name'].lower()+'_tabular_layout_851.json').is_file()}))
 
 
 def layout(kind='Catalog'):
@@ -31,7 +32,7 @@ def collection(source,kind='Catalog'):
 
 def common(entry):
     try:
-        if len(entry)!=3 or (s.val(entry[0][0]),len(entry[0])) not in (('2',3),('2',4),('1',4),('0',2)) or len(entry[0][1])!=9 or s.val(entry[0][1][0])!='11' or s.val(entry[1])!='1':raise ValueError('Unsupported TabularSection layout')
+        if len(entry)!=3 or (s.val(entry[0][0]),len(entry[0])) not in (('2',3),('2',4),('1',3),('1',4),('0',2)) or len(entry[0][1])!=9 or s.val(entry[0][1][0])!='11' or s.val(entry[1])!='1':raise ValueError('Unsupported TabularSection layout')
         return entry[0][1][5][1]
     except (IndexError,TypeError):raise ValueError('Unsupported TabularSection layout') from None
 

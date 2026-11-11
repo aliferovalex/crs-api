@@ -41,6 +41,20 @@ class ExportCoverageTests(unittest.TestCase):
             self.check('Catalog',{'.0':b'protected'},{path:b'exported'})
         self.check('Catalog',{'.0':b'protected'},{path[:-3]+'bin':b'protected'})
 
+    def test_native_recalculation_module_is_required_and_classified_without_property_writers(self):
+        case=json.loads(Path(__file__).parent.joinpath('fixtures/native_recalculation_module.json').read_text(encoding='utf-8'))
+        oid=case['object_id'];raw=base64.b64decode(case['stream']);module=base64.b64decode(case['module'])
+        path=str(Path(case['path']).with_suffix('')/'Ext/RecordSetModule.bsl').replace('\\','/')
+        record=dict(kind='Recalculation',path=case['path'],node=ET.fromstring(case['xml'])[0])
+        self.assertEqual(native_streams.roles('Recalculation',oid,[oid+'.0',oid+'.extra']),
+                         {oid+'.0':'module',oid+'.extra':'opaque'})
+        self.assertEqual(coverage._module(raw).replace('\r\n','\n'),module.decode('utf-8-sig').replace('\r\n','\n'))
+        coverage.require_complete_export({oid+'.0':raw},{oid:record},{path:module})
+        with self.assertRaisesRegex(ValueError,'omitted native asset.*RecordSetModule.bsl'):
+            coverage.require_complete_export({oid+'.0':raw},{oid:record},{})
+        with self.assertRaisesRegex(ibcmd_backend.ExportMismatch,'omitted native asset.*RecordSetModule.bsl'):
+            ibcmd_backend.require_complete_export({oid+'.0':raw},{oid:record},{})
+
     def test_known_empty_module_and_command_interface_can_be_omitted(self):
         self.check('Catalog',{'.0':b'\xef\xbb\xbf'},{})
         self.check('Subsystem',{'.1':b'{7,0,0,0,0,0,0}'},{})

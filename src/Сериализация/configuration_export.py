@@ -11,6 +11,7 @@ import native_metadata as s
 import metadata_structure as structure
 import export_xml as preparation
 import native_object_profiles as profiles
+import xml_compare
 
 Q=preparation.Q
 D='{http://v8.1c.ru/8.3/xcf/dumpinfo}'
@@ -45,7 +46,7 @@ def inventory(directory):
         if node.tag!=Q+'MetaDataObject':continue
         kind,oid,label=preparation.metadata(raw.decode('utf-8-sig'));structure.profile(kind)
         if oid in objects:raise ValueError('Duplicate export object UUID')
-        record=dict(id=oid,kind=kind,name=label,path=name,node=node[0],files=[name],parent_id=None)
+        record=dict(id=oid,kind=kind,name=label,path=name,node=node[0],xml=raw.decode('utf-8-sig'),files=[name],parent_id=None)
         objects[oid]=record;by_path[name]=record
     if 'Configuration.xml' not in by_path or by_path['Configuration.xml']['kind']!='Configuration':raise ValueError('Complete export requires Configuration.xml')
     root=by_path['Configuration.xml'];root['parent_id']=s.ZERO;visiting=set();visited=set()
@@ -168,7 +169,7 @@ def plan(request):
         previous=relocated_files(prior,record)
         names=set(record['files'])|set(previous)
         for name in sorted(names):
-            if old_files.get(previous.get(name,name))!=new_files.get(name):changed.append(name)
+            if not xml_compare.file_equal(name,old_files.get(previous.get(name,name)),new_files.get(name)):changed.append(name)
         position_changed=prior is not None and oid in ordinals and int(s.val(objects[oid][0][10]))!=ordinals[oid]
         if prior and not changed and not position_changed:continue
         operations.append(dict(operation='Изменение' if prior else 'Создание',object_id=oid,kind=runtime_kind(record,new),

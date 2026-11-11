@@ -71,9 +71,9 @@ class CompiledGraphTests(unittest.TestCase):
         index,record,inventory,image=self.typed_index()
         value='cfg:ReportObject.TestDocument';native=self.fixtures['Report']['generated']
         self.assertEqual(index.reference(value),(native,OID))
-        xml='<Type xmlns:v8="http://v8.1c.ru/8.1/data/core"><v8:Type>'+value+'</v8:Type></Type>'
+        xml='<Type xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core"><v8:Type>'+value+'</v8:Type></Type>'
         self.assertEqual(metadata_type_references.resolve(xml,dict(_compiled_types=index)),{value:native})
-        form='<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:v8="http://v8.1c.ru/8.1/data/core"><Attributes><Attribute name="Other" id="1"><Type><v8:Type>'+value+'</v8:Type></Type></Attribute></Attributes></Form>'
+        form='<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core"><Attributes><Attribute name="Other" id="1"><Type><v8:Type>'+value+'</v8:Type></Type></Attribute></Attributes></Form>'
         self.assertEqual(form_attribute_types.resolve(form,dict(_compiled_types=index)),{value:native})
         self.assertEqual(index.object_ids_required({value}),{OID})
         with self.assertRaisesRegex(ValueError,'Unresolved compiled metadata type'):index.reference('cfg:ReportObject.Missing')

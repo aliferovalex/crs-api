@@ -56,6 +56,15 @@ class PredefinedReferenceTests(unittest.TestCase):
         plan = references.plan(dict(self.request, xml=self.xml))
         self.assertEqual(plan['objects'], [dict(object_id=self.owner, name='CRSAPI_FormOwner')])
 
+    def test_locally_bound_design_time_values_keep_the_complete_native_form_contract(self):
+        local=self.xml.replace('xmlns:xr="'+references.XR+'"','xmlns:xr="urn:foreign"').replace(
+            'xsi:type="xr:DesignTimeRef"','xmlns:xr="'+references.XR+'" xsi:type="xr:DesignTimeRef"')
+        self.assertNotEqual(local,self.xml)
+        self.assertEqual(references.resolve_values(local,self.request),references.resolve_values(self.xml,self.request))
+        owner=s.Parser(self.image[self.owner].decode('utf-8-sig')).documents()[0]
+        compiled.validate_form_interface(local,owner,'Catalog',self.image[self.case['form_id']+'.0'],self.request)
+        self.assertEqual(references.plan(dict(self.request,xml=local)),references.plan(dict(self.request,xml=self.xml)))
+
     def test_dependencies_are_added_and_removed_without_losing_opaque_links(self):
         parent = next(oid for oid, row in self.index.inventory.items() if row['kind'] == 'Catalog' and oid != self.owner)
         opaque = '77777777-7777-4777-8777-777777777777'

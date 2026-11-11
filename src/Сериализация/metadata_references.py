@@ -2,11 +2,10 @@
 import metadata_context
 import re
 import uuid
-from xml.etree import ElementTree as E
 import native_metadata as s
 import metadata_identifiers as ids
 import xml_qnames as values
-import xml_namespace_bindings
+import xml_namespaces
 import native_predefined_reader
 
 XR='http://v8.1c.ru/8.3/xcf/readable'
@@ -30,10 +29,10 @@ def reference_name(reference):
 def required(xml):
     if xml is None:return set()
     if not isinstance(xml,str) or len(xml.encode('utf-8'))>s.MAX_BYTES or '<!DOCTYPE' in xml.upper() or '<!ENTITY' in xml.upper():raise ValueError('Invalid reference XML')
-    bindings=xml_namespace_bindings.namespaces(xml);result=set()
-    for node in E.fromstring(xml).iter():
+    root,scopes=xml_namespaces.parse(xml);result=set()
+    for node in root.iter():
         kind=node.get(values.XSI+'type')
-        if kind is not None and values.qname(kind,bindings)==(XR,'DesignTimeRef'):
+        if kind is not None and values.qname(kind,xml_namespaces.context(scopes,node))==(XR,'DesignTimeRef'):
             if len(node) or set(node.attrib)!={values.XSI+'type'}:raise ValueError('Invalid design-time reference value')
             ref=node.text or '';reference_name(ref);result.add(ref)
     return result

@@ -41,6 +41,26 @@ class ExportMismatch(ValueError):
     """The compiler reported success but did not preserve the full target."""
 
 
+def retain_unchanged_objects(before,candidate,source_records,target_records,objects,baseline_files,target_files):
+    """Keep source native records for owners whose complete export is unchanged.
+
+    A base-free build may normalize unrelated native objects. Select by the
+    complete owned file set, never by application properties or native slots.
+    The assembled image must still pass the mandatory whole-tree export check.
+    """
+    unchanged={oid for oid in source_records.keys() & target_records.keys()
+               if source_records[oid]['path']==target_records[oid]['path']
+               and set(source_records[oid]['files'])==set(target_records[oid]['files'])
+               and all(xml_compare.file_equal(name,baseline_files[name],target_files[name]) for name in source_records[oid]['files'])}
+    delta=compiled_image.Delta(before,candidate,source_records,target_records,objects)
+    result=dict(candidate)
+    for name,owner in delta.records.items():
+        if owner not in unchanged:continue
+        if name in before:result[name]=before[name]
+        else:result.pop(name,None)
+    return result
+
+
 def read_cf(path):
     """Read the effective image, without mixing compatibility-container roots."""
     path = Path(path)
@@ -107,9 +127,7 @@ def write_cf(path, members):
 
 
 def canonical(text):
-    if '<!DOCTYPE' in text.upper():
-        raise ValueError('DOCTYPE is unsupported in compiler XML')
-    return xml_compare.canonical(E.fromstring(text))
+    return xml_compare.document(text)
 
 
 def align_xml(text, template):
@@ -152,13 +170,8 @@ def verify_export(target_files,exported,image=None):
     if actual_names!=expected_names:
         raise ExportMismatch('ibcmd output file set differs from complete target export: '+str(sorted(actual_names^expected_names)[:20]))
     for name in sorted(expected_names):
-        expected=target_files[name];actual=actual_files[name];suffix=Path(name).suffix.lower()
-        if suffix in ('.xml','.bsl','.txt'):
-            expected=expected.decode('utf-8-sig').replace('\r\n','\n')
-            actual=actual.decode('utf-8-sig').replace('\r\n','\n')
-            equal=canonical(expected)==canonical(actual) if suffix=='.xml' else expected==actual
-        else:equal=expected==actual
-        if not equal:raise ExportMismatch('ibcmd output differs from target XML/file: '+name)
+        if not xml_compare.file_equal(name,target_files[name],actual_files[name]):
+            raise ExportMismatch('ibcmd output differs from target XML/file: '+name)
 
 
 class Compiler:
@@ -201,7 +214,7 @@ class Compiler:
                                       [row.get('code') for row in report.get('errors',[]) if isinstance(row,dict)])
         return report
 
-    def compile_tree(self,source,normalized,output,before,platform,verify=None):
+    def compile_tree(self,source,normalized,output,before,platform,verify=None,assemble=None):
         """Both routes use ibcmd; neither writes application properties here."""
         self.route='overlay'
         try:
@@ -222,6 +235,7 @@ class Compiler:
             # native contents below still pass the whole-tree reverse check,
             # delta ownership and repository identity/dependency validation.
             image['version']=before['version']
+            if assemble is not None:image=assemble(image)
             write_cf(output,image)
             self.route='bootstrap'
             if verify is not None:
@@ -292,7 +306,9 @@ class Compiler:
             exported=self.work/('exported-'+self.route)
             self.execute('cf','export',path,exported,'--platform',request['platform'])
             verify_export(target_files,exported,read_cf(path))
-        self.compile_tree(source,normalized,output,before,request['platform'],verify)
+        def assemble(candidate):
+            return retain_unchanged_objects(before,candidate,source_records,target,objects,baseline_files,target_files)
+        self.compile_tree(source,normalized,output,before,request['platform'],verify,assemble)
         self.after = read_cf(output)
         self.delta=compiled_image.Delta(before,self.after,objects,target,objects)
         self.object_ids.update(self.delta.objects)

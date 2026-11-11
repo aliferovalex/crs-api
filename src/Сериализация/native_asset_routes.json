@@ -256,6 +256,14 @@
       "codec": "Module"
     },
     {
+      "family": "Recalculation",
+      "role": "RecordSetModule",
+      "suffix": ".0",
+      "path": "Ext/RecordSetModule.bsl",
+      "codec": "Module",
+      "evidence": "Native Designer 8.5.1.1529 XML load, CF dump and independent XML export"
+    },
+    {
       "family": "CalculationRegister",
       "role": "ManagerModule",
       "suffix": ".2",

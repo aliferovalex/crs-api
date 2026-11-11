@@ -1,10 +1,10 @@
 """Resolve form reference types through version-checked native metadata bodies."""
 import metadata_context
-from xml.etree import ElementTree as E
 import native_metadata as s
 import metadata_identifiers as ids
 import metadata_type_references as references
 import metadata_type_sets as type_sets
+import xml_namespaces
 
 Q='{http://v8.1c.ru/8.3/xcf/logform}'
 CORE='{http://v8.1c.ru/8.1/data/core}'
@@ -13,19 +13,16 @@ CORE='{http://v8.1c.ru/8.1/data/core}'
 def required(xml,index=None):
     if xml is None:return set()
     if not isinstance(xml,str) or len(xml.encode('utf-8'))>s.MAX_BYTES or '<!DOCTYPE' in xml.upper() or '<!ENTITY' in xml.upper():raise ValueError('Invalid reference type XML')
-    result=set()
-    root=E.fromstring(xml)
-    for attr in list(root.iter(Q+'Attribute'))+list(root.iter(Q+'Column')):
-        if attr.findtext(Q+'MainAttribute')=='true':continue
+    root,scopes=xml_namespaces.parse(xml)
+    # Only the main attribute's own type is supplied by its final owner.
+    # Columns below it, parameters and every other declaration still have
+    # independent reference dependencies, even when no control uses them.
+    main_types=set()
+    for attr in root.findall(Q+'Attributes/'+Q+'Attribute'):
+        if attr.findtext(Q+'MainAttribute')!='true':continue
         node=attr.find(Q+'Type')
-        if node is None:continue
-        for child in node:
-            value=child.text or ''
-            if child.tag not in (CORE+'Type',CORE+'TypeSet') or not value.startswith('cfg:'):continue
-            if index is not None:index.reference(value)
-            elif value not in type_sets.profile():references.reference_definition(value)
-            result.add(value)
-    return result
+        if node is not None:main_types.update(node.iter())
+    return references.required_nodes((node for node in root.iter() if node not in main_types),index,scopes)
 
 
 def reference_name(value):

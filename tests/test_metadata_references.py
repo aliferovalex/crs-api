@@ -16,7 +16,7 @@ import native_form_reader as x
 class ReferenceTests(unittest.TestCase):
     def test_explicit_false_main_flag_does_not_hide_local_reference_dependencies(self):
         import form_attribute_types as types
-        xml='<Form xmlns="'+types.Q[1:-1]+'" xmlns:v8="'+types.CORE[1:-1]+'"><Attributes><Attribute name="Local" id="1"><Type><v8:Type>cfg:CatalogRef.Other</v8:Type></Type><MainAttribute>false</MainAttribute></Attribute></Attributes></Form>'
+        xml='<Form xmlns="'+types.Q[1:-1]+'" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="'+types.CORE[1:-1]+'"><Attributes><Attribute name="Local" id="1"><Type><v8:Type>cfg:CatalogRef.Other</v8:Type></Type><MainAttribute>false</MainAttribute></Attribute></Attributes></Form>'
         self.assertEqual(types.required(xml),{'cfg:CatalogRef.Other'})
         self.assertEqual(types.required(xml.replace('false','true')),set())
 
@@ -81,6 +81,34 @@ class ReferenceTests(unittest.TestCase):
         self.assertEqual(refs.resolve(None,{}),{})
         self.assertEqual(refs.resolve('<Form/>',{}),{})
         with self.assertRaises(ValueError):refs.required('<!DOCTYPE Form><Form/>')
+
+    def test_design_time_value_uses_its_local_namespace_scope(self):
+        xml=('<Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xr="urn:foreign">'
+             '<Value xmlns:xr="'+refs.XR+'" xsi:type="xr:DesignTimeRef">Enum.Test.EnumValue.First</Value>'
+             '<Value xsi:type="xr:DesignTimeRef">Not.A.Configuration.Reference</Value>'
+             '<Value xmlns:ref="'+refs.XR+'" xsi:type="ref:DesignTimeRef">Catalog.Test.EmptyRef</Value>'
+             '</Form>')
+        self.assertEqual(refs.required(xml),{'Enum.Test.EnumValue.First','Catalog.Test.EmptyRef'})
+
+    def test_unbound_design_time_value_prefix_and_malformed_values_are_rejected(self):
+        prefix='<Value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
+        with self.assertRaisesRegex(ValueError,'Unbound XML type QName'):
+            refs.required(prefix+'xsi:type="missing:DesignTimeRef">Catalog.Test.EmptyRef</Value>')
+        for extra,content in [(' extra="1"','Catalog.Test.EmptyRef'),('','<Nested/>')]:
+            xml=prefix+'xmlns:xr="'+refs.XR+'" xsi:type="xr:DesignTimeRef"'+extra+'>'+content+'</Value>'
+            with self.subTest(xml=xml),self.assertRaisesRegex(ValueError,'Invalid design-time reference'):
+                refs.required(xml)
+
+    def test_scoped_enum_values_resolve_and_plan_against_the_same_native_snapshot(self):
+        request,storage=self.fixture();xml=self.interfaces['cases'][0]['xml']
+        expected=refs.resolve(xml,request,storage)
+        # A root binding may be unrelated; each actual value supplies its own
+        # readable namespace. All generated/native identities must stay equal.
+        local=xml.replace('xmlns:xr="'+refs.XR+'"','xmlns:xr="urn:foreign"').replace(
+            'xsi:type="xr:DesignTimeRef"','xmlns:xr="'+refs.XR+'" xsi:type="xr:DesignTimeRef"')
+        self.assertNotEqual(local,xml)
+        self.assertEqual(refs.resolve(local,request,storage),expected)
+        self.assertEqual(refs.plan(dict(request,xml=local)),refs.plan(dict(request,xml=xml)))
 
     def test_removed_enum_value_requires_matching_feature_map(self):
         case=self.witness[0];body=s.Parser(case['body']).documents()[0];meta=s.Parser(case['metadata']).documents()[0]

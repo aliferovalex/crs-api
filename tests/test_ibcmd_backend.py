@@ -145,6 +145,49 @@ class BackendTests(unittest.TestCase):
                     with self.assertRaisesRegex(ValueError,'root identity' if foreign else 'overlay rejection.*bootstrap rejection'):
                         compiler.compile_tree(source,self.base,compiler.work/'target.cf',self.image,'8.5.1.1529')
 
+    def test_base_free_assembly_is_followed_by_full_export_verification(self):
+        for matches in (True,False):
+            with self.subTest(matches=matches),self.compiler() as compiler:
+                source=compiler.work/'source';source.mkdir();events=[]
+                def execute(*args):
+                    if args[:2]==('cf','load'):raise backend.CompilationRejected('overlay rejected')
+                    backend.write_cf(Path(args[3]),self.image)
+                def assemble(image):
+                    events.append('assemble');return dict(image,object=b'preserved source')
+                def verify(path):
+                    events.append('verify');self.assertEqual(backend.read_cf(path)['object'],b'preserved source')
+                    if not matches:raise backend.ExportMismatch('target still differs')
+                with mock.patch.object(compiler,'execute',side_effect=execute):
+                    if matches:compiler.compile_tree(source,self.base,compiler.work/'out.cf',self.image,'8.5.1.1529',verify,assemble)
+                    else:
+                        with self.assertRaisesRegex(backend.CompilationRejected,'target still differs'):
+                            compiler.compile_tree(source,self.base,compiler.work/'out.cf',self.image,'8.5.1.1529',verify,assemble)
+                self.assertEqual(events,['assemble','verify'])
+
+    def test_base_free_preserves_all_records_only_for_completely_unchanged_owners(self):
+        records={'object':dict(path='Object.xml',files=['Object.xml','Object/Module.bsl']),
+                 'other':dict(path='Other.xml',files=['Other.xml','Other/Form.xml'])}
+        files={'Object.xml':b'<Object>old</Object>','Object/Module.bsl':b'old module','Other.xml':b'<Other/>','Other/Form.xml':b'<Form/>'}
+        before=dict(self.image,other=b'original other',**{'other.0':b'original form','other.1':b'original binary'})
+        candidate=dict(self.image,object=b'compiled edit',other=b'normalized other',**{'other.0':b'normalized form','other.extra':b'compiler addition'})
+        target=dict(files,**{'Object.xml':b'<Object>edited</Object>'})
+        result=backend.retain_unchanged_objects(before,candidate,records,records,{},files,target)
+        self.assertEqual(result,dict(before,object=b'compiled edit'))
+        # A companion-only edit makes the owner changed too; none of its
+        # native streams may be silently restored from the source.
+        target['Other/Form.xml']=b'<Form>edited</Form>'
+        self.assertEqual(backend.retain_unchanged_objects(before,candidate,records,records,{},files,target),candidate)
+        candidate['unclassified']=b'cannot be hidden'
+        with self.assertRaisesRegex(ValueError,'Unclassified native CF record'):
+            backend.retain_unchanged_objects(before,candidate,records,records,{},files,target)
+
+    def test_base_free_keeps_unchanged_owner_despite_xml_and_module_formatting(self):
+        records={'object':dict(path='Object.xml',files=['Object.xml','Object/Module.bsl'])}
+        files={'Object.xml':b'<Object><Name>Same</Name></Object>','Object/Module.bsl':b'// unchanged\r\n'}
+        target={'Object.xml':b'\xef\xbb\xbf<Object>\n  <Name>Same</Name>\n</Object>','Object/Module.bsl':b'\xef\xbb\xbf// unchanged\n'}
+        candidate=dict(self.image,object=b'compiler normalization',**{'object.0':b'new stream'})
+        self.assertEqual(backend.retain_unchanged_objects(self.image,candidate,records,records,{},files,target),self.image)
+
     def test_invalid_reports_and_timeouts_do_not_trigger_another_route(self):
         with self.compiler() as compiler,mock.patch.object(compiler,'execute',side_effect=ValueError('invalid JSON')) as execute:
             with self.assertRaisesRegex(ValueError,'invalid JSON'):

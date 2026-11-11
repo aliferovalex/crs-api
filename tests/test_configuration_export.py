@@ -51,6 +51,32 @@ class ConfigurationExportTests(unittest.TestCase):
     def test_unchanged_export_skips_unsupported_but_version_verified_classes(self):
         result=self.plan();self.assertEqual(result['operations'],[]);self.assertEqual(result['unchanged_count'],len(self.objects))
 
+    def test_formatting_only_changes_do_not_capture_objects_but_fingerprints_stay_raw(self):
+        for path in self.new.rglob('*'):
+            if not path.is_file():continue
+            if path.suffix=='.xml':
+                tree=E.parse(path);E.indent(tree,space='   ');tree.write(path,encoding='utf-8')
+            elif path.suffix=='.bsl':
+                path.write_bytes(b'\xef\xbb\xbf'+path.read_bytes()+b'\r\n')
+                original=(self.old/path.relative_to(self.new));original.write_bytes(original.read_bytes()+b'\n')
+        result=self.plan()
+        self.assertEqual(result['operations'],[])
+        self.assertEqual(result['capture_ids'],[])
+        self.assertNotEqual(result['target_fingerprint'],result['baseline_fingerprint'])
+
+    def test_inventory_keeps_original_xml_for_namespace_qualified_type_values(self):
+        import metadata_type_references as references
+        path=self.new/'Configuration.xml';tree=E.parse(path);root=tree.getroot()
+        root.set('xmlns:project',references.CONFIG_NAMESPACE)
+        props=root[0].find(export.Q+'Properties');node=E.SubElement(props,export.Q+'Type')
+        E.SubElement(node,'{http://v8.1c.ru/8.1/data/core}Type').text='project:CatalogRef.Test'
+        tree.write(path,encoding='utf-8')
+        _,_,_,record=export.inventory(self.new)
+        self.assertEqual(record['xml'],path.read_text(encoding='utf-8'))
+        self.assertEqual(references.required(record['xml']),{'cfg:CatalogRef.Test'})
+        with self.assertRaisesRegex(ValueError,'Unbound XML type QName'):
+            references.required(E.tostring(record['node'],encoding='unicode'))
+
     def test_xml_and_module_changes_select_their_owners_despite_stale_dumpinfo(self):
         owner=self.fixture['request']['parent_id'];form=self.fixture['remaining_form_id']
         path=self.new/self.paths[owner];top=E.parse(path)

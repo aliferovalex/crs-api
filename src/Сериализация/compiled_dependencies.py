@@ -87,7 +87,7 @@ def reconcile(request,change,body,image,previous=None,source_body=None,source_im
     if source_body is not None:
         source=request['_source_types'];old=source.inventory[oid]
         validate_surviving_types(old,record)
-        managed=references(source,old,source_body,source_image,E.tostring(old['node'],encoding='unicode'))
+        managed=references(source,old,source_body,source_image,old.get('xml',E.tostring(old['node'],encoding='unicode')))
         for owner in managed:
             if owner not in final and result.get(owner) in (0,1):result.pop(owner)
     for owner,flag in final.items():result.setdefault(owner,flag)

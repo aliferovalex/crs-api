@@ -82,7 +82,7 @@
       "name": "form_attribute_types",
       "language": "Python",
       "path": "src/Сериализация/form_attribute_types.py",
-      "purpose": "Типы реквизитов формы, включая составные и коллекционные."
+      "purpose": "Типы всех объявлений формы: реквизиты, колонки и параметры; общий читатель типов метаданных."
     },
     "python:ibcmd_backend": {
       "name": "ibcmd_backend",
@@ -310,19 +310,13 @@
       "name": "xml_compare",
       "language": "Python",
       "path": "src/Сериализация/xml_compare.py",
-      "purpose": "Чтение и проверка XML: xml_compare."
+      "purpose": "Общее сравнение XML/QName и содержимого файлов для плана, сборки CF и обратной сверки; проверка имён."
     },
     "python:xml_git": {
       "name": "xml_git",
       "language": "Python",
       "path": "src/Сериализация/xml_git.py",
       "purpose": "XML-проект Git: коммит каждой полученной версии хранилища в настраиваемой source_branch, трёхстороннее слияние и отдельные рабочие копии без изменения входных папок."
-    },
-    "python:xml_namespace_bindings": {
-      "name": "xml_namespace_bindings",
-      "language": "Python",
-      "path": "src/Сериализация/xml_namespace_bindings.py",
-      "purpose": "Чтение и проверка XML: xml_namespace_bindings."
     },
     "python:xml_namespaces": {
       "name": "xml_namespaces",
@@ -1487,6 +1481,10 @@
       "callee": "python:serialization_context"
     },
     {
+      "caller": "python:compiled_metadata",
+      "callee": "python:xml_namespaces"
+    },
+    {
       "caller": "python:configuration_commit",
       "callee": "python:compiled_creation"
     },
@@ -1573,6 +1571,10 @@
     {
       "caller": "python:configuration_export",
       "callee": "python:serializer_cli"
+    },
+    {
+      "caller": "python:configuration_export",
+      "callee": "python:xml_compare"
     },
     {
       "caller": "python:export_coverage",
@@ -1689,6 +1691,10 @@
     {
       "caller": "python:form_attribute_types",
       "callee": "python:native_metadata"
+    },
+    {
+      "caller": "python:form_attribute_types",
+      "callee": "python:xml_namespaces"
     },
     {
       "caller": "python:ibcmd_backend",
@@ -1812,7 +1818,7 @@
     },
     {
       "caller": "python:metadata_references",
-      "callee": "python:xml_namespace_bindings"
+      "callee": "python:xml_namespaces"
     },
     {
       "caller": "python:metadata_references",
@@ -1873,6 +1879,14 @@
     {
       "caller": "python:metadata_type_references",
       "callee": "python:serialization_context"
+    },
+    {
+      "caller": "python:metadata_type_references",
+      "callee": "python:xml_namespaces"
+    },
+    {
+      "caller": "python:metadata_type_references",
+      "callee": "python:xml_qnames"
     },
     {
       "caller": "python:metadata_type_references",
@@ -2084,11 +2098,11 @@
     },
     {
       "caller": "python:native_tabular",
-      "callee": "python:native_metadata"
+      "callee": "python:metadata_structure"
     },
     {
       "caller": "python:native_tabular",
-      "callee": "python:native_object_profiles"
+      "callee": "python:native_metadata"
     },
     {
       "caller": "python:object_changes",
@@ -2251,6 +2265,10 @@
       "callee": "python:xml_namespaces"
     },
     {
+      "caller": "python:xml_compare",
+      "callee": "python:xml_qnames"
+    },
+    {
       "caller": "python:xml_git",
       "callee": "python:compiled_graph"
     },
@@ -2273,10 +2291,6 @@
     {
       "caller": "python:xml_git",
       "callee": "python:serializer_cli"
-    },
-    {
-      "caller": "python:xml_namespace_bindings",
-      "callee": "python:xml_namespaces"
     }
   ],
   "calls": [
@@ -2921,6 +2935,7 @@
       "caller": "python:compiled_metadata",
       "callee": "python:metadata_type_references",
       "functions": [
+        "declared_type",
         "reconcile",
         "resolve",
         "type_ids"
@@ -2996,6 +3011,13 @@
         "external_versions",
         "original_version",
         "read"
+      ]
+    },
+    {
+      "caller": "python:compiled_metadata",
+      "callee": "python:xml_namespaces",
+      "functions": [
+        "parse"
       ]
     },
     {
@@ -3174,6 +3196,13 @@
       ]
     },
     {
+      "caller": "python:configuration_export",
+      "callee": "python:xml_compare",
+      "functions": [
+        "file_equal"
+      ]
+    },
+    {
       "caller": "python:export_coverage",
       "callee": "python:cf_container",
       "functions": [
@@ -3345,8 +3374,8 @@
       "caller": "python:form_attribute_types",
       "callee": "python:metadata_type_references",
       "functions": [
-        "reference_definition",
         "reference_name",
+        "required_nodes",
         "required_object_ids",
         "resolve_required"
       ]
@@ -3363,6 +3392,13 @@
       "callee": "python:native_metadata",
       "functions": [
         "val"
+      ]
+    },
+    {
+      "caller": "python:form_attribute_types",
+      "callee": "python:xml_namespaces",
+      "functions": [
+        "parse"
       ]
     },
     {
@@ -3443,7 +3479,8 @@
       "caller": "python:ibcmd_backend",
       "callee": "python:xml_compare",
       "functions": [
-        "canonical"
+        "document",
+        "file_equal"
       ]
     },
     {
@@ -3594,9 +3631,10 @@
     },
     {
       "caller": "python:metadata_references",
-      "callee": "python:xml_namespace_bindings",
+      "callee": "python:xml_namespaces",
       "functions": [
-        "namespaces"
+        "context",
+        "parse"
       ]
     },
     {
@@ -3710,6 +3748,21 @@
       "callee": "python:serialization_context",
       "functions": [
         "decode"
+      ]
+    },
+    {
+      "caller": "python:metadata_type_references",
+      "callee": "python:xml_namespaces",
+      "functions": [
+        "context",
+        "parse"
+      ]
+    },
+    {
+      "caller": "python:metadata_type_references",
+      "callee": "python:xml_qnames",
+      "functions": [
+        "qname"
       ]
     },
     {
@@ -4077,16 +4130,16 @@
     },
     {
       "caller": "python:native_tabular",
-      "callee": "python:native_metadata",
+      "callee": "python:metadata_structure",
       "functions": [
-        "val"
+        "classes"
       ]
     },
     {
       "caller": "python:native_tabular",
-      "callee": "python:native_object_profiles",
+      "callee": "python:native_metadata",
       "functions": [
-        "profiles"
+        "val"
       ]
     },
     {
@@ -4412,6 +4465,21 @@
       ]
     },
     {
+      "caller": "python:xml_compare",
+      "callee": "python:xml_namespaces",
+      "functions": [
+        "context",
+        "parse"
+      ]
+    },
+    {
+      "caller": "python:xml_compare",
+      "callee": "python:xml_qnames",
+      "functions": [
+        "qname"
+      ]
+    },
+    {
       "caller": "python:xml_git",
       "callee": "python:compiled_graph",
       "functions": [
@@ -4456,13 +4524,6 @@
       "functions": [
         "run",
         "run.mkdir"
-      ]
-    },
-    {
-      "caller": "python:xml_namespace_bindings",
-      "callee": "python:xml_namespaces",
-      "functions": [
-        "namespace_bindings"
       ]
     }
   ]

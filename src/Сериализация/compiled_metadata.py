@@ -22,6 +22,7 @@ import metadata_references
 import native_configuration_reader
 import native_object_reader
 import compiled_dependencies
+import xml_namespaces
 
 OWNERS = {'Catalog', 'Document', 'DataProcessor', 'Report'}
 
@@ -139,12 +140,13 @@ def reconcile_owner(request, change, objects, source, target, docs):
 
 def validate_form_paths(xml, owner, kind):
     paths = native_form_reader.object_paths(owner, kind)
-    root = E.fromstring(xml)
+    root,scopes = xml_namespaces.parse(xml)
     main = [node for node in root.findall(FORM + 'Attributes/' + FORM + 'Attribute') if node.findtext(FORM + 'MainAttribute') == 'true']
     if len(main)>1:raise ValueError('Compiled form has multiple main attributes')
     if not main:return None
     alias = main[0].get('name')
-    key = main[0].findtext(FORM + 'Type/' + '{http://v8.1c.ru/8.1/data/core}Type')
+    node = main[0].find(FORM + 'Type/' + '{http://v8.1c.ru/8.1/data/core}Type')
+    key = None if node is None else metadata_type_references.declared_type(node,scopes)
     if key not in paths.main_types:raise ValueError('Compiled main attribute type differs from its owner')
     for node in root.iter(FORM + 'DataPath'):
         value = node.text or ''

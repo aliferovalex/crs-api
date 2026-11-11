@@ -78,6 +78,34 @@ class ContractTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'undeclared main'):
                 compiled.validate_form_interface(xml,owner,'Catalog',raw,{})
 
+    def test_declared_parameter_type_must_be_present_in_compiled_whole_form(self):
+        fixture=json.loads(Path(__file__).with_name('fixtures').joinpath('compiled_owners.json').read_text(encoding='utf-8'))
+        owner=s.Parser(fixture['Catalog']['before']).documents()[0]
+        raw=native_form_profiles.owner_profiles()['Catalog']['external_template'].encode()
+        xml=('<Form xmlns="'+compiled.FORM[1:-1]+'" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core">'
+             '<Parameters><Parameter name="Selected" id="1"><Type>'
+             '<v8:Type>cfg:CatalogRef.Other</v8:Type></Type></Parameter></Parameters></Form>')
+        index=types.SimpleNamespace(reference=mock.Mock(),resolve_required=lambda refs:{ref:GENERATED for ref in refs})
+        with self.assertRaisesRegex(ValueError,'missing declared native reference'):
+            compiled.validate_form_interface(xml,owner,'Catalog',raw,{'_compiled_types':index})
+        index.reference.assert_called_with('cfg:CatalogRef.Other')
+
+    def test_real_compiled_parameter_type_passes_and_missing_native_uuid_fails(self):
+        case=json.loads(Path(__file__).with_name('fixtures').joinpath('compiled_form_parameter.json').read_text(encoding='utf-8'))
+        owner=s.Parser(case['owner']).documents()[0]
+        index=types.SimpleNamespace(reference=mock.Mock(),resolve_required=lambda refs:{ref:case['type_id'] for ref in refs})
+        request={'_compiled_types':index}
+        compiled.validate_form_interface(case['xml'],owner,'Catalog',case['interface'].encode(),request)
+        index.reference.assert_called_with(case['type_name'])
+        alias_xml=case['xml'].replace('xmlns:cfg=','xmlns:project=').replace('cfg:','project:')
+        compiled.validate_form_interface(alias_xml,owner,'Catalog',case['interface'].encode(),request)
+        wrong_namespace=case['xml'].replace('http://v8.1c.ru/8.1/data/enterprise/current-config','urn:other')
+        with self.assertRaisesRegex(ValueError,'main attribute type differs'):
+            compiled.validate_form_interface(wrong_namespace,owner,'Catalog',case['interface'].encode(),request)
+        damaged=case['interface'].replace(case['type_id'],GENERATED).encode()
+        with self.assertRaisesRegex(ValueError,'missing declared native reference'):
+            compiled.validate_form_interface(case['xml'],owner,'Catalog',damaged,request)
+
     def test_form_reference_proof_uses_authoritative_storage_without_extra_snapshots(self):
         fixture=json.loads(Path(__file__).with_name('fixtures').joinpath('compiled_owners.json').read_text(encoding='utf-8'))
         owner=s.Parser(fixture['Catalog']['before']).documents()[0]
@@ -133,7 +161,7 @@ class ContractTests(unittest.TestCase):
 
     def owner_xml(self, kind, ids):
         attributes = ''.join('<Attribute uuid="' + oid + '"><Properties><Name>Field' + str(index) + '</Name><Type><v8:Type>xs:string</v8:Type><v8:StringQualifiers><v8:Length>30</v8:Length><v8:AllowedLength>Variable</v8:AllowedLength></v8:StringQualifiers></Type></Properties></Attribute>' for index, oid in enumerate(ids))
-        return ('<MetaDataObject xmlns="' + compiled.Q[1:-1] + '" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.21"><' + kind + ' uuid="' + OID + '"><Properties><Name>TestDocument</Name></Properties><ChildObjects>' + attributes + '</ChildObjects></' + kind + '></MetaDataObject>')
+        return ('<MetaDataObject xmlns="' + compiled.Q[1:-1] + '" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.21"><' + kind + ' uuid="' + OID + '"><Properties><Name>TestDocument</Name></Properties><ChildObjects>' + attributes + '</ChildObjects></' + kind + '></MetaDataObject>')
 
     def compiled_feature_change(self, kind, final_ids, tamper_generated=False):
         old, new = self.owner_xml(kind, [FEATURE]), self.owner_xml(kind, final_ids)
@@ -181,7 +209,7 @@ class ContractTests(unittest.TestCase):
         text = self.owner_xml('Document', [FEATURE])
         raw = json.loads(Path(__file__).with_name('fixtures').joinpath('compiled_owners.json').read_text(encoding='utf-8'))['Document']['before'].encode('utf-8')
         body = s.Parser(raw.decode('utf-8-sig')).documents()[0]
-        form = '<Form xmlns="' + compiled.FORM[1:-1] + '" xmlns:v8="http://v8.1c.ru/8.1/data/core"><ChildItems><InputField name="Field" id="2"><DataPath>Object.Field0</DataPath></InputField></ChildItems><Attributes><Attribute name="Object" id="1"><Type><v8:Type>cfg:DocumentObject.TestDocument</v8:Type></Type><MainAttribute>true</MainAttribute></Attribute></Attributes></Form>'
+        form = '<Form xmlns="' + compiled.FORM[1:-1] + '" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:v8="http://v8.1c.ru/8.1/data/core"><ChildItems><InputField name="Field" id="2"><DataPath>Object.Field0</DataPath></InputField></ChildItems><Attributes><Attribute name="Object" id="1"><Type><v8:Type>cfg:DocumentObject.TestDocument</v8:Type></Type><MainAttribute>true</MainAttribute></Attribute></Attributes></Form>'
         self.assertTrue(compiled.validate_form_paths(form, body, 'Document'))
         self.assertTrue(compiled.validate_form_paths(form.replace('Object.Field0','Local.Value'),body,'Document'))
         self.assertIsNone(compiled.validate_form_paths('<Form xmlns="'+compiled.FORM[1:-1]+'"><Attributes/></Form>',body,'Document'))
