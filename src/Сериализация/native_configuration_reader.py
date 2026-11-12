@@ -118,3 +118,39 @@ def configuration_properties(documents, platform='8.5.4.1878'):
         if not isinstance(props[index], Atom) or not props[index].quoted:
             raise ValueError('Unsupported string property layout')
     return props
+
+
+def configuration_version(documents,object_id,platform):
+    """Read Version without claiming support for every property of an old root.
+
+    Real 8.3.27 roots also use the retained 68/61 layout. Its common prefix and
+    Version slot match the later root, while its opaque tail has a different
+    shape. Do not admit it to the complete-property reader/serializer.
+    """
+    if (len(documents)!=1 or not isinstance(documents[0],list) or len(documents[0])<4
+            or val(documents[0][0])!='2' or not isinstance(documents[0][1],list)
+            or len(documents[0][1])!=1 or val(documents[0][1][0]).lower()!=object_id.lower()):
+        raise ValueError('Configuration version source UUID mismatch')
+    groups=[g for g in documents[0][3:] if isinstance(g,list) and len(g)==2
+            and isinstance(g[0],Atom) and val(g[0])==ROOT_FEATURE_CLASS]
+    if len(groups)!=1:raise ValueError('Unsupported Configuration version feature')
+    outer=groups[0][1]
+    if not isinstance(outer,list) or len(outer)<2 or val(outer[0])!='1' or not isinstance(outer[1],list):
+        raise ValueError('Unsupported Configuration version wrapper')
+    props=outer[1]
+    if len(props)==61 and val(props[0])=='68':
+        wrapper=props[1]
+        if not isinstance(wrapper,list) or len(wrapper)!=2 or val(wrapper[0])!='0' or not isinstance(wrapper[1],list):
+            raise ValueError('Invalid retained Configuration common wrapper')
+        common=wrapper[1]
+        if (len(common)!=9 or val(common[0])!='3' or not isinstance(common[1],list) or len(common[1])!=3
+                or [val(v) for v in common[1][:2]]!=['1','0']
+                or str(uuid.UUID(val(common[1][2])))==ZERO
+                or not isinstance(common[4],Atom) or not common[4].quoted):
+            raise ValueError('Invalid retained Configuration identity')
+    else:
+        common_properties(documents,object_id,platform)
+        props=configuration_properties(documents,platform)
+    value=props[PROPERTY_SLOTS['Version']]
+    if not isinstance(value,Atom) or not value.quoted:raise ValueError('Configuration Version is not a string')
+    return val(value)

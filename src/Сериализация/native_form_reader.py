@@ -19,13 +19,18 @@ def scalar_type(pattern):
 
 def tabular_paths(owner,kind,paths):
     import native_tabular as tabular
+    import native_form_bindings as bindings
     for entry in tabular.collection(owner,kind):
         common=tabular.common(entry);name='Object.'+s.val(common[2]);oid=s.val(common[1][2])
         if name in paths:raise ValueError('Ambiguous tabular form binding')
         paths[name]=s.Parser('{2,{1},{0,'+oid+'}}').documents()[0];paths.tables.add(name)
+        for column,(code,type_code) in bindings.profile()['tabular_standard_fields'].items():
+            field=name+'.'+column
+            paths[field]=[s.atom(3),[s.atom(1)],[s.atom(0),s.atom(oid)],[s.atom(code)]]
+            paths.types[field]=type_code
         for attr in tabular.attributes(entry):
             common=attr[0][1][1][1];field=name+'.'+s.val(common[2])
-            if field in paths:raise ValueError('Ambiguous tabular attribute form binding')
+            if any(field.casefold()==key.casefold() for key in paths):raise ValueError('Ambiguous tabular attribute form binding')
             paths[field]=s.Parser('{3,{1},{0,'+oid+'},{0,'+s.val(common[1][2])+'}}').documents()[0]
             paths.types[field]=scalar_type(attr[0][1][1][2])
     return paths

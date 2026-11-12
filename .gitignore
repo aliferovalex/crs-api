@@ -6,4 +6,7 @@ coverage
 __pycache__/
 .python-deps/
 .crs-cache/
+.crs-agent/
+.crs-operations/
+.crs-cli.local.json
 .vscode/launch.json

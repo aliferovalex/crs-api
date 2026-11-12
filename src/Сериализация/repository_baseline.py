@@ -11,6 +11,7 @@ from export_snapshot import version_map,expected_versions,write_files
 import ibcmd_backend
 import native_metadata as s
 import repository_cache
+import resource_limits as limits
 
 
 def publish(cache,folder,manifest):
@@ -37,7 +38,9 @@ def register(request,changed,payload,removed=()):
     """Save exactly the compiled input and expected server contents before sending."""
     cache=repository_cache.Cache(request['baseline_update']['cache_directory'])
     with cache.locked():
-        basis=read(cache.directory);state,image,_=cache.load()
+        basis=read(cache.directory)
+        if basis.get('kind')=='partial':raise ValueError('Whole-configuration receipts are unavailable for partial XML baselines')
+        state,image,_=cache.load()
         settings=request['baseline_update']
         if not isinstance(settings.get('use_git',False),bool):raise ValueError('use_git must be boolean')
         git=None
@@ -107,7 +110,7 @@ def advance(request):
         files=dict(files);files['ConfigDumpInfo.xml']=received['ConfigDumpInfo.xml']
         write_files(folder/'xml',files,exclusive=True)
         manifest=dict(schema=1,baseline_id=new,repository_id=state['repository_id'],root_id=state['root_id'],platform=state['platform'],
-                      repository_version=state['repository_version'],cache_generation=state['generation'],cf_sha256=repository_cache.digest(cf.read_bytes()),
+                      repository_version=state['repository_version'],cache_generation=state['generation'],cf_sha256=limits.file_digest(cf),
                       xml_fingerprint=export.fingerprint(files),working_directory=receipt['working_directory'],working_directory_created=False,receipt_id=key)
         if receipt.get('git_directory'):
             from xml_git import Git,record_source,retain_unchanged,DEFAULT_SOURCE_BRANCH
@@ -120,7 +123,7 @@ def advance(request):
         return dict(publish(cache,folder,manifest),updated=True,committed=True)
 
 
-def read(directory):
+def read(directory,*,verify_all_files=False):
     cache=repository_cache.Cache(directory)
     if not (cache.directory/'baseline.json').is_file():raise ValueError('Initialize the XML baseline first')
     pointer=json.loads((cache.directory/'baseline.json').read_text(encoding='utf-8'))
@@ -130,19 +133,27 @@ def read(directory):
     if repository_cache.digest(raw)!=pointer['manifest_sha256']:raise ValueError('Baseline manifest checksum mismatch')
     manifest=json.loads(raw)
     if manifest['schema']!=1 or manifest['baseline_id']!=key:raise ValueError('Invalid baseline manifest')
-    files=export.inventory(folder/'xml')[1]
-    if export.fingerprint(files)!=manifest['xml_fingerprint']:raise ValueError('Frozen baseline XML was modified')
+    if manifest.get('kind')=='partial':
+        import partial_baseline
+        partial_baseline.verify(folder,manifest,all_files=verify_all_files)
+    else:
+        files=export.inventory(folder/'xml')[1]
+        if export.fingerprint(files)!=manifest['xml_fingerprint']:raise ValueError('Frozen baseline XML was modified')
     generation=manifest['cache_generation']
     if not isinstance(generation,str) or len(generation)!=32 or any(c not in '0123456789abcdef' for c in generation):raise ValueError('Invalid baseline CF generation')
     cf=cache.directory/'generations'/generation/'base.cf'
-    if repository_cache.digest(cf.read_bytes())!=manifest['cf_sha256']:raise ValueError('Frozen baseline CF was modified')
+    if limits.file_digest(cf)!=manifest['cf_sha256']:raise ValueError('Frozen baseline CF was modified')
     return dict(manifest,baseline_directory=str(folder/'xml'),base_cf=str(cf),manifest_file=str(folder/'manifest.json'))
 
 
 def initialize(request):
+    if not isinstance(request.get('allow_partial',False),bool):raise ValueError('allow_partial must be boolean')
+    if request.get('allow_partial'):
+        import partial_baseline
+        return partial_baseline.initialize(request)
     cache=repository_cache.Cache(request['cache_directory'])
     with cache.locked():
-        state,image,cf=cache.load()
+        state,cf=cache.load_state()
         if request['generation']!=state['generation']:raise ValueError('Cache changed before baseline initialization')
         key=uuid.uuid4().hex
         folder=cache.directory/'baselines'/key
@@ -160,6 +171,10 @@ def initialize(request):
         options=dict(compiler=dict(backend='ibcmd',executable=request['executable'],base_cf=str(cf)))
         with ibcmd_backend.Compiler(options) as compiler:
             compiler.execute('cf','export',cf,xml,'--platform',state['platform'])
+        # Avoid retaining the complete decoded CF alongside the compiler's own
+        # image. All native/image checks still run before publishing the basis.
+        verified,image,verified_cf=cache.load()
+        if verified!=state or verified_cf!=cf:raise ValueError('Cache changed during baseline export')
         _,files,records,root=export.inventory(xml)
         ibcmd_backend.require_complete_export(image,records,files)
         if root['id']!=state['root_id'] or version_map(files)!=expected_versions(state):raise ValueError('Baseline export differs from repository versions')
@@ -172,15 +187,22 @@ def initialize(request):
             raise ValueError('Working XML changed during baseline initialization')
         manifest=dict(schema=1,baseline_id=key,repository_id=state['repository_id'],root_id=state['root_id'],
                       platform=state['platform'],repository_version=state['repository_version'],cache_generation=state['generation'],
-                      cf_sha256=repository_cache.digest(cf.read_bytes()),xml_fingerprint=export.fingerprint(files),
+                      cf_sha256=limits.file_digest(cf),xml_fingerprint=export.fingerprint(files),
                       working_directory=str(working),working_directory_created=created)
         return publish(cache,folder,manifest)
 
 
 def run(request):
+    if request['mode']=='adopt_partial':
+        import partial_baseline
+        return partial_baseline.initialize(request,adopt=True)
+    if request['mode']=='materialize':
+        import partial_baseline
+        return partial_baseline.materialize(request)
     if request['mode']=='initialize':return initialize(request)
     if request['mode']=='read':
-        result=read(request['cache_directory'])
+        if not isinstance(request.get('verify_all_files',False),bool):raise ValueError('verify_all_files must be boolean')
+        result=read(request['cache_directory'],verify_all_files=request.get('verify_all_files',False))
         if request.get('working_directory') and Path(request['working_directory']).resolve()!=Path(result['working_directory']).resolve():
             raise ValueError('Use the active baseline working_directory or supply an explicit XML baseline')
         return result

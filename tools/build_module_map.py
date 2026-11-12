@@ -8,6 +8,8 @@ sys.path.insert(0,str(ROOT/'src'/'Сериализация'))
 import metadata_structure
 
 PURPOSES = {'compiled_dependencies': 'Общие связи служебного графа из подтверждённых UUID, объявленных типов и хранимых детей; проверка изменённых ссылок корня и сохранение непрозрачных исходных связей.','compiled_graph': 'Общие факты идентичности: UUID, имя, возможности, генерируемые типы и дочерние коллекции из XML, подтверждённые нативным CF.','compiled_image': 'Полное различие нативных CF: создание, изменение и удаление тел и потоков с проверкой принадлежности объектам.','compiled_creation': 'Метаданные новых владельцев и управляемых форм из проверенного CF: UUID, возможности, потоки, позиция и связи; приложение не сериализуется повторно.','repository_baseline': 'Инициализация XML-основы и рабочей папки без обязательного Git; квитанции пакетов и атомарное продвижение основы после проверки серверного состояния.',
+ 'partial_baseline': 'Частичное XML-представление поверх полного неизменяемого CF: файловая карта покрытия, явные недоступные владельцы и потоки, выборочное копирование файлов по UUID. Автоматические удаления и полная компиляция запрещены.',
+ 'configuration_version': 'Чтение свойства Version корня из проверенного адресного снимка или итогового пакета для поля code истории помещения; без полной выгрузки и без записи в хранилище.',
  'export_snapshot': 'Общая карта версий полной XML-выгрузки и безопасная запись файлов снимка.',
 'compiled_metadata': 'Контракты внешнего компилятора: реквизиты владельцев и полные управляемые формы, извлечение '
                       'итоговых UUID возможностей, согласование типов и зависимостей, проверка '
@@ -147,13 +149,45 @@ CONTRACTS += [('object_view_context', 'bind_children', 'XML ibcmd-rs, план �
 CONTRACTS += [('КлиентХранилища', 'ПоместитьПакет', 'Любой ПакетПомещенияОбъекта, комментарий и UUID подключения', 'Единая проверка источников/захватов, один commitObjects, подтверждение описаний и удалений; группа → массив, одиночное изменение/создание → объект, удаление → родитель')]
 
 
+PURPOSES.update({
+ 'commit_artifacts': 'Неизменяемый подготовленный пакет, план с SHA256 одобрения, локальный журнал единственной попытки и проверка нативного содержимого после помещения.',
+ 'ПомещениеАгента': 'CLI/MCP-помещение: восстановление проверенного пакета, контроль источников, существующий жизненный цикл захватов, одно помещение, адресное чтение результата и обновление основы.',
+ 'resource_limits': 'Проверяемые лимиты процесса из профиля/окружения, области настроек и потоковые хеши файлов.',
+ 'native_storage_file': 'Проверенный файловый индекс нативного контейнера, ленивые чтения записей и запись контейнера без общего буфера.',
+ 'file_exchange': 'Потоковый HTTP/TCP-приём, проверка framing/XML/base64, публикация файла и необязательный CRS_RPC_TRACE с именами RPC/размерами без URL, авторизации и содержимого.',
+ 'ОграниченияДанных': 'Положительные лимиты байтов из той же политики процесса, что использует Python.',
+ 'module_commit': 'Адресная компиляция одного существующего codec=Module по полному снимку: фрагмент CF для ibcmd overlay, проверка BSL/соседних данных, обычный общий пакет без полной конфигурации.',
+ 'crs_mcp': 'Точка запуска MCP stdio-сервера поверх JSON CLI.',
+ 'agent_mcp': 'Каталог MCP-инструментов, JSON-RPC lifecycle и очередь CLI; помещение конфигурации и запись пользователей включаются отдельными флагами.',
+ 'crs': 'Точка запуска JSON CLI из любой рабочей папки.',
+ 'agent_cli': 'Проверка JSON и профилей, запуск OneScript без секретов в аргументах, поиск по актуальным описаниям, читаемые файлы и review локального пакета.',
+ 'cli_bridge': 'JSON-мост к КлиентХранилища: чтение, локальная подготовка, отдельное исполнение одобренных помещений и операций пользователей.',
+})
+CONTRACTS += [
+ ('commit_artifacts', 'make_plan', 'prepared_directory, comment/label и именованный профиль; только чтение хранилища', 'plan_file/plan_sha256 с хешами packet/prepared/review, UUID хранилища, версиями, захватами и конфликтами'),
+ ('commit_artifacts', 'execute', 'plan_file, approved_plan_sha256, execute=true и тот же профиль', 'Сохранённый результат единственной попытки; при неопределённости только status, без повторной отправки'),
+ ('ПомещениеАгента', 'Обработать', 'Внутренний commit.inspect/commit.execute с проверенными файлами подготовки и плана', 'Текущее состояние либо одно помещение через общий клиент, проверка содержимого возвращённой версии и завершение новых захватов'),
+ ('file_exchange', 'run', 'mode=exchange/version, URL, файл XML-запроса, новый путь результата; политика лимитов процесса', 'Малый JSON с code/file/bytes/sha256; тело принимается блоками, version проверяет полный контейнер до публикации'),
+ ('native_storage_file', 'FileStorage.__init__', 'Путь нативного контейнера', 'Проверенный SHA1-индекс и ленивые записи, без чтения всего файла в память'),
+ ('КлиентХранилища', 'ПолучитьПакетТекущейВерсииВФайл', 'Новый путь двоичного файла и Python', 'Проверенный полный контейнер и UUID версии; потоковое XML/base64-декодирование, отказ/удаление при гонке версии'),
+ ('module_commit', 'prepare', 'Полный снимок одного UUID, исходное описание, точный module_path, полный BSL и compiler={backend:ibcmd,executable}; необязательный ожидаемый SHA256 исходного текста', 'No-op без data либо один обычный пакет с единственным изменённым модулем; тело/граф/версии прочих потоков сохранены, review с diff и хешами'),
+ ('КлиентХранилища', 'ПодготовитьМодульОбъекта', 'Актуальное описание, Ext/ManagerModule.bsl, полный текст, настройки ibcmd, Python; необязательные отчёт и ожидаемый SHA256 исходного BSL', 'ПакетПомещенияОбъекта или Неопределено; адресные чтения, проверки версии до/после, без захвата и записи'),
+ ('agent_mcp', 'CLIRunner.__call__', 'Проверяемый CLI JSON-запрос из tools/call; фиксированные config/workspace процесса', 'JSON CLI в structuredContent и content; ошибки CLI → isError, неизвестный результат записи → outcome_unknown'),
+ ('agent_cli', 'main', 'CONFIG и один UTF-8 JSON-запрос: чтение, подготовка, план или одобренная запись', 'Один JSON в stdout, exit code 0/1; запись конфигурации только changes.commit с хешем плана и execute=true'),
+ ('cli_bridge', 'ВыполнитьЗапрос', 'Проверенный JSON и профиль; пароли только через имена переменных окружения', 'Структура результата CRS API; для changes.prepare — путь packet.bin и план без записи на сервер'),
+ ('cli_bridge', 'Пользователи', 'users.list/plan/apply; для записи execute=true и точное expected состояние', 'Проекция без секретов: роль и исходная маска rights; план или подтверждённое изменение'),
+]
+
+
 def inventory(root=ROOT):
     modules = {}
-    for path in sorted((root / 'src' / 'Сериализация').glob('*.py')):
+    for path in sorted([*(root / 'src' / 'Сериализация').glob('*.py'),
+                        root/'src/agent_cli.py', root/'tools/crs.py',
+                        root/'src/agent_mcp.py', root/'tools/crs_mcp.py']):
         modules['python:' + path.stem] = dict(
             name=path.stem, language='Python', path=path.relative_to(root).as_posix())
     for path in sorted([*(root / 'src' / 'Классы').glob('*.os'),
-                        *(root / 'src' / 'Модули').glob('*.os')]):
+                        *(root / 'src' / 'Модули').glob('*.os'), root/'src/cli_bridge.os']):
         modules['onescript:' + path.stem] = dict(
             name=path.stem, language='OneScript', path=path.relative_to(root).as_posix())
     for module in modules.values():
@@ -218,6 +252,10 @@ def extract(root=ROOT):
                     call(key, aliases[name], 'ПриСозданииОбъекта')
             for script in re.findall(r'"([a-z_]+)\.py"', text):
                 call(key, 'python:' + script, 'JSON CLI')
+    call('python:agent_cli', 'onescript:cli_bridge', 'JSON через subprocess')
+    call('python:agent_mcp', 'python:crs', 'JSON CLI через subprocess')
+    for method in re.findall(r'Клиент\.([\wА-Яа-яЁё]+)\s*\(', (root/'src/cli_bridge.os').read_text(encoding='utf-8-sig')):
+        call('onescript:cli_bridge', 'onescript:КлиентХранилища', method)
     contracts = []
     for name, function, inputs, outputs in CONTRACTS:
         if 'onescript:' + name in modules:
@@ -290,7 +328,21 @@ def markdown(data):
         incoming[edge['callee']].add(edge['caller']);outgoing[edge['caller']].add(edge['callee'])
     def names(keys):return ', '.join('`'+modules[key]['name']+'`' for key in sorted(keys)) or '—'
     lines=['# Карта модулей','','Генератор: `python tools/build_module_map.py`; проверка: `--check`.','',
-        '```mermaid','flowchart TD',' Client[КлиентХранилища] --> Bridge[JSON-мост]',
+        '```mermaid','flowchart TD',
+        ' MCP[tools/crs_mcp.py: MCP stdio] --> Adapter[agent_mcp: инструменты и очередь]',
+        ' Adapter --> CLI[tools/crs.py: JSON CLI]',
+        ' CLI --> Agent[agent_cli: профили и результаты]',
+        ' Agent --> CliBridge[cli_bridge: команды агента]',
+        ' CliBridge --> Client[КлиентХранилища]',
+        ' Client --> FileIO[file_exchange: HTTP/TCP в файл и base64 по блокам]',
+        ' FileIO --> NativeFile[native_storage_file: проверяемый индекс на диске]',
+        ' NativeFile --> Cache',
+        ' Limits[resource_limits и ОграниченияДанных] -.-> FileIO',
+        ' Limits -.-> Cache',
+        ' Client --> ModuleCommit[module_commit: один BSL-модуль по снимку]',
+        ' ModuleCommit --> Compiler',
+        ' ModuleCommit --> ModulePacket[packet_builder: общий пакет]',
+        ' Client --> Bridge[СериализаторОбъектаХранилища: JSON-мост]',
         ' Bridge --> Commit[configuration_commit]',' Bridge --> Cache[repository_cache: выборочное обновление CF]',
         ' Cache --> Basis[repository_baseline: XML-основа и рабочая папка]',
         ' Basis --> Compiler[ibcmd_backend]',

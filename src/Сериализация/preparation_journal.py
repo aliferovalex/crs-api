@@ -10,6 +10,7 @@ from pathlib import Path
 import uuid
 
 import repository_cache
+import resource_limits as limits
 
 MAX_PACKET=256*1024*1024
 PHASES={'Подготовка','Готово','НетИзменений','Отменено','ЗахватыНеОсвобождены',
@@ -83,7 +84,7 @@ def read(directory):
     if data['operation_id']!=directory.name:raise ValueError('Preparation journal identity mismatch')
     if 'packet_sha256' in data:
         packet=directory/'packet.bin'
-        if not packet.is_file() or packet.stat().st_size>MAX_PACKET or digest(packet.read_bytes())!=data['packet_sha256']:raise ValueError('Preparation packet checksum mismatch')
+        if not packet.is_file() or packet.stat().st_size>limits.get('packet_bytes',MAX_PACKET) or limits.file_digest(packet)!=data['packet_sha256']:raise ValueError('Preparation packet checksum mismatch')
     validate(data['snapshot'])
     return data
 

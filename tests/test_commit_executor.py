@@ -1,4 +1,5 @@
 """One commit RPC for changes, creations, deletions and mixed configuration groups."""
+import base64
 import copy
 import json
 from pathlib import Path
@@ -12,6 +13,10 @@ from test_version_labels import OSCRIPT, ROOT, Q, END
 import sys
 sys.path.insert(0,str(ROOT/'src'/'Сериализация'))
 import metadata_identifiers as ids
+import native_metadata as native
+from test_configuration_root import frame as root_frame
+from test_configuration_version import root_body,root_packet
+from test_repository_cache import snapshot as native_snapshot
 
 PARENT='11111111-1111-4111-8111-111111111111'
 ITEM='22222222-2222-4222-8222-222222222222'
@@ -55,8 +60,22 @@ def value(node,key,v): return E.SubElement(node,Q+key,value=str(v).lower() if is
 
 @unittest.skipUnless(OSCRIPT and Path(OSCRIPT).is_file(),'OneScript unavailable')
 class CommitExecutorTests(unittest.TestCase):
-    def run_case(self,mode,fault='none'):
+    def run_case(self,mode,fault='none',auto_code=False,code='2.5 & version',root_externals=False):
         config=settings(mode,fault);before=copy.deepcopy(config['sources']);after=copy.deepcopy(config['expected'])
+        config['expected_code']='' if mode=='delete' else 'Test & version'
+        root_snapshot=None
+        if auto_code:
+            config.update(auto_code=True,expected_code=code)
+            if mode=='change':
+                before.append(row(PARENT,'Configuration','Root',ZERO))
+                context,_=root_frame();docs=context.docs
+                docs[0][5]=docs[0][6]=native.atom(7)
+                docs[0][7]=docs[0][8]=native.atom('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa')
+                if root_externals:
+                    docs[0][11]=[native.atom(1),native.atom(PARENT+'.0',True),native.atom(REPO)]
+                root_snapshot=native_snapshot(PARENT,docs,root_body(code))
+            else:config['data']=base64.b64encode(root_packet(code)).decode()
+        if fault=='version_read_race':config['error_contains']='Хранилище изменилось'
         for r in after:r['version']=8
         if fault=='old_version':
             for r in after:r['version']=7
@@ -67,7 +86,7 @@ class CommitExecutorTests(unittest.TestCase):
         if fault=='stale_source':before[0]['original']='e'*32+'00000000'
         if fault=='collision':before.append(copy.deepcopy(config['expected'][-1]))
         if fault=='not_deleted':after.append(copy.deepcopy(config['sources'][-1]))
-        state=dict(commits=0,latest=0);calls=[];errors=[]
+        state=dict(commits=0,latest=0,root_read=False);calls=[];errors=[]
         class Handler(socketserver.BaseRequestHandler):
             def handle(inner):
                 try:
@@ -84,7 +103,7 @@ class CommitExecutorTests(unittest.TestCase):
                         value(user,'online',False);value(user,'removed',False)
                     elif method=='DevDepot_latestVerID':
                         state['latest']+=1
-                        v=NEXT if state['commits'] or fault=='stale_repository' and state['latest']>=3 else REPO
+                        v=NEXT if state['commits'] or fault=='stale_repository' and state['latest']>=3 or fault=='version_read_race' and state['root_read'] else REPO
                         value(root,'verID',v)
                     elif method=='DevDepot_devObjectsStatistic':
                         rows=after if state['commits'] else before;group=E.SubElement(root,Q+'statMap')
@@ -102,11 +121,15 @@ class CommitExecutorTests(unittest.TestCase):
                             versions=E.SubElement(info,Q+'version');value(versions,'original',r['original']);value(versions,'local',r['local']);value(info,'removed',False)
                     elif method=='DevDepot_commitObjects':
                         state['commits']+=1
+                        self.assertEqual(params.find(Q+'code').get('value'),config.get('expected_code','Test & version'))
                         self.assertEqual(params.find(Q+'comment').text,'Unified & commit')
                         self.assertEqual(params.find(Q+'clientVerID').get('value'),REPO)
                         self.assertEqual(len(params.find(Q+'changes')),len(config['expected']))
                         if fault=='lost_reply':return
                         E.SubElement(root,Q+'exc');result=E.SubElement(root,Q+'result');E.SubElement(result,Q+'unprocessed')
+                    elif method=='DevDepot_updateObjects' and root_snapshot:
+                        state['root_read']=True
+                        snapshots=E.SubElement(root,Q+'snapshots');E.SubElement(snapshots,Q+'data').text=root_snapshot
                     else:raise AssertionError('Unexpected RPC '+str(method))
                     body=b'\xef\xbb\xbf'+E.tostring(root,encoding='utf-8')
                     inner.request.sendall(('HTTP/1.1 200 OK\r\nContent-Length: %d\r\n\r\n'%len(body)).encode()+body+END)
@@ -121,13 +144,33 @@ class CommitExecutorTests(unittest.TestCase):
             finally:server.shutdown();worker.join()
         self.assertEqual(errors,[])
         self.assertEqual(result.returncode,0,(result.stdout+result.stderr).decode('utf-8',errors='replace'))
-        preflight={'capture','other_user','stale_source','collision','stale_repository','wrong_repository'}
+        preflight={'capture','other_user','stale_source','collision','stale_repository','wrong_repository','version_read_race'}
         self.assertEqual(state['commits'],0 if fault in preflight else 1)
         return calls
 
     def test_four_operations_have_one_commit_and_preserve_result_shape(self):
         for mode in ('change','create','delete','group'):
             with self.subTest(mode=mode):self.run_case(mode)
+
+    def test_module_commit_resolves_current_configuration_version_without_full_configuration(self):
+        calls=self.run_case('change',auto_code=True)
+        self.assertEqual(calls.count('DevDepot_updateObjects'),1)
+        self.assertNotIn('DevDepot_getVersion',calls)
+
+    def test_configuration_version_does_not_fetch_root_external_assets(self):
+        calls=self.run_case('change',auto_code=True,root_externals=True)
+        self.assertEqual(calls.count('DevDepot_updateObjects'),1)
+        self.assertEqual(calls.count('DevDepot_commitObjects'),1)
+
+    def test_changed_root_supplies_target_version_including_explicit_empty(self):
+        for mode in ('create','delete','group'):
+            for code in ('2.6 & new',''):
+                with self.subTest(mode=mode,code=code):
+                    calls=self.run_case(mode,auto_code=True,code=code)
+                    self.assertNotIn('DevDepot_updateObjects',calls)
+
+    def test_changed_repository_after_root_read_prevents_commit(self):
+        self.run_case('change','version_read_race',auto_code=True)
 
     def test_preconditions_prevent_commit(self):
         for fault in ('capture','other_user','stale_source','collision','stale_repository','wrong_repository'):

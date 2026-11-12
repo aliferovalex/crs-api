@@ -23,18 +23,60 @@ import export_xml
 import serialization_context
 import cf_container
 import compiled_metadata
+import resource_limits as limits
 import configuration_export
 import native_references
 import native_object_profiles
 
 MAX_CF_BYTES = 256 * 1024 * 1024
 MAX_IMAGE_BYTES = 512 * 1024 * 1024
+FORMAT15_OFFSET_LIMIT = 2**31-1
+CF_IO_CHUNK_BYTES = 1024*1024
+FORMAT16_BASE_OFFSET = 0x1359
+
+
+def format16_preamble(storage_version):
+    """Generate the semantic Format15 envelope of a complete Format16 CF."""
+    sentinel=0x7fffffff
+    def block(payload,minimum=0):
+        size=max(len(payload),minimum)
+        return ('\r\n%08x %08x %08x \r\n'%(len(payload),size,sentinel)).encode()+payload+bytes(size-len(payload))
+    descriptions=[];addresses=[];offset=16+31+512
+    for name in ('root','version','versions'):
+        description=block(bytes(20)+name.encode('utf-16-le')+bytes(4))
+        addresses.append(struct.pack('<III',offset,sentinel,sentinel));descriptions.append(description);offset+=len(description)
+    data=struct.pack('<IIII',sentinel,512,storage_version,0)+block(b''.join(addresses),512)+b''.join(descriptions)
+    if len(data)>FORMAT16_BASE_OFFSET:raise ValueError('Oversized Format16 preamble')
+    return data+bytes(FORMAT16_BASE_OFFSET-len(data))
+
+
+class _OffsetWriter:
+    """Keep primary-container offsets relative while writing after a preamble."""
+    def __init__(self,stream,offset):self.stream,self.offset=stream,offset
+    def write(self,data):return self.stream.write(data)
+    def tell(self):return self.stream.tell()-self.offset
+    def seek(self,position,whence=0):
+        self.stream.seek(position+self.offset if whence==0 else position,whence)
+        return self.tell()
+
+
+def primary_container_offset(source):
+    source.seek(0);header=source.read(20)
+    if header[:4]==bytes.fromhex('ffffff7f'):
+        source.seek(FORMAT16_BASE_OFFSET);wide=source.read(20)
+        if len(wide)==20 and wide[:8]==bytes.fromhex('ffffffffffffffff'):
+            preamble=cf_container.Container();preamble.allow_absent=True;preamble.read(source)
+            if preamble.size>FORMAT16_BASE_OFFSET:raise ValueError('Overlapping Format16 preamble')
+            for item in preamble.files.values():
+                for _ in item.data:pass
+            return FORMAT16_BASE_OFFSET
+    return 0
 
 
 class CompilationRejected(ValueError):
     """A valid compiler report rejected the requested conversion."""
-    def __init__(self,message,codes=()):
-        super().__init__(message);self.codes=frozenset(codes)
+    def __init__(self,message,codes=(),report=None):
+        super().__init__(message);self.codes=frozenset(codes);self.report=report
 
 
 class ExportMismatch(ValueError):
@@ -62,13 +104,22 @@ def retain_unchanged_objects(before,candidate,source_records,target_records,obje
 
 
 def read_cf(path):
+    return read_container_image(path, {'root', 'version', 'versions'})
+
+
+def read_fragment(path):
+    """An explicit compiler fragment is not a complete configuration image."""
+    return read_container_image(path, {'versions'})
+
+
+def read_container_image(path, required):
     """Read the effective image, without mixing compatibility-container roots."""
     path = Path(path)
-    if not path.is_file() or not 0 < path.stat().st_size <= MAX_CF_BYTES:
+    if not path.is_file() or not 0 < path.stat().st_size <= limits.get('cf_bytes',MAX_CF_BYTES):
         raise ValueError('Missing or oversized ibcmd base/result CF')
     result = {}
     with path.open('rb') as source:
-        offset = 0
+        offset = primary_container_offset(source)
         for _ in range(2):
             if offset >= path.stat().st_size:
                 break
@@ -100,10 +151,10 @@ def read_cf(path):
                         raise ValueError('Invalid compressed CF member: ' + name) from None
                     raw = packed
                 total += len(raw)
-                if total > MAX_IMAGE_BYTES:
+                if total > limits.get('image_bytes',MAX_IMAGE_BYTES):
                     raise ValueError('Oversized decoded CF image')
                 image[name] = raw
-            if not container.size or not {'root', 'version', 'versions'} <= set(image):
+            if not container.size or not required <= set(image):
                 raise ValueError('Incomplete CF configuration image')
             result = image
             offset += container.size
@@ -111,19 +162,51 @@ def read_cf(path):
 
 
 def write_cf(path, members):
-    """Normalize effective records to a single, fully deflated Format15 image."""
+    return write_container_image(path, members, {'root','version','versions'})
+
+
+def write_fragment(path, members):
+    return write_container_image(path, members, {'versions'})
+
+
+def _deflate_to_file(output,raw):
+    encoder=zlib.compressobj(wbits=-15)
+    view=memoryview(raw)
+    for start in range(0,len(view),CF_IO_CHUNK_BYTES):
+        output.write(encoder.compress(view[start:start+CF_IO_CHUNK_BYTES]))
+    output.write(encoder.flush())
+
+
+def write_container_image(path, members, required):
+    """Normalize effective records, using 64-bit offsets for large images."""
+    if not required<=set(members):raise ValueError('Incomplete CF configuration image')
+    if sum(map(len,members.values()))>limits.get('image_bytes',MAX_IMAGE_BYTES):raise ValueError('Oversized decoded CF image')
     with Path(path).open('w+b') as output:
-        writer = cf_container.Container()
-        writer.file = output
+        # Bound deflate expansion plus per-record descriptions, padding and TOC.
+        # Choose before writing: Format15 stores signed 32-bit file offsets.
+        upper_bound=1024+sum(len(raw)+len(raw)//100+2048+len(name.encode('utf-16-le')) for name,raw in members.items())
+        wide=upper_bound>=FORMAT15_OFFSET_LIMIT
+        writer = (cf_container.Container64 if wide else cf_container.Container)()
+        if wide:output.write(format16_preamble(len(members)))
+        writer.file = _OffsetWriter(output,FORMAT16_BASE_OFFSET) if wide else output
         writer.write_header(len(members))
         for name, raw in members.items():
             with tempfile.TemporaryFile() as item:
-                item.write(s.compress(raw))
+                _deflate_to_file(item,raw)
                 item.seek(0)
                 writer.add_file(item, name, False)
+            output.seek(0,2)
+            if output.tell()>limits.get('cf_bytes',MAX_CF_BYTES):raise ValueError('Oversized ibcmd result CF')
         writer.write_table_off_content()
-    if read_cf(path) != members:
-        raise ValueError('CF normalization changed decoded contents')
+    if Path(path).stat().st_size>limits.get('cf_bytes',MAX_CF_BYTES):raise ValueError('Oversized ibcmd result CF')
+    # Compare one record at a time; a second complete decoded image can exhaust
+    # memory during the first initialization of a large repository.
+    with Path(path).open('rb') as source:
+        offset=primary_container_offset(source)
+        container=cf_container.detect_format(source,offset);container.read(source,offset)
+        if set(container.files)!=set(members):raise ValueError('CF normalization changed member set')
+        for name,item in container.files.items():
+            if s.inflate(b''.join(item.data))!=members[name]:raise ValueError('CF normalization changed decoded contents')
 
 
 def canonical(text):
@@ -196,9 +279,20 @@ class Compiler:
     def execute(self, *args):
         if 'IBCMD_RS_LOAD_NO_VERIFY' in os.environ:
             raise ValueError('Unverified ibcmd diagnostic mode is forbidden for repository preparation')
+        timeout=os.environ.get('CRS_COMPILER_TIMEOUT_SECONDS','240')
+        if not re.fullmatch(r'[0-9]{1,5}',timeout) or not 1<=int(timeout)<=86400:
+            raise ValueError('CRS_COMPILER_TIMEOUT_SECONDS must be an integer from 1 to 86400')
+        args=list(args)
+        if '--platform' in args:
+            position=args.index('--platform')+1
+            # ibcmd explicitly supports release selectors. Its build catalog is
+            # smaller than the set of repository server builds; retain the exact
+            # version in CRS state/authentication and select only the XML release.
+            version=str(args[position])
+            if re.fullmatch(r'8\.(?:3\.27|5\.1)\.[0-9]+',version):args[position]='.'.join(version.split('.')[:3])
         try:
             result = subprocess.run([str(self.executable), *map(str, args)], stdout=subprocess.PIPE,
-                                    stderr=subprocess.PIPE, timeout=240)
+                                    stderr=subprocess.PIPE, timeout=int(timeout))
         except subprocess.TimeoutExpired:
             raise ValueError('ibcmd compilation timed out') from None
         try:
@@ -211,7 +305,7 @@ class Compiler:
         if result.returncode or report.get('ok') is not True:
             messages = '; '.join(str(row.get('message', row)) for row in report.get('errors', []))
             raise CompilationRejected('ibcmd failed: ' + messages[:2000],
-                                      [row.get('code') for row in report.get('errors',[]) if isinstance(row,dict)])
+                                      [row.get('code') for row in report.get('errors',[]) if isinstance(row,dict)],report)
         return report
 
     def compile_tree(self,source,normalized,output,before,platform,verify=None,assemble=None):
@@ -244,6 +338,8 @@ class Compiler:
                     raise CompilationRejected(str(overlay_error)+'; base-free verification: '+str(bootstrap_error)) from None
 
     def prepare(self, request, plan, changes, objects):
+        for name in ('directory','baseline_directory'):
+            if request.get(name):configuration_export.require_complete_directory(request[name])
         self.object_ids = {row['object_id'] for row in changes}
         before = read_cf(self.base)
         self.before = before
@@ -254,13 +350,13 @@ class Compiler:
             if before.get(oid) != s.inflate(frame.data):
                 raise ValueError('Stale or foreign ibcmd base CF object: ' + oid)
             if s.val(objects[oid][0][11][0]) != '0':
-                storage = external_data.extract(serialization_context.decode(request['storage'], 'Oversized version storage'), oid)
+                storage = external_data.extract(serialization_context.storage(request,'Oversized version storage'), oid)
                 for stream in storage['externals']:
                     if before.get(stream['name']) != s.inflate(base64.b64decode(stream['data'], validate=True)):
                         raise ValueError('Stale or foreign ibcmd base CF stream: ' + stream['name'])
         # A form's owner need not itself have a changed XML file. Its current
         # definition is still required to prove the compiler's field bindings.
-        storage = serialization_context.decode(request['storage'], 'Oversized binding storage') if any(row['kind'].endswith('Form') for row in changes) else None
+        storage = serialization_context.storage(request,'Oversized binding storage') if any(row['kind'].endswith('Form') for row in changes) else None
         if storage is not None:
             reader = native_references.Catalog(request)
             for row in changes:

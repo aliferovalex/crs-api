@@ -58,6 +58,7 @@ class Container:
         self.files = None
         self.size = 0
         self.toc = []
+        self.allow_absent = False
 
     def read(self, file, offset=0):
         self.offset = offset
@@ -112,7 +113,9 @@ class Container:
             if not name or name in files:
                 raise ValueError('Empty or duplicate CF member name')
             doc = Document(self)
-            file_data = doc.read_chunk(file, file_data_offset, self.default_block_size)
+            if file_data_offset==self.end_marker and not self.allow_absent:
+                raise ValueError('CF member has no payload: '+name)
+            file_data = iter(()) if file_data_offset==self.end_marker else doc.read_chunk(file, file_data_offset, self.default_block_size)
             self.size += doc.full_size
             inner_file = File(name, doc.data_size, self.parse_datetime(file_description[0]), self.parse_datetime(file_description[1]), file_data)
             files[inner_file.name] = inner_file
@@ -192,7 +195,9 @@ class Document:
         return gen
 
     def _read_gen(self, file, offset, min_block_size=0):
-        header_block = self.read_block(file, offset)
+        # Catalog creation must retain offsets, not every compressed payload.
+        # Read the first block's bytes only when this member is consumed.
+        header_block = self.read_block(file, offset,0)
         doc_size = max(header_block.doc_size, min_block_size)
         if doc_size > header_block.current_block_size:
             self.full_size = doc_size + math.ceil(header_block.doc_size / header_block.current_block_size) * min_block_size
@@ -201,6 +206,7 @@ class Document:
         else:
             self.full_size = doc_size + self.container.block_header_size
         yield header_block.doc_size
+        header_block = self.read_block(file, offset)
         yield header_block.data
         left_bytes = header_block.doc_size - len(header_block.data)
         next_block_offset = header_block.next_block_offset

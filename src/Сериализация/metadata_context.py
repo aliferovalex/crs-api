@@ -1,5 +1,6 @@
 """Repository updateInfo readers, UUID validation and stored child maps."""
 import uuid
+import resource_limits as limits
 import native_metadata as s
 from native_metadata import HEADER, MAX_STORAGE_BYTES, Parser, read_record, val
 
@@ -12,9 +13,14 @@ def guid(value):
 
 
 def context_objects(encoded):
+    return dict(iter_context_objects(encoded))
+
+
+def iter_context_objects(encoded):
+    """Validate the container; yield checked object documents one at a time."""
     data = s.decode_storage(encoded, 'Oversized or invalid context')
     s.validate_storage(data)
-    pos, objects = 12, {}
+    pos, seen = 12, set()
     while pos < len(data):
         raw, pos = s.read_record(data, pos)
         if not raw.startswith(b'\xef\xbb\xbf{5,'):
@@ -24,10 +30,10 @@ def context_objects(encoded):
         if len(docs) != 3 or len(m) != 17 or s.val(m[0]) != '5':
             raise ValueError('Unsupported context metadata')
         oid = guid(s.val(m[1]))
-        if oid in objects:
+        if oid in seen:
             raise ValueError('Duplicate context UUID')
-        objects[oid] = docs
-    return objects
+        seen.add(oid)
+        yield oid,docs
 
 
 def children(metadata):
@@ -45,7 +51,7 @@ def children(metadata):
 
 
 def context_metadata(data, object_id):
-    if data[:8] != HEADER[:8] or len(data) > MAX_STORAGE_BYTES:
+    if data[:8] != HEADER[:8] or len(data) > limits.get('storage_bytes',MAX_STORAGE_BYTES):
         raise ValueError("Unsupported updateInfo context")
     pos, found = 12, []
     while pos < len(data):

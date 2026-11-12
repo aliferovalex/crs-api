@@ -1,5 +1,11 @@
 {
   "source": "Configurator 8.5.1.1529 native record manager/set forms; metadata UUIDs are resolved from each owner",
+  "tabular_standard_fields": {
+    "LineNumber": [
+      -2,
+      "N"
+    ]
+  },
   "owners": {
     "Catalog": {
       "types": {
@@ -14,7 +20,24 @@
           "class_id": "cf4abea7-37b2-11d4-940f-008048da11f9"
         }
       ],
-      "standard_fields": {},
+      "standard_fields": {
+        "Ref": [
+          -8,
+          "#"
+        ],
+        "DeletionMark": [
+          -7,
+          "B"
+        ],
+        "Predefined": [
+          -10,
+          "B"
+        ],
+        "PredefinedDataName": [
+          -13,
+          "S"
+        ]
+      },
       "standard_field_rules": [
         {
           "when": [
@@ -90,10 +113,123 @@
               "N"
             ]
           }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                37
+              ],
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "fields": {
+            "Parent": [
+              -4,
+              "#"
+            ]
+          }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                37
+              ],
+              "values": [
+                "1"
+              ]
+            },
+            {
+              "path": [
+                1,
+                36
+              ],
+              "values": [
+                "0"
+              ]
+            }
+          ],
+          "fields": {
+            "IsFolder": [
+              -6,
+              "B"
+            ]
+          }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                12,
+                1
+              ],
+              "not_values": [
+                "0"
+              ]
+            }
+          ],
+          "fields": {
+            "Owner": [
+              -5,
+              "#"
+            ]
+          }
         }
       ],
       "tabular_sections": true,
-      "form_usage": "Items"
+      "form_usage": "Items",
+      "native_property_checks": {
+        "CodeLength": {
+          "path": [
+            1,
+            17
+          ],
+          "integer": true
+        },
+        "DescriptionLength": {
+          "path": [
+            1,
+            19
+          ],
+          "integer": true
+        },
+        "CodeType": {
+          "path": [
+            1,
+            18
+          ],
+          "values": {
+            "0": "Number",
+            "1": "String"
+          }
+        },
+        "Hierarchical": {
+          "path": [
+            1,
+            37
+          ],
+          "values": {
+            "0": "false",
+            "1": "true"
+          }
+        },
+        "HierarchyType": {
+          "path": [
+            1,
+            36
+          ],
+          "values": {
+            "0": "HierarchyFoldersAndItems",
+            "1": "HierarchyOfItems"
+          }
+        }
+      }
     },
     "Document": {
       "types": {
@@ -112,6 +248,18 @@
         "Date": [
           -3,
           "D"
+        ],
+        "Ref": [
+          -5,
+          "#"
+        ],
+        "DeletionMark": [
+          -4,
+          "B"
+        ],
+        "Posted": [
+          -7,
+          "B"
         ]
       },
       "tabular_sections": true,
@@ -172,7 +320,36 @@
             ]
           }
         }
-      ]
+      ],
+      "native_property_checks": {
+        "NumberType": {
+          "path": [
+            1,
+            11
+          ],
+          "values": {
+            "0": "Number",
+            "1": "String"
+          }
+        },
+        "NumberLength": {
+          "path": [
+            1,
+            12
+          ],
+          "integer": true
+        },
+        "Posting": {
+          "path": [
+            1,
+            19
+          ],
+          "values": {
+            "0": "Allow",
+            "1": "Deny"
+          }
+        }
+      }
     },
     "DataProcessor": {
       "types": {
@@ -452,12 +629,40 @@
         {
           "slot": 7,
           "class_id": "6e65cbf5-daa8-4d8d-bef8-59723f4e5777"
+        },
+        {
+          "slot": 8,
+          "class_id": "78bd1243-c4df-46c3-8138-e147465cb9a4"
         }
       ],
       "standard_fields": {
         "DeletionMark": [
           -4,
           "B"
+        ],
+        "Ref": [
+          -2,
+          "#"
+        ],
+        "Parent": [
+          -6,
+          "#"
+        ],
+        "Type": [
+          -10,
+          null
+        ],
+        "OffBalance": [
+          -11,
+          "B"
+        ],
+        "Predefined": [
+          -5,
+          "B"
+        ],
+        "PredefinedDataName": [
+          -28,
+          "S"
         ]
       },
       "standard_field_rules": [
@@ -519,7 +724,82 @@
           }
         }
       ],
-      "tabular_sections": true
+      "tabular_sections": true,
+      "standard_collections": {
+        "ExtDimensionTypes": {
+          "marker": -12,
+          "when": [
+            {
+              "path": [
+                1,
+                20
+              ],
+              "not_values": [
+                "0"
+              ]
+            },
+            {
+              "path": [
+                1,
+                19
+              ],
+              "not_values": [
+                "00000000-0000-0000-0000-000000000000"
+              ]
+            }
+          ],
+          "columns": {
+            "LineNumber": [
+              -12,
+              "N"
+            ],
+            "ExtDimensionType": [
+              -13,
+              "#"
+            ],
+            "TurnoversOnly": [
+              -15,
+              "B"
+            ]
+          },
+          "inline_groups": [
+            {
+              "slot": 9,
+              "class_id": "c70ca527-5042-4cad-a315-dcb4007e32a3"
+            }
+          ]
+        }
+      },
+      "native_property_checks": {
+        "MaxExtDimensionCount": {
+          "path": [
+            1,
+            20
+          ],
+          "integer": true
+        },
+        "CodeLength": {
+          "path": [
+            1,
+            22
+          ],
+          "integer": true
+        },
+        "DescriptionLength": {
+          "path": [
+            1,
+            23
+          ],
+          "integer": true
+        },
+        "OrderLength": {
+          "path": [
+            1,
+            25
+          ],
+          "integer": true
+        }
+      }
     },
     "ChartOfCharacteristicType": {
       "form_usage": "Items",
@@ -539,6 +819,22 @@
         "DeletionMark": [
           -4,
           "B"
+        ],
+        "Ref": [
+          -2,
+          "#"
+        ],
+        "Predefined": [
+          -5,
+          "B"
+        ],
+        "PredefinedDataName": [
+          -14,
+          "S"
+        ],
+        "ValueType": [
+          -11,
+          null
         ]
       },
       "standard_field_rules": [
@@ -579,9 +875,78 @@
               "S"
             ]
           }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                19
+              ],
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "fields": {
+            "Parent": [
+              -6,
+              "#"
+            ],
+            "IsFolder": [
+              -7,
+              "B"
+            ]
+          }
         }
       ],
-      "tabular_sections": true
+      "tabular_sections": true,
+      "native_property_checks": {
+        "CodeLength": {
+          "path": [
+            1,
+            21
+          ],
+          "integer": true
+        },
+        "DescriptionLength": {
+          "path": [
+            1,
+            23
+          ],
+          "integer": true
+        },
+        "Hierarchical": {
+          "path": [
+            1,
+            19
+          ],
+          "values": {
+            "0": "false",
+            "1": "true"
+          }
+        },
+        "Autonumbering": {
+          "path": [
+            1,
+            22
+          ],
+          "values": {
+            "0": "false",
+            "1": "true"
+          }
+        },
+        "DefaultPresentation": {
+          "path": [
+            1,
+            24
+          ],
+          "values": {
+            "0": "AsCode",
+            "1": "AsDescription"
+          }
+        }
+      }
     },
     "BusinessProcess": {
       "types": {
@@ -596,8 +961,130 @@
           "class_id": "87c988de-ecbf-413b-87b0-b9516df05e28"
         }
       ],
-      "standard_fields": {},
-      "tabular_sections": true
+      "standard_fields": {
+        "Ref": [
+          -5,
+          "#"
+        ],
+        "DeletionMark": [
+          -4,
+          "B"
+        ],
+        "Date": [
+          -3,
+          "D"
+        ],
+        "Completed": [
+          -7,
+          "B"
+        ],
+        "Started": [
+          -9,
+          "B"
+        ],
+        "HeadTask": [
+          -8,
+          "#"
+        ]
+      },
+      "tabular_sections": true,
+      "standard_field_rules": [
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                18
+              ],
+              "not_values": [
+                "0"
+              ]
+            },
+            {
+              "path": [
+                1,
+                16
+              ],
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "fields": {
+            "Number": [
+              -2,
+              "S"
+            ]
+          }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                18
+              ],
+              "not_values": [
+                "0"
+              ]
+            },
+            {
+              "path": [
+                1,
+                16
+              ],
+              "values": [
+                "0"
+              ]
+            }
+          ],
+          "fields": {
+            "Number": [
+              -2,
+              "N"
+            ]
+          }
+        }
+      ],
+      "native_property_checks": {
+        "NumberType": {
+          "path": [
+            1,
+            16
+          ],
+          "values": {
+            "0": "Number",
+            "1": "String"
+          }
+        },
+        "NumberLength": {
+          "path": [
+            1,
+            18
+          ],
+          "integer": true
+        },
+        "Autonumbering": {
+          "path": [
+            1,
+            20
+          ],
+          "values": {
+            "0": "false",
+            "1": "true"
+          }
+        },
+        "EditType": {
+          "path": [
+            1,
+            21
+          ],
+          "values": {
+            "0": "InList",
+            "1": "InDialog"
+          }
+        }
+      }
     },
     "Task": {
       "types": {
@@ -612,8 +1099,156 @@
           "class_id": "8ddfb495-c5fc-46b9-bdc5-bcf58341bff0"
         }
       ],
-      "standard_fields": {},
-      "tabular_sections": true
+      "standard_fields": {
+        "Ref": [
+          -5,
+          "#"
+        ],
+        "DeletionMark": [
+          -4,
+          "B"
+        ],
+        "Date": [
+          -3,
+          "D"
+        ],
+        "BusinessProcess": [
+          -7,
+          "#"
+        ],
+        "RoutePoint": [
+          -8,
+          "#"
+        ],
+        "Executed": [
+          -10,
+          "B"
+        ]
+      },
+      "tabular_sections": true,
+      "standard_field_rules": [
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                19
+              ],
+              "not_values": [
+                "0"
+              ]
+            },
+            {
+              "path": [
+                1,
+                18
+              ],
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "fields": {
+            "Number": [
+              -2,
+              "S"
+            ]
+          }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                19
+              ],
+              "not_values": [
+                "0"
+              ]
+            },
+            {
+              "path": [
+                1,
+                18
+              ],
+              "values": [
+                "0"
+              ]
+            }
+          ],
+          "fields": {
+            "Number": [
+              -2,
+              "N"
+            ]
+          }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                22
+              ],
+              "not_values": [
+                "0"
+              ]
+            }
+          ],
+          "fields": {
+            "Description": [
+              -9,
+              "S"
+            ]
+          }
+        }
+      ],
+      "native_property_checks": {
+        "NumberType": {
+          "path": [
+            1,
+            18
+          ],
+          "values": {
+            "0": "Number",
+            "1": "String"
+          }
+        },
+        "NumberLength": {
+          "path": [
+            1,
+            19
+          ],
+          "integer": true
+        },
+        "Autonumbering": {
+          "path": [
+            1,
+            21
+          ],
+          "values": {
+            "0": "false",
+            "1": "true"
+          }
+        },
+        "DescriptionLength": {
+          "path": [
+            1,
+            22
+          ],
+          "integer": true
+        },
+        "DefaultPresentation": {
+          "path": [
+            1,
+            27
+          ],
+          "values": {
+            "0": "AsNumber",
+            "1": "AsDescription"
+          }
+        }
+      }
     },
     "ExchangePlan": {
       "types": {
@@ -628,8 +1263,109 @@
           "class_id": "1a1b4fea-e093-470d-94ff-1d2f16cda2ab"
         }
       ],
-      "standard_fields": {},
-      "tabular_sections": true
+      "standard_fields": {
+        "Ref": [
+          -6,
+          "#"
+        ],
+        "DeletionMark": [
+          -4,
+          "B"
+        ],
+        "SentNo": [
+          -9,
+          "N"
+        ],
+        "ReceivedNo": [
+          -10,
+          "N"
+        ],
+        "ThisNode": [
+          -13,
+          "B"
+        ],
+        "ExchangeDate": [
+          -14,
+          "D"
+        ]
+      },
+      "tabular_sections": true,
+      "standard_field_rules": [
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                15
+              ],
+              "not_values": [
+                "0"
+              ]
+            }
+          ],
+          "fields": {
+            "Code": [
+              -2,
+              "S"
+            ]
+          }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                17
+              ],
+              "not_values": [
+                "0"
+              ]
+            }
+          ],
+          "fields": {
+            "Description": [
+              -3,
+              "S"
+            ]
+          }
+        }
+      ],
+      "native_property_checks": {
+        "CodeLength": {
+          "path": [
+            1,
+            15
+          ],
+          "integer": true
+        },
+        "DescriptionLength": {
+          "path": [
+            1,
+            17
+          ],
+          "integer": true
+        },
+        "DefaultPresentation": {
+          "path": [
+            1,
+            25
+          ],
+          "values": {
+            "0": "AsCode",
+            "1": "AsDescription"
+          }
+        },
+        "DistributedInfoBase": {
+          "path": [
+            1,
+            26
+          ],
+          "values": {
+            "0": "false",
+            "1": "true"
+          }
+        }
+      }
     },
     "ChartOfCalculationTypes": {
       "types": {
@@ -644,8 +1380,243 @@
           "class_id": "0dc22ad2-476a-4794-afae-cfa7ed251752"
         }
       ],
-      "standard_fields": {},
-      "tabular_sections": true
+      "standard_fields": {
+        "Ref": [
+          -6,
+          "#"
+        ],
+        "DeletionMark": [
+          -5,
+          "B"
+        ],
+        "Predefined": [
+          -8,
+          "B"
+        ],
+        "PredefinedDataName": [
+          -11,
+          "S"
+        ]
+      },
+      "tabular_sections": true,
+      "standard_field_rules": [
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                25
+              ],
+              "not_values": [
+                "0"
+              ]
+            },
+            {
+              "path": [
+                1,
+                26
+              ],
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "fields": {
+            "Code": [
+              -2,
+              "S"
+            ]
+          }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                25
+              ],
+              "not_values": [
+                "0"
+              ]
+            },
+            {
+              "path": [
+                1,
+                26
+              ],
+              "values": [
+                "0"
+              ]
+            }
+          ],
+          "fields": {
+            "Code": [
+              -2,
+              "N"
+            ]
+          }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                30
+              ],
+              "not_values": [
+                "0"
+              ]
+            }
+          ],
+          "fields": {
+            "Description": [
+              -3,
+              "S"
+            ]
+          }
+        },
+        {
+          "when": [
+            {
+              "path": [
+                1,
+                29
+              ],
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "fields": {
+            "ActionPeriodIsBasic": [
+              -4,
+              "B"
+            ]
+          }
+        }
+      ],
+      "native_property_checks": {
+        "CodeLength": {
+          "path": [
+            1,
+            25
+          ],
+          "integer": true
+        },
+        "CodeType": {
+          "path": [
+            1,
+            26
+          ],
+          "values": {
+            "0": "Number",
+            "1": "String"
+          }
+        },
+        "ActionPeriodUse": {
+          "path": [
+            1,
+            29
+          ],
+          "values": {
+            "0": "false",
+            "1": "true"
+          }
+        },
+        "DescriptionLength": {
+          "path": [
+            1,
+            30
+          ],
+          "integer": true
+        },
+        "DefaultPresentation": {
+          "path": [
+            1,
+            31
+          ],
+          "values": {
+            "0": "AsCode",
+            "1": "AsDescription"
+          }
+        },
+        "DependenceOnCalculationTypes": {
+          "path": [
+            1,
+            27
+          ],
+          "values": {
+            "0": "DontUse",
+            "1": "OnActionPeriod",
+            "2": "OnRegistrationPeriod"
+          }
+        }
+      },
+      "standard_collections": {
+        "BaseCalculationTypes": {
+          "marker": -10,
+          "when": [
+            {
+              "path": [
+                1,
+                27
+              ],
+              "values": [
+                "1",
+                "2"
+              ]
+            }
+          ],
+          "columns": {
+            "LineNumber": [
+              -100,
+              "N"
+            ],
+            "CalculationType": [
+              -101,
+              "#"
+            ]
+          }
+        },
+        "DisplacingCalculationTypes": {
+          "marker": -20,
+          "when": [
+            {
+              "path": [
+                1,
+                29
+              ],
+              "values": [
+                "1"
+              ]
+            }
+          ],
+          "columns": {
+            "LineNumber": [
+              -100,
+              "N"
+            ],
+            "CalculationType": [
+              -101,
+              "#"
+            ]
+          }
+        },
+        "LeadingCalculationTypes": {
+          "marker": -30,
+          "when": [],
+          "columns": {
+            "LineNumber": [
+              -100,
+              "N"
+            ],
+            "CalculationType": [
+              -101,
+              "#"
+            ]
+          }
+        }
+      }
     }
   }
 }

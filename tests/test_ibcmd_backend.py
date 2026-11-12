@@ -32,6 +32,13 @@ class BackendTests(unittest.TestCase):
     def compiler(self):
         return backend.Compiler(self.request)
 
+    def test_partial_tree_is_rejected_before_full_cf_load_or_any_compiler_call(self):
+        directory=self.root/'partial';directory.mkdir();(directory/'.crs-partial.json').write_text('{}')
+        with mock.patch.object(backend,'read_cf',side_effect=AssertionError('Do not decode full CF')),\
+             mock.patch.object(backend.subprocess,'run',side_effect=AssertionError('Do not compile/bootstrap')):
+            with self.assertRaisesRegex(ValueError,'Partial XML'):
+                self.compiler().prepare(dict(directory=str(directory)),{},[],{})
+
     def test_diagnostic_verification_override_never_reaches_the_compiler(self):
         with mock.patch.dict(backend.os.environ,{'IBCMD_RS_LOAD_NO_VERIFY':'1'}),mock.patch.object(backend.subprocess,'run') as run:
             with self.assertRaisesRegex(ValueError,'diagnostic mode'):
@@ -40,6 +47,67 @@ class BackendTests(unittest.TestCase):
 
     def test_cf_normalization_preserves_all_records(self):
         self.assertEqual(backend.read_cf(self.base), self.image)
+
+    def test_compiler_accepts_supported_release_without_requiring_exact_build_catalog(self):
+        with mock.patch.object(backend.subprocess,'run',return_value=subprocess.CompletedProcess([],0,b'{"ok":true}',b'')) as run:
+            for version,expected in [('8.3.27.1936','8.3.27'),('8.5.1.1529','8.5.1'),('8.5.4.1878','8.5.4.1878')]:
+                self.compiler().execute('cf','export',self.base,self.root/'xml','--platform',version)
+                self.assertEqual(run.call_args.args[0][-1],expected)
+
+    def test_compiler_timeout_is_configurable_and_invalid_values_never_launch(self):
+        with mock.patch.object(backend.subprocess,'run',return_value=subprocess.CompletedProcess([],0,b'{"ok":true}',b'')) as run:
+            with mock.patch.dict(backend.os.environ,CRS_COMPILER_TIMEOUT_SECONDS='3600'):
+                self.compiler().execute('cf','export','source','target')
+            self.assertEqual(run.call_args.kwargs['timeout'],3600)
+            run.reset_mock()
+            for value in ('0','-1','True','1.5','86401'):
+                with mock.patch.dict(backend.os.environ,CRS_COMPILER_TIMEOUT_SECONDS=value),self.assertRaisesRegex(ValueError,'CRS_COMPILER_TIMEOUT_SECONDS'):
+                    self.compiler().execute('cf','export','source','target')
+            run.assert_not_called()
+
+    def test_large_image_uses_64_bit_offsets_and_preserves_records(self):
+        from cf_container import Container,Container64,detect_format
+        with self.base.open('rb') as source:
+            self.assertIs(type(detect_format(source)),Container)
+        with mock.patch.object(backend,'FORMAT15_OFFSET_LIMIT',1):
+            backend.write_cf(self.base,self.image)
+        with self.base.open('rb') as source:
+            self.assertIs(type(detect_format(source)),Container)
+            offset=backend.primary_container_offset(source)
+            self.assertEqual(offset,0x1359)
+            self.assertIs(type(detect_format(source,offset)),Container64)
+        self.assertEqual(backend.read_cf(self.base),self.image)
+
+    def test_absent_payload_is_only_allowed_in_compatibility_preamble(self):
+        from cf_container import Container
+        with self.assertRaisesRegex(ValueError,'no payload'):
+            Container().read(io.BytesIO(backend.format16_preamble(0)))
+        reader=Container();reader.allow_absent=True;reader.read(io.BytesIO(backend.format16_preamble(0)))
+        self.assertEqual(set(reader.files),{'root','version','versions'})
+
+    def test_cf_catalog_does_not_retain_all_compressed_payloads(self):
+        from cf_container import detect_format
+        image=dict(self.image,object=backend.os.urandom(128*1024))
+        backend.write_cf(self.base,image)
+        class CountingReader(io.BytesIO):
+            bytes_read=0
+            def read(self,size=-1):
+                data=super().read(size);self.bytes_read+=len(data);return data
+        source=CountingReader(self.base.read_bytes());container=detect_format(source);container.read(source)
+        self.assertLess(source.bytes_read,16384)
+        self.assertEqual({name:s.inflate(b''.join(item.data)) for name,item in container.files.items()},image)
+        self.assertGreater(source.bytes_read,128*1024)
+
+    def test_cf_deflate_writes_bounded_chunks_and_matches_native_encoding(self):
+        raw=backend.os.urandom(128*1024)
+        class Sink(io.BytesIO):
+            largest_write=0
+            def write(self,data):
+                self.largest_write=max(self.largest_write,len(data));return super().write(data)
+        output=Sink()
+        with mock.patch.object(backend,'CF_IO_CHUNK_BYTES',16*1024):backend._deflate_to_file(output,raw)
+        self.assertEqual(output.getvalue(),s.compress(raw))
+        self.assertLess(output.largest_write,64*1024)
 
     def test_last_container_is_effective_and_does_not_merge_compatibility_objects(self):
         from cf_container import Container64
@@ -249,8 +317,9 @@ class BackendTests(unittest.TestCase):
     def test_structured_error_on_stderr_is_reported(self):
         result = types.SimpleNamespace(returncode=2, stdout=b'', stderr=b'{"ok":false,"errors":[{"message":"unsupported Document layout"}]}')
         with mock.patch.object(backend.subprocess, 'run', return_value=result):
-            with self.assertRaisesRegex(ValueError, 'unsupported Document layout'):
+            with self.assertRaisesRegex(backend.CompilationRejected, 'unsupported Document layout') as failed:
                 self.compiler().execute('cf', 'load')
+        self.assertEqual(failed.exception.report,json.loads(result.stderr))
 
     def test_stale_base_object_is_rejected_before_execution(self):
         request = dict(self.request, snapshots={'object': 'snapshot'})

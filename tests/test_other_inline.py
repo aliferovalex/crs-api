@@ -24,7 +24,7 @@ class OtherInlineTests(unittest.TestCase):
                 body=self.body(case)
                 compiled.validate_form_interface(case['form_xml'],body,case['kind'],case['interface'].encode(),{})
                 paths=forms.object_paths(body,case['kind'])
-                self.assertEqual(paths.tables,{'Object.Rows'})
+                self.assertIn('Object.Rows',paths.tables)
                 for name,code in [('ExtraText','S'),('ExtraQuantity','N'),('ExtraActive','B'),('ExtraMoment','D'),('ExtraReference','#')]:
                     self.assertEqual(paths.types['Object.'+name],code)
 

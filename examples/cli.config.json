@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "repositories": {
+    "local": {
+      "url": "tcp://127.0.0.1:1542/Example",
+      "platform": "8.5.1.1529",
+      "username": "reader",
+      "password_env": "CRS_REPOSITORY_PASSWORD",
+      "cache_directory": "../.crs-cache/local"
+    }
+  },
+  "runtime": {
+    "state_directory": "../.crs-operations",
+    "ibcmd": "C:/tools/ibcmd-rs.exe",
+    "module_path": "../oscript_modules"
+  }
+}

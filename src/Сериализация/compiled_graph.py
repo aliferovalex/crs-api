@@ -10,6 +10,7 @@ import native_metadata as s
 import native_object_reader
 import native_configuration_reader
 import metadata_structure
+import native_form_bindings
 
 XR='{http://v8.1c.ru/8.3/xcf/readable}'
 
@@ -117,6 +118,7 @@ class Facts:
 
 def read(record,inventory,image,platform='8.5.1.1529'):
     oid=record['id'];body=s.Parser(image[oid].decode('utf-8-sig')).documents()
+    native_form_bindings.validate_owner_properties(record['node'],body[0],record['kind'])
     declared_features=features(record);declared_generated=generated(record);native=atoms(body)
     owned=[oid,*declared_features,*declared_generated]
     if len(owned)!=len(set(owned)):raise ValueError('Object, feature and generated identities overlap')

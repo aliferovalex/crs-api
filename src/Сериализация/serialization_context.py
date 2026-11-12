@@ -13,6 +13,20 @@ def decode(encoded,error):
     return s.decode_storage(encoded,error)
 
 
+def has_storage(request):return 'storage' in request or 'storage_file' in request
+
+
+def storage(request,error='Invalid version storage'):
+    """File and base64 inputs have the same checked record interface."""
+    if 'storage_file' in request:
+        from native_storage_file import FileStorage
+        cached=request.get('_storage_file_reader')
+        if cached is None:
+            cached=FileStorage(request['storage_file']);request['_storage_file_reader']=cached
+        return cached
+    return decode(request['storage'],error)
+
+
 @dataclass
 class SnapshotContext:
     saved: list

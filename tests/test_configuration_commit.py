@@ -52,6 +52,20 @@ class ConfigurationCommitTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Compiler requires'):
             commit.serialize(self.request)
 
+    def test_history_version_comes_from_verified_target_root(self):
+        request=copy.deepcopy(self.request)
+        for key in ('directory','baseline_directory'):
+            folder=Path(self.temp.name)/key;shutil.copytree(request[key],folder);request[key]=str(folder)
+            root=folder/'Configuration.xml';raw=root.read_bytes()
+            self.assertIn(b'<Version/>',raw)
+            root.write_bytes(raw.replace(b'<Version/>',b'<Version>2.6 &amp; new</Version>'))
+        plan=commit.export.plan(request)
+        for key in ('target_fingerprint','baseline_fingerprint'):request[key]=plan[key]
+        with mock.patch.object(ibcmd_backend.Compiler,'prepare',autospec=True,side_effect=self.prepared):
+            result=commit.serialize(request)
+        self.assertEqual(result['version_code'],'2.6 & new')
+        self.assertTrue(result['version_code_resolved'])
+
     def test_compiler_error_propagates_without_building_a_packet(self):
         with mock.patch.object(ibcmd_backend.Compiler, 'prepare', side_effect=ValueError('upstream rejected type')), \
                 mock.patch.object(commit.packets, 'assemble') as assemble:

@@ -70,6 +70,20 @@ class CacheTests(unittest.TestCase):
         source=self.cache.source(dict(self.request,snapshot_ids=[]))
         return dict(self.request,storage=source['storage'],repository_version_after=OLD)
 
+    def test_file_source_and_bootstrap_do_not_exchange_aggregate_base64(self):
+        from native_storage_file import FileStorage
+        path=self.work/'source.bin'
+        result=self.cache.source(dict(self.request,snapshot_ids=[CHILD],storage_output=str(path)))
+        self.assertNotIn('storage',result)
+        self.assertEqual(result['storage_file'],str(path.resolve()))
+        self.assertEqual(len(result['snapshots']),1)
+        request=dict(self.request,storage_file=str(path),repository_version_after=OLD)
+        fresh=cache.Cache(self.work/'file-bootstrap')
+        fresh.bootstrap(request)
+        _,image,_=fresh.load()
+        for name in set(self.image)-cache.SERVICE:self.assertEqual(image[name],self.image[name])
+        self.assertEqual(external_data.extract(FileStorage(path),CHILD)['object_id'],CHILD)
+
     def test_bootstrap_without_seed_preserves_all_native_payloads(self):
         fresh=cache.Cache(self.work/'fresh')
         request=self.bootstrap_request();request.pop('seed_cf')
@@ -176,6 +190,23 @@ class CacheTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'stream ownership'):cache.inventory(context(objects))
         objects[CHILD][0][13]=[s.atom(1),s.atom(ROOT)]
         with self.assertRaisesRegex(ValueError,'Ambiguous'):cache.inventory(context(objects))
+
+    def test_compact_bootstrap_context_preserves_all_compared_metadata(self):
+        objects=copy.deepcopy(self.objects)
+        objects[CHILD][1]=[s.atom('large ignored document')]*1000
+        encoded=context(objects)
+        root,records,full=cache.inventory(encoded)
+        compact_root,compact_records,small=cache.inventory(encoded,compact=True)
+        self.assertEqual((compact_root,compact_records),(root,records))
+        self.assertEqual(len(small[CHILD]),1)
+        self.assertEqual(small[CHILD][0][12:],[None]*5)
+        for oid in full:
+            cache.serialization_context.validate_metadata(full[oid][0],small[oid][0],oid)
+        small[CHILD][0][8]=s.atom(NEW)
+        with self.assertRaisesRegex(ValueError,'fields=8'):
+            cache.serialization_context.validate_metadata(full[CHILD][0],small[CHILD][0],CHILD)
+        objects[CHILD][0][13]=[s.atom(1),s.atom(ROOT)]
+        with self.assertRaisesRegex(ValueError,'Ambiguous'):cache.inventory(context(objects),compact=True)
 
     def test_complete_version_can_exceed_one_record_limit_and_still_validates_checksums(self):
         payload=s.storage([b'a'*(s.MAX_BYTES//2),b'b'*(s.MAX_BYTES//2)],s.text_bytes([[s.atom(0),s.atom(0)]]))

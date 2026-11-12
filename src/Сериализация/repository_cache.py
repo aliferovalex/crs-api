@@ -17,6 +17,8 @@ import packet_builder
 import serialization_context
 import platform_profiles
 import native_streams
+import resource_limits as limits
+from native_storage_file import write as write_storage
 
 SERVICE={'root','version','versions'}
 
@@ -36,22 +38,28 @@ def service_versions(image,records):
 def digest(raw):return hashlib.sha256(raw).hexdigest()
 
 
-def inventory(context):
-    objects=metadata_context.context_objects(context)
-    roots=[oid for oid,docs in objects.items() if s.val(docs[0][3])==s.ZERO]
-    if len(roots)!=1:raise ValueError('Cache requires exactly one configuration root')
-    records={};names=set();identities={}
-    for oid,docs in objects.items():
+def inventory(context,*,compact=False):
+    objects={};roots=[];records={};names=set();identities={}
+    for oid,docs in metadata_context.iter_context_objects(context):
+        m=docs[0]
+        if s.val(m[3])==s.ZERO:roots.append(oid)
         for value in native_streams.identities(docs[0]):
             if value in identities:raise ValueError('Ambiguous cache stream owner identity')
             identities[value]=oid
-    for oid,docs in objects.items():
-        m=docs[0];streams=serialization_context.external_versions(m[11])
+        streams=serialization_context.external_versions(m[11])
         if native_streams.select(m,streams)!=set(streams) or names.intersection(streams):raise ValueError('Invalid cache stream ownership')
         if oid in names:raise ValueError('Duplicate cache entry')
         names.update(streams);names.add(oid)
         records[oid]=dict(local=metadata_context.guid(s.val(m[8])),original=metadata_context.guid(s.val(m[7])),
                           class_id=s.val(m[2]),parent_id=s.val(m[3]),externals=streams)
+        if compact:
+            # Bootstrap compares precisely fields 0..11 against the complete
+            # version; remaining documents/maps are not used by that operation.
+            # Shape and stream-owner maps were validated before discarding them.
+            m[12:]=[None]*5
+            objects[oid]=[m]
+        else:objects[oid]=docs
+    if len(roots)!=1:raise ValueError('Cache requires exactly one configuration root')
     return roots[0],records,objects
 
 
@@ -107,7 +115,8 @@ class Cache:
             yield
         finally:lock.unlink()
 
-    def load(self):
+    def load_state(self):
+        """Verify the published state and CF hash without decoding its image."""
         if not (self.directory/'current.json').is_file():raise ValueError('Initialize the repository cache first')
         pointer=json.loads((self.directory/'current.json').read_text(encoding='utf-8'))
         generation=pointer['generation']
@@ -117,7 +126,12 @@ class Cache:
         if digest(raw)!=pointer['state_sha256']:raise ValueError('Cache state checksum mismatch')
         state=json.loads(raw)
         path=folder/'base.cf'
-        if state['schema']!=1 or state['generation']!=generation or digest(path.read_bytes())!=state['cf_sha256']:raise ValueError('Cache CF checksum mismatch')
+        if path.stat().st_size>limits.get('cf_bytes',ibcmd_backend.MAX_CF_BYTES):raise ValueError('Cache CF exceeds byte limit')
+        if state['schema']!=1 or state['generation']!=generation or limits.file_digest(path)!=state['cf_sha256']:raise ValueError('Cache CF checksum mismatch')
+        return state,path
+
+    def load(self):
+        state,path=self.load_state()
         image=ibcmd_backend.read_cf(path)
         if {key:digest(raw) for key,raw in image.items()}!=state['entries']:raise ValueError('Cache entry checksum mismatch')
         validate_image(image,state['root_id'],state['objects'])
@@ -127,7 +141,7 @@ class Cache:
         generation=uuid.uuid4().hex;folder=self.directory/'generations'/generation
         folder.mkdir(parents=True)
         path=folder/'base.cf';ibcmd_backend.write_cf(path,image)
-        state=dict(state,schema=1,generation=generation,cf_sha256=digest(path.read_bytes()),entries={key:digest(raw) for key,raw in image.items()})
+        state=dict(state,schema=1,generation=generation,cf_sha256=limits.file_digest(path),entries={key:digest(raw) for key,raw in image.items()})
         raw=(json.dumps(state,ensure_ascii=False,sort_keys=True,indent=2)+'\n').encode('utf-8')
         (folder/'repository-state.json').write_bytes(raw)
         pointer=dict(generation=generation,state_sha256=digest(raw))
@@ -151,25 +165,30 @@ class Cache:
             if (self.directory/'current.json').exists():raise ValueError('Cache already initialized')
             version=metadata_context.guid(request['repository_version'])
             if request['repository_version_after']!=version:raise ValueError('Repository changed during initial download')
-            root,records,objects=inventory(request['context'])
+            root,records,objects=inventory(request['context'],compact=True)
             profiles=json.loads(Path(__file__).with_name('cf_service_profiles.json').read_text(encoding='utf-8'))
             profile=profiles.get(platform_profiles.profile(request['platform']))
             if profile is None:raise ValueError('No initial CF service profile for this platform; supply seed_cf')
-            data=serialization_context.decode(request['storage'],'Oversized initial repository data')
-            received=external_data.extract_many(data,set(objects));image={}
-            for oid,row in received.items():
+            data=serialization_context.storage(request,'Oversized initial repository data')
+            image={};decoded_bytes=0
+            def add(name,raw):
+                nonlocal decoded_bytes
+                decoded_bytes+=len(raw)
+                if decoded_bytes>limits.get('image_bytes',ibcmd_backend.MAX_IMAGE_BYTES):raise ValueError('Oversized decoded initial CF image')
+                if name in image:raise ValueError('Duplicate initial CF member')
+                image[name]=raw
+            for oid,saved,body,streams in external_data.iter_native(data,set(objects)):
                 m=objects[oid][0];expected=records[oid]
-                if (row['class_id'],row['parent_id'],row['version_number'],row['original'],row['local'])!=(expected['class_id'],expected['parent_id'],int(s.val(m[5])),uuid.UUID(expected['original']).bytes_le.hex(),uuid.UUID(expected['local']).bytes_le.hex()):
-                    raise ValueError('Initial repository data/context mismatch: '+oid)
-                actual={entry['name']:entry['version'] for entry in row['externals']}
-                wanted={name:uuid.UUID(value).bytes_le.hex()+'00000000' for name,value in expected['externals'].items()}
+                serialization_context.validate_metadata(saved[0],m,oid,'Initial repository data/context mismatch')
+                actual=serialization_context.external_versions(saved[0][11])
+                wanted=expected['externals']
                 if actual!=wanted:raise ValueError('Initial stream versions differ from context')
-                image[oid]=s.inflate(base64.b64decode(row['data'],validate=True))
-                for entry in row['externals']:image[entry['name']]=s.inflate(base64.b64decode(entry['data'],validate=True))
+                add(oid,s.inflate(body))
+                for name,blob in streams.items():add(name,s.inflate(blob))
             def native(value):return [native(item) for item in value] if isinstance(value,list) else s.atom(value)
-            image['root']=('﻿{'+str(profile['root_format'])+','+root+',}').encode('utf-8')
-            image['version']=s.text_bytes([native(profile['version'])])
-            image['versions']=service_versions(image,records)
+            add('root',('﻿{'+str(profile['root_format'])+','+root+',}').encode('utf-8'))
+            add('version',s.text_bytes([native(profile['version'])]))
+            add('versions',service_versions(image,records))
             validate_image(image,root,records)
             state=dict(repository_id=identity(request),platform=request['platform'],root_id=root,objects=records,repository_version=version)
             return self.publish(image,state)
@@ -245,24 +264,28 @@ class Cache:
             raise ValueError('Refresh cache before preparing source snapshots')
         wanted=request['snapshot_ids']
         if len(set(wanted))!=len(wanted) or not set(wanted)<=set(objects):raise ValueError('Invalid cached snapshot selection')
-        payloads=[];manifest=[s.atom(0),s.atom(len(objects))];snapshots=[]
-        for oid,docs in objects.items():
-            meta=s.text_bytes(docs);body=s.compress(image[oid]);payloads.extend([meta,body])
-            streams=records[oid]['externals']
-            header=[s.atom(oid),s.atom(hashlib.sha1(meta).hexdigest(),True),s.atom(hashlib.sha1(body).hexdigest(),True)]
-            manifest.extend(header+[s.atom(len(streams))])
-            for name in streams:
-                raw=s.compress(image[name]);payloads.append(raw)
-                manifest.extend([s.atom(name,True),s.atom(hashlib.sha1(raw).hexdigest(),True)])
-            if oid in wanted:
-                snapshot=s.storage([meta,body],s.text_bytes([[s.atom(0),s.atom(1)]+header+[s.atom(0)]]))
-                original=uuid.UUID(records[oid]['original']).bytes_le+bytes(4)
-                local=uuid.UUID(records[oid]['local']).bytes_le+bytes(4)
-                snapshots.append(dict(object_id=oid,snapshot=base64.b64encode(snapshot).decode(),
-                    description=packet_builder.description(docs[0],original,local),
-                    version_number=int(s.val(docs[0][5])),self_version_number=int(s.val(docs[0][6]))))
-        storage=s.storage(payloads,s.text_bytes([manifest]))
-        if len(storage)>external_data.MAX_STORAGE_BYTES:raise ValueError('Cached version storage exceeds protocol reader limit')
+        manifest=[s.atom(0),s.atom(len(objects))];snapshots=[]
+        def payloads():
+            for oid,docs in objects.items():
+                meta=s.text_bytes(docs);body=s.compress(image[oid]);yield meta;yield body
+                streams=records[oid]['externals']
+                header=[s.atom(oid),s.atom(hashlib.sha1(meta).hexdigest(),True),s.atom(hashlib.sha1(body).hexdigest(),True)]
+                manifest.extend(header+[s.atom(len(streams))])
+                for name in streams:
+                    raw=s.compress(image[name]);yield raw
+                    manifest.extend([s.atom(name,True),s.atom(hashlib.sha1(raw).hexdigest(),True)])
+                if oid in wanted:
+                    snapshot=s.storage([meta,body],s.text_bytes([[s.atom(0),s.atom(1)]+header+[s.atom(0)]]))
+                    original=uuid.UUID(records[oid]['original']).bytes_le+bytes(4)
+                    local=uuid.UUID(records[oid]['local']).bytes_le+bytes(4)
+                    snapshots.append(dict(object_id=oid,snapshot=base64.b64encode(snapshot).decode(),
+                        description=packet_builder.description(docs[0],original,local),
+                        version_number=int(s.val(docs[0][5])),self_version_number=int(s.val(docs[0][6]))))
+        if request.get('storage_output'):
+            result=write_storage(request['storage_output'],payloads(),lambda:s.text_bytes([manifest]))
+            return dict(result,snapshots=snapshots,repository_version=state['repository_version'])
+        values=list(payloads());storage=s.storage(values,s.text_bytes([manifest]))
+        if len(storage)>limits.get('storage_bytes',external_data.MAX_STORAGE_BYTES):raise ValueError('Cached version storage exceeds resource limit')
         return dict(snapshots=snapshots,storage=base64.b64encode(storage).decode(),repository_version=state['repository_version'])
 
 

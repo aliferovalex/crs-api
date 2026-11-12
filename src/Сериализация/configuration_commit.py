@@ -1,5 +1,5 @@
 """Compile complete export changes through ibcmd-rs, then build one CRS packet."""
-import base64,copy,uuid
+import base64,copy,uuid,hashlib
 from pathlib import Path
 import metadata_context
 import native_metadata as s
@@ -204,8 +204,15 @@ def compile_configuration(request,compiler):
     payload=packets.assemble(final_graph(objects,kept,list(changed),removed,plan['new_ids']),records)
     final_plan=export.plan(request)
     if final_plan['target_fingerprint']!=plan['target_fingerprint'] or final_plan['baseline_fingerprint']!=plan['baseline_fingerprint']:raise ValueError('Export changed during compilation')
+    root_id=next(oid for oid,row in inventory.items() if row['kind']=='Configuration')
+    # The compiler has verified the complete target XML. Version may be
+    # intentionally empty; do not substitute an older history label for it.
+    version_code=inventory[root_id]['node'].findtext(export.Q+'Properties/'+export.Q+'Version') or ''
     result=dict(data=base64.b64encode(payload).decode(),descriptions=[descriptions[oid] for oid in changed],requested=requested,removed_ids=plan['removed_ids'],
-                changed_ids=[oid for oid in changed if oid in objects],new_ids=plan['new_ids'],version_code='',externals=externals,repository=request['repository'],platform=request['platform'],repository_version=request['repository_version'])
+                changed_ids=[oid for oid in changed if oid in objects],new_ids=plan['new_ids'],version_code=version_code,version_code_resolved=True,externals=externals,repository=request['repository'],platform=request['platform'],repository_version=request['repository_version'])
+    result['verification']=[dict(id=oid,body_sha256=hashlib.sha256(body).hexdigest(),
+        streams=[dict(name=s.val(key),sha256=hashlib.sha256(compiler.after[s.val(key)]).hexdigest()) for key in docs[0][11][1::2]])
+        for oid,(docs,body,_) in changed.items()]
     if request.get('baseline_update'):
         import repository_baseline
         result['baseline_update']=repository_baseline.register(request,changed,payload,removed)

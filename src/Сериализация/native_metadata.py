@@ -5,6 +5,7 @@ import re
 import struct
 import uuid
 import zlib
+import resource_limits as limits
 from dataclasses import dataclass
 
 
@@ -23,16 +24,17 @@ EOF_MARKER = bytes.fromhex("eee6eb24e5811f44ab292f34ce20ab33")
 HEADER = struct.pack("<III", 0x11223344, 2, 3)
 
 
-MAX_BYTES = 16 * 1024 * 1024
-MAX_STORAGE_BYTES = 256 * 1024 * 1024
+MAX_BYTES = limits.get('record_bytes',16 * 1024 * 1024)
+MAX_STORAGE_BYTES = limits.get('storage_bytes',256 * 1024 * 1024)
 
 
 def decode_storage(encoded, error='Oversized or invalid native storage'):
     """Bound the envelope separately from each record and inflated object."""
-    if not isinstance(encoded, str) or len(encoded) > 4 * ((MAX_STORAGE_BYTES + 2) // 3):
+    budget=limits.get('storage_bytes',MAX_STORAGE_BYTES)
+    if not isinstance(encoded, str) or len(encoded) > 4 * ((budget + 2) // 3):
         raise ValueError(error)
     data = base64.b64decode(encoded, validate=True)
-    if len(data) > MAX_STORAGE_BYTES:
+    if len(data) > budget:
         raise ValueError(error)
     return data
 
@@ -150,11 +152,11 @@ def record(data):
     return struct.pack("<Q", len(data)) + data
 
 
-def read_record(data, pos):
+def read_record(data, pos, *, budget=None):
     if pos + 8 > len(data):
         raise ValueError("Truncated storage record")
     size = struct.unpack_from("<Q", data, pos)[0]
-    if size > MAX_BYTES or pos + 8 + size > len(data):
+    if size > (limits.get('record_bytes',MAX_BYTES) if budget is None else budget) or pos + 8 + size > len(data):
         raise ValueError("Invalid storage record size")
     return data[pos + 8:pos + 8 + size], pos + 8 + size
 
@@ -183,15 +185,16 @@ def storage(records, manifest):
 
 def inflate(data):
     decoder = zlib.decompressobj(-15)
-    raw = decoder.decompress(data, MAX_BYTES + 1)
-    if len(raw) > MAX_BYTES or not decoder.eof or decoder.unused_data:
+    budget=limits.get('record_bytes',MAX_BYTES)
+    raw = decoder.decompress(data, budget + 1)
+    if len(raw) > budget or not decoder.eof or decoder.unused_data:
         raise ValueError("Invalid or oversized raw DEFLATE")
     return raw
 
 
 def validate_storage(data):
     """Validate the index, all indexed records and both SHA1 checksums."""
-    if len(data) < 128 or len(data) > MAX_STORAGE_BYTES or data[:8] != HEADER[:8]:
+    if len(data) < 128 or len(data) > limits.get('storage_bytes',MAX_STORAGE_BYTES) or data[:8] != HEADER[:8]:
         raise ValueError("Unsupported or oversized native storage")
     count = struct.unpack_from('<I', data, 8)[0]
     if data[-36:-20] != EOF_MARKER or hashlib.sha1(data[:-20]).digest() != data[-20:]:

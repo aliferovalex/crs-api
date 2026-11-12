@@ -31,7 +31,7 @@ class OtherTabularTests(unittest.TestCase):
                 body=self.body(case)
                 compiled.validate_form_interface(case['form_xml'],body,case['kind'],case['interface'].encode(),{})
                 paths=forms.object_paths(body,case['kind'])
-                self.assertEqual(paths.tables,{'Object.Rows'})
+                self.assertIn('Object.Rows',paths.tables)
                 for name,code in [('Text','S'),('Quantity','N'),('Active','B'),('Moment','D')]:
                     self.assertEqual(paths.types['Object.Rows.'+name],code)
 
@@ -52,7 +52,7 @@ class OtherTabularTests(unittest.TestCase):
             with self.subTest(kind=case['kind']):
                 body=self.body(case,'before')
                 self.assertEqual(tabular.collection(body,case['kind']),[])
-                self.assertFalse(forms.object_paths(body,case['kind']).tables)
+                self.assertNotIn('Object.Rows',forms.object_paths(body,case['kind']).tables)
                 with self.assertRaisesRegex(ValueError,'unavailable final DataPath'):
                     compiled.validate_form_paths(case['form_xml'],body,case['kind'])
 

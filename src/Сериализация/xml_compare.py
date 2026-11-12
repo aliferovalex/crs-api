@@ -5,9 +5,10 @@ import xml_namespaces
 import xml_qnames
 
 Q = '{' + xml_namespaces.MD + '}'
+PREDEF='{http://v8.1c.ru/8.3/xcf/predef}'
 
 
-def canonical(node,scopes=None,preserve=False):
+def canonical(node,scopes=None,preserve=False,calculation_predefined=False):
     attributes=dict(node.attrib)
     mode=node.get('{http://www.w3.org/XML/1998/namespace}space')
     if mode is not None:preserve=mode=='preserve'
@@ -27,10 +28,19 @@ def canonical(node,scopes=None,preserve=False):
             if not isinstance(value,str):continue
             match=re.fullmatch(r'([^\W\d][\w.-]*):[^\W\d][\w.-]*',value,re.UNICODE)
             if match:lexical_namespaces.append((value,bindings.get(match[1])))
+    ordered=list(node)
+    if calculation_predefined and node.tag==PREDEF+'Item' and not preserve:
+        # Designer accepts either order of these named sections and emits
+        # Base/Leading/Displaced; ibcmd emits Displaced/Base/Leading. Preserve
+        # item order, every row within each section, and all other properties.
+        slots=[i for i,child in enumerate(ordered) if child.tag in {PREDEF+name for name in ('Base','Leading','Displaced')}]
+        sections=[ordered[i] for i in slots]
+        if len({child.tag for child in sections})!=len(sections):raise ValueError('Duplicate predefined calculation section')
+        for i,child in zip(slots,sorted(sections,key=lambda child:child.tag)):ordered[i]=child
     children=[]
-    for child in node:
+    for child in ordered:
         tail=child.tail or ''
-        children.append([canonical(child,scopes,preserve),tail if preserve or tail.strip() else ''])
+        children.append([canonical(child,scopes,preserve,calculation_predefined),tail if preserve or tail.strip() else ''])
     return [node.tag,attributes,text,children,sorted(lexical_namespaces)]
 
 
@@ -38,14 +48,17 @@ def document(text):
     """Compare XML structure and QName values using their actual namespaces."""
     if '<!DOCTYPE' in text.upper() or '<!ENTITY' in text.upper():raise ValueError('DOCTYPE/ENTITY is unsupported in compiler XML')
     root,scopes=xml_namespaces.parse(text)
-    return canonical(root,scopes)
+    kind=root.get(xml_qnames.XSI+'type')
+    calculation=(root.tag==PREDEF+'PredefinedData' and kind is not None
+                 and xml_qnames.qname(kind,xml_namespaces.context(scopes,root))==(PREDEF[1:-1],'CalculationTypePredefinedItems'))
+    return canonical(root,scopes,calculation_predefined=calculation)
 
 
 def file_equal(name,before,after):
     """Share content equality across planning, CF assembly and reverse checks.
 
     Raw fingerprints remain separate mutation guards. Binary contents, text
-    spaces, XML leaf values and child order are never normalized away here.
+    spaces, XML leaf values and row order are never normalized away here.
     """
     if before==after:return True
     if before is None or after is None:return False

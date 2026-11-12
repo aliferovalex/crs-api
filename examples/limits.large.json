@@ -1,0 +1,12 @@
+{
+  "message_bytes": 2147483648,
+  "storage_bytes": 1073741824,
+  "record_bytes": 67108864,
+  "cf_bytes": 1073741824,
+  "image_bytes": 2147483648,
+  "export_file_bytes": 67108864,
+  "export_total_bytes": 1073741824,
+  "export_files": 262144,
+  "packet_bytes": 1073741824,
+  "module_bytes": 16777216
+}

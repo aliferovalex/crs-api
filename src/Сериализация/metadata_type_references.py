@@ -63,7 +63,7 @@ def resolve_required(refs,request,storage=None):
     if not refs:return {}
     if '_compiled_types' in request:return request['_compiled_types'].resolve_required(refs)
     reader=native_references.catalog(request)
-    if storage is None and 'storage' in request:storage=contexts.decode(request['storage'],'Metadata references require current version storage')
+    if storage is None and contexts.has_storage(request):storage=contexts.storage(request,'Metadata references require current version storage')
     return {ref:(type_sets.profile()[ref] if ref in type_sets.profile() else reader.type_id(*reference_definition(ref),storage=storage)) for ref in sorted(refs)}
 
 
@@ -73,7 +73,7 @@ def object_ids(xml,reader):
 
 def required_object_ids(refs,reader,storage=None):
     if '_compiled_types' in reader.request:return reader.request['_compiled_types'].object_ids_required(refs)
-    if storage is None and 'storage' in reader.request:storage=contexts.decode(reader.request['storage'],'Type-set dependencies require current version storage')
+    if storage is None and contexts.has_storage(reader.request):storage=contexts.storage(reader.request,'Type-set dependencies require current version storage')
     return {reader.select(*reference_name(ref),label='Referenced type').object_id for ref in refs if ref not in type_sets.profile()}|type_sets.dependencies(refs,reader,storage)
 
 
@@ -126,7 +126,7 @@ def source_owners(request,source,layout,relations,oid,*,strict=True):
         return managed
     if old_types or old_groups:
         reader=native_references.Catalog(request)
-        storage=contexts.decode(request['storage'],'Source type dependencies require current version storage') if 'storage' in request else None
+        storage=contexts.storage(request,'Source type dependencies require current version storage') if contexts.has_storage(request) else None
         managed.update(type_sets.dependencies(old_groups,reader,storage))
     if old_types:
         kinds=reference_kinds();matched=set()

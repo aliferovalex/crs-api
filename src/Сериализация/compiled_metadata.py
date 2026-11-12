@@ -168,7 +168,7 @@ def validate_form_interface(xml,owner,kind,raw,request):
         if entries:raise ValueError('Compiled native form has an undeclared main attribute')
     elif len(entries)!=1 or s.render(entries[0][5])!='{"Pattern",{"#",'+expected_main+'}}':
         raise ValueError('Compiled native main type differs from final owner')
-    storage=serialization_context.decode(request['storage'],'Oversized form storage') if 'storage' in request else None
+    storage=serialization_context.storage(request,'Oversized form storage') if serialization_context.has_storage(request) else None
     values=metadata_references.resolve(xml,request,storage)
     expected=set()
     for value in values.values():expected.update(value if isinstance(value,tuple) else (value,))
@@ -260,7 +260,7 @@ def content(request, change, objects, before, after):
     owner = s.Parser(after[parent].decode('utf-8-sig')).documents()[0]
     xml = change.get('_form_interface', change.get('form_xml'))
     validate_form_interface(xml,owner,kind,after[name],request)
-    storage = serialization_context.decode(request['storage'], 'Oversized form storage')
+    storage = serialization_context.storage(request,'Oversized form storage')
     docs[0][14] = metadata_references.form_relations(xml, request, parent, s.metadata_relations(docs[0][14]), before[name], storage)
     names={key for key in before.keys()|after.keys() if key.startswith(oid+'.')}
     return native_content.compiled_stream_changes(docs,frame.saved,after[oid],oid,before,after,names)

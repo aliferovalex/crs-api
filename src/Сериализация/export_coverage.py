@@ -156,7 +156,8 @@ def require_complete_export(image,records,files):
         def require(relative):
             if relative not in files:raise ValueError('Compiler omitted native asset from complete XML export: '+relative+' ('+name+')')
         if codec=='Predefined':
-            if path not in files and native_predefined_reader.read(raw,kind):
+            values=native_predefined_reader.read(raw,kind) if kind=='ChartOfCalculationTypes' or path not in files else None
+            if path not in files and values:
                 raise ValueError('Compiler omitted nonempty predefined data from complete XML export: '+path)
         elif codec=='Module':
             text=_module(raw)

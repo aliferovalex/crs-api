@@ -24,8 +24,9 @@ class ModuleMapTests(unittest.TestCase):
 
     def test_readers_do_not_import_packet_builders_or_xml_converters(self):
         dependencies = mapping.extract()['imports']
-        for name, allowed in [('native_metadata', set()),
-                              ('metadata_context', {'python:native_metadata'}),
+        for name, allowed in [('resource_limits', set()),
+                              ('native_metadata', {'python:resource_limits'}),
+                              ('metadata_context', {'python:native_metadata','python:resource_limits'}),
                               ('xml_namespaces', set())]:
             actual = {edge['callee'] for edge in dependencies if edge['caller'] == 'python:' + name}
             self.assertLessEqual(actual, allowed)

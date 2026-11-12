@@ -65,6 +65,9 @@ def references(index,record,body,image,xml):
     if kind in ('Role','Template','CommonTemplate') and streams:
         import external_dependencies
         values.update(external_dependencies.stream_references(kind,oid,body,streams))
+    if kind=='ChartOfCalculationTypes' and oid+'.2' in streams:
+        import native_predefined_reader
+        values.update(native_predefined_reader.calculation_references(streams[oid+'.2']))
     result={}
     for value in values:
         owner=identity_owner(index,value)

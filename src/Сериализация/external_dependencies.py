@@ -94,7 +94,7 @@ def validate(request,objects,removed,targets,changed):
 
 def validate_streams(request,objects,watchers,targets,changed):
     needed=watchers & set(objects)
-    storage=contexts.decode(request.get('storage'),'External dependencies require current version storage') if needed else None
+    storage=contexts.storage(request,'External dependencies require current version storage') if needed else None
     current=external_data.extract_many(storage,needed) if needed else {}
     for oid in sorted(watchers):
         streams={};body=None

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Хранилища 1С"
+  short_description: "Чтение, подготовка изменений и пользователи хранилищ 1С"
+  default_prompt: "Используй $1c-repository для работы с хранилищем 1С через MCP или JSON CLI CRS API."

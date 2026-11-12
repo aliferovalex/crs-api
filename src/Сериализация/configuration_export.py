@@ -12,6 +12,7 @@ import metadata_structure as structure
 import export_xml as preparation
 import native_object_profiles as profiles
 import xml_compare
+import resource_limits as limits
 
 Q=preparation.Q
 D='{http://v8.1c.ru/8.3/xcf/dumpinfo}'
@@ -32,13 +33,22 @@ def export_paths(base):
     return walk(base)
 
 
+def require_complete_directory(directory):
+    base=Path(directory).resolve()
+    if (base/'.crs-partial.json').exists():
+        raise ValueError('Partial XML workspace cannot use complete-configuration preparation; use its coverage map and addressed module preparation')
+
+
 def inventory(directory):
     base=Path(directory).resolve()
     if not base.is_dir():raise ValueError('Missing export directory')
+    require_complete_directory(base)
     files={};objects={};by_path={};total=0
     for path in export_paths(base):
+        if len(files)>=limits.get('export_files',65536):raise ValueError('Configuration export exceeds export_files')
+        if path.stat().st_size>limits.get('export_file_bytes',s.MAX_BYTES) or total+path.stat().st_size>limits.get('export_total_bytes',s.MAX_BYTES*8):raise ValueError('Oversized configuration export')
         name=path.relative_to(base).as_posix();raw=path.read_bytes();total+=len(raw)
-        if len(raw)>s.MAX_BYTES or total>s.MAX_BYTES*8 or len(files)>=65536:raise ValueError('Oversized configuration export')
+        if len(raw)>limits.get('export_file_bytes',s.MAX_BYTES) or total>limits.get('export_total_bytes',s.MAX_BYTES*8):raise ValueError('Oversized configuration export')
         files[name]=raw
         if path.suffix.lower()!='.xml' or name=='ConfigDumpInfo.xml':continue
         if b'<!DOCTYPE' in raw.upper():raise ValueError('Export DOCTYPE is unsupported')

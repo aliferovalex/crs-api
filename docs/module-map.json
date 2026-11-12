@@ -1,10 +1,28 @@
 {
   "modules": {
+    "python:agent_cli": {
+      "name": "agent_cli",
+      "language": "Python",
+      "path": "src/agent_cli.py",
+      "purpose": "Проверка JSON и профилей, запуск OneScript без секретов в аргументах, поиск по актуальным описаниям, читаемые файлы и review локального пакета."
+    },
+    "python:agent_mcp": {
+      "name": "agent_mcp",
+      "language": "Python",
+      "path": "src/agent_mcp.py",
+      "purpose": "Каталог MCP-инструментов, JSON-RPC lifecycle и очередь CLI; помещение конфигурации и запись пользователей включаются отдельными флагами."
+    },
     "python:cf_container": {
       "name": "cf_container",
       "language": "Python",
       "path": "src/Сериализация/cf_container.py",
       "purpose": "Встроенное чтение и запись контейнеров CF Format15/Format16; адаптированный MIT-код без внешних Python-зависимостей."
+    },
+    "python:commit_artifacts": {
+      "name": "commit_artifacts",
+      "language": "Python",
+      "path": "src/Сериализация/commit_artifacts.py",
+      "purpose": "Неизменяемый подготовленный пакет, план с SHA256 одобрения, локальный журнал единственной попытки и проверка нативного содержимого после помещения."
     },
     "python:compiled_creation": {
       "name": "compiled_creation",
@@ -48,6 +66,12 @@
       "path": "src/Сериализация/configuration_export.py",
       "purpose": "Инвентаризация файлов выгрузки и определение операций."
     },
+    "python:configuration_version": {
+      "name": "configuration_version",
+      "language": "Python",
+      "path": "src/Сериализация/configuration_version.py",
+      "purpose": "Чтение свойства Version корня из проверенного адресного снимка или итогового пакета для поля code истории помещения; без полной выгрузки и без записи в хранилище."
+    },
     "python:export_coverage": {
       "name": "export_coverage",
       "language": "Python",
@@ -77,6 +101,12 @@
       "language": "Python",
       "path": "src/Сериализация/external_dependencies.py",
       "purpose": "Проверка внешних ссылок при удалении; UUID генерируемых типов объектов и вложенных возможностей берутся из подтверждённого индекса исходного CF, без профилей классов."
+    },
+    "python:file_exchange": {
+      "name": "file_exchange",
+      "language": "Python",
+      "path": "src/Сериализация/file_exchange.py",
+      "purpose": "Потоковый HTTP/TCP-приём, проверка framing/XML/base64, публикация файла и необязательный CRS_RPC_TRACE с именами RPC/размерами без URL, авторизации и содержимого."
     },
     "python:form_attribute_types": {
       "name": "form_attribute_types",
@@ -137,6 +167,12 @@
       "language": "Python",
       "path": "src/Сериализация/metadata_type_sets.py",
       "purpose": "Проверенные групповые типы платформы: XML TypeSet, постоянные UUID и запрет их подмены."
+    },
+    "python:module_commit": {
+      "name": "module_commit",
+      "language": "Python",
+      "path": "src/Сериализация/module_commit.py",
+      "purpose": "Адресная компиляция одного существующего codec=Module по полному снимку: фрагмент CF для ibcmd overlay, проверка BSL/соседних данных, обычный общий пакет без полной конфигурации."
     },
     "python:native_commands": {
       "name": "native_commands",
@@ -222,6 +258,12 @@
       "path": "src/Сериализация/native_references.py",
       "purpose": "Итоговые ссылки на типы и значения: подготовленные нативные определения либо проверенные исходные снимки/пакет версии."
     },
+    "python:native_storage_file": {
+      "name": "native_storage_file",
+      "language": "Python",
+      "path": "src/Сериализация/native_storage_file.py",
+      "purpose": "Проверенный файловый индекс нативного контейнера, ленивые чтения записей и запись контейнера без общего буфера."
+    },
     "python:native_streams": {
       "name": "native_streams",
       "language": "Python",
@@ -258,6 +300,12 @@
       "path": "src/Сериализация/packet_builder.py",
       "purpose": "Граф помещения, версии, записи объектов и итоговый XML-запрос."
     },
+    "python:partial_baseline": {
+      "name": "partial_baseline",
+      "language": "Python",
+      "path": "src/Сериализация/partial_baseline.py",
+      "purpose": "Частичное XML-представление поверх полного неизменяемого CF: файловая карта покрытия, явные недоступные владельцы и потоки, выборочное копирование файлов по UUID. Автоматические удаления и полная компиляция запрещены."
+    },
     "python:platform_profiles": {
       "name": "platform_profiles",
       "language": "Python",
@@ -281,6 +329,12 @@
       "language": "Python",
       "path": "src/Сериализация/repository_cache.py",
       "purpose": "Инкрементальный кэш CF: версии объектов и потоков, выборочное получение, удаления, контроль целостности и атомарная смена поколения."
+    },
+    "python:resource_limits": {
+      "name": "resource_limits",
+      "language": "Python",
+      "path": "src/Сериализация/resource_limits.py",
+      "purpose": "Проверяемые лимиты процесса из профиля/окружения, области настроек и потоковые хеши файлов."
     },
     "python:role_rights_native": {
       "name": "role_rights_native",
@@ -335,6 +389,24 @@
       "language": "Python",
       "path": "src/Сериализация/xml_type_text.py",
       "purpose": "Чтение и проверка XML: xml_type_text."
+    },
+    "python:crs": {
+      "name": "crs",
+      "language": "Python",
+      "path": "tools/crs.py",
+      "purpose": "Точка запуска JSON CLI из любой рабочей папки."
+    },
+    "python:crs_mcp": {
+      "name": "crs_mcp",
+      "language": "Python",
+      "path": "tools/crs_mcp.py",
+      "purpose": "Точка запуска MCP stdio-сервера поверх JSON CLI."
+    },
+    "onescript:cli_bridge": {
+      "name": "cli_bridge",
+      "language": "OneScript",
+      "path": "src/cli_bridge.os",
+      "purpose": "JSON-мост к КлиентХранилища: чтение, локальная подготовка, отдельное исполнение одобренных помещений и операций пользователей."
     },
     "onescript:ВерсияХранилища": {
       "name": "ВерсияХранилища",
@@ -431,6 +503,18 @@
       "language": "OneScript",
       "path": "src/Модули/ОбработкаXML.os",
       "purpose": "Разбор ответов сервера, контекста и описаний объектов."
+    },
+    "onescript:ОграниченияДанных": {
+      "name": "ОграниченияДанных",
+      "language": "OneScript",
+      "path": "src/Модули/ОграниченияДанных.os",
+      "purpose": "Положительные лимиты байтов из той же политики процесса, что использует Python."
+    },
+    "onescript:ПомещениеАгента": {
+      "name": "ПомещениеАгента",
+      "language": "OneScript",
+      "path": "src/Модули/ПомещениеАгента.os",
+      "purpose": "CLI/MCP-помещение: восстановление проверенного пакета, контроль источников, существующий жизненный цикл захватов, одно помещение, адресное чтение результата и обновление основы."
     },
     "onescript:ПравилаПакетовХранилища": {
       "name": "ПравилаПакетовХранилища",
@@ -600,7 +684,7 @@
     {
       "module": "python:repository_baseline",
       "function": "read",
-      "signature": "read(directory)",
+      "signature": "read(directory, *, verify_all_files=False)",
       "inputs": "Каталог кэша с baseline.json",
       "outputs": "Проверенные пути основы и CF; повреждения прекращают чтение"
     },
@@ -726,9 +810,93 @@
     {
       "module": "onescript:КлиентХранилища",
       "function": "ПоместитьПакет",
-      "signature": "ПоместитьПакет(Знач Пакет, Знач Комментарий = \"\", Знач ИдентификаторПодключения = Неопределено)",
+      "signature": "ПоместитьПакет(Знач Пакет, Знач Комментарий = \"\", Знач ИдентификаторПодключения = Неопределено, Знач ПутьPython = \"python\")",
       "inputs": "Любой ПакетПомещенияОбъекта, комментарий и UUID подключения",
       "outputs": "Единая проверка источников/захватов, один commitObjects, подтверждение описаний и удалений; группа → массив, одиночное изменение/создание → объект, удаление → родитель"
+    },
+    {
+      "module": "python:commit_artifacts",
+      "function": "make_plan",
+      "signature": "make_plan(params, config, runner)",
+      "inputs": "prepared_directory, comment/label и именованный профиль; только чтение хранилища",
+      "outputs": "plan_file/plan_sha256 с хешами packet/prepared/review, UUID хранилища, версиями, захватами и конфликтами"
+    },
+    {
+      "module": "python:commit_artifacts",
+      "function": "execute",
+      "signature": "execute(params, config, runner)",
+      "inputs": "plan_file, approved_plan_sha256, execute=true и тот же профиль",
+      "outputs": "Сохранённый результат единственной попытки; при неопределённости только status, без повторной отправки"
+    },
+    {
+      "module": "onescript:ПомещениеАгента",
+      "function": "Обработать",
+      "signature": "Обработать(Клиент, Действие, Параметры, Подключение)",
+      "inputs": "Внутренний commit.inspect/commit.execute с проверенными файлами подготовки и плана",
+      "outputs": "Текущее состояние либо одно помещение через общий клиент, проверка содержимого возвращённой версии и завершение новых захватов"
+    },
+    {
+      "module": "python:file_exchange",
+      "function": "run",
+      "signature": "run(request)",
+      "inputs": "mode=exchange/version, URL, файл XML-запроса, новый путь результата; политика лимитов процесса",
+      "outputs": "Малый JSON с code/file/bytes/sha256; тело принимается блоками, version проверяет полный контейнер до публикации"
+    },
+    {
+      "module": "python:native_storage_file",
+      "function": "FileStorage.__init__",
+      "signature": "FileStorage.__init__(self, path)",
+      "inputs": "Путь нативного контейнера",
+      "outputs": "Проверенный SHA1-индекс и ленивые записи, без чтения всего файла в память"
+    },
+    {
+      "module": "onescript:КлиентХранилища",
+      "function": "ПолучитьПакетТекущейВерсииВФайл",
+      "signature": "ПолучитьПакетТекущейВерсииВФайл(Знач Путь, Знач ПутьPython = \"python\")",
+      "inputs": "Новый путь двоичного файла и Python",
+      "outputs": "Проверенный полный контейнер и UUID версии; потоковое XML/base64-декодирование, отказ/удаление при гонке версии"
+    },
+    {
+      "module": "python:module_commit",
+      "function": "prepare",
+      "signature": "prepare(request)",
+      "inputs": "Полный снимок одного UUID, исходное описание, точный module_path, полный BSL и compiler={backend:ibcmd,executable}; необязательный ожидаемый SHA256 исходного текста",
+      "outputs": "No-op без data либо один обычный пакет с единственным изменённым модулем; тело/граф/версии прочих потоков сохранены, review с diff и хешами"
+    },
+    {
+      "module": "onescript:КлиентХранилища",
+      "function": "ПодготовитьМодульОбъекта",
+      "signature": "ПодготовитьМодульОбъекта(Знач Объект, Знач ПутьМодуля, Знач ТекстМодуля, Знач НастройкиКомпилятора, Знач ПутьPython = \"python\", ОтчетПодготовки = Неопределено, Знач ОжидаемыйХешМодуля = Неопределено)",
+      "inputs": "Актуальное описание, Ext/ManagerModule.bsl, полный текст, настройки ibcmd, Python; необязательные отчёт и ожидаемый SHA256 исходного BSL",
+      "outputs": "ПакетПомещенияОбъекта или Неопределено; адресные чтения, проверки версии до/после, без захвата и записи"
+    },
+    {
+      "module": "python:agent_mcp",
+      "function": "CLIRunner.__call__",
+      "signature": "CLIRunner.__call__(self, request)",
+      "inputs": "Проверяемый CLI JSON-запрос из tools/call; фиксированные config/workspace процесса",
+      "outputs": "JSON CLI в structuredContent и content; ошибки CLI → isError, неизвестный результат записи → outcome_unknown"
+    },
+    {
+      "module": "python:agent_cli",
+      "function": "main",
+      "signature": "main(argv=None)",
+      "inputs": "CONFIG и один UTF-8 JSON-запрос: чтение, подготовка, план или одобренная запись",
+      "outputs": "Один JSON в stdout, exit code 0/1; запись конфигурации только changes.commit с хешем плана и execute=true"
+    },
+    {
+      "module": "onescript:cli_bridge",
+      "function": "ВыполнитьЗапрос",
+      "signature": "ВыполнитьЗапрос(Запрос, КодОшибки)",
+      "inputs": "Проверенный JSON и профиль; пароли только через имена переменных окружения",
+      "outputs": "Структура результата CRS API; для changes.prepare — путь packet.bin и план без записи на сервер"
+    },
+    {
+      "module": "onescript:cli_bridge",
+      "function": "Пользователи",
+      "signature": "Пользователи(Клиент, Действие, Параметры, КодОшибки)",
+      "inputs": "users.list/plan/apply; для записи execute=true и точное expected состояние",
+      "outputs": "Проекция без секретов: роль и исходная маска rights; план или подтверждённое изменение"
     }
   ],
   "metadata_routes": [
@@ -1305,6 +1473,70 @@
   ],
   "imports": [
     {
+      "caller": "python:agent_cli",
+      "callee": "python:commit_artifacts"
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:configuration_export"
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:metadata_identifiers"
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:object_changes"
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:object_xml_changes"
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:partial_baseline"
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:resource_limits"
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:xml_compare"
+    },
+    {
+      "caller": "python:agent_mcp",
+      "callee": "python:agent_cli"
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:external_data"
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:native_metadata"
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:native_storage_file"
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:preparation_journal"
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:repository_cache"
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:resource_limits"
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:serializer_cli"
+    },
+    {
       "caller": "python:compiled_creation",
       "callee": "python:compiled_dependencies"
     },
@@ -1381,6 +1613,10 @@
       "callee": "python:native_metadata"
     },
     {
+      "caller": "python:compiled_dependencies",
+      "callee": "python:native_predefined_reader"
+    },
+    {
       "caller": "python:compiled_graph",
       "callee": "python:configuration_export"
     },
@@ -1399,6 +1635,10 @@
     {
       "caller": "python:compiled_graph",
       "callee": "python:native_configuration_reader"
+    },
+    {
+      "caller": "python:compiled_graph",
+      "callee": "python:native_form_bindings"
     },
     {
       "caller": "python:compiled_graph",
@@ -1570,11 +1810,47 @@
     },
     {
       "caller": "python:configuration_export",
+      "callee": "python:resource_limits"
+    },
+    {
+      "caller": "python:configuration_export",
       "callee": "python:serializer_cli"
     },
     {
       "caller": "python:configuration_export",
       "callee": "python:xml_compare"
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:external_data"
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:metadata_identifiers"
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:native_configuration_reader"
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:native_metadata"
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:resource_limits"
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:serializer_cli"
+    },
+    {
+      "caller": "python:crs",
+      "callee": "python:agent_cli"
+    },
+    {
+      "caller": "python:crs_mcp",
+      "callee": "python:agent_mcp"
     },
     {
       "caller": "python:export_coverage",
@@ -1618,11 +1894,27 @@
     },
     {
       "caller": "python:export_xml",
+      "callee": "python:resource_limits"
+    },
+    {
+      "caller": "python:export_xml",
       "callee": "python:xml_namespaces"
     },
     {
       "caller": "python:external_data",
       "callee": "python:native_metadata"
+    },
+    {
+      "caller": "python:external_data",
+      "callee": "python:native_storage_file"
+    },
+    {
+      "caller": "python:external_data",
+      "callee": "python:resource_limits"
+    },
+    {
+      "caller": "python:external_data",
+      "callee": "python:serialization_context"
     },
     {
       "caller": "python:external_data",
@@ -1671,6 +1963,18 @@
     {
       "caller": "python:external_dependencies",
       "callee": "python:serialization_context"
+    },
+    {
+      "caller": "python:file_exchange",
+      "callee": "python:native_storage_file"
+    },
+    {
+      "caller": "python:file_exchange",
+      "callee": "python:resource_limits"
+    },
+    {
+      "caller": "python:file_exchange",
+      "callee": "python:serializer_cli"
     },
     {
       "caller": "python:form_attribute_types",
@@ -1738,6 +2042,10 @@
     },
     {
       "caller": "python:ibcmd_backend",
+      "callee": "python:resource_limits"
+    },
+    {
+      "caller": "python:ibcmd_backend",
       "callee": "python:serialization_context"
     },
     {
@@ -1759,6 +2067,10 @@
     {
       "caller": "python:metadata_context",
       "callee": "python:native_metadata"
+    },
+    {
+      "caller": "python:metadata_context",
+      "callee": "python:resource_limits"
     },
     {
       "caller": "python:metadata_identifiers",
@@ -1905,6 +2217,74 @@
       "callee": "python:native_metadata"
     },
     {
+      "caller": "python:module_commit",
+      "callee": "python:cf_container"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:configuration_commit"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:export_coverage"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:external_data"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:ibcmd_backend"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:metadata_context"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:metadata_identifiers"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:native_content"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:native_metadata"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:native_streams"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:object_changes"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:packet_builder"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:platform_profiles"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:repository_cache"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:resource_limits"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:serialization_context"
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:serializer_cli"
+    },
+    {
       "caller": "python:native_commands",
       "callee": "python:native_inline"
     },
@@ -2017,6 +2397,10 @@
       "callee": "python:xml_namespaces"
     },
     {
+      "caller": "python:native_metadata",
+      "callee": "python:resource_limits"
+    },
+    {
       "caller": "python:native_object_profiles",
       "callee": "python:metadata_structure"
     },
@@ -2087,6 +2471,14 @@
     {
       "caller": "python:native_references",
       "callee": "python:serialization_context"
+    },
+    {
+      "caller": "python:native_storage_file",
+      "callee": "python:native_metadata"
+    },
+    {
+      "caller": "python:native_storage_file",
+      "callee": "python:resource_limits"
     },
     {
       "caller": "python:native_streams",
@@ -2177,8 +2569,44 @@
       "callee": "python:native_metadata"
     },
     {
+      "caller": "python:partial_baseline",
+      "callee": "python:cf_container"
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:configuration_export"
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:export_snapshot"
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:ibcmd_backend"
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:native_metadata"
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:repository_baseline"
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:repository_cache"
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:resource_limits"
+    },
+    {
       "caller": "python:preparation_journal",
       "callee": "python:repository_cache"
+    },
+    {
+      "caller": "python:preparation_journal",
+      "callee": "python:resource_limits"
     },
     {
       "caller": "python:preparation_journal",
@@ -2202,7 +2630,15 @@
     },
     {
       "caller": "python:repository_baseline",
+      "callee": "python:partial_baseline"
+    },
+    {
+      "caller": "python:repository_baseline",
       "callee": "python:repository_cache"
+    },
+    {
+      "caller": "python:repository_baseline",
+      "callee": "python:resource_limits"
     },
     {
       "caller": "python:repository_baseline",
@@ -2230,6 +2666,10 @@
     },
     {
       "caller": "python:repository_cache",
+      "callee": "python:native_storage_file"
+    },
+    {
+      "caller": "python:repository_cache",
       "callee": "python:native_streams"
     },
     {
@@ -2239,6 +2679,10 @@
     {
       "caller": "python:repository_cache",
       "callee": "python:platform_profiles"
+    },
+    {
+      "caller": "python:repository_cache",
+      "callee": "python:resource_limits"
     },
     {
       "caller": "python:repository_cache",
@@ -2259,6 +2703,10 @@
     {
       "caller": "python:serialization_context",
       "callee": "python:native_metadata"
+    },
+    {
+      "caller": "python:serialization_context",
+      "callee": "python:native_storage_file"
     },
     {
       "caller": "python:xml_compare",
@@ -2295,6 +2743,52 @@
   ],
   "calls": [
     {
+      "caller": "onescript:cli_bridge",
+      "callee": "onescript:Вспомогательный",
+      "functions": [
+        "ХешированныйПароль"
+      ]
+    },
+    {
+      "caller": "onescript:cli_bridge",
+      "callee": "onescript:КлиентХранилища",
+      "functions": [
+        "АвторизацияПройдена",
+        "ВосстановитьПользователя",
+        "ИнициализироватьОснову",
+        "ОбновитьПользователяХранилища",
+        "ПланИзмененийКонфигурацииИзВыгрузки",
+        "ПодготовитьКонфигурациюИзВыгрузки",
+        "ПодготовитьМодульОбъекта",
+        "Подключиться",
+        "ПолучитьВерсиюХранилища",
+        "ПолучитьИсторическийОбъект",
+        "ПолучитьОписаниеОбъекта",
+        "ПолучитьОписанияОбъектов",
+        "ПолучитьСостоянияОбъектов",
+        "ПриСозданииОбъекта",
+        "СоздатьПользователя",
+        "СписокПользователей",
+        "УдалитьПользователя"
+      ]
+    },
+    {
+      "caller": "onescript:cli_bridge",
+      "callee": "onescript:ПомещениеАгента",
+      "functions": [
+        "Обработать",
+        "СохранитьПакет"
+      ]
+    },
+    {
+      "caller": "onescript:cli_bridge",
+      "callee": "onescript:СериализаторОбъектаХранилища",
+      "functions": [
+        "КонтекстЧитаемогоСнимка",
+        "ОсноваКонфигурации"
+      ]
+    },
+    {
       "caller": "onescript:ВерсияХранилища",
       "callee": "onescript:Вспомогательный",
       "functions": [
@@ -2320,6 +2814,7 @@
       "caller": "onescript:КлиентХранилища",
       "callee": "onescript:ИдентификаторыМетаданных",
       "functions": [
+        "ИдентификаторКласса",
         "КлассКонфигурации"
       ]
     },
@@ -2358,6 +2853,7 @@
       "callee": "onescript:ОбработкаXML",
       "functions": [
         "ОбъектЗахваченПользователем",
+        "ПроверитьБазовыйОтветОбъектов",
         "ПроверитьОтветЗахвата",
         "ПроверитьОтветОписанияОбъекта",
         "ПроверитьОтветПомещения",
@@ -2368,10 +2864,16 @@
         "ПрочитатьОписаниеОбъекта",
         "ПрочитатьОтветИзТекста",
         "ПрочитатьОтветПолученияОбъекта",
-        "ПрочитатьПакетТекущейВерсии",
         "ПрочитатьПользователяИзXML",
         "СостояниеОбъектаИзОтвета",
         "СостоянияОбъектовИзОтвета"
+      ]
+    },
+    {
+      "caller": "onescript:КлиентХранилища",
+      "callee": "onescript:ПакетПомещенияОбъекта",
+      "functions": [
+        "ПриСозданииОбъекта"
       ]
     },
     {
@@ -2400,6 +2902,8 @@
       "caller": "onescript:КлиентХранилища",
       "callee": "onescript:СериализаторОбъектаХранилища",
       "functions": [
+        "АртефактыПомещения",
+        "ВерсияКонфигурацииПомещения",
         "ВнешниеДанныеИзВерсии",
         "ЖурналПодготовки",
         "КлассыМетаданных",
@@ -2409,6 +2913,7 @@
         "ПакетКонфигурации",
         "ПланВыгрузкиКонфигурации",
         "ПланПакетаКонфигурации",
+        "ПодготовитьМодуль",
         "ПотокиСнимка",
         "СогласоватьXMLЧерезGit",
         "СравнитьСнимкиОбъекта",
@@ -2434,6 +2939,7 @@
       "callee": "onescript:ТранспортХранилища",
       "functions": [
         "Отправить",
+        "ОтправитьВФайл",
         "ПараметрыTCP"
       ]
     },
@@ -2498,6 +3004,13 @@
     },
     {
       "caller": "onescript:ОбработкаXML",
+      "callee": "onescript:СериализаторОбъектаХранилища",
+      "functions": [
+        "ФайловыйОбмен"
+      ]
+    },
+    {
+      "caller": "onescript:ОбработкаXML",
       "callee": "onescript:СнимокОбъектаХранилища",
       "functions": [
         "ПриСозданииОбъекта"
@@ -2510,6 +3023,13 @@
         "ИдентификаторКласса",
         "ИдентификаторПризнака",
         "КлассКонфигурации"
+      ]
+    },
+    {
+      "caller": "onescript:ПакетПомещенияОбъекта",
+      "callee": "onescript:ОграниченияДанных",
+      "functions": [
+        "Значение"
       ]
     },
     {
@@ -2540,16 +3060,10 @@
       ]
     },
     {
-      "caller": "onescript:ПакетПомещенияОбъекта",
-      "callee": "onescript:ТранспортХранилища",
-      "functions": [
-        "МаксимальныйРазмерСообщения"
-      ]
-    },
-    {
       "caller": "onescript:ПодготовкаПомещенияКонфигурации",
       "callee": "onescript:СериализаторОбъектаХранилища",
       "functions": [
+        "АртефактыПомещения",
         "ЖурналПодготовки"
       ]
     },
@@ -2567,6 +3081,41 @@
       "functions": [
         "ПредставлениеРоли",
         "РольИзСтроки"
+      ]
+    },
+    {
+      "caller": "onescript:ПомещениеАгента",
+      "callee": "onescript:ПакетПомещенияОбъекта",
+      "functions": [
+        "ПриСозданииОбъекта"
+      ]
+    },
+    {
+      "caller": "onescript:ПомещениеАгента",
+      "callee": "onescript:ПодготовкаПомещенияКонфигурации",
+      "functions": [
+        "ПриСозданииОбъекта"
+      ]
+    },
+    {
+      "caller": "onescript:ПомещениеАгента",
+      "callee": "onescript:ПравилаПакетовХранилища",
+      "functions": [
+        "ОписаниеОбъекта"
+      ]
+    },
+    {
+      "caller": "onescript:ПомещениеАгента",
+      "callee": "onescript:СериализаторОбъектаХранилища",
+      "functions": [
+        "АртефактыПомещения"
+      ]
+    },
+    {
+      "caller": "onescript:ПомещениеАгента",
+      "callee": "onescript:СнимокОбъектаХранилища",
+      "functions": [
+        "ПриСозданииОбъекта"
       ]
     },
     {
@@ -2610,6 +3159,13 @@
     },
     {
       "caller": "onescript:СериализаторОбъектаХранилища",
+      "callee": "python:commit_artifacts",
+      "functions": [
+        "JSON CLI"
+      ]
+    },
+    {
+      "caller": "onescript:СериализаторОбъектаХранилища",
       "callee": "python:configuration_commit",
       "functions": [
         "JSON CLI"
@@ -2624,6 +3180,13 @@
     },
     {
       "caller": "onescript:СериализаторОбъектаХранилища",
+      "callee": "python:configuration_version",
+      "functions": [
+        "JSON CLI"
+      ]
+    },
+    {
+      "caller": "onescript:СериализаторОбъектаХранилища",
       "callee": "python:external_data",
       "functions": [
         "JSON CLI"
@@ -2631,7 +3194,21 @@
     },
     {
       "caller": "onescript:СериализаторОбъектаХранилища",
+      "callee": "python:file_exchange",
+      "functions": [
+        "JSON CLI"
+      ]
+    },
+    {
+      "caller": "onescript:СериализаторОбъектаХранилища",
       "callee": "python:metadata_classes",
+      "functions": [
+        "JSON CLI"
+      ]
+    },
+    {
+      "caller": "onescript:СериализаторОбъектаХранилища",
+      "callee": "python:module_commit",
       "functions": [
         "JSON CLI"
       ]
@@ -2680,9 +3257,160 @@
     },
     {
       "caller": "onescript:ТранспортХранилища",
+      "callee": "onescript:ОграниченияДанных",
+      "functions": [
+        "Значение"
+      ]
+    },
+    {
+      "caller": "onescript:ТранспортХранилища",
       "callee": "onescript:ОтветТранспортаХранилища",
       "functions": [
         "ПриСозданииОбъекта"
+      ]
+    },
+    {
+      "caller": "onescript:ТранспортХранилища",
+      "callee": "onescript:СериализаторОбъектаХранилища",
+      "functions": [
+        "ФайловыйОбмен"
+      ]
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "onescript:cli_bridge",
+      "functions": [
+        "JSON через subprocess"
+      ]
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:commit_artifacts",
+      "functions": [
+        "execute",
+        "make_plan",
+        "status"
+      ]
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:configuration_export",
+      "functions": [
+        "fingerprint",
+        "inventory"
+      ]
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:metadata_identifiers",
+      "functions": [
+        "class_labels"
+      ]
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:object_changes",
+      "functions": [
+        "compare",
+        "value"
+      ]
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:object_xml_changes",
+      "functions": [
+        "export"
+      ]
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:partial_baseline",
+      "functions": [
+        "materialize"
+      ]
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:resource_limits",
+      "functions": [
+        "overrides",
+        "scope",
+        "validate"
+      ]
+    },
+    {
+      "caller": "python:agent_cli",
+      "callee": "python:xml_compare",
+      "functions": [
+        "file_equal"
+      ]
+    },
+    {
+      "caller": "python:agent_mcp",
+      "callee": "python:agent_cli",
+      "functions": [
+        "load_json"
+      ]
+    },
+    {
+      "caller": "python:agent_mcp",
+      "callee": "python:crs",
+      "functions": [
+        "JSON CLI через subprocess"
+      ]
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:external_data",
+      "functions": [
+        "iter_native"
+      ]
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:native_metadata",
+      "functions": [
+        "inflate"
+      ]
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:native_storage_file",
+      "functions": [
+        "FileStorage"
+      ]
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:preparation_journal",
+      "functions": [
+        "atomic",
+        "encoded",
+        "locked",
+        "process_identity",
+        "validate"
+      ]
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:repository_cache",
+      "functions": [
+        "identity"
+      ]
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:resource_limits",
+      "functions": [
+        "file_digest",
+        "get"
+      ]
+    },
+    {
+      "caller": "python:commit_artifacts",
+      "callee": "python:serializer_cli",
+      "functions": [
+        "run"
       ]
     },
     {
@@ -2822,6 +3550,13 @@
       ]
     },
     {
+      "caller": "python:compiled_dependencies",
+      "callee": "python:native_predefined_reader",
+      "functions": [
+        "calculation_references"
+      ]
+    },
+    {
       "caller": "python:compiled_graph",
       "callee": "python:configuration_export",
       "functions": [
@@ -2855,6 +3590,13 @@
       "callee": "python:native_configuration_reader",
       "functions": [
         "contained_objects"
+      ]
+    },
+    {
+      "caller": "python:compiled_graph",
+      "callee": "python:native_form_bindings",
+      "functions": [
+        "validate_owner_properties"
       ]
     },
     {
@@ -3007,10 +3749,11 @@
       "caller": "python:compiled_metadata",
       "callee": "python:serialization_context",
       "functions": [
-        "decode",
         "external_versions",
+        "has_storage",
         "original_version",
-        "read"
+        "read",
+        "storage"
       ]
     },
     {
@@ -3190,6 +3933,13 @@
     },
     {
       "caller": "python:configuration_export",
+      "callee": "python:resource_limits",
+      "functions": [
+        "get"
+      ]
+    },
+    {
+      "caller": "python:configuration_export",
       "callee": "python:serializer_cli",
       "functions": [
         "run"
@@ -3200,6 +3950,66 @@
       "callee": "python:xml_compare",
       "functions": [
         "file_equal"
+      ]
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:external_data",
+      "functions": [
+        "records"
+      ]
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:metadata_identifiers",
+      "functions": [
+        "class_id"
+      ]
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:native_configuration_reader",
+      "functions": [
+        "configuration_version"
+      ]
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:native_metadata",
+      "functions": [
+        "Parser",
+        "decode_storage",
+        "inflate",
+        "read_record",
+        "val"
+      ]
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:resource_limits",
+      "functions": [
+        "get"
+      ]
+    },
+    {
+      "caller": "python:configuration_version",
+      "callee": "python:serializer_cli",
+      "functions": [
+        "run"
+      ]
+    },
+    {
+      "caller": "python:crs",
+      "callee": "python:agent_cli",
+      "functions": [
+        "main"
+      ]
+    },
+    {
+      "caller": "python:crs_mcp",
+      "callee": "python:agent_mcp",
+      "functions": [
+        "main"
       ]
     },
     {
@@ -3255,13 +4065,33 @@
       ]
     },
     {
+      "caller": "python:export_xml",
+      "callee": "python:resource_limits",
+      "functions": [
+        "get"
+      ]
+    },
+    {
       "caller": "python:external_data",
       "callee": "python:native_metadata",
       "functions": [
         "Parser",
-        "decode_storage",
         "read_record",
         "val"
+      ]
+    },
+    {
+      "caller": "python:external_data",
+      "callee": "python:resource_limits",
+      "functions": [
+        "get"
+      ]
+    },
+    {
+      "caller": "python:external_data",
+      "callee": "python:serialization_context",
+      "functions": [
+        "storage"
       ]
     },
     {
@@ -3351,8 +4181,30 @@
       "caller": "python:external_dependencies",
       "callee": "python:serialization_context",
       "functions": [
-        "decode",
-        "external_versions"
+        "external_versions",
+        "storage"
+      ]
+    },
+    {
+      "caller": "python:file_exchange",
+      "callee": "python:native_storage_file",
+      "functions": [
+        "FileStorage",
+        "publish_new"
+      ]
+    },
+    {
+      "caller": "python:file_exchange",
+      "callee": "python:resource_limits",
+      "functions": [
+        "get"
+      ]
+    },
+    {
+      "caller": "python:file_exchange",
+      "callee": "python:serializer_cli",
+      "functions": [
+        "run"
       ]
     },
     {
@@ -3427,7 +4279,8 @@
       "caller": "python:ibcmd_backend",
       "callee": "python:configuration_export",
       "functions": [
-        "inventory"
+        "inventory",
+        "require_complete_directory"
       ]
     },
     {
@@ -3455,7 +4308,6 @@
       "caller": "python:ibcmd_backend",
       "callee": "python:native_metadata",
       "functions": [
-        "compress",
         "inflate",
         "val"
       ]
@@ -3469,10 +4321,17 @@
     },
     {
       "caller": "python:ibcmd_backend",
+      "callee": "python:resource_limits",
+      "functions": [
+        "get"
+      ]
+    },
+    {
+      "caller": "python:ibcmd_backend",
       "callee": "python:serialization_context",
       "functions": [
-        "decode",
-        "read"
+        "read",
+        "storage"
       ]
     },
     {
@@ -3521,6 +4380,13 @@
         "read_record",
         "val",
         "validate_storage"
+      ]
+    },
+    {
+      "caller": "python:metadata_context",
+      "callee": "python:resource_limits",
+      "functions": [
+        "get"
       ]
     },
     {
@@ -3747,7 +4613,8 @@
       "caller": "python:metadata_type_references",
       "callee": "python:serialization_context",
       "functions": [
-        "decode"
+        "has_storage",
+        "storage"
       ]
     },
     {
@@ -3792,6 +4659,144 @@
       "callee": "python:native_metadata",
       "functions": [
         "Parser"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:cf_container",
+      "functions": [
+        "detect_format"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:configuration_commit",
+      "functions": [
+        "final_graph"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:export_coverage",
+      "functions": [
+        "_module"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:external_data",
+      "functions": [
+        "extract",
+        "records"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:ibcmd_backend",
+      "functions": [
+        "Compiler",
+        "read_fragment",
+        "write_fragment"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:metadata_context",
+      "functions": [
+        "children",
+        "guid"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:metadata_identifiers",
+      "functions": [
+        "class_labels"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:native_content",
+      "functions": [
+        "compiled_stream_changes"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:native_metadata",
+      "functions": [
+        "Parser",
+        "atom",
+        "decode_storage",
+        "inflate",
+        "metadata_relations",
+        "render",
+        "text_bytes",
+        "val",
+        "validate_storage"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:native_streams",
+      "functions": [
+        "routes",
+        "select"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:object_changes",
+      "functions": [
+        "text_diff"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:packet_builder",
+      "functions": [
+        "ObjectRecord",
+        "assemble",
+        "commit_metadata",
+        "content_version",
+        "description"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:platform_profiles",
+      "functions": [
+        "legacy",
+        "version_parts"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:repository_cache",
+      "functions": [
+        "versions"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:resource_limits",
+      "functions": [
+        "get"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:serialization_context",
+      "functions": [
+        "external_versions",
+        "original_version"
+      ]
+    },
+    {
+      "caller": "python:module_commit",
+      "callee": "python:serializer_cli",
+      "functions": [
+        "run"
       ]
     },
     {
@@ -3960,6 +4965,7 @@
       "functions": [
         "attach_types",
         "owners",
+        "profile",
         "register_fields"
       ]
     },
@@ -3968,6 +4974,7 @@
       "callee": "python:native_metadata",
       "functions": [
         "Parser",
+        "atom",
         "val"
       ]
     },
@@ -3985,6 +4992,13 @@
       "callee": "python:native_metadata",
       "functions": [
         "val"
+      ]
+    },
+    {
+      "caller": "python:native_metadata",
+      "callee": "python:resource_limits",
+      "functions": [
+        "get"
       ]
     },
     {
@@ -4112,6 +5126,22 @@
       "callee": "python:serialization_context",
       "functions": [
         "read"
+      ]
+    },
+    {
+      "caller": "python:native_storage_file",
+      "callee": "python:native_metadata",
+      "functions": [
+        "Parser",
+        "record"
+      ]
+    },
+    {
+      "caller": "python:native_storage_file",
+      "callee": "python:resource_limits",
+      "functions": [
+        "file_digest",
+        "get"
       ]
     },
     {
@@ -4292,11 +5322,76 @@
       ]
     },
     {
+      "caller": "python:partial_baseline",
+      "callee": "python:cf_container",
+      "functions": [
+        "detect_format"
+      ]
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:export_snapshot",
+      "functions": [
+        "expected_versions",
+        "version_map"
+      ]
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:ibcmd_backend",
+      "functions": [
+        "Compiler",
+        "primary_container_offset"
+      ]
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:native_metadata",
+      "functions": [
+        "Parser",
+        "inflate",
+        "val"
+      ]
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:repository_baseline",
+      "functions": [
+        "publish",
+        "read"
+      ]
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:repository_cache",
+      "functions": [
+        "Cache",
+        "digest",
+        "versions"
+      ]
+    },
+    {
+      "caller": "python:partial_baseline",
+      "callee": "python:resource_limits",
+      "functions": [
+        "file_digest",
+        "get"
+      ]
+    },
+    {
       "caller": "python:preparation_journal",
       "callee": "python:repository_cache",
       "functions": [
         "Cache",
         "identity"
+      ]
+    },
+    {
+      "caller": "python:preparation_journal",
+      "callee": "python:resource_limits",
+      "functions": [
+        "file_digest",
+        "get"
       ]
     },
     {
@@ -4341,10 +5436,26 @@
     },
     {
       "caller": "python:repository_baseline",
+      "callee": "python:partial_baseline",
+      "functions": [
+        "initialize",
+        "materialize",
+        "verify"
+      ]
+    },
+    {
+      "caller": "python:repository_baseline",
       "callee": "python:repository_cache",
       "functions": [
         "Cache",
         "digest"
+      ]
+    },
+    {
+      "caller": "python:repository_baseline",
+      "callee": "python:resource_limits",
+      "functions": [
+        "file_digest"
       ]
     },
     {
@@ -4367,7 +5478,8 @@
       "caller": "python:repository_cache",
       "callee": "python:external_data",
       "functions": [
-        "extract_many"
+        "extract_many",
+        "iter_native"
       ]
     },
     {
@@ -4382,8 +5494,8 @@
       "caller": "python:repository_cache",
       "callee": "python:metadata_context",
       "functions": [
-        "context_objects",
-        "guid"
+        "guid",
+        "iter_context_objects"
       ]
     },
     {
@@ -4397,6 +5509,13 @@
         "storage",
         "text_bytes",
         "val"
+      ]
+    },
+    {
+      "caller": "python:repository_cache",
+      "callee": "python:native_storage_file",
+      "functions": [
+        "write"
       ]
     },
     {
@@ -4423,11 +5542,20 @@
     },
     {
       "caller": "python:repository_cache",
+      "callee": "python:resource_limits",
+      "functions": [
+        "file_digest",
+        "get"
+      ]
+    },
+    {
+      "caller": "python:repository_cache",
       "callee": "python:serialization_context",
       "functions": [
-        "decode",
         "external_versions",
-        "read"
+        "read",
+        "storage",
+        "validate_metadata"
       ]
     },
     {
@@ -4462,6 +5590,13 @@
         "render",
         "val",
         "validate_storage"
+      ]
+    },
+    {
+      "caller": "python:serialization_context",
+      "callee": "python:native_storage_file",
+      "functions": [
+        "FileStorage"
       ]
     },
     {

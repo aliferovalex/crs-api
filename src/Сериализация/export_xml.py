@@ -4,11 +4,12 @@ import xml_namespaces
 from pathlib import Path
 from xml.etree import ElementTree as E
 import native_metadata as s
+import resource_limits as limits
 
 Q='{'+xml_namespaces.MD+'}'
 def read(path):
     path=Path(path)
-    if not path.is_file() or path.stat().st_size>s.MAX_BYTES:raise ValueError('Missing or oversized export file: '+str(path))
+    if not path.is_file() or path.stat().st_size>limits.get('export_file_bytes',s.MAX_BYTES):raise ValueError('Missing or oversized export file: '+str(path))
     return path.read_text(encoding='utf-8-sig')
 
 

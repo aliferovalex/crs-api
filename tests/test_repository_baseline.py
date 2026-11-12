@@ -36,8 +36,9 @@ class BaselineTests(unittest.TestCase):
     def initialize(self,native_image=None,**extra):
         def execute(compiler,*args):
             self.assertEqual(args[:2],('cf','export'))
+            loaded.assert_not_called()  # The decoded image must not coexist with ibcmd.
             shutil.copytree(self.fixture/'baseline',args[3])
-        with mock.patch.object(repository_cache.Cache,'load',return_value=(copy.deepcopy(self.state),native_image or {},self.cf)),mock.patch.object(baseline.ibcmd_backend.Compiler,'execute',autospec=True,side_effect=execute):
+        with mock.patch.object(repository_cache.Cache,'load_state',return_value=(copy.deepcopy(self.state),self.cf)),mock.patch.object(repository_cache.Cache,'load',return_value=(copy.deepcopy(self.state),native_image or {},self.cf)) as loaded,mock.patch.object(baseline.ibcmd_backend.Compiler,'execute',autospec=True,side_effect=execute):
             return baseline.initialize(dict(self.request,**extra))
 
     def test_initialize_without_git_and_read_frozen_basis(self):
